@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* ENCABEZADO */
+      .header-container h3 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: left;
+        font-size: 28px;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* CONTENEDOR PRINCIPAL */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      h1.section-title,
+      h2.section-subtitle {
+        font-size: 35px;
+        font-weight: 700;
+        color: #041e42;
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #202122;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      .centered-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition: background 0.2s ease, color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #eaf4ff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition: max-height 0.35s ease, padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 1200px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .accordion-content ul {
+        padding-left: 20px;
+      }
+      .accordion-content li {
+        margin-bottom: 10px;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* TABLA DE ASSESSMENTS */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #dcdcdc;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+      }
+      th {
+        background-color: #041e42;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h3 style="text-align: center">
+        <span class="course-code">COURSE_CODE<br /></span>
+        <span style="font-size: 28px">Course Overview</span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <!-- SECCIÓN PRINCIPAL -->
+      <h2 class="section-title" style="text-align: center">
+        <span
+          style="font-family: Lato, sans-serif; font-size: 30px; color: #041e40"
+          >Scope, Learning Objectives, and Assessment</span
+        >
+      </h2>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40">| Course Scope</span>
+      </h3>
+      <div
+        style="display: flex; gap: 100px; align-items: center; padding: 0px 0"
+      >
+        <div style="flex: 1; min-width: 200px; max-width: 200px">
+          <img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/img-course-1_20251120220934262.png"
+            alt=""
+            title=""
+            width="313"
+            height="338"
+            style="float: left"
+          />
+        </div>
+        <div style="flex: 2">
+          <p>
+            Emphasis in this course will be placed on problems and opportunities
+            of business leaders and managers. It will also provide you an
+            opportunity to analyze several components critically, which will
+            challenge you to apply management principles to accomplishing growth
+            in business enterprises. The ultimate objective of the course is to
+            enable the student to evaluate and to solve problems involving
+            business management and to communicate effectively their
+            recommendations to others.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Course &amp; Learning Objectives</span
+        >
+      </h3>
+      <p>
+        Select each Course Objective to see the associated Learning Objectives
+        and Assessments.
+      </p>
+      <!-- ACORDEÓN: COURSE AND LEARNING OBJECTIVES -->
+      <div class="accordion">
+        <!-- CO-1 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co1" />
+          <label class="accordion-title" for="co1"
+            >CO-1: Examine the strategic management process for
+            corporations</label
+          >
+          <div class="accordion-content">
+            <ul>
+              <li>Analyze the concept of strategic management.</li>
+              <li>
+                Illustrate the importance of developing a thorough plan that
+                will guide the organization in the future.
+              </li>
+              <li>
+                Distinguish the importance of strategic management as a process.
+                Identify and discuss the role and function of a company mission.
+              </li>
+              <li>
+                Explain how vision and performance help leaders clarify
+                strategic intent.
+              </li>
+              <li>
+                Identify how a mission sets a direction for an organization.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-2 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co2" />
+          <label class="accordion-title" for="co2"
+            >CO-2: Evaluate strategic initiatives to leverage opportunities and
+            mitigate threats to businesses</label
+          >
+          <div class="accordion-content">
+            <ul>
+              <li>
+                LO-2.1: Identify and describe the environmental factors that
+                affect the performance of a firm.
+              </li>
+              <li>
+                LO-2.2: Identify how products and services may gain an advantage
+                against competitors.
+              </li>
+              <li>
+                LO-2.3: Identify forces that support the organizational strategy
+                and those that may undermine it.
+              </li>
+              <li>
+                LO-2.4: Identify and discuss topics for long-term corporate
+                objectives including the forces that drive the organization's
+                products and markets.
+              </li>
+              <li>
+                LO-2.5: Explain strategies for competing in International
+                Markets.
+              </li>
+              <li>
+                LO-2.6: Illustrate how companies strengthen their competitive
+                position in the marketplace.
+              </li>
+              <li>
+                LO-2.7: Evaluate and discuss the importance of the stakeholder
+                approach to social responsibility.
+              </li>
+              <li>
+                LO-2.8: Examine the role ethical issues play in setting
+                boundaries within which businesses operate.
+              </li>
+              <li>
+                <strong>Assessment:</strong> Assignment Title: Week 5 – Quiz
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-3 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co3" />
+          <label class="accordion-title" for="co3"
+            >CO-3: Demonstrate how to build a competitive advantage through
+            functional level strategy</label
+          >
+          <div class="accordion-content">
+            <ul>
+              <li>
+                LO-3.1: Analyze how to conduct a SWOT analysis and summarize its
+                limitations.
+              </li>
+              <li>
+                LO-3.2: Illustrate how a firm can pursue both low-cost and
+                differentiation strategies.
+              </li>
+              <li>
+                LO-3.3: Identify the building blocks of organizational
+                structure.
+              </li>
+              <li>
+                LO-3.4: Identify the different forms of control within an
+                organization.
+              </li>
+              <li>
+                LO-3.5: Illustrate fair assessments of how realistic the
+                strategy is in terms of culture.
+              </li>
+              <li>
+                <strong>Assessment:</strong> Assignment Title: Week 2 – Quiz
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-4 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co4" />
+          <label class="accordion-title" for="co4"
+            >CO-4: Develop a comprehensive strategic plan document</label
+          >
+          <div class="accordion-content">
+            <ul>
+              <li>
+                LO-4.1: Articulate strategic analyses, decisions, and action
+                plans in a clear, coherent, and professional manner.
+              </li>
+              <li>
+                LO-4.2: Analyze the common and conflicting interests of various
+                stakeholder groups.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <!-- PROGRAM LEARNING OUTCOMES -->
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Program Learning Outcomes</span
+        >
+      </h3>
+      <p>
+        Program Learning Outcomes (PLO) serve as a roadmap for educational
+        success and guide the courses that you take.
+      </p>
+      <p>
+        If there is more than one program, add an accordion for each program.
+        The accordion title/program name should be H4. The accordion text should
+        be bulleted PLOs.
+      </p>
+      <hr />
+      <!-- ASSESSMENT COMPONENTS -->
+      <h3>
+        <span style="color: #041e40; font-size: 24px"
+          >| Assessment Components</span
+        >
+      </h3>
+      <p>
+        Your final grade will be calculated using the following category
+        weights:
+      </p>
+      <table style="width: 46.8327%; height: 84.3906px">
+        <tbody>
+          <tr style="height: 40.1953px">
+            <th style="width: 49.0956%">Assignments</th>
+            <th style="width: 50.9044%">Discussions</th>
+          </tr>
+          <tr style="height: 44.1953px">
+            <td style="width: 49.0956%">70%</td>
+            <td style="width: 50.9044%">30%</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt="logo"
+        class="footer-logo"
+      />
+    </div>
+  </body>
+</html>
