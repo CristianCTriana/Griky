@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif;
+        color: #041e42;
+        line-height: 1.6;
+      }
+
+      /* ENCABEZADO */
+      .header-container h3 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .header-container .week-text {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+      }
+
+      .header-container .title-text {
+        font-size: 28px;
+        display: block;
+      }
+
+      /* CONTENEDOR GENERAL */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 35px;
+      }
+
+      /* TÍTULO PRINCIPAL */
+      .main-title {
+        text-align: center;
+        font-size: 35px;
+        font-weight: 700;
+        color: #041e42;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+
+      /* BLOQUE DESTACADO CON IMAGEN LATERAL */
+      .highlight-box {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        padding: 25px;
+        background-color: #041d42;
+        color: white;
+        margin-top: 25px;
+        border-radius: 8px;
+      }
+
+      .highlight-box .section-text {
+        flex: 2;
+        font-size: 20px;
+        line-height: 1.6;
+      }
+
+      .highlight-box .section-image img {
+        width: 270px;
+        height: auto;
+        flex-shrink: 0;
+        border-radius: 8px;
+      }
+
+      /* BLOQUE TEXTO + IMAGEN LATERAL (posterior) */
+      .side-section {
+        display: flex;
+        justify-content: flex-start;
+        gap: 25px;
+        margin-top: 40px;
+        align-items: center;
+      }
+
+      .side-text {
+        flex: 2;
+        font-size: 19px;
+        line-height: 1.6;
+        color: #041e42;
+      }
+
+      .side-image img {
+        width: 200px;
+        height: auto;
+        flex-shrink: 0;
+      }
+
+      /* DIVIDER */
+      .footer-divider {
+        border: 0;
+        height: 1px;
+        background: #dcdcdc;
+        margin-top: 60px;
+      }
+
+      .footer-logo {
+        width: 115px;
+        float: right;
+        margin-top: 10px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 700px) {
+        .highlight-box {
+          flex-direction: column;
+          text-align: center;
+        }
+        .highlight-box .section-image {
+          margin-bottom: 20px;
+        }
+
+        .side-section {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .side-text {
+          order: 2;
+        }
+
+        .side-image {
+          order: 1;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h3>
+        <span class="week-text">Week 2</span>
+        <span class="title-text">Welcome</span>
+      </h3>
+    </div>
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="content-wrapper">
+      <!-- TÍTULO PRINCIPAL -->
+      <h1 class="main-title">What to Expect in Week 2</h1>
+      <hr />
+      <!-- BLOQUE DESTACADO CON IMAGEN LATERAL -->
+      <div class="highlight-box">
+        <div class="section-image">
+          <!--img src="" alt="Welcome Icon" /-->
+        </div>
+        <div class="section-text">
+          <span style="font-size: 19px"
+            >Individuals who coach or train others are often perceived as
+            leaders, particularly in entrepreneurial settings where business
+            owners frequently assume leadership roles.
+          </span>
+        </div>
+      </div>
+      <!-- BLOQUE TEXTO POSTERIOR -->
+      <div class="side-section">
+        <div class="side-text">
+          The concept of leadership has been widely explored, and one commonly
+          posed question in graduate business programs is:
+          <strong>Are managers and leaders the same?</strong>
+        </div>
+        <div class="side-text">
+          The prevailing view suggests they are not. Supervising others does not
+          inherently confer leadership status. While managers can certainly be
+          leaders, leadership is not defined by a title alone. True leadership
+          involves qualities and actions that extend beyond formal authority.
+        </div>
+      </div>
+      <!-- DIVIDER + FOOTER -->
+      <hr class="footer-divider" />
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt="logo"
+        class="footer-logo"
+      />
+    </div>
+  </body>
+</html>
