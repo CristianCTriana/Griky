@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      /* Margen general del contenido */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      h2,
+      h3,
+      p,
+      li,
+      ul,
+      div {
+        font-family: Lato, sans-serif;
+      }
+
+      /* Ajustes solicitados */
+      .title-topic {
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+
+      .divider-line {
+        margin-top: 0px;
+        margin-bottom: 40px;
+      }
+
+      .highlight-box {
+        padding: 25px;
+        background-color: #041d42;
+        color: white;
+        margin-top: 25px;
+        border-radius: 8px;
+        line-height: 1.8;
+      }
+
+      .section-divider {
+        height: 5px;
+        width: 50%;
+        max-width: 200px;
+        background-color: #ffffff;
+        margin: 0;
+      }
+
+      /* VIDEO RESPONSIVE */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+      }
+
+      .video-responsive video,
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY (FONDO BLANCO, SOMBRA, +/– AZUL) --- */
+
+      .accordion {
+        margin-top: 40px;
+        font-family: Lato, sans-serif;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      /* Ocultar checkbox */
+      .accordion-item input {
+        display: none;
+      }
+
+      /* TÍTULO */
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition: background 0.2s ease, color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / – */
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      /* Estado activo cambia a "–" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+
+      /* Hover */
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      /* CONTENIDO */
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition: max-height 0.35s ease, padding 0.3s ease;
+      }
+
+      /* Apertura al hacer check */
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      /* Título activo */
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+      .digital-guide span.icon {
+        color: #202122;
+        font-size: 24px;
+        margin-right: 10px;
+        line-height: 1;
+      }
+      .highlight-box {
+        padding: 25px;
+        background-color: #041d42;
+        color: white;
+        margin-top: 25px;
+        border-radius: 8px;
+      }
+
+      .section-divider {
+        height: 5px;
+        width: 50%;
+        max-width: 200px;
+        background-color: #ffffff;
+        margin: 0;
+      }
+
+      /* TEXTO GENERAL */
+      .standard-text {
+        font-size: 19px;
+        line-height: 1.6;
+        margin-top: 20px;
+      }
+
+      /* CITA estilo .subsection-box */
+      .subsection-box {
+        background: #eaf4ff;
+        border-left: 6px solid #004c90;
+        padding: 18px 20px;
+        margin-top: 40px;
+        border-radius: 6px;
+        font-size: 19px;
+        color: #004c90;
+        font-weight: 600;
+        line-height: 1.7;
+      }
+
+      /* SUBTÍTULO sin fondo */
+      .subtitle-phrase {
+        text-align: center;
+        color: #004c90;
+        font-weight: 700;
+        font-size: 20px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h3
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Week 3</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >How Leaders Inspire Vision
+        </span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Democratic and Autocratic Leadership</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+
+      <!-- CAJA OSCURA -->
+      <div class="highlight-box">
+        <div class="section-divider"></div>
+        <p class="standard-text" style="color: white">
+          <strong>Democratic leadership</strong> emphasizes collaboration,
+          participation, and shared decision-making. While the leader retains
+          ultimate authority, this style encourages input from team members and
+          often involves delegating tasks with a high degree of autonomy.
+        </p>
+      </div>
+      <!-- PÁRRAFOS -->
+      <p class="standard-text">
+        Key features of democratic leadership include active listening, open
+        communication (both upward and downward), and a strong emphasis on
+        fairness, honesty, and encouragement. Leaders who adopt this style seek
+        feedback and insight from others, fostering a culture of trust and
+        mutual respect.
+      </p>
+      <p class="standard-text">
+        This approach is particularly effective in environments where
+        innovation, engagement, and team cohesion are valued.
+      </p>
+      <!-- CITA -->
+      <div class="subsection-box">
+        Notable examples of democratic leaders include: Abraham Lincoln George
+        Washington Howard Schultz, former CEO of Starbucks
+        <ul>
+          <li>Abraham Lincoln</li>
+          <li>George Washington</li>
+          <li>Howard Schultz, former CEO of Starbucks</li>
+        </ul>
+      </div>
+
+      <!-- CAJA OSCURA -->
+      <div class="highlight-box">
+        <div class="section-divider"></div>
+        <p class="standard-text" style="color: white">
+          <strong>Autocratic leadership</strong> is defined by centralized
+          authority and strict control over decision-making. Leaders who adopt
+          this style maintain full command over organizational operations and
+          are often perceived as the ultimate authority within their teams or
+          institutions.
+        </p>
+      </div>
+      <!-- PÁRRAFOS -->
+      <p class="standard-text">
+        Decisions are typically made unilaterally, with little to no input from
+        subordinates. In some cases, this approach may involve the use of fear
+        or intimidation to enforce compliance. While efficient in crisis
+        situations or highly structured environments, autocratic leadership is
+        generally considered the least favorable style due to its tendency to
+        limit employee motivation, engagement, and autonomy.
+      </p>
+      <!-- CITA -->
+      <div class="subsection-box">
+        Historical and notable examples of autocratic leaders include:
+        <ul>
+          <li>Genghis Khan</li>
+          <li>Leona Helmsley</li>
+          <li>Napoleon Bonaparte</li>
+        </ul>
+      </div>
+
+      <!-- ============================
+         ACORDEÓN
+         ============================ -->
+      <hr />
+      <div>
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="logo"
+          width="110"
+          style="float: right"
+        />
+      </div>
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </p>
+  </body>
+</html>
