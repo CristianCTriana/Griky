@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif !important;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Asegurar que todo Lato también aplique a labels, inputs, etc */
+      *,
+      h1,
+      h2,
+      h3,
+      p,
+      span,
+      div,
+      li,
+      td,
+      a,
+      label {
+        font-family: Lato, sans-serif !important;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-responsive {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        display: block;
+        margin: 30px auto;
+      }
+
+      /* ============================
+       RESPONSIVE IFRAME APUS STYLE
+    ============================ */
+      .iframe-wrapper {
+        width: 100%;
+        max-width: 900px;
+        margin: 30px auto;
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .iframe-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Acordeón APUS original */
+      .accordion {
+        margin-top: 30px;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition: 0.2s ease;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        transition: max-height 0.35s ease, padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+      .table-wrapper {
+        margin: 50px auto;
+        max-width: 1000px;
+      }
+
+      .table-apus {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-family: Lato, sans-serif !important;
+        font-size: 16px;
+        color: #041e42;
+      }
+
+      .table-apus caption {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #041e42;
+      }
+
+      .table-apus thead th {
+        background: #eaf4ff; /* azul claro APUS */
+        color: #004c90;
+        padding: 14px 12px;
+        font-size: 17px;
+        font-weight: 700;
+        border-bottom: 2px solid #dcdcdc;
+        text-align: left;
+      }
+
+      .table-apus td,
+      .table-apus th {
+        padding: 12px 10px;
+        border-bottom: 1px solid #dcdcdc;
+        vertical-align: top;
+      }
+
+      .table-apus tbody tr:hover {
+        background-color: #f8fbff;
+      }
+
+      .table-apus td p,
+      .table-apus th p {
+        margin: 0;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 800px) {
+        .table-apus thead {
+          display: none;
+        }
+        .table-apus tr {
+          display: block;
+          margin-bottom: 15px;
+          border: 1px solid #e6e6e6;
+          padding: 10px;
+          border-radius: 6px;
+        }
+        .table-apus td {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 5px;
+          border: none;
+          border-bottom: 1px solid #e5e5e5;
+        }
+        .table-apus td::before {
+          content: attr(data-label);
+          font-weight: 700;
+          color: #004c90;
+          margin-right: 10px;
+        }
+        .table-apus td:last-child {
+          border-bottom: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h3
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Week 4</span><br /><span
+          style="font-size: 28px"
+          >Models for Leading Change</span
+        >
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <strong>Agreement and Certainty Matrix</strong>
+      </h1>
+      <hr class="divider-line" />
+      <div
+        class="highlight-box"
+        style="
+          padding: 25px;
+          background-color: #041d42;
+          color: white;
+          margin-top: 25px;
+          border-radius: 8px;
+        "
+      >
+        <div
+          class="section-divider"
+          style="
+            height: 5px;
+            width: 50%;
+            max-width: 200px;
+            background-color: #ffffff;
+            margin: 0;
+          "
+        ></div>
+        <p
+          style="
+            font-size: 20px;
+            margin-top: 15px;
+            font-family: Lato, sans-serif;
+          "
+        >
+          <span style="font-size: 20px"
+            >The Agreement and Certainty Matrix is a decision-making framework
+            developed by Ralph D. Stacey often used in leadership and
+            organizational contexts to help leaders understand the nature of the
+            challenges they face and choose appropriate strategies.
+          </span>
+        </p>
+      </div>
+      <div>
+        <p style="text-align: center; margin-top: 40px">
+          <img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+            alt="See more information"
+            style="max-width: 100%"
+            width="600"
+          />
+        </p>
+
+        <p
+          style="
+            font-size: 20px;
+            margin-top: 15px;
+            font-family: Lato, sans-serif;
+            text-align: center;
+          "
+        >
+          <strong>It maps situations based on two dimensions:</strong>
+        </p>
+        <div class="accordion">
+          <div class="accordion-item">
+            <input type="checkbox" id="acc1" />
+            <label class="accordion-title" for="acc1"
+              >1. Level of Agreement
+            </label>
+            <div class="accordion-content">
+              <ul
+                style="
+                  font-size: 16px;
+                  margin-top: 15px;
+                  font-family: Lato, sans-serif;
+                "
+              >
+                <li>
+                  Refers to how much consensus exists among stakeholders about
+                  what should be done.
+                </li>
+                <li>
+                  Ranges from <strong>high agreement</strong> (clear goals,
+                  shared values) to <strong>low agreement</strong> (conflicting
+                  interests, unclear objectives).
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <input type="checkbox" id="acc2" />
+            <label class="accordion-title" for="acc2"
+              >2. Level of Certainty
+            </label>
+            <div class="accordion-content">
+              <ul
+                style="
+                  font-size: 16px;
+                  margin-top: 15px;
+                  font-family: Lato, sans-serif;
+                "
+              >
+                <li>
+                  Refers to how predictable the outcomes are and how
+                  well-understood the cause-and-effect relationships are
+                </li>
+                <li>
+                  Ranges from <strong>high certainty</strong> (clear data,
+                  proven methods) to <strong>low certainty</strong> (complex,
+                  ambiguous, or novel situations).
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table class="table-apus">
+          <caption>
+            Four Zones in the Matrix
+          </caption>
+          <thead>
+            <tr>
+              <th>Zone</th>
+              <th>Description</th>
+              <th>Leadership Implications</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Zone"><strong>Simple</strong></td>
+              <td data-label="Description">High agreement, high certainty</td>
+              <td data-label="Leadership Implications">
+                Use best practices and standard procedures.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Zone"><strong>Complicated</strong></td>
+              <td data-label="Description">High agreement, low certainty</td>
+              <td data-label="Leadership Implications">
+                Use expert analysis and strategic planning.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Zone"><strong>Complex</strong></td>
+              <td data-label="Description">Low agreement, low certainty</td>
+              <td data-label="Leadership Implications">
+                Encourage experimentation, dialogue, and adaptive leadership.
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Zone"><strong>Chaotic</strong></td>
+              <td data-label="Description">Low agreement, high uncertainty</td>
+              <td data-label="Leadership Implications">
+                Act quickly to stabilize, then move toward complexity or
+                simplicity.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 style="text-align: center; color: #041d42; font-size: 20px">
+        Why It’s Useful in Leadership
+      </h3>
+      <div>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+          "
+        >
+          <!-- TEXTO -->
+          <div style="flex: 1">
+            <ul>
+              <li>
+                <p style="font-size: 16px">
+                  Helps leaders <strong>diagnose</strong> the nature of a
+                  problem.
+                </p>
+              </li>
+              <li>
+                <p style="font-size: 16px">
+                  Guides them in choosing the
+                  <strong>appropriate leadership style</strong> or
+                  decision-making approach.
+                </p>
+              </li>
+              <li>
+                <p style="font-size: 16px">
+                  Encourages <strong>adaptive thinking</strong> in dynamic
+                  environments.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <!-- IMAGEN -->
+          <div style="flex-shrink: 0">
+            <img
+              src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/icon.png"
+              alt="icon"
+              style="width: 288px; height: 325px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p style="text-align: right">
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt="logo"
+        width="110"
+      />
+    </p>
+  </body>
+</html>

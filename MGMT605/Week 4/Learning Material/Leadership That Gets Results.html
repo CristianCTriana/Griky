@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif !important;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Asegurar que todo Lato también aplique a labels, inputs, etc */
+      *,
+      h1,
+      h2,
+      h3,
+      p,
+      span,
+      div,
+      li,
+      td,
+      a,
+      label {
+        font-family: Lato, sans-serif !important;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-responsive {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        display: block;
+        margin: 30px auto;
+      }
+
+      /* ============================
+       RESPONSIVE IFRAME APUS STYLE
+    ============================ */
+      .iframe-wrapper {
+        width: 100%;
+        max-width: 900px;
+        margin: 30px auto;
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .iframe-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Acordeón APUS original */
+      .accordion {
+        margin-top: 30px;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition: 0.2s ease;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        transition: max-height 0.35s ease, padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+      .table-wrapper {
+        margin: 50px auto;
+        max-width: 1000px;
+      }
+
+      .table-apus {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-family: Lato, sans-serif !important;
+        font-size: 16px;
+        color: #041e42;
+      }
+
+      .table-apus caption {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #041e42;
+      }
+
+      .table-apus thead th {
+        background: #eaf4ff; /* azul claro APUS */
+        color: #004c90;
+        padding: 14px 12px;
+        font-size: 17px;
+        font-weight: 700;
+        border-bottom: 2px solid #dcdcdc;
+        text-align: left;
+      }
+
+      .table-apus td,
+      .table-apus th {
+        padding: 12px 10px;
+        border-bottom: 1px solid #dcdcdc;
+        vertical-align: top;
+      }
+
+      .table-apus tbody tr:hover {
+        background-color: #f8fbff;
+      }
+
+      .table-apus td p,
+      .table-apus th p {
+        margin: 0;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 800px) {
+        .table-apus thead {
+          display: none;
+        }
+        .table-apus tr {
+          display: block;
+          margin-bottom: 15px;
+          border: 1px solid #e6e6e6;
+          padding: 10px;
+          border-radius: 6px;
+        }
+        .table-apus td {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 5px;
+          border: none;
+          border-bottom: 1px solid #e5e5e5;
+        }
+        .table-apus td::before {
+          content: attr(data-label);
+          font-weight: 700;
+          color: #004c90;
+          margin-right: 10px;
+        }
+        .table-apus td:last-child {
+          border-bottom: none;
+        }
+      }
+      /* VIDEO RESPONSIVE */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+      }
+
+      .video-responsive video,
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY (FONDO BLANCO, SOMBRA, +/– AZUL) --- */
+
+      .accordion {
+        margin-top: 40px;
+        font-family: Lato, sans-serif;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      /* Ocultar checkbox */
+      .accordion-item input {
+        display: none;
+      }
+
+      /* TÍTULO */
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition: background 0.2s ease, color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / – */
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      /* Estado activo cambia a "–" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+
+      /* Hover */
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      /* CONTENIDO */
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition: max-height 0.35s ease, padding 0.3s ease;
+      }
+
+      /* Apertura al hacer check */
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      /* Título activo */
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+      .digital-guide span.icon {
+        color: #202122;
+        font-size: 24px;
+        margin-right: 10px;
+        line-height: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h3
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Week 4</span><br /><span
+          style="font-size: 28px"
+          >Models for Leading Change</span
+        >
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <strong>Leadership That Gets Results</strong>
+      </h1>
+      <hr class="divider-line" />
+      <h2
+        style="
+          text-align: center;
+          color: #004c90;
+          font-size: 24px;
+          margin-top: 10px;
+        "
+      >
+        <strong>Learning Challenge</strong>
+      </h2>
+      <p>
+        <strong><!-- PDF info --> </strong>
+      </p>
+      <div class="digital-guide">
+        <strong><span class="icon">ⓘ</span>&nbsp;</strong
+        ><span style="font-family: Lato, sans-serif"
+          >This is not an assignment prompt, but rather an opportunity to
+          reflect on how the week’s concepts apply to real workplace
+          situations.</span
+        >
+      </div>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+        alt="banner-video"
+        style="max-width: 100%; display: block; margin: 0 auto"
+        width="600"
+      />
+      <!-- ============================
+         VIDEO CENTRADO Y RESPONSIVE
+         ============================ -->
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <video title="Learning challenge" controls="controls">
+            <source
+              src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Week_1/APUS_Coach_Woman.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcript: Digital Content Guide Podcast</label
+          >
+          <div class="accordion-content">
+            <p>Welcome, future HR leaders and policy shapers!</p>
+            <p>
+              You are about to embark on an exciting journey that will transform
+              the way you think about human resources and its critical role in
+              organizational success. In this course, we will dive deep into the
+              world of HR policies and strategies. But this isn't just about
+              memorizing rules and regulations. It's about understanding the
+              profound impact that well-crafted HR policies can have on people's
+              lives and on the success of entire organizations.
+            </p>
+            <p>
+              From navigating the complexities of employment law to mastering
+              the art of talent management, from ensuring workplace safety to
+              mediating conflicts, you will gain the skills to become a true HR
+              champion. You will learn how to balance the needs of a
+              multi-generational workforce, protect employee privacy in the
+              digital age, and align HR strategies with organizational goals.
+            </p>
+            <p>
+              By the end of this course, you won't just understand HR policies –
+              you will be equipped to create and implement strategies that can
+              transform workplaces, empower employees, and drive organizational
+              success.
+            </p>
+            <p>
+              So get ready to challenge your assumptions, expand your horizons,
+              and become the kind of HR professional who doesn't just follow
+              best practices, but sets them!
+            </p>
+            <p>
+              Are you ready to redefine what HR can be? Let's get started on
+              this exciting journey together!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <table class="table-apus">
+        <caption>
+          Daniel Goleman popularized emotional intelligence and used insights
+          from his work in this area to identify six styles of leadership.
+        </caption>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Description</th>
+            <th>Phrase</th>
+            <th>Characteristics</th>
+            <th>Pros and Cons</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th data-label="Category">Coercive (Commanding)</th>
+            <td data-label="Description">
+              This style demands immediate compliance.
+            </td>
+            <td data-label="Phrase"><em>“Do what I tell you.”</em></td>
+            <td data-label="Characteristics">
+              <ul>
+                <li>Focuses on control and discipline.</li>
+                <li>
+                  Often used in crisis situations or when turnaround is needed.
+                </li>
+              </ul>
+            </td>
+            <td data-label="Pros and cros">
+              <p>
+                <strong>Pros:</strong> Effective in emergencies or with problem
+                employees.
+              </p>
+              <p>
+                <strong>Cons:</strong> Can stifle creativity and demoralize
+                teams if overused.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <th data-label="Category">Authoritative (Visionary)</th>
+            <td data-label="Description">Mobilizes people toward a vision.</td>
+            <td data-label="Phrase"><em>“Come with me.”</em></td>
+            <td data-label="Characteristics">
+              <ul>
+                <li>Provides clear direction and purpose.</li>
+                <li>Encourages autonomy in achieving goals.</li>
+              </ul>
+            </td>
+            <td data-label="Pros and cros">
+              <p>
+                <strong>Pros:</strong> Inspires and motivates; builds
+                commitment.
+              </p>
+              <p>
+                <strong>Cons:</strong> Less effective when team members are more
+                experienced than the leader.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <th data-label="Category">Affiliative</th>
+            <td data-label="Description">
+              Creates emotional bonds and harmony.
+            </td>
+            <td data-label="Phrase"><em>“People come first.”</em></td>
+            <td data-label="Characteristics">
+              <ul>
+                <li>Focuses on team cohesion and morale.</li>
+                <li>Values emotional needs and relationships.</li>
+              </ul>
+            </td>
+            <td data-label="Pros and cros">
+              <p><strong>Pros:</strong> Builds trust and loyalty.</p>
+              <p>
+                <strong>Cons:</strong> May avoid confronting poor performance or
+                conflict.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <th data-label="Category">Democratic</th>
+            <td data-label="Description">
+              Forges consensus through participation.
+            </td>
+            <td data-label="Phrase"><em>“What do you think?”</em></td>
+            <td data-label="Characteristics">
+              <ul>
+                <li>Encourages collaboration and input.</li>
+                <li>Builds commitment through involvement.</li>
+              </ul>
+            </td>
+            <td data-label="Pros and cros">
+              <p><strong>Pros:</strong> Boosts morale and innovation.</p>
+              <p>
+                <strong>Cons:</strong> Can slow decision-making and frustrate in
+                urgent situations.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <th data-label="Category">Pacesetting</th>
+            <td data-label="Description">
+              Sets high standards for performance.
+            </td>
+            <td data-label="Phrase"><em>“Do as I do, now.”</em></td>
+            <td data-label="Characteristics">
+              <ul>
+                <li>Leads by example.</li>
+                <li>Expects excellence and self-direction.</li>
+              </ul>
+            </td>
+            <td data-label="Pros and cros">
+              <p>
+                <strong>Pros:</strong> Works well with highly motivated and
+                competent teams.
+              </p>
+              <p>
+                <strong>Cons:</strong> Can overwhelm and demoralize; may neglect
+                emotional needs.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <th data-label="Category">Coaching</th>
+            <td data-label="Description">Develops people for the future.</td>
+            <td data-label="Phrase"><em>“Try this.”</em></td>
+            <td data-label="Characteristics">
+              <ul>
+                <li>Focuses on personal development.</li>
+                <li>Encourages learning and growth.</li>
+              </ul>
+            </td>
+            <td data-label="Pros and cros">
+              <p>
+                <strong>Pros:</strong> Builds long-term strengths and
+                capabilities.
+              </p>
+              <p>
+                <strong>Cons:</strong> Requires time and patience; less
+                effective if employees are resistant.
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr />
+    <p style="text-align: right">
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt="logo"
+        width="110"
+      />
+    </p>
+  </body>
+</html>
