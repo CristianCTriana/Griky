@@ -1,0 +1,344 @@
+/* ===============================
+   GLOBAL STYLES – APUS TEMPLATE
+   =============================== */
+
+/* ---- BODY BASE ---- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Lato, sans-serif !important;
+    line-height: 1.6;
+}
+
+/* Forzar Lato en todo el documento */
+*, 
+h1, h2, h3, h4, h5, h6,
+p, span, div, li, td, th,
+a, label, input, textarea {
+    font-family: Lato, sans-serif !important;
+}
+
+/* ---- CONTENEDOR PRINCIPAL ---- */
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* ---- TEXTO ESTÁNDAR (GLOBAL) ---- */
+p {
+    font-size: 19px !important;
+    color: #041e42;
+    line-height: 1.6;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* ---- TÍTULOS ---- */
+
+/* h1 – Título principal del Topic */
+h1 {
+    font-size: 35px;
+    font-weight: 700;
+    color: #041e40;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* h2 – Subtítulo */
+h2 {
+    font-size: 24px; /* pedido explícito */
+    font-weight: 700;
+    color: #004c90;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* h3 – Sub-subtítulo */
+h3 {
+    font-size: 20px; /* pedido explícito */
+    font-weight: 700;
+    color: #041e42;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* ---- DIVIDER GLOBAL ---- */
+hr {
+    border: 0;
+    height: 1px;
+    background: #999c9f;
+    margin: 40px 0;
+}
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+}
+/* Encabezado principal */
+.header-title {
+    background-color: #041e42;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.header-title .week {
+    font-size: 20px;
+    color: #05c3de;
+}
+
+.header-title .main-title {
+    font-size: 28px;
+}
+
+/* TÍTULO PRINCIPAL */
+.title-topic {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 35px;
+    text-align: left;
+    color: #041e40;
+}
+
+.divider-line {
+    margin-top: 0;
+    margin-bottom: 40px;
+    height: 1px;
+    background: #999c9f;
+    border: 0;
+}
+/* TEXTO GENERAL */
+.standard-text {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+/* SUBTÍTULO sin fondo */
+.subtitle-phrase {
+    text-align: center;
+    color: #004c90;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+    /* FOOTER */
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background: #dcdcdc;
+    margin-top: 60px;
+}
+
+.footer-logo {
+    width: 110px;
+    float: right;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .side-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .side-image {
+        margin-bottom: 20px;
+    }
+}
+    /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+    .banner-responsive {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        display: block;
+        margin: 30px auto;
+    }
+    /* ============================
+       RESPONSIVE IFRAME APUS STYLE
+    ============================ */
+    .iframe-wrapper {
+        width: 100%;
+        max-width: 900px;
+        margin: 30px auto;
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .iframe-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+/* --- ACORDEÓN CSS-ONLY (FONDO BLANCO, SOMBRA, +/– AZUL) --- */
+
+.accordion {
+    margin-top: 40px;
+    font-family: Lato, sans-serif;
+}
+
+.accordion-item {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #ffffff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+}
+
+/* Ocultar checkbox */
+.accordion-item input {
+    display: none;
+}
+
+/* TÍTULO */
+.accordion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #03244d;
+    background: #ffffff;
+    cursor: pointer;
+    border-bottom: 1px solid #e5e5e5;
+    transition: background 0.2s ease, color 0.2s ease;
+    position: relative;
+}
+
+/* ICONO + / – */
+.accordion-title::after {
+    content: "+";
+    font-size: 22px;
+    font-weight: bold;
+    color: #004c90;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Estado activo cambia a "–" */
+.accordion-item input:checked + .accordion-title::after {
+    content: "–";
+    color: #004c90;
+}
+
+/* Hover */
+.accordion-title:hover {
+    background: #f5faff;
+}
+
+/* CONTENIDO */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #ffffff;
+    color: #03244d;
+    padding: 0 20px;
+    font-size: 17px;
+    line-height: 1.5;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+}
+
+/* Apertura al hacer check */
+.accordion-item input:checked ~ .accordion-content {
+    max-height: 800px;
+    padding: 20px;
+}
+
+/* Título activo */
+.accordion-item input:checked + .accordion-title {
+    background: #eaf4ff;
+    color: #041e42;
+}
+/* --- ACORDEÓN CSS-ONLY (FONDO BLANCO, SOMBRA, +/– AZUL) --- */
+
+.accordion {
+    margin-top: 40px;
+    font-family: Lato, sans-serif;
+}
+
+.accordion-item {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #ffffff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+}
+
+/* Ocultar checkbox */
+.accordion-item input {
+    display: none;
+}
+
+/* TÍTULO */
+.accordion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #03244d;
+    background: #ffffff;
+    cursor: pointer;
+    border-bottom: 1px solid #e5e5e5;
+    transition: background 0.2s ease, color 0.2s ease;
+    position: relative;
+}
+
+/* ICONO + / – */
+.accordion-title::after {
+    content: "+";
+    font-size: 22px;
+    font-weight: bold;
+    color: #004c90;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Estado activo cambia a "–" */
+.accordion-item input:checked + .accordion-title::after {
+    content: "–";
+    color: #004c90;
+}
+
+/* Hover */
+.accordion-title:hover {
+    background: #f5faff;
+}
+
+/* CONTENIDO */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #ffffff;
+    color: #03244d;
+    padding: 0 20px;
+    font-size: 17px;
+    line-height: 1.5;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+}
+
+/* Apertura al hacer check */
+.accordion-item input:checked ~ .accordion-content {
+    max-height: 800px;
+    padding: 20px;
+}
+
+/* Título activo */
+.accordion-item input:checked + .accordion-title {
+    background: #eaf4ff;
+    color: #041e42;
+}
