@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
+    />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css"
+    />
+    <style></style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h3
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Week 1</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Foundations and Instruction Set Architectures
+        </span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Performance Metrics and Evaluation</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        In the realm of computer architecture, performance evaluation is crucial
+        for understanding system capabilities, making informed design decisions,
+        and comparing different architectures. Let’s explore the key performance
+        metrics and evaluation methods used in computer architecture.
+      </p>
+      <!-- SUMMARY -->
+      <div class="summary-box">
+        <h3 style="font-size: 28px">Execution Time:</h3>
+        <p>
+          This is the primary metric for performance, focusing on how long it
+          takes for a program to run. It is inversely related to performance,
+          meaning the shorter the execution time, the better the performance.
+          The formula for performance based on execution time is as follows:
+        </p>
+        <p style="text-align: center">
+          <math
+            title=""
+            xmlns="http://www.w3.org/1998/Math/MathML"
+            display="inline"
+            ><semantics
+              ><mstyle
+                ><mi>Performance</mi><mo></mo><mo>=</mo><mo></mo
+                ><mfrac
+                  ><mn>1</mn
+                  ><mrow><mi>Execution</mi><mo></mo><mi>Time</mi></mrow></mfrac
+                ></mstyle
+              ><annotation encoding="wiris"
+                >{"version":"1.1","math":"&lt;math
+                xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mi&gt;Performance&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow&gt;&lt;mi&gt;Execution&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Time&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/math&gt;"}</annotation
+              ></semantics
+            ></math
+          >
+        </p>
+      </div>
+      <div
+        class="highlight-box"
+        style="
+          padding: 25px;
+          background-color: #041d42;
+          color: white;
+          margin-top: 25px;
+          border-radius: 8px;
+        "
+      >
+        <div
+          class="section-divider"
+          style="
+            height: 5px;
+            width: 50%;
+            max-width: 200px;
+            background-color: #ffffff;
+            margin: 0;
+          "
+        ></div>
+        <h3 style="font-size: 28px; color: #fff">Throughput:</h3>
+        <p style="margin-top: 15px; font-family: Lato, sans-serif">
+          This measures the total amount of work done in a given time. It is
+          crucial for data center managers who need to know how many jobs a
+          machine can handle simultaneously. Throughput is often expressed in
+          tasks completed per unit of time.
+        </p>
+      </div>
+      <h3 style="font-size: 28px">CPU Performance Equation</h3>
+      <p>CPU performance can be evaluated using a more detailed formula:</p>
+      <p style="text-align: center">
+        <math
+          title=""
+          xmlns="http://www.w3.org/1998/Math/MathML"
+          display="inline"
+          ><semantics
+            ><mstyle
+              ><mstyle mathsize="14px"
+                ><mi>CPU</mi><mo></mo><mi>Time</mi><mo></mo><mo>=</mo><mo></mo
+                ><mi>Instruction</mi><mo></mo><mi>Count</mi><mo></mo
+                ><mi mathvariant="normal">x</mi><mo></mo><mi>Cycles</mi><mo></mo
+                ><mi>per</mi><mo></mo><mi>Instruction</mi><mo></mo
+                ><mi mathvariant="normal">x</mi><mo></mo><mi>Clock</mi><mo></mo
+                ><mi>Cycle</mi><mo></mo><mi>Time</mi></mstyle
+              ></mstyle
+            ><annotation encoding="wiris"
+              >{"version":"1.1","math":"&lt;math dir="rtl"
+              xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mstyle
+              mathsize="14px"&gt;&lt;mi&gt;CPU&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Time&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Instruction&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Count&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi
+              mathvariant="normal"&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Cycles&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;per&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Instruction&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi
+              mathvariant="normal"&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Clock&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Cycle&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Time&lt;/mi&gt;&lt;/mstyle&gt;&lt;/math&gt;"}</annotation
+            ></semantics
+          ></math
+        >
+      </p>
+      <p>
+        This equation highlights three key factors that affect CPU performance
+        (CPU Time):
+      </p>
+      <ol>
+        <li>The number of instructions executed (Instruction Count)</li>
+        <li>
+          The average number of clock cyclesrequired per instruction (Cycles per
+          Instruction)
+        </li>
+        <li>The duration of each clock cycle(Clock Cycle Time)</li>
+      </ol>
+      <h3 style="font-size: 28px">Clock Rate and Cycle Time</h3>
+      <p>
+        The clock rate, measured in MHz or GHz, is inversely related to the
+        clock cycle time. A higher clock rate generally indicates better
+        performance, assuming the number of cycles per instruction remains
+        constant. However, it’s important to note that clock rate alone is not a
+        sufficient measure of performance, especially when comparing different
+        architectures.
+      </p>
+      <h3 style="font-size: 28px">Speedup</h3>
+      <p>
+        Speedup is a metric used to compare the performance of two systems. It
+        is calculated as follows:
+      </p>
+      <p style="text-align: center">
+        <math
+          title=""
+          xmlns="http://www.w3.org/1998/Math/MathML"
+          display="inline"
+          ><semantics
+            ><mstyle
+              ><mstyle mathsize="18px"
+                ><mi>Speedup</mi><mo></mo><mo>=</mo><mo></mo
+                ><mfrac
+                  ><mrow
+                    ><mi>Execution</mi><mo></mo><mi>Time</mi><mo></mo><mi>of</mi
+                    ><mo></mo><mi>Reference</mi><mo></mo><mi>System</mi></mrow
+                  ><mrow
+                    ><mi>Execution</mi><mo></mo><mi>Time</mi><mo></mo><mi>of</mi
+                    ><mo></mo><mi>Improved</mi><mo></mo><mi>System</mi></mrow
+                  ></mfrac
+                ></mstyle
+              ></mstyle
+            ><annotation encoding="wiris"
+              >{"version":"1.1","math":"&lt;math
+              xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mstyle
+              mathsize="18px"&gt;&lt;mi&gt;Speedup&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;Execution&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Time&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;of&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Reference&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;System&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;Execution&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Time&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;of&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Improved&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;System&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/mstyle&gt;&lt;/math&gt;"}</annotation
+            ></semantics
+          ></math
+        >
+      </p>
+      <p>
+        For example, if computer A runs a program in 10 seconds and computer B
+        in 20 seconds, then the speedup of A over B is 2, indicating that A is
+        twice as fast.
+      </p>
+      <h3 style="font-size: 28px">Evaluation Methods</h3>
+      <p>The three most common evaluation methods are as follows:</p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600"
+        />
+      </p>
+      <!-- ============================
+         ACORDEÓN
+      ============================ -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="acc1" />
+          <label class="accordion-title" for="acc1">Benchmarking</label>
+
+          <div class="accordion-content">
+            <p>
+              Benchmarks are standardized tests used to evaluate the performance
+              of computer systems. They help in comparing different systems and
+              understanding their capabilities in handling specific tasks.
+              Common benchmarks include the following:
+            </p>
+
+            <ul>
+              <li>SPEC CPU for processor performance</li>
+              <li>LINPACK for high-performance computing</li>
+              <li>TPC for database and transaction processing systems</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="acc2" />
+          <label class="accordion-title" for="acc2">Bottleneck Analysis</label>
+          <div class="accordion-content">
+            <p>
+              This involves identifying and analyzing components of the system
+              that are limiting overall performance. By addressing these
+              bottlenecks, system performance can be significantly improved.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="acc3" />
+          <label class="accordion-title" for="acc3">Modeling Approaches</label>
+          <div class="accordion-content">
+            <p>
+              Various modeling approaches, including mechanistic and empirical
+              models, are used to predict and evaluate system performance. These
+              models help in understanding the impact of different architectural
+              choices on performance.&nbsp;
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3 style="font-size: 28px">
+        Recent Advancements in Performance Evaluation
+      </h3>
+      <p>
+        Recent advancements in performance evaluation include the
+        following:&nbsp;&nbsp;
+      </p>
+      <div style="padding-left: 20px">
+        <p>
+          <strong>✅&nbsp; Energy Efficiency Metrics:</strong> With the growing
+          importance of sustainable computing, metrics that consider performance
+          per watt have become increasingly relevant.&nbsp;
+        </p>
+        <p>
+          <strong>✅&nbsp; Customizable Architecture Evaluation:</strong> As
+          architectures become more specialized, evaluation methods are adapting
+          to assess performance in specific use cases, such as AI and machine
+          learning workloads.&nbsp;
+        </p>
+        <p>
+          <strong>✅&nbsp; Real-Time Performance Monitoring:</strong> Advanced
+          tools now allow for real-time monitoring and analysis of system
+          performance, enabling dynamic optimization and troubleshooting.&nbsp;
+        </p>
+      </div>
+      <div class="card card-standard">
+        <div class="card-body">
+          <div class="card-text" style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3 class="card-text">QUESTION:</h3>
+                  <div class="card-text"></div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      >Which architecture introduced the concept of storing
+                      program instructions in memory alongside data?</span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      >A) &nbsp;<span data-ccp-parastyle="Body Text"
+                        >Harvard </span
+                      ><span data-ccp-parastyle="Body Text">Architecture</span
+                      >&nbsp;</span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      >B) &nbsp;<span data-ccp-parastyle="Body Text"
+                        >Von Neumann </span
+                      ><span data-ccp-parastyle="Body Text">Architecture</span
+                      >&nbsp;</span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      >C) &nbsp;<span data-ccp-parastyle="Body Text">RISC </span
+                      ><span data-ccp-parastyle="Body Text">Architecture</span
+                      >&nbsp;</span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      >D) &nbsp;<span data-ccp-parastyle="Body Text">CISC </span
+                      ><span data-ccp-parastyle="Body Text">Architecture</span
+                      >&nbsp;</span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false"
+                  >
+                    Show Answer
+                  </button>
+                  <div class="collapse" tabindex="0">
+                    <h3 style="font-size: 28px">
+                      Answer:&nbsp; B)
+                      <span data-ccp-parastyle="Body Text">Von Neumann </span
+                      ><span data-ccp-parastyle="Body Text">Architecture</span
+                      >&nbsp;
+                    </h3>
+                    <p>
+                      <span data-ccp-parastyle="Body Text">Explanation:</span
+                      ><span xml:lang="EN-US" data-contrast="auto"
+                        ><span data-ccp-parastyle="Body Text">
+                          The Von Neumann Architecture proposed storing program
+                          instructions in memory alongside data, a fundamental
+                          principle of modern computers that allows for
+                          sequential execution of instructions.&nbsp;</span
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+    </div>
+    <p>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    </p>
+    <!-- Template JavaScript -->
+    <p>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </p>
+  </body>
+</html>
