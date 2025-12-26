@@ -13,7 +13,11 @@
     font-size: 20px;
     font-family: 'Lato', sans-serif;
 }
-
+.highlight-box h3 {
+    color: #05c3de;
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+}
 
 /* Tables */
   .table-wrapper {
@@ -190,4 +194,360 @@
     font-size: 19px;
     line-height: 1.6;
     color: #041e42;
+}
+
+/* Hide radios */
+.tabs-container input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: #f3f5f8;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.tabs label {
+  flex: 1;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 6px;
+  color: #041e42;
+}
+
+.tabs label:hover {
+  background: #e7edf7;
+}
+
+/* Active tab */
+#tab1:checked ~ .tabs label[for="tab1"],
+#tab2:checked ~ .tabs label[for="tab2"],
+#tab3:checked ~ .tabs label[for="tab3"],
+#tab4:checked ~ .tabs label[for="tab4"] {
+  background: #fff;
+  border: 1px solid #0078ff;
+  box-shadow: 0 2px 6px rgba(4,30,66,.2);
+}
+
+/* Content */
+.content {
+  display: none;
+  padding: 16px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+}
+
+/* Show content */
+#tab1:checked ~ .content-1,
+#tab2:checked ~ .content-2,
+#tab3:checked ~ .content-3,
+#tab4:checked ~ .content-4 {
+  display: block;
+}
+.flip-card-container {
+  perspective: 1400px;
+  width: 100%;
+  max-width: 700px;
+  height: 340px;
+  margin: 24px auto;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.75s ease;
+  will-change: transform;
+}
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 28px;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #041e42;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front h2,
+.flip-card-back h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 15px;
+  color: #041e42;
+}
+
+.flip-card-front p,
+.flip-card-back p,
+.flip-card-back li {
+  font-size: 19px;
+  line-height: 1.45;
+  margin: 6px 0;
+  color: #041e42;
+}
+
+.flip-card-back ul {
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+.flip-card-front p:last-child,
+.flip-card-back p:last-child {
+  margin-top: 20px;
+  font-weight: 700;
+  color: #05c3de;
+}
+/* Banner */
+.signature-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Card principal */
+.signature-card {
+    display: flex;
+    flex-direction: row;         /* Imagen a la izquierda, texto a la derecha */
+    gap: 20px;                   /* Espacio entre imagen y texto */
+    padding: 20px;
+    border: 2px solid #0E3A60;
+    border-radius: 8px;
+    background: white;
+    align-items: flex-start;     /* Imagen alineada arriba */
+    margin-top: 20px;
+}
+
+/* Imagen dentro de la tarjeta */
+.signature-card img {
+    flex-shrink: 0;              /* Evita que la imagen se estire */
+    width: 130px;                /* Ajusta el tamaño del ícono */
+    height: auto;
+    display: block;
+}
+
+/* Texto dentro de la tarjeta */
+.signature-card p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+    flex: 1;                     /* El texto ocupa todo el espacio restante */
+}
+
+/* Contenedor del botón */
+.signature-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Botón */
+.signature-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #05c3de;
+  border: 1px solid #05c3de;
+  color: #041e42;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+/* Hover / Focus */
+.signature-button a:hover,
+.signature-button a:focus {
+  background-color: #041e42;
+  border-color: #041e42;
+  color: #ffffff;
+}
+
+/* RESPONSIVE – en pantallas pequeñas la imagen sube */
+@media (max-width: 600px) {
+    .signature-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .signature-card img {
+        margin: 0 auto;
+    }
+
+    .signature-card p {
+        text-align: center;
+    }
+}
+/* =========================
+   DEFINITION FLIP CARDS
+========================= */
+
+/* ================================
+   ROOT COMPONENT SCOPE
+================================ */
+.def-cards {
+  font-family: inherit;
+}
+
+/* Reset controlado SOLO dentro del componente */
+.def-cards h3,
+.def-cards p,
+.def-cards span {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  color: inherit;
+}
+
+/* ================================
+   GRID
+================================ */
+.def-cards .def-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+/* ================================
+   WRAPPER
+================================ */
+.def-cards .def-card-wrapper {
+  perspective: 1400px;
+  height: 280px;
+  cursor: pointer;
+}
+
+/* ================================
+   CARD
+================================ */
+.def-cards .def-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+  will-change: transform;
+}
+
+.def-cards .def-card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* ================================
+   FACES
+================================ */
+.def-cards .def-card-face {
+  position: absolute;
+  inset: 0;
+  padding: 24px;
+  border-radius: 14px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+/* ================================
+   FRONT
+================================ */
+.def-cards .def-card-front {
+  background: #041e42;
+  color: #ffffff;
+}
+
+.def-cards .def-card-front h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.def-cards .def-card-front p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+/* ================================
+   BACK
+================================ */
+.def-cards .def-card-back {
+  background: #ffffff;
+  color: #041e42;
+  transform: rotateY(180deg);
+}
+
+.def-cards .def-card-back h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #004c90;
+}
+
+.def-cards .def-card-back p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #041e42;
+}
+
+/* ================================
+   ICON (IMPROVED)
+================================ */
+.def-cards .def-card-icon {
+  width: 36px;
+  height: 36px;
+  margin-top: 12px;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: flex-end;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+
+  opacity: 0.9;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Hover feedback */
+.def-cards .def-card-wrapper:hover .def-card-icon {
+  transform: rotate(180deg);
+  background: rgba(255, 255, 255, 0.28);
 }

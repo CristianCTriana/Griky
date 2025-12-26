@@ -7,12 +7,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: Lato, sans-serif !important;
-    line-height: 1.6;
+    line-height: 1.6 !important;
 }
 
 /* Forzar Lato en todo el documento */
 *, 
-h1, h2, h3, h4, h5, h6,
+.content-wrapper h1, h2, h3, h4, h5, h6,
 p, span, div, li, td, th,
 a, label, input, textarea {
     font-family: Lato, sans-serif !important;
@@ -26,50 +26,55 @@ a, label, input, textarea {
 }
 
 /* ---- TEXTO ESTÁNDAR (GLOBAL) ---- */
-p {
+.content-wrapper p {
     font-size: 19px !important;
-    color: #041e42;
-    line-height: 1.6;
-    margin-top: 20px;
+    color: #041e42 ;
+    line-height: 1.6 !important;
+    margin-top: 20px !important;
     margin-bottom: 0;
 }
 
 /* ---- TÍTULOS ---- */
 
 /* h1 – Título principal del Topic */
-h1 {
-    font-size: 35px;
-    font-weight: 700;
-    color: #041e40;
-    margin-top: 25px;
+.content-wrapper h1 {
+    font-size: 35px !important;
+    font-weight: 700 !important;
+    color: #041e40 !important;
+    margin-top: 25px !important;
     margin-bottom: 10px;
 }
 
 /* h2 – Subtítulo */
-h2 {
-    font-size: 24px; /* pedido explícito */
-    font-weight: 700;
-    color: #004c90;
+.content-wrapper h2 {
+    font-size: 24px !important; 
+    font-weight: 700 !important;
+    color: #004c90 !important;
     margin-top: 40px;
     margin-bottom: 20px;
     line-height: 1.6;
 }
 
 /* h3 – Sub-subtítulo */
-h3 {
-    font-size: 20px; /* pedido explícito */
-    font-weight: 700;
-    color: #041e42;
-    margin-top: 30px;
-    margin-bottom: 15px;
+.content-wrapper h3 {
+    font-size: 20px ; 
+    font-weight: 700 ;
+    color: #041e42 ;
+    margin-top: 30px ;
+    margin-bottom: 15px ;
 }
 
 /* ---- DIVIDER GLOBAL ---- */
 hr {
     border: 0;
     height: 1px;
-    background: #999c9f;
+    background: #999c9f !important;
     margin: 40px 0;
+}
+.titleBanner {
+    font-size: 28px;
+    color: white;
+    margin: 0;
 }
 .content-wrapper {
     max-width: 1000px;
@@ -87,7 +92,7 @@ hr {
 
 .header-title .week {
     font-size: 20px;
-    color: #05c3de;
+    color: #05c3de ;
 }
 
 .header-title .main-title {
@@ -341,4 +346,20 @@ hr {
 .accordion-item input:checked + .accordion-title {
     background: #eaf4ff;
     color: #041e42;
+}
+.digital-guide {
+border: 1px solid #041e42;
+background-color: #f9f9f9;
+padding: 20px;
+border-radius: 8px;
+max-width: 800px;
+margin: 30px auto;
+font-size: 19px;
+line-height: 1.6;
+}
+.digital-guide span.icon {
+color: #202122;
+font-size: 24px;
+margin-right: 10px;
+line-height: 1;
 }

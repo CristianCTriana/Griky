@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
+    />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css"
+    />
+    <link rel="stylesheet" href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css"
+    />
+    <style>
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h3
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Week 1</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Foundations and Instruction Set Architectures
+        </span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong
+            >Basic Concepts of Instruction-Level Parallelism</strong
+          ></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        Instruction-Level Parallelism (ILP) is a fundamental concept in computer
+        architecture that refers to the ability of a processor to execute
+        multiple instructions simultaneously. This parallel execution is
+        achieved by leveraging the inherent parallelism present in the
+        instruction stream of a program. Understanding ILP is crucial for
+        designing efficient processors and optimizing program execution. ILP is
+        basically he parallel or simultaneous execution of a sequence of
+        instructions in a computer program. It allows multiple instructions to
+        be processed concurrently within a CPU, thereby improving the
+        performance of processors by executing more operations in a given time
+        frame. Basic ILP terminology includes the following:
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600"
+        />
+      </p>
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="acc1" />
+          <label class="accordion-title" for="acc1">Execution Techniques</label>
+          <div class="accordion-content">
+            <p>
+              ILP involves a set of techniques for executing multiple
+              instructions simultaneously within the same CPU core. This is done
+              by keeping different functional units or stages busy, which helps
+              in maximizing the utilization of the processor’s resources.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc2" />
+          <label class="accordion-title" for="acc2"
+            >Processor and Compiler Design</label
+          >
+          <div class="accordion-content">
+            <p>
+              ILP is a family of processor and compiler design techniques that
+              speed up execution by causing individual machine operations to
+              overlap. This overlap is achieved by exploiting the parallelism
+              between instructions within a basic block of code.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc3" />
+          <label class="accordion-title" for="acc3"
+            >Instruction Execution</label
+          >
+          <div class="accordion-content">
+            <p>
+              The average number of instructions that a processor might be able
+              to execute at the same time is a measure of ILP. This is
+              determined by the processor’s ability to handle multiple
+              instructions in a single clock cycle.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc4" />
+          <label class="accordion-title" for="acc4">Pipeline Concept</label>
+          <div class="accordion-content">
+            <p>
+              The pipeline concept is central to ILP, where the execution of
+              instructions is overlapped to improve system performance. This
+              involves breaking down the execution process into several stages,
+              allowing different instructions to be processed at different
+              stages simultaneously.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>Dependencies and Hazards</h3>
+      <p>
+        Although ILP can significantly enhance performance, it also introduces
+        challenges such as handling dependencies and hazards that can occur when
+        instructions are executed out of order or in parallel.&nbsp; Several
+        types of dependencies include:
+      </p>
+
+      <div class="summary-box">
+        <h3>➡️Data Dependency:</h3>
+        <p>
+          This occurs when an instruction depends on the data produced by a
+          previous instruction. There are three main types of data dependencies:
+        </p>
+        <ul style="color: #041e40">
+          <li>
+            Read After Write (RAW): Also known as true dependency, this occurs
+            when an instruction needs data that is yet to be produced by a
+            previous instruction.&nbsp;
+          </li>
+          <li>
+            Write&nbsp;After Read (WAR): Occurs when an instruction writes to a
+            location after a previous instruction has read from it.&nbsp;&nbsp;
+          </li>
+          <li>
+            Write After Write (WAW): Occurs when two instructions write to the
+            same location, and the order of writes affects the final
+            result.&nbsp;
+          </li>
+        </ul>
+        <h3>➡️Control Dependency:</h3>
+        <p>
+          This type of dependency arises from the need to maintain the correct
+          sequence of instruction execution, especially in the presence of
+          branches and jumps.
+        </p>
+        <h3>➡️Structural Dependency:</h3>
+        <p>
+          This occurs when hardware resources required by the pipeline stages
+          cannot be supplied simultaneously due to resource conflicts.
+        </p>
+      </div>
+      <h3>Hazards in ILP</h3>
+      <p>
+        Hazards are situations that prevent the next instruction in the pipeline
+        from executing during its designated clock cycle. They are directly
+        related to dependencies and can be categorized as data, control, or
+        structural hazards.
+      </p>
+      <p>
+        Data hazards occur when instructions that exhibit data dependencies are
+        executed in a way that violates the intended sequence of operations.
+        They can lead to incorrect program execution if not properly
+        managed.&nbsp;
+      </p>
+      <p>
+        Control hazards occur due to branch instructions and can cause the
+        pipeline to fetch incorrect instructions. These are managed by
+        techniques such as branch prediction and pipeline stalling.&nbsp;
+      </p>
+      <p>
+        Structural hazards occur when two or more instructions require the same
+        hardware resource at the same time. This can be mitigated by duplicating
+        resources or by scheduling instructions to avoid conflicts.
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600"
+        />
+      </p>
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="acc5" />
+          <label class="accordion-title" for="acc5">Loop Unrolling</label>
+          <div class="accordion-content">
+            <p>
+              This technique involves replicating the loop body multiple times
+              to decrease the overhead of loop control and increase the
+              instruction throughput. By doing so, it allows more instructions
+              to be executed in parallel, thus improving the performance of the
+              processor.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc6" />
+          <label class="accordion-title" for="acc6"
+            >Instruction Reordering</label
+          >
+          <div class="accordion-content">
+            <p>
+              This involves rearranging the order of instructions to minimize
+              stalls and improve the utilization of the processor’s execution
+              units. By reordering instructions, dependencies can be managed
+              more effectively, allowing for better parallel execution.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc7" />
+          <label class="accordion-title" for="acc7">Software Pipelining</label>
+          <div class="accordion-content">
+            <p>
+              This technique schedules instructions from different iterations of
+              a loop to be executed in parallel. It overlaps the execution of
+              operations from different iterations, which can significantly
+              increase the throughput of the loop.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc8" />
+          <label class="accordion-title" for="acc8">Balanced Scheduling</label>
+          <div class="accordion-content">
+            <p>
+              This involves distributing instructions evenly across available
+              resources to avoid bottlenecks and ensure that all parts of the
+              processor are utilized efficiently. Balanced scheduling can help
+              in achieving higher levels of parallelism by minimizing idle
+              times.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="acc9" />
+          <label class="accordion-title" for="acc9"
+            >Forwarding (or Bypassing)</label
+          >
+          <div class="accordion-content">
+            <p>
+              This technique involves passing the result of an instruction
+              directly to a subsequent instruction that needs it, thereby
+              reducing the delay caused by data hazards.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc10" />
+          <label class="accordion-title" for="acc10">Pipeline Stalling</label>
+          <div class="accordion-content">
+            <p>
+              This means introducing delays in the pipeline to ensure that
+              instructions are executed in the correct order, especially in the
+              presence of control hazards.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc11" />
+          <label class="accordion-title" for="acc11">Dynamic Scheduling</label>
+          <div class="accordion-content">
+            <p>
+              This allows the processor to execute instructions out of order
+              while maintaining data dependencies, thus improving ILP.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc12" />
+          <label class="accordion-title" for="acc12">Compiler Techniques</label>
+          <div class="accordion-content">
+            <p>
+              Compilers can rearrange the order of instructions to minimize
+              hazards and maximize ILP by analyzing dependencies.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card card-standard">
+        <div class="card-body">
+          <div class="card-text" style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3 class="card-text" style="color: #041e42">Question:</h3>
+                  <div class="card-text"></div>
+                  <div class="card-text">
+                    <span style="font-size: 19px; color: #041e42"
+                      ><span data-ccp-parastyle="Body Text">Identify</span
+                      ><span data-ccp-parastyle="Body Text">
+                        the type of hazard that occurs when an instruction
+                        depends on the result of </span
+                      ><span data-ccp-parastyle="Body Text">a previous</span
+                      ><span data-ccp-parastyle="Body Text">
+                        instruction that has not yet </span
+                      ><span data-ccp-parastyle="Body Text">completed</span
+                      ><span data-ccp-parastyle="Body Text">.</span>
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false"
+                  >
+                    Show Answer
+                  </button>
+                  <div class="collapse" tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer: &nbsp;Data hazard (specifically, Read After Write
+                      [RAW).
+                    </h3>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation:
+                        <span xml:lang="EN-US" data-contrast="auto"
+                          >A data hazard occurs when instructions that exhibit
+                          data dependencies are executed in a way that violates
+                          the intended sequence of operations. A </span
+                        >Read After Write (RAW)<span
+                          xml:lang="EN-US"
+                          data-contrast="auto"
+                        >
+                          hazard, also known as a true dependency, occurs when
+                          an instruction needs data that is yet to be produced
+                          by a previous instruction.</span
+                        >&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <div>
+          <img
+            src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+            alt="logo"
+            width="110"
+            style="float: right"
+          />
+        </div>
+      </div>
+    </div>
+    <p>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </p>
+  </body>
+</html>

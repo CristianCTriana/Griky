@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
+    />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css"
+    />
+    <link rel="stylesheet" href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css"
+    />
+    <style>
+      .content-4 {
+        display: none; /* Se oculta por defecto */
+      }
+      #tab4:checked ~ .content-4 {
+        display: block !important; /* Aparece cuando el input 4 está marcado */
+      }
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h3
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Week 1</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Foundations and Instruction Set Architectures
+        </span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Instruction Set Architecture Design</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        Instruction Set Architecture (ISA) is a critical component in computer
+        architecture, serving as the interface between software and hardware.
+        The design of an ISA involves several principles and trade-offs that
+        must be carefully balanced to meet the desired performance, efficiency,
+        and functionality. Let’s explore the key aspects of and the principles
+        and trade-offs involved in ISA design, including a comparison between
+        Reduced Instruction Set Computer (RISC) and Complex Instruction Set
+        Computer (CISC) architectures and an examination of instruction formats
+        and addressing modes.
+      </p>
+      <h3>RISC vs. CISC Architectures</h3>
+      <p>
+        The debate between RISC and CISC architectures has been a fundamental
+        aspect of computer architecture for decades. Each approach has its own
+        set of characteristics, advantages, and disadvantages.
+      </p>
+      <p>
+        RISC architectures are designed with a smaller set of instructions that
+        are highly optimized for performance. This simplicity allows RISC
+        processors to execute instructions at a higher speed, often achieving
+        one instruction per clock cycle.
+      </p>
+      <div class="highlight-box">
+        <h3 style="text-align: center">
+          Key Characteristics and Benefits of RISC Architectures
+        </h3>
+        <p>
+          ✔️ A focus on reducing the average clock cycles per instruction,
+          leading to faster execution times.
+        </p>
+        <p>
+          ✔️ Generally simpler architecture, which can result in less expensive
+          manufacturing costs compared to CISC.
+        </p>
+        <p>
+          ✔️ Faster execution due to a simplified set of instructions, allowing
+          for quicker command execution.
+        </p>
+        <p>
+          ✔️ Lower power consumption and cost-effective manufacturing due to the
+          simplicity of the architecture.
+        </p>
+        <p>
+          ✔️ Ability to be designed more quickly and take advantage of
+          technological advancements more readily.
+        </p>
+        <h3 style="text-align: center">Drawbacks of RISC Architectures</h3>
+        <p>
+          ❌ Require more instructions to perform complex tasks compared to CISC
+          processors.
+        </p>
+        <p>❌ Increased complexity of software development.</p>
+      </div>
+      <p>
+        CISC architectures have a larger set of instructions, which can perform
+        complex tasks in a single instruction. This approach attempts to
+        minimize the number of instructions per program, although it may
+        increase the number of cycles per instruction. The key characteristics
+        of CISC architectures include the following:
+      </p>
+      <div class="highlight-box">
+        <p>
+          ✔️ A larger set of instructions capable of performing complex tasks in
+          a single instruction.
+        </p>
+        <p>
+          ✔️ Typically more complex processors with more transistors, which can
+          lead to higher power consumption.
+        </p>
+        <p>
+          ✔️Ability to perform complex tasks with fewer instructions, which can
+          be beneficial for certain applications.
+        </p>
+        <p>
+          ✔️ Easier implementation of microprogramming and less expensive
+          control unit design compared to hard-wiring.
+        </p>
+        <h3 style="text-align: center">Drawbacks of CISC Architectures</h3>
+        <p>
+          ❌ Higher power consumption due to the complexity of the instruction
+          sets and the number of transistors used.
+        </p>
+        <p>
+          ❌ Generally slower compared to RISC chips, although they use fewer
+          instructions.
+        </p>
+      </div>
+      <p>
+        The choice between RISC and CISC depends on the specific requirements of
+        the application and the trade-offs that are acceptable in terms of
+        performance, power consumption, and cost.
+      </p>
+      <h3>Instruction Formats</h3>
+      <p>
+        Instruction formats and addressing modes are crucial components of ISA
+        design, determining how instructions are encoded and how data is
+        accessed.
+      </p>
+      <p>
+        Instruction formats refer to the way instructions are encoded and
+        represented in machine language. They are crucial in determining how
+        efficiently a CPU can execute instructions. The format of an instruction
+        typically includes several fields, such as the operation code (opcode),
+        operand addresses, and sometimes a mode field that specifies how to
+        interpret the operands. Types of instruction formats include the
+        following:
+      </p>
+
+      <p class="standard-text">
+        <img
+          src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+          alt="Cintillo_Tabs"
+          title="Cintillo_Tabs"
+          data-d2l-editor-default-img-style="true"
+          style="max-width: 100%"
+        />
+      </p>
+      <div class="tabs-container">
+        <input type="radio" name="tabs-hr" id="tab1" checked="checked" />
+        <input type="radio" name="tabs-hr" id="tab2" />
+        <input type="radio" name="tabs-hr" id="tab3" />
+        <input type="radio" name="tabs-hr" id="tab4" />
+
+        <div class="tabs">
+          <label for="tab1">Zero Address Instructions</label>
+          <label for="tab2">One Address Instructions</label>
+          <label for="tab3">Two Address Instructions</label>
+          <label for="tab4">Three Address Instructions</label>
+        </div>
+
+        <div class="content content-1">
+          <p class="standard-text">
+            These do not specify any operands or addresses explicitly. They are
+            often used in stack-based architectures in which operations
+            implicitly use the top items of the stack.
+          </p>
+        </div>
+
+        <div class="content content-2">
+          <p class="standard-text">
+            These specify one operand or address, typically using an implied
+            accumulator register for operations.
+          </p>
+        </div>
+
+        <div class="content content-3">
+          <p class="standard-text">
+            These specify two operands or addresses, allowing operations to be
+            performed directly on memory or registers.
+          </p>
+        </div>
+        <div class="content content-4">
+          <p class="standard-text">
+            These specify three operands or addresses, enabling direct
+            representation of complex expressions and facilitating parallelism
+            in CPU architecture.
+          </p>
+        </div>
+      </div>
+      <p>
+        Instruction length is another important consideration. Variable-length
+        instructions allow for more flexible and compact instruction sets but
+        require complex decoding logic. In contrast, fixed-length instructions
+        simplify fetching and decoding, making them suitable for pipelining and
+        parallelism.
+      </p>
+      <h3>Addressing Modes</h3>
+      <p>
+        Addressing modes are techniques used by the CPU to determine where the
+        data needed for an operation is stored. They provide rules for
+        interpreting or modifying the address field in an instruction before
+        accessing the operand. The importance of addressing modes lies in their
+        ability to allow flexibility in data handling, such as accessing arrays,
+        records, or pointers. Additionally, addressing modes support program
+        control with techniques like loops, branches, and jumps and enable
+        efficient memory usage and program relocation during runtime.
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600"
+        />
+      </p>
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="acc1" />
+          <label class="accordion-title" for="acc1">Immediate Addressing</label>
+          <div class="accordion-content">
+            <p>The operand is specified directly in the instruction.&nbsp;</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc2" />
+          <label class="accordion-title" for="acc2">Direct Addressing</label>
+          <div class="accordion-content">
+            <p>
+              The address of the operand is given explicitly in the instruction.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc3" />
+          <label class="accordion-title" for="acc3">Indirect Addressing</label>
+          <div class="accordion-content">
+            <p>
+              The address field of the instruction contains the address of the
+              effective address, requiring multiple memory accesses.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc4" />
+          <label class="accordion-title" for="acc4">Register Addressing</label>
+          <div class="accordion-content">
+            <p>
+              The operand is located in a register specified by the instruction.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="acc5" />
+          <label class="accordion-title" for="acc5">Indexed Addressing</label>
+          <div class="accordion-content">
+            <p>
+              Combines a base address and an index to calculate the effective
+              address, useful for accessing array elements.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>ISA Design Principles and Trade-Offs</h3>
+      <p>
+        Designing an ISA involves several key principles and trade-offs that
+        must be carefully balanced to create an effective and efficient
+        architecture.
+      </p>
+      <div class="highlight-box">
+        <p>
+          📌 Simplicity and Regularity: A simple and regular ISA is easier to
+          implement and understand. This often involves using a consistent
+          instruction format and a limited number of instruction types, which
+          can simplify the design of both the hardware and the compiler.
+        </p>
+        <p>
+          📌 Orthogonality: This principle ensures that instructions are
+          independent of each other, allowing for more flexible and efficient
+          programming. Orthogonality in ISA design means that any operation can
+          be performed on any data type or addressing mode.
+        </p>
+        <p>
+          📌 Completeness: An ISA should provide a complete set of operations
+          needed to perform any computation. This includes arithmetic
+          operations, data movement, control flow, and input/output operations.
+        </p>
+        <p>
+          📌 The ISA should be efficient for both the compiler to translate and
+          the hardware to execute. This involves optimizing the instruction set
+          for common operations and minimizing the number of instructions
+          required to perform a task.
+        </p>
+      </div>
+      <div class="highlight-box">
+        <p>
+          ⚖ Performance vs. Complexity: Optimizing for performance can lead to
+          increased complexity in the ISA. For example, adding more instructions
+          or addressing modes can improve performance but also make the ISA more
+          complex and harder to implement.
+        </p>
+        <p>
+          ⚖ Hardware Simplicity vs. Software Complexity: A simpler hardware
+          design often results in more complex software. For instance, RISC
+          architectures simplify hardware by using a smaller set of
+          instructions, which can increase the complexity of the software needed
+          to perform certain tasks.
+        </p>
+        <p>
+          ⚖ Flexibility vs. Specialization: An ISA can be designed to be
+          flexible, supporting a wide range of applications, or specialized,
+          optimized for specific tasks. Flexibility can lead to inefficiencies,
+          while whereas specialization can limit the applicability of the ISA.
+        </p>
+        <p>
+          ⚖ Backward Compatibility vs. Innovation: Maintaining backward
+          compatibility with older ISAs can limit the ability to innovate and
+          incorporate new features. However, it is often necessary to ensure
+          that existing software continues to function on new hardware.
+        </p>
+        <p>
+          ⚖ Power Consumption vs. Performance: In modern computing, power
+          efficiency is as important as performance. Designing an ISA that
+          balances these two aspects is crucial, especially for mobile and
+          embedded systems.
+        </p>
+      </div>
+      <div class="card card-standard">
+        <div class="card-body">
+          <div class="card-text" style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3 class="card-text" style="color: #041e42">
+                    TRUE or FALSE?
+                  </h3>
+                  <div class="card-text"></div>
+                  <div class="card-text">
+                    <span style="font-size: 19px; color: #041e42"
+                      >CISC architectures typically have a smaller set of
+                      instructions compared to RISC architectures.</span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false"
+                  >
+                    Show Answer
+                  </button>
+                  <div class="collapse" tabindex="0">
+                    <h3 style="color: #041e42">Answer:&nbsp; FALSE</h3>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation: CISC architectures have a larger set of
+                        complex instructions, which can perform complex tasks in
+                        a single instruction. In contrast, RISC architectures
+                        use a smaller set of simpler instructions.&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="logo"
+          width="110"
+          style="float: right"
+        />
+      </div>
+    </div>
+    <p>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </p>
+  </body>
+</html>
