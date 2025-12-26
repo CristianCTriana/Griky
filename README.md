@@ -1,1 +1,1 @@
-# Girky
+# Griky
