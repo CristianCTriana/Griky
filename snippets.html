@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="./Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="./Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* logo footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* Código para learning challenge */
+      .text-center {
+        text-align: center;
+      }
+
+      /* Contenedor de Video Responsivo */
+      .video-container {
+        max-width: 800px;
+        margin: 30px auto;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .video-container video {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* --- ESTILOS DEL VIDEO (Tus estilos originales optimizados) --- */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Ratio 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 20px; /* Espacio entre video y acordeón */
+        border: 8px solid #05c3de;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+      }
+
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* --- ESTILOS DEL ACORDEÓN (Agregados para funcionalidad) --- */
+      .accordion {
+        max-width: 800px;
+        margin: 0 auto;
+        font-family: sans-serif;
+      }
+
+      /* Ocultar el checkbox real */
+      .accordion input[type="checkbox"] {
+        display: none;
+      }
+
+      /* Estilo del botón/título */
+      .accordion-title {
+        display: block;
+        background-color: #f4f4f4;
+        color: #333;
+        padding: 15px 20px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-weight: bold;
+        border: 1px solid #ddd;
+        transition: background 0.3s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .accordion-title:hover {
+        background-color: #e9e9e9;
+      }
+
+      /* Estilo del contenido oculto */
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out; /* Animación suave */
+        background: #fff;
+        border-radius: 0 0 8px 8px;
+      }
+
+      .content-inner {
+        padding: 20px;
+        border: 1px solid #eee;
+        border-top: none;
+        line-height: 1.6;
+        color: #555;
+      }
+
+      /* --- LÓGICA DE APERTURA --- */
+      /* Cuando el checkbox está marcado, expandir el contenido */
+      #transcript-toggle:checked ~ .accordion-content {
+        max-height: 1000px; /* Un valor alto seguro para permitir la expansión */
+      }
+
+      /* Cambiar color del título al estar activo */
+      #transcript-toggle:checked ~ .accordion-title {
+        background-color: #05c3de;
+        color: #fff;
+        border-color: #05c3de;
+      }
+
+      /* Contenedor principal */
+      .code-wrapper {
+        background-color: #1e1e1e; /* Color fondo estilo VS Code */
+        border-radius: 8px;
+        overflow: hidden;
+        font-family: "Consolas", "Monaco", "Courier New",
+          monospace;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Cabecera con el botón y etiqueta */
+      .code-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #2d2d2d;
+        padding: 8px 15px;
+        border-bottom: 1px solid #333;
+      }
+
+      .language-label {
+        color: #ccc;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week # </span>
+      <span class="banner__week-name">
+        Name of the week
+      </span>
+    </header>
+    <main class="content-wrapper">
+      <h1 class="topic-title">Topic name</h1>
+
+      <hr class="divider-line" />
+
+
+    
+      <hr class="divider-line" />      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
