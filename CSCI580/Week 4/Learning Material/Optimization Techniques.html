@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">
+        GPUs and Accelerators
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Optimization Techniques</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Optimizing the performance of specialized
+        accelerators is crucial for maximizing their
+        potential in various applications. Memory access
+        patterns, thread management, and performance tuning
+        strategies are three key areas of optimization.
+      </p>
+      <h3>Memory Access Patterns</h3>
+      <p>
+        Memory access patterns refer to the sequence and
+        manner in which data is accessed from memory during
+        computation. Optimizing these patterns is crucial
+        due to the limited on-chip memory and the high cost
+        of accessing off-chip memory in specialized
+        accelerators. There are various techniques to
+        optimize these patterns:
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Data-Movement Elimination
+          </label>
+          <div class="accordion-content">
+            <p>
+              Techniques based on the polyhedral model can
+              eliminate unnecessary data movements by
+              optimizing loop nests and memory access
+              patterns across multiple operators. This
+              approach has been shown to significantly
+              reduce memory references and improve
+              performance on accelerators like AWS
+              Inferentia.
+            </p>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Global Memory-Bank Mapping
+          </label>
+          <div class="accordion-content">
+            <p>
+              This technique involves organizing on-chip
+              memory into multiple banks to maximize
+              internal memory bandwidth and minimize slow
+              data movement between banks. By propagating
+              bank mappings across the network based on data
+              dependencies, it is possible to reduce
+              interbank data movement and improve overall
+              performance.
+            </p>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Memory Scheduling and Virtualization
+          </label>
+          <div class="accordion-content">
+            <p>
+              Strategies like mixed-memory CNN (mmCNN) use
+              virtualization to optimize memory usage
+              dynamically, allowing developers to focus on
+              network architecture rather than memory
+              management.
+            </p>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Data Locality Optimization
+          </label>
+          <div class="accordion-content">
+            <p>
+              Techniques such as loop tiling and memory
+              partitioning enhance data locality and reduce
+              memory bandwidth requirements, particularly
+              effective in FPGAs.
+            </p>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Coalesced Memory Access
+          </label>
+          <div class="accordion-content">
+            <p>
+              Ensuring memory accesses are combined into
+              fewer transactions is crucial for minimizing
+              memory access latency, especially in GPU-like
+              architectures.&nbsp;
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>Thread Management&nbsp;</h3>
+      <p>
+        Effective thread management is essential for
+        optimizing the performance of specialized
+        accelerators, particularly in multi-core and
+        multi-threaded environments. Proper management
+        enhances parallelism and overall system efficiency.
+        Modern GPUs utilize multi-level thread scheduling,
+        where a two-level thread scheduler manages many
+        hardware threads. The scheduler maintains a small
+        set of active threads to hide ALU and local memory
+        access latency, while a larger set of pending
+        threads helps hide main memory latency.
+      </p>
+      <p>
+        Techniques like register file caching are also
+        employed, using smaller caches to store the
+        immediate working set of active threads, reducing
+        energy consumption while maintaining performance.
+        Additionally, efficient context switching between
+        threads is critical, with hardware-assisted context
+        switching techniques minimizing overhead and
+        improving system efficiency. Load balancing ensures
+        an even distribution of work across threads,
+        maximizing resource utilization and reducing idle
+        time. Finally, efficient thread synchronization
+        mechanisms, such as barriers and atomic operations,
+        are vital for coordinating thread execution and
+        ensuring data consistency.&nbsp;
+      </p>
+      <details
+        style="
+          background: #041e42;
+          padding: 10px;
+          border: 1px solid #ddd;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          color: white;
+        ">
+        <summary
+          style="
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            font-size: 19px;
+            padding: 10px;
+          ">
+          Performance Tuning Strategies
+        </summary>
+        <p>
+          ☑️ &nbsp;Network Architecture Search (NAS): This
+          technique customizes neural network architectures
+          to suit specific NPUs, optimizing performance and
+          energy efficiency by minimizing parameters while
+          maximizing throughput.&nbsp;&nbsp;
+        </p>
+        <p>
+          ☑️&nbsp; Quantization: Reducing the precision of a
+          model’s weights and activations can significantly
+          improve inference speed and reduce power
+          consumption on NPUs, FPGAs, and ASICs.&nbsp;&nbsp;
+        </p>
+
+        <p></p>
+        <p>
+          ☑️ &nbsp;Pruning: This involves reducing
+          unnecessary weights in a neural network, which
+          decreases computational load and enables faster
+          inference. It is particularly effective for FPGAs
+          due to their reconfigurable nature.&nbsp;&nbsp;
+        </p>
+        <p>
+          ☑️ &nbsp;Kernel Fusion: Combining multiple
+          operations into a single computational kernel can
+          reduce memory access overhead and improve
+          computational efficiency, which is particularly
+          beneficial for NPUs and FPGAs.&nbsp;&nbsp;
+        </p>
+        <p>
+          ☑️ &nbsp;Resource Optimization: For FPGAs,
+          techniques such as pipelining and timing analysis
+          can be used to optimize designs, balancing
+          performance, power consumption, and resource
+          usage.&nbsp;
+        </p>
+        <p>
+          ☑️ &nbsp;Design Optimization for ASICs: ASICs can
+          be tuned for higher speed by optimizing gate
+          placement and sizing specifically for the
+          application, enhancing performance and energy
+          efficiency.&nbsp;
+        </p>
+        <p>
+          ☑️ &nbsp;Dataflow Optimization: Optimizing the
+          flow of data through the accelerator can
+          significantly improve performance, particularly in
+          AI and machine learning applications.&nbsp;
+        </p>
+        <p>
+          ☑️ &nbsp;Memory Hierarchy Optimization: Careful
+          design of data paths and memory hierarchies to
+          minimize data movement and maximize on-chip data
+          reuse is crucial, especially for ASICs.&nbsp;
+        </p>
+      </details>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

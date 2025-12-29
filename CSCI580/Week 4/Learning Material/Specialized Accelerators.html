@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .highlight-box h3 {
+        color: #05c3de;
+      }
+      .highlight-box ul,
+      .highlight-box p {
+        color: white;
+      }
+
+      .tabs-container {
+        color: #041e42;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+
+      .dual-box p {
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">
+        GPUs and Accelerators
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Specialized Accelerators</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        In recent years, the demand for high-performance
+        computing in various domains, particularly in
+        artificial intelligence and machine learning, has
+        led to the development of specialized hardware
+        accelerators. These accelerators are designed to
+        optimize specific types of computations, offering
+        significant improvements in performance and energy
+        efficiency compared to general-purpose processors.
+        Three key types of specialized accelerators are
+        explained in this lesson.
+      </p>
+      <h3>Neural Processing Units</h3>
+      <p>
+        NPUs are specialized microprocessors designed to
+        accelerate artificial intelligence and machine
+        learning tasks, particularly those involving neural
+        networks. Their architecture is fundamentally
+        different from traditional CPUs and GPUs, focusing
+        on parallel processing capabilities and energy
+        efficiency.
+      </p>
+      <p>
+        The architecture of NPUs (Neural Processing Units)
+        is designed to optimize performance for AI
+        applications by focusing on parallel processing,
+        memory architecture, energy efficiency, specialized
+        processing elements, and low-precision arithmetic.
+        NPUs excel at executing multiple operations
+        simultaneously, which is crucial for handling the
+        large volumes of data in AI tasks. This is
+        accomplished by using numerous small processing
+        cores that can manage different parts of a
+        computation concurrently.
+      </p>
+      <p>
+        Unlike traditional architectures that separate
+        memory and processing units, NPUs often integrate
+        memory closer to the processing cores, reducing
+        latency and increasing bandwidth, which allows for
+        faster data access and processing. Additionally,
+        NPUs are designed for energy efficiency, making them
+        ideal for mobile and edge devices where energy
+        resources are limited. They also feature specialized
+        processing elements that are optimized to execute
+        the mathematical operations essential for neural
+        networks, such as matrix multiplications and
+        convolutions, with high throughput and parallelism.
+        To further enhance computational efficiency, NPUs
+        commonly use low-precision arithmetic, allowing for
+        faster processing while still maintaining acceptable
+        accuracy levels.
+      </p>
+
+      <details
+        style="
+          background: #041e42;
+          padding: 10px;
+          border: 1px solid #ddd;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          color: white;
+        ">
+        <summary
+          style="
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            font-size: 19px;
+            padding: 10px;
+          ">
+          Advantages of NPUs
+        </summary>
+        <p>
+          ☑️&nbsp; Increased Performance: NPUs are capable
+          of performing neural network computations
+          significantly faster than CPUs and GPUs. This
+          performance boost translates into faster training
+          and inference times for AI models.&nbsp;
+        </p>
+        <p>
+          ☑️&nbsp; Improved Efficiency: By optimizing for
+          the specific needs of neural networks, NPUs
+          achieve greater computational efficiency,
+          performing more operations per watt of power
+          consumed.&nbsp;
+        </p>
+        <p>
+          ☑️&nbsp; Scalability: NPUs are designed to scale
+          efficiently with the size of neural networks,
+          handling increased computational demands without a
+          proportional increase in power consumption or
+          reduction in performance.&nbsp;
+        </p>
+        <p>
+          ☑️&nbsp; Real-time Processing: NPUs are
+          well-suited for real-time AI applications,
+          ensuring that AI systems can respond swiftly to
+          dynamic environments.&nbsp;
+        </p>
+        <p>
+          ☑️&nbsp; Power Efficiency: NPUs consume
+          significantly less power than their CPU and GPU
+          counterparts, making them ideal for
+          battery-powered devices and IoT
+          applications.&nbsp;
+        </p>
+      </details>
+
+      <h3>Applications of NPUs&nbsp;</h3>
+      <p>
+        NPUs are deployed across a wide array of industries
+        and applications, leveraging their unique strengths
+        to enhance performance and
+        capabilities.&nbsp;Several common applications are
+        as follows:
+      </p>
+      H5P
+      <h3>Field-Programmable Gate Arrays (FPGAs)</h3>
+      <p>
+        The structure of FPGAs consists of several key
+        components that enable their flexibility and
+        configurability. The core structure includes an
+        array of programmable logic blocks, input/output
+        blocks (IOBs), and programmable interconnects that
+        allow the logic blocks to be connected in various
+        configurations. The Configurable Logic Blocks (CLBs)
+        are the fundamental building blocks of an FPGA, each
+        containing lookup tables (LUTs) for implementing
+        combinational logic and flip-flops for sequential
+        logic. The programmable interconnects are
+        responsible for connecting the CLBs and IOBs,
+        enabling flexible routing of signals and the
+        creation of complex digital circuits. The IOBs serve
+        as the interface between the FPGA and external
+        devices, managing the data flow between the FPGA and
+        the outside world. Modern FPGAs may also include
+        additional features, such as built-in multipliers,
+        high-speed I/Os, data converters, large RAM arrays,
+        and even embedded processors, further enhancing
+        their versatility and performance.
+      </p>
+      <p>
+        FPGAs are used in a wide range of applications due
+        to their flexibility and reconfigurability:&nbsp;
+      </p>
+      <!--CAJA OSCURA-->
+      <div class="highlight-box">
+        <h3>Use Cases of FPGAs</h3>
+        <p>
+          ☑️ &nbsp;Automotive Industry: They are used in
+          advanced driver-assistance systems (ADAS),
+          infotainment systems, and other automotive
+          applications.&nbsp;&nbsp;
+        </p>
+        <p>
+          ☑️ &nbsp;Telecommunications: FPGAs are employed in
+          network equipment for tasks such as packet
+          processing and signal modulation.&nbsp;&nbsp;
+        </p>
+        <p>
+          ☑️ &nbsp;Aerospace and Defense: Due to their
+          reliability and ability to be reprogrammed, FPGAs
+          are used in various aerospace and defense
+          applications.&nbsp;&nbsp;
+        </p>
+        <p>
+          ☑️ &nbsp;Data Centers and High-Performance
+          Computing (HPC): FPGAs are increasingly used in
+          data centers for accelerating workloads such as
+          machine learning and data analytics.&nbsp;&nbsp;
+        </p>
+        <p>
+          ☑️ &nbsp;Consumer Electronics: FPGAs are used in
+          devices such as MP3 players and televisions for
+          processing and control tasks.&nbsp;
+        </p>
+      </div>
+      <h3>Comparison with Other Accelerators</h3>
+      <p>
+        FPGAs offer several advantages compared to other
+        types of accelerators. One of their key benefits is
+        flexibility, as FPGAs are reprogrammable, allowing
+        design changes even after deployment, whereas ASICs
+        are fixed-function devices designed for a specific
+        task. Additionally, FPGAs have a shorter development
+        cycle compared to ASICs, which require longer design
+        and fabrication processes. In terms of
+        cost-effectiveness, FPGAs are often more affordable
+        for low- to medium-volume applications due to the
+        high initial cost of ASIC design and manufacturing.
+        FPGAs also provide fine-grained parallelism, which
+        can be tailored to specific tasks, whereas GPUs are
+        optimized for coarse-grained parallelism suitable
+        for graphics and general-purpose computing. Finally,
+        FPGAs can be more power-efficient than GPUs for
+        certain applications, as they can be optimized for
+        specific tasks, making them a more energy-efficient
+        solution in some cases.
+      </p>
+      <h3>
+        Application-Specific Integrated Circuits (ASICs)
+      </h3>
+      <p>
+        ASICs are custom-designed chips optimized for
+        specific applications, offering high efficiency in
+        terms of power consumption and performance, but
+        lacking the flexibility of FPGAs. The ASIC design
+        process is complex and iterative, involving several
+        stages:&nbsp;&nbsp;
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Specification and Requirements
+          </label>
+          <div class="accordion-content">
+            <p>
+              This initial stage involves defining the
+              specifications and requirements for the ASIC
+              project, including desired functionality,
+              performance goals, and power consumption
+              targets.
+            </p>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Architecture and High-Level Design
+          </label>
+          <div class="accordion-content">
+            <p>
+              Designers create the ASIC architecture and
+              high-level design by selecting appropriate
+              components and defining interconnects.
+            </p>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            RTL Design and Design Verification
+          </label>
+          <div class="accordion-content">
+            <p>
+              The Register-Transfer Level (RTL) design stage
+              involves translating the high-level
+              architecture into a hardware description
+              language (HDL). Verification follows, which
+              means simulating and testing the design to
+              ensure it meets specifications.
+            </p>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Logic Synthesis and Optimization
+          </label>
+          <div class="accordion-content">
+            <p>
+              This stage involves converting the RTL design
+              into a gate-level netlist, optimizing for
+              performance, area, and power.
+            </p>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Physical Design and Layout
+          </label>
+          <div class="accordion-content">
+            <p>
+              The physical design stage includes floor
+              planning, placement, and routing of the ASIC
+              components on the chip.
+            </p>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo6" />
+          <label
+            class="accordion-title"
+            for="lo6">
+            Signoff and Tapeout
+          </label>
+          <div class="accordion-content">
+            <p>
+              The final stage involves verifying the design
+              against all specifications and preparing it
+              for manufacturing.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>ASIC Advantages and Disadvantages</h3>
+      <p>
+        ASICs offer several advantages, particularly in
+        terms of performance, power efficiency, and
+        integration. Along with these benefits, there are
+        several drawbacks to consider:
+      </p>
+      <div class="dual-box-wrapper">
+        <div class="dual-box">
+          <strong>Benefits:</strong><br />
+          <p>
+            Performance: ASICs are optimized for specific
+            tasks, allowing them to deliver higher
+            performance compared to general-purpose
+            integrated circuits.&nbsp;
+          </p>
+          <p>
+            Power Efficiency: Due to their specialized
+            nature, ASICs consume less power, making them
+            ideal for energy-sensitive applications.&nbsp;
+          </p>
+          <p>
+            Integration: ASICs enable the integration of
+            multiple functions onto a single chip, reducing
+            system complexity and size.&nbsp;
+          </p>
+          <p>
+            Cost-Effectiveness at Scale: While the initial
+            development costs are high, the per-unit cost
+            decreases significantly with large production
+            volumes.&nbsp;
+          </p>
+          <p>
+            Security: ASICs provide higher security as they
+            are harder to reverse-engineer compared to
+            software-based solutions.&nbsp;
+          </p>
+        </div>
+        <div class="dual-box">
+          <strong>Limitations:</strong><br />
+          <p>
+            High Development Costs: The initial investment
+            required for ASIC design and manufacturing can
+            be substantial, especially for small production
+            runs.&nbsp;
+          </p>
+          <p>
+            Time to Market: The ASIC design process can be
+            lengthy, resulting in a longer time to market
+            compared to using off-the-shelf
+            components.&nbsp;
+          </p>
+          <p>
+            Lack of Flexibility: Unlike FPGAs and
+            microcontrollers, ASICs are designed for
+            specific applications and cannot be reprogrammed
+            or reconfigured for other purposes.&nbsp;
+          </p>
+          <p>
+            Obsolescence Risk: Due to their inflexible
+            nature, ASICs can become obsolete quickly in
+            fast-evolving fields.&nbsp;
+          </p>
+        </div>
+      </div>
+
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:&nbsp;
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >Can you identify</span
+                      ><span data-ccp-parastyle="Body Text">
+                        the type of specialized accelerator
+                        that can be reprogrammed to perform
+                        specific tasks after
+                        manufacturing?</span
+                      ></span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer: PFPGAs
+                    </h3>
+                    <p style="color: #041e42">
+                      <span
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >Explanation: FPGA<span
+                            style="list-style-type: disc"
+                            xml:lang="EN-US"
+                            data-contrast="auto"
+                            >s are specialized accelerators
+                            that can be reprogrammed to
+                            perform specific tasks after
+                            manufacturing, offering
+                            flexibility and adaptability for
+                            various
+                            applications.&nbsp;</span
+                          ></span
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

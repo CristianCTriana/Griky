@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .highlight-box h3 {
+        color: #05c3de;
+      }
+      .highlight-box ul {
+        color: white;
+      }
+
+      .tabs-container {
+        color: #041e42;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">
+        GPUs and Accelerators
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        GPU Architecture and Fundamentals
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Graphics processing units (GPUs) and central
+        processing units (CPUs) have distinct architectural
+        designs that reflect their specialized roles in
+        computing systems. Understanding these differences
+        is crucial for optimizing performance in various
+        computing tasks:
+      </p>
+      <!--CAJA OSCURA-->
+      <div class="highlight-box">
+        <h3>GPU Architecture:&nbsp;</h3>
+        <ul>
+          <li>
+            GPUs are designed for parallel processing,
+            featuring thousands of smaller, simpler cores
+            optimized for executing many operations
+            simultaneously.&nbsp;
+          </li>
+          <li>
+            The core structure consists of multiple
+            streaming multiprocessors (SMs), each containing
+            numerous cores.&nbsp;
+          </li>
+          <li>
+            GPUs excel at Single Instruction, Multiple Data
+            (SIMD) operations, where the same instruction is
+            executed across multiple data points
+            concurrently.&nbsp;
+          </li>
+        </ul>
+        <h3>CPU Architecture:&nbsp;</h3>
+        <ul>
+          <li>
+            CPUs are optimized for sequential processing,
+            with fewer but more powerful cores capable of
+            handling complex instructions.&nbsp;
+          </li>
+          <li>
+            Modern CPUs often feature multi-core designs to
+            improve performance through parallelism, but on
+            a much smaller scale compared to GPUs.&nbsp;
+          </li>
+          <li>
+            CPUs are designed to switch rapidly between
+            different tasks, making them versatile for a
+            wide range of applications.&nbsp;
+          </li>
+        </ul>
+      </div>
+
+      <!--CAJA OSCURA-->
+      <div class="highlight-box">
+        <h3>GPU Hierarchy:</h3>
+        <ul>
+          <li>
+            GPUs have a distinct memory hierarchy including
+            registers, shared memory, and global memory
+            (VRAM).&nbsp;
+          </li>
+          <li>
+            This hierarchy is optimized for high throughput
+            and parallel access, crucial for handling large
+            datasets in parallel processing tasks.&nbsp;
+          </li>
+        </ul>
+        <h3>CPU Hierarchy:&nbsp;</h3>
+        <ul>
+          <li>
+            CPUs feature a hierarchical memory structure
+            with multiple levels of cache (L1, L2, L3)
+            closer to the cores.&nbsp;
+          </li>
+          <li>
+            This structure supports the CPU’s need for
+            low-latency access to data, essential for
+            sequential processing and task switching.&nbsp;
+          </li>
+        </ul>
+      </div>
+
+      <!--CAJA OSCURA-->
+      <div class="highlight-box">
+        <h3>GPU Functionality:&nbsp;</h3>
+        <ul>
+          <li>
+            Specialized for tasks that benefit from parallel
+            processing, such as graphics rendering,
+            scientific computations, and machine
+            learning.&nbsp;
+          </li>
+          <li>
+            Excels in tasks that can be broken down into
+            smaller, independent operations.&nbsp;
+          </li>
+        </ul>
+        <h3>CPU Functionality:&nbsp;</h3>
+        <ul>
+          <li>
+            General-purpose processors capable of handling a
+            wide range of tasks.&nbsp;
+          </li>
+          <li>
+            Suited for complex decision-making and
+            sequential processing tasks, including operating
+            system management and application
+            execution.&nbsp;
+          </li>
+        </ul>
+      </div>
+
+      <!--CAJA OSCURA-->
+      <div class="highlight-box">
+        <h3>GPU Performance:&nbsp;</h3>
+        <ul>
+          <li>High throughput for parallel tasks.&nbsp;</li>
+          <li>
+            Optimized for processing large datasets
+            simultaneously.&nbsp;
+          </li>
+          <li>
+            May have higher latency for individual
+            operations.&nbsp;
+          </li>
+        </ul>
+        <h3>CPU Performance:&nbsp;</h3>
+        <ul>
+          <li>
+            Lower latency for individual operations.&nbsp;
+          </li>
+          <li>
+            Better at handling complex, branching
+            logic.&nbsp;
+          </li>
+          <li>
+            More efficient for tasks requiring frequent
+            context switching.&nbsp;
+          </li>
+        </ul>
+      </div>
+
+      <p>
+        Although both GPUs and CPUs are critical components
+        of modern computing systems, they are designed with
+        different priorities. GPUs excel in parallel
+        processing tasks involving large datasets, whereas
+        CPUs are more versatile and efficient for complex,
+        sequential operations. Understanding these
+        architectural differences is key to optimizing
+        performance across various computing
+        applications.&nbsp;
+      </p>
+
+      <h3>Memory Hierarchy and Management</h3>
+      <p>
+        In GPUs, memory hierarchy and management are crucial
+        aspects of the architecture, significantly impacting
+        performance in parallel computing tasks.
+        Understanding these components is essential for
+        effective GPU programming and optimization.&nbsp;
+      </p>
+
+      <p class="standard-text">
+        <img
+          src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+          alt="cintillo tabs"
+          style="max-width: 100%" />
+      </p>
+
+      <div class="tabs-container">
+        <input
+          type="radio"
+          name="group-name"
+          id="tab1"
+          checked="checked" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab2" />
+
+        <div class="tabs">
+          <label for="tab1">GPU Memory Hierarchy</label>
+          <label for="tab2"
+            >Memory Management Techniques</label
+          >
+        </div>
+
+        <div class="content content-1">
+          <strong>Global Memory:&nbsp;</strong>
+          <ul>
+            <li>
+              The main memory accessible by all
+              threads.&nbsp;
+            </li>
+            <li>Large capacity but high latency.&nbsp;</li>
+            <li>
+              Optimizing access patterns is crucial for
+              performance.&nbsp;
+            </li>
+          </ul>
+          <strong>Registers:&nbsp;</strong>
+          <ul>
+            <li>
+              Each thread has its own set of
+              registers.&nbsp;
+            </li>
+            <li>Extremely low-latency access.&nbsp;</li>
+          </ul>
+          <p>
+            Limited in number; excessive use can lead to
+            “register spilling.”.&nbsp;
+          </p>
+          <strong>Local Memory:</strong>
+          <ul>
+            <li>Private to each thread.&nbsp;</li>
+            <li>Used for storing local variables.&nbsp;</li>
+            <li>
+              Lower latency than global memory but higher
+              than registers.&nbsp;
+            </li>
+          </ul>
+          <strong>Shared Memory:&nbsp;</strong>
+          <ul>
+            <li>
+              Shared among threads within the same
+              block.&nbsp;
+            </li>
+            <li>Low- latency and high- bandwidth.&nbsp;</li>
+            <li>
+              Ideal for data sharing and intermediate
+              calculations.&nbsp;
+            </li>
+          </ul>
+          <strong>Constant Memory:&nbsp;</strong>
+          <ul>
+            <li>Read-only memory.&nbsp;</li>
+            <li>
+              Optimized for situations in which all threads
+              read the same data.&nbsp;
+            </li>
+          </ul>
+          <strong>Texture Memory:&nbsp;</strong>
+          <ul>
+            <li>Optimized for spatial locality.&nbsp;</li>
+            <li>
+              Primarily used in graphics applications for
+              data requiring interpolation or 2D spatial
+              access.&nbsp;
+            </li>
+          </ul>
+          <strong>Cache Systems:&nbsp;</strong>
+          <ul>
+            <li>
+              L1 and L2 caches reduce memory access latency
+              and improve data locality.&nbsp;
+            </li>
+            <li>
+              L1 cache: Typically, 128 KB per SM; latencies
+              around 30–40 cycles.&nbsp;
+            </li>
+            <li>
+              L2 cache: Larger and shared across SMs;
+              latencies around 200 cycles.&nbsp;
+            </li>
+          </ul>
+        </div>
+
+        <div class="content content-2">
+          <strong>Memory Allocation:</strong>
+          <ul>
+            <li>
+              Dynamic allocation using functions like
+              cudaMalloc() in CUDA.&nbsp;
+            </li>
+            <li>
+              Unified Memory allows the GPU to access a
+              single address space shared with the
+              CPU.&nbsp;
+            </li>
+          </ul>
+          <strong
+            >Memory Optimization Techniques:&nbsp;</strong
+          >
+          <ul>
+            <li>
+              Memory Pooling: Reusing memory allocations to
+              reduce fragmentation and overhead
+            </li>
+            <li>
+              Data Compression: Compressing data stored in
+              GPU memory to save space and potentially
+              reduce bandwidth usage.&nbsp;
+            </li>
+            <li>
+              Avoiding Memory Thrashing: Ensuring memory
+              access patterns do not lead to frequent page
+              faults or cache misses.&nbsp;
+            </li>
+          </ul>
+          <strong>Coalesced Memory Access:&nbsp;</strong>
+          <ul>
+            <li>
+              Crucial for minimizing memory access
+              latency.&nbsp;
+            </li>
+            <li>
+              Ensures memory accesses are combined into
+              fewer transactions.&nbsp;
+            </li>
+          </ul>
+          <strong>Advanced Features:&nbsp;</strong>
+          <ul>
+            <li>
+              Tensor Memory Accelerator (TMA): Introduced in
+              NVIDIA’s Hopper architecture for efficient
+              data transfer between global and shared
+              memory.&nbsp;
+            </li>
+            <li>
+              Asynchronous Transaction Barriers: Facilitate
+              synchronization of CUDA threads and on-chip
+              accelerators.
+            </li>
+          </ul>
+          <strong
+            >Performance Tools and Best
+            Practices:&nbsp;</strong
+          >
+          <ul>
+            <li>
+              Tools like NVIDIA Nsight help analyze memory
+              usage and identify bottlenecks.&nbsp;
+            </li>
+            <li>
+              Understanding trade-offs between latency and
+              bandwidth is key for optimizing memory
+              usage.&nbsp;
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Challenges and Solutions</h3>
+      <p>
+        The memory bottleneck remains a significant
+        challenge due to the performance gap between
+        processors and the GPU memory system. Optimizing the
+        use of shared, texture, and constant memory can
+        provide significant performance improvements.&nbsp;
+      </p>
+      <p>
+        By effectively managing these memory components and
+        implementing optimization techniques, developers can
+        significantly enhance GPU performance across various
+        applications, from scientific computing to machine
+        learning and graphics processing.&nbsp;
+      </p>
+      <h3>Parallel Processing Capabilities&nbsp;</h3>
+
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Massive Parallelism
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                GPUs can execute thousands of threads
+                simultaneously.&nbsp;
+              </li>
+              <li>
+                This capability is essential for tasks that
+                can be divided into smaller, independent
+                operations.&nbsp;
+              </li>
+              <li>
+                Particularly beneficial for applications
+                like deep learning, where large datasets are
+                processed.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            High Throughput
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                The architecture of GPUs allows for high
+                throughput—that is, processing a large
+                amount of data in a short time.&nbsp;
+              </li>
+              <li>
+                Crucial for handling large datasets and
+                performing complex mathematical
+                computations.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Data and Task Parallelism
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                GPUs support both data parallelism and task
+                parallelism.&nbsp;
+              </li>
+              <li>
+                In data parallelism, data is distributed
+                across multiple cores for simultaneous
+                processing.&nbsp;
+              </li>
+              <li>
+                In task parallelism, different tasks are
+                executed concurrently.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Efficient Memory Management
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                GPUs have a memory hierarchy including
+                global, shared, and local memory.
+              </li>
+              <li>
+                Efficient memory management is crucial to
+                avoid latency and maximize
+                performance.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h3>Implications of GPU Parallel Processing&nbsp;</h3>
+      <p>
+        GPU parallel processing has a wide range of
+        implications across various fields. In machine
+        learning, it significantly accelerates the training
+        of models, reducing training times from weeks or
+        months to just hours. This enhanced speed has made
+        machine learning more efficient and accessible. In
+        scientific simulations, GPUs facilitate complex
+        tasks in fields like physics and chemistry, enabling
+        researchers to conduct simulations with greater
+        speed and accuracy. Furthermore, GPUs play a crucial
+        role in improving graphics and visualization, being
+        essential for rendering high-quality 3D graphics and
+        visual effects. This makes them invaluable in image-
+        and video-editing applications. In terms of
+        cost-effectiveness and scalability, GPUs offer a
+        more affordable alternative to relying solely on
+        CPUs and provide scalability by allowing easy
+        expansion through the addition of more GPUs or
+        GPU-accelerated clusters. Lastly, the integration of
+        GPUs into cloud computing environments boosts
+        performance and reduces operational costs while
+        offering the flexibility of dynamic resource scaling
+        based on demand.&nbsp;
+      </p>
+      <h3>Performance Considerations</h3>
+      <p>
+        The performance improvement due to GPU parallel
+        processing can be quantified using speedup formulas,
+        comparing execution time with and without GPU
+        acceleration. In ideal conditions, significant
+        speedups can be achieved, though real-world
+        performance improvements may vary due to factors
+        such as data transfer overhead and the nature of the
+        computational task.&nbsp;
+      </p>
+      <p>
+        In summary, the parallel processing capabilities of
+        GPUs have revolutionized computing by enabling
+        faster and more efficient execution of complex
+        tasks. Their architecture allows for massive
+        parallelism and high throughput, making them
+        indispensable in fields such as machine learning,
+        scientific simulations, and graphics rendering. As
+        technology continues to advance, the role of GPUs in
+        high-performance computing is expected to grow,
+        driving innovation and efficiency across multiple
+        domains.&nbsp;&nbsp;
+      </p>
+
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_4/../Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      >Which of the following is a key
+                      difference between GPU and CPU
+                      architectures?</span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <div>
+                      <p
+                        paraeid="{29540716-8535-48d5-8c43-d9179e19cb9e}{6}"
+                        paraid="1838118254">
+                        <span data-ccp-parastyle="Body Text"
+                          >(</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >A) GPUs have fewer cores than
+                          CPUs</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >.</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >&nbsp;</span
+                        ><span
+                          data-ccp-props='{"335559738":180,"335559739":180}'
+                          >&nbsp;</span
+                        >
+                      </p>
+                    </div>
+                    <div>
+                      <p
+                        paraeid="{29540716-8535-48d5-8c43-d9179e19cb9e}{22}"
+                        paraid="267195561">
+                        <span data-ccp-parastyle="Body Text"
+                          >(</span
+                        ><span
+                          xml:lang="EN-US"
+                          data-contrast="auto"
+                          ><span
+                            data-ccp-parastyle="Body Text"
+                            >B) CPUs are </span
+                          ><span
+                            data-ccp-parastyle="Body Text"
+                            >optimized</span
+                          ><span
+                            data-ccp-parastyle="Body Text">
+                            for parallel processing</span
+                          ></span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >.</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >&nbsp;</span
+                        ><span
+                          data-ccp-props='{"335559738":180,"335559739":180}'
+                          >&nbsp;</span
+                        >
+                      </p>
+                    </div>
+                    <div>
+                      <p
+                        paraeid="{29540716-8535-48d5-8c43-d9179e19cb9e}{34}"
+                        paraid="286656214">
+                        <span data-ccp-parastyle="Body Text"
+                          >(</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >C) GPUs have a higher memory
+                          bandwidth than CPUs</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >.</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >&nbsp;</span
+                        ><span
+                          data-ccp-props='{"335559738":180,"335559739":180}'
+                          >&nbsp;</span
+                        >
+                      </p>
+                    </div>
+                    <div>
+                      <p
+                        paraeid="{29540716-8535-48d5-8c43-d9179e19cb9e}{46}"
+                        paraid="1037306508">
+                        <span data-ccp-parastyle="Body Text"
+                          >(</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >D) CPUs are designed for high
+                          throughput</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >.</span
+                        ><span
+                          xml:lang="EN-US"
+                          data-contrast="auto"></span
+                        ><span
+                          data-ccp-props='{"335559738":180,"335559739":180}'
+                          >&nbsp;</span
+                        >
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer:&nbsp;&nbsp;
+                    </h3>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >(</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >C) GPUs have a higher memory
+                        bandwidth than CPUs</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >.</span
+                      >
+                    </p>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation: GPUs are designed with
+                        a higher memory bandwidth to handle
+                        the large amounts of data required
+                        for parallel processing tasks,
+                        making them well-suited for
+                        applications like graphics rendering
+                        and scientific
+                        computing.&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

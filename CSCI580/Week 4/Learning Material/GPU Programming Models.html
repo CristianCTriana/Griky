@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+
+      .highlight-box h3 {
+        color: #05c3de;
+      }
+      .highlight-box ul,
+      .highlight-box p {
+        color: white;
+      }
+
+      .tabs-container {
+        color: #041e42;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">
+        GPUs and Accelerators
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        CUDA Programming Framework
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        CUDA (Compute Unified Device Architecture) is a
+        parallel computing platform and application
+        programming interface (API) model created by NVIDIA.
+        It enables developers to use NVIDIA GPUs for
+        general-purpose processing, extending beyond
+        traditional graphics rendering. CUDA provides a
+        software layer that gives direct access to the GPU’s
+        virtual instruction set and parallel computational
+        elements for executing compute kernels. Important
+        features of CUDA are as follows:
+      </p>
+
+      <!--CAJA OSCURA-->
+      <div class="highlight-box">
+        <h3>Key Features of CUDA</h3>
+        <strong> Parallel Computing Model:&nbsp; </strong>
+        <ul>
+          <li>
+            Enables developers to harness GPU power for
+            parallel computing.&nbsp;
+          </li>
+          <li>
+            Allows decomposition of computational problems
+            into smaller tasks that can run concurrently on
+            thousands of GPU cores.&nbsp;
+          </li>
+          <li>
+            Built around three fundamental abstractions:
+            thread hierarchy, memory hierarchy, and barrier
+            synchronization.&nbsp;
+          </li>
+        </ul>
+        <strong>Thread and Block Hierarchy:</strong>
+        <ul>
+          <li>
+            Organizes computations into a hierarchy of
+            threads, blocks, and grids.&nbsp;
+          </li>
+          <li>
+            A CUDA kernel is executed by multiple threads
+            organized into blocks, which are further
+            organized into grids.&nbsp;
+          </li>
+          <li>
+            Each block is executed by one SM, with multiple
+            blocks running concurrently on a single
+            SM.&nbsp;
+          </li>
+        </ul>
+        <strong>Memory Hierarchy:&nbsp;</strong>
+        <ul>
+          <li>
+            CUDA-capable GPUs have a memory hierarchy
+            including registers, shared memory, L1 cache, L2
+            cache, and global memory.&nbsp;
+          </li>
+          <li>
+            Shared memory is fast, on-chip memory shared
+            among threads in the same block, providing
+            higher bandwidth than global memory.&nbsp;
+          </li>
+        </ul>
+        <strong>Programming Language and API:</strong>
+        <ul>
+          <li>
+            Extends C/C++ with specific keywords and
+            constructs for parallel programming on
+            GPUs.&nbsp;
+          </li>
+          <li>
+            Includes built-in variables for indexing threads
+            and blocks, and functions for thread
+            synchronization.&nbsp;
+          </li>
+          <li>
+            Supports other programming languages like
+            Fortran and Python, and integrates with
+            libraries such as CUDA Deep Neural Network
+            (cuDNN) for deep learning.&nbsp;
+          </li>
+        </ul>
+        <strong>Performance Optimization:</strong>
+        <ul>
+          <li>
+            Provides tools and libraries for optimization,
+            such as cuBLAS for linear algebra and cuFFT for
+            fast Fourier transforms.&nbsp;
+          </li>
+          <li>
+            Allows developers to optimize memory usage and
+            data transfer between a host (CPU) and a device
+            (GPU).&nbsp;
+          </li>
+        </ul>
+      </div>
+
+      <h3>Applications and Use Cases&nbsp;</h3>
+      <p>
+        CUDA is widely used in scientific computing, machine
+        learning, and computer graphics. It enables
+        significant acceleration of tasks like deep learning
+        model training, image processing, and simulations.
+        The platform supports high-level libraries that
+        abstract low-level details, making it accessible to
+        domain experts who are not necessarily GPU
+        programming experts. The benefits and limitations of
+        CUDA are explained below:
+      </p>
+
+      <div class="def-cards">
+        <div class="def-cards-grid">
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <h3>Advantages</h3>
+                </div>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  ✔️ Performance: Offers significant
+                  speedups for parallel computing
+                  tasks.&nbsp;
+                </p>
+                <p>
+                  ✔️ Ecosystem: Extensive Has an extensive
+                  set of libraries and tools for various
+                  domains.&nbsp;
+                </p>
+                <p>
+                  ✔️ Developer support: Strong community and
+                  documentation support are available from
+                  NVIDIA.&nbsp;
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <h3>Limitations</h3>
+                </div>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  ❌ Hardware dependency: Limited to NVIDIA
+                  GPUs.&nbsp;
+                </p>
+                <p>
+                  ❌ Learning curve: Requires understanding
+                  of parallel programming concepts.&nbsp;
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>OpenCL Framework</h3>
+      <p>
+        OpenCL (Open Computing Language) is a framework
+        designed for writing programs that execute across
+        heterogeneous platforms, including CPUs, GPUs, DSPs,
+        and other processors or hardware accelerators. It is
+        an open standard maintained by the Khronos Group and
+        provides a standard interface for parallel computing
+        using task- and data-based parallelism. Important
+        features of OpenCL are as follows:
+      </p>
+
+      <!--CAJA OSCURA-->
+      <div class="highlight-box">
+        <h3 style="text-align: center">
+          Key Features of OpenCL
+        </h3>
+        <strong>Cross-Platform Compatibility:&nbsp;</strong>
+        <ul>
+          <li>
+            Designed as a cross-platform API, allowing
+            programs to run on hardware from different
+            vendors.&nbsp;
+          </li>
+          <li>
+            Has a significant advantage over frameworks like
+            CUDA, which is limited to NVIDIA hardware.&nbsp;
+          </li>
+        </ul>
+        <strong>Heterogeneous Computing:&nbsp;</strong>
+        <ul>
+          <li>
+            Supports a wide range of devices, including
+            CPUs, GPUs, and FPGAs.&nbsp;
+          </li>
+          <li>
+            Enables writing a single program that can be
+            executed on different types of devices.&nbsp;
+          </li>
+        </ul>
+        <strong>Parallel Programming Model:&nbsp;</strong>
+        <ul>
+          <li>
+            Provides a low-level programming interface for
+            writing programs that can be executed in
+            parallel on multiple processing elements.&nbsp;
+          </li>
+          <li>
+            Uses a language based on C/C++ to write compute
+            kernels, which are functions executed on compute
+            devices.&nbsp;
+          </li>
+        </ul>
+        <strong>Memory Hierarchy:&nbsp;</strong>
+        <ul>
+          <li>
+            Defines a four-level memory hierarchy for
+            compute devices: global memory, read-only
+            memory, local memory, and private memory.&nbsp;
+          </li>
+          <li>
+            Crucial for optimizing memory access patterns
+            and improving performance.&nbsp;
+          </li>
+        </ul>
+        <strong>Task and Data Parallelism:&nbsp;</strong>
+        <ul>
+          <li>
+            Allows for both task and data parallelism within
+            a single program.&nbsp;
+          </li>
+          <li>
+            Beneficial for load balancing across different
+            processing units.&nbsp;
+          </li>
+        </ul>
+        <strong
+          >Vendor-Specific Implementations:&nbsp;</strong
+        >
+        <ul>
+          <li>
+            Although OpenCL is a standard, implementations
+            can vary between vendors.&nbsp;
+          </li>
+          <li>
+            This allows for optimizations specific to
+            certain hardware, but it can affect performance
+            and compatibility.&nbsp;
+          </li>
+        </ul>
+      </div>
+
+      <h3>OpenCL Programming Model</h3>
+      <p>
+        The OpenCL programming model is structured around
+        several key components:
+      </p>
+
+      <p class="standard-text">
+        <img
+          src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+          alt="cintillo tabs"
+          style="max-width: 100%" />
+      </p>
+
+      <div class="tabs-container">
+        <input
+          type="radio"
+          name="group-name"
+          id="tab1"
+          checked="checked" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab2" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab3" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab4" />
+
+        <div class="tabs">
+          <label for="tab1">Platform Model:&nbsp;</label>
+          <label for="tab2">Execution Model</label>
+          <label for="tab3">Memory Model</label>
+          <label for="tab4">Programming Interface</label>
+        </div>
+
+        <div class="content content-1">
+          <ul>
+            <li>
+              Views a computing system as consisting of a
+              host (usually a CPU) and one or more compute
+              devices (such as GPUs).&nbsp;
+            </li>
+            <li>
+              The host manages the execution of kernels on
+              the compute devices.&nbsp;
+            </li>
+          </ul>
+        </div>
+
+        <div class="content content-2">
+          <ul>
+            <li>
+              Involves launching kernels on compute
+              devices.&nbsp;
+            </li>
+            <li>
+              A kernel is executed by multiple work- items,
+              organized into work- groups.&nbsp;
+            </li>
+            <li>
+              Allows for fine-grained control over parallel
+              execution.&nbsp;
+            </li>
+          </ul>
+        </div>
+
+        <div class="content content-3">
+          <ul>
+            <li>
+              Includes different types of memory (global,
+              local, constant, and private) to optimize data
+              access and storage during kernel
+              execution.&nbsp;
+            </li>
+            <li>
+              Crucial for achieving high performance in
+              parallel applications.&nbsp;
+            </li>
+          </ul>
+        </div>
+        <div class="content content-4">
+          <ul>
+            <li>
+              Provides APIs for managing memory, launching
+              kernels, and synchronizing tasks.&nbsp;
+            </li>
+            <li>
+              Available in C and C++, allowing detailed
+              control over parallel program execution
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Applications of OpenCL</h3>
+      <p>
+        OpenCL is widely used across various domains due to
+        its flexibility and cross-platform capabilities. In
+        scientific computing, it accelerates computations by
+        utilizing the parallel processing power of GPUs. In
+        machine learning, OpenCL is employed to speed up
+        both the training and inference processes through
+        GPU acceleration. It is also used in computer
+        graphics and visualization, where it facilitates
+        complex computations required for rendering and
+        visualization tasks. One of the key advantages of
+        OpenCL is its portability, as programs can run on a
+        wide range of hardware from different vendors.
+        Additionally, its flexibility allows support for
+        both task and data parallelism, making it adaptable
+        to various use cases. As an open standard, OpenCL is
+        not tied to any specific hardware vendor, further
+        enhancing its versatility. However, OpenCL also
+        presents some challenges. Performance can vary
+        significantly across different hardware
+        implementations, and its lower-level API, compared
+        to some alternatives, can increase development time
+        and complexity.
+      </p>
+      <p>
+        In summary, OpenCL provides a robust framework for
+        GPU programming, offering cross-platform
+        compatibility, support for heterogeneous computing,
+        and a flexible parallel programming model. Its
+        ability to handle both task and data parallelism
+        makes it a versatile tool for developers looking to
+        optimize performance across various hardware
+        platforms.&nbsp;
+      </p>
+      <h3>Parallel Programming Patterns</h3>
+      <p>
+        Parallel programming patterns are essential
+        techniques used in GPU computing to effectively
+        leverage the parallel processing capabilities of
+        GPUs. These patterns provide structured approaches
+        to solving common problems in parallel computing,
+        enabling developers to optimize performance and
+        efficiency in various applications. The following
+        provides descriptions of various patterns in
+        parallel programming along with applications and
+        advantages of each.
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Data Parallelism:&nbsp;
+          </label>
+          <div class="accordion-content">
+            <p>
+              Description: Involves performing the same
+              operation on different pieces of distributed
+              data simultaneously.&nbsp;
+            </p>
+            <ul>
+              <li>
+                Applications: Highly effective for tasks
+                requiring repetitive operations on large
+                datasets, such as matrix multiplications,
+                image processing, and neural network
+                training.&nbsp;
+              </li>
+              <li>
+                Advantage: Efficiently utilizes a GPU’s
+                massive parallel processing
+                capabilities.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Task Parallelism:&nbsp;
+          </label>
+          <div class="accordion-content">
+            <p>
+              Description: Focuses on dividing work into
+              smaller, independent tasks that can be
+              processed concurrently.&nbsp;
+            </p>
+            <ul>
+              <li>
+                Applications: Optimal for scenarios in which
+                tasks can run independently, such as
+                rendering different frames in parallel
+                within a video game or processing various
+                inputs in a multi-threaded server
+                application.&nbsp;
+              </li>
+              <li>
+                Advantage: Allows for efficient handling of
+                diverse, independent workloads.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Hybrid Parallelism:&nbsp;
+          </label>
+          <div class="accordion-content">
+            <p>
+              Description: Combines data and task
+              parallelism to efficiently utilize GPU
+              resources.&nbsp;
+            </p>
+            <ul>
+              <li>
+                Applications: Particularly useful in
+                heterogeneous computing environments in
+                which multiple task types and data
+                processing needs arise simultaneously.&nbsp;
+              </li>
+              <li>
+                Advantage: Provides flexibility in handling
+                complex applications with varied parallelism
+                requirements.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            MapReduce:&nbsp;
+          </label>
+          <div class="accordion-content">
+            <p>
+              Description: Involves mapping a function over
+              a dataset and then reducing the results to a
+              single output.&nbsp;
+            </p>
+            <ul>
+              <li>
+                Applications: Commonly used in data analysis
+                and processing tasks in which large datasets
+                need to be processed and aggregated.&nbsp;
+              </li>
+              <li>
+                Advantage: Effective for parallel processing
+                of large-scale data analytics tasks.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Scan (prefix sum):&nbsp;
+          </label>
+          <div class="accordion-content">
+            <p>
+              Description: Computes all- prefix- sums of an
+              array, a fundamental building block for many
+              parallel algorithms.&nbsp;
+            </p>
+            <ul>
+              <li>
+                Applications: Useful in sorting, lexical
+                analysis, stream compaction, and building
+                data structures like histograms and
+                trees.&nbsp;
+              </li>
+              <li>
+                Advantage: Efficiently implemented on GPUs
+                using frameworks like CUDA.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo6" />
+          <label
+            class="accordion-title"
+            for="lo6">
+            Pipeline:
+          </label>
+          <div class="accordion-content">
+            <p>
+              Description: Divides a task into a series of
+              stages. Each stage can be processed in
+              parallel.&nbsp;
+            </p>
+            <ul>
+              <li>
+                Applications: Commonly used in image
+                processing and video encoding, in which each
+                frame or image can be processed in
+                stages.&nbsp;
+              </li>
+              <li>
+                Advantage: Enhances throughput in sequential
+                processes by enabling parallel execution of
+                different stages.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo7" />
+          <label
+            class="accordion-title"
+            for="lo7">
+            Fork-Join:&nbsp;
+          </label>
+          <div class="accordion-content">
+            <p>
+              Description: Splits a task into multiple
+              parallel subtasks (fork), processes them
+              concurrently, and then combines the results
+              (join).&nbsp;
+            </p>
+            <ul>
+              <li>
+                Applications: Suitable for recursive
+                algorithms and tasks that can be naturally
+                divided into independent subtasks.&nbsp;
+              </li>
+              <li>
+                Advantage: Effective for problems that can
+                be recursively decomposed into smaller,
+                parallel tasks.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--CAJA OSCURA-->
+      <div class="highlight-box">
+        <h3>Summary: Implementation and Synthesis</h3>
+        <p>
+          When implementing parallel programming on GPUs,
+          several considerations are essential for achieving
+          optimal performance. First, memory access patterns
+          play a critical role, as optimizing memory
+          access—such as ensuring coalesced memory access
+          and efficiently utilizing shared memory—can
+          significantly improve performance. Load balancing
+          is another key factor, ensuring an even
+          distribution of work across GPU cores to maximize
+          utilization and performance. Proper
+          synchronization between threads and work-groups is
+          also crucial to ensure correct results and avoid
+          race conditions. Additionally, scalability must be
+          considered, with patterns designed to scale
+          effectively as data sizes and available GPU
+          resources increase.
+        </p>
+        <p>
+          These parallel programming patterns are
+          fundamental to maximizing the performance and
+          efficiency of GPU computing. By understanding and
+          applying these patterns, developers can leverage
+          the power of GPUs for various applications,
+          including scientific computing, machine learning,
+          and computer graphics. Each pattern offers
+          distinct advantages suited to specific problems,
+          making them versatile tools in parallel computing.
+          The choice of pattern depends on the problem's
+          nature, the characteristics of the data, and the
+          application’s requirements. Effective use of these
+          patterns, combined with an understanding of GPU
+          architecture and memory hierarchy, can lead to
+          substantial performance gains in GPU-accelerated
+          applications.
+        </p>
+      </div>
+
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question: TRUE or FALSE?
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      >CUDA is a parallel computing platform
+                      and application programming interface
+                      (API) model created by AMD.</span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer: FALSE
+                    </h3>
+                    <p style="color: #041e42">
+                      <span
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >Explanation: CUDA is a parallel
+                          computing platform and&nbsp;</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >application programming interface
+                          (</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >API</span
+                        ></span
+                      ><span data-ccp-parastyle="Body Text"
+                        >)</span
+                      ><span
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text">
+                          model created by NVIDIA, designed
+                          to enable developers to use a
+                          CUDA-enabled </span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >graphics processing unit (</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >GPU</span
+                        ></span
+                      ><span data-ccp-parastyle="Body Text"
+                        >)</span
+                      ><span data-ccp-parastyle="Body Text">
+                        for general</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >-</span
+                      ><span data-ccp-parastyle="Body Text">
+                      </span
+                      ><span data-ccp-parastyle="Body Text"
+                        >purpose processing.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
