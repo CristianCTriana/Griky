@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        Memory Hierarchy and Parallelism
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Memory-Level Parallelism</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Memory-Level Parallelism (MLP) is a crucial concept
+        in modern computer architecture that focuses on
+        optimizing memory operations by allowing multiple
+        memory accesses to occur simultaneously. This
+        parallelism is essential for improving system
+        performance, especially in data-intensive
+        applications. Let’s explore the key aspects of MLP!
+      </p>
+      <h3>Memory Access Patterns</h3>
+      <p>
+        Memory access patterns significantly influence the
+        efficiency of MLP and overall system performance.
+        These patterns can be broadly categorized into three
+        types:
+      </p>
+
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Sequential Access Patterns
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Involve accessing memory locations in a
+                linear sequence.
+              </li>
+              <li>
+                Highly cache-friendly and benefit from
+                prefetching mechanisms.
+              </li>
+              <li>
+                Maximize MLP by allowing multiple memory
+                requests to be issued and serviced
+                concurrently.
+              </li>
+              <li>
+                Enable efficient use of cache lines and
+                reduce cache misses.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Strided Access PatternS
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Involve accessing memory locations at
+                regular intervals.
+              </li>
+              <li>
+                Efficiency depends on the stride length.
+              </li>
+              <li>
+                Short strides can be cache-friendly and
+                benefit from prefetching.
+              </li>
+              <li>
+                Longer strides may lead to cache misses and
+                inefficient memory usage.
+              </li>
+            </ul>
+          </div>
+          <!--ACORDEON-->
+          <!--<div class="accordion">aqui acordeon item</div> -->
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="lo3" />
+            <label
+              class="accordion-title"
+              for="lo3">
+              Random Access Patterns
+            </label>
+            <div class="accordion-content">
+              <ul>
+                <li>
+                  Involve accessing memory locations in an
+                  unpredictable order.
+                </li>
+                <li>
+                  Can lead to high cache miss rates and
+                  increased latency due to lack of spatial
+                  locality.
+                </li>
+                <li>
+                  Typically result in low MLP due to
+                  frequent cache misses and inability to
+                  predict data access patterns.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        To optimize memory access patterns and enhance MLP,
+        several techniques can be employed. Loop interchange
+        and cache blocking are techniques rearrange loops to
+        improve data locality and reduce cache misses,
+        significantly enhancing MLP. Data layout
+        transformation involves organizing data in memory to
+        match the expected access pattern can improve cache
+        utilization and reduce memory access latency.
+      </p>
+      <h3>Prefetching Techniques</h3>
+      <p>
+        Prefetching is a critical technique in modern
+        computer architectures designed to mitigate the
+        latency associated with memory accesses. It involves
+        predicting future memory accesses and fetching the
+        required data into the cache before it is explicitly
+        requested by the processor. The two main types are
+        hardware and software prefetching.
+      </p>
+
+      <div class="dual-box-wrapper">
+        <div class="dual-box">
+          <strong>Hardware Prefetching</strong><br />
+          <ul>
+            <li>
+              Implemented directly in the processor’s
+              hardware.
+            </li>
+            <li>
+              Uses dedicated mechanisms to monitor data or
+              instruction access streams and predict future
+              accesses.
+            </li>
+            <li>
+              Common techniques include stream buffers and
+              strided prefetching.
+            </li>
+          </ul>
+        </div>
+        <div class="dual-box">
+          <strong>Software Prefetching</strong><br />
+          <ul>
+            <li>
+              Requires the compiler or programmer to insert
+              prefetch instructions into the code.
+            </li>
+            <li>
+              Particularly effective in loops with
+              predictable access patterns.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        Prefetching strategies can be further categorized as
+        follows:
+      </p>
+      <ul>
+        <p>
+          ◾ Data vs. Instruction Prefetching: Data
+          prefetching focuses on fetching data before it’s
+          it is needed, while whereas instruction
+          prefetching fetches instructions ahead of
+          execution.
+        </p>
+        <p>
+          ◾ Collaborative Prefetching: Combines multiple
+          prefetching schemes to improve coverage and
+          accuracy.
+        </p>
+      </ul>
+
+      <p>
+        Evaluation metrics for prefetching include coverage,
+        accuracy. and timeliness. These metrics measure the
+        fraction of cache misses eliminated due to
+        prefetching, the fraction of useful prefetches, as
+        well as how early a block is prefetched relative to
+        whenit is actually accessed. Challenges in
+        prefetching include accurately predicting access
+        patterns, balancing overhead, and managing the
+        trade-offs between hardware and software
+        prefetching.
+      </p>
+
+      <h3>Memory Controllers</h3>
+      <p>
+        Memory controllers play a crucial role in
+        facilitating MLP by managing the flow of data
+        between the processor and memory. Their key
+        functions include the following:
+      </p>
+      <ul>
+        <p>
+          ➡️<strong
+            >Data Flow Management: Overseeing read and
+            write</strong
+          ><br />Overseeing read and write operations to
+          ensure efficient and accurate data transfer.
+        </p>
+        <p>
+          ➡️<strong>Handling Multiple Memory Types:</strong
+          ><br />Connecting various types of memory (e.g.,
+          DRAM, flash) to the processor bus, supporting
+          diverse memory access patterns.
+        </p>
+        <p>
+          ➡️<strong
+            >Protocol and Interface Management:</strong
+          ><br />Providing necessary interfaces and
+          protocols to maximize transfer speed, data
+          integrity, and information retention.
+        </p>
+        <p>
+          ➡️<strong
+            >Power and Performance Optimization:</strong
+          ><br />Incorporating features to optimize power
+          consumption and performance, such as power
+          management modules.
+        </p>
+      </ul>
+      <p>
+        In addition, there are various designs to consider
+        for memory controllers. One option is to consider
+        supporting complex memory hierarchies with diverse
+        types of volatile and non-volatile memories. Another
+        option is to implement features like command queuing
+        and partitioning to support parallel operations.
+        Additional considerations includeerror control logic
+        to ensure data integrity and reliability and
+        adaptive and self-optimizing features using machine
+        learning techniques to dynamically optimize
+        operation based on workload characteristics.
+      </p>
+      <h3>Bank-Level Parallelism</h3>
+      <p>
+        Bank-Level Parallelism (BLP) refers to the ability
+        of a memory system to handle multiple memory
+        requests simultaneously across different banks of
+        memory. This is crucial for improving the throughput
+        and efficiency of memory systems, particularly in
+        DRAM architectures. Key aspects of BLP include the
+        following:
+      </p>
+
+      <p class="standard-text">
+        <img
+          src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+          alt="cintillo tabs"
+          style="max-width: 100%" />
+      </p>
+
+      <div class="tabs-container">
+        <input
+          type="radio"
+          name="group-name"
+          id="tab1"
+          checked="checked" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab2" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab3" />
+
+        <div class="tabs">
+          <label for="tab1">Importance</label>
+          <label for="tab2"
+            >Implementation Strategies
+          </label>
+          <label for="tab3"
+            >Challenges and Considerations
+          </label>
+        </div>
+
+        <div class="content content-1">
+          <ul>
+            <li>
+              BLP is a key factor in achieving high
+              performance in DRAM systems.
+            </li>
+            <li>
+              When all DRAM banks are busy servicing useful
+              memory requests, the system can achieve higher
+              throughput and reduced latency.
+            </li>
+            <li>
+              BLP significantly impacts the overall
+              performance of computing systems, especially
+              in multi-core and many-core environments.
+            </li>
+          </ul>
+        </div>
+
+        <div class="content content-2">
+          <ul>
+            <li>
+              Hardware-Driven Scheduling: Uses a
+              non-software-intervening mechanism to classify
+              memory requests at the memory controller
+              layer, guiding scheduling to maximize row
+              buffer locality and improve system throughput.
+            </li>
+            <li>
+              Cost-Effective Mechanisms: Techniques like
+              BAPI and BPMRI aim to maximize DRAM BLP by
+              complementing existing DRAM scheduling
+              techniques.
+            </li>
+            <li>
+              Bank Remapping: Involves remapping memory
+              accesses to ensure they are distributed across
+              different banks, maintaining high parallelism
+              and reducing contention.
+            </li>
+            <li>
+              Persistent Memory Controllers: In systems with
+              persistent memory, specialized controllers can
+              enhance BLP by managing memory requests more
+              efficiently.
+            </li>
+          </ul>
+        </div>
+
+        <div class="content content-3">
+          <ul>
+            <li>
+              The effectiveness of BLP depends heavily on
+              memory access patterns of applications.
+            </li>
+            <li>
+              Maximizing row buffer locality is crucial for
+              achieving high BLP.
+            </li>
+            <li>
+              The configuration of the memory system, such
+              as the number of banks and their organization,
+              plays a critical role in determining the
+              achievable level of BLP.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      >&nbsp;_________ is a technique used
+                      to improve memory access times by
+                      loading data into the cache before it
+                      is actually needed by the
+                      processor.</span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer:&nbsp;
+                      <span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >Prefetching</span
+                        ></span
+                      >
+                    </h3>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation: Prefetching is a
+                        technique used to improve memory
+                        access times by predicting which
+                        data will be needed next and loading
+                        it into the cache before the
+                        processor requests it, thereby
+                        reducing wait times and improving
+                        performance.&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

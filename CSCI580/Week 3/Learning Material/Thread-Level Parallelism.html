@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+
+      .highlight-box p {
+        color: white;
+      }
+
+      .highlight-box h3 {
+        color: #05c3de;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        Memory Hierarchy and Parallelism
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Thread-Level Parallelism</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Thread-Level Parallelism (TLP) is a fundamental
+        concept in modern computer architecture that focuses
+        on executing multiple threads concurrently to
+        improve system performance and resource utilization.
+        Multi-threading architectures have evolved
+        significantly to improve processor utilization and
+        performance.
+      </p>
+
+      H5P
+
+      <h3>Synchronization Mechanisms</h3>
+      <p>
+        Synchronization mechanisms are crucial in parallel
+        computing systems to manage concurrent access to
+        shared resources and ensure correct execution of
+        processes or threads. Key synchronization mechanisms
+        include the following:
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Semaphores
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Used to control access to shared resources
+                by multiple processes.
+              </li>
+              <li>
+                Two types: binary semaphores (mutexes) and
+                counting semaphores.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Locks
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Ensure that only one thread can access a
+                critical section of code at a time.
+              </li>
+              <li>
+                Prevent race conditions by ensuring thread
+                completion before another thread accesses
+                shared data.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Monitors
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                High-level synchronization constructs that
+                encapsulate shared variables and procedures.
+              </li>
+              <li>
+                Ensure that only one process can execute a
+                procedure at a time.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Barriers
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Used to ensure multiple threads or processes
+                reach a certain point before proceeding.
+              </li>
+              <li>
+                Particularly useful in parallel computing
+                for synchronizing tasks at certain stages.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Atomic Operations
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Indivisible operations that complete without
+                interference from other threads.
+              </li>
+              <li>
+                Used to implement synchronization primitives
+                like locks and semaphores.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Challenges in synchronization include avoiding
+        deadlocks, managing performance overhead, and
+        preventing race conditions.
+      </p>
+
+      <h3>Memory Consistency Models</h3>
+      <p>
+        Memory Consistency Models (MCMs) define the behavior
+        of memory operations in multi-threaded environments,
+        specifying the order in which memory operations
+        appear to execute to the programmer. They are
+        important for a variety of reasons. First, MCMs
+        provide rules and guarantees for managing the
+        synchronization of shared data in concurrent
+        programming. They also ensure that the results of
+        memory operations are predictable, which is crucial
+        for debugging and verifying multi-threaded programs.
+        Different MCMs offer varying levels of strictness in
+        memory operation ordering, allowing for performance
+        improvements in weaker models. Lastly, MCMs are
+        important as they influence the design of both
+        hardware (e.g., cache coherence protocols) and
+        software (e.g., compiler optimizations).
+      </p>
+
+      <!--CAJA OSCURA-->
+      <div class="highlight-box">
+        <h3>Key MCMs:</h3>
+        <ul>
+          <p>
+            ▶️ Sequential Consistency: Ensures that all
+            operations appear to execute in some sequential
+            order, with each processor’s operations
+            appearing in program order.
+          </p>
+          <p>
+            ▶️ Total Store Ordering (TSO): Used by x86
+            architectures, ensuring all processors observe
+            memory writes in the same order.
+          </p>
+          <p>
+            ▶️ Weak Ordering (WO): Often used in ARM
+            architectures, allowing more freedom in
+            reordering instructions for potential
+            performance improvements.
+          </p>
+          <p>
+            ▶️ Acquire-Release Consistency: Provides a
+            middle ground by ensuring certain
+            synchronization operations are observed in a
+            consistent order.
+          </p>
+        </ul>
+      </div>
+
+      <h3>Thread Scheduling Strategies</h3>
+      <p>
+        Thread scheduling strategies determine how threads
+        are allocated CPU time and resources, significantly
+        impacting system performance. Several of these
+        strategies are explained below:
+      </p>
+
+      <details
+        style="
+          background: #041e42;
+          padding: 10px;
+          border: 1px solid #ddd;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          color: white;
+        ">
+        <summary
+          style="
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            font-size: 19px;
+            padding: 10px;
+          ">
+          1. Preemptive Scheduling
+        </summary>
+        <p style="color: white">
+          <strong>Round Robin:</strong> Assigns fixed time
+          slices to threads cyclically, ensuring fair CPU
+          time distribution.
+        </p>
+        <p style="color: white">
+          <strong>Priority Scheduling:</strong> Allocates
+          CPU to the highest-priority thread, ensuring
+          critical tasks are prioritized.
+        </p>
+      </details>
+
+      <details
+        style="
+          background: #041e42;
+          padding: 10px;
+          border: 1px solid #ddd;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          color: white;
+        ">
+        <summary
+          style="
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            font-size: 19px;
+            padding: 10px;
+          ">
+          2. Non-Preemptive Scheduling
+        </summary>
+        <p style="color: white">
+          <strong>First Come, First Served (FCFS):</strong>
+          Executes threads in order of arrival, potentially
+          leading to inefficiencies, with long threads
+          blocking shorter ones.
+        </p>
+        <p style="color: white">
+          <strong>Shortest Job Next (SJN):</strong>
+          Prioritizes threads with the shortest estimated
+          execution time, reducing average wait times.
+        </p>
+      </details>
+
+      <details
+        style="
+          background: #041e42;
+          padding: 10px;
+          border: 1px solid #ddd;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          color: white;
+        ">
+        <summary
+          style="
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            font-size: 19px;
+            padding: 10px;
+          ">
+          3. Rate Monotonic Analysis (RMA)
+        </summary>
+        <ul>
+          <li>
+            Assigns thread priorities based on execution
+            period.
+          </li>
+          <li>Useful in real-time systems.</li>
+        </ul>
+      </details>
+
+      <p>
+        These strategies can impact system performance in
+        various ways. They can improve overall system
+        performance by ensuring efficient CPU resource
+        utilization. They can also enhance resource
+        utilization, which is particularly important in
+        environments with limited resources. However, such
+        strategies can simultaneously create challenges in
+        complexity, resource contention, and scalability.
+      </p>
+      <p>
+        Understanding and optimizing both MLP and TLP are
+        crucial for designing efficient and high-performance
+        computing systems. By leveraging advanced techniques
+        in memory access, prefetching, multi-threading
+        architectures, and thread scheduling, modern
+        processors can achieve significant performance
+        improvements and better resource utilization.
+      </p>
+
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      >Can you identify the mechanisms used
+                      to ensure that multiple threads can
+                      safely access shared resources without
+                      causing data corruption?</span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer:&nbsp; S<span
+                        data-ccp-parastyle="Body Text"
+                        >ynchronization </span
+                      ><span data-ccp-parastyle="Body Text"
+                        >Mechanisms</span
+                      >&nbsp;
+                    </h3>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation:
+                        <span
+                          style="list-style-type: disc"
+                          xml:lang="EN-US"
+                          data-contrast="auto"
+                          >Synchronization mechanisms, such
+                          as locks, semaphores, and
+                          monitors, are used to ensure that
+                          multiple threads can safely access
+                          shared resources without causing
+                          data corruption or
+                          inconsistencies, enabling correct
+                          and efficient parallel
+                          execution.</span
+                        >&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

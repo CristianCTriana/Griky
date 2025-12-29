@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
+    />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css"
+    />
+    <style>
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h3
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Week 2</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Pipelining and Performance
+        </span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Clock Cycles per Instruction</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        Clock cycles per instruction (CPI) is a fundamental metric in computer
+        architecture that measures the average number of clock cycles required
+        to execute an instruction in a program. It provides crucial insights
+        into the efficiency of a CPU’s instruction execution.&nbsp;
+      </p>
+      <p>
+        CPI is calculated as the ratio of the total number of CPU cycles to the
+        total number of instructions executed. The basic formula for calculating
+        CPI is the following:&nbsp;
+      </p>
+      <p
+        paraeid="{e740048d-427d-450a-ae7b-2bd5b5459a00}{130}"
+        paraid="2130177974"
+        style="text-align: center"
+      >
+        <math
+          title=""
+          xmlns="http://www.w3.org/1998/Math/MathML"
+          display="inline"
+          ><semantics
+            ><mstyle
+              ><mstyle mathsize="18px"
+                ><mi>CPI</mi><mo>&nbsp;</mo><mo>=</mo><mo>&nbsp;</mo
+                ><mfrac
+                  ><mrow
+                    ><mi>Total</mi><mo>&nbsp;</mo><mi>CPU</mi><mo>&nbsp;</mo
+                    ><mi>Cycles</mi></mrow
+                  ><mrow
+                    ><mi>Total</mi><mo>&nbsp;</mo><mi>Instructions</mi
+                    ><mo>&nbsp;</mo><mi>Executed</mi></mrow
+                  ></mfrac
+                ></mstyle
+              ></mstyle
+            ><annotation encoding="wiris"
+              >{"version":"1.1","math":"&lt;math
+              xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mstyle
+              mathsize="18px"&gt;&lt;mi&gt;CPI&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;Total&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;CPU&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Cycles&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;Total&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Instructions&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Executed&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/mstyle&gt;&lt;/math&gt;"}</annotation
+            ></semantics
+          ></math
+        >
+      </p>
+      <p>
+        In real-world applications,&nbsp;different types of instructions may
+        take different numbers of cycles, and a weighted average formula can
+        account for this variation. CPI is important for the following reasons:
+      </p>
+      <p>
+        ✔️ A lower CPI indicates a more efficient CPU, as fewer cycles are
+        needed to execute each instruction.&nbsp;
+      </p>
+      <p>
+        ✔️ Higher CPI suggests potential inefficiencies in the CPU or the
+        program being executed.&nbsp;
+      </p>
+      <p>
+        ✔️ CPI is crucial for assessing CPU efficiency and performance, helping
+        identify and optimize inefficiencies in both hardware and
+        software.&nbsp;
+      </p>
+      <h3>Throughput and Latency</h3>
+      <p>
+        Throughput and latency are two critical performance metrics that provide
+        different perspectives on system performance.&nbsp;
+      </p>
+      <div class="highlight-box">
+        <h3>Throughput</h3>
+        <p>
+          Throughput refers to the total amount of work done&nbsp;in a given
+          time. It measures the number of tasks or instructions that a system
+          can complete in a fixed period. Throughput is crucial for
+          understanding the overall processing speed of a system. It is
+          particularly important for data center managers who need to maximize
+          the amount of work done in a given time. Throughput is
+          usually&nbsp;measured in terms of the number of instructions executed
+          per unit time. Factors that could potentially affect throughput
+          include pipeline length, clock frequency, and the efficiency of
+          instruction execution.&nbsp;
+        </p>
+      </div>
+      <div class="highlight-box">
+        <h3>Latency</h3>
+        <p>
+          Latency, also known as execution time, is the time taken to complete a
+          single task or instruction. It measures the delay or the time it takes
+          for an instruction to pass through all stages of execution. Latency is
+          critical for individual users concerned with how quickly a task can be
+          completed. Lower latency indicates better performance, as tasks are
+          completed more quickly. It is measured as the time from start to
+          completion of a task and influenced by factors such as pipeline
+          length, clock cycle time, and instruction dependencies.&nbsp;
+        </p>
+      </div>
+      <p>These metrics have distinct relationships with one another:</p>
+      <ul>
+        <p>
+          ➡️ CPI and Latency: CPI directly affects latency, as a higher CPI
+          means more cycles are needed per instruction, increasing the time to
+          complete tasks.&nbsp;
+        </p>
+        <p>
+          ➡️ Throughput and Latency: While throughput measures the volume of
+          work done, latency measures the time taken for individual tasks.
+          Systems often aim to balance these metrics to achieve optimal
+          performance.&nbsp;
+        </p>
+      </ul>
+      <h3>Pipeline Efficiency Measures&nbsp;</h3>
+      <p>
+        Pipeline efficiency measures are crucial for assessing and optimizing
+        the performance of pipelined processors. Key measures include the
+        following:&nbsp;
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600"
+        />
+      </p>
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="acc1" />
+          <label class="accordion-title" for="acc1">Pipeline Velocity</label>
+          <div class="accordion-content">
+            <p>
+              This measure indicates how quickly data or instructions move
+              through the pipeline. In the context of sales pipelines, this
+              helps illustrate how much revenue is moving through the pipeline
+              on a daily basis and is calculated using the following formula:
+            </p>
+            <p style="text-align: center">
+              <math
+                title=""
+                xmlns="http://www.w3.org/1998/Math/MathML"
+                display="inline"
+                ><semantics
+                  ><mstyle
+                    ><mstyle mathsize="16px"
+                      ><mi>Pipeline</mi><mo>&nbsp;</mo><mi>Velocity</mi
+                      ><mo>&nbsp;</mo><mo>=</mo><mo>&nbsp;</mo
+                      ><mfrac
+                        ><mrow
+                          ><mi>Number</mi><mo>&nbsp;</mo><mi>of</mi
+                          ><mo>&nbsp;</mo><mi>Opportunities</mi><mo>&nbsp;</mo
+                          ><mi mathvariant="normal">x</mi><mo>&nbsp;</mo
+                          ><mi>Average</mi><mo>&nbsp;</mo><mi>Deal</mi
+                          ><mo>&nbsp;</mo><mi>Size</mi><mo>&nbsp;</mo
+                          ><mi mathvariant="normal">x</mi><mo>&nbsp;</mo
+                          ><mi>Win</mi><mo>&nbsp;</mo><mi>Rate</mi></mrow
+                        ><mrow
+                          ><mi>Sales</mi><mo>&nbsp;</mo><mi>Cycle</mi
+                          ><mo>&nbsp;</mo><mi>Length</mi></mrow
+                        ></mfrac
+                      ></mstyle
+                    ></mstyle
+                  ><annotation encoding="wiris"
+                    >{"version":"1.1","math":"&lt;math
+                    xmlns="http://www.w3.org/1998/Math/MathML"&gt;&lt;mstyle
+                    mathsize="16px"&gt;&lt;mi&gt;Pipeline&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Velocity&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;Number&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;of&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Opportunities&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi
+                    mathvariant="normal"&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Average&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Deal&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Size&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi
+                    mathvariant="normal"&gt;x&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Win&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Rate&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;Sales&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Cycle&lt;/mi&gt;&lt;mo&gt;&amp;#xA0;&lt;/mo&gt;&lt;mi&gt;Length&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/mstyle&gt;&lt;/math&gt;"}</annotation
+                  ></semantics
+                ></math
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc2" />
+          <label class="accordion-title" for="acc2"
+            >Pipeline Coverage Ratio</label
+          >
+          <div class="accordion-content">
+            <p>
+              This ratio compares the value of the current pipeline to sales
+              quotas or goals for a certain period. It helps illustrate whether
+              the pipeline is sufficient to meet targets. This metric is
+              calculated by dividing the total value of the pipeline by the
+              sales target.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc3" />
+          <label class="accordion-title" for="acc3"
+            >Instruction Throughput</label
+          >
+          <div class="accordion-content">
+            <p>
+              In the context of processor pipelines, this measures the number of
+              instructions completed per unit time. Higher throughput indicates
+              better pipeline efficiency.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="acc4" />
+          <label class="accordion-title" for="acc4">Pipeline Utilization</label>
+          <div class="accordion-content">
+            <p>
+              his metric assesses how effectively the pipeline stages are being
+              used. Ideally, all stages should be active most of the time to
+              maximize efficiency.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="acc5" />
+          <label class="accordion-title" for="acc5"
+            >Cycles Per Instruction (CPI)</label
+          >
+          <div class="accordion-content">
+            <p>
+              As discussed earlier, CPI is a crucial measure of pipeline
+              efficiency. A lower CPI generally indicates a more efficient
+              pipeline.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3 style="text-align: center">
+          Performance Bottleneck Identification
+        </h3>
+        <p>
+          1️⃣ Identifying performance bottlenecks is crucial for optimizing
+          pipelined processors. Several methods can be employed to identify,
+          avoid, or solve these occurrences.
+        </p>
+        <p>
+          2️⃣ Monitoring Resource Utilization: This involves keeping track of
+          CPU, memory, disk I/O, and network usage during pipeline execution.
+          Tools that provide insights into these metrics can help pinpoint where
+          bottlenecks might be occurring.&nbsp;
+        </p>
+        <p>
+          3️⃣&nbsp; Profiling Tools: These tools monitor CPU, memory, and network
+          usage, providing detailed insights into which parts of the pipeline
+          are causing delays. Profiling can help isolate the stages of the
+          pipeline that are underperforming.&nbsp;
+        </p>
+        <p>
+          4️⃣ Pipeline Stages Analysis: By analyzing the performance of each
+          stage, it’s possible to identify which stage is causing a bottleneck.
+          This can be done by measuring the time taken for each stage and
+          comparing it to expected performance metrics.&nbsp;
+        </p>
+        <p>
+          5️⃣&nbsp; Top-down Analysis: This methodology involves performing a
+          top-down analysis to detect and identify any performance bottlenecks
+          in the CPU. This approach provides direction for further analysis at
+          more granular levels, helping to pinpoint specific issues within the
+          pipeline.&nbsp;
+        </p>
+        <p>
+          6️⃣&nbsp; Testing for Specific specific Bottlenecks: Specific tests can
+          be conducted to determine if a particular stage is the bottleneck. For
+          example, in a graphics pipeline, increasing the resolution can help
+          determine if the bottleneck is in fragment processing.&nbsp;
+        </p>
+        <p>
+          7️⃣&nbsp; Elimination Process: Sometimes, bottlenecks are identified
+          through a process of elimination. By systematically testing and ruling
+          out potential bottlenecks, it’s possible to narrow down the source of
+          the issue.&nbsp;
+        </p>
+        <p>
+          8️⃣&nbsp; Performance Metrics Analysis: Utilizing metrics such as CPI,
+          throughput, and latency can help identify inefficiencies in the
+          pipeline. These metrics provide a quantitative basis for assessing
+          pipeline performance and identifying stages that may be
+          underperforming.&nbsp;
+        </p>
+      </div>
+      <div class="card card-standard">
+        <div class="card-body">
+          <div class="card-text" style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3 class="card-text" style="color: #041e42">Question:</h3>
+                  <div class="card-text"></div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        data-ccp-parastyle="Body Text"
+                        style="color: #041e42"
+                        >The formula for calculating CPU time </span
+                      ><span data-ccp-parastyle="Body Text">is:</span
+                      ><span data-ccp-parastyle="Body Text"> </span
+                    ></span>
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        data-ccp-parastyle="Body Text"
+                        style="color: #041e42"
+                        >CPU Time = Instruction Count × _______ × Clock Cycle
+                        Time.</span
+                      >
+                    </span>
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span data-ccp-parastyle="Body Text"></span></span
+                    ></span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false"
+                  >
+                    Show Answer
+                  </button>
+                  <div class="collapse" tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer: &nbsp;Cycles per Instruction (CPI)
+                    </h3>
+                    <p>
+                      <span
+                        data-ccp-parastyle="Body Text"
+                        style="color: #041e42"
+                        >Explanation:&nbsp;<span
+                          style="list-style-type: disc"
+                          xml:lang="EN-US"
+                          data-contrast="auto"
+                          >The CPU performance can be evaluated using the
+                          formula: CPU Time = Instruction Count × Cycles per
+                          Instruction (CPI) × Clock Cycle Time. This equation
+                          highlights the key factors affecting CPU
+                          performance.</span
+                        >&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="logo"
+          width="110"
+          style="float: right"
+        />
+      </div>
+    </div>
+    <p>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </p>
+  </body>
+</html>

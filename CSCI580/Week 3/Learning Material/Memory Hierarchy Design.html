@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .highlight-box {
+        color: white;
+      }
+
+      .highlight-box h3 {
+        color: var(--color-accent);
+      }
+
+      .highlight-box strong {
+        color: var(--color-accent);
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        Memory Hierarchy and Parallelism
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Memory System Organization
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Memory hierarchy in modern computer systems is a
+        structured arrangement of various types of memory,
+        designed to optimize the trade-offs among speed,
+        capacity, and cost. This hierarchical organization
+        is crucial for enhancing system performance by
+        minimizing data access time and efficiently managing
+        storage resources.&nbsp;
+      </p>
+      <p>
+        The memory hierarchy is typically organized into
+        four levels, each with distinct
+        characteristics:&nbsp;
+      </p>
+
+      <!--CARDS-->
+      <div class="def-cards">
+        <div class="def-cards-grid">
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <h3>Registers</h3>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  Located within the CPU, registers are the
+                  fastest and smallest memory units, used
+                  for immediate data access by the
+                  processor.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <h3>Cache Memory</h3>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  Acts as a buffer between the CPU and main
+                  memory, storing frequently accessed data
+                  to reduce access time. Cache memory is
+                  divided into multiple levels (L1, L2, L3),
+                  with L1 being the fastest and closest to
+                  the CPU.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <h3>Main Memory (RAM)</h3>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  Provides larger storage capacity than
+                  cache but is slower. It stores data that
+                  the CPU is actively working on.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <h3>Secondary Storage</h3>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  Includes hard drives (HDDs) and
+                  solid-state drives (SSDs), offering
+                  massive storage capacity but slower access
+                  speeds compared to RAM.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Cache Architecture and Design&nbsp;</h3>
+      <p>
+        Cache architecture is a critical component of the
+        memory hierarchy, designed to bridge the speed gap
+        between the processor and main memory. Key aspects
+        of cache architecture and design include the
+        following:&nbsp;
+      </p>
+
+      <p class="standard-text">
+        <img
+          src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+          alt="Cintillo_Tabs"
+          title="Cintillo_Tabs"
+          data-d2l-editor-default-img-style="true"
+          style="max-width: 100%" />
+      </p>
+
+      <div class="tabs-container">
+        <input
+          type="radio"
+          name="tabs-hr"
+          id="tab1"
+          checked="checked" />
+        <input
+          type="radio"
+          name="tabs-hr"
+          id="tab2" />
+        <input
+          type="radio"
+          name="tabs-hr"
+          id="tab3" />
+        <div class="tabs">
+          <label for="tab1"> Cache Levels </label>
+
+          <label for="tab2">
+            Cache Mapping Techniques
+          </label>
+
+          <label for="tab3"> Design Considerations </label>
+        </div>
+
+        <div class="content content-1">
+          <p class="standard-text">Level 1 (L1) Cache:</p>
+          <ul>
+            <li>
+              The primary cache, located on the processor
+              chip.
+            </li>
+            <li>Extremely fast but small in size.&nbsp;</li>
+          </ul>
+          <p>Level 2 (L2) Cache:</p>
+          <ul>
+            <li>
+              Often larger than L1, and also located on the
+              processor chip
+            </li>
+            <li>
+              Serves as an intermediary between L1 and main
+              memory.&nbsp;
+            </li>
+          </ul>
+          <p>Level 3 (L3) Cache:</p>
+          <ul>
+            <li>Larger and slower than L1 and L2.</li>
+            <li>
+              Shared among multiple cores in a multi-core
+              processor.&nbsp;
+            </li>
+          </ul>
+        </div>
+
+        <div class="content content-2">
+          <ol>
+            <li>
+              Direct mapping: Each block of main memory maps
+              to exactly one cache line. Simple but can lead
+              to a high level of conflict misses.&nbsp;
+            </li>
+            <li>
+              Fully associative mapping: Any block of main
+              memory can be stored in any cache line.
+              Reduces conflict misses but requires more
+              complex hardware.&nbsp;
+            </li>
+            <li>
+              Set-associative mapping: A compromise between
+              direct and fully associative mapping. Cache
+              lines are grouped into sets, and each block of
+              main memory maps to any line within a specific
+              set.&nbsp;
+            </li>
+          </ol>
+        </div>
+
+        <div class="content content-3">
+          <ul>
+            <li>
+              Cache line size: Affects the cache’s ability
+              to exploit spatial locality. The most common
+              size is 64 bytes.&nbsp;
+            </li>
+            <li>
+              Replacement policies: In fully associative and
+              set-associative caches, policies like least
+              recently used (LRU) decide which cache line to
+              replace when new data is loaded.&nbsp;
+            </li>
+            <li>
+              Write policies: These policies include
+              write-through (data written to both cache and
+              main memory) and write-back (data written to
+              cache and updated in main memory later).&nbsp;
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Virtual Memory Systems</h3>
+      <p>
+        Virtual memory is a critical component of modern
+        operating systems, providing an abstraction that
+        allows systems to manage memory more efficiently and
+        effectively. It creates an illusion of a large,
+        continuous block of memory in applications, even if
+        the physical memory (RAM) is limited.&nbsp;
+      </p>
+
+      <!--CAJA OSCURA-->
+      <div class="highlight-box">
+        <h3>Key Aspects of Virtual Memory Systems</h3>
+        <p>
+          <strong>Implementation:&nbsp;</strong>
+        </p>
+        <ul>
+          <li>
+            Uses both hardware (Memory Management Unit
+            [MMU]) and software components.&nbsp;
+          </li>
+          <li>
+            Employs techniques like paging (dividing memory
+            into fixed-size blocks) and segmentation
+            (dividing memory into segments of varying
+            lengths).&nbsp;
+          </li>
+        </ul>
+        <p><strong>Benefits:&nbsp;</strong></p>
+        <ul>
+          <li>
+            Increases memory capacity by using disk space as
+            an extension of RAM.&nbsp;
+          </li>
+          <li>
+            Improves multitasking by allowing multiple
+            applications to run simultaneously.&nbsp;
+          </li>
+          <li>
+            Enhances security and stability through process
+            isolation.&nbsp;
+          </li>
+          <li>
+            Increases cost-effectiveness by reducing the
+            need for additional physical RAM.&nbsp;
+          </li>
+        </ul>
+        <p><strong>Challenges:&nbsp;</strong></p>
+        <ul>
+          <li>
+            Slower than physical memory due to the overhead
+            of managing data transfers between RAM and disk
+            storage.&nbsp;
+          </li>
+          <li>
+            Can lead to potential performance issues like
+            thrashing, where excessive paging activity
+            reduces system performance.&nbsp;
+          </li>
+        </ul>
+      </div>
+
+      <h3>Memory Performance Optimization&nbsp;</h3>
+      <p>
+        Optimizing memory performance is crucial for
+        enhancing overall system efficiency. Key techniques
+        include the following:&nbsp;
+      </p>
+
+      <!--ACORDEON-->
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Prefetching
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Anticipates data needs and loads it into the
+                cache before it is requested.&nbsp;
+              </li>
+              <li>
+                Can be hardware-based or
+                software-based.&nbsp;
+              </li>
+              <li>
+                Has been shown to reduce memory access delay
+                times by 45–63% in certain schemes.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Memory Interleaving:&nbsp;
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Spreads memory addresses evenly across
+                multiple memory modules.&nbsp;
+              </li>
+              <li>
+                Allows for parallel access to memory,
+                reducing bottlenecks and improving
+                throughput.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Efficient Cache Design
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Optimizes cache size, associativity, and
+                replacement policies.&nbsp;
+              </li>
+              <li>
+                Implements multi-level cache hierarchies to
+                balance speed and capacity.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Locality Optimization
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Structures code and data to maximize spatial
+                and temporal locality.&nbsp;
+              </li>
+              <li>
+                Techniques like loop tiling and data
+                alignment can improve cache
+                utilization.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Memory Bandwidth Optimization
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Uses techniques like burst-mode transfers
+                and wide memory buses.&nbsp;
+              </li>
+              <li>
+                Implements high-speed memory interfaces like
+                DDR4 or GDDR6.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_3/../Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:
+                  </h3>
+                  <div class="card-text"></div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        data-ccp-parastyle="Body Text"
+                        style="color: #041e42"
+                        >Which of the following is a primary
+                        function of cache memory in a
+                        computer system?
+                      </span></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >(</span
+                      ><span
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >A) To increase the total storage </span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >capacity</span
+                        ><span
+                          data-ccp-parastyle="Body Text">
+                        </span></span
+                    ></span>
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >(</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >B) To reduce the time needed to
+                        access data from the main memory
+                      </span></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >(</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >C) To store backup copies of data
+                      </span></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >(</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >D) To manage network traffic</span
+                      ><span
+                        data-ccp-props='{"335559738":180,"335559739":180}'
+                        >&nbsp;</span
+                      >
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer:&nbsp;&nbsp;
+                    </h3>
+                    <p style="color: #041e42">
+                      <span style="font-size: 19px"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >B) To reduce the time needed to
+                          access data from the main
+                          memory</span
+                        ></span
+                      >
+                    </p>
+                    <p style="color: #041e42">
+                      Cache memory is a small, high-speed
+                      storage area located close to the CPU
+                      that stores frequently accessed data
+                      and instructions. Its primary function
+                      is to reduce the time needed to access
+                      data from the main memory, thereby
+                      improving system performance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

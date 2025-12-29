@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        Memory Hierarchy and Parallelism
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Cache Coherence Protocols</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Cache coherence protocols are essential in
+        multi-processor systems to ensure that all
+        processors have a consistent view of memory. These
+        protocols manage inconsistencies that can arise when
+        multiple caches store copies of the same memory
+        location. Key aspects of cache coherence protocols
+        include the following:
+      </p>
+      <div class="dual-box-wrapper">
+        <div class="dual-box">
+          <strong>Types of Protocols:</strong><br />
+          <ul>
+            <li>
+              Directory-based protocols: Maintain a
+              directory to track the sharing status of each
+              memory block.
+            </li>
+            <li>
+              Snooping protocols: Each cache monitors the
+              bus to track the sharing status of blocks.
+            </li>
+          </ul>
+        </div>
+        <div class="dual-box">
+          <strong>Common Protocols:</strong><br />
+          <ul>
+            <li>
+              MSI protocol: Uses Modified, Shared, and
+              Invalid states.
+            </li>
+            <li>
+              MESI protocol: Adds an Exclusive state to MSI,
+              widely used due to its efficiency.
+            </li>
+            <li>
+              MOESI protocol: Extends MESI with an Owned
+              state for shared data management.
+            </li>
+          </ul>
+        </div>
+        <div class="dual-box">
+          <strong>Importance:</strong><br />
+          <ul>
+            <li>
+              Ensures data consistency across all
+              processors.;
+            </li>
+            <li>
+              Optimizes performance by reducing unnecessary
+              cache flushes and invalidations.
+            </li>
+            <li>
+              Enables scalability in multi-processor
+              systems.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Cache Replacement Policies</h3>
+      <p>
+        Cache replacement policies determine which data to
+        retain and which to discard when the cache is full.
+        These policies significantly impact cache
+        performance, influencing both the hit ratio and
+        latency of memory access. Common cache replacement
+        policies are listed below. It is worth noting that
+        the choice of replacement policy can significantly
+        affect cache performance, impacting hit ratio,
+        latency, and adaptability to different workloads.
+      </p>
+
+      <!-- SUMMARY -->
+
+      <div class="summary-box">
+        <ol style="color: #041e42">
+          <li>
+            Least Recently Used (LRU): Discards the least
+            recently used items first. Effective when
+            recently accessed data is likely to be accessed
+            again soon.
+          </li>
+          <li>
+            First In First Out (FIFO): Evicts the oldest
+            data in the cache, regardless of access
+            frequency.
+          </li>
+          <li>
+            Random Replacement (RR): Randomly selects a
+            cache line to evict. Simple, but may not provide
+            optimal performance.
+          </li>
+          <li>
+            Least Frequently Used (LFU): Evicts the least
+            frequently accessed data. Beneficial for
+            scenarios with stable access patterns.
+          </li>
+          <li>
+            Most Recently Used (MRU): Evicts the most
+            recently used items first. Advantageous for
+            specific access patterns, such as looping
+            sequential access.
+          </li>
+          <li>
+            Segmented LRU (SLRU): Divides the cache into
+            probationary and protected segments, offering a
+            balance between LRU and LFU
+          </li>
+        </ol>
+      </div>
+
+      <h3>Write Policies and Strategies</h3>
+      <p>
+        Write policies in cache memory systems determine how
+        data is written to the cache and subsequently to the
+        main memory. Each policy has its own set of
+        trade-offs, and the choice depends on specific
+        requirements such as data consistency, performance
+        constraints, and expected access patterns. The
+        primary write policies include the following:
+      </p>
+
+      <p class="standard-text">
+        <img
+          src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+          alt="cintillo"
+          style="max-width: 100%" />
+      </p>
+
+      <div class="tabs-container">
+        <input
+          type="radio"
+          name="group-name"
+          id="tab1"
+          checked="checked" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab2" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab3" />
+
+        <div class="tabs">
+          <label for="tab1">Write-Through Policy </label>
+          <label for="tab2">Write-Back Policy </label>
+          <label for="tab3">Write-Around Policy</label>
+        </div>
+
+        <div class="content content-1">
+          <ul>
+            <li>
+              Data is written to both the cache and the main
+              memory simultaneously.
+            </li>
+            <li>
+              Ensures data consistency, but can lead to
+              higher latency and reduced performance.
+            </li>
+          </ul>
+        </div>
+
+        <div class="content content-2">
+          <ul>
+            <li>
+              Data is initially written only to the cache.
+            </li>
+            <li>
+              Data is written back to the main memory only
+              when the cache line is evicted.
+            </li>
+            <li>
+              Improves performance by reducing write
+              operations to main memory, but introduces
+              complexity in maintaining data consistency.
+            </li>
+          </ul>
+        </div>
+
+        <div class="content content-3">
+          <ul>
+            <li>
+              Data is written directly to the main memory,
+              bypassing the cache.
+            </li>
+            <li>
+              Beneficial when data is not expected to be
+              reused soon, avoiding unnecessary cache
+              pollution.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Multi-Level Cache Hierarchies</h3>
+      <p>
+        Multi-level cache hierarchies are designed to bridge
+        the speed gap between the processor and main memory.
+        They consist of multiple layers of cache, each with
+        different sizes and speeds, to optimize data access
+        times and improve overall system performance.
+        Multi-level cache hierarchies play a vital role in
+        enhancing the performance of memory systems in
+        modern computer architectures. By carefully
+        balancing speed, size, and cost across multiple
+        cache levels, these hierarchies enable processors to
+        operate more efficiently, significantly improving
+        overall system performance.
+      </p>
+      <p>
+        Key aspects of multi-level cache hierarchies include
+        the following:
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Structure and Organization
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Typically includes L1, L2, and sometimes L3
+                caches.
+              </li>
+              <li>
+                L1 is the smallest and fastest, while L2 and
+                L3 are progressively larger and slower but
+                still faster than main memory.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Role in Performance Improvement
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Reduces access time by storing frequently
+                accessed data closer to the CPU.
+              </li>
+              <li>
+                Minimizes miss penalties by handling cache
+                misses more efficiently.
+              </li>
+              <li>
+                Improves system throughput by allowing the
+                CPU to execute more instructions in a given
+                time.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Challenges and Considerations
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Increased complexity in design and
+                maintenance.
+              </li>
+              <li>
+                Cache coherence issues in multi-processor
+                systems.
+              </li>
+              <li>
+                Managing data redundancy and weakened
+                locality.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    TRUE or FALSE?
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >Cache coherence protocols are used
+                        to ensure that all caches in a
+                        multi</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >-</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >core system have the most recent
+                        version of data.</span
+                      ></span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer: &nbsp;TRUE
+                    </h3>
+                    <p>
+                      <span
+                        data-ccp-parastyle="Body Text"
+                        style="color: #041e42"
+                        >Explanation: Cache coherence
+                        protocols are essential in
+                        multi-core systems to ensure that
+                        all caches have the most recent
+                        version of data, preventing
+                        inconsistencies and ensuring correct
+                        program execution.&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
