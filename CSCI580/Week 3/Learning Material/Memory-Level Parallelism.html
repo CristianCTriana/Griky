@@ -126,6 +126,18 @@
       .btn-primary:focus a {
         color: inherit !important;
       }
+
+      .icon-list {
+        list-style-type: none !important;
+      }
+
+      .sqrt-item::before {
+        content: "◾";
+      }
+
+      .blue_arrow::before {
+        content: "➡️";
+      }
     </style>
   </head>
 
@@ -321,19 +333,18 @@
         Prefetching strategies can be further categorized as
         follows:
       </p>
-      <ul>
-        <p>
-          ◾ Data vs. Instruction Prefetching: Data
-          prefetching focuses on fetching data before it’s
-          it is needed, while whereas instruction
-          prefetching fetches instructions ahead of
-          execution.
-        </p>
-        <p>
-          ◾ Collaborative Prefetching: Combines multiple
+      <ul class="icon-list">
+        <li class="sqrt-item">
+          Data vs. Instruction Prefetching: Data prefetching
+          focuses on fetching data before it’s it is needed,
+          while whereas instruction prefetching fetches
+          instructions ahead of execution.
+        </li>
+        <li class="sqrt-item">
+          Collaborative Prefetching: Combines multiple
           prefetching schemes to improve coverage and
           accuracy.
-        </p>
+        </li>
       </ul>
 
       <p>
@@ -356,34 +367,33 @@
         between the processor and memory. Their key
         functions include the following:
       </p>
-      <ul>
-        <p>
-          ➡️<strong
+      <ul class="icon-list">
+        <li class="blue_arrow">
+          <strong
             >Data Flow Management: Overseeing read and
             write</strong
           ><br />Overseeing read and write operations to
           ensure efficient and accurate data transfer.
-        </p>
-        <p>
-          ➡️<strong>Handling Multiple Memory Types:</strong
+        </li>
+        <li class="blue_arrow">
+          <strong>Handling Multiple Memory Types:</strong
           ><br />Connecting various types of memory (e.g.,
           DRAM, flash) to the processor bus, supporting
           diverse memory access patterns.
-        </p>
-        <p>
-          ➡️<strong
-            >Protocol and Interface Management:</strong
+        </li>
+        <li class="blue_arrow">
+          <strong>Protocol and Interface Management:</strong
           ><br />Providing necessary interfaces and
           protocols to maximize transfer speed, data
           integrity, and information retention.
-        </p>
-        <p>
-          ➡️<strong
+        </li>
+        <li class="blue_arrow">
+          <strong
             >Power and Performance Optimization:</strong
           ><br />Incorporating features to optimize power
           consumption and performance, such as power
           management modules.
-        </p>
+        </li>
       </ul>
       <p>
         In addition, there are various designs to consider
@@ -442,7 +452,7 @@
         </div>
 
         <div class="content content-1">
-          <ul>
+          <ul style="color: #041e42">
             <li>
               BLP is a key factor in achieving high
               performance in DRAM systems.
@@ -461,7 +471,7 @@
         </div>
 
         <div class="content content-2">
-          <ul>
+          <ul style="color: #041e42">
             <li>
               Hardware-Driven Scheduling: Uses a
               non-software-intervening mechanism to classify
@@ -491,7 +501,7 @@
         </div>
 
         <div class="content content-3">
-          <ul>
+          <ul style="color: #041e42">
             <li>
               The effectiveness of BLP depends heavily on
               memory access patterns of applications.

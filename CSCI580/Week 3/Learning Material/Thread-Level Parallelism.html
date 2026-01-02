@@ -136,6 +136,47 @@
         color: #05c3de;
         text-align: center;
       }
+
+      details {
+        margin-top: 20px;
+        background-color: #041d42;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 19px;
+        border-radius: 8px;
+      }
+      summary {
+        color: #05c3de;
+        font-size: 19px;
+      }
+      .box-border {
+        border: #041e42 1px solid;
+        border-radius: 5px;
+        padding: 25px;
+        margin-top: 25px;
+      }
+
+      .box-border h3 {
+        font-size: 24px;
+      }
+
+      .box-border p,
+      .box-border ul {
+        font-size: 19px;
+        line-height: 1.6;
+      }
+
+      .box-border ul {
+        color: #041e42;
+      }
+
+      .right-list {
+        list-style-type: none !important;
+      }
+
+      .right-item::before {
+        content: "▶️";
+      }
     </style>
   </head>
 
@@ -162,7 +203,96 @@
         performance.
       </p>
 
-      H5P
+      <div class="timeline">
+        <!-- Línea central -->
+        <div class="timeline-line"></div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>Early Developments</h3>
+            <ul>
+              <li>
+                Multithreading emerged as a solution to the
+                limitations of Instruction-Level Parallelism
+                (ILP) in superscalar and out-of-order
+                processors.
+              </li>
+              <li>
+                Early multithreaded processors were designed
+                to switch between threads when one thread
+                was stalled.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>Simultaneous Multithreading (SMT):</h3>
+            <ul>
+              <li>
+                SMT allows multiple threads to issue
+                instructions to the execution units in a
+                single cycle.
+              </li>
+              <li>
+                It combines multithreading with wide-issue
+                superscalar processors, effectively
+                overcoming underutilization caused by
+                missing ILP.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>Multicore Processors:</h3>
+            <ul>
+              <li>
+                The shift to multicore processors marked a
+                significant evolution, integrating multiple
+                independent cores onto a single chip.
+              </li>
+              <li>
+                This transition was driven by the “power
+                wall” limitations of increasing single-core
+                clock frequencies.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>Modern Multithreading Techniques:</h3>
+            <ul>
+              <li>
+                Modern processors employ a combination of
+                SMT and multicore architectures.
+              </li>
+              <li>
+                Examples include Intel’s Hyper-Threading
+                Technology, which allows a single physical
+                core to appear as two logical cores.
+              </li>
+              <li>
+                Advanced features like Intel’s Turbo Boost
+                Technology dynamically adjust core
+                frequencies based on workload.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
       <h3>Synchronization Mechanisms</h3>
       <p>
@@ -329,32 +459,31 @@
       </p>
 
       <!--CAJA OSCURA-->
-      <div class="highlight-box">
+      <div class="box-border">
         <h3>Key MCMs:</h3>
-        <ul>
-          <p>
-            ▶️ Sequential Consistency: Ensures that all
+        <ul class="right-list">
+          <li class="right-item">
+            Sequential Consistency: Ensures that all
             operations appear to execute in some sequential
             order, with each processor’s operations
             appearing in program order.
-          </p>
-          <p>
-            ▶️ Total Store Ordering (TSO): Used by x86
+          </li>
+          <li class="right-item">
+            Total Store Ordering (TSO): Used by x86
             architectures, ensuring all processors observe
             memory writes in the same order.
-          </p>
-          <p>
-            ▶️ Weak Ordering (WO): Often used in ARM
+          </li>
+          <li class="right-item">
+            Weak Ordering (WO): Often used in ARM
             architectures, allowing more freedom in
             reordering instructions for potential
             performance improvements.
-          </p>
-          <p>
-            ▶️ Acquire-Release Consistency: Provides a
-            middle ground by ensuring certain
-            synchronization operations are observed in a
-            consistent order.
-          </p>
+          </li>
+          <li class="right-item">
+            Acquire-Release Consistency: Provides a middle
+            ground by ensuring certain synchronization
+            operations are observed in a consistent order.
+          </li>
         </ul>
       </div>
 
@@ -366,25 +495,8 @@
         strategies are explained below:
       </p>
 
-      <details
-        style="
-          background: #041e42;
-          padding: 10px;
-          border: 1px solid #ddd;
-          margin-bottom: 10px;
-          border-radius: 5px;
-          color: white;
-        ">
-        <summary
-          style="
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            font-size: 19px;
-            padding: 10px;
-          ">
-          1. Preemptive Scheduling
-        </summary>
+      <details>
+        <summary>1. Preemptive Scheduling</summary>
         <p style="color: white">
           <strong>Round Robin:</strong> Assigns fixed time
           slices to threads cyclically, ensuring fair CPU
@@ -397,25 +509,8 @@
         </p>
       </details>
 
-      <details
-        style="
-          background: #041e42;
-          padding: 10px;
-          border: 1px solid #ddd;
-          margin-bottom: 10px;
-          border-radius: 5px;
-          color: white;
-        ">
-        <summary
-          style="
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            font-size: 19px;
-            padding: 10px;
-          ">
-          2. Non-Preemptive Scheduling
-        </summary>
+      <details>
+        <summary>2. Non-Preemptive Scheduling</summary>
         <p style="color: white">
           <strong>First Come, First Served (FCFS):</strong>
           Executes threads in order of arrival, potentially
@@ -429,25 +524,8 @@
         </p>
       </details>
 
-      <details
-        style="
-          background: #041e42;
-          padding: 10px;
-          border: 1px solid #ddd;
-          margin-bottom: 10px;
-          border-radius: 5px;
-          color: white;
-        ">
-        <summary
-          style="
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            font-size: 19px;
-            padding: 10px;
-          ">
-          3. Rate Monotonic Analysis (RMA)
-        </summary>
+      <details>
+        <summary>3. Rate Monotonic Analysis (RMA)</summary>
         <ul>
           <li>
             Assigns thread priorities based on execution
