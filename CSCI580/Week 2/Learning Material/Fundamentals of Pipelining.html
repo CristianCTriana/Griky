@@ -3,40 +3,34 @@
   <head>
     <link
       rel="stylesheet"
-      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
-    />
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
     <link
       rel="stylesheet"
-      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
-    />
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
     <link
       rel="stylesheet"
-      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
-    />
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
     <!-- Font Awesome CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
     <!-- Template CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css"
-    />
-    <link rel="stylesheet" href="../../../Griky Structure/GlobalStyles.css" />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
     <link
       rel="stylesheet"
-      href="../../../Griky Structure/StylesComponents.css"
-    />
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
     <style>
       .btn-primary {
         background-color: #05c3de !important;
@@ -67,6 +61,36 @@
       .btn-primary:focus a {
         color: inherit !important;
       }
+
+      .box-border {
+        border: #041e42 1px solid;
+        border-radius: 5px;
+        padding: 25px;
+        margin-top: 25px;
+      }
+
+      .box-border h3 {
+        font-size: 24px;
+      }
+
+      .box-border p,
+      .box-border ul {
+        font-size: 19px;
+        line-height: 1.6;
+      }
+
+      .box-border ul {
+        color: #041e42;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      li::before {
+        content: "☑️";
+        color: #041e42;
+      }
     </style>
   </head>
   <body>
@@ -78,12 +102,19 @@
           color: white;
           text-align: center;
           margin: 0;
-        "
-      >
+        ">
         <span
-          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          style="
+            font-size: 20px;
+            color: #05c3de;
+            font-family: Lato, sans-serif;
+          "
           >Week 2</span
-        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+        ><br /><span
+          style="
+            font-size: 28px;
+            font-family: Lato, sans-serif;
+          "
           >Pipelining and Performance
         </span>
       </h3>
@@ -91,38 +122,49 @@
     <div class="content-wrapper">
       <h1
         class="title-topic"
-        style="text-align: center; color: #041e40; font-size: 35px"
-      >
+        style="
+          text-align: center;
+          color: #041e40;
+          font-size: 35px;
+        ">
         <span style="font-family: Lato, sans-serif"
           ><strong>Basic Pipeline Concepts</strong></span
         >
       </h1>
       <hr class="divider-line" />
       <p>
-        Pipelining is a fundamental technique in computer architecture that
-        significantly enhances processor performance by allowing multiple
-        instructions to be processed simultaneously. This technique is analogous
-        to an assembly line in manufacturing, where different stages of
-        production occur concurrently. In a pipelined processor, the execution
-        of instructions is divided into several stages, each handling a specific
-        part of the instruction processing.
+        Pipelining is a fundamental technique in computer
+        architecture that significantly enhances processor
+        performance by allowing multiple instructions to be
+        processed simultaneously. This technique is
+        analogous to an assembly line in manufacturing,
+        where different stages of production occur
+        concurrently. In a pipelined processor, the
+        execution of instructions is divided into several
+        stages, each handling a specific part of the
+        instruction processing.
       </p>
       <p>
-        The primary goal of pipelining is to increase instruction throughput,
-        which is the number of instructions that can be processed in a given
-        time period. By overlapping the execution of multiple instructions,
-        pipelining allows a processor to complete more instructions in a given
-        period compared to non-pipelined processors.
+        The primary goal of pipelining is to increase
+        instruction throughput, which is the number of
+        instructions that can be processed in a given time
+        period. By overlapping the execution of multiple
+        instructions, pipelining allows a processor to
+        complete more instructions in a given period
+        compared to non-pipelined processors.
       </p>
       <h3>Pipeline Stages and Implementation</h3>
       <p>
-        A typical instruction pipeline in computer architecture consists of
-        several stages. The most common implementation, especially in Reduced
-        Instruction Set Computer (RISC) architectures, includes the five stages
-        explained below. The implementation of these stages involves connecting
-        them with pipeline registers that hold intermediate results. This setup
-        allows the CPU to complete an instruction on each clock cycle,
-        significantly increasing throughput compared to non-pipelined
+        A typical instruction pipeline in computer
+        architecture consists of several stages. The most
+        common implementation, especially in Reduced
+        Instruction Set Computer (RISC) architectures,
+        includes the five stages explained below. The
+        implementation of these stages involves connecting
+        them with pipeline registers that hold intermediate
+        results. This setup allows the CPU to complete an
+        instruction on each clock cycle, significantly
+        increasing throughput compared to non-pipelined
         processors.
       </p>
       <p style="text-align: center; margin-top: 40px">
@@ -130,125 +172,172 @@
           src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
           alt="See more information"
           style="max-width: 100%"
-          width="600"
-        />
+          width="600" />
       </p>
       <div class="accordion">
         <div class="accordion-item">
-          <input type="checkbox" id="acc1" />
-          <label class="accordion-title" for="acc1"
+          <input
+            type="checkbox"
+            id="acc1" />
+          <label
+            class="accordion-title"
+            for="acc1"
             >Instruction Fetch (IF)</label
           >
           <div class="accordion-content">
             <p>
-              In this stage, the CPU fetches the instruction from memory and
-              places it into a buffer for use in the next stage.
+              In this stage, the CPU fetches the instruction
+              from memory and places it into a buffer for
+              use in the next stage.
             </p>
           </div>
         </div>
 
         <div class="accordion-item">
-          <input type="checkbox" id="acc2" />
-          <label class="accordion-title" for="acc2"
+          <input
+            type="checkbox"
+            id="acc2" />
+          <label
+            class="accordion-title"
+            for="acc2"
             >Instruction Decode (ID)</label
           >
           <div class="accordion-content">
             <p>
-              The fetched instruction is decoded to determine the operation to
-              be performed and the operands involved. This stage also involves
-              reading the necessary data from the register file.
+              The fetched instruction is decoded to
+              determine the operation to be performed and
+              the operands involved. This stage also
+              involves reading the necessary data from the
+              register file.
             </p>
           </div>
         </div>
 
         <div class="accordion-item">
-          <input type="checkbox" id="acc3" />
-          <label class="accordion-title" for="acc3">Execute (EX)</label>
+          <input
+            type="checkbox"
+            id="acc3" />
+          <label
+            class="accordion-title"
+            for="acc3"
+            >Execute (EX)</label
+          >
           <div class="accordion-content">
             <p>
-              The actual operation specified by the instruction is performed in
-              this stage. This could involve arithmetic operations, logical
+              The actual operation specified by the
+              instruction is performed in this stage. This
+              could involve arithmetic operations, logical
               operations, or address calculations.
             </p>
           </div>
         </div>
 
         <div class="accordion-item">
-          <input type="checkbox" id="acc4" />
-          <label class="accordion-title" for="acc4">Memory Access (MEM)</label>
+          <input
+            type="checkbox"
+            id="acc4" />
+          <label
+            class="accordion-title"
+            for="acc4"
+            >Memory Access (MEM)</label
+          >
           <div class="accordion-content">
             <p>
-              If the instruction involves accessing memory (such as load or
-              store operations), this stage handles the reading from or writing
-              to memory.
+              If the instruction involves accessing memory
+              (such as load or store operations), this stage
+              handles the reading from or writing to memory.
             </p>
           </div>
         </div>
         <div class="accordion-item">
-          <input type="checkbox" id="acc5" />
-          <label class="accordion-title" for="acc5">Write Back (WB)</label>
+          <input
+            type="checkbox"
+            id="acc5" />
+          <label
+            class="accordion-title"
+            for="acc5"
+            >Write Back (WB)</label
+          >
           <div class="accordion-content">
             <p>
-              The results of the instruction execution are written back to the
-              register file, completing the instruction’s execution.
+              The results of the instruction execution are
+              written back to the register file, completing
+              the instruction’s execution.
             </p>
           </div>
         </div>
       </div>
       <h3>Instruction Flow and Timing</h3>
       <p>
-        In a pipelined processor, instructions flow through the CPU in stages.
-        Each stage is responsible for a part of the instruction execution
-        process, and multiple instructions are processed simultaneously at
-        different stages of completion. The timing of each stage is crucial, as
-        it determines how quickly instructions can move through the pipeline.
-        Ideally, each stage should take the same amount of time to avoid
-        bottlenecks.
+        In a pipelined processor, instructions flow through
+        the CPU in stages. Each stage is responsible for a
+        part of the instruction execution process, and
+        multiple instructions are processed simultaneously
+        at different stages of completion. The timing of
+        each stage is crucial, as it determines how quickly
+        instructions can move through the pipeline. Ideally,
+        each stage should take the same amount of time to
+        avoid bottlenecks.
       </p>
       <p>
-        For example, while one instruction is in the execute stage, the next
-        instruction can be in the decode stage, and a third instruction can be
-        in the fetch stage. This overlapping of instruction execution is what
-        allows pipelining to increase throughput.
+        For example, while one instruction is in the execute
+        stage, the next instruction can be in the decode
+        stage, and a third instruction can be in the fetch
+        stage. This overlapping of instruction execution is
+        what allows pipelining to increase throughput.
       </p>
-      <div class="highlight-box">
-        <h3 style="text-align: center">Performance Benefits of Pipelining</h3>
-        <p>
-          ☑️ Increased Throughput: By allowing multiple instructions to be
-          processed simultaneously, pipelining significantly increases the
-          number of instructions completed per unit time.
-        </p>
-        <p>
-          ☑️ Improved CPU Utilization: Pipelining ensures that different parts
-          of the CPU are active at all times, reducing idle times and improving
-          overall CPU utilization.
-        </p>
-        <p>
-          ☑️ Reduced Latency: Although the time for a single instruction to
-          complete (latency) may not decrease, the overall throughput of the
-          system increases, leading to faster program execution.
-        </p>
-        <p>
-          ☑️ Higher Clock Frequencies: Pipelined processors can operate at
-          higher clock frequencies than non-pipelined processors because each
-          stage can be optimized to perform its specific task more quickly.
-        </p>
-        <p>
-          ☑️ Efficient Handling of Repeated Tasks: Pipelining is particularly
-          effective for tasks that involve repeated instructions, significantly
-          improving the performance of applications that rely on repetitive
-          processing.
-        </p>
+      <div class="box-border">
+        <h2 style="text-align: center">
+          Performance Benefits of Pipelining
+        </h2>
+        <ul>
+          <li>
+            Increased Throughput: By allowing multiple
+            instructions to be processed simultaneously,
+            pipelining significantly increases the number of
+            instructions completed per unit time.
+          </li>
+          <li>
+            Improved CPU Utilization: Pipelining ensures
+            that different parts of the CPU are active at
+            all times, reducing idle times and improving
+            overall CPU utilization.
+          </li>
+          <li>
+            Reduced Latency: Although the time for a single
+            instruction to complete (latency) may not
+            decrease, the overall throughput of the system
+            increases, leading to faster program execution.
+          </li>
+          <li>
+            Higher Clock Frequencies: Pipelined processors
+            can operate at higher clock frequencies than
+            non-pipelined processors because each stage can
+            be optimized to perform its specific task more
+            quickly.
+          </li>
+          <li>
+            Efficient Handling of Repeated Tasks: Pipelining
+            is particularly effective for tasks that involve
+            repeated instructions, significantly improving
+            the performance of applications that rely on
+            repetitive processing.
+          </li>
+        </ul>
       </div>
       <p>
-        In ideal conditions, a five-stage pipeline could theoretically achieve a
-        speedup of up to five times compared to a non-pipelined execution.
-        However, real-world performance improvements are typically lower due to
-        various factors such as pipeline hazards and resource limitations.
+        In ideal conditions, a five-stage pipeline could
+        theoretically achieve a speedup of up to five times
+        compared to a non-pipelined execution. However,
+        real-world performance improvements are typically
+        lower due to various factors such as pipeline
+        hazards and resource limitations.
       </p>
       <div class="card card-standard">
         <div class="card-body">
-          <div class="card-text" style="text-align: center">
+          <div
+            class="card-text"
+            style="text-align: center">
             <span style="font-size: 24px; color: #004c99"
               ><strong
                 ><img
@@ -272,9 +361,11 @@
                         style="list-style-type: disc"
                         xml:lang="EN-US"
                         data-contrast="auto"
-                        ><span data-ccp-parastyle="Body Text"
-                          >Which of the following is a primary benefit of
-                          pipelining in processor design?</span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >Which of the following is a
+                          primary benefit of pipelining in
+                          processor design?</span
                         ></span
                       >
                     </span>
@@ -285,7 +376,8 @@
                         style="list-style-type: disc"
                         xml:lang="EN-US"
                         data-contrast="auto"
-                        ><span data-ccp-parastyle="Body Text"
+                        ><span
+                          data-ccp-parastyle="Body Text"
                           >(A) Increased power consumption
                         </span></span
                       ></span
@@ -297,8 +389,10 @@
                         style="list-style-type: disc"
                         xml:lang="EN-US"
                         data-contrast="auto"
-                        ><span data-ccp-parastyle="Body Text"
-                          >(B) Reduced instruction set complexity
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(B) Reduced instruction set
+                          complexity
                         </span></span
                       ></span
                     >
@@ -309,8 +403,10 @@
                         style="list-style-type: disc"
                         xml:lang="EN-US"
                         data-contrast="auto"
-                        ><span data-ccp-parastyle="Body Text"
-                          >(C) Improved instruction throughput
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(C) Improved instruction
+                          throughput
                         </span></span
                       ></span
                     >
@@ -321,8 +417,10 @@
                         style="list-style-type: disc"
                         xml:lang="EN-US"
                         data-contrast="auto"
-                        ><span data-ccp-parastyle="Body Text"
-                          >(D) Simplified control unit design<span
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(D) Simplified control unit
+                          design<span
                             data-ccp-props='{"335559738":180,"335559739":180}'
                             >&nbsp;</span
                           >
@@ -335,19 +433,23 @@
                     class="btn btn-primary btn-reveal"
                     data-toggle="collapse"
                     data-target="answer"
-                    aria-expanded="false"
-                  >
+                    aria-expanded="false">
                     Show Answer
                   </button>
-                  <div class="collapse" id="answer" tabindex="0">
+                  <div
+                    class="collapse"
+                    id="answer"
+                    tabindex="0">
                     <h3>Answer: &nbsp;</h3>
                     <p>
                       (C)&nbsp;<span
                         style="list-style-type: disc"
                         xml:lang="EN-US"
                         data-contrast="auto"
-                        ><span data-ccp-parastyle="Body Text">
-                          Improved instruction throughput</span
+                        ><span
+                          data-ccp-parastyle="Body Text">
+                          Improved instruction
+                          throughput</span
                         ></span
                       >&nbsp;
                     </p>
@@ -358,10 +460,12 @@
                           style="list-style-type: disc"
                           xml:lang="EN-US"
                           data-contrast="auto"
-                          >Pipelining improves instruction throughput by
-                          allowing multiple instructions to be processed
-                          simultaneously at different stages of execution,
-                          thereby increasing the overall efficiency of the
+                          >Pipelining improves instruction
+                          throughput by allowing multiple
+                          instructions to be processed
+                          simultaneously at different stages
+                          of execution, thereby increasing
+                          the overall efficiency of the
                           processor.</span
                         >&nbsp;</span
                       >
@@ -379,8 +483,7 @@
           src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
           alt="logo"
           width="110"
-          style="float: right"
-        />
+          style="float: right" />
       </div>
     </div>
     <p>

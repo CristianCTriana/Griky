@@ -3,40 +3,34 @@
   <head>
     <link
       rel="stylesheet"
-      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
-    />
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
     <link
       rel="stylesheet"
-      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
-    />
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
     <link
       rel="stylesheet"
-      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
-    />
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
     <!-- Font Awesome CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
     <!-- Template CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css"
-    />
-    <link rel="stylesheet" href="../../../Griky Structure/GlobalStyles.css" />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
     <link
       rel="stylesheet"
-      href="../../../Griky Structure/StylesComponents.css"
-    />
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
     <style>
       .btn-primary {
         background-color: #05c3de !important;
@@ -67,6 +61,27 @@
       .btn-primary:focus a {
         color: inherit !important;
       }
+
+      .box-border {
+        border: #041e42 1px solid;
+        border-radius: 5px;
+        padding: 25px;
+        margin-top: 25px;
+      }
+
+      .box-border h3 {
+        font-size: 24px;
+      }
+
+      .box-border p,
+      .box-border ul {
+        font-size: 19px;
+        line-height: 1.6;
+      }
+
+      .box-border ul {
+        color: #041e42;
+      }
     </style>
   </head>
   <body>
@@ -78,12 +93,19 @@
           color: white;
           text-align: center;
           margin: 0;
-        "
-      >
+        ">
         <span
-          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          style="
+            font-size: 20px;
+            color: #05c3de;
+            font-family: Lato, sans-serif;
+          "
           >Week 1</span
-        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+        ><br /><span
+          style="
+            font-size: 28px;
+            font-family: Lato, sans-serif;
+          "
           >Foundations and Instruction Set Architectures
         </span>
       </h3>
@@ -91,32 +113,39 @@
     <div class="content-wrapper">
       <h1
         class="title-topic"
-        style="text-align: center; color: #041e40; font-size: 35px"
-      >
+        style="
+          text-align: center;
+          color: #041e40;
+          font-size: 35px;
+        ">
         <span style="font-family: Lato, sans-serif"
-          ><strong>Overview of Control and Datapath</strong></span
+          ><strong
+            >Overview of Control and Datapath</strong
+          ></span
         >
       </h1>
       <hr class="divider-line" />
       <p>
-        The control and datapath elements form the core of CPU functionality,
-        determining how instructions are executed and data is processed.
-        Understanding these elements is crucial for grasping the inner workings
-        of a CPU and the principles behind its design. Let’s explore the control
-        and datapath elements in detail, including recent innovations in this
-        area.
+        The control and datapath elements form the core of
+        CPU functionality, determining how instructions are
+        executed and data is processed. Understanding these
+        elements is crucial for grasping the inner workings
+        of a CPU and the principles behind its design. Let’s
+        explore the control and datapath elements in detail,
+        including recent innovations in this area.
       </p>
       <p>
-        The CPU is primarily divided into two main components, the datapath and
-        the control unit. This division allows for a clear separation of
-        concerns, with the datapath handling the “what” (the actual
-        computations) and the control unit managing the “when” and “how” of
-        these operations.
+        The CPU is primarily divided into two main
+        components, the datapath and the control unit. This
+        division allows for a clear separation of concerns,
+        with the datapath handling the “what” (the actual
+        computations) and the control unit managing the
+        “when” and “how” of these operations.
       </p>
 
       <p style="font-size: 19px">
-        The seven stages are described below. Click on the cards to reveal
-        defense points for each stage.
+        The seven stages are described below. Click on the
+        cards to reveal defense points for each stage.
       </p>
 
       <div class="def-cards">
@@ -128,7 +157,10 @@
                 <span class="def-card-icon">↻</span>
               </div>
               <div class="def-card-face def-card-back">
-                <p>Responsible for the actual data processing operations.</p>
+                <p>
+                  Responsible for the actual data processing
+                  operations.
+                </p>
               </div>
             </div>
           </div>
@@ -140,8 +172,8 @@
               </div>
               <div class="def-card-face def-card-back">
                 <p>
-                  Orchestrates the operations of the datapath by sending control
-                  signals.
+                  Orchestrates the operations of the
+                  datapath by sending control signals.
                 </p>
               </div>
             </div>
@@ -151,19 +183,26 @@
 
       <h3>Datapath Design</h3>
       <p>
-        The datapath is designed to implement the fetch-decode-execute cycle,
-        which is the core operation cycle of a CPU. This cycle involves the
+        The datapath is designed to implement the
+        fetch-decode-execute cycle, which is the core
+        operation cycle of a CPU. This cycle involves the
         following actions:
       </p>
       <ol style="color: #202122">
         <li>Fetch: Retrieving instructions from memory.</li>
-        <li>Decode: Understanding the operation to be performed.</li>
+        <li>
+          Decode: Understanding the operation to be
+          performed.
+        </li>
         <li>Execute: Performing the actual operation.</li>
-        <li>Write Back: Storing the results back in memory or registers.</li>
+        <li>
+          Write Back: Storing the results back in memory or
+          registers.
+        </li>
       </ol>
       <p>
-        In a typical MIPS architecture, the datapath elements include the
-        following:
+        In a typical MIPS architecture, the datapath
+        elements include the following:
       </p>
       <ul style="color: #202122">
         <li>Instruction and data memories</li>
@@ -172,83 +211,189 @@
         <li>Adders and multiplexers</li>
       </ul>
       <p>
-        These components work together to process data according to the
-        instructions provided.
+        These components work together to process data
+        according to the instructions provided.
       </p>
 
       <h3>Control Unit</h3>
       <p>
-        The control unit is responsible for generating control signals that
-        dictate the operations of the datapath. It ensures that the correct data
-        flows through the datapath components at the right time. The control
-        unit can be implemented using one of the following options:
+        The control unit is responsible for generating
+        control signals that dictate the operations of the
+        datapath. It ensures that the correct data flows
+        through the datapath components at the right time.
+        The control unit can be implemented using one of the
+        following options:
       </p>
 
       <div class="dual-box-wrapper">
         <div class="dual-box">
-          <strong>Finite State Machines</strong><br />A model of computation
-          based on a hypothetical machine that can be in one of a finite number
-          of states.
+          <strong>Finite State Machines</strong><br />A
+          model of computation based on a hypothetical
+          machine that can be in one of a finite number of
+          states.
         </div>
         <div class="dual-box">
-          <strong>Microprogrammed Control</strong><br />Uses a microprogram (a
-          sequence of microinstructions) to generate control signals.
+          <strong>Microprogrammed Control</strong><br />Uses
+          a microprogram (a sequence of microinstructions)
+          to generate control signals.
         </div>
       </div>
 
-      <h3>Recent Innovations in Control and Datapath Elements:</h3>
+      <h3>
+        Recent Innovations in Control and Datapath Elements:
+      </h3>
 
-      H5P
+      <div class="timeline">
+        <!-- Línea central -->
+        <div class="timeline-line"></div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>1. Pipelining and Parallelism</h3>
+            <p>
+              Modern CPUs use pipelining to improve
+              performance by overlapping the execution of
+              multiple instructions.
+            </p>
+            <p>
+              Parallel pipelined datapath architectures have
+              been developed to further enhance performance
+              by executing multiple instruction streams in
+              parallel.
+            </p>
+            <p>
+              These techniques can significantly reduce the
+              cycles per instruction (CPI) and power
+              consumption.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>2. MATRIX Architecture:</h3>
+            <p>
+              The MATRIX architecture introduces a novel
+              approach by allowing dynamic configuration of
+              datapath and control elements.
+            </p>
+            <p>
+              It does not predefine the roles of these
+              elements at fabrication, providing flexibility
+              in instruction distribution and control
+              assignment.
+            </p>
+            <p>
+              This architecture uses a uniform array of
+              primitive elements that can be configured to
+              serve as instruction stores, data stores, or
+              control elements, depending on the
+              application’s needs.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>3. Advanced Clocking Strategies</h3>
+            <p>
+              Recent innovations include the use of
+              dual-edge triggered clocks in pipelined
+              datapath designs
+            </p>
+            <p>
+              This approach can reduce power consumption
+              without sacrificing throughput by triggering
+              on both the rising and falling edges of the
+              clock signal.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>4. Enhanced Datapath Widths</h3>
+            <p>
+              The transition from 32-bit to 64-bit
+              architectures has allowed for wider datapaths.
+            </p>
+            <p>
+              This shift enables the processing of larger
+              data chunks and addressing more memory, which
+              is crucial for supporting modern applications
+              that require high computational power and
+              large memory spaces.
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <div class="highlight-box">
-        <h3 style="width: 100%; text-align: center">
+      <div class="box-border">
+        <h2 style="width: 100%; text-align: center">
           Case Study: ARM Big.LITTLE Architecture
-        </h3>
+        </h2>
         <p>
-          To illustrate the practical application of control and datapath
-          innovations, let’s consider ARM’s Big.LITTLE architecture:
+          To illustrate the practical application of control
+          and datapath innovations, let’s consider ARM’s
+          Big.LITTLE architecture:
         </p>
         <h3>Heterogeneous Multi-Processing:</h3>
-        <ul style="color: white">
+        <ul>
           <li>
-            Combines high-performance “big” cores with energy-efficient “LITTLE”
-            cores on the same chip.
+            Combines high-performance “big” cores with
+            energy-efficient “LITTLE” cores on the same
+            chip.
           </li>
           <li>
-            The control unit dynamically assigns tasks to the appropriate core
-            based on performance and power requirements.
+            The control unit dynamically assigns tasks to
+            the appropriate core based on performance and
+            power requirements.
           </li>
         </ul>
 
         <h3>Flexible Datapath:</h3>
-        <ul style="color: white">
+        <ul>
           <li>
-            The datapath elements in big cores are optimized for performance,
-            with wider execution units and more advanced branch prediction.
+            The datapath elements in big cores are optimized
+            for performance, with wider execution units and
+            more advanced branch prediction.
           </li>
           <li>
-            LITTLE cores have simpler datapaths optimized for energy efficiency.
+            LITTLE cores have simpler datapaths optimized
+            for energy efficiency.
           </li>
         </ul>
 
         <h3>Intelligent Power Management:</h3>
-        <ul style="color: white">
+        <ul>
           <li>
-            The control unit manages power states of individual cores, shutting
-            down unused cores to save energy.
+            The control unit manages power states of
+            individual cores, shutting down unused cores to
+            save energy.
           </li>
         </ul>
 
         <p>
-          This architecture demonstrates how modern control and datapath designs
-          can be optimized for both performance and energy efficiency, a crucial
+          This architecture demonstrates how modern control
+          and datapath designs can be optimized for both
+          performance and energy efficiency, a crucial
           consideration in today’s computing landscape.
         </p>
       </div>
 
       <div class="card card-standard">
         <div class="card-body">
-          <div class="card-text" style="text-align: center">
+          <div
+            class="card-text"
+            style="text-align: center">
             <span style="font-size: 24px; color: #004c99"
               ><strong
                 ><img
@@ -264,7 +409,11 @@
             <div class="card card-standard card-reveal">
               <div class="card-body">
                 <div class="card-text">
-                  <h3 class="card-text" style="color: #041e40">QUESTION:</h3>
+                  <h3
+                    class="card-text"
+                    style="color: #041e40">
+                    QUESTION:
+                  </h3>
                   <div class="card-text"></div>
                   <div class="card-text">
                     <span style="font-size: 19px"
@@ -275,8 +424,9 @@
                         ><span
                           data-ccp-parastyle="Body Text"
                           style="color: #041e40"
-                          >In the binary number system, the decimal number 13 is
-                          represented as _______.</span
+                          >In the binary number system, the
+                          decimal number 13 is represented
+                          as _______.</span
                         ></span
                       >
                     </span>
@@ -285,25 +435,30 @@
                     type="button"
                     class="btn btn-primary btn-reveal"
                     data-toggle="collapse"
-                    aria-expanded="false"
-                  >
+                    aria-expanded="false">
                     Show Answer
                   </button>
-                  <div class="collapse" tabindex="0">
-                    <h3 style="color: #041e40">Answer:&nbsp; 1101</h3>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e40">
+                      Answer:&nbsp; 1101
+                    </h3>
                     <p>
                       <span
                         data-ccp-parastyle="Body Text"
                         style="color: #041e40"
                         >Explanation:</span
-                      ><span xml:lang="EN-US" data-contrast="auto"
+                      ><span
+                        xml:lang="EN-US"
+                        data-contrast="auto"
                         ><span
                           data-ccp-parastyle="Body Text"
-                          style="color: #041e40"
-                        >
-                          The binary number system uses only two symbols, 0 and
-                          1. The decimal number 13 is represented as 1101 in
-                          binary, calculated as:<span
+                          style="color: #041e40">
+                          The binary number system uses only
+                          two symbols, 0 and 1. The decimal
+                          number 13 is represented as 1101
+                          in binary, calculated as:<span
                             role="presentation"
                             data-mathml='&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block"&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#xD7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#xD7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;&amp;#xD7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#xD7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msup&gt;&lt;/math&gt;'
                             id="MathJax-Element-4-Frame"
@@ -314,19 +469,30 @@
                                 display="block"
                                 xmlns="http://www.w3.org/1998/Math/MathML"
                                 ><mn>1</mn><mo>×</mo
-                                ><msup><mn>2</mn><mn>3</mn></msup
-                                ><mo>+</mo><mn>1</mn><mo>×</mo
-                                ><msup><mn>2</mn><mn>2</mn></msup
-                                ><mo>+</mo><mn>0</mn><mo>×</mo
-                                ><msup><mn>2</mn><mn>1</mn></msup
-                                ><mo>+</mo><mn>1</mn><mo>×</mo
-                                ><msup><mn>2</mn><mn>0</mn></msup></math
+                                ><msup
+                                  ><mn>2</mn
+                                  ><mn>3</mn></msup
+                                ><mo>+</mo><mn>1</mn
+                                ><mo>×</mo
+                                ><msup
+                                  ><mn>2</mn
+                                  ><mn>2</mn></msup
+                                ><mo>+</mo><mn>0</mn
+                                ><mo>×</mo
+                                ><msup
+                                  ><mn>2</mn
+                                  ><mn>1</mn></msup
+                                ><mo>+</mo><mn>1</mn
+                                ><mo>×</mo
+                                ><msup
+                                  ><mn>2</mn
+                                  ><mn>0</mn></msup
+                                ></math
                               ></span
                             ></span
                           ><span
                             xml:lang="EN-US"
-                            data-contrast="auto"
-                          ></span></span
+                            data-contrast="auto"></span></span
                       ></span>
                     </p>
                   </div>
@@ -342,8 +508,7 @@
           src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
           alt="logo"
           width="110"
-          style="float: right"
-        />
+          style="float: right" />
       </div>
     </div>
     <p>

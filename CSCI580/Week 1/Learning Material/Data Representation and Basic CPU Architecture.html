@@ -3,43 +3,46 @@
   <head>
     <link
       rel="stylesheet"
-      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
-    />
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
     <link
       rel="stylesheet"
-      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
-    />
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
     <link
       rel="stylesheet"
-      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
-    />
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
     <!-- Font Awesome CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
     <!-- Template CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css"
-    />
-    <link rel="stylesheet" href="../../../Griky Structure/GlobalStyles.css" />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
     <link
       rel="stylesheet"
-      href="../../../Griky Structure/StylesComponents.css"
-    />
+      href="/content/enforced/960173-CSCI580_development_8w/../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/960173-CSCI580_development_8w/../../../Griky Structure/StylesComponents.css" />
     <style>
       h3 {
         color: #041e42;
+        font-size: 28px;
+      }
+
+      .hand_list {
+        list-style-type: none !important;
+      }
+
+      .hand::before {
+        content: "👉";
       }
     </style>
   </head>
@@ -52,12 +55,19 @@
           color: white;
           text-align: center;
           margin: 0;
-        "
-      >
+        ">
         <span
-          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          style="
+            font-size: 20px;
+            color: #05c3de;
+            font-family: Lato, sans-serif;
+          "
           >Week 3</span
-        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+        ><br /><span
+          style="
+            font-size: 28px;
+            font-family: Lato, sans-serif;
+          "
           >Foundations and Instruction Set Architectures
         </span>
       </h3>
@@ -65,23 +75,30 @@
     <div class="content-wrapper">
       <h1
         class="title-topic"
-        style="text-align: center; color: #041e40; font-size: 35px"
-      >
+        style="
+          text-align: center;
+          color: #041e40;
+          font-size: 35px;
+        ">
         <span style="font-family: Lato, sans-serif"
-          ><strong>Number Systems and Data Formats</strong></span
+          ><strong
+            >Number Systems and Data Formats</strong
+          ></span
         >
       </h1>
       <hr class="divider-line" />
       <p>
-        In computer architecture, understanding number systems and data formats
-        is crucial as they form the foundation of how information is represented
-        and processed within a computer system. Let’s explore the key concepts
-        in this area.
+        In computer architecture, understanding number
+        systems and data formats is crucial as they form the
+        foundation of how information is represented and
+        processed within a computer system. Let’s explore
+        the key concepts in this area.
       </p>
       <h3>Number Systems</h3>
       <p>
-        Computer systems use various number systems to represent and process
-        data. The most important ones are as follows:
+        Computer systems use various number systems to
+        represent and process data. The most important ones
+        are as follows:
       </p>
       <p class="standard-text">
         <img
@@ -89,54 +106,80 @@
           alt="Cintillo_Tabs"
           title="Cintillo_Tabs"
           data-d2l-editor-default-img-style="true"
-          style="max-width: 100%"
-        />
+          style="max-width: 100%" />
       </p>
-
       <div class="tabs-container">
         <!-- Inputs -->
-        <input type="radio" name="tabs-hr" id="tab1" checked="checked" />
-        <input type="radio" name="tabs-hr" id="tab2" />
-        <input type="radio" name="tabs-hr" id="tab3" />
-        <input type="radio" name="tabs-hr" id="tab4" />
+        <input
+          type="radio"
+          name="tabs-hr"
+          id="tab1"
+          checked="checked" />
+        <input
+          type="radio"
+          name="tabs-hr"
+          id="tab2" />
+        <input
+          type="radio"
+          name="tabs-hr"
+          id="tab3" />
+        <input
+          type="radio"
+          name="tabs-hr"
+          id="tab4" />
         <!-- <input type="radio" name="tabs-hr" id="tab4"> --><!-- Tabs -->
         <div class="tabs">
-          <label for="tab1">Binary Number System (Base 2)</label
-          ><label for="tab2">Decimal Number System (Base 10)</label
+          <label for="tab1"
+            >Binary Number System (Base 2)</label
+          ><label for="tab2"
+            >Decimal Number System (Base 10)</label
           ><label for="tab3"
-            >Transition to<br />Hexadecimal Number System (Base 16)</label
+            >Transition to<br />Hexadecimal Number System
+            (Base 16)</label
           >
-          <label for="tab4">Octal Number System (Base 8) </label>
+          <label for="tab4"
+            >Octal Number System (Base 8)
+          </label>
           <!-- <label for="tab4">Modern HR<br>Perspectives</label> -->
         </div>
         <!-- Content (VISIBLE IN EDITOR) -->
         <div class="content content-1">
           <ul>
-            <li><p>Uses only two symbols: 0 and 1.</p></li>
+            <li>
+              <p>Uses only two symbols: 0 and 1.</p>
+            </li>
             <li>
               <p>
-                Fundamental to digital electronics and computing, as it aligns
-                with the binary logic of on/off states in circuits.
+                Fundamental to digital electronics and
+                computing, as it aligns with the binary
+                logic of on/off states in circuits.
               </p>
             </li>
             <li>
               <p>
-                <em>Example:</em> The decimal number 13 is represented as 1101
-                in binary.
+                <em>Example:</em> The decimal number 13 is
+                represented as 1101 in binary.
               </p>
             </li>
           </ul>
         </div>
         <div class="content content-2">
           <ul>
-            <li><p>The most familiar system, using digits 0–9.</p></li>
             <li>
-              <p>Each digit’s place value is a power of 10.</p>
+              <p>
+                The most familiar system, using digits 0–9.
+              </p>
             </li>
             <li>
               <p>
-                Although not directly used in computer hardware, it’s the system
-                most humans are comfortable with.
+                Each digit’s place value is a power of 10.
+              </p>
+            </li>
+            <li>
+              <p>
+                Although not directly used in computer
+                hardware, it’s the system most humans are
+                comfortable with.
               </p>
             </li>
           </ul>
@@ -144,24 +187,28 @@
         <div class="content content-3">
           <ul>
             <li>
-              <p>Uses digits 0–9 and letters A–F to represent values 10–15.</p>
-            </li>
-            <li>
               <p>
-                Provides a more compact representation of binary data, making it
-                easier to read and write large binary numbers.
+                Uses digits 0–9 and letters A–F to represent
+                values 10–15.
               </p>
             </li>
             <li>
               <p>
-                Commonly used in programming and debugging to represent memory
-                addresses and raw data.
+                Provides a more compact representation of
+                binary data, making it easier to read and
+                write large binary numbers.
               </p>
             </li>
             <li>
               <p>
-                <em>Example:</em> The decimal number 255 is represented as FF in
-                hexadecimal.
+                Commonly used in programming and debugging
+                to represent memory addresses and raw data.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Example:</em> The decimal number 255 is
+                represented as FF in hexadecimal.
               </p>
             </li>
           </ul>
@@ -173,14 +220,15 @@
             </li>
             <li>
               <p>
-                Acts as a shorthand for binary, grouping binary digits into sets
-                of three.
+                Acts as a shorthand for binary, grouping
+                binary digits into sets of three.
               </p>
             </li>
             <li>
               <p>
-                Useful in simplifying binary data representation and is often
-                used in digital circuit design.
+                Useful in simplifying binary data
+                representation and is often used in digital
+                circuit design.
               </p>
             </li>
           </ul>
@@ -188,36 +236,47 @@
       </div>
       <h3>Data Formats</h3>
       <p>
-        Data formats define how data is structured and stored in computer
-        systems. Key data formats include the following:
+        Data formats define how data is structured and
+        stored in computer systems. Key data formats include
+        the following:
       </p>
       <p style="font-size: 19px">
-        The seven stages are described below. Click on the cards to reveal
-        defense points for each stage.
+        The seven stages are described below. Click on the
+        cards to reveal defense points for each stage.
       </p>
-
       <!-- SUMMARY -->
       <div class="summary-box">
         <h3>Integer Representation:</h3>
         <ul style="color: #041e42">
-          <li>Fixed-point representation for whole numbers.</li>
           <li>
-            Can be signed (positive and negative) or unsigned (only positive).
+            Fixed-point representation for whole numbers.
           </li>
-          <li>Common sizes are 8-bit, 16-bit, 32-bit, and 64-bit format.</li>
+          <li>
+            Can be signed (positive and negative) or
+            unsigned (only positive).
+          </li>
+          <li>
+            Common sizes are 8-bit, 16-bit, 32-bit, and
+            64-bit format.
+          </li>
         </ul>
       </div>
       <!-- SUMMARY -->
       <div class="summary-box">
         <h3>Floating-Point Representation:</h3>
         <ul style="color: #041e42">
-          <li>Used for representing real numbers with fractional parts.</li>
           <li>
-            Follows the IEEE 754 standard, which defines formats for 32-bit
-            (single-precision) and 64-bit (double-precision) floating-point
-            numbers.
+            Used for representing real numbers with
+            fractional parts.
           </li>
-          <li>Consists of sign, exponent, and mantissa parts.</li>
+          <li>
+            Follows the IEEE 754 standard, which defines
+            formats for 32-bit (single-precision) and 64-bit
+            (double-precision) floating-point numbers.
+          </li>
+          <li>
+            Consists of sign, exponent, and mantissa parts.
+          </li>
         </ul>
       </div>
       <!-- SUMMARY -->
@@ -225,11 +284,12 @@
         <h3>Binary Coded Decimal (BCD):</h3>
         <ul style="color: #041e42">
           <li>
-            Represents each decimal digit with its four-bit binary equivalent.
+            Represents each decimal digit with its four-bit
+            binary equivalent.
           </li>
           <li>
-            Used in applications requiring precise decimal representation, such
-            as financial calculations.
+            Used in applications requiring precise decimal
+            representation, such as financial calculations.
           </li>
         </ul>
       </div>
@@ -238,55 +298,72 @@
         <h3>ASCII and Unicode:</h3>
         <ul style="color: #041e42">
           <li>
-            Character encoding standards that map characters to numerical
-            values.
+            Character encoding standards that map characters
+            to numerical values.
           </li>
           <li>
-            ASCII uses seven or eight bits per character, supporting 128 or 256
-            characters.
+            ASCII uses seven or eight bits per character,
+            supporting 128 or 256 characters.
           </li>
           <li>
-            Unicode supports a wider range of characters with variable-length
-            encoding, allowing representation of characters from virtually all
+            Unicode supports a wider range of characters
+            with variable-length encoding, allowing
+            representation of characters from virtually all
             writing systems.
           </li>
         </ul>
       </div>
       <h3>Practical Applications</h3>
       <p>
-        Understanding number systems and data formats is crucial for various
-        practical applications in computer science:
+        Understanding number systems and data formats is
+        crucial for various practical applications in
+        computer science:
       </p>
-      <p>
-        👉 <strong>Data Encoding and Decoding:</strong> Conversion between
-        different bases is common in data storage and transmission, such as
-        converting binary data to hexadecimal for readability.
-      </p>
-      <p>
-        👉 <strong>Networking:</strong> IP addresses are often converted between
-        decimal and binary for subnetting and routing.
-      </p>
-      <p>
-        👉 <strong>Cryptography:</strong> Relies heavily on base conversions for
-        encrypting and decrypting data.
-      </p>
-      <p>
-        👉 <strong>Programming and Debugging:</strong> Hexadecimal is frequently
-        used to represent memory addresses and machine code instructions,
-        facilitating analysis and debugging.
-      </p>
+      <ul class="hand_list">
+        <li
+          class="hand"
+          style="color: #202122">
+          <strong>Data Encoding and Decoding:</strong>
+          Conversion between different bases is common in
+          data storage and transmission, such as converting
+          binary data to hexadecimal for readability.
+        </li>
+        <li
+          class="hand"
+          style="color: #202122">
+          <strong>Networking:</strong> IP addresses are
+          often converted between decimal and binary for
+          subnetting and routing.
+        </li>
+        <li
+          class="hand"
+          style="color: #202122">
+          <strong>Cryptography:</strong> Relies heavily on
+          base conversions for encrypting and decrypting
+          data.
+        </li>
+        <li
+          class="hand"
+          style="color: #202122">
+          <strong>Programming and Debugging:</strong>
+          Hexadecimal is frequently used to represent memory
+          addresses and machine code instructions,
+          facilitating analysis and debugging.
+        </li>
+      </ul>
       <h3>Interactive Element: Number System Converter</h3>
       <p>
-        To reinforce your understanding of number systems, you can implement an
-        interactive number system converter. This tool allows you to input a
-        number in one base (decimal, binary, hexadecimal, or octal) and see its
-        representation in other bases. It also can show the step-by-step
-        conversion process, helping you grasp the underlying mathematics. Here
+        To reinforce your understanding of number systems,
+        you can implement an interactive number system
+        converter. This tool allows you to input a number in
+        one base (decimal, binary, hexadecimal, or octal)
+        and see its representation in other bases. It also
+        can show the step-by-step conversion process,
+        helping you grasp the underlying mathematics. Here
         is the code to implement this tool:
       </p>
       <pre
-        class="line-numbers d2l-code"
-      ><code class="language-javascript">def decimal_to_base(decimal_num, base): 
+        class="line-numbers d2l-code"><code class="language-javascript">def decimal_to_base(decimal_num, base): 
     if decimal_num == 0: 
         return "0" 
     digits = "0123456789ABCDEF" 
@@ -302,201 +379,232 @@ print(f"Decimal: {decimal_num}")
 print(f"Binary: {decimal_to_base(decimal_num, 2)}") 
 print(f"Hexadecimal: {decimal_to_base(decimal_num, 16)}") 
 print(f"Octal: {decimal_to_base(decimal_num, 8)}")</code></pre>
-
       <p>
-        By mastering number systems and data formats, computer scientists and
-        engineers can ensure accurate and efficient data manipulation, storage,
-        and communication across various computing platforms. This knowledge is
-        fundamental to understanding how computers process and store information
-        at the lowest levels.
+        By mastering number systems and data formats,
+        computer scientists and engineers can ensure
+        accurate and efficient data manipulation, storage,
+        and communication across various computing
+        platforms. This knowledge is fundamental to
+        understanding how computers process and store
+        information at the lowest levels.
       </p>
       <h3>Basic CPU Components</h3>
       <p>
-        The CPU is the brain of a computer system, responsible for executing
-        instructions and controlling the operation of other components.
-        Understanding the basic components of a CPU is crucial for grasping how
-        computers process information. Let’s explore the key elements that make
-        up a modern CPU.
+        The CPU is the brain of a computer system,
+        responsible for executing instructions and
+        controlling the operation of other components.
+        Understanding the basic components of a CPU is
+        crucial for grasping how computers process
+        information. Let’s explore the key elements that
+        make up a modern CPU.
       </p>
       <p style="text-align: center; margin-top: 40px">
         <img
           src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
           alt="See more information"
           style="max-width: 100%"
-          width="600"
-        />
+          width="600" />
       </p>
-      <br />
-      <!-- ============================
+      <br /><!-- ============================
 
          ACORDEÓN
 
          ============================ -->
-
       <div class="accordion">
         <!-- PLANNING -->
-
         <div class="accordion-item">
-          <input type="checkbox" id="acc1" />
-          <label class="accordion-title" for="acc1"
+          <input
+            type="checkbox"
+            id="acc1" />
+          <label
+            class="accordion-title"
+            for="acc1"
             >Arithmetic Logic Unit (ALU)</label
           >
-
           <div class="accordion-content">
             <ul>
               <li>
-                The ALU is responsible for performing all arithmetic and logical
-                operations.
+                The ALU is responsible for performing all
+                arithmetic and logical operations.
               </li>
               <li>
-                It handles basic calculations like addition, subtraction,
-                multiplication, and division.
+                It handles basic calculations like addition,
+                subtraction, multiplication, and division.
               </li>
               <li>
-                Logical operations such as AND, OR, NOT, and XOR are also
-                performed by the ALU.
+                Logical operations such as AND, OR, NOT, and
+                XOR are also performed by the ALU.
               </li>
               <li>
-                Modern CPUs often contain multiple ALUs to handle parallel
-                processing tasks, enhancing computational efficiency.
+                Modern CPUs often contain multiple ALUs to
+                handle parallel processing tasks, enhancing
+                computational efficiency.
               </li>
             </ul>
           </div>
         </div>
-
         <!-- ORGANIZING -->
-
         <div class="accordion-item">
-          <input type="checkbox" id="acc2" />
-          <label class="accordion-title" for="acc2">Control Unit (CU)</label>
-
+          <input
+            type="checkbox"
+            id="acc2" />
+          <label
+            class="accordion-title"
+            for="acc2"
+            >Control Unit (CU)</label
+          >
           <div class="accordion-content">
             <ul>
               <li>
-                The control unit manages the execution of instructions by
-                directing the operation of the other components of the CPU.
+                The control unit manages the execution of
+                instructions by directing the operation of
+                the other components of the CPU.
               </li>
               <li>
-                It fetches instructions from memory, decodes them, and then
-                executes them by coordinating with the ALU and other units.
+                It fetches instructions from memory, decodes
+                them, and then executes them by coordinating
+                with the ALU and other units.
               </li>
               <li>
-                In modern CPUs, the control unit is integrated with advanced
-                features like pipelining and out-of-order execution to improve
-                instruction throughput.
+                In modern CPUs, the control unit is
+                integrated with advanced features like
+                pipelining and out-of-order execution to
+                improve instruction throughput.
               </li>
             </ul>
           </div>
         </div>
-
         <!-- LEADING -->
-
         <div class="accordion-item">
-          <input type="checkbox" id="acc3" />
-          <label class="accordion-title" for="acc3">Registers</label>
-
+          <input
+            type="checkbox"
+            id="acc3" />
+          <label
+            class="accordion-title"
+            for="acc3"
+            >Registers</label
+          >
           <div class="accordion-content">
             <ul>
               <li>
-                Registers are small, fast storage locations within the CPU used
-                to hold temporary data and instructions that are being
-                processed.
+                Registers are small, fast storage locations
+                within the CPU used to hold temporary data
+                and instructions that are being processed.
               </li>
               <li>
-                They play a crucial role in the execution of instructions by
-                providing quick access to data.
+                They play a crucial role in the execution of
+                instructions by providing quick access to
+                data.
               </li>
               <li>
-                Modern CPUs have a variety of registers, including the following
-                types:
+                Modern CPUs have a variety of registers,
+                including the following types:
                 <ul>
                   <li>
-                    <em>General-purpose registers:</em> Used for temporary data
-                    storage during computations.
+                    <em>General-purpose registers:</em> Used
+                    for temporary data storage during
+                    computations.
                   </li>
                   <li>
-                    <em>Instruction registers:</em> Hold the current instruction
-                    being executed.
+                    <em>Instruction registers:</em> Hold the
+                    current instruction being executed.
                   </li>
                   <li>
-                    <em>Program counter:</em> Keeps track of the address of the
-                    next instruction to be executed.
+                    <em>Program counter:</em> Keeps track of
+                    the address of the next instruction to
+                    be executed.
                   </li>
                   <li>
-                    <em>Stack pointer:</em> Points to the top of the stack in
-                    memory.
+                    <em>Stack pointer:</em> Points to the
+                    top of the stack in memory.
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
         </div>
-
         <!-- CONTROLLING -->
-
         <div class="accordion-item">
-          <input type="checkbox" id="acc5" />
-          <label class="accordion-title" for="acc5">Cache Memory</label>
-
+          <input
+            type="checkbox"
+            id="acc5" />
+          <label
+            class="accordion-title"
+            for="acc5"
+            >Cache Memory</label
+          >
           <div class="accordion-content">
             <ul>
               <li>
-                Cache memory is a small-sized type of volatile computer memory
-                that provides high-speed data storage and access to the CPU.
+                Cache memory is a small-sized type of
+                volatile computer memory that provides
+                high-speed data storage and access to the
+                CPU.
               </li>
               <li>
-                It stores frequently accessed data and instructions, reducing
-                the time needed to fetch them from the main memory.
+                It stores frequently accessed data and
+                instructions, reducing the time needed to
+                fetch them from the main memory.
               </li>
               <li>
-                Modern CPUs have multiple levels of cache (L1, L2, and sometimes
-                L3) to optimize data retrieval speed.
+                Modern CPUs have multiple levels of cache
+                (L1, L2, and sometimes L3) to optimize data
+                retrieval speed.
               </li>
               <li>
-                These caches use sophisticated algorithms to predict and
-                pre-load data that the CPU is likely to need next.
+                These caches use sophisticated algorithms to
+                predict and pre-load data that the CPU is
+                likely to need next.
               </li>
             </ul>
           </div>
         </div>
         <div class="accordion-item">
-          <input type="checkbox" id="acc6" />
-          <label class="accordion-title" for="acc6"
+          <input
+            type="checkbox"
+            id="acc6" />
+          <label
+            class="accordion-title"
+            for="acc6"
             >Memory Management Unit (MMU)</label
           >
-
           <div class="accordion-content">
             <ul>
               <li>
-                The MMU handles the translation of virtual memory addresses to
-                physical addresses, enabling efficient memory management and
+                The MMU handles the translation of virtual
+                memory addresses to physical addresses,
+                enabling efficient memory management and
                 protection.
               </li>
               <li>
-                It supports advanced features like address space layout
-                randomization (ASLR) to enhance security.
+                It supports advanced features like address
+                space layout randomization (ASLR) to enhance
+                security.
               </li>
               <li>
-                The MMU is crucial for supporting large address spaces in 64-bit
-                architectures.
+                The MMU is crucial for supporting large
+                address spaces in 64-bit architectures.
               </li>
             </ul>
           </div>
         </div>
         <div class="accordion-item">
-          <input type="checkbox" id="acc4" />
-          <label class="accordion-title" for="acc4">Controlling</label>
-
+          <input
+            type="checkbox"
+            id="acc4" />
+          <label
+            class="accordion-title"
+            for="acc4"
+            >Controlling</label
+          >
           <div class="accordion-content">
-            <p>Managers define and establish standards...</p>
-
+            <p>
+              Managers define and establish standards...
+            </p>
             <ul>
               <li>Measure results...</li>
-
               <li>Monitor performance...</li>
-
               <li>Reward employees...</li>
-
               <li>Provide corrective action...</li>
             </ul>
           </div>
@@ -504,20 +612,21 @@ print(f"Octal: {decimal_to_base(decimal_num, 8)}")</code></pre>
       </div>
       <h3>Advanced Features in Modern CPUs</h3>
       <p>
-        Modern CPUs have various advanced features that allow for optimal
-        efficiency and output:
+        Modern CPUs have various advanced features that
+        allow for optimal efficiency and output:
       </p>
       <h3>
         <strong><span>➡️</span>Pipelining:</strong>
       </h3>
       <ul style="color: #202122">
         <li>
-          Pipelining is a techniquein which multiple instructions are overlapped
-          in execution.
+          Pipelining is a techniquein which multiple
+          instructions are overlapped in execution.
         </li>
         <li>
-          It improves throughput by allowing the CPU to work on several
-          instructions simultaneously, each at a different stage of execution.
+          It improves throughput by allowing the CPU to work
+          on several instructions simultaneously, each at a
+          different stage of execution.
         </li>
       </ul>
       <h3>
@@ -526,12 +635,13 @@ print(f"Octal: {decimal_to_base(decimal_num, 8)}")</code></pre>
       </h3>
       <ul style="color: #202122">
         <li>
-          Superscalar CPUs can execute more than one instruction per clock cycle
-          by using multiple execution units.
+          Superscalar CPUs can execute more than one
+          instruction per clock cycle by using multiple
+          execution units.
         </li>
         <li>
-          This architecture significantly boosts performance by exploiting
-          instruction-level parallelism.
+          This architecture significantly boosts performance
+          by exploiting instruction-level parallelism.
         </li>
       </ul>
       <h3>
@@ -540,11 +650,13 @@ print(f"Octal: {decimal_to_base(decimal_num, 8)}")</code></pre>
       </h3>
       <ul style="color: #202122">
         <li>
-          This feature allows the CPU to execute instructions in an order
-          different from the original program order.
+          This feature allows the CPU to execute
+          instructions in an order different from the
+          original program order.
         </li>
         <li>
-          It helps to optimize the use of execution units and reduce idle time.
+          It helps to optimize the use of execution units
+          and reduce idle time.
         </li>
       </ul>
       <h3>
@@ -553,12 +665,12 @@ print(f"Octal: {decimal_to_base(decimal_num, 8)}")</code></pre>
       </h3>
       <ul style="color: #202122">
         <li>
-          Branch predictionattempts to guess the outcome of conditional branches
-          before they are executed.
+          Branch predictionattempts to guess the outcome of
+          conditional branches before they are executed.
         </li>
         <li>
-          Accurate branch prediction can significantly improve performance by
-          reducing pipeline stalls.
+          Accurate branch prediction can significantly
+          improve performance by reducing pipeline stalls.
         </li>
       </ul>
       <h3>
@@ -567,12 +679,13 @@ print(f"Octal: {decimal_to_base(decimal_num, 8)}")</code></pre>
       </h3>
       <ul style="color: #202122">
         <li>
-          Also known asHyperthreading in Intel processors, SMT allows a single
-          CPU core to execute multiple threads simultaneously.
+          Also known asHyperthreading in Intel processors,
+          SMT allows a single CPU core to execute multiple
+          threads simultaneously.
         </li>
         <li>
-          It improves the efficiency of superscalar CPUs by betterutilizing
-          available execution resources.
+          It improves the efficiency of superscalar CPUs by
+          betterutilizing available execution resources.
         </li>
       </ul>
       <hr />
@@ -581,8 +694,7 @@ print(f"Octal: {decimal_to_base(decimal_num, 8)}")</code></pre>
           src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
           alt="logo"
           width="110"
-          style="float: right"
-        />
+          style="float: right" />
       </div>
     </div>
     <p>

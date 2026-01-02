@@ -3,40 +3,34 @@
   <head>
     <link
       rel="stylesheet"
-      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
-    />
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
     <link
       rel="stylesheet"
-      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
-    />
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
     <link
       rel="stylesheet"
-      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
-    />
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
     <!-- Font Awesome CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
     <!-- Template CSS -->
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css"
-    />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
     <link
       rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css"
-    />
-    <link rel="stylesheet" href="../../../Griky Structure/GlobalStyles.css" />
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
     <link
       rel="stylesheet"
-      href="../../../Griky Structure/StylesComponents.css"
-    />
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
     <style>
       .btn-primary {
         background-color: #05c3de !important;
@@ -67,6 +61,33 @@
       .btn-primary:focus a {
         color: inherit !important;
       }
+
+      details {
+        margin-top: 20px;
+        background-color: #041d42;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 19px;
+        border-radius: 8px;
+      }
+      summary {
+        color: #05c3de;
+        font-size: 19px;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      .green_check::before {
+        content: "✅";
+        color: #202122;
+      }
+
+      .blue_arrow::before {
+        content: "➡️";
+        color: #202122;
+      }
     </style>
   </head>
   <body>
@@ -78,12 +99,19 @@
           color: white;
           text-align: center;
           margin: 0;
-        "
-      >
+        ">
         <span
-          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          style="
+            font-size: 20px;
+            color: #05c3de;
+            font-family: Lato, sans-serif;
+          "
           >Week 2</span
-        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+        ><br /><span
+          style="
+            font-size: 28px;
+            font-family: Lato, sans-serif;
+          "
           >Pipelining and Performance
         </span>
       </h3>
@@ -91,123 +119,155 @@
     <div class="content-wrapper">
       <h1
         class="title-topic"
-        style="text-align: center; color: #041e40; font-size: 35px"
-      >
+        style="
+          text-align: center;
+          color: #041e40;
+          font-size: 35px;
+        ">
         <span style="font-family: Lato, sans-serif"
           ><strong>Superscalar Execution</strong></span
         >
       </h1>
       <hr class="divider-line" />
       <p>
-        Superscalar execution is a processor design approach that allows
-        multiple instructions to be issued and executed per clock cycle. This
-        technique significantly enhances processor performance by exploiting
-        instruction-level parallelism (ILP).&nbsp; Key characteristics of
-        superscalar execution include the following:&nbsp;
+        Superscalar execution is a processor design approach
+        that allows multiple instructions to be issued and
+        executed per clock cycle. This technique
+        significantly enhances processor performance by
+        exploiting instruction-level parallelism
+        (ILP).&nbsp; Key characteristics of superscalar
+        execution include the following:&nbsp;
       </p>
       <ol>
         <li>
-          <strong>Multiple Issue:</strong> Superscalar processors can issue more
-          than one instruction per clock cycle, in contrast to scalar
-          processors, which issue a single instruction per cycle.&nbsp;
+          <strong>Multiple Issue:</strong> Superscalar
+          processors can issue more than one instruction per
+          clock cycle, in contrast to scalar processors,
+          which issue a single instruction per cycle.&nbsp;
         </li>
         <li>
-          <strong>Dynamic Scheduling:</strong> Unlike VLIW processors,
-          superscalar processors dynamically check for resource conflicts and
-          dependencies at runtime, determining which instructions can be
+          <strong>Dynamic Scheduling:</strong> Unlike VLIW
+          processors, superscalar processors dynamically
+          check for resource conflicts and dependencies at
+          runtime, determining which instructions can be
           executed in parallel.&nbsp;
         </li>
         <li>
-          <strong>Multiple Execution Units:</strong> Superscalar processors
-          typically have multiple execution units (e.g., integer and
-          floating-point units) that can operate simultaneously, allowing
-          different types of instructions to be processed in parallel.&nbsp;
+          <strong>Multiple Execution Units:</strong>
+          Superscalar processors typically have multiple
+          execution units (e.g., integer and floating-point
+          units) that can operate simultaneously, allowing
+          different types of instructions to be processed in
+          parallel.&nbsp;
         </li>
       </ol>
       <p>
-        Superscalar execution has various impacts on performance. First,
-        throughput is increased: by executing multiple instructions per cycle,
-        superscalar processors significantly increase instruction throughput
-        compared to scalar processors. Second, latency is reduced: parallel
-        execution of instructions helps in reducing the latency of individual
-        tasks. While offering performance benefits, superscalar architectures
-        introduce complexity in instruction scheduling and hazard management.
-        The performance of superscalar processors can be further enhanced by
-        compiler optimizations that reorder instructions to minimize hazards and
-        maximize utilization of available execution units.&nbsp;
+        Superscalar execution has various impacts on
+        performance. First, throughput is increased: by
+        executing multiple instructions per cycle,
+        superscalar processors significantly increase
+        instruction throughput compared to scalar
+        processors. Second, latency is reduced: parallel
+        execution of instructions helps in reducing the
+        latency of individual tasks. While offering
+        performance benefits, superscalar architectures
+        introduce complexity in instruction scheduling and
+        hazard management. The performance of superscalar
+        processors can be further enhanced by compiler
+        optimizations that reorder instructions to minimize
+        hazards and maximize utilization of available
+        execution units.&nbsp;
       </p>
       <h3>SIMD and Vectorization</h3>
       <p>
-        Single Instruction, Multiple Data (SIMD) and vectorization are
-        techniques used in modern processors to enhance computational efficiency
-        by processing multiple data elements in parallel. SIMD
-        architecture&nbsp;allows a single instruction to be executed on multiple
-        data points simultaneously, reducing the number of instructions and
-        execution time. Vectorization is a&nbsp;technique that enhances
-        computational efficiency by processing multiple data elements in
-        parallel, often implemented using SIMD instructions.&nbsp;
+        Single Instruction, Multiple Data (SIMD) and
+        vectorization are techniques used in modern
+        processors to enhance computational efficiency by
+        processing multiple data elements in parallel. SIMD
+        architecture&nbsp;allows a single instruction to be
+        executed on multiple data points simultaneously,
+        reducing the number of instructions and execution
+        time. Vectorization is a&nbsp;technique that
+        enhances computational efficiency by processing
+        multiple data elements in parallel, often
+        implemented using SIMD instructions.&nbsp;
       </p>
-      <p>These techniques offer the following benefits:&nbsp;</p>
+      <p>
+        These techniques offer the following benefits:&nbsp;
+      </p>
       <ul>
-        <p>
-          ✅&nbsp; Performance Improvement: Vectorization significantly boosts
-          performance by reducing the number of instructions a program needs to
+        <li class="green_check">
+          Performance Improvement: Vectorization
+          significantly boosts performance by reducing the
+          number of instructions a program needs to
           execute.&nbsp;
-        </p>
-        <p>
-          ✅&nbsp; Power Efficiency: Vectorized operations consume less power
-          than equivalent scalar operations.&nbsp;
-        </p>
-        <p>
-          ✅&nbsp; Memory Optimization: SIMD improves cache locality by
-          accessing contiguous memory blocks, reducing cache misses and memory
-          latency.&nbsp;
-        </p>
+        </li>
+        <li class="green_check">
+          Power Efficiency: Vectorized operations consume
+          less power than equivalent scalar
+          operations.&nbsp;
+        </li>
+        <li class="green_check">
+          Memory Optimization: SIMD improves cache locality
+          by accessing contiguous memory blocks, reducing
+          cache misses and memory latency.&nbsp;
+        </li>
       </ul>
       <p>
-        The above techniques can be implemented using various approaches. Modern
-        compilers can automatically identify opportunities for vectorization
-        (auto-vectorization). Libraries like NumPy and Pandas in Python, and
-        SIMD Intrinsics and Intel MKL in C++, provide tools for implementing
-        vectorized operations. Lastly, processors with SIMD capabilities (e.g.,
-        AVX2 and AVX-512) enable efficient vectorization of operations like
-        matrix multiplication and image processing.&nbsp;
+        The above techniques can be implemented using
+        various approaches. Modern compilers can
+        automatically identify opportunities for
+        vectorization (auto-vectorization). Libraries like
+        NumPy and Pandas in Python, and SIMD Intrinsics and
+        Intel MKL in C++, provide tools for implementing
+        vectorized operations. Lastly, processors with SIMD
+        capabilities (e.g., AVX2 and AVX-512) enable
+        efficient vectorization of operations like matrix
+        multiplication and image processing.&nbsp;
       </p>
       <p>
-        Application areas for vectorization and SIMD include Natural Language
-        Processing (NLP), Image Processing, and Financial Calculation.
+        Application areas for vectorization and SIMD include
+        Natural Language Processing (NLP), Image Processing,
+        and Financial Calculation.
       </p>
       <h3>Branch Prediction Techniques</h3>
       <p>
-        Branch prediction is a crucial technique in modern processors that can
-        improve performance by predicting the outcome of branch instructions
-        before they are executed. There are two main categories of branch
-        prediction techniques—static and dynamic.&nbsp;
+        Branch prediction is a crucial technique in modern
+        processors that can improve performance by
+        predicting the outcome of branch instructions before
+        they are executed. There are two main categories of
+        branch prediction techniques—static and
+        dynamic.&nbsp;
       </p>
       <div class="highlight-box">
-        <h3 style="text-align: center">Static Branch Prediction Techniques:</h3>
+        <h3 style="text-align: center">
+          Static Branch Prediction Techniques:
+        </h3>
         <ol style="color: white">
           <li>
-            Always Taken/Not Taken: Assumes branches are always taken or not
-            taken. This method can be correct about 68% of the time for an
-            “always taken” prediction.&nbsp;
+            Always Taken/Not Taken: Assumes branches are
+            always taken or not taken. This method can be
+            correct about 68% of the time for an “always
+            taken” prediction.&nbsp;
           </li>
           <li>
-            Opcode-Based Prediction: Uses the opcode of the branch instruction
-            to make predictions.&nbsp;
+            Opcode-Based Prediction: Uses the opcode of the
+            branch instruction to make predictions.&nbsp;
           </li>
           <li>
-            Backward/Forward Prediction: Predicts backward branches (loops) as
-            taken and forward branches as not taken.&nbsp;
+            Backward/Forward Prediction: Predicts backward
+            branches (loops) as taken and forward branches
+            as not taken.&nbsp;
           </li>
           <li>
-            Profiling-Based Prediction: Uses data from previous runs to predict
-            branch behavior.&nbsp;
+            Profiling-Based Prediction: Uses data from
+            previous runs to predict branch behavior.&nbsp;
           </li>
           <li>
-            Evidence-Based Static Prediction (ESP): Uses machine learning
-            techniques to predict branch behavior based on static features of a
-            program, showing a miss rate of 20%.&nbsp;
+            Evidence-Based Static Prediction (ESP): Uses
+            machine learning techniques to predict branch
+            behavior based on static features of a program,
+            showing a miss rate of 20%.&nbsp;
           </li>
         </ol>
       </div>
@@ -217,50 +277,57 @@
         </h3>
         <ol style="color: white">
           <li>
-            One-bit and two-bit Predictors: Use a history table to store the
-            outcome of previous branches. Two-bit predictors offer better
-            accuracy by changing a prediction only after two consecutive
+            One-bit and two-bit Predictors: Use a history
+            table to store the outcome of previous branches.
+            Two-bit predictors offer better accuracy by
+            changing a prediction only after two consecutive
             mispredictions.&nbsp;
           </li>
           <li>
-            Correlating Predictors: Use the behavior of other branches to make
-            predictions, capturing correlations between different
-            branches.&nbsp;
+            Correlating Predictors: Use the behavior of
+            other branches to make predictions, capturing
+            correlations between different branches.&nbsp;
           </li>
           <li>
-            Tournament Predictors: Use multiple prediction strategies and select
-            the best one based on past performance.&nbsp;
+            Tournament Predictors: Use multiple prediction
+            strategies and select the best one based on past
+            performance.&nbsp;
           </li>
           <li>
-            Branch Target Buffer (BTB): Stores the target addresses of
-            previously taken branches, reducing penalties for taken
-            branches.&nbsp;
+            Branch Target Buffer (BTB): Stores the target
+            addresses of previously taken branches, reducing
+            penalties for taken branches.&nbsp;
           </li>
           <li>
-            Perceptron-Based Predictors: Use simple neural networks to predict
-            branch outcomes, capturing complex patterns in branch
-            behavior.&nbsp;
+            Perceptron-Based Predictors: Use simple neural
+            networks to predict branch outcomes, capturing
+            complex patterns in branch behavior.&nbsp;
           </li>
         </ol>
       </div>
       <p>
-        It is worth noting several points about the effectiveness of branch
-        prediction techniques. Dynamic branch prediction techniques generally
-        outperform static ones due to their ability to adapt to runtime
-        behavior.More complex dynamic predictors like tournament and
-        perceptron-based predictors offer higher accuracy but at the cost of
-        increased hardware complexity and power consumption. Lastly, the
-        effectiveness of branch prediction can vary with different processor
-        architectures, but studies show that the impact is generally consistent
-        across architectures like MIPS, Alpha, and SPARC.
+        It is worth noting several points about the
+        effectiveness of branch prediction techniques.
+        Dynamic branch prediction techniques generally
+        outperform static ones due to their ability to adapt
+        to runtime behavior.More complex dynamic predictors
+        like tournament and perceptron-based predictors
+        offer higher accuracy but at the cost of increased
+        hardware complexity and power consumption. Lastly,
+        the effectiveness of branch prediction can vary with
+        different processor architectures, but studies show
+        that the impact is generally consistent across
+        architectures like MIPS, Alpha, and SPARC.
       </p>
       <h3>Instruction Scheduling</h3>
       <p>
-        Instruction scheduling is a critical compiler optimization technique
-        aimed at improving the performance of pipelined processors by enhancing
-        instruction-level parallelism. It involves rearranging the order of
-        instructions to avoid pipeline stalls and ensure efficient utilization
-        of processor resources.&nbsp;
+        Instruction scheduling is a critical compiler
+        optimization technique aimed at improving the
+        performance of pipelined processors by enhancing
+        instruction-level parallelism. It involves
+        rearranging the order of instructions to avoid
+        pipeline stalls and ensure efficient utilization of
+        processor resources.&nbsp;
       </p>
 
       <p class="standard-text">
@@ -269,13 +336,22 @@
           alt="Cintillo_Tabs"
           title="Cintillo_Tabs"
           data-d2l-editor-default-img-style="true"
-          style="max-width: 100%"
-        />
+          style="max-width: 100%" />
       </p>
       <div class="tabs-container">
-        <input type="radio" name="tabs-hr" id="tab1" checked="checked" />
-        <input type="radio" name="tabs-hr" id="tab2" />
-        <input type="radio" name="tabs-hr" id="tab3" />
+        <input
+          type="radio"
+          name="tabs-hr"
+          id="tab1"
+          checked="checked" />
+        <input
+          type="radio"
+          name="tabs-hr"
+          id="tab2" />
+        <input
+          type="radio"
+          name="tabs-hr"
+          id="tab3" />
 
         <div class="tabs">
           <label for="tab1">Pipeline Stalls</label>
@@ -285,21 +361,29 @@
 
         <div class="content content-1">
           <p class="standard-text">
-            These occur when the next instruction cannot be executed in the
-            subsequent cycle due to various hazards:
+            These occur when the next instruction cannot be
+            executed in the subsequent cycle due to various
+            hazards:
           </p>
           <ul>
-            <li>Structural hazards: Hardware resource unavailability&nbsp;</li>
-            <li>Data hazards: Instruction dependencies&nbsp;</li>
             <li>
-              Control hazards: Branch instructions altering execution flow&nbsp;
+              Structural hazards: Hardware resource
+              unavailability&nbsp;
+            </li>
+            <li>
+              Data hazards: Instruction dependencies&nbsp;
+            </li>
+            <li>
+              Control hazards: Branch instructions altering
+              execution flow&nbsp;
             </li>
           </ul>
         </div>
 
         <div class="content content-2">
           <p class="standard-text">
-            Instruction scheduling must respect data dependencies:
+            Instruction scheduling must respect data
+            dependencies:
           </p>
           <ul>
             <li>Read after write (RAW)&nbsp;</li>
@@ -310,69 +394,62 @@
 
         <div class="content content-3">
           <p class="standard-text">
-            Directed graphs representing dependencies between instructions, used
-            to determine valid instruction schedules.
+            Directed graphs representing dependencies
+            between instructions, used to determine valid
+            instruction schedules.
           </p>
         </div>
       </div>
 
-      <p>The following algorithms are used for instruction scheduling:&nbsp;</p>
+      <p>
+        The following algorithms are used for instruction
+        scheduling:&nbsp;
+      </p>
       <ul>
-        <p>
-          ➡️ List scheduling: Selects instructions from the dependency graph
-          based on their readiness and appends them to the schedule.&nbsp;&nbsp;
-        </p>
-        <p>
-          ➡️ Modulo&nbsp;scheduling: Used for software pipelining, particularly
-          in loops, to increase instruction-level parallelism.&nbsp;&nbsp;
-        </p>
-        <p>
-          ➡️ Trace scheduling: Focuses on optimizing the most frequently
-          executed paths in the code.&nbsp;&nbsp;
-        </p>
-        <p>
-          ➡️ Superblock scheduling: A simplified form of trace scheduling that
-          allows multiple schedules for different paths.&nbsp;&nbsp;
-        </p>
+        <li class="blue_arrow">
+          List scheduling: Selects instructions from the
+          dependency graph based on their readiness and
+          appends them to the schedule.&nbsp;&nbsp;
+        </li>
+        <li class="blue_arrow">
+          Modulo&nbsp;scheduling: Used for software
+          pipelining, particularly in loops, to increase
+          instruction-level parallelism.&nbsp;&nbsp;
+        </li>
+        <li class="blue_arrow">
+          Trace scheduling: Focuses on optimizing the most
+          frequently executed paths in the code.&nbsp;&nbsp;
+        </li>
+        <li class="blue_arrow">
+          Superblock scheduling: A simplified form of trace
+          scheduling that allows multiple schedules for
+          different paths.&nbsp;&nbsp;
+        </li>
       </ul>
 
-      <details
-        style="
-          background: #041e42;
-          padding: 10px;
-          border: 1px solid #ddd;
-          margin-bottom: 10px;
-          border-radius: 5px;
-          color: white;
-        "
-      >
-        <summary
-          style="
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            font-size: 19px;
-            padding: 10px;
-          "
-        >
-          Can you predict the ways in which instruction scheduling may optimize
-          pipeline performance?
+      <details>
+        <summary>
+          Can you predict the ways in which instruction
+          scheduling may optimize pipeline performance?
         </summary>
         <ol style="margin-top: 10px; font-size: 19px">
           <li>
-            By reducing pipeline stalls (by rearranging instructions to avoid
-            hazards, instruction scheduling minimizes idle cycles in the
+            By reducing pipeline stalls (by rearranging
+            instructions to avoid hazards, instruction
+            scheduling minimizes idle cycles in the
             pipeline).&nbsp;
           </li>
           <li>
-            By enhancing parallelism (maximizes the overlap of instruction
-            execution, increasing the effective utilization of processor
+            By enhancing parallelism (maximizes the overlap
+            of instruction execution, increasing the
+            effective utilization of processor
             resources).&nbsp;
           </li>
           <li>
-            By improving resource utilization (considers the availability of
-            processor resources and the latency of operations to ensure
-            efficient pipeline utilization).&nbsp;
+            By improving resource utilization (considers the
+            availability of processor resources and the
+            latency of operations to ensure efficient
+            pipeline utilization).&nbsp;
           </li>
         </ol>
       </details>
@@ -380,7 +457,9 @@
 
       <div class="card card-standard">
         <div class="card-body">
-          <div class="card-text" style="text-align: center">
+          <div
+            class="card-text"
+            style="text-align: center">
             <span style="font-size: 24px; color: #004c99"
               ><strong
                 ><img
@@ -396,24 +475,35 @@
             <div class="card card-standard card-reveal">
               <div class="card-body">
                 <div class="card-text">
-                  <h3 class="card-text" style="color: #041e42">Question:</h3>
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:
+                  </h3>
                   <div class="card-text"></div>
                   <div class="card-text">
-                    <span style="font-size: 19px; color: #041e42"
-                      >Can you identify the term used to describe a processor’s
-                      ability to execute more than one instruction per clock
-                      cycle by using multiple execution units?</span
+                    <span
+                      style="
+                        font-size: 19px;
+                        color: #041e42;
+                      "
+                      >Can you identify the term used to
+                      describe a processor’s ability to
+                      execute more than one instruction per
+                      clock cycle by using multiple
+                      execution units?</span
                     >
                   </div>
                   <button
                     type="button"
                     class="btn btn-primary btn-reveal"
                     data-toggle="collapse"
-                    aria-expanded="false"
-                  >
+                    aria-expanded="false">
                     Show Answer
                   </button>
-                  <div class="collapse" tabindex="0">
+                  <div
+                    class="collapse"
+                    tabindex="0">
                     <h3 style="color: #041e42">
                       Answer: &nbsp;Superscalar Execution
                     </h3>
@@ -421,10 +511,12 @@
                       <span
                         data-ccp-parastyle="Body Text"
                         style="color: #041e42"
-                        >Explanation: Superscalar execution refers to a
-                        processor’s capability to execute multiple instructions
-                        per clock cycle by utilizing multiple execution units,
-                        thereby enhancing parallelism and
+                        >Explanation: Superscalar execution
+                        refers to a processor’s capability
+                        to execute multiple instructions per
+                        clock cycle by utilizing multiple
+                        execution units, thereby enhancing
+                        parallelism and
                         performance.&nbsp;</span
                       >
                     </p>
@@ -442,8 +534,7 @@
           src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
           alt="logo"
           width="110"
-          style="float: right"
-        />
+          style="float: right" />
       </div>
     </div>
     <p>
