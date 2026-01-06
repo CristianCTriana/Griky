@@ -144,6 +144,47 @@
       .dual-box p {
         color: white;
       }
+
+      details {
+        margin-top: 20px;
+        background-color: #041d42;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 19px;
+        border-radius: 8px;
+      }
+      summary {
+        color: #05c3de;
+        font-size: 19px;
+      }
+
+      .box-border {
+        border: #041e42 1px solid;
+        border-radius: 5px;
+        padding: 25px;
+        margin-top: 25px;
+      }
+
+      .box-border h3 {
+        font-size: 24px;
+      }
+
+      .box-border p,
+      .box-border ul {
+        font-size: 19px;
+        line-height: 1.6;
+      }
+
+      .box-border ul {
+        color: #041e42;
+      }
+
+      .icon-list {
+        list-style-type: none !important;
+      }
+      .purple-check::before {
+        content: "☑️";
+      }
     </style>
   </head>
 
@@ -214,59 +255,44 @@
         accuracy levels.
       </p>
 
-      <details
-        style="
-          background: #041e42;
-          padding: 10px;
-          border: 1px solid #ddd;
-          margin-bottom: 10px;
-          border-radius: 5px;
-          color: white;
-        ">
-        <summary
-          style="
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            font-size: 19px;
-            padding: 10px;
-          ">
-          Advantages of NPUs
-        </summary>
-        <p>
-          ☑️&nbsp; Increased Performance: NPUs are capable
-          of performing neural network computations
-          significantly faster than CPUs and GPUs. This
-          performance boost translates into faster training
-          and inference times for AI models.&nbsp;
-        </p>
-        <p>
-          ☑️&nbsp; Improved Efficiency: By optimizing for
-          the specific needs of neural networks, NPUs
-          achieve greater computational efficiency,
-          performing more operations per watt of power
-          consumed.&nbsp;
-        </p>
-        <p>
-          ☑️&nbsp; Scalability: NPUs are designed to scale
-          efficiently with the size of neural networks,
-          handling increased computational demands without a
-          proportional increase in power consumption or
-          reduction in performance.&nbsp;
-        </p>
-        <p>
-          ☑️&nbsp; Real-time Processing: NPUs are
-          well-suited for real-time AI applications,
-          ensuring that AI systems can respond swiftly to
-          dynamic environments.&nbsp;
-        </p>
-        <p>
-          ☑️&nbsp; Power Efficiency: NPUs consume
-          significantly less power than their CPU and GPU
-          counterparts, making them ideal for
-          battery-powered devices and IoT
-          applications.&nbsp;
-        </p>
+      <details>
+        <summary>Advantages of NPUs</summary>
+        <ul class="icon-list">
+          <li class="purple-check">
+            Increased Performance: NPUs are capable of
+            performing neural network computations
+            significantly faster than CPUs and GPUs. This
+            performance boost translates into faster
+            training and inference times for AI
+            models.&nbsp;
+          </li>
+          <li class="purple-check">
+            Improved Efficiency: By optimizing for the
+            specific needs of neural networks, NPUs achieve
+            greater computational efficiency, performing
+            more operations per watt of power
+            consumed.&nbsp;
+          </li>
+          <li class="purple-check">
+            Scalability: NPUs are designed to scale
+            efficiently with the size of neural networks,
+            handling increased computational demands without
+            a proportional increase in power consumption or
+            reduction in performance.&nbsp;
+          </li>
+          <li class="purple-check">
+            Real-time Processing: NPUs are well-suited for
+            real-time AI applications, ensuring that AI
+            systems can respond swiftly to dynamic
+            environments.&nbsp;
+          </li>
+          <li class="purple-check">
+            Power Efficiency: NPUs consume significantly
+            less power than their CPU and GPU counterparts,
+            making them ideal for battery-powered devices
+            and IoT applications.&nbsp;
+          </li>
+        </ul>
       </details>
 
       <h3>Applications of NPUs&nbsp;</h3>
@@ -277,7 +303,65 @@
         capabilities.&nbsp;Several common applications are
         as follows:
       </p>
-      H5P
+      <div class="timeline">
+        <!-- Línea central -->
+        <div class="timeline-line"></div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>1. Mobile Devices</h3>
+            <p>
+              In smartphones and tablets, NPUs enable
+              advanced features such as real-time language
+              translation, enhanced camera functionalities,
+              and improved voice recognition.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>2. Autonomous Vehicles</h3>
+            <p>
+              NPUs provide the necessary computational power
+              to handle tasks like object detection, path
+              planning, and decision-making, ensuring safe
+              and efficient autonomous navigation.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>3. Healthcare</h3>
+            <p>
+              NPUs accelerate tasks such as medical image
+              analysis, disease diagnosis, and drug
+              discovery, helping medical professionals make
+              informed decisions faster.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>4. Robotics</h3>
+            <p>
+              Robots in industrial automation, agriculture,
+              and consumer electronics benefit from the
+              real-time processing capabilities of NPUs.
+            </p>
+          </div>
+        </div>
+      </div>
       <h3>Field-Programmable Gate Arrays (FPGAs)</h3>
       <p>
         The structure of FPGAs consists of several key
@@ -307,36 +391,40 @@
         to their flexibility and reconfigurability:&nbsp;
       </p>
       <!--CAJA OSCURA-->
-      <div class="highlight-box">
-        <h3>Use Cases of FPGAs</h3>
-        <p>
-          ☑️ &nbsp;Automotive Industry: They are used in
-          advanced driver-assistance systems (ADAS),
-          infotainment systems, and other automotive
-          applications.&nbsp;&nbsp;
-        </p>
-        <p>
-          ☑️ &nbsp;Telecommunications: FPGAs are employed in
-          network equipment for tasks such as packet
-          processing and signal modulation.&nbsp;&nbsp;
-        </p>
-        <p>
-          ☑️ &nbsp;Aerospace and Defense: Due to their
-          reliability and ability to be reprogrammed, FPGAs
-          are used in various aerospace and defense
-          applications.&nbsp;&nbsp;
-        </p>
-        <p>
-          ☑️ &nbsp;Data Centers and High-Performance
-          Computing (HPC): FPGAs are increasingly used in
-          data centers for accelerating workloads such as
-          machine learning and data analytics.&nbsp;&nbsp;
-        </p>
-        <p>
-          ☑️ &nbsp;Consumer Electronics: FPGAs are used in
-          devices such as MP3 players and televisions for
-          processing and control tasks.&nbsp;
-        </p>
+      <div class="box-border">
+        <h2 style="text-align: center">
+          Use Cases of FPGAs
+        </h2>
+        <ul class="icon-list">
+          <li class="purple-check">
+            Automotive Industry: They are used in advanced
+            driver-assistance systems (ADAS), infotainment
+            systems, and other automotive
+            applications.&nbsp;&nbsp;
+          </li>
+          <li class="purple-check">
+            Telecommunications: FPGAs are employed in
+            network equipment for tasks such as packet
+            processing and signal modulation.&nbsp;&nbsp;
+          </li>
+          <li class="purple-check">
+            Aerospace and Defense: Due to their reliability
+            and ability to be reprogrammed, FPGAs are used
+            in various aerospace and defense
+            applications.&nbsp;&nbsp;
+          </li>
+          <li class="purple-check">
+            Data Centers and High-Performance Computing
+            (HPC): FPGAs are increasingly used in data
+            centers for accelerating workloads such as
+            machine learning and data analytics.&nbsp;&nbsp;
+          </li>
+          <li class="purple-check">
+            Consumer Electronics: FPGAs are used in devices
+            such as MP3 players and televisions for
+            processing and control tasks.&nbsp;
+          </li>
+        </ul>
       </div>
       <h3>Comparison with Other Accelerators</h3>
       <p>

@@ -83,6 +83,27 @@
         margin-left: auto;
         width: 110px;
       }
+
+      ul {
+        list-style-type: none !important;
+      }
+
+      li::before {
+        content: "☑️";
+      }
+
+      details {
+        margin-top: 20px;
+        background-color: #041d42;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 19px;
+        border-radius: 8px;
+      }
+      summary {
+        color: #05c3de;
+        font-size: 19px;
+      }
     </style>
   </head>
 
@@ -147,8 +168,6 @@
             </p>
           </div>
         </div>
-        <!--ACORDEON-->
-        <!--<div class="accordion">aqui acordeon item</div> -->
         <div class="accordion-item">
           <input
             type="checkbox"
@@ -171,8 +190,6 @@
             </p>
           </div>
         </div>
-        <!--ACORDEON-->
-        <!--<div class="accordion">aqui acordeon item</div> -->
         <div class="accordion-item">
           <input
             type="checkbox"
@@ -192,8 +209,6 @@
             </p>
           </div>
         </div>
-        <!--ACORDEON-->
-        <!--<div class="accordion">aqui acordeon item</div> -->
         <div class="accordion-item">
           <input
             type="checkbox"
@@ -212,8 +227,6 @@
             </p>
           </div>
         </div>
-        <!--ACORDEON-->
-        <!--<div class="accordion">aqui acordeon item</div> -->
         <div class="accordion-item">
           <input
             type="checkbox"
@@ -263,80 +276,64 @@
         are vital for coordinating thread execution and
         ensuring data consistency.&nbsp;
       </p>
-      <details
-        style="
-          background: #041e42;
-          padding: 10px;
-          border: 1px solid #ddd;
-          margin-bottom: 10px;
-          border-radius: 5px;
-          color: white;
-        ">
-        <summary
-          style="
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            font-size: 19px;
-            padding: 10px;
-          ">
-          Performance Tuning Strategies
-        </summary>
-        <p>
-          ☑️ &nbsp;Network Architecture Search (NAS): This
-          technique customizes neural network architectures
-          to suit specific NPUs, optimizing performance and
-          energy efficiency by minimizing parameters while
-          maximizing throughput.&nbsp;&nbsp;
-        </p>
-        <p>
-          ☑️&nbsp; Quantization: Reducing the precision of a
-          model’s weights and activations can significantly
-          improve inference speed and reduce power
-          consumption on NPUs, FPGAs, and ASICs.&nbsp;&nbsp;
-        </p>
-
-        <p></p>
-        <p>
-          ☑️ &nbsp;Pruning: This involves reducing
-          unnecessary weights in a neural network, which
-          decreases computational load and enables faster
-          inference. It is particularly effective for FPGAs
-          due to their reconfigurable nature.&nbsp;&nbsp;
-        </p>
-        <p>
-          ☑️ &nbsp;Kernel Fusion: Combining multiple
-          operations into a single computational kernel can
-          reduce memory access overhead and improve
-          computational efficiency, which is particularly
-          beneficial for NPUs and FPGAs.&nbsp;&nbsp;
-        </p>
-        <p>
-          ☑️ &nbsp;Resource Optimization: For FPGAs,
-          techniques such as pipelining and timing analysis
-          can be used to optimize designs, balancing
-          performance, power consumption, and resource
-          usage.&nbsp;
-        </p>
-        <p>
-          ☑️ &nbsp;Design Optimization for ASICs: ASICs can
-          be tuned for higher speed by optimizing gate
-          placement and sizing specifically for the
-          application, enhancing performance and energy
-          efficiency.&nbsp;
-        </p>
-        <p>
-          ☑️ &nbsp;Dataflow Optimization: Optimizing the
-          flow of data through the accelerator can
-          significantly improve performance, particularly in
-          AI and machine learning applications.&nbsp;
-        </p>
-        <p>
-          ☑️ &nbsp;Memory Hierarchy Optimization: Careful
-          design of data paths and memory hierarchies to
-          minimize data movement and maximize on-chip data
-          reuse is crucial, especially for ASICs.&nbsp;
-        </p>
+      <details>
+        <summary>Performance Tuning Strategies</summary>
+        <ul>
+          <li>
+            Network Architecture Search (NAS): This
+            technique customizes neural network
+            architectures to suit specific NPUs, optimizing
+            performance and energy efficiency by minimizing
+            parameters while maximizing
+            throughput.&nbsp;&nbsp;
+          </li>
+          <li>
+            Quantization: Reducing the precision of a
+            model’s weights and activations can
+            significantly improve inference speed and reduce
+            power consumption on NPUs, FPGAs, and
+            ASICs.&nbsp;&nbsp;
+          </li>
+          <li>
+            Pruning: This involves reducing unnecessary
+            weights in a neural network, which decreases
+            computational load and enables faster inference.
+            It is particularly effective for FPGAs due to
+            their reconfigurable nature.&nbsp;&nbsp;
+          </li>
+          <li>
+            ;Kernel Fusion: Combining multiple operations
+            into a single computational kernel can reduce
+            memory access overhead and improve computational
+            efficiency, which is particularly beneficial for
+            NPUs and FPGAs.&nbsp;&nbsp;
+          </li>
+          <li>
+            Resource Optimization: For FPGAs, techniques
+            such as pipelining and timing analysis can be
+            used to optimize designs, balancing performance,
+            power consumption, and resource usage.&nbsp;
+          </li>
+          <li>
+            Design Optimization for ASICs: ASICs can be
+            tuned for higher speed by optimizing gate
+            placement and sizing specifically for the
+            application, enhancing performance and energy
+            efficiency.&nbsp;
+          </li>
+          <li>
+            Dataflow Optimization: Optimizing the flow of
+            data through the accelerator can significantly
+            improve performance, particularly in AI and
+            machine learning applications.&nbsp;
+          </li>
+          <li>
+            Memory Hierarchy Optimization: Careful design of
+            data paths and memory hierarchies to minimize
+            data movement and maximize on-chip data reuse is
+            crucial, especially for ASICs.&nbsp;
+          </li>
+        </ul>
       </details>
 
       <hr class="divider-line" />

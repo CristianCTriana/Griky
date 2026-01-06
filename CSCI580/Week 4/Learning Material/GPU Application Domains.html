@@ -136,6 +136,52 @@
       .highlight-box p {
         color: white;
       }
+
+      .box-border {
+        border: #041e42 1px solid;
+        border-radius: 5px;
+        padding: 25px;
+        margin-top: 25px;
+      }
+
+      .box-border h3 {
+        font-size: 24px;
+      }
+
+      .box-border p,
+      .box-border ul {
+        font-size: 19px;
+        line-height: 1.6;
+      }
+
+      .box-border ul {
+        color: #041e42;
+      }
+
+      .icon-list {
+        list-style-type: none !important;
+      }
+
+      .purple-check::before {
+        content: "☑️";
+      }
+
+      .blue_arrow::before {
+        content: "➡️";
+      }
+
+      details {
+        margin-top: 20px;
+        background-color: #041d42;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 19px;
+        border-radius: 8px;
+      }
+      summary {
+        color: #05c3de;
+        font-size: 19px;
+      }
     </style>
   </head>
 
@@ -188,7 +234,92 @@
         scientific research.
       </p>
       <p>Several common applications are as follows:</p>
-      H5P
+      <div class="timeline">
+        <!-- Línea central -->
+        <div class="timeline-line"></div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>1. Simulations and Modeling</h3>
+            <ul>
+              <li>
+                GPUs are extensively used in complex
+                simulations and modeling tasks.
+              </li>
+              <li>
+                Applications include climate modeling, fluid
+                dynamics, and molecular simulations.
+              </li>
+              <li>
+                GPUs can handle complex calculations more
+                efficiently than traditional CPUs, allowing
+                for more detailed and accurate simulations.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>2. Data Analysis</h3>
+            <ul>
+              <li>
+                The ability of GPUs to process large
+                datasets quickly makes them invaluable in
+                data-intensive scientific research.
+              </li>
+              <li>
+                Fields benefiting from GPU-accelerated data
+                analysis include genomics and astrophysics.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>3. High-Performance Computing (HPC)</h3>
+            <ul>
+              <li>
+                Many HPC applications are being ported to
+                run on GPUs due to their ability to deliver
+                high computational throughput.
+              </li>
+              <li>
+                This includes applications in linear
+                algebra, signal processing, and image
+                processing.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-axis">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-panel">
+            <h3>4. Scientific Visualization</h3>
+            <ul>
+              <li>
+                GPUs enable researchers to visualize large
+                datasets at interactive speeds.
+              </li>
+              <li>
+                This capability is crucial for understanding
+                complex scientific phenomena and
+                interpreting results from simulations and
+                experiments.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <p>
         In conclusion, the use of GPUs in scientific
         computing has revolutionized the way complex
@@ -204,37 +335,37 @@
       </p>
       <!--CAJA OSCURA-->
       <div class="highlight-box">
-        <h3 style="text-align: center">
+        <h2 style="text-align: center; color: #05c3de">
           Impact on Scientific Research
-        </h3>
-        <p>
-          ☑️&nbsp; Accelerated Discovery: GPU acceleration
-          has significantly reduced the time required for
-          complex computations, accelerating the pace of
-          scientific discovery.&nbsp;
-        </p>
-        <p>
-          ☑️&nbsp; Enhanced Model Complexity: The
-          computational power of GPUs allows scientists to
-          develop and run more complex and detailed models,
-          leading to more accurate predictions and
-          insights.&nbsp;
-        </p>
-        <p>
-          ☑️&nbsp; Democratization of High-Performance
-          Computing: By providing supercomputer-like
-          performance at a fraction of the cost, GPUs have
-          made advanced computational research more
-          accessible to a broader range of institutions and
-          researchers.&nbsp;
-        </p>
-        <p>
-          ☑️&nbsp; Interdisciplinary Applications: The
-          versatility of GPUs has facilitated
-          interdisciplinary research, allowing techniques
-          from one field to be applied in others more
-          easily.&nbsp;
-        </p>
+        </h2>
+        <ul class="icon-list">
+          <li class="purple-check">
+            Accelerated Discovery: GPU acceleration has
+            significantly reduced the time required for
+            complex computations, accelerating the pace of
+            scientific discovery.&nbsp;
+          </li>
+          <li class="purple-check">
+            Enhanced Model Complexity: The computational
+            power of GPUs allows scientists to develop and
+            run more complex and detailed models, leading to
+            more accurate predictions and insights.&nbsp;
+          </li>
+          <li class="purple-check">
+            Democratization of High-Performance Computing:
+            By providing supercomputer-like performance at a
+            fraction of the cost, GPUs have made advanced
+            computational research more accessible to a
+            broader range of institutions and
+            researchers.&nbsp;
+          </li>
+          <li class="purple-check">
+            Interdisciplinary Applications: The versatility
+            of GPUs has facilitated interdisciplinary
+            research, allowing techniques from one field to
+            be applied in others more easily.&nbsp;
+          </li>
+        </ul>
       </div>
 
       <h3>Machine Learning Acceleration&nbsp;</h3>
@@ -250,82 +381,73 @@
         Several examples include:
       </p>
 
-      <ul>
-        ➡️Parallel Processing Capabilities&nbsp;
-        <ul>
-          <li>
-            GPUs are designed with a specialized
-            architecture that excels in parallel processing,
-            crucial for handling the large-scale
-            computations required in machine learning.&nbsp;
-          </li>
-          <li>
-            Unlike CPUs, which are optimized for sequential
-            processing, GPUs can perform thousands of
-            operations simultaneously, making them ideal for
-            the matrix operations common in machine learning
-            algorithms.&nbsp;
-          </li>
-        </ul>
-        Efficiency and Speed&nbsp;
-        <ul>
-          <li>
-            GPUs perform technical calculations faster and
-            with greater energy efficiency than CPUs.&nbsp;
-          </li>
-          <li>
-            This results in leading performance for AI
-            training and inference, enabling rapid
-            processing of complex models.&nbsp;
-          </li>
-          <li>
-            The specialized design of GPUs provides the
-            necessary speed and efficiency for the intricate
-            calculations required by AI and machine learning
-            algorithms.&nbsp;
-          </li>
-        </ul>
-        Accelerated Training and Inference&nbsp;
-        <ul>
-          <li>
-            GPUs have transformed AI and machine learning by
-            delivering accelerated computing, which enhances
-            the performance of complex models.
-          </li>
-          <li>
-            This acceleration is achieved through the
-            ability of GPUs to handle parallel processing,
-            which is essential for the heavy computations
-            needed in deep learning.&nbsp;
-          </li>
-          <li>
-            By leveraging the parallel processing power of
-            GPUs, machine learning models can be trained
-            more quickly, allowing for faster iteration and
-            development cycles.&nbsp;
-          </li>
-        </ul>
+      <ul class="icon-list">
+        <li class="blue_arrow">
+          Parallel Processing Capabilities&nbsp;
+          <ul>
+            <li>
+              GPUs are designed with a specialized
+              architecture that excels in parallel
+              processing, crucial for handling the
+              large-scale computations required in machine
+              learning.&nbsp;
+            </li>
+            <li>
+              Unlike CPUs, which are optimized for
+              sequential processing, GPUs can perform
+              thousands of operations simultaneously, making
+              them ideal for the matrix operations common in
+              machine learning algorithms.&nbsp;
+            </li>
+          </ul>
+        </li>
+        <li class="blue_arrow">
+          Efficiency and Speed&nbsp;
+          <ul>
+            <li>
+              GPUs perform technical calculations faster and
+              with greater energy efficiency than
+              CPUs.&nbsp;
+            </li>
+            <li>
+              This results in leading performance for AI
+              training and inference, enabling rapid
+              processing of complex models.&nbsp;
+            </li>
+            <li>
+              The specialized design of GPUs provides the
+              necessary speed and efficiency for the
+              intricate calculations required by AI and
+              machine learning algorithms.&nbsp;
+            </li>
+          </ul>
+        </li>
+        <li class="blue_arrow">
+          Accelerated Training and Inference&nbsp;
+          <ul>
+            <li>
+              GPUs have transformed AI and machine learning
+              by delivering accelerated computing, which
+              enhances the performance of complex models.
+            </li>
+            <li>
+              This acceleration is achieved through the
+              ability of GPUs to handle parallel processing,
+              which is essential for the heavy computations
+              needed in deep learning.&nbsp;
+            </li>
+            <li>
+              By leveraging the parallel processing power of
+              GPUs, machine learning models can be trained
+              more quickly, allowing for faster iteration
+              and development cycles.&nbsp;
+            </li>
+          </ul>
+        </li>
       </ul>
 
-      <details
-        style="
-          background: #041e42;
-          padding: 10px;
-          border: 1px solid #ddd;
-          margin-bottom: 10px;
-          border-radius: 5px;
-          color: white;
-        ">
-        <summary
-          style="
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            font-size: 19px;
-            padding: 10px;
-          ">
-          Applications in Machine Learning
-        </summary>
+      <details>
+        <summary>Applications in Machine Learning</summary>
         <ol style="margin-top: 10px; font-size: 19px">
           <li>
             Deep Learning:&nbsp;
@@ -433,37 +555,39 @@
       </p>
 
       <!--CAJA OSCURA-->
-      <div class="highlight-box">
-        <h3 style="text-align: center">
+      <div class="box-border">
+        <h2 style="text-align: center">
           Impact on Machine Learning Development:
-        </h3>
-        <p>
-          ☑️&nbsp; Faster Iteration and Experimentation: GPU
-          acceleration allows researchers and developers to
-          train models and iterate on ideas much faster,
-          accelerating the pace of innovation in machine
-          learning.&nbsp;
-        </p>
-        <p>
-          ☑️&nbsp; Handling Larger Datasets and Models: The
-          increased computational power enables the training
-          of larger, more complex models on bigger datasets,
-          leading to improved model accuracy and
-          capabilities.&nbsp;
-        </p>
-        <p>
-          ☑️&nbsp; Real-time Applications: GPU acceleration
-          makes real-time machine learning applications
-          feasible, opening up new possibilities in fields
-          like autonomous systems and interactive AI.
-        </p>
-        <p>
-          ☑️&nbsp; Democratization of AI: By reducing the
-          time and computational resources required for
-          machine learning tasks, GPUs have made advanced AI
-          techniques more accessible to a broader range of
-          researchers and organizations.&nbsp;
-        </p>
+        </h2>
+        <ul class="icon-list">
+          <li class="purple-check">
+            Faster Iteration and Experimentation: GPU
+            acceleration allows researchers and developers
+            to train models and iterate on ideas much
+            faster, accelerating the pace of innovation in
+            machine learning.&nbsp;
+          </li>
+          <li class="purple-check">
+            Handling Larger Datasets and Models: The
+            increased computational power enables the
+            training of larger, more complex models on
+            bigger datasets, leading to improved model
+            accuracy and capabilities.&nbsp;
+          </li>
+          <li class="purple-check">
+            Real-time Applications: GPU acceleration makes
+            real-time machine learning applications
+            feasible, opening up new possibilities in fields
+            like autonomous systems and interactive AI.
+          </li>
+          <li class="purple-check">
+            Democratization of AI: By reducing the time and
+            computational resources required for machine
+            learning tasks, GPUs have made advanced AI
+            techniques more accessible to a broader range of
+            researchers and organizations.&nbsp;
+          </li>
+        </ul>
         <p>
           As you can see, GPUs play a critical role in
           accelerating machine learning tasks due to their
@@ -599,25 +723,8 @@
         </div>
       </div>
 
-      <details
-        style="
-          background: #041e42;
-          padding: 10px;
-          border: 1px solid #ddd;
-          margin-bottom: 10px;
-          border-radius: 5px;
-          color: white;
-        ">
-        <summary
-          style="
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-            font-size: 19px;
-            padding: 10px;
-          ">
-          Applications in Computer Graphics
-        </summary>
+      <details>
+        <summary>Applications in Computer Graphics</summary>
         <ol style="margin-top: 10px; font-size: 19px">
           <li>
             Gaming and Visual Effects:&nbsp;&nbsp;
@@ -732,36 +839,38 @@
       </p>
 
       <!--CAJA OSCURA-->
-      <div class="highlight-box">
-        <h3 style="text-align: center">
+      <div class="box-border">
+        <h2 style="text-align: center">
           Impact on Graphics and Visualization:
-        </h3>
-        <p>
-          ☑️ &nbsp;Increased Realism: GPUs have enabled the
-          creation of increasingly realistic graphics in
-          games, films, and simulations, pushing the
-          boundaries of visual fidelity.&nbsp;
-        </p>
-        <p>
-          ☑️ &nbsp;Real-time Rendering: The processing power
-          of GPUs allows for real-time rendering of complex
-          scenes, essential for interactive applications and
-          live visualizations.&nbsp;&nbsp;
-        </p>
-        <p>
-          ☑️&nbsp; Large-scale Data Visualization: GPUs
-          facilitate the visualization of massive datasets,
-          enabling researchers and analysts to gain insights
-          from complex data through interactive visual
-          exploration.&nbsp;
-        </p>
-        <p>
-          ☑️️ Democratization of High-quality Graphics: GPU
-          advancements have made high-quality graphics more
-          accessible, allowing smaller studios and
-          independent developers to create visually
-          impressive content.&nbsp;
-        </p>
+        </h2>
+        <ul class="icon-list">
+          <li class="purple-check">
+            Increased Realism: GPUs have enabled the
+            creation of increasingly realistic graphics in
+            games, films, and simulations, pushing the
+            boundaries of visual fidelity.&nbsp;
+          </li>
+          <li class="purple-check">
+            Real-time Rendering: The processing power of
+            GPUs allows for real-time rendering of complex
+            scenes, essential for interactive applications
+            and live visualizations.&nbsp;&nbsp;
+          </li>
+          <li class="purple-check">
+            Large-scale Data Visualization: GPUs facilitate
+            the visualization of massive datasets, enabling
+            researchers and analysts to gain insights from
+            complex data through interactive visual
+            exploration.&nbsp;
+          </li>
+          <li class="purple-check">
+            Democratization of High-quality Graphics: GPU
+            advancements have made high-quality graphics
+            more accessible, allowing smaller studios and
+            independent developers to create visually
+            impressive content.&nbsp;
+          </li>
+        </ul>
       </div>
 
       <div class="card card-standard">
