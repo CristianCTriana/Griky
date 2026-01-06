@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+      details {
+        margin-top: 20px;
+        background-color: #041d42;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 19px;
+        border-radius: 8px;
+      }
+      summary {
+        color: #05c3de;
+        font-size: 19px;
+      }
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 5 </span>
+      <span class="banner__week-name">
+        Power-Efficient Design
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        System-Level Power Management
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        System-level power management involves strategies
+        and techniques implemented at the operating system
+        and hardware level to optimize power consumption
+        across the entire computing system.&nbsp;
+      </p>
+      <h3>Power States and Transitions&nbsp;</h3>
+      <p>
+        Modern computing systems utilize a variety of power
+        states and transitions to manage energy consumption
+        effectively. These states are defined by the
+        Advanced Configuration and Power Interface (ACPI)
+        specification:
+      </p>
+
+      <div class="def-cards">
+        <div class="def-cards-grid">
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <img
+                    alt="Green tile with number one"
+                    title="Green tile with number one"
+                    src="https://cdn.pixabay.com/photo/2012/04/23/15/21/one-38486_640.png"
+                    width="91"
+                    height="152" />
+                  <p>Working State (S0)</p>
+                </div>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  This is the fully operational state in
+                  which the system is awake and
+                  running.&nbsp;
+                </p>
+                <p>
+                  All components are active, and power
+                  consumption is at its peak. However,
+                  components not in use can be powered down
+                  to save energy.&nbsp;
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <img
+                    alt="Green tile with number two"
+                    title="Green tile with number two"
+                    src="https://cdn.pixabay.com/photo/2012/04/23/15/29/two-38531_640.png"
+                    width="112"
+                    height="160" />
+                  <p>Sleep States (S1–S3)&nbsp;</p>
+                </div>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  These states represent various levels of
+                  reduced power consumption while
+                  maintaining the system state in volatile
+                  memory. The system appears off but can
+                  quickly resume to the working state.&nbsp;
+                </p>
+                <p>
+                  S3 consumes the least power among these
+                  states.&nbsp;
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <img
+                    alt="Green tile with number three"
+                    title="Green tile with number three"
+                    src="https://cdn.pixabay.com/photo/2012/04/23/15/34/number-38557_640.png"
+                    width="104"
+                    height="149" />
+                  <p>Modern Standby (S0 low-power idle)</p>
+                </div>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  A variant of the sleep state for some
+                  System on Chip (SoC) systems.&nbsp;
+                </p>
+                <p>
+                  It allows the system to remain partially
+                  active and quickly respond to network and
+                  hardware events.&nbsp;
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="def-cards-grid">
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <img
+                    alt="Green tile with number four"
+                    title="Green tile with number four"
+                    src="https://cdn.pixabay.com/photo/2012/04/23/15/35/four-38561_640.png"
+                    width="106"
+                    height="152" />
+                  <p>Hibernate (S4)</p>
+                </div>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  In this state, the system saves the
+                  contents of volatile memory to a
+                  non-volatile storage (hibernation file)
+                  and powers down almost completely.&nbsp;
+                </p>
+                <p>
+                  The hibernate state consumes minimal
+                  power.&nbsp;
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <img
+                    alt="Green tile with number five"
+                    title="Green tile with number five"
+                    src="https://cdn.pixabay.com/photo/2012/04/23/15/35/five-38564_640.png"
+                    width="103"
+                    height="148" />
+                  <p>Soft Off (S5)</p>
+                </div>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  This state involves a full shutdown and
+                  boot cycle.&nbsp;
+                </p>
+                <p>
+                  The system is off but can be powered on by
+                  certain events, like a power button
+                  press.&nbsp;
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <img
+                    alt="Green tile with number six"
+                    title="Green tile with number six"
+                    src="https://cdn.pixabay.com/photo/2012/04/23/15/36/six-38569_640.png"
+                    width="105"
+                    height="150" />
+                </div>
+                <p>Mechanical Off (G3)</p>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  The system is completely off and consumes
+                  no power.&nbsp;
+                </p>
+                <p>
+                  This requires a full reboot to return to
+                  the working state.&nbsp;
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Transitions between different power states are
+        crucial for managing power efficiently. The system
+        can transition from working to sleep based on user
+        activity or system settings, and this process
+        involves notifying applications and drivers before
+        entering the sleep state. When transitioning from
+        sleep to working, the system can wake up in response
+        to user activity or predefined wake-up events. The
+        time it takes to wake depends on the sleep state,
+        with lower-powered states like S3 taking longer to
+        resume. Transitioning from working to hibernate
+        involves saving the system state to a hibernation
+        file before powering down, which helps conserve
+        power while preserving the system state. Resuming
+        from hibernation, which involves restoring the
+        system state from the hibernation file, typically
+        takes longer than waking from sleep but is more
+        power-efficient. These transitions are key to
+        optimizing power management in modern systems.
+      </p>
+      <h3>Dynamic Power Management</h3>
+      <p>
+        Dynamic Power Management (DPM) techniques are
+        crucial for optimizing power consumption in modern
+        computing systems. These techniques involve
+        selectively shutting down or reducing the power of
+        system components when they are idle or
+        underutilized. The following are key points to know
+        about DPM:
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Basic Concept
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                DPM techniques allow systems or their
+                components to enter low-power sleep modes
+                when inactive.&nbsp;
+              </li>
+              <li>
+                This is particularly useful in systems in
+                which not all components are required to
+                perform every function, allowing inactive
+                parts to be shut down to save power.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Implementation in Multicore Architectures
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                In multicore processors, DPM is essential
+                due to the high-power consumption associated
+                with numerous transistors operating at high
+                frequencies.&nbsp;
+              </li>
+              <li>
+                Techniques in this domain aim to maximize
+                performance without exceeding a power
+                budget.&nbsp;
+              </li>
+              <li>
+                This involves managing power states
+                dynamically based on workload demands and
+                system requirements.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Policies and Strategies
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Timeout Policies: These involve setting a
+                timeout period after which a device enters a
+                low-power state if it remains idle. The
+                timeout can be fixed or adaptive, with the
+                latter adjusting based on previous idle
+                periods to optimize power savings.&nbsp;
+              </li>
+              <li>
+                Predictive Policies: These predict the
+                length of upcoming idle periods to decide
+                whether to transition to a low-power state.
+                This approach can be more efficient than
+                timeout policies as it reduces unnecessary
+                waiting times.&nbsp;
+              </li>
+              <li>
+                Stochastic Policies: These model power state
+                transitions as stochastic processes,
+                optimizing power savings while considering
+                performance delays. They are robust but
+                require accurate modeling of request
+                patterns.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Challenges and Considerations
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Implementing DPM involves trade-offs between
+                power savings and performance.&nbsp;
+              </li>
+              <li>
+                The overhead of transitioning between power
+                states can lead to performance degradation
+                if not managed properly.&nbsp;
+              </li>
+              <li>
+                Effective DPM policies aim to minimize this
+                overhead while maximizing energy
+                savings.&nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h3>Energy-Aware Scheduling</h3>
+      <p>
+        Energy-aware scheduling algorithms play a crucial
+        role in optimizing power management in
+        high-performance computing (HPC) systems by
+        balancing performance and energy consumption. These
+        algorithms can be categorized into various types,
+        including machine learning-based, dynamic
+        programming, fuzzy logic, integer programming,
+        randomized algorithms, evolutionary algorithms, and
+        constraint programming, each offering a unique
+        approach to optimizing energy usage while
+        maintaining performance.
+      </p>
+      <p>
+        The primary goals of these algorithms are to
+        minimize execution time, energy consumption, and
+        power usage, with some focusing on metrics like
+        Energy Delay Product (EDP) or Energy Delay Sum
+        (EDS), which combine time and energy considerations.
+        Common mechanisms employed in these algorithms
+        include Dynamic Voltage and Frequency Scaling
+        (DVFS), Dynamic Power Management (DPM), and power
+        capping, with DVFS being particularly popular for
+        dynamically adjusting power and performance. These
+        algorithms are integral to dynamic power management
+        strategies, helping determine when to scale down
+        power usage or turn off components to save energy
+        without significantly impacting performance. In
+        real-time systems, energy-aware scheduling ensures
+        power consumption is managed while meeting strict
+        timing constraints, achieved by dynamically
+        adjusting the power states of processors based on
+        the current workload and system state.&nbsp;
+      </p>
+      <h3>Green Computing Initiatives&nbsp;</h3>
+      <p>
+        Green computing initiatives aim to reduce the
+        environmental impact of IT infrastructure by
+        maximizing energy efficiency and minimizing waste.
+        The following are key details about these
+        initiatives to be aware of.
+      </p>
+      <details>
+        <summary>Key Details</summary>
+        <ol>
+          <li>
+            <strong>Energy Star Program:&nbsp;</strong>
+            <ul>
+              <li>
+                One of the earliest initiatives in green
+                computing, introduced by the Environmental
+                Protection Agency (EPA) in 1992.&nbsp;
+              </li>
+              <li>
+                Promotes energy efficiency in hardware such
+                as monitors and climate control equipment,
+                encouraging the use of sleep modes in
+                consumer electronics.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>80 PLUS Certification:&nbsp;</strong>
+            <ul>
+              <li>
+                Certifies power supplies that are at least
+                80% efficient, compared to the typical
+                70–75%.&nbsp;
+              </li>
+              <li>
+                This certification helps reduce power
+                consumption in computing devices,
+                contributing to overall energy
+                efficiency.&nbsp;
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >Recycling and e-Waste
+              Management:&nbsp;</strong
+            >
+            <ul>
+              <li>
+                Emphasizes the importance of recycling
+                computer parts, batteries, and printer
+                cartridges.&nbsp;
+              </li>
+              <li>
+                Proper disposal and recycling of e-waste
+                help minimize the release of toxic materials
+                into the environment.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >Energy-Efficient Hardware:&nbsp;</strong
+            >
+            <ul>
+              <li>
+                Programs promote the use of energy-efficient
+                hardware components, such as processors,
+                memory modules, and storage devices.&nbsp;
+              </li>
+              <li>
+                These components are designed to consume
+                less power while maintaining performance.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >Impact on System-Level Power
+              Management:&nbsp;</strong
+            >
+            <ul>
+              <li>
+                Reducing Energy Consumption: By implementing
+                energy-efficient hardware and dynamic power
+                management techniques, systems can
+                significantly reduce their energy
+                consumption.&nbsp;
+              </li>
+              <li>
+                Enhancing Performance: Energy-aware
+                scheduling and power management techniques
+                ensure that systems maintain optimal
+                performance while minimizing energy usage.
+              </li>
+              <li>
+                Promoting Sustainability: By focusing on
+                recycling and the use of eco-friendly
+                materials, green computing initiatives
+                contribute to the sustainability of IT
+                systems.&nbsp;
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </details>
+
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >Can you identify</span
+                      ><span data-ccp-parastyle="Body Text">
+                        the power management strategy that
+                        involves adjusting power states
+                        based on real-time workload
+                        demands?</span
+                      ></span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer: &nbsp;Dynamic Power Management
+                    </h3>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation: DPM is a strategy that
+                        involves adjusting power states
+                        based on real-time workload demands,
+                        allowing systems to optimize energy
+                        use by scaling power consumption
+                        according to the current processing
+                        needs.&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

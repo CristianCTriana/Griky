@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .icon-list {
+        list-style-type: none !important;
+      }
+
+      .blue_arrow::before {
+        content: "➡️";
+      }
+
+      details {
+        margin-top: 20px;
+        background-color: #041d42;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 19px;
+        border-radius: 8px;
+      }
+      summary {
+        color: #05c3de;
+        font-size: 19px;
+      }
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 5 </span>
+      <span class="banner__week-name">
+        Power-Efficient Design
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Static and Dynamic Power Consumption
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Power consumption in modern processors can be
+        broadly categorized into two main types: static and
+        dynamic. Understanding these two forms of power
+        dissipation is crucial for designing
+        energy-efficient processors.&nbsp;
+      </p>
+      <p>
+        Static power consumption, also known as leakage
+        power, occurs even when a processor is idle or is
+        not actively processing data. It is primarily due to
+        leakage currents within the transistors. Key aspects
+        of static power consumption include the
+        following:&nbsp;
+      </p>
+      <ul class="icon-list">
+        <li class="blue_arrow">
+          Cause: Imperfections in insulating materials and
+          sub-threshold conduction.&nbsp;&nbsp;
+        </li>
+        <li class="blue_arrow">
+          Challenges: As transistors become smaller with
+          advanced manufacturing techniques, controlling
+          leakage currents becomes increasingly
+          difficult.&nbsp;&nbsp;
+        </li>
+        <li class="blue_arrow">
+          Influence Factors: Physical properties of
+          transistors, including material choice and
+          transistor architecture.&nbsp;&nbsp;
+        </li>
+        <li class="blue_arrow">
+          Mitigation Techniques: Use of improved insulating
+          materials and advanced transistor designs, like
+          fin field-effect transistors (FinFETs).&nbsp;
+        </li>
+        <li class="blue_arrow">
+          Importance: Minimizing static power dissipation is
+          crucial for reducing standby power consumption and
+          extending battery life in portable
+          devices.&nbsp;&nbsp;
+        </li>
+      </ul>
+      <p>
+        Dynamic power consumption occurs when the CPU is
+        actively processing tasks. It is caused by the
+        constant switching of transistors, which draw
+        current to charge and discharge capacitances. Key
+        aspects of dynamic power consumption include the
+        following:&nbsp;&nbsp;
+      </p>
+      <ul class="icon-list">
+        <li class="blue_arrow">
+          Cause: Switching of transistors during active
+          processing.&nbsp;&nbsp;
+        </li>
+        <li class="blue_arrow">
+          Formula: The dynamic power dissipation is
+          expressed as P = C × V² × f, where:&nbsp;
+          <ul>
+            <li>P is the power dissipated,&nbsp;</li>
+            <li>
+              C represents the capacitance of the
+              transistor’s switching elements
+            </li>
+            <li>
+              &nbsp;V is the supply voltage, and&nbsp;
+            </li>
+            <li>&nbsp;f is the frequency of operation.</li>
+          </ul>
+        </li>
+        <li class="blue_arrow">
+          Influence Factors: CPU clock frequency and supply
+          voltage.&nbsp;&nbsp;
+        </li>
+        <li class="blue_arrow">
+          Mitigation Techniques: Reducing clock speed or
+          voltage supply can lower dynamic dissipation, but
+          this can impact CPU performance.&nbsp;
+        </li>
+      </ul>
+      <h3>
+        Power Consumption Sources in Modern Processors&nbsp;
+      </h3>
+      <p>
+        Understanding the various sources of power
+        consumption in modern processors is essential for
+        implementing effective power optimization
+        strategies. The main sources include the
+        following:&nbsp;
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            CPU Frequency and Voltage
+          </label>
+          <div class="accordion-content">
+            <p>
+              Higher clock frequencies and voltages lead to
+              increased power consumption. The dynamic power
+              consumed by a CPU is directly related to these
+              factors.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Transistor Count and Activity
+          </label>
+          <div class="accordion-content">
+            <p>
+              More transistors, as seen in CPUs with more
+              cores and larger caches, result in higher
+              power consumption. The activity of these
+              transistors, such as switching between states,
+              also contributes significantly to power usage.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Workload
+          </label>
+          <div class="accordion-content">
+            <p>
+              The nature of the tasks being handled by the
+              CPU affects power consumption. More demanding
+              workloads require higher power consumption.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Architecture and Efficiency:
+          </label>
+          <div class="accordion-content">
+            <p>
+              Different CPU architectures have varying power
+              requirements and efficiency levels. Newer
+              architectures often offer better performance
+              at lower power consumption.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Power Management Features
+          </label>
+          <div class="accordion-content">
+            <p>
+              Modern CPUs employ various power management
+              techniques, such as clock throttling, power
+              gating, and voltage scaling&nbsp;to reduce
+              power consumption during periods of lower
+              demand.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo6" />
+          <label
+            class="accordion-title"
+            for="lo6">
+            Memory Subsystem
+          </label>
+          <div class="accordion-content">
+            <p>
+              The memory hierarchy, including caches and
+              main memory, contributes significantly to
+              overall power consumption. Frequent memory
+              accesses and data transfers can increase power
+              usage.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo7" />
+          <label
+            class="accordion-title"
+            for="lo7 ">
+            I/O Operations
+          </label>
+          <div class="accordion-content">
+            <p>
+              Input/output operations, including data
+              transfers between the CPU and peripherals, can
+              contribute to power consumption, especially in
+              systems with high I/O activity.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>Energy Efficiency Metrics</h3>
+      <p>
+        Energy efficiency metrics are vital for evaluating
+        and comparing the power performance of processors,
+        helping designers optimize processors for both
+        performance and energy consumption.
+      </p>
+      <p>
+        Key metrics include the Energy Delay Product (EDP)
+        and Energy Delay Squared (ED²), which balance energy
+        consumption with performance. EDP provides a
+        trade-off between energy use and execution time,
+        while ED² emphasizes performance relative to energy
+        consumption, making them useful for assessing energy
+        efficiency. Performance per watt measures the
+        computational work done per unit of energy consumed
+        and is a direct indicator of energy efficiency,
+        commonly used for comparing different processors or
+        systems. The Running Average Power Limit (RAPL),
+        developed by Intel, is a low-level interface that
+        measures CPU energy consumption and helps manage
+        power usage to improve energy efficiency. In
+        high-performance computing (HPC), energy efficiency
+        is measured by the energy consumed to perform
+        specific tasks, a crucial factor given the
+        significant power consumption of HPC systems.
+        Optimizing energy efficiency in HPC can lead to
+        substantial cost savings and environmental benefits.
+        Lastly, the Unified Architecture Level
+        Energy-Efficiency Metric is derived from a
+        multi-dimensional power optimization problem,
+        providing a comprehensive view of energy efficiency
+        by analyzing changes in power consumption and
+        performance. These metrics are essential for
+        designing processors that balance power with energy
+        efficiency, an increasingly critical concern in
+        modern computing environments.
+      </p>
+      <h3>Power Modeling and Analysis</h3>
+      <p>
+        Power modeling and analysis techniques are essential
+        for understanding and optimizing power consumption
+        in processors. These techniques help designers
+        estimate, analyze, and optimize power usage
+        throughout the processor design process. The
+        following sections describe key aspects of power
+        modeling and analysis.&nbsp;
+      </p>
+      <details>
+        <summary>Power Modeling Techniques</summary>
+        <strong>Analytical Models:</strong>
+        <ul>
+          <li>
+            Use mathematical equations to estimate power
+            consumption.&nbsp;
+          </li>
+          <li>
+            Based on processor characteristics and workload
+            parameters.
+          </li>
+          <li>
+            Useful for quick estimations, but may be less
+            accurate than simulation-based models.&nbsp;
+          </li>
+        </ul>
+        <strong>Simulation-Based Models:</strong>
+        <ul>
+          <li>
+            Simulate processor behavior under different
+            conditions to estimate power consumption.&nbsp;
+          </li>
+          <li>
+            Provide detailed insights, but are
+            computationally expensive.&nbsp;
+          </li>
+        </ul>
+        <strong>Micro-Benchmark-Based Models:&nbsp;</strong>
+        <ul>
+          <li>
+            Use specific benchmarks to measure power
+            consumption under controlled conditions.&nbsp;
+          </li>
+          <li>
+            Results can be extrapolated to other
+            scenarios.&nbsp;
+          </li>
+        </ul>
+        <strong>Machine Learning Models:&nbsp;</strong>
+        <ul>
+          <li>
+            Use machine learning techniques to predict power
+            consumption.&nbsp;
+          </li>
+          <li>
+            Based on historical data and real-time
+            measurements.&nbsp;
+          </li>
+          <li>
+            Can adapt to new architectures and
+            workloads.&nbsp;
+          </li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Power Analysis Techniques</summary>
+        <strong>Fine-Grain Power Breakdown:&nbsp;</strong>
+        <ul>
+          <li>
+            Analyzes power consumption at a detailed level,
+            such as individual cores or components.&nbsp;
+          </li>
+          <li>
+            Helps identify hotspots and optimize power
+            distribution.&nbsp;
+          </li>
+        </ul>
+        <strong
+          >Side-by-Side Power and Performance
+          Analysis:&nbsp;</strong
+        >
+        <ul>
+          <li>
+            Compares power consumption with performance
+            metrics.&nbsp;
+          </li>
+          <li>
+            Helps understand trade-offs and optimize both
+            simultaneously.&nbsp;
+          </li>
+        </ul>
+        <strong
+          >Use of Hardware Performance
+          Counters:&nbsp;</strong
+        >
+        <ul>
+          <li>
+            Provides real-time data on processor
+            activity.&nbsp;
+          </li>
+          <li>
+            Used to estimate power consumption
+            dynamically.&nbsp;
+          </li>
+        </ul>
+      </details>
+      <p>
+        These power modeling and analysis techniques are
+        crucial for designing energy-efficient processors
+        that meet the demands of modern computing
+        environments. They enable researchers and engineers
+        to optimize power consumption while maintaining or
+        enhancing performance.&nbsp;
+      </p>
+      <div class="card card-standard card-reveal">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <button
+              type="button"
+              class="btn btn-primary btn-reveal"
+              data-toggle="collapse"
+              aria-expanded="false">
+              Power Analysis Techniques
+            </button>
+            <div
+              class="collapse"
+              tabindex="0">
+              <p style="text-align: left">
+                Fine-Grain Power Breakdown:&nbsp;
+              </p>
+              <ul>
+                <li style="text-align: left">
+                  Analyzes power consumption at a detailed
+                  level, such as individual cores or
+                  components.&nbsp;
+                </li>
+                <li style="text-align: left">
+                  Helps identify hotspots and optimize power
+                  distribution.&nbsp;
+                </li>
+              </ul>
+              <p style="text-align: left">
+                Side-by-Side Power and Performance
+                Analysis:&nbsp;
+              </p>
+              <ul>
+                <li style="text-align: left">
+                  Compares power consumption with
+                  performance metrics.&nbsp;
+                </li>
+                <li style="text-align: left">
+                  Helps understand trade-offs and optimize
+                  both simultaneously.&nbsp;
+                </li>
+              </ul>
+              <p style="text-align: left">
+                Use of Hardware Performance Counters:&nbsp;
+              </p>
+              <ul>
+                <li style="text-align: left">
+                  Provides real-time data on processor
+                  activity.&nbsp;
+                </li>
+                <li style="text-align: left">
+                  Used to estimate power consumption
+                  dynamically.&nbsp;
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <p>
+        <span
+          xml:lang="EN-US"
+          data-contrast="auto"
+          ><span
+            data-ccp-parastyle-defn='{"ObjectId":"259d7500-d6c3-4369-b132-711da5ec8de9|195","ClassId":1073872969,"Properties":[201342446,"1",201342447,"5",201342448,"1",201342449,"1",469777841,"Aptos",469777842,"",469777843,"Aptos",469777844,"Aptos",201341986,"1",469769226,"Aptos",268442635,"24",335559739,"180",335559738,"180",469775450,"First Paragraph",201340122,"2",134234082,"true",134233614,"true",469778129,"FirstParagraph",335572020,"1",469775498,"Body Text",469778324,"Body Text"]}'
+            data-ccp-parastyle="First Paragraph"
+            >These power modeling and analysis techniques
+            are crucial for designing energy-efficient
+            processors that meet the demands of modern
+            computing environments. They enable researchers
+            and engineers to </span
+          ><span data-ccp-parastyle="First Paragraph"
+            >optimize</span
+          ><span data-ccp-parastyle="First Paragraph">
+            power consumption while </span
+          ><span data-ccp-parastyle="First Paragraph"
+            >maintaining</span
+          ><span data-ccp-parastyle="First Paragraph">
+            or enhancing performance.</span
+          ></span
+        ><span
+          data-ccp-props='{"335559738":180,"335559739":180}'
+          >&nbsp;</span
+        >
+      </p>
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_5/../Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >Which of the following is a
+                          primary source of power
+                          consumption in modern
+                          processors?</span
+                        ></span
+                      >
+                    </span>
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(A) Static power consumption
+                        </span></span
+                      ></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(B) Network traffic
+                        </span></span
+                      ></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(C) User interface design
+                        </span></span
+                      ></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(D) Data storage capacity</span
+                        ></span
+                      ></span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer: &nbsp;
+                    </h3>
+                    <p style="color: #041e42">
+                      <span style="font-size: 19px"
+                        ><span
+                          style="list-style-type: disc"
+                          xml:lang="EN-US"
+                          data-contrast="auto"
+                          ><span
+                            data-ccp-parastyle="Body Text"
+                            >(A) Static power
+                            consumption</span
+                          ></span
+                        ></span
+                      >
+                    </p>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation:
+                        <span
+                          style="list-style-type: disc"
+                          xml:lang="EN-US"
+                          data-contrast="auto"
+                          >Static power consumption, also
+                          known as leakage power, is a
+                          primary source of power
+                          consumption in modern processors.
+                          It occurs even when the processor
+                          is idle, due to leakage currents
+                          in the transistors.</span
+                        >&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      #tab5:checked ~ .content-5 {
+        display: block;
+      }
+
+      #tab5:checked ~ .tabs label[for="tab5"] {
+        background: #fff;
+        border: 1px solid #0078ff;
+        box-shadow: 0 2px 6px rgba(4, 30, 66, 0.2);
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 5 </span>
+      <span class="banner__week-name">
+        Power-Efficient Design
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Architecture-Level Power Optimization
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Architecture-level power optimization focuses on
+        designing processor components and systems that are
+        inherently energy- efficient. This approach involves
+        optimizing various aspects of the processor
+        architecture to reduce power consumption while
+        maintaining or improving performance.&nbsp;
+      </p>
+      <h3>Low-Power Processor Designs</h3>
+      <p>
+        Low-power processor designs are crucial in modern
+        computing, especially for mobile and embedded
+        systems in which energy efficiency is paramount.
+        Recent advancements in this field have focused on
+        several key areas:&nbsp;&nbsp;
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Processor Core-Level Techniques
+          </label>
+          <div class="accordion-content">
+            <p>
+              Clock gating and power gating are widely
+              employed to optimize dynamic power
+              consumption. These techniques involve turning
+              off the clock signal to inactive parts of the
+              circuit or completely shutting down power to
+              certain sections when not in use.&nbsp;These
+              methods are particularly effective in reducing
+              power usage in multi-core processors, in which
+              not all cores may be active
+              simultaneously.&nbsp;
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Dynamic Power Optimization
+          </label>
+          <div class="accordion-content">
+            <p>
+              This technique involves adjusting the power
+              usage dynamically based on the workload and
+              operational requirements. It allows processors
+              to adapt their power consumption in real time,
+              achieving significant energy savings without
+              compromising performance.&nbsp;
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Advanced Chip Design
+          </label>
+          <div class="accordion-content">
+            <p>
+              Significant advancements have been made in
+              chip design techniques, particularly for
+              multi-core processors. These advancements
+              focus on optimizing both power efficiency and
+              performance. For instance, asymmetric
+              multi-core processors use a mix of large and
+              small cores to handle different parts of a
+              workload efficiently, which can be more energy
+              efficient.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Very-Large-Scale Integration (VLSI) and
+            Semiconductor Technologies
+          </label>
+          <div class="accordion-content">
+            <p>
+              The field of VLSI and semiconductor
+              technologies continues to evolve, focusing on
+              low power consumption. This includes
+              innovations in processor architecture,
+              compiler design, and operating systems. These
+              advancements contribute to overall reduction
+              in power consumption at the hardware level.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Microarchitectural Techniques
+          </label>
+          <div class="accordion-content">
+            <p>
+              Both static and dynamic methods are employed
+              to control hardware structures. This includes
+              optimizing the physical layout of components
+              on a chip through floorplanning.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>Energy-Efficient Memory Hierarchies&nbsp;</h3>
+      <p>
+        Energy-efficient memory hierarchies are crucial for
+        reducing overall system power consumption. Recent
+        research has highlighted several innovative
+        approaches:&nbsp;
+      </p>
+      H5P
+      <h3>Power-Aware Cache Architectures&nbsp;</h3>
+      <p>
+        Power-aware cache architectures are designed to
+        enhance the energy efficiency of cache memory
+        systems, which are crucial in modern processors.
+        These architectures aim to reduce power consumption
+        while maintaining or improving performance.
+        Partitioned cache architectures divide the cache
+        into smaller subcaches, which can be accessed
+        independently, reducing per-access energy costs and
+        improving data locality, leading to better
+        performance and reduced energy consumption. This
+        approach is particularly beneficial in media and
+        embedded applications, where the memory system can
+        consume a large portion of the system’s total
+        energy.
+      </p>
+      <p>
+        Dynamic cache reconfiguration adjusts the cache size
+        and structure based on workload demands, effectively
+        reducing energy consumption in cache subsystems.
+        Linked instruction caches improve the cache hit
+        rate, reducing memory system power consumption and
+        boosting overall performance. Multi-level cache
+        organizations aim to reduce average memory latency
+        and power consumption, optimizing the cache
+        hierarchy for improved system performance.
+        Additionally, energy- and performance-aware DRAM
+        cache configurations, including hybrid setups with
+        DRAM and Phase Change Memory (PCM), are being
+        explored to balance energy savings and performance.
+        These power-aware cache techniques play a vital role
+        in optimizing processor efficiency and performance
+        while reducing energy consumption.&nbsp;
+      </p>
+      <h3>Energy-Efficient Interconnects&nbsp;</h3>
+      <p>
+        Energy-efficient interconnects are crucial in modern
+        processor design, particularly as processors become
+        more complex and integrate more cores. The
+        interconnects that facilitate communication between
+        cores and other components significantly impact
+        overall power consumption:&nbsp;
+      </p>
+      <p class="standard-text">
+        <img
+          src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+          alt="cintillo tabs"
+          style="max-width: 100%" />
+      </p>
+
+      <div class="tabs-container">
+        <input
+          type="radio"
+          name="group-name"
+          id="tab1"
+          checked="checked" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab2" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab3" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab4" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab5" />
+
+        <div class="tabs">
+          <label for="tab1">Low-Swing Signaling </label>
+          <label for="tab2">Dynamic Link Shutdown</label>
+          <label for="tab3"
+            >Machine Learning Approaches</label
+          >
+          <label for="tab4">Hybrid Switch Solutions</label>
+          <label for="tab5"
+            >3D Torus Network Topologies</label
+          >
+        </div>
+
+        <div class="content content-1">
+          <p class="standard-text">
+            This technique reduces the voltage swing in
+            interconnects, thereby reducing dynamic power
+            consumption. It is particularly effective in
+            FPGA designs, where it can significantly lower
+            power usage without sacrificing
+            performance.&nbsp;
+          </p>
+        </div>
+
+        <div class="content content-2">
+          <p class="standard-text">
+            This technique involves shutting down
+            interconnect links dynamically when they are not
+            in use, thus saving power. It requires adaptive
+            routing to ensure that data can still be
+            transmitted efficiently even when some links are
+            inactive.&nbsp;
+          </p>
+        </div>
+
+        <div class="content content-3">
+          <p class="standard-text">
+            Machine learning models, such as artificial
+            neural networks (ANNs), are being used to
+            optimize interconnect design. These models can
+            predict optimal configurations that minimize
+            power consumption while maintaining
+            performance.&nbsp;
+          </p>
+        </div>
+        <div class="content content-4">
+          <p class="standard-text">
+            Combining buffer and pass-gate switches in
+            interconnects can match the performance of
+            traditional full-swing, buffer-only
+            interconnects, but at significantly lower power
+            levels. This approach balances the need for
+            performance with energy efficiency.&nbsp;
+          </p>
+        </div>
+        <div class="content content-5">
+          <p class="standard-text">
+            In high-performance computing systems, using
+            regular network topologies like 3D torus can
+            help manage power consumption effectively. These
+            topologies allow for predictable communication
+            patterns, which can be exploited to reduce power
+            usage by switching interconnects to low-power
+            modes during idle periods.&nbsp;
+          </p>
+        </div>
+      </div>
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      >_________ is a design approach that
+                      focuses on reducing power consumption
+                      while maintaining performance in
+                      processors.</span
+                    >
+                  </div>
+                  <div class="card-text"></div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer: &nbsp;
+                    </h3>
+                    <p style="color: #041e42">
+                      Low-power processor design
+                    </p>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation: Low-power processor
+                        design is an approach that focuses
+                        on reducing power consumption while
+                        maintaining performance, often
+                        through techniques like efficient
+                        circuit design and power-aware
+                        architecture.&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
