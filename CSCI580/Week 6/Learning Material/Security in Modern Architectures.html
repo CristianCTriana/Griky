@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .box-border {
+        border: #041e42 1px solid;
+        border-radius: 5px;
+        padding: 25px;
+        margin-top: 25px;
+      }
+
+      .box-border h3 {
+        font-size: 24px;
+      }
+
+      .box-border p,
+      .box-border ul {
+        font-size: 19px;
+        line-height: 1.6;
+      }
+
+      .box-border ul {
+        color: #041e42;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 6 </span>
+      <span class="banner__week-name">
+        Emerging Trends and Security
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Hardware Security Features
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        As cyberattacks increasingly target lower layers of
+        the system stack, hardware security features have
+        become critical for protecting systems from attacks
+        that software-based solutions alone cannot mitigate.
+        Key hardware security features include the
+        following:
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Root of Trust and Secure Boot
+          </label>
+          <div class="accordion-content">
+            <p>
+              A root of trust establishes a secure
+              foundation by ensuring that the system starts
+              in a known good state.&nbsp;
+            </p>
+            <p>
+              Secure Boot verifies the integrity of the boot
+              process, preventing boot-time attacks and
+              unauthorized modifications to the
+              system.&nbsp;
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Cryptographic Instruction Set Architectures
+          </label>
+          <div class="accordion-content">
+            <p>
+              These provide hardware support for
+              cryptographic operations, enhancing
+              performance and security by reducing the risk
+              of software-based vulnerabilities.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Memory Encryption
+          </label>
+          <div class="accordion-content">
+            <p>
+              Techniques such as Total Memory Encryption
+              (TME) protect data in memory from unauthorized
+              access and tampering.&nbsp;
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Side-Channel Attack Prevention
+          </label>
+          <div class="accordion-content">
+            <p>
+              Modern processors incorporate features to
+              mitigate side-channel attacks, such as cache
+              partitioning and speculative execution
+              barriers.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Advanced Threat Detection
+          </label>
+          <div class="accordion-content">
+            <p>
+              Technologies like the Intel vPro® Platform
+              offer advanced threat-detection capabilities
+              using CPU telemetry to identify attack
+              signatures and anomalies.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo6" />
+          <label
+            class="accordion-title"
+            for="lo6">
+            Remote Management Technologies
+          </label>
+          <div class="accordion-content">
+            <p>
+              Features like Intel® Active Management
+              Technology (AMT) allow for remote patching and
+              remediation, enhancing security management of
+              distributed systems.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>Secure Processor Architectures&nbsp;</h3>
+      <p>
+        Secure processor architectures integrate additional
+        hardware features to protect against various types
+        of attacks. Key components include the following:
+      </p>
+      <div class="box-border">
+        <h2
+          style="text-align: center"
+          ;>
+          Key Components of Secure Processors
+        </h2>
+        <h3>Cryptoprocessors:&nbsp;</h3>
+        <ul>
+          <li>
+            Specialized processors that execute
+            cryptographic algorithms at the hardware level,
+            accelerating encryption and decryption
+            processes.
+          </li>
+        </ul>
+        <h3>
+          Trusted&nbsp;Execution Environments (TEEs):&nbsp;
+        </h3>
+        <ul>
+          <li>
+            Secure areas within a processor for executing
+            sensitive code and handling sensitive data.
+            Examples include ARM TrustZone and Intel SGX.
+          </li>
+        </ul>
+        <h3>Secure Boot:&nbsp;</h3>
+        <ul>
+          <li>
+            Ensures that a device boots using only trusted
+            software, preventing unauthorized software from
+            being loaded during the boot process.
+          </li>
+        </ul>
+        <h3>Physical Memory Protection (PMP):</h3>
+        <ul>
+          <li>
+            Controls access to memory regions, ensuring that
+            only authorized code can access certain areas of
+            memory.
+          </li>
+        </ul>
+        <h3>Hardware Security Modules (HSMs):</h3>
+        <ul>
+          <li>
+            Dedicated hardware devices that manage
+            cryptographic keys and perform encryption and
+            decryption operations.
+          </li>
+        </ul>
+      </div>
+      <p>
+        Implementation challenges for secure processor
+        architectures include design complexity, performance
+        overhead, vulnerability to side-channel attacks, and
+        ensuring compatibility and extensibility.
+      </p>
+      <h3>Trusted Execution Environments</h3>
+      <p>
+        TEEs are secure areas within processors designed to
+        provide an isolated environment for executing code
+        and processing data, playing a critical role in
+        cybersecurity. TEEs ensure data confidentiality and
+        integrity by keeping sensitive data secure and
+        unaltered during processing. They also isolate
+        sensitive data from untrusted code, preventing
+        malicious software from accessing or tampering with
+        it. TEEs facilitate secure remote execution, making
+        them essential for cloud-based services and
+        applications.
+      </p>
+      <p>
+        While not completely immune, TEEs offer greater
+        protection against side-channel attacks compared to
+        traditional execution environments. These
+        environments have a wide range of applications,
+        including use in mobile devices, IoT devices, cloud
+        computing, secure data analytics, multi-party
+        computation, and privacy-preserving machine
+        learning. However, challenges such as side-channel
+        vulnerabilities, regulatory compliance, and
+        integration complexities remain significant
+        considerations for adopting TEEs.
+      </p>
+      <h3>Side-Channel Attack Prevention&nbsp;</h3>
+      <p>
+        Side-channel attacks exploit indirect information
+        leakage from a system, such as timing, power
+        consumption, or electromagnetic emissions, to infer
+        sensitive data. Prevention techniques in modern
+        architectures include the following:&nbsp;
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo7" />
+          <label
+            class="accordion-title"
+            for="lo7">
+            Constant-Time Operations
+          </label>
+          <div class="accordion-content">
+            <p>
+              Ensuring that cryptographic operations execute
+              in constant time, regardless of the input
+              data, to prevent timing-based side-channel
+              attacks.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo8" />
+          <label
+            class="accordion-title"
+            for="lo8">
+            Memory Protection Mechanisms&nbsp;
+          </label>
+          <div class="accordion-content">
+            <p>
+              Guarded heap allocations and permission
+              settings to protect sensitive data and prevent
+              unauthorized access.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo9" />
+          <label
+            class="accordion-title"
+            for="lo9">
+            Randomization Techniques&nbsp;
+          </label>
+          <div class="accordion-content">
+            <p>
+              Randomizing the order of operations or
+              introducing random delays to obscure timing
+              patterns that attackers might exploit.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo9" />
+          <label
+            class="accordion-title"
+            for="lo9">
+            Hardware-Based Countermeasures
+          </label>
+          <div class="accordion-content">
+            <p>
+              Features like dual-rail logic to balance power
+              consumption and secure enclaves to isolate
+              sensitive computations.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo10" />
+          <label
+            class="accordion-title"
+            for="lo10">
+            Thermal Management
+          </label>
+          <div class="accordion-content">
+            <p>
+              Controlling the thermal output of processors
+              to mitigate heat-based side-channel attacks.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo11" />
+          <label
+            class="accordion-title"
+            for="lo11">
+            Software-Based Mitigations
+          </label>
+          <div class="accordion-content">
+            <p>
+              Techniques like masking, which involves hiding
+              the true value of data by combining it with
+              random values during processing.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo12" />
+          <label
+            class="accordion-title"
+            for="lo12">
+            Systemwide Detection and Mitigation
+          </label>
+          <div class="accordion-content">
+            <p>
+              Kernel-level infrastructures to detect and
+              mitigate side-channel attacks systemwide.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    TRUE or FALSE?
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >Trusted Execution Environments
+                        (</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >TEEs</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >)</span
+                      ><span data-ccp-parastyle="Body Text">
+                        are designed to protect sensitive
+                        data and code from unauthorized
+                        access and tampering.</span
+                      >
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer: TRUE
+                    </h3>
+                    <p style="color: #041e42">
+                      <span
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >Explanation: Trusted Execution
+                          Environments (TEEs) provide a
+                          secure area within a processor to
+                          protect sensitive data and code
+                          from unauthorized access and
+                          tampering, enhancing security in
+                          modern architectures.&nbsp;</span
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

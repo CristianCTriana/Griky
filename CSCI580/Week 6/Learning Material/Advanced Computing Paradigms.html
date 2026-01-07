@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+
+      .icon-list {
+        list-style-type: none !important;
+      }
+
+      .purple-check::before {
+        content: "☑️";
+      }
+
+      .blue_arrow::before {
+        content: "➡️";
+      }
+
+      .box-border {
+        border: #041e42 1px solid;
+        border-radius: 5px;
+        padding: 25px;
+        margin-top: 25px;
+      }
+
+      .box-border h3 {
+        font-size: 24px;
+      }
+
+      .box-border p,
+      .box-border ul {
+        font-size: 19px;
+        line-height: 1.6;
+      }
+
+      .box-border ul {
+        color: #041e42;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 6 </span>
+      <span class="banner__week-name">
+        Emerging Trends and Security
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Blockchain Architectures</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Blockchain technology represents a significant shift
+        in how we approach data management and transaction
+        processing. It is fundamentally a decentralized and
+        distributed ledger system that records transactions
+        across a network of computers, ensuring data
+        security, transparency, and immutability. The key
+        components of blockchain architecture are explained
+        below.&nbsp;&nbsp;
+      </p>
+      <div class="box-border">
+        <h2 style="text-align: center">
+          Key Components of Secure Processors
+        </h2>
+        <h3>Nodes:</h3>
+        <ul>
+          <li>
+            Active participants in the blockchain network
+            that validate, record, and maintain
+            transactions. Each node holds a complete copy of
+            the blockchain ledger.&nbsp;
+          </li>
+        </ul>
+        <h3>Blocks:</h3>
+        <ul>
+          <li>
+            The fundamental units of a blockchain,
+            containing lists of transactions. Blocks are
+            cryptographically linked, ensuring data
+            integrity and immutability.&nbsp;
+          </li>
+        </ul>
+        <h3>Consensus Mechanisms:</h3>
+        <ul>
+          <li>
+            Algorithms used to achieve agreement on
+            transaction validity across the network. Common
+            mechanisms include Proof of Work (PoW) and Proof
+            of Stake (PoS).
+          </li>
+        </ul>
+        <h3>Smart Contracts:</h3>
+        <ul>
+          <li>
+            Self-executing contracts with agreement terms
+            directly written into code, automating processes
+            and reducing the need for intermediaries.
+          </li>
+        </ul>
+        <h3>Distributed Ledger Technology (DLT):</h3>
+        <ul>
+          <li>
+            The backbone of blockchain, allowing all
+            participants to access the entire database and
+            its history.&nbsp;
+          </li>
+        </ul>
+      </div>
+      <h3>Applications of Blockchain</h3>
+      <p>
+        Blockchain technology has found widespread
+        applications across various domains, transforming
+        industries and enhancing security and transparency.
+        In finance, it underpins cryptocurrencies like
+        Bitcoin and Ethereum, enabling secure, transparent
+        transactions without intermediaries. In healthcare,
+        blockchain is used to create patient-centric health
+        records and verify staff credentials. It also plays
+        a significant role in supply chain management by
+        providing traceability and transparency, which helps
+        authenticate products and reduce fraud. Blockchain
+        enhances the security of IoT networks by encrypting
+        data and eliminating single points of failure. In
+        smart grids, it supports peer-to-peer energy trading
+        and the management of renewable energy certificates.
+        Governments are utilizing blockchain to manage
+        registries and administrative processes, improving
+        transparency and reducing fraud.
+      </p>
+      <p>
+        Blockchain is implemented in several forms,
+        including public blockchains like Bitcoin and
+        Ethereum, which offer high transparency and
+        decentralization; private blockchains, which provide
+        restricted access for enterprise applications;
+        consortium blockchains, governed by a group of
+        organizations to balance decentralization with
+        control; and hybrid blockchains, which combine
+        elements of both public and private blockchains for
+        greater flexibility in handling different
+        transaction types.&nbsp;
+      </p>
+      <h3>Confidential Computing&nbsp;</h3>
+      <p>
+        Confidential computing is an emerging technology
+        designed to enhance data security and privacy by
+        protecting data in use. It achieves this by
+        performing computations within a hardware-based
+        Trusted Execution Environment (TEE), ensuring that
+        data remains secure even during processing. General
+        principles of confidential computing are as follows:
+      </p>
+      <div class="def-cards">
+        <div class="def-cards-grid">
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <h3>Data Confidentiality</h3>
+                  <img
+                    alt="Blue Check Mark"
+                    title="Blue Check Mark"
+                    src="https://cdn.pixabay.com/photo/2014/04/02/10/12/checkbox-303113_1280.png"
+                    width="118"
+                    height="119"
+                    style="
+                      display: block;
+                      margin-left: auto;
+                      margin-right: auto;
+                    " />
+                </div>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  Ensures that unauthorized entities cannot
+                  view data while it is in use within the
+                  TEE.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <h3>Data Integrity</h3>
+                  <img
+                    alt="Blue Check Mark"
+                    title="Blue Check Mark"
+                    src="https://cdn.pixabay.com/photo/2014/04/02/10/12/checkbox-303113_1280.png"
+                    width="118"
+                    height="119"
+                    style="
+                      display: block;
+                      margin-left: auto;
+                      margin-right: auto;
+                    " />
+                </div>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  Prevents unauthorized entities from
+                  adding, removing, or altering data while
+                  it is in use within the TEE.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="def-cards-grid">
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <h3>Code Integrity</h3>
+                  <img
+                    alt="Blue Check Mark"
+                    title="Blue Check Mark"
+                    src="https://cdn.pixabay.com/photo/2014/04/02/10/12/checkbox-303113_1280.png"
+                    width="118"
+                    height="119"
+                    style="
+                      display: block;
+                      margin-left: auto;
+                      margin-right: auto;
+                    " />
+                </div>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  Ensures that unauthorized entities cannot
+                  modify the code executing within the TEE.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <h3>Remote Attestation</h3>
+                  <img
+                    alt="Blue Check Mark"
+                    title="Blue Check Mark"
+                    src="https://cdn.pixabay.com/photo/2014/04/02/10/12/checkbox-303113_1280.png"
+                    width="118"
+                    height="119"
+                    style="
+                      display: block;
+                      margin-left: auto;
+                      margin-right: auto;
+                    " />
+                </div>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <p>
+                  Assesses the trustworthiness of a system,
+                  ensuring that confidential data is
+                  released to a TEE only after it presents
+                  verifiable evidence of its security
+                  posture.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3>Technologies in Confidential Computing</h3>
+      <p>
+        Confidential computing is achieved through a
+        combination of hardware and software solutions
+        designed to protect data and code from unauthorized
+        access or modification. Trusted Execution
+        Environments (TEEs) create secure areas within a
+        processor to safeguard sensitive information. Memory
+        encryption technologies, such as AMD's Secure
+        Encrypted Virtualization (SEV) and Intel's Trust
+        Domain Extensions (TDX), protect data in use by
+        encrypting it. Virtual machine isolation is another
+        critical approach, isolating data within virtual
+        machines to prevent unauthorized access.
+        Additionally, process and function isolation
+        restricts data access to only authorized software
+        applications or specific subroutines within larger
+        programs, further enhancing security. These
+        techniques work together to ensure the
+        confidentiality of data throughout its lifecycle.
+      </p>
+      <h3>Use Cases of Confidential Computing&nbsp;</h3>
+      <p>
+        Confidential computing is applied across various
+        industries to enhance data security and
+        privacy:&nbsp;
+      </p>
+      <div class="box-border">
+        <h2 style="text-align: center">
+          Applications in Confidential Computing
+        </h2>
+        <ul class="icon-list">
+          <li class="purple-check">
+            Healthcare: Enables secure processing of
+            sensitive patient data, facilitating research
+            and collaboration while maintaining strict
+            patient confidentiality.&nbsp;
+          </li>
+          <li class="purple-check">
+            Financial Services: Allows for secure
+            multi-party computations, such as anti-money
+            laundering and fraud detection, by enabling
+            banks to share data without exposing customer
+            information.&nbsp;
+          </li>
+          <li class="purple-check">
+            Cloud Computing: Provides a secure environment
+            for processing data in the cloud, ensuring that
+            cloud service providers cannot access sensitive
+            data.&nbsp;
+          </li>
+          <li class="purple-check">
+            Multi-party Data Collaboration: Organizations
+            can collaborate on data analysis without sharing
+            raw data, preserving privacy and
+            compliance.&nbsp;
+          </li>
+          <li class="purple-check">
+            Regulatory Compliance: Helps organizations meet
+            regulatory requirements for data protection by
+            limiting access to sensitive data.
+          </li>
+          <li class="purple-check">
+            Intellectual Property Protection: Protects
+            proprietary designs and processes from being
+            accessed by unauthorized parties in
+            manufacturing.&nbsp;
+          </li>
+        </ul>
+      </div>
+      <h3>Self-Driving Vehicle Architectures</h3>
+      <p>
+        Self-driving vehicle architectures integrate sensor
+        systems, data processing, and decision-making
+        components to enable autonomous vehicles to operate
+        effectively and safely. Self-driving vehicles rely
+        on a variety of sensors to accurately perceive their
+        environment. Cameras provide visual data for tasks
+        such as image classification, object detection, and
+        lane tracking. LiDAR (Light Detection and Ranging)
+        creates detailed 3D maps by emitting laser beams to
+        measure distances, offering a precise representation
+        of the surroundings. RADAR (Radio Detection and
+        Ranging) utilizes radio waves to detect objects, as
+        well as measure their speed and distance. Ultrasonic
+        sensors are typically used for short-range
+        detection, especially during parking assistance and
+        low-speed maneuvers. Additionally, GPS and IMU
+        (Inertial Measurement Unit) offer global positioning
+        data and help with vehicle localization, ensuring
+        accurate navigation. Together, these sensors work in
+        tandem to provide the comprehensive perception
+        needed for autonomous driving.&nbsp;
+      </p>
+      <h3>Data Processing</h3>
+      <p>
+        The data collected from the sensors in self-driving
+        vehicles requires significant processing power to be
+        useful. First, the data undergoes preprocessing to
+        reduce noise and errors, while data fusion
+        techniques combine inputs from multiple sensors to
+        provide a more accurate representation of the
+        environment. Perception algorithms then process the
+        fused data to identify and classify objects,
+        estimate their positions and velocities, and
+        understand the dynamics of the surroundings.
+        Additionally, localization algorithms, such as
+        Visual Odometry (VO) and Simultaneous Localization
+        and Mapping (SLAM), are employed to determine the
+        vehicle’s precise location and orientation, ensuring
+        accurate navigation and decision-making.
+      </p>
+      <h3>Decision-Making Components&nbsp;</h3>
+      <p>
+        Decision-making in autonomous vehicles involves
+        interpreting the processed data to make real-time
+        driving decisions:&nbsp;
+      </p>
+      <p class="standard-text">
+        <img
+          src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+          alt="cintillo tabs"
+          style="max-width: 100%" />
+      </p>
+
+      <div class="tabs-container">
+        <input
+          type="radio"
+          name="group-name"
+          id="tab1"
+          checked="checked" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab2" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab3" />
+
+        <div class="tabs">
+          <label for="tab1">Path Planning </label>
+          <label for="tab2">Control Algorithms</label>
+          <label for="tab3">Predictive Modeling</label>
+        </div>
+
+        <div class="content content-1">
+          <p class="standard-text">
+            Algorithms generate safe and efficient routes,
+            considering dynamic obstacles, traffic rules,
+            and user preferences.
+          </p>
+        </div>
+
+        <div class="content content-2">
+          <p class="standard-text">
+            These algorithms convert the planned path into
+            control commands for the vehicle’s actuators.
+          </p>
+        </div>
+
+        <div class="content content-3">
+          <p class="standard-text">
+            Advanced models predict the actions of other
+            road users, allowing vehicles to anticipate and
+            react to potential hazards.
+          </p>
+        </div>
+      </div>
+      <h3>Hardware Considerations&nbsp;</h3>
+      <p>
+        The computational demands of processing sensor data
+        and making real-time decisions require robust
+        hardware solutions. Field-Programmable Gate Arrays
+        (FPGAs) and Graphics Processing Units (GPUs) are
+        often used to accelerate data processing and
+        decision-making tasks due to their parallel
+        processing capabilities and low-latency
+        performance.&nbsp;
+      </p>
+      <h3>IoT Architectures&nbsp;</h3>
+      <p>
+        IoT architectures are designed to connect a wide
+        range of devices, from simple sensors to complex
+        industrial machines, and manage the data they
+        generate. The architecture focuses on three key
+        areas: device connectivity, data management, and
+        security aspects.&nbsp;
+      </p>
+      <p>
+        IoT architectures rely on various network protocols
+        and technologies for connectivity. Wi-Fi is commonly
+        used for local area networks, offering high data
+        rates and a range of up to 250 meters outdoors.
+        Bluetooth and Bluetooth Low Energy (BLE) are
+        typically employed in personal area networks, with a
+        range of about 100 meters, making them ideal for
+        low-power devices. ZigBee and Z-Wave are used to
+        create mesh networks, particularly suited for smart
+        home devices due to their low power consumption and
+        moderate data rates. Cellular networks like NB-IoT
+        and LTE-M provide wide-area network coverage, making
+        them suitable for IoT devices that need to
+        communicate over long distances.
+      </p>
+      <h3>Data Management in loT</h3>
+      <p>
+        Data management in IoT involves the collection,
+        storage, and processing of data generated by IoT
+        devices:&nbsp;
+      </p>
+      <ul class="icon-list">
+        <li class="blue_arrow">
+          <strong>Data Layer Protocols:</strong> Protocols
+          like MQTT and CoAP are commonly used for data
+          transmission in IoT systems.&nbsp;&nbsp;
+        </li>
+        <li class="blue_arrow">
+          <strong>Data Storage and Analytics: </strong>IoT
+          platforms often include functionalities for
+          storing and analyzing data, often leveraging cloud
+          computing resources for scalability and
+          flexibility.&nbsp;&nbsp;
+        </li>
+        <li class="blue_arrow">
+          <strong>Application Enablement: </strong>IoT
+          platforms provide APIs and tools for developing
+          applications that utilize the collected data,
+          including support for data visualization and
+          integration with third-party
+        </li>
+      </ul>
+      <h3>Security Aspects&nbsp;</h3>
+      <p>
+        Security is a critical concern in IoT architectures
+        due to the large number of connected devices and the
+        sensitive data they handle. Device security is
+        essential, with measures such as strong
+        authentication, regular firmware updates, and
+        vulnerability testing ensuring that devices are
+        secure by default. Data security is equally
+        important, achieved by protecting the integrity and
+        confidentiality of data through encryption and
+        secure communication protocols. Additionally,
+        network security plays a crucial role by
+        implementing network segmentation and continuous
+        monitoring to detect and respond to unauthorized
+        access or anomalies.
+      </p>
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text">
+                          _________ architectures are
+                          designed to provide decentralized
+                          and secure transaction
+                          processing.</span
+                        ></span
+                      >
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer: Blockchain
+                    </h3>
+                    <p style="color: #041e42">
+                      <span
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >Explanation:
+                          <span
+                            style="list-style-type: disc"
+                            xml:lang="EN-US"
+                            data-contrast="auto"
+                            >Blockchain architectures are
+                            designed to provide
+                            decentralized and secure
+                            transaction processing, enabling
+                            trustless interactions and data
+                            integrity across distributed
+                            networks.</span
+                          >&nbsp;</span
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

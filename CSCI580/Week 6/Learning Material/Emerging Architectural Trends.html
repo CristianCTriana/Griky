@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .box-border {
+        border: #041e42 1px solid;
+        border-radius: 5px;
+        padding: 25px;
+        margin-top: 25px;
+      }
+
+      .box-border h3 {
+        font-size: 24px;
+      }
+
+      .box-border p,
+      .box-border ul {
+        font-size: 19px;
+        line-height: 1.6;
+      }
+
+      .box-border ul {
+        color: #041e42;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 6 </span>
+      <span class="banner__week-name">
+        Emerging Trends and Security
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        CUDA Programming Framework
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        As we approach the physical limits of transistor
+        scaling, the computing industry is shifting toward
+        new architectural paradigms to continue performance
+        improvements. This transition is driven by the
+        slowdown of Moore’s Law, which has been the guiding
+        principle for semiconductor advancement for decades.
+      </p>
+      <div class="box-border">
+        <h2 style="text-align: center">
+          Key Aspects of Moore's Law
+        </h2>
+        <h3>Accelerated Computing:&nbsp;</h3>
+        <p>
+          Companies like NVIDIA are promoting accelerated
+          computing, where GPUs play a central role in
+          enhancing data-processing capabilities. This
+          approach allows for significant performance
+          improvements in data-intensive applications, such
+          as AI, without relying solely on traditional CPU
+          advancements.
+        </p>
+        <h3>Heterogeneous Computing:&nbsp;</h3>
+        <p>
+          This involves using a mix of different types of
+          processors, such as CPUs, GPUs, and specialized
+          accelerators, to optimize performance for specific
+          tasks. Heterogeneous computing systems offer
+          several advantages:
+        </p>
+        <ul>
+          <li>
+            Enhanced performance and efficiency by
+            leveraging the strengths of different processor
+            types.&nbsp;
+          </li>
+          <li>
+            Improved power efficiency, making them ideal for
+            embedded systems.&nbsp;
+          </li>
+          <li>
+            Better scalability and flexibility, allowing for
+            future upgrades and adaptation to new computing
+            demands.&nbsp;
+          </li>
+          <li>
+            Improved resource utilization, which is
+            particularly beneficial for AI and machine
+            learning applications.&nbsp;
+          </li>
+          <li>
+            Better handling of tasks requiring large memory
+            bandwidth due to the significant difference in
+            memory capacity between CPUs and GPUs.
+          </li>
+        </ul>
+        <h3>Innovation in Processor Design:&nbsp;</h3>
+        <p>
+          The slowing of Moore’s Law has spurred innovation
+          in processor design, leading to the development of
+          new architectures that can better handle the
+          demands of modern applications.
+        </p>
+      </div>
+      <h3>Domain-Specific Architectures (DSAs)</h3>
+      <p>
+        DSAs are specialized computing architectures
+        tailored to efficiently execute specific types of
+        applications or workloads. They have gained
+        prominence as a way to continue performance
+        improvements in computing systems. Key aspects of
+        DSAs include the following:&nbsp;&nbsp;
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Optimization for Specific Domains
+          </label>
+          <div class="accordion-content">
+            <p>
+              DSAs are designed to provide high-performance
+              and energy-efficient execution tailored to
+              particular application domains, such as deep
+              neural networks, AI and robotics, and emerging
+              applications like DNA sequencing and
+              post-quantum cryptography.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Performance Improvements
+          </label>
+          <div class="accordion-content">
+            <p>
+              In specific domains like deep learning, DSAs
+              can achieve 15 to 30 times faster execution
+              and 30 to 80 times better energy efficiency
+              compared to conventional CPUs and GPUs.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Design Methodology&nbsp;
+          </label>
+          <div class="accordion-content">
+            <p>
+              The development of DSAs involves a
+              system-level methodology that ensures the
+              architecture meets the functional and
+              performance requirements of the target
+              application, balancing specificity and
+              flexibility.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>Edge Computing Architectures&nbsp;</h3>
+      <p>
+        Edge computing is a distributed computing paradigm
+        that processes data closer to the data source,
+        addressing several key challenges associated with
+        traditional centralized computing models.&nbsp;
+      </p>
+      <p>
+        Key components and aspects of edge computing
+        architectures include the following:&nbsp;
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Edge Devices
+          </label>
+          <div class="accordion-content">
+            <p>
+              These are the endpoints where data is
+              generated, such as IoT devices, sensors, and
+              smartphones. They perform local data
+              processing and storage, reducing latency by
+              minimizing the distance data needs to travel
+              for computation.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Edge Gateways
+          </label>
+          <div class="accordion-content">
+            <p>
+              Acting as intermediaries, edge gateways
+              aggregate, preprocess, and filter data from
+              multiple edge devices before transmitting it
+              to the cloud, optimizing bandwidth usage and
+              reducing the load on cloud infrastructure.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo6" />
+          <label
+            class="accordion-title"
+            for="lo6">
+            Cloud Infrastructure
+          </label>
+          <div class="accordion-content">
+            <p>
+              While edge devices handle real-time
+              processing, the cloud provides scalability,
+              storage capacity, and centralized management,
+              supporting more extensive data analysis and
+              long-term storage.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo7" />
+          <label
+            class="accordion-title"
+            for="lo7">
+            Connectivity Technologies
+          </label>
+          <div class="accordion-content">
+            <p>
+              Various technologies, such as Wi-Fi, cellular
+              networks, and Ethernet, enable communication
+              between edge devices, gateways, and the cloud,
+              ensuring efficient data transmission.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo8" />
+          <label
+            class="accordion-title"
+            for="lo8">
+            Edge Computing Software
+          </label>
+          <div class="accordion-content">
+            <p>
+              This includes operating systems and
+              applications designed to run on edge devices
+              and gateways, facilitating data processing,
+              analytics, and device management at the edge.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p>
+        Edge computing plays a crucial role in distributed
+        systems by addressing several key challenges. It
+        helps reduce latency for real-time applications,
+        ensuring faster response times. By processing data
+        locally, edge computing optimizes bandwidth,
+        minimizing the need for extensive data transmission
+        to central data centers. This approach also enhances
+        reliability by enabling local processing, which
+        reduces dependency on remote servers. Additionally,
+        edge computing improves scalability by distributing
+        processing tasks across multiple edge devices,
+        allowing systems to handle increased workloads more
+        efficiently. Furthermore, it enhances security and
+        privacy by processing data closer to its origin,
+        reducing the risk of exposure during transmission.
+        Lastly, edge computing boosts operational efficiency
+        by enabling faster and more comprehensive data
+        analysis, leading to more informed decision-making.
+      </p>
+
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_6/../Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:&nbsp;
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      >Which of the following is a
+                      characteristic of post–Moore’s Law
+                      architectures?</span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >(</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >A) Increasing transistor density
+                      </span></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >(</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >B) Focus on single-core performance
+                      </span></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >(</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >C) Emphasis on energy efficiency
+                        and parallelism
+                      </span></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >(</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >D) Reliance on traditional
+                        silicon-based technology</span
+                      >
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer:&nbsp;
+                    </h3>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >(</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >C) Emphasis on energy efficiency
+                        and parallelism</span
+                      >
+                    </p>
+                    <p style="color: #041e42">
+                      <span
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >Explanation: Post–Moore’s Law
+                          architectures focus on energy
+                          efficiency and parallelism to
+                          overcome the limitations of
+                          increasing transistor density,
+                          which is no longer scaling as it
+                          did under Moore’s Law.&nbsp;</span
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
