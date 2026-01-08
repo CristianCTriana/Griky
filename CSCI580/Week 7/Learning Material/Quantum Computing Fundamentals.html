@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      #tab5:checked ~ .tabs label[for="tab5"] {
+        background: #fff;
+        border: 1px solid #0078ff;
+        box-shadow: 0 2px 6px rgba(4, 30, 66, 0.2);
+      }
+
+      #tab5:checked ~ .content-5 {
+        display: block;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 7 </span>
+      <span class="banner__week-name">
+        Neural and Quantum Architectures
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Quantum Computing Fundamentals
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Quantum computing is an emerging field that
+        leverages the principles of quantum mechanics to
+        perform computations that are infeasible for
+        classical computers. It offers the potential for
+        exponential speedups in certain types of
+        calculations.&nbsp;
+      </p>
+      <h3>Quantum Bits and Quantum Gates</h3>
+      <p>
+        Quantum bits (qubits) are the fundamental units of
+        quantum information, analogous to classical bits.
+        Key properties of qubits include the
+        following:&nbsp;
+      </p>
+      <ol>
+        <li>
+          Superposition: A qubit can exist in a
+          superposition of states, representing both 0 and 1
+          simultaneously until measured.&nbsp;
+        </li>
+        <li>
+          Entanglement: Qubits can be entangled with one
+          another, creating correlations between their
+          states that are not possible in classical
+          systems.&nbsp;
+        </li>
+        <li>
+          Measurement: Measuring a qubit collapses its state
+          to one of the basis states, either |0⟩ or |1⟩,
+          with probabilities determined by its quantum
+          state.&nbsp;
+        </li>
+        <li>
+          Mathematical Representation: The state of a qubit
+          is typically represented as follows:&nbsp;
+          <div style="text-align: center">
+            <p
+              paraeid="{c40f41b7-4628-44fc-ac9b-1b46f65c0aa3}{173}"
+              paraid="1749825898">
+              <span
+                role="presentation"
+                data-mathml='&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block"&gt;&lt;mfenced open="|" close="|"&gt;&lt;mrow&gt;&lt;mi&gt;&amp;#x1D713;&lt;/mi&gt;&lt;mo fence="false"&gt;&amp;#x27E9;&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;&amp;#x1D6FC;&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfenced&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo fence="false"&gt;&amp;#x27E9;&lt;/mo&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;&amp;#x1D6FD;&lt;/mi&gt;&lt;mo fence="false"&gt;|&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo fence="false"&gt;&amp;#x27E9;&lt;/mo&gt;&lt;/math&gt;'
+                id="MathJax-Element-1-Frame"
+                tabindex="0"
+                ><span role="presentation"
+                  ><math
+                    display="block"
+                    xmlns="http://www.w3.org/1998/Math/MathML"
+                    ><mfenced
+                      close="|"
+                      open="|"
+                      ><mrow
+                        ><mi>𝜓</mi><mo fence="false">⟩</mo
+                        ><mo>=</mo><mi>𝛼</mi></mrow
+                      ></mfenced
+                    ><mn>0</mn><mo fence="false">⟩</mo
+                    ><mo>+</mo><mi>𝛽</mi
+                    ><mo fence="false">|</mo><mn>1</mn
+                    ><mo fence="false">⟩</mo></math
+                  ></span
+                ></span
+              >
+            </p>
+            <span
+              xml:lang="EN-US"
+              data-contrast="auto"></span
+            ><span style="font-size: 19px"
+              ><span
+                data-ccp-props='{"335551550":2,"335551620":2,"335559738":180,"335559739":180}'
+                >&nbsp;</span
+              ><span
+                xml:lang="EN-US"
+                data-contrast="auto"
+                >where </span
+              ><span style="font-size: 32px">∝ </span>and
+              <span style="font-size: 32px">β </span>are
+              complex numbers satisfying</span
+            ><span contenteditable="false"></span
+            ><span
+              role="presentation"
+              data-mathml='&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block"&gt;&lt;msup&gt;&lt;mrow&gt;&lt;mfenced open="|" close="|"&gt;&lt;mi&gt;&amp;#x1D6FC;&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mrow&gt;&lt;mfenced open="|" close="|"&gt;&lt;mi&gt;&amp;#x1D6FD;&lt;/mi&gt;&lt;/mfenced&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/math&gt;'
+              id="MathJax-Element-4-Frame"
+              tabindex="0"
+              ><span id="MathJax-Span-27"
+                ><span id="MathJax-Span-36"
+                  ><span
+                    id="MathJax-Span-42"></span></span></span
+              ><span role="presentation"
+                ><math
+                  display="block"
+                  xmlns="http://www.w3.org/1998/Math/MathML"
+                  ><msup
+                    ><mrow
+                      ><mfenced
+                        close="|"
+                        open="|"
+                        ><mi>𝛼</mi></mfenced
+                      ></mrow
+                    ><mn>2</mn></msup
+                  ><mo>+</mo
+                  ><msup
+                    ><mrow
+                      ><mfenced
+                        close="|"
+                        open="|"
+                        ><mi>𝛽</mi></mfenced
+                      ></mrow
+                    ><mn>2</mn></msup
+                  ><mo>=</mo><mn>1</mn></math
+                ></span
+              ></span
+            >
+          </div>
+        </li>
+      </ol>
+      <h3>Quantum Gates&nbsp;</h3>
+      <p>
+        Quantum gates are the building blocks of quantum
+        circuits, used to manipulate qubits. Key aspects of
+        quantum gates include the following:&nbsp;
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Unitary Operations
+          </label>
+          <div class="accordion-content">
+            <p>
+              Quantum gates are unitary operations that
+              preserve the norm of the quantum state vector,
+              ensuring reversibility.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Types of Quantum Gates
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Pauli Gates (X, Y, Z): Single-qubit gates
+                corresponding to rotations around the x, y,
+                and z axes of the Bloch sphere.&nbsp;
+              </li>
+              <li>
+                Hadamard Gate (H): Creates superposition by
+                transforming basis states into equal
+                superpositions.&nbsp;
+              </li>
+              <li>
+                Phase Shift Gates: Add a phase to the state
+                of a qubit, such as the T-gate and
+                S-gate.&nbsp;
+              </li>
+              <li>
+                Controlled Gates (e.g., CNOT): Operate on
+                multiple qubits, with one or more qubits
+                acting as controls.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Universal Gates
+          </label>
+          <div class="accordion-content">
+            <p>
+              A set of gates is universal if any quantum
+              operation can be decomposed into a sequence of
+              these gates. For example, the combination of
+              Hadamard, T-gate, and CNOT forms a universal
+              set.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3>Quantum Circuits and Algorithms</h3>
+      <p>
+        Quantum circuits are composed of sequences of
+        quantum gates applied to qubits. Quantum algorithms
+        have potential applications in cryptography,
+        optimization, scientific computing, and machine
+        learning. Key aspects of quantum circuits and
+        algorithms include the following:&nbsp;
+      </p>
+      <div class="box-border">
+        <h2 style="text-align: center">Key Aspects</h2>
+        <h3>Quantum Circuit Model:</h3>
+        <p>
+          This theoretical framework describes quantum
+          systems in terms of quantum circuits, providing a
+          way to analyze and design quantum
+          algorithms.&nbsp;
+        </p>
+        <h3>Quantum Algorithmic Paradigms:</h3>
+        <p>
+          Quantum algorithms leverage phenomena such as
+          superposition, entanglement, and interference to
+          achieve computational speedups.&nbsp;
+        </p>
+        <h3>Notable Algorithms:&nbsp;</h3>
+        <ul>
+          <li>
+            Shor’s Algorithm: Efficiently factors large
+            numbers, posing a threat to classical
+            cryptographic systems.&nbsp;
+          </li>
+          <li>
+            Grover’s Algorithm: Provides a quadratic speedup
+            for search problems in unsorted databases.&nbsp;
+          </li>
+        </ul>
+      </div>
+      <h3>Quantum Error Correction</h3>
+      <p>
+        Quantum error correction (QEC) is essential for
+        developing practical quantum computing systems,
+        addressing the inherent instability and error-prone
+        nature of qubits. Quantum errors can manifest as bit
+        flips, phase flips, or a combination of both, making
+        error correction critical. A fundamental principle
+        in QEC is the No-Cloning Theorem, which prohibits
+        the copying of quantum information, requiring the
+        use of entanglement and redundancy to encode logical
+        qubits across multiple physical qubits.
+      </p>
+      <p>
+        To detect errors without disturbing the quantum
+        information, QEC employs syndrome measurements.
+        Various error correction codes, such as the Shor
+        Code, Steane Code, and Surface Code, have been
+        developed, each offering different properties and
+        error correction capabilities. QEC plays a crucial
+        role in achieving fault-tolerant quantum computing,
+        enabling the reliable execution of long and complex
+        quantum algorithms.&nbsp;
+      </p>
+      <h3>Current Quantum Hardware Platforms&nbsp;</h3>
+      <p>
+        Several types of quantum hardware platforms are
+        currently being developed, each with its own
+        advantages and challenges:
+      </p>
+      <p class="standard-text">
+        <img
+          src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+          alt="cintillo tabs"
+          style="max-width: 100%" />
+      </p>
+
+      <div class="tabs-container">
+        <input
+          type="radio"
+          name="group-name"
+          id="tab1"
+          checked="checked" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab2" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab3" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab4" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab5" />
+
+        <div class="tabs">
+          <label for="tab1">Superconducting Qubits</label>
+          <label for="tab2">Trapped Ions</label>
+          <label for="tab3"
+            >Photonic Quantum Computing</label
+          >
+          <label for="tab4">Neutral Atoms</label>
+          <label for="tab5">Quantum Dots</label>
+        </div>
+
+        <div class="content content-1">
+          <p class="standard-text">
+            Use superconducting circuits to create qubits,
+            offering fast gate operation times but requiring
+            complex cooling systems.
+          </p>
+        </div>
+
+        <div class="content content-2">
+          <p class="standard-text">
+            Use ions confined by electromagnetic fields as
+            qubits, providing long coherence times but
+            slower operation compared to superconducting
+            qubits.
+          </p>
+        </div>
+
+        <div class="content content-3">
+          <p class="standard-text">
+            Uses photons as qubits, naturally resistant to
+            decoherence but requiring advanced optical
+            control systems.
+          </p>
+        </div>
+        <div class="content content-4">
+          <p class="standard-text">
+            Use individual atoms trapped by laser beams as
+            qubits, offering all-to-all connectivity but
+            facing challenges in scaling to large numbers of
+            qubits.&nbsp;
+          </p>
+        </div>
+        <div class="content content-5">
+          <p class="standard-text">
+            Use semiconductor quantum dots as qubits,
+            offering high coherence times but requiring
+            sophisticated nanofabrication techniques.&nbsp;
+          </p>
+        </div>
+      </div>
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    TRUE or FALSE?
+                  </h3>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      ><span data-ccp-parastyle="Body Text"
+                        >Quantum bits (q</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >ubits</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >)</span
+                      ><span data-ccp-parastyle="Body Text">
+                        can exist in multiple states
+                        simultaneously, unlike classical
+                        bits.</span
+                      >
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer:&nbsp; &nbsp;TRUE
+                    </h3>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation:&nbsp;Quantum bits, or
+                        qubits, can exist in multiple states
+                        simultaneously due to the principle
+                        of superposition, which is a
+                        fundamental aspect of quantum
+                        computing that allows for more
+                        complex computations than classical
+                        bits.&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

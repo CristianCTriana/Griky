@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .box-border {
+        border: #041e42 1px solid;
+        border-radius: 5px;
+        padding: 25px;
+        margin-top: 25px;
+      }
+
+      .box-border h3 {
+        font-size: 24px;
+      }
+
+      .box-border p,
+      .box-border ul {
+        font-size: 19px;
+        line-height: 1.6;
+      }
+
+      .box-border ul {
+        color: #041e42;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+
+      .icon-list {
+        list-style-type: none !important;
+      }
+
+      .redflag-icon::before {
+        content: "🚩";
+      }
+      .purple-check::before {
+        content: "✔️";
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 7 </span>
+      <span class="banner__week-name">
+        Neural and Quantum Architectures
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Scaling Considerations&nbsp;
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Both scaling neuromorphic systems and scaling
+        quantum systems present several challenges that
+        should be considered:&nbsp;
+      </p>
+
+      <div class="box-border">
+        <h2 style="text-align: center">
+          Scaling Neuromorphic System Challenges:
+        </h2>
+        <ul class="icon-list">
+          <li class="redflag-icon">
+            Complexity of Neural Networks: As systems grow,
+            managing the complexity of interconnections
+            between neurons and synapses becomes
+            increasingly difficult.&nbsp;
+          </li>
+          <li class="redflag-icon">
+            Material Limitations: Scaling up neuromorphic
+            hardware often relies on advanced materials like
+            memristors, which are still in the experimental
+            phase and need to be made more reliable for
+            widespread adoption.&nbsp;
+          </li>
+          <li class="redflag-icon">
+            Energy Efficiency: Maintaining low power
+            consumption as systems grow in size and
+            complexity is a significant challenge.&nbsp;
+          </li>
+          <li class="redflag-icon">
+            Integration and Co-Design: Scaling requires
+            tight integration of hardware and software,
+            addressing the complexities of asynchronous and
+            event-driven processing.&nbsp;
+          </li>
+        </ul>
+      </div>
+      <div class="box-border">
+        <h2 style="text-align: center">
+          Scaling Quantum Systems Challenges:
+        </h2>
+        <ul class="icon-list">
+          <li class="redflag-icon">
+            Qubit Coherence: Maintaining qubit coherence
+            over time becomes more difficult as the number
+            of qubits increases.&nbsp;
+          </li>
+          <li class="redflag-icon">
+            Error Correction Overhead: Implementing error
+            correction in quantum systems requires
+            additional qubits and operations, which
+            complicates scaling efforts.&nbsp;
+          </li>
+          <li class="redflag-icon">
+            Cooling Requirements: As quantum systems grow,
+            managing the cooling requirements becomes
+            increasingly complex and energy-intensive.&nbsp;
+          </li>
+          <li class="redflag-icon">
+            Fabrication and Integration: Achieving
+            large-scale integration of high-quality qubits
+            remains a significant technical hurdle.&nbsp;
+          </li>
+        </ul>
+      </div>
+      <h3>Error Rates and Noise</h3>
+      <p>
+        Both neuromorphic systems and quantum systems face
+        challenges related to device variability and noise.
+        Key issues and mitigation strategies are as follows:
+      </p>
+      <div class="box-border">
+        <h2 style="text-align: center">
+          Neuromorphic Systems Challenges:
+        </h2>
+        <ul class="icon-list">
+          <li class="redflag-icon">
+            Device Variability: Variations in the physical
+            properties of neuromorphic devices can lead to
+            inconsistent performance and errors in
+            computation.&nbsp;&nbsp;
+          </li>
+          <li class="redflag-icon">
+            Thermal Noise: As neuromorphic systems often
+            operate at low power, thermal noise can
+            significantly affect the reliability of the
+            computations.&nbsp;&nbsp;
+          </li>
+        </ul>
+        <h2 style="text-align: center">
+          Mitigation Strategies:
+        </h2>
+        <ul class="icon-list">
+          <li class="purple-check">
+            Energy Efficiency: Maintaining low power
+            consumption as systems grow in size and
+            complexity is a significant challenge.&nbsp;
+          </li>
+          <li class="purple-check">
+            Integration and Co-Design: Scaling requires
+            tight integration of hardware and software,
+            addressing the complexities of asynchronous and
+            event-driven processing.&nbsp;
+          </li>
+        </ul>
+      </div>
+      <div class="box-border">
+        <h2 style="text-align: center">
+          Quantum Systems Challenges:
+        </h2>
+        <ul class="icon-list">
+          <li class="redflag-icon">
+            Environmental Interactions: Qubits are highly
+            sensitive to their environment, leading to
+            decoherence and loss of quantum
+            information.&nbsp;&nbsp;
+          </li>
+          <li class="redflag-icon">
+            Gate Imperfections: Errors can occur during the
+            application of quantum gates due to imprecise
+            control over quantum operations.&nbsp;&nbsp;
+          </li>
+          <li class="redflag-icon">
+            State Preparation and Measurement (SPAM) Errors:
+            These errors arise during the initialization and
+            measurement phases of quantum computation.&nbsp;
+          </li>
+        </ul>
+        <h2 style="text-align: center">
+          Mitigation Strategies:
+        </h2>
+        <ul class="icon-list">
+          <li class="purple-check">
+            Quantum Error Mitigation (QEM) techniques like
+            zero-noise extrapolation and probabilistic error
+            cancellation.&nbsp;&nbsp;
+          </li>
+          <li class="purple-check">
+            Development of noise-agnostic models using deep
+            neural networks for error
+            mitigation.&nbsp;&nbsp;
+          </li>
+          <li class="purple-check">
+            Efficient noise characterization protocols to
+            estimate error rates and detect correlated
+            errors.&nbsp;
+          </li>
+        </ul>
+      </div>
+      <h3>Programming Paradigms</h3>
+      <p>
+        Programming neuromorphic systems requires a
+        significant shift from traditional computing
+        paradigms while quantum programming introduces
+        fundamentally different approaches:&nbsp;
+      </p>
+      <div class="summary-box">
+        <h3>Neuromorphic Computing:</h3>
+        <p>
+          Neuromorphic systems use Spiking Neural Networks
+          (SNNs), which mimic the brain's parallel
+          processing capabilities and require new
+          programming approaches. Additionally, there is a
+          lack of established models, necessitating the
+          development of new theories and methods to make
+          neuromorphic devices applicable beyond machine
+          learning and research benchmarks. Furthermore, the
+          close integration of hardware and software is
+          crucial, as the physical properties of the
+          hardware are exploited for computation, making
+          hardware-software co-design essential for
+          effective programming of neuromorphic systems.
+        </p>
+      </div>
+      <div class="summary-box">
+        <h3>Quantum Computing:</h3>
+        <p>
+          New programming languages such as Q#, Qiskit, and
+          Cirq have been developed specifically for quantum
+          algorithms, enabling programmers to harness the
+          unique capabilities of quantum computers. However,
+          quantum programming requires a deep understanding
+          of quantum mechanics, which presents a steep
+          learning curve for traditional software
+          developers. Additionally, hybrid computing models
+          are crucial for practical applications, as they
+          integrate quantum and classical systems, requiring
+          efficient communication protocols and hybrid
+          computing solutions to effectively bridge the two
+          paradigms.
+        </p>
+      </div>
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:
+                  </h3>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >In quantum computing, _______ is
+                          a significant challenge due to the
+                          sensitivity of qubits to external
+                          disturbances.</span
+                        ></span
+                      >
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer:&nbsp; Noise
+                    </h3>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation: &nbsp;Noise is a
+                        significant challenge in quantum
+                        computing because qubits are highly
+                        sensitive to external disturbances,
+                        which can lead to errors in
+                        computation and require
+                        sophisticated error-correction
+                        techniques.&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

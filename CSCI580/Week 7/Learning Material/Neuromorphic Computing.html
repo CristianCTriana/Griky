@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .icon-list {
+        list-style-type: none !important;
+      }
+
+      .blue-arrow::before {
+        content: "➡️";
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 7 </span>
+      <span class="banner__week-name">
+        Neural and Quantum Architectures
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Neuromorphic Computing</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Neuromorphic computing is an innovative approach to
+        computer engineering that draws inspiration from the
+        structure and function of the human brain. This
+        field aims to create more efficient and adaptive
+        computing systems by mimicking the brain’s neural
+        architecture and information-processing
+        capabilities.&nbsp;
+      </p>
+      <h3>Brain-Inspired Architectures&nbsp;</h3>
+      <p>
+        Brain-inspired architectures in neuromorphic
+        computing are designed to emulate the structure and
+        functionality of biological neural networks. Key
+        aspects of these architectures include the
+        following:&nbsp;
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Biological Inspiration
+          </label>
+          <div class="accordion-content">
+            <p>
+              Neuromorphic systems are modeled after the
+              brain’s neural and synaptic structures, aiming
+              to replicate the brain’s efficiency in
+              processing information.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Spiking Neural Networks (SNNs)&nbsp;
+          </label>
+          <div class="accordion-content">
+            <p>
+              These networks form the core of neuromorphic
+              computing, mimicking the way biological
+              neurons communicate through spikes or action
+              potentials.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Parallel Processing
+          </label>
+          <div class="accordion-content">
+            <p>
+              Neuromorphic architectures are capable of
+              massive parallel processing, similar to the
+              brain. Each artificial neuron can perform
+              operations concurrently, allowing for faster
+              computation and improved efficiency.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Integration of Memory and Processing
+          </label>
+          <div class="accordion-content">
+            <p>
+              Unlike traditional von Neumann architectures,
+              neuromorphic systems integrate memory and
+              processing units. This integration reduces
+              latency and increases computational speed by
+              eliminating the need for data transfer between
+              separate units.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Plasticity and Learning
+          </label>
+          <div class="accordion-content">
+            <p>
+              These systems incorporate the concept of
+              plasticity, allowing them to adapt and learn
+              from new stimuli. This is often implemented
+              through mechanisms like spike-timing-dependent
+              plasticity (STDP).&nbsp;
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo6" />
+          <label
+            class="accordion-title"
+            for="lo6">
+            Energy Efficiency
+          </label>
+          <div class="accordion-content">
+            <p>
+              By mimicking the brain’s architecture,
+              neuromorphic systems can perform computations
+              with significantly lower power consumption
+              compared to traditional architectures.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Neural Network Hardware Acceleration</h3>
+      <p>
+        Hardware acceleration in neural networks involves
+        using specialized hardware to speed up the
+        processing of neural network computations. This is
+        crucial in neuromorphic systems for achieving
+        real-time processing with minimal power consumption.
+        Key techniques include the following:&nbsp;
+      </p>
+      <div class="dual-box-wrapper">
+        <div class="dual-box">
+          <strong>Pruning:</strong><br />
+          This technique involves removing less important
+          neurons or connections in a neural network to
+          reduce its size and computational requirements
+          while maintaining performance.
+        </div>
+        <div class="dual-box">
+          <strong>Quantization:</strong><br />
+          This process reduces the precision of the
+          network’s weights and activations, significantly
+          decreasing computational load and memory usage
+          without substantially affecting accuracy.
+        </div>
+      </div>
+      <div class="dual-box-wrapper">
+        <div class="dual-box">
+          <strong>Tensor Decomposition:</strong><br />
+          This technique breaks down large tensors into
+          smaller, more manageable components, which can be
+          processed more efficiently by hardware
+          accelerators.
+        </div>
+        <div class="dual-box">
+          <strong>Specialized Hardware Components:</strong
+          ><br />
+          Neuromorphic systems often incorporate specialized
+          components such as memristors and phase-change
+          memory (PCM) to emulate the behavior of biological
+          synapses.
+        </div>
+      </div>
+      <h3>Spiking Neural Networks (SNNs)</h3>
+      <p>
+        Spiking Neural Networks (SNNs) are a type of
+        artificial neural network that closely resemble
+        biological neural networks. Unlike traditional
+        neural networks, SNNs use discrete spikes to
+        transmit information, mimicking the communication
+        method of biological neurons. They excel at
+        processing temporal patterns and spatiotemporal
+        information, making them particularly well-suited
+        for tasks that require precise timing.
+      </p>
+      <p>
+        One of the key advantages of SNNs is their energy
+        efficiency; they only consume power when spikes are
+        generated, significantly reducing overall energy
+        usage compared to traditional networks. SNNs are
+        especially beneficial for applications that demand
+        low power consumption and high performance, such as
+        in-sensor processing, embedded intelligence, and
+        autonomous driving. However, SNNs also face
+        challenges, including the computational complexity
+        of simulating spiking behavior and the need for
+        specialized simulators.&nbsp;
+      </p>
+      <h3>Memory-Centric Neural Computing&nbsp;</h3>
+      <p>
+        Memory-centric neural computing is an approach that
+        focuses on integrating memory and processing units
+        to overcome the limitations of traditional computing
+        architectures. Memory-centric neural computing
+        offers benefits such as massively parallel
+        processing, energy efficiency, scalability, and the
+        ability to bypass the von Neumann bottleneck. Key
+        aspects include the following:
+      </p>
+      <ul class="icon-list">
+        <li class="blue-arrow">
+          Integration of Memory and Processing: This
+          integration allows for massively parallel data
+          processing, reducing the need for data transfer
+          between separate memory and processing
+          units.&nbsp;&nbsp;
+        </li>
+        <li class="blue-arrow">
+          Use of Emerging Nonvolatile Memories: Technologies
+          such as memristors are used to store and process
+          information simultaneously, mimicking synaptic
+          functions of the human brain.&nbsp;&nbsp;
+        </li>
+        <li class="blue-arrow">
+          Synaptic Plasticity and Neuronal Models: These
+          systems incorporate synaptic plasticity and
+          neuronal models, enabling adaptive learning
+          processes similar to biological neural
+          networks.&nbsp; &nbsp;
+        </li>
+      </ul>
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_7/../Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    Question:
+                  </h3>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >Which of the following is a
+                          characteristic of neuromorphic
+                          computing?</span
+                        ></span
+                      >
+                    </span>
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(A) Uses traditional&nbsp;</span
+                        ></span
+                      ></span
+                    ><span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >Von Neumann
+                          architecture&nbsp;</span
+                        ></span
+                      ></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(B) Mimics the structure and
+                          function of the human brain
+                        </span></span
+                      ></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(C) Relies solely on quantum bits
+                          for processing
+                        </span></span
+                      ></span
+                    >
+                  </div>
+                  <div class="card-text">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >(D) Focuses on high-frequency
+                          clock speeds&nbsp;</span
+                        ></span
+                      ></span
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer:&nbsp;&nbsp;
+                    </h3>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >(</span
+                      ><span data-ccp-parastyle="Body Text"
+                        >B) Mimics the structure and
+                        function of the human brain</span
+                      >
+                    </p>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation: &nbsp;Neuromorphic
+                        computing is designed to mimic the
+                        structure and function of the human
+                        brain, using brain-inspired
+                        architectures to process information
+                        in a way that is more similar to
+                        biological systems.&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
