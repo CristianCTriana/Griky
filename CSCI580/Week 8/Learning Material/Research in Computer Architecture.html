@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+
+      details {
+        margin-top: 20px;
+        background-color: #041d42;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 19px;
+        border-radius: 8px;
+      }
+
+      details h3 {
+        color: #ffffff !important;
+      }
+
+      summary {
+        color: #05c3de;
+        font-size: 19px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 8 </span>
+      <span class="banner__week-name">
+        Research and Course Wrap-Up
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Current Research Trends</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Current research in computer architecture is driven
+        by the need to overcome the limitations of
+        traditional scaling as we approach the end of
+        Moore’s Law. Key trends include the following:&nbsp;
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <!--<div class="accordion">aqui acordeon item</div> -->
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="lo1" />
+        <label
+          class="accordion-title"
+          for="lo1">
+          Domain-Specific Architectures (DSAs)
+        </label>
+        <div class="accordion-content">
+          <p>
+            There is a significant focus on developing
+            architectures optimized for specific application
+            domains, such as deep learning, graphics
+            processing, or scientific computing. These
+            architectures aim to provide enhanced
+            performance and energy efficiency for targeted
+            workloads.
+          </p>
+        </div>
+      </div>
+      <!--ACORDEON-->
+      <!--<div class="accordion">aqui acordeon item</div> -->
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="lo2" />
+        <label
+          class="accordion-title"
+          for="lo2">
+          Quantum Computing
+        </label>
+        <div class="accordion-content">
+          <p>
+            This emerging field leverages quantum mechanics
+            to perform calculations, potentially solving
+            problems that are intractable for classical
+            computers. Research is ongoing in areas such as
+            quantum algorithms, error correction, and the
+            development of practical quantum hardware.
+          </p>
+        </div>
+      </div>
+      <!--ACORDEON-->
+      <!--<div class="accordion">aqui acordeon item</div> -->
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="lo3" />
+        <label
+          class="accordion-title"
+          for="lo3">
+          Neuromorphic Computing
+        </label>
+        <div class="accordion-content">
+          <p>
+            Inspired by the human brain, neuromorphic
+            computing aims to create more energy-efficient
+            and adaptive computing solutions. This approach
+            involves developing specialized hardware and
+            software that mimic the brain’s neuronal
+            structure.
+          </p>
+        </div>
+      </div>
+      <!--ACORDEON-->
+      <!--<div class="accordion">aqui acordeon item</div> -->
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="lo4" />
+        <label
+          class="accordion-title"
+          for="lo4">
+          Advanced Memory Technologies
+        </label>
+        <div class="accordion-content">
+          <p>
+            Research is being conducted on new memory
+            solutions, including non-volatile memory and 3D
+            stacked memory, to address issues of power
+            consumption, performance, and scalability in
+            computer architecture.
+          </p>
+        </div>
+      </div>
+      <!--ACORDEON-->
+      <!--<div class="accordion">aqui acordeon item</div> -->
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="lo5" />
+        <label
+          class="accordion-title"
+          for="lo5">
+          RISC-V and Open Instruction Sets
+        </label>
+        <div class="accordion-content">
+          <p>
+            The open-source RISC-V instruction set
+            architecture is gaining attention for enabling
+            new architectural opportunities, including
+            large-scale in-memory computing and
+            heterogeneous compute environments.
+          </p>
+        </div>
+      </div>
+      <!--ACORDEON-->
+      <!--<div class="accordion">aqui acordeon item</div> -->
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="lo6" />
+        <label
+          class="accordion-title"
+          for="lo6">
+          Security in Computer Architecture:
+        </label>
+        <div class="accordion-content">
+          <p>
+            With the increasing importance of cybersecurity,
+            there is a growing focus on developing
+            architectures that are inherently secure,
+            including research into hardware-level security
+            features and secure processor designs.
+          </p>
+        </div>
+      </div>
+      <h3>Future Directions</h3>
+      <p>
+        The future of computer architecture research is
+        expected to focus on several key areas. As
+        traditional scaling approaches reach their limits,
+        research into post-Moore’s Law computing will
+        explore new paradigms and technologies to maintain
+        performance growth. Heterogeneous computing, which
+        integrates different types of processors such as
+        CPUs, GPUs, and FPGAs to optimize task-specific
+        performance, will also be a major research focus.
+        With power consumption becoming a critical
+        constraint, there will be a strong emphasis on
+        developing more energy-efficient architectures.
+        Additionally, the integration of AI and machine
+        learning into computer architecture will be crucial
+        for both optimizing architectural design and
+        efficiently running AI algorithms. Finally, the
+        exploration of quantum and neuromorphic computing as
+        potential successors to traditional computing models
+        will continue to drive innovation in the field.
+      </p>
+      <p>
+        &nbsp;The following suggests several of many
+        potential future applications:
+      </p>
+      <details>
+        <summary>Industry Applications</summary>
+        <h3>Healthcare:</h3>
+        <ul>
+          <li>
+            In diagnostic imaging and personalized medicine,
+            leveraging AI and computer vision technologies.
+          </li>
+        </ul>
+        <h3>Retail and E-commerce:</h3>
+        <ul>
+          <li>
+            Enabling automated checkouts, cashierless
+            stores, and personalized recommendations.
+          </li>
+        </ul>
+        <h3>Manufacturing and Mining:</h3>
+        <ul>
+          <li>
+            Used for quality control and predictive
+            maintenance, improving efficiency and reducing
+            downtime.&nbsp;
+          </li>
+        </ul>
+        <h3>Automotive:</h3>
+        <ul>
+          <li>
+            Supporting the development of autonomous driving
+            technologies through real-time data processing
+            and decision-making.
+          </li>
+        </ul>
+        <h3>Education:</h3>
+        <ul>
+          <li>
+            Enhancing learning experiences through student
+            engagement monitoring and automated
+            administrative tasks.&nbsp;
+          </li>
+        </ul>
+        <h3>Precision Agriculture:</h3>
+        <ul>
+          <li>
+            Analyzing data from sensors and drones to
+            optimize resource use and increase yields.
+          </li>
+        </ul>
+        <h3>High-Performance Computing (HPC):</h3>
+        <ul>
+          <li>
+            Solving complex problems in scientific research,
+            financial modeling, and weather
+            forecasting.&nbsp;
+          </li>
+        </ul>
+      </details>
+      <details>
+        <summary>Academic Research Areas</summary>
+        <h3>Power-Efficient Computing:</h3>
+        <ul>
+          <li>
+            Developing architectures that maximize
+            performance while minimizing energy consumption,
+            particularly important for exascale
+            computing.&nbsp;
+          </li>
+        </ul>
+        <h3>Reliability and Security:</h3>
+        <ul>
+          <li>
+            Designing architectures that can withstand
+            hardware failures and resist security
+            vulnerabilities, such as speculative execution
+            attacks.&nbsp;
+          </li>
+        </ul>
+        <h3>Heterogeneous Computing and Accelerators:</h3>
+        <ul>
+          <li>
+            Integrating different types of processors to
+            optimize performance for specific tasks.
+          </li>
+        </ul>
+        <h3>
+          Architectures for IoT and Cyber-Physical Systems:
+        </h3>
+        <ul>
+          <li>
+            Developing efficient architectures for the
+            unique requirements of IoT and cyber-physical
+            systems, such as low power consumption and
+            real-time processing.
+          </li>
+        </ul>
+        <h3>Machine Learning and AI Integration:</h3>
+        <ul>
+          <li>
+            Exploring ways to efficiently run AI algorithms
+            and use AI to optimize architectural
+            design.&nbsp;
+          </li>
+        </ul>
+        <h3>Quantum Computing:</h3>
+        <ul>
+          <li>
+            Developing architectures that can leverage
+            quantum mechanics for computation.&nbsp;
+          </li>
+        </ul>
+      </details>
+
+      <div class="card card-standard">
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="text-align: center">
+            <span style="font-size: 24px; color: #004c99"
+              ><strong
+                ><img
+                  src="/content/enforced/960173-CSCI580_development_8w/Week_8/../Week_0_Instructors/Self-Check.png"
+                  alt="Self-Check Banner"
+                  title="Self-Check Banner"
+                  data-d2l-editor-default-img-style="true"
+                  style="max-width: 100%" /></strong
+            ></span>
+          </div>
+          <div class="card-text">
+            <br />
+            <div class="card card-standard card-reveal">
+              <div class="card-body">
+                <div class="card-text">
+                  <h3
+                    class="card-text"
+                    style="color: #041e42">
+                    TRUE or FALSE?
+                  </h3>
+                  <div class="card-text"></div>
+                  <div
+                    class="card-text"
+                    style="color: #041e42">
+                    <span style="font-size: 19px"
+                      ><span
+                        style="list-style-type: disc"
+                        xml:lang="EN-US"
+                        data-contrast="auto"
+                        ><span
+                          data-ccp-parastyle="Body Text"
+                          >Performance optimization in
+                          computer architecture focuses
+                          solely on increasing processing
+                          speed.</span
+                        ></span
+                      >
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-reveal"
+                    data-toggle="collapse"
+                    aria-expanded="false">
+                    Show Answer
+                  </button>
+                  <div
+                    class="collapse"
+                    tabindex="0">
+                    <h3 style="color: #041e42">
+                      Answer:&nbsp; FALSE
+                    </h3>
+                    <p style="color: #041e42">
+                      <span data-ccp-parastyle="Body Text"
+                        >Explanation: Performance
+                        optimization in computer
+                        architecture involves balancing
+                        multiple factors, including
+                        processing speed, energy efficiency,
+                        and resource utilization, to achieve
+                        optimal system
+                        performance.&nbsp;</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
