@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 1 </span>
+      <span class="banner__week-name">
+        Overview of Software Engineering, Agile, and
+        DevSecOps
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Overview of Software Engineering, Agile, and
+        DevSecOps
+      </h1>
+
+      <hr class="divider-line" />
+
+      <h2>4.1 Version Control Systems</h2>
+      <p>
+        Version Control Systems (VCS) form the foundation of
+        modern software development, enabling teams to track
+        changes, collaborate effectively, and maintain code
+        quality. Contemporary version control practices have
+        evolved significantly, with distributed version
+        control systems (DVCS) becoming the industry
+        standard.
+      </p>
+      <h3>Git and Distributed Version Control:</h3>
+      <p>
+        Git has emerged as the predominant version control
+        system, offering several key advantages:
+      </p>
+      <ol>
+        <li>
+          <strong>Distributed Architecture:</strong> Unlike
+          centralized systems, Git provides each developer
+          with a complete copy of the repository, enabling:
+          <ul>
+            <li>offline work capability</li>
+            <li>faster operations</li>
+            <li>enhanced backup redundancy</li>
+            <li>
+              greater flexibility in branching and merging
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong
+            >Branching and Workflow Strategies:</strong
+          >
+          <ul>
+            <li>
+              <strong>Feature Branching:</strong> Isolating
+              new features in dedicated branches
+            </li>
+            <li>
+              <strong>Gitflow Workflow:</strong> Structured
+              approach for managing releases
+            </li>
+            <li>
+              <strong>Trunk-Based Development:</strong>
+              Emphasis on small, frequent commits to the
+              main branch
+            </li>
+            <li>
+              <strong>Pull Request Model:</strong>
+              Facilitating code review and collaboration
+            </li>
+          </ul>
+        </li>
+        <li>
+          Advanced Git Features:
+          <ul>
+            <li>
+              <strong>Git Hooks:</strong> Automated scripts
+              triggered by repository events
+            </li>
+            <li>
+              <strong>Submodules:</strong> Managing external
+              dependencies
+            </li>
+            <li>
+              <strong>Git LFS:</strong> Handling large files
+              efficiently
+            </li>
+            <li>
+              <strong>Signed Commits:</strong> Ensuring code
+              authenticity
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <h3>Collaboration Platforms:</h3>
+      <p>
+        Modern version control extends beyond basic source
+        code management through platforms that provide:
+      </p>
+      <ol>
+        <li>
+          <strong>Code Hosting Services:</strong>
+          <ul>
+            <li>GitHub</li>
+            <li>GitLab</li>
+            <li>Bitbucket</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Collaboration Features:</strong>
+          <ul>
+            <li>code review systems</li>
+            <li>issue tracking</li>
+            <li>project management tools</li>
+            <li>continuous integration</li>
+            <li>security scanning</li>
+          </ul>
+        </li>
+      </ol>
+      <h2>4.2 Automated Testing Frameworks</h2>
+      <p>
+        Automated testing has become essential for
+        maintaining software quality and enabling rapid
+        development cycles. Modern testing frameworks
+        support various testing levels and approaches,
+        ensuring comprehensive coverage and reliability.
+      </p>
+      <h3>Types of Testing Frameworks</h3>
+      <ol>
+        <li>
+          <strong>Unit Testing Frameworks:</strong>
+          <ul>
+            <li>
+              <strong>JUnit</strong> (Java): Feature-rich
+              testing framework with extensive assertion
+              capabilities
+            </li>
+            <li>
+              <strong>pytest</strong> (Python): Flexible
+              framework supporting fixture-based testing
+            </li>
+            <li>
+              <strong>Jest</strong> (JavaScript): Complete
+              testing solution for JavaScript applications
+            </li>
+            <li>
+              <strong>NUnit</strong> (.NET): Comprehensive
+              testing toolkit for .NET applications
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Integration Testing Tools:</strong>
+          <ul>
+            <li>
+              <strong>Selenium</strong>: Web application
+              testing automation
+            </li>
+            <li>
+              <strong>Postman</strong>: API testing and
+              documentation
+            </li>
+            <li>
+              <strong>TestContainers</strong>:
+              Container-based integration testing
+            </li>
+            <li>
+              <strong>Cypress</strong>: Modern web testing
+              framework
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Performance Testing Frameworks:</strong>
+          <ul>
+            <li>
+              <strong>JMeter</strong>: Load and performance
+              testing
+            </li>
+            <li>
+              <strong>K6:</strong> Modern load testing too
+            </li>
+            <li>
+              <strong>Gatling</strong>: Scala-based
+              performance testing
+            </li>
+            <li>
+              <strong>Artillery</strong>: Node.js-based load
+              testing
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <h3>Testing Best Practices:</h3>
+      <ol>
+        <li>
+          <strong>Test Pyramid Implementation:</strong>
+
+          <ul>
+            <li>large number of unit tests at the base</li>
+            <li>fewer integration tests in the middle</li>
+            <li>
+              limited number of end-to-end tests at the top
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Test Automation Strategies:</strong>
+          <ul>
+            <li>
+              Continuous Testing: Integration with CI/CD
+              pipelines
+            </li>
+            <li>
+              Test-Driven Development (TDD): Writing tests
+              before implementation
+            </li>
+            <li>
+              Behavior-Driven Development (BDD):
+              Specification by example
+            </li>
+            <li>
+              Property-Based Testing: Generating test cases
+              automatically
+            </li>
+          </ul>
+        </li>
+      </ol>
+      <h2>4.3 Containerization and Orchestration</h2>
+      <p>
+        Containerization has revolutionized software
+        deployment and operations, providing consistency
+        across environments and enabling efficient resource
+        utilization. Modern container platforms and
+        orchestration tools form the backbone of
+        cloud-native applications.
+      </p>
+      <h3>Container Technologies</h3>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Docker Fundamentals
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                <strong>Container Images</strong>:
+                Standardized, self-contained packages of
+                software and dependencies
+              </li>
+              <li>
+                <strong>Dockerfile</strong>: Text document
+                containing commands to automate image
+                creation
+              </li>
+              <li>
+                <strong>Multi-stage Builds</strong>: Process
+                to create optimized images by separating
+                build and runtime environments
+              </li>
+              <li>
+                <strong>Container Networks</strong>:
+                Isolated communication channels between
+                containers and external services
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Container Security
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                <strong>Rootless Containers</strong>:
+                Running containers without root privileges
+                for enhanced security
+              </li>
+              <li>
+                <strong>Image Scanning</strong>: Automated
+                vulnerability detection in container images
+              </li>
+              <li>
+                <strong>Access Control:</strong> Managing
+                permissions and authentication for container
+                operations
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Container Registry
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                <strong>Registry Types:</strong> Secure
+                storage for container images, either private
+                or public
+              </li>
+              <li>
+                <strong>Image Tagging</strong>: Systematic
+                versioning and identification of container
+                images
+              </li>
+              <li>
+                <strong>Security Scanning</strong>:
+                Continuous vulnerability assessment of
+                stored images
+              </li>
+              <li>
+                <strong>Access Management</strong>:
+                Controlled distribution and usage of
+                container images
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Kubernetes Architecture
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                <strong>API Server</strong>: Central
+                management point for cluster state and
+                operations
+              </li>
+              <li>
+                <strong>Scheduler</strong>: Intelligent
+                placement of workloads across nodes
+              </li>
+              <li>
+                <strong>Controller Manager</strong>:
+                Maintains desired cluster state through
+                control loops
+              </li>
+              <li>
+                <strong>etcd</strong>: Distributed key-value
+                store for cluster configuration
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Kubernetes Components
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                <strong>Kubelet</strong>: Node agent
+                ensuring container operation in pods
+              </li>
+              <li>
+                <strong>Container Runtime</strong>: Software
+                responsible for running containers
+              </li>
+              <li>
+                <strong>Kube Proxy</strong>: Network proxy
+                maintaining pod networking rules
+              </li>
+              <li>
+                <strong>CoreDNS</strong>: Service discovery
+                and internal DNS management
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo6" />
+          <label
+            class="accordion-title"
+            for="lo6">
+            Kubernetes Resources
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                <strong>Pods</strong>: Smallest deployable
+                units hosting containers
+              </li>
+              <li>
+                <strong>Deployments</strong>: Declarative
+                updates for pods and replicaSets
+              </li>
+              <li>
+                <strong>StatefulSets</strong>: Management of
+                stateful applications
+              </li>
+              <li>
+                <strong>Services</strong>: Stable networking
+                for pod access
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo7" />
+          <label
+            class="accordion-title"
+            for="lo7">
+            Orchestration Features
+          </label>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                <strong>Auto-scaling</strong>: Automatic
+                resource adjustment based on demand
+              </li>
+              <li>
+                <strong>Service Mesh</strong>: Advanced
+                networking and security control plane
+              </li>
+              <li>
+                <strong>GitOps</strong>: Declarative
+                infrastructure and application management
+              </li>
+              <li>
+                <strong>Load Balancing</strong>: Intelligent
+                distribution of network traffic
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p>
+        These modern software development tools and
+        practices collectively enable organizations to:
+      </p>
+      <ul>
+        <li>maintain code quality and version history</li>
+        <li>ensure reliable testing and validation</li>
+        <li>
+          deploy applications consistently and securely
+        </li>
+        <li>scale operations efficiently</li>
+        <li>automate routine tasks</li>
+        <li>foster collaboration and knowledge sharing</li>
+      </ul>
+      <p>
+        The effective use of these tools, combined with
+        proper practices and processes, forms the foundation
+        of modern software engineering, enabling teams to
+        deliver high-quality software efficiently and
+        reliably.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

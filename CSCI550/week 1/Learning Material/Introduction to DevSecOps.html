@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+      /* Colores base */
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="banner">
+      <span class="banner__week-number">&nbsp;Week 1 </span>
+      <span class="banner__week-name">
+        Overview of Software Engineering, Agile, and
+        DevSecOps
+      </span>
+    </header>
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        3. Introduction to DevSecOps
+      </h1>
+      <hr class="divider-line" />
+      <h2>3.1 DevOps Culture and Practices</h2>
+      <p>
+        DevOps represents a cultural and technical
+        transformation in software development that
+        emphasizes collaboration, automation, and continuous
+        improvement. The term “DevOps” combines
+        “Development” and “Operations,” reflecting its core
+        mission of breaking down traditional silos between
+        these teams. This integration enables organizations
+        to deliver high-quality software more efficiently
+        and reliably.
+      </p>
+      <h3>Core DevOps Values:</h3>
+      <iframe
+        src="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1027196&amp;type=lti&amp;rCode=00D22884-7DC5-4408-809B-589E36B04C5A-1060476"
+        title="Introduction to DevSecOps"
+        allowfullscreen="allowfullscreen"
+        allow="microphone *; camera *; autoplay *"
+        height="600"
+        width="779"></iframe
+      ><br />
+      <h2>
+        3.2 Security Integration in the Development Pipeline
+      </h2>
+      <p>
+        The integration of security practices into the
+        DevOps pipeline, known as
+        <strong>DevSecOps</strong>, represents a fundamental
+        shift in how organizations approach security. Rather
+        than treating security as a final gate or separate
+        concern, DevSecOps embeds security practices
+        throughout the entire software development
+        lifecycle.
+      </p>
+      <h3>Key Security Integration Practices:</h3>
+      <ul>
+        <li>
+          <strong>Shift-Left Security:</strong> This
+          approach involves implementing security measures
+          early in the development process rather than
+          waiting until the end. By identifying and
+          addressing security issues during development,
+          organizations can reduce the cost and impact of
+          security vulnerabilities.
+        </li>
+        <li>
+          <strong>Security as Code:</strong> Security
+          requirements, policies, and controls are defined
+          and implemented as code, making them
+          version-controlled, testable, and automatically
+          enforceable. This includes:
+          <ul>
+            <li>Infrastructure security configurations</li>
+            <li>Access control policies</li>
+            <li>Compliance requirements</li>
+            <li>Security testing scripts</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Automated Security Testing:</strong>
+          Integration of various security testing tools and
+          practices into the pipeline:
+          <ol>
+            <li>
+              Static Application Security Testing (SAST)
+            </li>
+            <li>
+              Dynamic Application Security Testing (DAST)
+            </li>
+            <li>Software Composition Analysis (SCA)</li>
+            <li>Container security scanning</li>
+            <li>
+              Infrastructure as Code (IaC) security scanning
+            </li>
+          </ol>
+        </li>
+      </ul>
+      <h2>
+        3.3 Continuous Integration and Continuous Deployment
+      </h2>
+      <p>
+        <strong>Continuous Integration (CI)</strong> and
+        <strong>Continuous Deployment (CD)</strong> form the
+        backbone of modern DevSecOps practices, enabling
+        teams to deliver software rapidly while maintaining
+        quality and security.
+      </p>
+      <h3>Continuous Integration:</h3>
+      <p>
+        CI involves automatically integrating code changes
+        from multiple contributors into a shared repository.
+        Key aspects include:
+      </p>
+      <ol>
+        <li>
+          <strong>Automated Build Process:</strong> Every
+          code commit triggers an automated build process
+          that:
+          <ul>
+            <li>compiles the code,</li>
+            <li>runs unit tests,</li>
+            <li>performs code quality checks, and</li>
+            <li>executes security scans.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Early Detection of Issues:</strong> CI
+          helps identify integration problems, bugs, and
+          security vulnerabilities early in the development
+          process, when they are easier and less expensive
+          to fix.
+        </li>
+        <li>
+          <strong>Code Quality Gates:</strong> Automated
+          quality checks ensure that code meets predefined
+          standards before it can be merged:
+          <ul>
+            <li>code coverage requirements</li>
+            <li>security vulnerability thresholds</li>
+            <li>performance benchmarks</li>
+            <li>compliance checks</li>
+          </ul>
+        </li>
+      </ol>
+      <h3>Compliance Checks</h3>
+      <p>
+        CD extends CI by automatically deploying code
+        changes to production environments after passing all
+        required tests and checks. Key components include:
+      </p>
+      <ol>
+        <li>
+          <strong>Deployment Pipeline Stages:</strong>
+          <ul>
+            <li>development environment deployment</li>
+            <li>testing environment validation</li>
+            <li>staging environment verification</li>
+            <li>production deployment</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Automated Rollback Capabilities:</strong>
+          Systems to automatically detect and respond to
+          deployment issues:
+          <ul>
+            <li>health check monitoring</li>
+            <li>performance metrics analysis</li>
+            <li>automated rollback triggers</li>
+            <li>recovery procedures</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Environment Consistency:</strong>
+          Infrastructure as Code (IaC) ensures consistent
+          environments across the deployment pipeline:
+          <ul>
+            <li>automated environment provisioning</li>
+            <li>configuration management</li>
+            <li>dependencies handling</li>
+            <li>security controls implementation</li>
+          </ul>
+        </li>
+      </ol>
+      <p>
+        The integration of CI/CD practices with security
+        controls creates a robust pipeline that enables:
+      </p>
+      <ul>
+        <li>rapid delivery of features</li>
+        <li>consistent security practices</li>
+        <li>automated compliance checks</li>
+        <li>reduced risk of human error</li>
+        <li>improved traceability and auditing</li>
+      </ul>
+      <p>
+        These practices collectively form the foundation of
+        modern DevSecOps, enabling organizations to deliver
+        secure, high-quality software at scale while
+        maintaining the speed and agility required in
+        today’s competitive landscape.
+      </p>
+      <div class="quiz">
+        <form class="quick-assess quick-assess-mc">
+          <fieldset class="radio">
+            <legend>
+              <strong>Question 1: </strong>What is the
+              primary goal of DevOps culture?
+            </legend>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer" /><label
+                    class="radio-label"
+                    >A. To separate Development and
+                    Operations teams
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer" /><label
+                    class="radio-label"
+                    >B. To automate manual processes only
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-check ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer" /><label
+                    class="radio-label"
+                    >C. To break down silos and encourage
+                    collaboration between teams
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer" /><label
+                    class="radio-label"
+                    >D. To focus solely on deployment
+                    frequency</label
+                  >
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <button
+            class="btn btn-primary btn-quick-assess"
+            type="button"
+            data-toggle="collapse"
+            aria-expanded="false">
+            Check Answer
+          </button>
+          <div class="form-check pl-2">
+            <div class="collapse feedback">
+              <p>
+                <strong>Correct Answer:</strong>&nbsp; C. To
+                break down silos and encourage collaboration
+                between teams.
+              </p>
+            </div>
+          </div>
+        </form>
+        <form class="quick-assess quick-assess-mc">
+          <fieldset class="radio">
+            <legend>
+              <strong>Question 2: </strong> What does
+              “Security as Code” involve?
+            </legend>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer" /><label
+                    class="radio-label"
+                    >A. Writing security policies and
+                    configurations as plain text documents
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer" /><label
+                    class="radio-label"
+                    >B. Manually configuring access control
+                    policies for each environment
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-check ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer" /><label
+                    class="radio-label"
+                    >C. Defining security requirements as
+                    code that is version-controlled and
+                    enforceable
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer" /><label
+                    class="radio-label"
+                    >D. Ignoring infrastructure security
+                    during development
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <button
+            class="btn btn-primary btn-quick-assess"
+            type="button"
+            data-toggle="collapse"
+            aria-expanded="false">
+            Check Answer
+          </button>
+          <div class="form-check pl-2">
+            <div class="collapse feedback">
+              <p>
+                <strong>Correct Answer:</strong> C. Defining
+                security requirements as code that is
+                version-controlled and enforceable
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+      <hr class="divider-line" />
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+    <p>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>

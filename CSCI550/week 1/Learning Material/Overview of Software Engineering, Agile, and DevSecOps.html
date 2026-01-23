@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 1 </span>
+      <span class="banner__week-name">
+        Overview of Software Engineering, Agile, and
+        DevSecOps
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        1. Foundations of Modern Software Engineering
+      </h1>
+
+      <hr class="divider-line" />
+
+      <h2>
+        1.1 Evolution of Software Development Life Cycle
+        (SDLC) Models
+      </h2>
+      <p>
+        The Software Development Life Cycle (SDLC) is a
+        structured process used to develop software,
+        consisting of different phases that guide the
+        creation, testing, deployment, and maintenance of
+        software systems (Sabharwal et al., 2021). Over
+        time, SDLC models have evolved to address
+        technological advancements, changing customer needs,
+        and organizational challenges.
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Waterfall Model
+          </label>
+          <div class="accordion-content">
+            <p>
+              The <strong>Waterfall Model</strong> is one of
+              the earliest SDLC models, which follows a
+              linear and sequential approach. It consists of
+              distinct phases, such as requirements
+              gathering, system design, implementation,
+              testing, deployment, and maintenance. Each
+              phase must be completed before moving to the
+              next. The Waterfall Model ensures thorough
+              documentation and planning, but its rigidity
+              makes it less effective for projects where
+              requirements are expected to change during
+              development (Hooda et al., 2023).
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            V-Model
+          </label>
+          <div class="accordion-content">
+            <p>
+              The <strong>V-Model</strong> is similar to the
+              Waterfall Model but emphasizes verification
+              and validation. In this model, each
+              development phase is paired with a
+              corresponding testing phase. For example,
+              requirements gathering is followed by
+              acceptance testing, and system design is
+              paired with system testing. The V-Model
+              improves upon the Waterfall approach by
+              integrating testing throughout the development
+              process, but it still struggles with adapting
+              to changing requirements (Sabharwal et al.,
+              2021).
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Iterative and Incremental Model
+          </label>
+          <div class="accordion-content">
+            <p>
+              As software systems became more complex, a
+              more flexible approach was needed. The
+              Iterative and Incremental Model involves
+              building software in small parts, allowing
+              developers to revisit and refine features in
+              cycles. Each iteration includes planning,
+              designing, coding, and testing, resulting in
+              an increment—a piece of the final product.
+              This approach enhances risk management and
+              allows for client feedback throughout the
+              process, unlike the rigid Waterfall Model
+              (Hooda et al., 2023).
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Agile Model
+          </label>
+          <div class="accordion-content">
+            <p>
+              <strong>Agile</strong> methodologies focus on
+              adaptability and customer collaboration.
+              Unlike the previous models, Agile is not a
+              single method but a mindset that emphasizes
+              iterative progress, responsiveness to change,
+              and customer satisfaction. Agile methods use
+              continuous feedback, short iterations, and
+              small cross-functional teams. Common Agile
+              frameworks include Scrum, Kanban, and Extreme
+              Programming (XP). Agile aims to make software
+              development an evolving process rather than a
+              fixed plan (Sabharwal et al., 2021).
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5 ">
+            DevOps
+          </label>
+          <div class="accordion-content">
+            <p>
+              <strong>DevOps</strong> is the latest
+              evolution in SDLC models. Building on Agile’s
+              focus on collaboration, DevOps emphasizes
+              teamwork between development and operations,
+              as well as continuous integration and
+              continuous deployment (CI/CD). DevOps
+              automates software delivery, optimizes
+              productivity, and shortens feedback loops,
+              making the development and operational
+              processes more efficient (Tosi, 2023).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        The evolution of SDLC models from the Waterfall to
+        the DevOps model can be visualized by the flowchart
+        below.
+      </p>
+      <div style="text-align: center">
+        <img
+          src="/content/enforced/1027196-CSCI550_development_site_griky_english/Week_1/../assets/Screenshot_27.png"
+          alt="This image depicts the evolution of different software development models in sequence. The flow chart begins with the “Waterfall Model,” followed by the “V-Model,” then progresses to the “Iterative and Incremental Model,” continues to the “Agile Model,” and concludes with the “DevOps Model.” Each model is represented in a rectangular box with arrows connecting them to indicate progression."
+          title="This image depicts the evolution of different software development models in sequence. The flow chart begins with the “Waterfall Model,” followed by the “V-Model,” then progresses to the “Iterative and Incremental Model,” continues to the “Agile Model,” and concludes with the “DevOps Model.” Each model is represented in a rectangular box with arrows connecting them to indicate progression."
+          data-d2l-editor-default-img-style="true"
+          style="
+            max-width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          " />
+        <p style="font-size: 16px">
+          Figure 1.1. Evolution of SDLC Models
+        </p>
+      </div>
+      <p>
+        This diagram shows how each successive model builds
+        upon and improves the previous one to meet the
+        evolving needs of software development.
+      </p>
+      <h2>1.2 Current Industry Trends and Challenges</h2>
+      <p>
+        Modern software engineering faces both opportunities
+        and challenges as technology continues to evolve.
+        Let’s discuss some of the key trends and challenges
+        that affect contemporary software development.
+      </p>
+      <h3>1.2.1 Industry Trends</h3>
+      <!-- BLOQUE estilo frase -->
+
+      <blockquote>
+        <div class="subsection-box">
+          <strong>Agile and DevOps Synergy:</strong> The
+          combination of Agile and DevOps practices has
+          significantly influenced software development.
+          Agile offers an iterative approach to building
+          software, while DevOps complements it by making
+          deployment efficient. Together, they enable teams
+          to deliver high-quality software faster and
+          continuously improve their processes
+          <br /><br /><em>(Tosi, 2023).</em>
+        </div>
+      </blockquote>
+      <blockquote>
+        <div class="subsection-box">
+          <strong
+            >Cloud Computing and Microservices:</strong
+          >
+          The adoption of
+          <strong
+            >cloud-native technologies and
+            microservices</strong
+          >
+          architecture has become a major trend. Cloud
+          computing provides scalability, while
+          microservices break down large systems into
+          smaller, loosely coupled services that can be
+          independently developed, deployed, and scaled.
+          This approach improves resilience,
+          maintainability, and scalability <br /><br />
+          <em>(Misra et al., 2024).</em>
+        </div>
+      </blockquote>
+      <blockquote>
+        <div class="subsection-box">
+          <strong>AI-Driven Development:</strong>
+          <strong>Artificial Intelligence (AI)</strong> is
+          transforming software development. AI-powered
+          tools like <strong>GitHub Copilot</strong> and
+          <strong>Tabnine</strong> help developers write
+          code, find vulnerabilities, and automate
+          repetitive tasks <br /><br /><em
+            >(Hooda et al., 2023).</em
+          >
+          <br /><br />This leads to increased productivity,
+          fewer errors, and greater developer satisfaction.
+          Additionally, machine learning algorithms are used
+          to provide predictive analytics in project
+          management, offering better estimates for
+          timelines and risks.
+        </div>
+      </blockquote>
+      <blockquote>
+        <div class="subsection-box">
+          <strong>Security Concerns (DevSecOps):</strong>
+          With the growing importance of cybersecurity, the
+          concept of <strong>DevSecOps</strong> has emerged.
+          DevSecOps integrates security throughout the
+          development life cycle, ensuring that
+          vulnerabilities are identified and addressed
+          early. Given the increasing number of data
+          breaches, adopting DevSecOps is now essential
+          <br /><br /><em>(OWASP, 2024).</em>
+        </div>
+      </blockquote>
+      <h3>1.2.2 Challenges</h3>
+      <blockquote>
+        <div class="subsection-box">
+          <strong
+            >Handling Rapid Requirement Changes:</strong
+          >
+          Agile emphasizes responsiveness, which means
+          software teams must handle rapidly changing
+          requirements. Balancing agility with stability can
+          be challenging, as too many changes can create
+          ambiguity, affect timelines, and cause scope creep
+          <br /><br /><em>(Hooda et al., 2023).</em>
+        </div>
+      </blockquote>
+      <blockquote>
+        <div class="subsection-box">
+          <strong>Scaling Agile:</strong> Applying Agile
+          principles at scale is a major challenge,
+          especially for large organizations. Frameworks
+          like
+          <strong>Scaled Agile Framework (SAFe)</strong> and
+          <strong>Large-Scale Scrum (LeSS)</strong> address
+          these challenges, but their implementation often
+          requires cultural changes and can add complexity
+          <br /><br /><em>(Sabharwal et al., 2021).</em>
+        </div>
+      </blockquote>
+      <blockquote>
+        <div class="subsection-box">
+          <strong>Managing Technical Debt:</strong> The
+          pressure to deliver quickly can lead to
+          <strong>technical debt</strong>—the cost of
+          maintaining code that was developed quickly, often
+          without following best practices. As systems grow,
+          technical debt can slow down development and make
+          future changes costly, potentially undermining the
+          benefits of Agile practices <br /><br /><em
+            >(Hooda et al., 2023).</em
+          >
+        </div>
+      </blockquote>
+      <h2>1.3 Best Practices in Software Development</h2>
+      <p>
+        Given the evolution of models, industry trends, and
+        challenges, it is important for software teams to
+        adopt best practices that promote efficiency,
+        maintainability, and scalability. Here are some best
+        practices to consider:
+      </p>
+      <ol>
+        <blockquote>
+          <li class="subsection-box">
+            <strong
+              >Continuous Integration and Continuous
+              Deployment (CI/CD):</strong
+            >
+            Automated CI/CD pipelines allow teams to
+            integrate code frequently and deploy it with
+            minimal manual intervention. This reduces
+            integration risks and makes frequent delivery
+            possible <br /><br /><em>(Tosi, 2023).</em>
+          </li>
+        </blockquote>
+        <blockquote>
+          <li class="subsection-box">
+            <strong>Test-Driven Development (TDD):</strong>
+            In Test-Driven Development, developers write
+            tests before writing the actual code. TDD
+            ensures that the code is covered by tests,
+            reducing bugs, and making the system easier to
+            refactor <br /><br /><em
+              >(Sabharwal et al., 2021).</em
+            >
+          </li>
+        </blockquote>
+        <blockquote>
+          <li class="subsection-box">
+            <strong
+              >Code Reviews and Pair Programming:</strong
+            >
+            Code reviews help maintain code quality and
+            share knowledge among team members.
+            <strong>Pair programming</strong>, where two
+            developers work together on the same code, is an
+            Agile technique that promotes collaboration and
+            quality <br /><br /><em
+              >(Hooda et al., 2023).</em
+            >
+          </li>
+        </blockquote>
+        <blockquote>
+          <li class="subsection-box">
+            <strong
+              >Documentation and Knowledge Sharing:</strong
+            >
+            While Agile emphasizes working software over
+            documentation, some documentation—such as
+            architectural blueprints and well-structured
+            README files—is essential for maintainability.
+            Tools like <strong>Confluence</strong> and
+            <strong>Notion</strong> help teams share
+            knowledge and collaborate <br /><br /><em
+              >(Sabharwal et al., 2021).</em
+            >
+          </li>
+        </blockquote>
+        <blockquote>
+          <li class="subsection-box">
+            <strong
+              >Refactoring and Managing Technical
+              Debt:</strong
+            >
+            Regular refactoring is crucial for managing
+            technical debt. Practices like
+            <strong>YAGNI</strong> (You Aren’t Gonna Need
+            It) help keep the codebase simple by only
+            including necessary functionality
+            <br /><br /><em>(Hooda et al., 2023).</em>
+          </li>
+        </blockquote>
+      </ol>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

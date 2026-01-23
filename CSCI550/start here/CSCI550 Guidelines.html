@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ENCABEZADO */
+      .header-container h3 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+      .header-container .week-text {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .title-text {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      .highlight-box {
+        padding: 25px;
+        background-color: #041d42;
+        color: white;
+        margin-top: 25px;
+        border-radius: 8px;
+        line-height: 1.8;
+      }
+
+      h1.section-title,
+      h2.section-subtitle,
+      h3.section-subtitle {
+        font-size: 28px;
+        font-weight: 700;
+        color: #041e42;
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #202122;
+      }
+
+      a {
+        color: #004c90;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      ul {
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      .centered-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item
+        input:checked
+        + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        h1.section-title,
+        h2.section-subtitle,
+        h3.section-subtitle {
+          font-size: 24px;
+        }
+        p,
+        li {
+          font-size: 17px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h3>
+        <span class="week-text">CSCI550</span>
+        <span class="title-text">Course Overview</span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="section-title"
+        style="text-align: center">
+        <span style="font-size: 32px">Guidelines</span>
+      </h1>
+      <hr />
+      <p>
+        The following highlights items and supports that are
+        unique to this course.&nbsp; It includes what
+        specific technology is needed for this course, if
+        any; guidance on academic integrity on course
+        assessments, including the use of Gen-AI; and the
+        preferred citation style.
+      </p>
+      <h2 class="section-subtitle">
+        | Specific Technology Needs
+      </h2>
+      <p>
+        This course does not require any unique technologies
+        for successful completion.
+      </p>
+      <h2 class="section-subtitle">| Academic Integrity</h2>
+      <p>
+        This course adheres to the
+        <a
+          href="https://www.apu.apus.edu/student-handbook/university-policies-and-code-of-conduct/apus-student-code-of-conduct/standards-of-student-conduct/"
+          target="_blank"
+          rel="noopener"
+          >Standards of Student Conduct [webpage]</a
+        >
+        as presented in the Student Handbook.
+      </p>
+      <h2 class="section-subtitle">
+        <span style="color: #004c90"
+          >| Generative Artificial Intelligence Usage</span
+        >
+      </h2>
+      <p>
+        This course encourages exploring and utilizing
+        generative artificial intelligence (Gen-AI) tools
+        and resources. Gen-AI can enhance learning
+        experiences, foster creativity, and provide valuable
+        insights. Here are the guidelines regarding Gen-AI
+        usage:
+      </p>
+      <ul>
+        <li style="list-style-type: none">
+          <ul>
+            <li>
+              <strong>Exploration:</strong> Feel free to
+              experiment with Gen-AI technologies,
+              algorithms, and frameworks. Curiosity drives
+              innovation, and exploring Gen-AI can lead to
+              exciting discoveries.
+            </li>
+            <li>
+              <strong>Academic Integrity:</strong> While
+              using Gen-AI, maintain academic integrity.
+              Properly cite any AI-generated content or
+              code, just as you would with any other
+              scholarly work.
+            </li>
+            <li>
+              <strong>Collaboration:</strong> Collaborate
+              with peers and discuss Gen-AI concepts.
+              Learning from each other’s experiences
+              enriches the educational journey.
+            </li>
+            <li>
+              <strong>Ethical Considerations:</strong> Be
+              mindful of ethical implications. Understand
+              the impact of Gen-AI on society, privacy, and
+              bias.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="highlight-box">
+        <p style="font-size: 20px; margin-top: 15px">
+          <strong
+            ><span style="color: #ffffff"
+              >Review individual assignments for unique
+              Gen-AI guidelines.&nbsp;<br /></span></strong
+          ><strong
+            ><span style="color: #ffffff"
+              >See&nbsp;<a
+                href="/d2l/le/lessons/922407/topics/20039423"
+                target="_blank"
+                rel="noopener"
+                ><span style="color: #05c3de"
+                  >Gen-AI in the Classroom [content
+                  page]</span
+                ></a
+              >
+              for additional details.</span
+            ></strong
+          >
+        </p>
+      </div>
+      <p style="text-align: center; margin-top: 40px">
+        <span style="font-family: Lato, sans-serif"
+          ><img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+            alt="See more information"
+            title="See more information"
+            data-d2l-editor-default-img-style="true"
+            style="max-width: 100%"
+            width="600"
+        /></span>
+      </p>
+      <!-- --- ACORDEÓN: Citation, Gen-AI Citing, Transcripts --- -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="citation" />
+          <label
+            class="accordion-title"
+            for="citation"
+            >Citation Style</label
+          >
+          <div class="accordion-content">
+            <p>
+              This course utilizes
+              <a
+                href="https://www.apus.edu/apus-library/resources/writing/apa-style/"
+                target="_blank"
+                rel="noopener"
+                >APA [webpage]</a
+              >
+              formatting and citations.
+            </p>
+            <p>
+              Citation Style requirements do NOT apply in
+              Discussions. Describe sources used, but full
+              citations are not required.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="genai-citing" />
+          <span style="color: #004c90"
+            ><label
+              class="accordion-title"
+              for="genai-citing"
+              >Citing Gen-AI Usage</label
+            ></span
+          >
+          <div class="accordion-content">
+            <p>
+              A student should include the following
+              statement in assignments to credit the use of
+              a Generative AI Tool:
+            </p>
+            <p>
+              <em
+                >"I utilized [Generative AI Tool Name], a
+                Gen-AI system created by [Generative AI Tool
+                Provider], to complete this assignment.
+                [Generative AI Tool Name] was employed for
+                the following purposes: [e.g., ideating
+                concepts, proofreading, formatting
+                citations, assisting with specific sections
+                of the work]."</em
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt="logo"
+        class="footer-logo" />
+    </div>
+  </body>
+</html>
