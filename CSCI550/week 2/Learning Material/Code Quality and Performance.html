@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name">
+        Analyzing Code Performance
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        3. Code Quality and Performance
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Maintaining high code quality and optimizing
+        performance are essential for delivering efficient
+        and reliable software. Below are key aspects to
+        consider in this domain.
+      </p>
+      <h2>3.1 Performance Optimization Techniques</h2>
+      <p>
+        Performance optimization involves improving the
+        speed and efficiency of software applications. Here
+        are some common techniques:
+      </p>
+      <ul>
+        <li>
+          <strong>Algorithm Optimization</strong>: Choose
+          the most efficient algorithms for the task at
+          hand. Analyze time and space complexity to ensure
+          that the chosen algorithm meets performance
+          requirements.<br />
+          Let’s look at different implementations of the
+          same problem to understand algorithm optimization:
+        </li>
+        <div class="code-cards">
+          <div class="code-cards-grid">
+            <div class="code-card">
+              <pre class="line-numbers d2l-code">
+<code class="language-python">
+from typing import List 
+import time 
+ 
+class SearchOptimization: 
+    def __init__(self, data: List[int]): 
+        self.data = sorted(data)  # Pre-sort for binary search 
+     
+    def find_element_linear(self, target: int) -> bool: 
+        """Linear search - O(n) time complexity""" 
+        for item in self.data: 
+            if item == target: 
+                return True 
+        return False 
+     
+    def find_element_binary(self, target: int) -> bool: 
+        """Binary search - O(log n) time complexity""" 
+        left, right = 0, len(self.data) - 1 
+         
+        while left <= right: 
+            mid = (left + right) // 2 
+            if self.data[mid] == target: 
+                return True 
+            elif self.data[mid] < target: 
+                left = mid + 1 
+            else: 
+                right = mid - 1 
+        return False 
+ 
+# Performance comparison 
+def compare_search_algorithms(): 
+    # Generate test data 
+    test_data = list(range(1000000)) 
+    search = SearchOptimization(test_data) 
+    target = 999999  # Worst case for linear search 
+     
+    # Test linear search 
+    start = time.time() 
+    result_linear = search.find_element_linear(target) 
+    linear_time = time.time() - start 
+     
+    # Test binary search 
+    start = time.time() 
+    result_binary = search.find_element_binary(target) 
+    binary_time = time.time() - start 
+     
+    print(f"Linear Search Time: {linear_time:.6f} seconds") 
+    print(f"Binary Search Time: {binary_time:.6f} seconds") 
+    print(f"Binary search is {linear_time/binary_time:.1f}x faster") 
+</code>
+      </pre>
+            </div>
+          </div>
+        </div>
+        This example demonstrates algorithm optimization by
+        comparing two search methods.
+        <br />
+        <strong>Linear Search</strong
+        >: Checks each element sequentially (O(n) time
+        complexity)
+        <br />
+        <strong>Binary Search</strong
+        >: Divides the search space in half each time (O(log
+        n) time complexity)
+        <br />
+        The code shows how choosing the right algorithm can
+        significantly impact performance. Binary search is
+        much faster for large datasets but requires sorted
+        data. This illustrates the classic space-time
+        tradeoff: we spend extra memory to keep the data
+        sorted but gain dramatically better search
+        performance.
+
+        <li>
+          <strong>Caching</strong>: Implement caching
+          strategies to store frequently accessed data in
+          memory, reducing the need for repeated
+          calculations or database queries.<br />Here’s an
+          example of implementing caching to improve
+          performance of expensive computations:
+        </li>
+        <div class="code-cards">
+          <div class="code-cards-grid">
+            <div class="code-card">
+              <pre class="line-numbers d2l-code">
+<code class="language-python">
+class DataService: 
+    def __init__(self): 
+        self._cache: Dict[str, Any] = {} 
+        self._cache_hits = 0 
+        self._cache_misses = 0 
+     
+    def _expensive_operation(self, key: str) -> dict: 
+        """Simulate expensive data retrieval""" 
+        time.sleep(0.1)  # Simulate network delay 
+        return {"data": f"Result for {key}"} 
+     
+    def get_data_uncached(self, key: str) -> dict: 
+        """No caching""" 
+        return self._expensive_operation(key) 
+     
+    def get_data_with_cache(self, key: str) -> dict: 
+        """Manual cache implementation""" 
+        if key in self._cache: 
+            self._cache_hits += 1 
+            return self._cache[key] 
+         
+        self._cache_misses += 1 
+        result = self._expensive_operation(key) 
+        self._cache[key] = result 
+        return result 
+</code>
+      </pre>
+            </div>
+          </div>
+        </div>
+        This caching example demonstrates three key
+        concepts:
+        <br />
+        <ol>
+          <li>
+            Basic caching using a dictionary to store
+            previously computed results
+          </li>
+          <li>
+            Cache performance monitoring through hit/miss
+            counting
+          </li>
+          <li>
+            Comparison between cached and uncached
+            operations
+          </li>
+        </ol>
+        The implementation shows how caching can
+        significantly improve performance by storing
+        frequently accessed data in memory. The code also
+        includes metrics tracking to help evaluate the
+        cache’s effectiveness. This is a common optimization
+        technique used in real-world applications,
+        especially for expensive operations like database
+        queries or API calls.
+        <li>
+          <strong>Lazy Loading</strong>: Load resources only
+          when they are needed, rather than at the start of
+          the application. This can significantly reduce
+          initial load times and improve user experience.
+          <br />Here is an example of lazy loading to
+          improve performance by delaying the initialization
+          of expensive resources until they are needed:
+        </li>
+        <div class="code-cards">
+          <div class="code-cards-grid">
+            <div class="code-card">
+              <pre class="line-numbers d2l-code">
+<code class="language-python">
+class ExpensiveResource: 
+    def __init__(self, resource_id: str): 
+        self.resource_id = resource_id 
+        self._data: Optional[Dict] = None 
+     
+    @property 
+    def data(self) -> Dict: 
+        """Lazy loading of data""" 
+        if self._data is None: 
+            print(f"Loading data for resource {self.resource_id}...") 
+            time.sleep(0.5)  # Simulate loading delay 
+            self._data = {"id": self.resource_id, "loaded_at": time.time()} 
+        return self._data 
+ 
+class ResourceManager: 
+    def __init__(self): 
+        self._resources: Dict[str, ExpensiveResource] = {} 
+</code>
+      </pre>
+            </div>
+          </div>
+        </div>
+        The lazy loading pattern demonstrates:
+        <br />
+        <ol>
+          <li>
+            Delayed initialization of expensive resources
+            until they are needed
+          </li>
+          <li>
+            Use of Python’s property decorator to make lazy
+            loading transparent to users
+          </li>
+          <li>
+            Resource management through a centralized
+            manager class
+          </li>
+        </ol>
+        This pattern is particularly useful when dealing
+        with resource-intensive operations. Instead of
+        loading all data at startup, the application only
+        loads what it needs when it needs it. This can
+        significantly improve initial load times and reduce
+        memory usage, especially in large applications.
+        <li>
+          <strong>Database Optimization</strong>: Optimize
+          database queries by indexing, avoiding unnecessary
+          data retrieval, and employing efficient data
+          structures. <br />Here is an example of database
+          optimization by using indexing and limiting data
+          retrieval.
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+import cProfile 
+import pstats 
+from typing import List 
+import time 
+from memory_profiler import profile 
+import logging 
+ 
+# Configure logging 
+logging.basicConfig( 
+    level=logging.INFO, 
+    format='%(asctime)s - %(levelname)s - %(message)s' 
+) 
+ 
+class PerformanceMonitor: 
+    def __init__(self): 
+        self.profiler = cProfile.Profile() 
+        self.execution_times = [] 
+     
+    @profile  # Memory profiling decorator 
+    def memory_intensive_operation(self, size: int) -> List[int]: 
+        """Operation that consumes significant memory""" 
+        return [i * i for i in range(size)] 
+     
+    def cpu_intensive_operation(self, n: int) -> int: 
+        """Operation that consumes significant CPU""" 
+        self.profiler.enable() 
+        result = sum(i * i for i in range(n)) 
+        self.profiler.disable() 
+        return result 
+     
+    def time_operation(self, func, *args, **kwargs): 
+        """Measure execution time of an operation""" 
+        start = time.time() 
+        try: 
+            result = func(*args, **kwargs) 
+            execution_time = time.time() - start 
+            self.execution_times.append(execution_time) 
+            logging.info(f"Operation completed in {execution_time:.4f} seconds") 
+            return result 
+        except Exception as e: 
+            logging.error(f"Operation failed: {str(e)}") 
+            raise 
+     
+    def generate_profile_report(self, sort_by: str = 'cumulative'): 
+        """Generate profiling report""" 
+        stats = pstats.Stats(self.profiler) 
+        stats.sort_stats(sort_by) 
+        stats.print_stats(20)  # Print top 20 results 
+     
+    def get_performance_metrics(self) -> dict: 
+        """Calculate performance metrics""" 
+        if not self.execution_times: 
+            return {} 
+         
+        return { 
+            'avg_time': sum(self.execution_times) / len(self.execution_times), 
+            'max_time': max(self.execution_times), 
+            'min_time': min(self.execution_times), 
+            'total_operations': len(self.execution_times) 
+        } 
+ 
+# Usage example 
+def main(): 
+    monitor = PerformanceMonitor() 
+     
+    # Profile CPU-intensive operation 
+    monitor.time_operation(monitor.cpu_intensive_operation, 1000000) 
+    monitor.generate_profile_report() 
+     
+    # Profile memory-intensive operation 
+    monitor.time_operation(monitor.memory_intensive_operation, 1000000) 
+     
+    # Get performance metrics 
+    metrics = monitor.get_performance_metrics() 
+    logging.info(f"Performance metrics: {metrics}") 
+ 
+if __name__ == "__main__": 
+    main() 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          This profiling example demonstrates:
+          <ol>
+            <li>
+              CPU profiling using cProfile for identifying
+              performance bottlenecks
+            </li>
+            <li>
+              Memory profiling using memory_profiler for
+              tracking memory usage
+            </li>
+            <li>
+              Execution time monitoring with detailed
+              metrics
+            </li>
+            <li>Logging for performance monitoring</li>
+            <li>Error handling and reporting</li>
+          </ol>
+          These tools help developers: identifying
+          performance bottlenecks, monitoring resource
+          usage, tracking performance trends over time, and
+          making data-driven optimization decisions.
+        </li>
+      </ul>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

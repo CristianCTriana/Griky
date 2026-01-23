@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* VIDEO RESPONSIVE */
+      .video-wrapper-TopicOne {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive-TopicOne {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+      }
+
+      .video-responsive-TopicOne video,
+      .video-responsive-TopicOne iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+      .digital-guide span.icon {
+        color: #202122 !important;
+        font-size: 24px;
+        margin-right: 10px;
+        line-height: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name">
+        Analyzing Code Performance
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        1. Software Architecture Patterns
+      </h1>
+
+      <hr class="divider-line" />
+      <h2
+        style="
+          text-align: center;
+          color: #004c90;
+          font-size: 24px;
+          margin-top: 10px;
+        ">
+        <strong>Learning Challenge</strong>
+      </h2>
+      <p>
+        <strong><!-- PDF info --> </strong>
+      </p>
+      <div class="digital-guide">
+        <strong><span class="icon">ⓘ</span>&nbsp;</strong
+        ><span style="font-family: Lato, sans-serif"
+          >This is not an assignment prompt, but rather an
+          opportunity to reflect on how the week’s concepts
+          apply to real workplace situations.</span
+        >
+      </div>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+        alt="banner-video"
+        style="
+          max-width: 100%;
+          display: block;
+          margin: 0 auto;
+        "
+        width="600" />
+      <!-- ============================
+         VIDEO CENTRADO Y RESPONSIVE
+         ============================ -->
+      <div class="video-wrapper-TopicOne">
+        <div class="video-responsive-TopicOne">
+          <video
+            title="Learning challenge"
+            controls="controls">
+            <source
+              src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Week_1/APUS_Coach_Woman.mp4"
+              type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1"
+            >Transcript: Digital Content Guide
+            Podcast</label
+          >
+          <div class="accordion-content">
+            <p>
+              Welcome, future HR leaders and policy shapers!
+            </p>
+            <p>
+              You are about to embark on an exciting journey
+              that will transform the way you think about
+              human resources and its critical role in
+              organizational success. In this course, we
+              will dive deep into the world of HR policies
+              and strategies. But this isn't just about
+              memorizing rules and regulations. It's about
+              understanding the profound impact that
+              well-crafted HR policies can have on people's
+              lives and on the success of entire
+              organizations.
+            </p>
+            <p>
+              From navigating the complexities of employment
+              law to mastering the art of talent management,
+              from ensuring workplace safety to mediating
+              conflicts, you will gain the skills to become
+              a true HR champion. You will learn how to
+              balance the needs of a multi-generational
+              workforce, protect employee privacy in the
+              digital age, and align HR strategies with
+              organizational goals.
+            </p>
+            <p>
+              By the end of this course, you won't just
+              understand HR policies – you will be equipped
+              to create and implement strategies that can
+              transform workplaces, empower employees, and
+              drive organizational success.
+            </p>
+            <p>
+              So get ready to challenge your assumptions,
+              expand your horizons, and become the kind of
+              HR professional who doesn't just follow best
+              practices, but sets them!
+            </p>
+            <p>
+              Are you ready to redefine what HR can be?
+              Let's get started on this exciting journey
+              together!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h2>1.1 Architectural Styles and Patterns</h2>
+      <p>
+        Architectural styles and patterns provide a
+        high-level framework for organizing system
+        components and interactions, enabling the
+        development of maintainable and scalable software
+        systems. These patterns define how software systems
+        should be structured to achieve desired qualities
+        such as performance, reliability, flexibility, and
+        adaptability. By understanding these architectural
+        styles, developers can build systems that are more
+        resilient, efficient, and easier to maintain over
+        time.
+      </p>
+      <h3>Key architectural styles include:</h3>
+      <ul>
+        <li>
+          <strong>Layered Architecture</strong>: This
+          pattern divides an application into multiple
+          distinct layers, each responsible for a specific
+          set of functionality. This promotes the separation
+          of concerns and modularity. The layers typically
+          include:
+          <ul>
+            <li>
+              <strong>Presentation Layer</strong>: Handles
+              user interface and browser communication logic
+            </li>
+            <li>
+              <strong>Business Layer</strong>: Executes
+              necessary business logic related to the
+              application’s functionality
+            </li>
+            <li>
+              <strong>Data Layer</strong>: Manages
+              application data storage
+            </li>
+            <li>
+              <strong>Persistence Layer</strong>:
+              Encapsulates long-term data storage and
+              retrieval operations
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        The layered architecture divides an application into
+        distinct layers, each handling specific
+        responsibilities. Here’s a practical implementation:
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Data Layer
+class UserRepository: 
+    def __init__(self): 
+        self.users = {}  # Simulating a database 
+         
+    def get_user(self, user_id): 
+        return self.users.get(user_id) 
+     
+    def save_user(self, user_id, user_data): 
+        self.users[user_id] = user_data
+      # Business Layer 
+class UserService: 
+    def __init__(self, repository): 
+        self.repository = repository 
+     
+    def get_user_details(self, user_id): 
+        user = self.repository.get_user(user_id) 
+        if not user: 
+            raise ValueError("User not found") 
+        return user 
+     
+    def create_user(self, user_id, name, email): 
+        user_data = {"name": name, "email": email} 
+        self.repository.save_user(user_id, user_data) 
+      # Presentation Layer 
+class UserController: 
+    def __init__(self, user_service): 
+        self.user_service = user_service 
+     
+    def get_user(self, user_id): 
+        try: 
+            user = self.user_service.get_user_details(user_id) 
+            return {"status": "success", "data": user} 
+        except ValueError as e: 
+            return {"status": "error", "message": str(e)}
+
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        This implementation demonstrates clear separation of
+        concerns: - The Repository layer handles data
+        persistence - The Service layer contains business
+        logic - The Controller layer manages user
+        interactions and request handling
+      </p>
+      <p>
+        The layered architecture promotes modularity and
+        makes the system easier to maintain and test. Each
+        layer can be modified or replaced independently
+        without affecting other layers.
+      </p>
+      <ul>
+        <li>
+          <strong>Microservices Architecture</strong>: This
+          pattern decomposes an application into a
+          collection of loosely coupled services, each
+          responsible for a specific business function
+          (Hooda et al., 2023). The microservices
+          architecture promotes scalability, flexibility,
+          and fault isolation. The services are typically
+          independent of one another and communicate using
+          lightweight mechanisms, such as REST APIs or
+          messaging queues.
+          <ul>
+            <li>
+              <strong>Service Independence</strong>: Each
+              microservice focuses on a specific business
+              capability and can be developed, deployed, and
+              scaled independently.
+            </li>
+            <li>
+              <strong>Fault Isolation</strong>: Failure in
+              one microservice does not necessarily affect
+              others, improving overall system resilience.
+            </li>
+            <li>
+              <strong>Scalability</strong>: Microservices
+              can be scaled based on individual service
+              needs, making it suitable for large-scale
+              applications where different components have
+              varying performance requirements.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        Microservices architecture is ideal for complex
+        applications requiring flexibility, scalability, and
+        the ability to support continuous deployment by
+        allowing teams to work independently on different
+        services.
+      </p>
+      <p>Here’s an example using Flask:</p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+from flask import Flask, jsonify, request 
+import requests 
+ 
+# User Service 
+app_user = Flask("user_service") 
+ 
+@app_user.route("/users/&lt;int:user_id&gt;", methods=["GET"]) 
+def get_user(user_id): 
+    # Simulating user data retrieval 
+    users = {1: {"name": "John Doe", "email": "john@example.com"}} 
+    return jsonify(users.get(user_id, {"error": "User not found"})) 
+ 
+# Order Service 
+app_order = Flask("order_service") 
+ 
+@app_order.route("/orders/&lt;int:user_id&gt;", methods=["GET"]) 
+def get_orders(user_id): 
+    # First, verify user exists by calling user service 
+    user_response = requests.get(f"http://localhost:5000/users/{user_id}") 
+    if user_response.status_code != 200: 
+        return jsonify({"error": "User not found"}), 404 
+     
+    # Simulating order data retrieval 
+    orders = { 
+        1: [ 
+            {"order_id": 1, "product": "Book", "quantity": 2}, 
+            {"order_id": 2, "product": "Pen", "quantity": 5} 
+        ] 
+    } 
+    return jsonify(orders.get(user_id, [])) 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This example shows how microservices are
+        independently deployable, communicate via HTTP/REST,
+        have their own data storage, and can be developed
+        and scaled independently.
+      </p>
+      <ul>
+        <li>
+          <strong>Event-Driven Architecture</strong>: This
+          pattern uses events to facilitate communication
+          between loosely coupled components (Tosi, 2023;
+          Misra et al., 2024). It is effective for
+          applications that need to respond in real-time to
+          changes in the environment.
+          <ul>
+            <li>
+              <strong>Producers and Consumers</strong>:
+              Components in an event-driven architecture are
+              categorized as producers (which generate
+              events) and consumers (which respond to those
+              events).
+            </li>
+            <li>
+              <strong>Asynchronous Communication</strong>:
+              Events are communicated asynchronously,
+              enabling real-time responsiveness and
+              decoupling of components.
+            </li>
+            <li>
+              <strong>High Availability</strong>:
+              Event-driven systems are often used in
+              applications that require high availability
+              and responsiveness, such as financial trading
+              systems, e-commerce platforms, and IoT
+              applications.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        By using events to trigger actions, this
+        architecture is well-suited for handling large
+        volumes of data while maintaining efficient
+        processing, without creating bottlenecks in the
+        system.
+      </p>
+      <p>Here’s an example:</p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+    from abc import ABC, abstractmethod 
+    from typing import Dict, List 
+    import asyncio 
+     
+    # Event definitions 
+    class Event: 
+        def __init__(self, event_type: str, data: Dict): 
+            self.type = event_type 
+            self.data = data 
+     
+    # Abstract base class for event handlers 
+    class EventHandler(ABC): 
+        @abstractmethod 
+        async def handle(self, event: Event): 
+            pass 
+     
+    # Example event handlers 
+    class OrderCreatedHandler(EventHandler): 
+        async def handle(self, event: Event): 
+            print(f"Processing new order: {event.data}") 
+            # Simulate processing time 
+            await asyncio.sleep(1) 
+            print(f"Order {event.data['order_id']} processed") 
+     
+    class InventoryUpdateHandler(EventHandler): 
+        async def handle(self, event: Event): 
+            print(f"Updating inventory for order: {event.data}") 
+            await asyncio.sleep(0.5) 
+            print(f"Inventory updated for order {event.data['order_id']}") 
+     
+    # Event bus implementation 
+    class EventBus: 
+        def __init__(self): 
+            self.handlers: Dict[str, List[EventHandler]] = {} 
+     
+        def register(self, event_type: str, handler: EventHandler): 
+            if event_type not in self.handlers: 
+                self.handlers[event_type] = [] 
+            self.handlers[event_type].append(handler) 
+     
+        async def publish(self, event: Event): 
+            if event.type in self.handlers: 
+                await asyncio.gather( 
+                    *[handler.handle(event) for handler in self.handlers[event.type]] 
+                ) 
+     
+    # Usage example 
+    async def main(): 
+        # Create event bus and register handlers 
+        event_bus = EventBus() 
+        event_bus.register("order_created", OrderCreatedHandler()) 
+        event_bus.register("order_created", InventoryUpdateHandler()) 
+     
+        # Publish an event 
+        order_event = Event( 
+            "order_created", 
+            {"order_id": 123, "product": "Book", "quantity": 2} 
+        ) 
+        await event_bus.publish(order_event) 
+     
+    # Run the example 
+      asyncio.run(main()) 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This example demonstrates an event-driven
+        architecture with async/await patterns in Python. It
+        includes:
+      </p>
+      <p>
+        An Event class to represent events in the system, an
+        abstract EventHandler class that defines the
+        interface for event handlers, concrete handler
+        implementations for different business processes, an
+        EventBus that manages event publication, and handler
+        registration.
+      </p>
+      <ul>
+        <li>
+          <strong>Client-Server Architecture</strong>: This
+          pattern separates the system into two main
+          components: clients and servers (Hooda et al.,
+          2023). Clients are responsible for making
+          requests, while servers provide the requested
+          services.
+          <ul>
+            <li>
+              <strong>Client Component</strong>: Manages
+              user interactions, including user input, and
+              sends requests to the server for processing.
+            </li>
+            <li>
+              <strong>Server Component</strong>: Handles
+              business logic, processes client requests, and
+              manages data storage.
+            </li>
+            <li>
+              <strong>Centralized Control</strong>: The
+              server component manages data and provides
+              services, allowing for centralized data
+              control and easy maintenance.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        The client-server architecture is widely used for
+        web applications and distribution systems
+        (Sabharwal, Rathore, &amp; Agrawal, 2021). It
+        provides a clear separation between user interface
+        and backend processing, allowing for scalability and
+        efficient data management, and is particularly
+        effective for systems that need to ensure a
+        consistent user experience across different client
+        devices.
+      </p>
+      <p>
+        Here is a comprehensive example using Python that
+        demonstrates both synchronous HTTP and
+        WebSocket-based real-time communication:
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+    # Server-side implementation 
+    from flask import Flask, jsonify, request 
+    from flask_socketio import SocketIO, emit 
+    import threading 
+    import time 
+     
+    app = Flask(__name__) 
+    socketio = SocketIO(app, cors_allowed_origins="*") 
+     
+    # Simulated database 
+    users_db = {} 
+    active_connections = {} 
+     
+    # REST API endpoints for traditional client-server communication 
+    @app.route('/api/users', methods=['POST']) 
+    def create_user(): 
+        """Handle user creation requests from clients""" 
+        data = request.get_json() 
+        if not data or 'username' not in data: 
+            return jsonify({'error': 'Username is required'}), 400 
+     
+        username = data['username'] 
+        if username in users_db: 
+            return jsonify({'error': 'Username already exists'}), 409 
+     
+        users_db[username] = { 
+            'username': username, 
+            'created_at': time.strftime('%Y-%m-%d %H:%M:%S'), 
+            'status': 'active' 
+        } 
+     
+        return jsonify(users_db[username]), 201 
+     
+    @app.route('/api/users/&lt;username&gt;', methods=['GET']) 
+    def get_user(username): 
+        """Handle requests for user information""" 
+        if username not in users_db: 
+            return jsonify({'error': 'User not found'}), 404 
+        return jsonify(users_db[username]) 
+     
+    # WebSocket handlers for real-time communication 
+    @socketio.on('connect') 
+    def handle_connect(): 
+        """Handle new client connections""" 
+        client_id = request.sid 
+        active_connections[client_id] = { 
+            'connected_at': time.strftime('%Y-%m-%d %H:%M:%S'), 
+            'last_activity': time.time() 
+        } 
+        emit('connection_success', {'message': 'Connected to server'}) 
+     
+    @socketio.on('disconnect') 
+    def handle_disconnect(): 
+        """Handle client disconnections""" 
+        client_id = request.sid 
+        if client_id in active_connections: 
+            del active_connections[client_id] 
+     
+    @socketio.on('message') 
+    def handle_message(data): 
+        """Handle real-time messages from clients""" 
+        client_id = request.sid 
+        if client_id in active_connections: 
+            active_connections[client_id]['last_activity'] = time.time() 
+            # Broadcast message to all connected clients except sender 
+            emit('new_message', { 
+                'sender': client_id, 
+                'message': data['message'], 
+                'timestamp': time.strftime('%Y-%m-%d %H:%M:%S') 
+            }, broadcast=True, include_self=False) 
+     
+    # Background task to monitor client connections 
+    def monitor_connections(): 
+        """Monitor and clean up inactive connections""" 
+        while True: 
+            current_time = time.time() 
+            inactive_clients = [ 
+                client_id for client_id, data in active_connections.items() 
+                if current_time - data['last_activity'] > 300  # 5 minutes timeout 
+            ] 
+     
+            for client_id in inactive_clients: 
+                del active_connections[client_id] 
+                socketio.emit('disconnect', room=client_id) 
+     
+            time.sleep(60)  # Check every minute 
+     
+    # Client-side implementation (example using requests and socketio-client) 
+    import requests 
+    from socketio import Client 
+    import json 
+     
+    class ChatClient: 
+        def __init__(self, server_url): 
+            """Initialize chat client with server URL""" 
+            self.server_url = server_url 
+            self.sio = Client() 
+            self.setup_socket_handlers() 
+     
+        def setup_socket_handlers(self): 
+            """Set up WebSocket event handlers""" 
+            @self.sio.on('connection_success') 
+            def on_connect(data): 
+                print(f"Connected to server: {data['message']}") 
+     
+            @self.sio.on('new_message') 
+            def on_message(data): 
+                print(f"New message from {data['sender']}: {data['message']}") 
+     
+            @self.sio.on('disconnect') 
+            def on_disconnect(): 
+                print("Disconnected from server") 
+     
+        def register_user(self, username): 
+            """Register a new user with the server""" 
+            response = requests.post( 
+                f"{self.server_url}/api/users", 
+                json={'username': username}, 
+                headers={'Content-Type': 'application/json'} 
+            ) 
+            return response.json() 
+     
+        def get_user_info(self, username): 
+            """Get information about a specific user""" 
+            response = requests.get(f"{self.server_url}/api/users/amsharma") 
+            return response.json() 
+     
+        def connect(self): 
+            """Establish WebSocket connection with server""" 
+            try: 
+                self.sio.connect(self.server_url) 
+                return True 
+            except Exception as e: 
+                print(f"Connection failed: {str(e)}") 
+                return False 
+     
+        def send_message(self, message): 
+            """Send a message to all connected clients""" 
+            if self.sio.connected: 
+                self.sio.emit('message', {'message': message}) 
+                return True 
+            return False 
+     
+        def disconnect(self): 
+            """Disconnect from the server""" 
+            if self.sio.connected: 
+                self.sio.disconnect() 
+     
+    # Example usage 
+    if __name__ == '__main__': 
+        # Start server monitoring in background thread 
+        monitor_thread = threading.Thread(target=monitor_connections, daemon=True) 
+        monitor_thread.start() 
+     
+        # Start server 
+        socketio.run(app, host='0.0.0.0', port=5000, debug=True) 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This implementation demonstrates several key aspects
+        of client-server architecture:
+      </p>
+      <p>Server Components:</p>
+      <ul>
+        <li>RESTful API endpoints for user management</li>
+        <li>
+          WebSocket handlers for real-time communication
+        </li>
+        <li>Connection monitoring and cleanup</li>
+        <li>Simulated database for data persistence</li>
+      </ul>
+      <p>Client Components:</p>
+      <ul>
+        <li>
+          HTTP requests for user registration and
+          information retrieval
+        </li>
+        <li>
+          WebSocket connection for real-time messaging
+        </li>
+        <li>
+          Event handlers for different types of server
+          responses
+        </li>
+      </ul>
+      <p>Key Features:</p>
+      <ul>
+        <li>
+          Bidirectional communication using both HTTP and
+          WebSocket protocols
+        </li>
+        <li>Connection state management</li>
+        <li>Error handling and validation</li>
+        <li>Automatic cleanup of inactive connections</li>
+        <li>Broadcast messaging capability</li>
+      </ul>
+      <p>Best Practices:</p>
+      <ul>
+        <li>
+          Separation of concerns between different types of
+          communication
+        </li>
+        <li>Proper error handling and status codes</li>
+        <li>Connection monitoring and resource cleanup</li>
+        <li>
+          Event-driven architecture for real-time features
+        </li>
+      </ul>
+      <p>
+        Understanding these architectural styles allows
+        developers to choose the right approach based on
+        system requirements, ensuring better quality,
+        maintainability, and alignment with business
+        objectives.
+      </p>
+      <div class="signature-banner">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/Template_Files/ui_templates/../../../signature_skills/Banners/DL%20Banner.jpg"
+          alt="Signature Skills: Digital Literacy"
+          style="
+            max-width: 100%;
+            display: block;
+            margin-bottom: 0px;
+          " />
+      </div>
+      <!-- Card -->
+      <div class="signature-card">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/Template_Files/ui_templates/../../../signature_skills/Images/DigitalLiteracy_Black_Badges_APUS_GDJSkills.png"
+          alt="Digital Literacy skill badge black and white"
+          style="
+            max-width: 150px;
+            display: block;
+            margin: 0px auto;
+          " />
+        <p style="text-align: center">
+          <span style="font-size: 24px; color: #202122"
+            >Understanding Software Architecture Patterns is
+            crucial for developing advanced Digital Literacy
+            in a professional context. This content teaches
+            you how to use digital devices, software, and
+            applications effectively by dissecting the
+            underlying structure of modern systems like
+            Microservices. By grasping the concepts of
+            Layered, Microservices, and Event-Driven
+            Architectures, you learn to critically evaluate
+            the design of the digital tools you rely on,
+            empowering you to analyze software for qualities
+            like reliability and scalability. This knowledge
+            is essential for responsibly engaging with
+            complex digital technology.</span
+          >
+        </p>
+      </div>
+      <!-- Button -->
+      <div class="signature-button">
+        <span
+          style="
+            font-family: Lato, sans-serif;
+            font-size: 19px;
+          "
+          ><a
+            href="/d2l/le/discovery/view/course/782174"
+            target="_blank"
+            rel="noopener"
+            >Learn More About&nbsp; Graduate Signature
+            Skills!</a
+          ></span
+        >
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* Colores base */
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name">
+        Analyzing Code Performance
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        1.2 Pattern Selection Criteria
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Selecting an appropriate architectural pattern
+        involves considering several factors to align the
+        architecture with the project’s specific needs.
+        Making informed decisions during the selection
+        process can have a significant impact on the success
+        and sustainability of the software system.
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            1. Scalability Requirements:
+          </label>
+          <div class="accordion-content">
+            <p>
+              If the system needs to support a large number
+              of users or handle heavy data loads,
+              microservices or event-driven architectures
+              are often ideal. These architectures provide
+              the flexibility to scale individual components
+              based on demand, thereby optimizing resource
+              usage.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            2. Complexity
+          </label>
+          <div class="accordion-content">
+            <p>
+              For simple applications, a monolithic or
+              layered architecture may suffice. More complex
+              systems can benefit from service-based
+              approaches, such as microservices or
+              service-oriented architectures, which allow
+              different components to be developed and
+              maintained independently. The choice of
+              architecture should match the complexity of
+              the problem domain to avoid over-engineering
+              or under-engineering.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            3. Flexibility and Modularity
+          </label>
+          <div class="accordion-content">
+            <p>
+              For systems that require independent
+              deployments, updates, or scaling,
+              microservices offer flexibility that is
+              difficult to achieve in a monolithic design.
+              Modular architectures also enhance the ability
+              to introduce new features or modify existing
+              ones without affecting the entire system, thus
+              reducing risk during updates.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            4. Development and Team Structure:
+          </label>
+          <div class="accordion-content">
+            <p>
+              Architectural decisions should also consider
+              team size and skill sets. Microservices, for
+              instance, require specialized skills for
+              managing distributed systems and handling
+              inter-service communication. Smaller teams may
+              prefer a monolithic or layered approach, while
+              larger, cross-functional teams can leverage
+              microservices to work on different parts of
+              the system concurrently.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            5. Deployment Frequency
+          </label>
+          <div class="accordion-content">
+            <p>
+              Architectural patterns should align with
+              desired deployment frequency. Microservices
+              architecture is particularly suitable for
+              frequent, independent deployments. The ability
+              to deploy services independently reduces
+              downtime and enables rapid iteration, which is
+              essential for continuous delivery and
+              responding to changing customer needs.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo6" />
+          <label
+            class="accordion-title"
+            for="lo6">
+            6. System Reliability
+          </label>
+          <div class="accordion-content">
+            <p>
+              The architecture should be selected to ensure
+              high availability and fault tolerance.
+              Event-driven and microservices architectures
+              are well-suited for systems that require
+              resilience, as they can handle failures
+              gracefully by isolating faults to specific
+              components and implementing retries or
+              fallbacks.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p>
+        Selecting the appropriate architecture pattern not
+        only facilitates system scalability and
+        maintainability but also significantly influences
+        development efficiency, team productivity, and the
+        overall success of the project. A well-chosen
+        architecture can minimize technical debt, reduce
+        development time, and ensure that the system is
+        capable of evolving alongside changing business
+        requirements.
+      </p>
+      <h2>1.3 Implementation Considerations</h2>
+      <p>
+        When implementing software architecture patterns, it
+        is crucial to consider the following aspects to
+        ensure that the resulting system is both functional
+        and maintainable:
+      </p>
+      <ul>
+        <li>
+          <strong>Separation of Concerns</strong>: Divide
+          the system into distinct sections where each has a
+          specific responsibility. This principle is
+          inherent in layered and microservices
+          architectures. Separation of concerns helps in
+          isolating different functionalities, making the
+          system easier to manage and reducing the impact of
+          changes in one area on other parts of the system.
+        </li>
+        <li>
+          <strong>Communication Mechanisms</strong>: In
+          microservices and event-driven architectures,
+          communication between components can be a
+          challenge. Techniques like REST APIs, message
+          brokers, and event queues are often employed to
+          ensure reliable interactions. Choosing the right
+          communication mechanism is essential to balance
+          performance, reliability, and consistency. For
+          instance, message brokers like RabbitMQ or Kafka
+          are commonly used to decouple services and provide
+          asynchronous communication.
+        </li>
+        <li>
+          <strong>Fault Tolerance</strong>: Architectures
+          such as event-driven and microservices must
+          consider failure points, ensuring that system
+          resilience is achieved by incorporating retry
+          logic, monitoring, and fallbacks. Techniques like
+          circuit breakers, load balancing, and redundancy
+          are often employed to ensure high availability and
+          reliability. Fault tolerance is critical for
+          maintaining service quality, especially in
+          distributed environments where network failures
+          and latency are common.
+        </li>
+        <li>
+          <strong>Testing Strategies</strong>: The choice of
+          architecture affects testing complexity.
+          Microservices require unit, integration, and
+          end-to-end testing strategies to validate service
+          interactions. Automated testing frameworks (e.g.,
+          JUnit) are critical in validating both individual
+          components and the entire system. In addition,
+          contract testing can be used to ensure that the
+          interactions between microservices adhere to
+          predefined agreements, reducing the risk of
+          integration issues.
+        </li>
+        <li>
+          <strong>Performance Optimization</strong>: It is
+          important to analyze how architectural choices
+          affect system performance. For example, adding too
+          many layers can create latency, while distributed
+          systems need to minimize communication overhead
+          through efficient data handling. Performance
+          profiling tools can help identify bottlenecks, and
+          optimization techniques such as caching, load
+          balancing, and efficient query design can be
+          implemented to enhance system responsiveness.
+        </li>
+        <li>
+          <strong>Security Considerations</strong>:
+          Implementing a secure architecture is vital to
+          protect against threats and vulnerabilities.
+          Microservices, for example, should use secure
+          communication channels (e.g., HTTPS) and proper
+          authentication mechanisms to ensure data integrity
+          and confidentiality. Architectural patterns should
+          also incorporate security best practices, such as
+          least privilege, secure defaults, and regular
+          security testing, to mitigate risks.
+        </li>
+      </ul>
+      <p>
+        The implementation of these architectural patterns
+        should be closely aligned with the overall system
+        requirements, anticipated user interactions, and
+        long-term maintenance goals. For example, employing
+        a microservices approach allows for independent
+        scaling of specific services that are
+        resource-intensive, thereby optimizing system
+        performance while reducing operational costs.
+        Additionally, adopting best practices for
+        monitoring, logging, and observability can
+        significantly improve the ability to detect and
+        resolve issues in production.
+      </p>
+      <h2>1.4. A Python Code Implementation Example</h2>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Example of a basic implementation of a microservice endpoint 
+from flask import Flask, jsonify 
+ 
+app = Flask(__name__) 
+ 
+# Sample endpoint for a User Service 
+@app.route('/user/&lt;int:user_id&gt;', methods=['GET']) 
+def get_user(user_id): 
+    user_data = {1: {'name': 'Alice'}, 2: {'name': 'Bob'}} 
+    return jsonify(user_data.get(user_id, 'User not found')) 
+ 
+if __name__ == '__main__': 
+    app.run(debug=True) 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This Python example shows a simple implementation of
+        a microservice endpoint using Flask. The endpoint
+        provides a user service that returns data for a
+        specific user, illustrating how microservices can
+        isolate business logic into independent services.
+        This design allows each microservice to focus on a
+        single responsibility, making the system easier to
+        develop, test, and maintain. Moreover, the use of
+        Flask as a lightweight framework supports rapid
+        development and straightforward integration into
+        larger systems.
+      </p>
+      <p>
+        By focusing on architectural styles, selection
+        criteria, and implementation considerations,
+        developers can build systems that are not only
+        functional but also resilient, scalable, and easy to
+        maintain. Understanding these concepts is crucial
+        for developing software that meets both current and
+        future business needs.
+      </p>
+      <h2>Knowledge Check</h2>
+      <div class="quiz">
+        <!--Question 1-->
+        <form class="quick-assess quick-assess-mc">
+          <fieldset class="radio">
+            <legend>
+              <span style="font-size: 19px"
+                >Question 1: Which architectural style is
+                best suited for a large-scale application
+                requiring flexibility, scalability, and
+                fault isolation?
+              </span>
+            </legend>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                  <!-- <span class="fas fa-times ans-symbol invisible float-right"></span> -->
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label"
+                    >A. Layered Architecture
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-check ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label"
+                    >B. Microservices Architecture
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label"
+                    >C. Client-Server Architecture
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label"
+                    >D. Monolithic Architecture
+                  </label>
+                </div>
+              </div>
+            </div>
+            <button
+              type="button"
+              data-toggle="collapse"
+              aria-expanded="false"
+              disabled="disabled"
+              class="btn btn-primary btn-quick-assess">
+              Check Answer
+            </button>
+            <div class="collapse feedback">
+              <p>
+                <span style="font-size: 19px"
+                  ><strong>Correct answer:</strong> b.
+                  Microservices Architecture Explanation:
+                  Microservices architecture is ideal for
+                  large-scale applications as it allows
+                  independent development, scaling, and
+                  fault isolation of individual
+                  services.</span
+                >
+              </p>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="card-body">
+        <div class="card-text">
+          <p>
+            <span style="font-size: 19px"
+              ><strong>Question 2</strong>: Scenario: You
+              are designing a system that must handle
+              real-time data processing for an IoT
+              application. The system needs to process large
+              volumes of asynchronous events and ensure high
+              availability. <br />Which architectural style
+              would you choose, and why?
+            </span>
+          </p>
+          <button
+            type="button"
+            class="btn btn-primary btn-reveal"
+            data-toggle="collapse"
+            aria-expanded="false">
+            Correct Answer
+          </button>
+          <div
+            class="collapse"
+            tabindex="0">
+            <p>
+              <span style="font-size: 19px"
+                ><strong
+                  >Event-Driven Architecture Explanation </strong
+                >: Event-driven architecture is suitable for
+                handling real-time data processing as it
+                enables asynchronous communication between
+                components, ensuring responsiveness and high
+                availability. Producers generate events, and
+                consumers respond to these events in near
+                real-time, making it ideal for IoT
+                applications.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

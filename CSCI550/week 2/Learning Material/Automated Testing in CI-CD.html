@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name">
+        Analyzing Code Performance
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        4. Automated Testing in CI/CD
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Automated testing is a critical component of
+        Continuous Integration and Continuous Deployment
+        (CI/CD) pipelines. It ensures that code changes do
+        not introduce new bugs and that the software remains
+        reliable.
+      </p>
+      <h2>4.1 Test Automation Frameworks</h2>
+      <p>
+        Test automation frameworks provide a structured
+        approach to automate testing processes. Key
+        frameworks include Selenium, JUnit, pytest, and
+        Cpress.
+      </p>
+      <ul>
+        <li>
+          <strong>Selenium</strong>: A widely used framework
+          for automating web applications for testing
+          purposes. It supports multiple programming
+          languages and browsers.
+        </li>
+        <li>
+          <strong>JUnit</strong>: A popular testing
+          framework for Java applications that provides
+          annotations and assertions to facilitate unit
+          testing.
+        </li>
+        <li>
+          <strong>pytest</strong>: A robust testing
+          framework for Python that supports simple unit
+          tests as well as complex functional testing.
+        </li>
+        <li>
+          <strong>Cypress</strong>: A modern testing
+          framework for web applications that allows for
+          end-to-end testing with a focus on developer
+          experience.
+        </li>
+      </ul>
+      <h2>4.2 Test Strategy Development</h2>
+      <p>
+        Developing a comprehensive test strategy is
+        essential for effective automated testing. Key
+        components include:
+      </p>
+      <ul>
+        <li>
+          <strong>Define Testing Objectives</strong>:
+          Clearly outline the goals of testing, such as
+          ensuring functionality, performance, and security.
+        </li>
+        <li>
+          <strong>Select Test Types</strong>: Determine
+          which types of tests to automate, including unit
+          tests, integration tests, functional tests, and
+          end-to-end tests.
+        </li>
+        <li>
+          <strong>Establish Testing Environments</strong>:
+          Set up consistent testing environments that mirror
+          production to ensure accurate test results.
+        </li>
+        <li>
+          <strong>Continuous Feedback Loop</strong>:
+          Implement a feedback loop where test results are
+          analyzed, and insights are used to improve both
+          the code and the testing process.
+        </li>
+      </ul>
+      <h2>4.3 Integration with CI/CD Pipelines</h2>
+      <p>
+        Integrating automated testing into CI/CD pipelines
+        enhances the development workflow. Key practices
+        include automated test execution, test reporting,
+        rollback mechanisms, and monitoring and alerts.
+      </p>
+      <ol>
+        <li>
+          <strong>Automated Test Execution </strong
+          ><br />Automated test execution ensures that tests
+          are run automatically whenever code is pushed to
+          the repository, providing immediate feedback on
+          the code’s quality. <br /><strong
+            >Example: Automating Tests with GitHub
+            Actions</strong
+          >
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# .github/workflows/ci.yml 
+name: CI Pipeline 
+ 
+on: 
+  push: 
+    branches: 
+      - main 
+ 
+jobs: 
+  test: 
+    runs-on: ubuntu-latest 
+ 
+    steps: 
+    - name: Checkout Code 
+      uses: actions/checkout@v3 
+ 
+    - name: Set up Python 
+      uses: actions/setup-python@v4 
+      with: 
+        python-version: '3.9' 
+ 
+    - name: Install Dependencies 
+      run: | 
+        python -m pip install --upgrade pip 
+        pip install -r requirements.txt 
+ 
+    - name: Run Tests 
+      run: | 
+        pytest --junitxml=test-results.xml 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          The above YAML file configures a GitHub Actions
+          workflow to automatically run tests using pytest
+          whenever code is pushed to the main branch.
+          <br />This pipeline automates the testing process,
+          ensuring that any new code changes are validated
+          immediately. It checks out the code, sets up
+          Python, installs dependencies, and runs the tests.
+        </li>
+        <li>
+          <strong>Test Reporting</strong>Detailed test
+          reports provide insights into test results,
+          helping teams quickly identify and address
+          issues.<br /><strong
+            >Example: Generating Test Reports with
+            Pytest</strong
+          >
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Run tests and generate an HTML report 
+pytest --html=report.html --self-contained-html 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          Using the pytest-html plugin, you can generate a
+          detailed HTML report of the test results. This
+          report can be integrated into the CI/CD pipeline
+          to provide visibility into test outcomes.
+        </li>
+        <li>
+          <strong>Rollback Mechanisms</strong><br />Rollback
+          mechanisms ensure system stability by reverting to
+          the last stable version if tests fail.<br /><strong
+            >Example: Rollback Using Git</strong
+          >
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Rollback to the previous stable commit 
+git reset --hard &lt;last_stable_commit_hash&gt; 
+git push --force 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          If a test fails during the CI/CD pipeline, the
+          system can automatically revert to the last stable
+          commit using Git commands. This ensures that
+          unstable code does not affect production.
+        </li>
+        <li>
+          <strong>Monitoring and Alerts</strong
+          ><br />Monitoring and alerting systems notify the
+          development team of test failures or performance
+          issues in real-time.
+          <strong
+            >Example: Setting Up Alerts with Slack</strong
+          >
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Example GitHub Actions workflow with Slack notifications 
+name: CI Pipeline with Alerts 
+ 
+on: 
+  push: 
+    branches: 
+      - main 
+ 
+jobs: 
+  test: 
+    runs-on: ubuntu-latest 
+ 
+    steps: 
+    - name: Checkout Code 
+      uses: actions/checkout@v3 
+ 
+    - name: Set up Python 
+      uses: actions/setup-python@v4 
+      with: 
+        python-version: '3.9' 
+ 
+    - name: Install Dependencies 
+      run: | 
+        python -m pip install --upgrade pip 
+        pip install -r requirements.txt 
+ 
+    - name: Run Tests 
+      run: | 
+        pytest --junitxml=test-results.xml 
+ 
+    - name: Notify Slack on Failure 
+      if: failure() 
+      uses: 8398a7/action-slack@v3 
+      with: 
+        status: ${{ job.status }} 
+        fields: repo,message,commit,author 
+      env: 
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          This workflow integrates Slack notifications to
+          alert the team if the tests fail. The action-slack
+          GitHub Action sends a message to a Slack channel
+          with details about the failure. <br />By
+          integrating these practices into CI/CD pipelines,
+          teams can ensure a robust and efficient
+          development workflow. Automated testing, detailed
+          reporting, rollback mechanisms, and real-time
+          alerts collectively enhance the quality and
+          reliability of software delivery.
+        </li>
+      </ol>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif !important;
+        color: #202122;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px;
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif !important;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition: 0.2s ease;
+        position: relative;
+      }
+
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        margin-left: 12px;
+        transition: 0.2s ease;
+      }
+
+      .accordion-item
+        input:checked
+        + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .title-topic {
+        font-size: 35px;
+        color: #041e40;
+        text-align: center;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .divider-line {
+        margin-top: 0px;
+        margin-bottom: 40px;
+      }
+
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+      .digital-guide span.icon {
+        color: #202122;
+        font-size: 24px;
+        margin-right: 10px;
+        line-height: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h3
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        ">
+        <span style="font-size: 20px; color: #05c3de"
+          >Week 2</span
+        ><br /><span style="font-size: 28px"
+          >Analyzing Code Performance</span
+        >
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <!-- CONCLUSIONS -->
+      <h1 class="title-topic">
+        <strong>Conclusions</strong>
+      </h1>
+      <hr class="divider-line" />
+      <p style="font-size: 19px">
+        In this course, you have journeyed through the
+        essential pillars of modern software development,
+        focusing on software architecture, object-oriented
+        design, code quality, and automated testing. Each
+        module has provided a foundation for building
+        robust, scalable, and maintainable software systems.
+      </p>
+      <strong style="font-size: 19px"
+        >Key takeaways include:</strong
+      >
+      <ul style="font-size: 19px">
+        <li>
+          <strong>Software Architecture Patterns</strong>:
+          Understanding architectural styles and patterns,
+          such as layered, client-server, and microservices,
+          equips developers to design systems that address
+          performance, scalability, and maintainability
+          challenges effectively.
+        </li>
+        <li>
+          <strong>Object-Oriented Design Principles</strong
+          >: The SOLID principles and design patterns
+          (Creational, Structural, Behavioral) emphasize
+          modularity, reusability, and clarity in code
+          organization.
+        </li>
+        <li>
+          <strong>Code Quality and Performance</strong>:
+          Techniques like refactoring, performance
+          optimization, and managing technical debt ensure
+          long-term software sustainability.
+        </li>
+        <li>
+          <strong>Automated Testing in CI/CD</strong>:
+          Integrating test automation frameworks into CI/CD
+          pipelines fosters rapid, reliable software
+          delivery while maintaining quality.
+        </li>
+      </ul>
+      <p style="font-size: 19px">
+        As you move forward, remember that these concepts
+        are not just theoretical but practical tools to
+        solve real-world problems. Mastery comes through
+        application—experiment with architectural patterns,
+        implement design principles, and refine your testing
+        strategies. This course has laid the groundwork for
+        advanced topics in software engineering. Continue
+        exploring, practicing, and innovating to become a
+        proficient software architect and developer.
+      </p>
+
+      <hr class="divider-line" />
+      <!-- LEARNING CHALLENGE -->
+      <h2
+        style="
+          text-align: center;
+          color: #004c90;
+          font-size: 24px;
+        ">
+        <strong>Learning Challenge</strong><strong></strong>
+      </h2>
+      <p>
+        <strong><!-- PDF info --> </strong>
+      </p>
+      <div class="digital-guide">
+        <strong><span class="icon">ⓘ</span>&nbsp;</strong
+        >This is not an assignment prompt, but rather an
+        opportunity to reflect on how the week’s concepts
+        apply to real workplace situations.
+      </div>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/16.png"
+        class="banner-image" />
+      <!-- RESPONSIVE VIDEO -->
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <video
+            title="Learning challenge"
+            controls="controls">
+            <source
+              src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/APUS_Coach_Man.mp4"
+              type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <!-- ACCORDION TRANSCRIPT -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="transcript1" />
+          <label
+            for="transcript1"
+            class="accordion-title"
+            >Transcript: Learning Challenge</label
+          >
+          <div class="accordion-content">
+            <p>
+              Welcome, future HR leaders and policy shapers!
+            </p>
+            <p>
+              You are about to embark on an exciting
+              journey...
+            </p>
+            <p>From navigating the complexities...</p>
+            <p>By the end of this course...</p>
+            <p>
+              So get ready to challenge your assumptions...
+            </p>
+            <p>Are you ready to redefine what HR can be?</p>
+          </div>
+        </div>
+      </div>
+      <hr class="divider-line" />
+      <!-- FOOTER -->
+      <div>
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="logo"
+          width="110"
+          style="float: right" />
+      </div>
+    </div>
+  </body>
+</html>

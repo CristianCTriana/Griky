@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name">
+        Analyzing Code Performance
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">2.2 Design Patterns</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Design patterns are typical solutions to common
+        problems in software design. They can be categorized
+        into three main types: creational, structural, and
+        behavioral patterns.
+      </p>
+      <ul>
+        <li>
+          <strong>Creational Patterns</strong>: These
+          patterns deal with object creation mechanisms,
+          trying to create objects in a manner suitable to
+          the situation. Examples include the Singleton,
+          Factory Method, and Abstract Factory patterns.<br />
+          Here is an example:
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+from typing import Optional 
+ 
+class DatabaseConnection: 
+    _instance: Optional['DatabaseConnection'] = None 
+     
+    def __init__(self): 
+        if DatabaseConnection._instance is not None: 
+            raise RuntimeError("Use get_instance() instead") 
+        self.connected = False 
+     
+    @classmethod 
+    def get_instance(cls) -> 'DatabaseConnection': 
+        if cls._instance is None: 
+            cls._instance = cls() 
+        return cls._instance 
+     
+    def connect(self) -> None: 
+        if not self.connected: 
+            print("Establishing database connection...") 
+            self.connected = True 
+        else: 
+            print("Already connected") 
+     
+    def disconnect(self) -> None: 
+        if self.connected: 
+            print("Disconnecting from database...") 
+            self.connected = False 
+        else: 
+            print("Already disconnected") 
+ 
+# Usage example 
+def main(): 
+    # Both variables reference the same instance 
+    db1 = DatabaseConnection.get_instance() 
+    db2 = DatabaseConnection.get_instance() 
+     
+    print(f"Same instance? {db1 is db2}")  # True 
+     
+    db1.connect() 
+    db2.connect()  # Already connected message 
+    db1.disconnect() 
+    db2.disconnect()  # Already disconnected message 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <strong>Structural Patterns</strong>: These
+          patterns focus on how classes and objects are
+          composed to form larger structures. They help
+          ensure that if one part of a system changes, the
+          entire system does not need to do the same.
+          Examples include adapter, composite, and decorator
+          patterns.<br />Here is an example:
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Adapter Pattern 
+class LegacyPrinter: 
+    """Legacy printer class that uses old interface""" 
+    def print_basic(self, text): 
+        return f"Legacy Printer: {text}" 
+ 
+class ModernPrinter: 
+    """Modern printer with new interface""" 
+    def print_content(self, content, format_type="plain"): 
+        return f"Modern Printer [{format_type}]: {content}" 
+ 
+class PrinterAdapter: 
+    """Adapter to make LegacyPrinter work with modern interface""" 
+    def __init__(self, legacy_printer: LegacyPrinter): 
+        self.legacy_printer = legacy_printer 
+     
+    def print_content(self, content, format_type="plain"): 
+        # Adapt the new interface to the old one 
+        return self.legacy_printer.print_basic(content) 
+ 
+# Usage example 
+def print_document(printer, content): 
+    return printer.print_content(content, "pdf") 
+ 
+# Decorator Pattern 
+class TextComponent: 
+    """Base component interface""" 
+    def render(self) -> str: 
+        pass 
+ 
+class PlainText(TextComponent): 
+    """Concrete component""" 
+    def __init__(self, text: str): 
+        self._text = text 
+     
+    def render(self) -> str: 
+        return self._text 
+ 
+class TextDecorator(TextComponent): 
+    """Base decorator class""" 
+    def __init__(self, component: TextComponent): 
+        self._component = component 
+     
+    def render(self) -> str: 
+        return self._component.render() 
+ 
+class BoldDecorator(TextDecorator): 
+    """Concrete decorator for bold text""" 
+    def render(self) -> str: 
+        return f"<b>{super().render()}</b>" 
+ 
+class ItalicDecorator(TextDecorator): 
+    """Concrete decorator for italic text""" 
+    def render(self) -> str: 
+        return f"<i>{super().render()}</i>" 
+ 
+# Example usage of all patterns 
+def main(): 
+    # Adapter Pattern 
+    legacy_printer = LegacyPrinter() 
+    modern_printer = ModernPrinter() 
+    adapter = PrinterAdapter(legacy_printer) 
+     
+    print(print_document(modern_printer, "Hello"))  # Uses modern interface 
+    print(print_document(adapter, "Hello"))  # Uses adapted legacy interface 
+     
+    # Decorator Pattern 
+    text = PlainText("Hello, World!") 
+    bold_text = BoldDecorator(text) 
+    bold_italic_text = ItalicDecorator(bold_text) 
+     
+    print(text.render()) 
+    print(bold_text.render()) 
+    print(bold_italic_text.render()) 
+     
+ 
+if __name__ == "__main__": 
+    main() 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <strong>Behavioral Patterns</strong>: These
+          patterns are concerned with algorithms and the
+          assignment of responsibilities between objects.
+          They help in defining how objects interact in a
+          system. Examples include observer, strategy, and
+          command patterns.<br />
+          Here is an example:
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+from abc import ABC, abstractmethod 
+from typing import List 
+ 
+# Abstract classes for the Observer pattern 
+class Observer(ABC): 
+    @abstractmethod 
+    def update(self, temperature: float, humidity: float): 
+        pass 
+ 
+class Subject(ABC): 
+    @abstractmethod 
+    def attach(self, observer: Observer): 
+        pass 
+     
+    @abstractmethod 
+    def detach(self, observer: Observer): 
+        pass 
+     
+    @abstractmethod 
+    def notify(self): 
+        pass 
+ 
+# Concrete implementation of a weather station 
+class WeatherStation(Subject): 
+    def __init__(self): 
+        self._observers: List[Observer] = [] 
+        self._temperature = 0.0 
+        self._humidity = 0.0 
+     
+    def attach(self, observer: Observer): 
+        if observer not in self._observers: 
+            self._observers.append(observer) 
+     
+    def detach(self, observer: Observer): 
+        self._observers.remove(observer) 
+     
+    def notify(self): 
+        for observer in self._observers: 
+            observer.update(self._temperature, self._humidity) 
+     
+    def set_measurements(self, temperature: float, humidity: float): 
+        self._temperature = temperature 
+        self._humidity = humidity 
+        self.notify() 
+ 
+# Concrete observers 
+class TemperatureDisplay(Observer): 
+    def update(self, temperature: float, humidity: float): 
+        print(f"Temperature Display: {temperature}°C") 
+ 
+class HumidityDisplay(Observer): 
+    def update(self, temperature: float, humidity: float): 
+        print(f"Humidity Display: {humidity}%") 
+ 
+# Usage example 
+def main(): 
+    weather_station = WeatherStation() 
+     
+    temp_display = TemperatureDisplay() 
+    humidity_display = HumidityDisplay() 
+     
+    weather_station.attach(temp_display) 
+    weather_station.attach(humidity_display) 
+     
+    # Simulate weather changes 
+    weather_station.set_measurements(24.5, 65.0) 
+    weather_station.set_measurements(25.8, 70.0) 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <h2>2.3 Code Organization and Modularity</h2>
+      <p>
+        Effective code organization and modularity are
+        crucial for maintaining a clean codebase. Here are
+        some best practices to follow.
+      </p>
+      <ul>
+        <li>
+          <strong>Modular Design</strong>: Break down the
+          code into smaller, manageable modules or
+          components. Each module should encapsulate a
+          specific functionality, making it easier to test
+          and maintain.
+        </li>
+        <li>
+          <strong>Consistent Naming Conventions</strong>:
+          Use clear and consistent naming conventions for
+          classes, methods, and variables. This enhances
+          readability and helps other developers understand
+          the code quickly.
+        </li>
+        <li>
+          <strong>Documentation</strong>: Provide clear
+          documentation for each module and its public
+          interfaces. This is essential for onboarding new
+          developers and for maintaining the code in the
+          long run.
+        </li>
+        <li>
+          <strong>Separation of Concerns</strong>: Keep
+          different concerns of the application separate.
+          For example, separate business logic from
+          presentation logic to enhance maintainability and
+          testability.
+        </li>
+      </ul>
+      <p>
+        By adhering to these object-oriented design
+        principles, developers can create robust, scalable,
+        and maintainable software systems that are easier to
+        understand and modify over time.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

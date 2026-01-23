@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name">
+        Analyzing Code Performance
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Code Refactoring Strategies
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Code refactoring is the process of restructuring
+        existing code without changing its external
+        behavior. Effective refactoring strategies include:
+      </p>
+      <ol>
+        <li>
+          <strong>Identify Code Smells </strong> <br />Code
+          smells are indicators of potential issues in the
+          codebase, such as duplicated code, long methods,
+          or large classes. Identifying these areas is the
+          first step in refactoring. <br />
+          <strong>Example: Removing Duplicated Code</strong>
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Before Refactoring: Duplicated Code 
+def calculate_area_of_rectangle(length, width): 
+    return length * width 
+ 
+def calculate_area_of_square(side): 
+    return side * side 
+ 
+# After Refactoring: Removing Duplication 
+def calculate_area(shape, *dimensions): 
+    if shape == "rectangle": 
+        return dimensions[0] * dimensions[1] 
+    elif shape == "square": 
+        return dimensions[0] ** 2 
+    else: 
+        raise ValueError("Unsupported shape") 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          In the refactored code, the duplicated logic for
+          calculating areas is consolidated into a single
+          function, improving maintainability and reducing
+          redundancy.
+        </li>
+        <li>
+          <strong>Incremental Refactoring</strong><br />
+          Refactor code in small, manageable increments to
+          reduce the risk of introducing bugs. <br />
+          <strong
+            >Example: Incremental Refactoring of a Long
+            Function</strong
+          >
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Before Refactoring: Long Function 
+def process_data(data): 
+    # Step 1: Clean data 
+    cleaned_data = [item.strip() for item in data if item] 
+     
+    # Step 2: Transform data 
+    transformed_data = [item.upper() for item in cleaned_data] 
+     
+    # Step 3: Filter data 
+    filtered_data = [item for item in transformed_data if len(item) > 3] 
+     
+    return filtered_data 
+ 
+# After Refactoring: Breaking into Smaller Functions 
+def clean_data(data): 
+    return [item.strip() for item in data if item] 
+ 
+def transform_data(data): 
+    return [item.upper() for item in data] 
+ 
+def filter_data(data): 
+    return [item for item in data if len(item) > 3] 
+ 
+def process_data(data): 
+    cleaned_data = clean_data(data) 
+    transformed_data = transform_data(cleaned_data) 
+    return filter_data(transformed_data) 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          The refactored code breaks a long function into
+          smaller, reusable functions, making it easier to
+          test and maintain.
+        </li>
+        <li>
+          <strong>Unit Testing</strong><br />
+          Unit tests ensure that the code’s functionality
+          remains intact after refactoring.<br />
+          <strong>Example: Adding Unit Tests</strong>
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+import unittest 
+ 
+def add_numbers(a, b): 
+    return a + b 
+ 
+class TestMathOperations(unittest.TestCase): 
+    def test_add_numbers(self): 
+        self.assertEqual(add_numbers(2, 3), 5) 
+        self.assertEqual(add_numbers(-1, 1), 0) 
+        self.assertEqual(add_numbers(0, 0), 0) 
+ 
+if __name__ == "__main__": 
+    unittest.main() 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          Unit tests verify the correctness of the
+          add_numbers function. Before refactoring, ensure
+          tests are in place to catch any unintended
+          changes.
+        </li>
+        <li>
+          <strong>Use Design Patterns </strong><br />
+          Applying design patterns during refactoring
+          improves code structure and maintainability.
+          <br />
+          <strong
+            >Example: Applying the Singleton Pattern</strong
+          >
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Singleton Pattern Implementation 
+class Singleton: 
+    _instance = None 
+ 
+    def __new__(cls, *args, **kwargs): 
+        if not cls._instance: 
+            cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs) 
+        return cls._instance 
+ 
+# Usage 
+singleton1 = Singleton() 
+singleton2 = Singleton() 
+print(singleton1 is singleton2)  # Output: True 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          The Singleton pattern ensures that only one
+          instance of the class exists, which can be useful
+          for managing shared resources.
+        </li>
+      </ol>
+      <h2>3.3 Technical Debt Management</h2>
+      <p>
+        Technical debt refers to the implied cost of
+        additional rework caused by choosing an easy
+        solution now instead of a better approach that would
+        take longer. Managing technical debt involves the
+        following:
+      </p>
+      <ol>
+        <li>
+          <strong>Regular Assessment</strong
+          ><br />Periodically assess the codebase for
+          technical debt and prioritize areas that need
+          attention.<br /><strong
+            >Example: Identifying Technical Debt</strong
+          >
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Example of Technical Debt: Hardcoded Values 
+def calculate_discount(price): 
+    return price * 0.1  # Hardcoded discount rate 
+ 
+# Refactored Code: Using Configurable Parameters 
+DISCOUNT_RATE = 0.1 
+ 
+def calculate_discount(price, discount_rate=DISCOUNT_RATE): 
+    return price * discount_rate 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          Hardcoded values are a form of technical debt.
+          Refactoring to use configurable parameters makes
+          the code more flexible and easier to maintain.
+        </li>
+        <li>
+          <strong>Allocate Time for Refactoring </strong
+          ><br />Set aside dedicated time in the development
+          cycle for addressing technical debt.<br />Example:
+          Scheduled Refactoring
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Before Refactoring: Inefficient Loop 
+numbers = [1, 2, 3, 4, 5] 
+squared_numbers = [] 
+for number in numbers: 
+    squared_numbers.append(number ** 2) 
+ 
+# After Refactoring: Using List Comprehension 
+squared_numbers = [number ** 2 for number in numbers] 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          Refactoring inefficient code (e.g., replacing a
+          loop with a list comprehension) can be scheduled
+          during dedicated refactoring time to improve
+          performance and readability.
+        </li>
+        <li>
+          <strong>Documentation</strong><br />Document
+          instances of technical debt and the rationale
+          behind them.<br /><strong
+            >Example: Adding Comments for Technical
+            Debt</strong
+          >
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# TODO: Replace this with a more efficient algorithm 
+def find_max(numbers): 
+    max_number = numbers[0] 
+    for number in numbers: 
+        if number > max_number: 
+            max_number = number 
+    return max_number   
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          Adding comments or TODOs helps track technical
+          debt and provides context for future developers to
+          address it.
+        </li>
+      </ol>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

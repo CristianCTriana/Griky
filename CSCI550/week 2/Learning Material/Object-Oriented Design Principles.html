@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name">
+        Analyzing Code Performance
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        2. Object-Oriented Design Principles
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Object-oriented design (OOD) is a programming
+        paradigm that uses “objects” to represent data and
+        methods. It emphasizes the importance of design
+        principles that enhance code maintainability,
+        scalability, and reusability. Below are key concepts
+        that form the foundation of effective
+        object-oriented design.
+      </p>
+      <h2>2.1 SOLID Principles</h2>
+      <p>
+        The SOLID principles are a set of five design
+        principles intended to make software designs more
+        understandable, flexible, and maintainable. They
+        are:
+      </p>
+      <ol>
+        <li>
+          <strong
+            >Single Responsibility Principle (SRP)</strong
+          >: A class should have only one reason to change,
+          meaning it should have only one job or
+          responsibility. This principle helps in reducing
+          the complexity of the code and makes it easier to
+          understand and maintain. <br />
+          Here is an example:
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Bad Example - Multiple responsibilities 
+ class User: 
+     def __init__(self, name: str): 
+         self.name = name 
+      
+     def save(self): 
+         # Handles database operations 
+         print(f"Saving user {self.name} to database") 
+      
+     def generate_report(self): 
+         # Handles report generation 
+         print(f"Generating report for user {self.name}") 
+ 
+ # Good Example - Single responsibility 
+ class User: 
+     def __init__(self, name: str): 
+         self.name = name 
+ 
+ class UserRepository: 
+     def save(self, user: User): 
+         print(f"Saving user {user.name} to database") 
+ 
+ class UserReportGenerator: 
+     def generate_report(self, user: User): 
+         print(f"Generating report for user {user.name}") 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <strong>Open/Closed Principle (OCP)</strong>:
+          Software entities (classes, modules, functions,
+          etc.) should be open for extension but closed for
+          modification. This encourages developers to extend
+          existing code rather than modifying it, which can
+          introduce bugs. <br />Here is an example:
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+from abc import ABC, abstractmethod 
+ 
+ # Bad Example - Not extensible 
+ class PaymentProcessor: 
+     def process_payment(self, payment_type: str, amount: float): 
+         if payment_type == "credit_card": 
+             print(f"Processing credit card payment of ${amount}") 
+         elif payment_type == "paypal": 
+             print(f"Processing PayPal payment of ${amount}") 
+         # Adding new payment types requires modifying existing code 
+ 
+ # Good Example - Extensible 
+ class PaymentMethod(ABC): 
+     @abstractmethod 
+     def process_payment(self, amount: float): 
+         pass 
+ 
+ class CreditCardPayment(PaymentMethod): 
+     def process_payment(self, amount: float): 
+         print(f"Processing credit card payment of ${amount}") 
+ 
+ class PayPalPayment(PaymentMethod): 
+     def process_payment(self, amount: float): 
+         print(f"Processing PayPal payment of ${amount}") 
+ 
+ # New payment methods can be added without modifying existing code 
+ class CryptoPayment(PaymentMethod): 
+     def process_payment(self, amount: float): 
+         print(f"Processing cryptocurrency payment of ${amount}") 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <strong
+            >Liskov Substitution Principle (LSP)</strong
+          >: Objects of a superclass should be replaceable
+          with objects of a subclass without affecting the
+          correctness of the program. This principle ensures
+          that a subclass can stand in for its superclass.
+          <br />Here is an example:
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+from abc import ABC, abstractmethod 
+from typing import List 
+ 
+# Base class establishing a contract 
+class Bird(ABC): 
+    @abstractmethod 
+    def fly_speed(self) -> float: 
+        pass 
+ 
+# Bad example - violates LSP because Penguin can't really fly 
+class Penguin(Bird): 
+    def fly_speed(self) -> float: 
+        raise NotImplementedError("Penguins can't fly!") 
+ 
+# Better design that follows LSP 
+class FlyingCreature(ABC): 
+    @abstractmethod 
+    def fly_speed(self) -> float: 
+        pass 
+ 
+class SwimmingCreature(ABC): 
+    @abstractmethod 
+    def swim_speed(self) -> float: 
+        pass 
+ 
+class Duck(FlyingCreature, SwimmingCreature): 
+    def fly_speed(self) -> float: 
+        return 12.0 
+     
+    def swim_speed(self) -> float: 
+        return 4.0 
+ 
+class Penguin(SwimmingCreature): 
+    def swim_speed(self) -> float: 
+        return 8.0 
+ 
+# Now we can safely work with collections of flying or swimming creatures 
+def race_flying_creatures(creatures: List[FlyingCreature]) -> FlyingCreature: 
+    return max(creatures, key=lambda c: c.fly_speed()) 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          This example demonstrates LSP by ensuring that
+          subtypes can be used in place of their base types
+          without breaking the program’s functionality. The
+          improved design separates behaviors into
+          appropriate interfaces.
+        </li>
+        <li>
+          <strong
+            >Interface Segregation Principle (ISP)</strong
+          >: Clients should not be forced to depend on
+          interfaces they do not use. This principle
+          promotes the creation of smaller, more specific
+          interfaces rather than a large, general-purpose
+          interface. <br />Here is an example:
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+from abc import ABC, abstractmethod 
+ 
+# Bad example - interface too large 
+class Worker(ABC): 
+    @abstractmethod 
+    def work(self): 
+        pass 
+     
+    @abstractmethod 
+    def eat(self): 
+        pass 
+     
+    @abstractmethod 
+    def recharge(self): 
+        pass 
+ 
+# Classes forced to implement unnecessary methods 
+class Human(Worker): 
+    def work(self): 
+        print("Working") 
+     
+    def eat(self): 
+        print("Eating lunch") 
+     
+    def recharge(self): 
+        print("Sleeping")  # Humans need sleep 
+ 
+class Robot(Worker): 
+    def work(self): 
+        print("Working") 
+     
+    def eat(self): 
+        raise NotImplementedError("Robots don't eat")  # Problematic! 
+     
+    def recharge(self): 
+        print("Charging battery") 
+ 
+# Better design with segregated interfaces 
+class Workable(ABC): 
+    @abstractmethod 
+    def work(self): 
+        pass 
+ 
+class NeedsFood(ABC): 
+    @abstractmethod 
+    def eat(self): 
+        pass 
+ 
+class Rechargeable(ABC): 
+    @abstractmethod 
+    def recharge(self): 
+        pass 
+ 
+# Now classes only implement relevant interfaces 
+class ImprovedHuman(Workable, NeedsFood): 
+    def work(self): 
+        print("Working") 
+     
+    def eat(self): 
+        print("Eating lunch") 
+ 
+class ImprovedRobot(Workable, Rechargeable): 
+    def work(self): 
+        print("Working") 
+     
+    def recharge(self): 
+        print("Charging battery") 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          This example shows how to split interfaces into
+          smaller, more focused ones, allowing classes to
+          implement only the methods they actually need.
+        </li>
+        <li>
+          <strong
+            >Dependency Inversion Principle (DIP)</strong
+          >: High-level modules should not depend on
+          low-level modules. Both should depend on
+          abstractions. This principle helps in reducing the
+          coupling between different parts of the system.<br />Here
+          is an example:
+          <div class="code-cards">
+            <div class="code-cards-grid">
+              <div class="code-card">
+                <pre class="line-numbers d2l-code">
+<code class="language-python">
+from abc import ABC, abstractmethod 
+ 
+# Bad example - high-level module depends on low-level module 
+class MySQLDatabase: 
+    def save(self, data: dict): 
+        print(f"Saving {data} to MySQL database") 
+ 
+class UserService: 
+    def __init__(self): 
+        self.database = MySQLDatabase()  # Direct dependency on concrete class 
+     
+    def save_user(self, user_data: dict): 
+        self.database.save(user_data) 
+ 
+# Better design following DIP 
+class DataStore(ABC): 
+    @abstractmethod 
+    def save(self, data: dict): 
+        pass 
+ 
+class MySQLDatabase(DataStore): 
+    def save(self, data: dict): 
+        print(f"Saving {data} to MySQL database") 
+ 
+class MongoDatabase(DataStore): 
+    def save(self, data: dict): 
+        print(f"Saving {data} to MongoDB") 
+ 
+class ImprovedUserService: 
+    def __init__(self, database: DataStore):  # Depends on abstraction 
+        self.database = database 
+     
+    def save_user(self, user_data: dict): 
+        self.database.save(user_data) 
+ 
+# Usage example showing flexibility 
+def main(): 
+    # Can easily switch between different database implementations 
+    mysql_service = ImprovedUserService(MySQLDatabase()) 
+    mongo_service = ImprovedUserService(MongoDatabase()) 
+     
+    user_data = {"name": "Peter Doe", "email": "Peter@example.com"} 
+    mysql_service.save_user(user_data) 
+    mongo_service.save_user(user_data) 
+</code>
+      </pre>
+              </div>
+            </div>
+          </div>
+          This example demonstrates DIP by having high-level
+          modules that depend on abstractions rather than
+          concrete implementations, making the system more
+          flexible and easier to modify.
+        </li>
+      </ol>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
