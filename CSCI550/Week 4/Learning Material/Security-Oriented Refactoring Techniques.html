@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">
+        Design and Refactoring & Application Tools and
+        Security
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        2. Security-Oriented Refactoring Techniques
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Rather than focusing on general refactoring
+        techniques, the emphasis here will be on refactoring
+        to address security vulnerabilities while improving
+        code maintainability.
+      </p>
+      <h2>Code Smells and Security Smells</h2>
+      <ul>
+        <li>
+          <strong>Identification of Security Smells</strong
+          >: Security smells are indicators of potential
+          vulnerabilities or weaknesses in the code that
+          could lead to security issues. Common security
+          smells include:
+          <ul>
+            <li>
+              <strong>Insecure Dependencies</strong>:
+              Reliance on outdated or vulnerable third-party
+              libraries that could introduce security flaws.
+            </li>
+            <li>
+              <stroong>Inadequate Error Handling</stroong>:
+              Lack of proper error management can lead to
+              unintentional information disclosure or
+              undefined behavior that attackers might
+              exploit.
+            </li>
+            <li>
+              <strong>Excessive Privilege Use</strong>: Code
+              that requires higher privileges than necessary
+              increases the risk if compromised.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        Identifying these security smells is the first step
+        in creating a secure codebase. Developers must be
+        vigilant in recognizing these smells during code
+        reviews and refactoring sessions.
+      </p>
+      <p>
+        <strong>Example</strong>: Refactoring Insecure
+        Dependencies
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+	# Before Refactoring: Using an outdated library 
+# import old_library 
+ 
+# After Refactoring: Using a secure, updated library 
+import new_library 
+ 
+# Example usage 
+result = new_library.secure_function() 
+print(result)  
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        Refactoring to replace outdated libraries with
+        secure alternatives reduces the risk of
+        vulnerabilities.
+      </p>
+      <h2>Security-Driven Refactoring Patterns</h2>
+      <ul>
+        <li>
+          <strong
+            >Encapsulation to Reduce Data Exposure</strong
+          >: Encapsulation involves restricting direct
+          access to some of an object’s components, which
+          reduces the risk of exposing sensitive data. By
+          refactoring to enforce encapsulation, developers
+          can minimize the attack surface. This can include
+          making fields private and providing controlled
+          access through secure getter and setter methods.
+        </li>
+        <li>
+          <strong>Input Validation Refactoring</strong>: A
+          significant vector for attacks like SQL injection
+          or cross-site scripting (XSS) is inadequate input
+          validation. Refactoring code to ensure that all
+          inputs are properly validated and sanitized before
+          processing is critical. This can include using
+          whitelisting for acceptable inputs and encoding
+          data before it is used in sensitive operations.
+        </li>
+        <li>
+          <strong>Least Privilege Refactoring</strong>:
+          Ensure that methods, classes, and services operate
+          with the minimum level of privilege necessary.
+          Refactoring to reduce privilege use helps mitigate
+          the damage that can be done if an attacker gains
+          access to a compromised component.
+        </li>
+        <li>
+          <strong>Reducing Complexity for Security</strong>:
+          Complex code is more prone to errors, which may
+          lead to security vulnerabilities. By simplifying
+          overly complex methods or classes, developers can
+          make the code easier to understand, audit, and
+          secure.
+        </li>
+      </ul>
+      <p>
+        <strong>Example</strong>: Input Validation
+        Refactoring
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Before Refactoring: No input validation 
+def process_input(data): 
+    return f"Processing {data}" 
+ 
+# After Refactoring: Adding input validation 
+def process_input(data): 
+    if not isinstance(data, str) or len(data) > 100: 
+        raise ValueError("Invalid input") 
+    return f"Processing {data}" 
+ 
+# Usage 
+try: 
+    print(process_input("valid input")) 
+except ValueError as e: 
+    print(e) 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Adding input validation prevents malicious inputs
+        from being processed, reducing the risk of attacks
+        like SQL injection.
+      </p>
+      <h2>
+        Managing Technical Debt with a Security Perspective
+      </h2>
+      <ul>
+        <li>
+          <strong>Assessment and Prioritization</strong>:
+          Technical debt is often an unavoidable aspect of
+          software development, but it can pose serious
+          security risks if not properly managed.
+          Security-oriented technical debt includes
+          shortcuts or compromises made in security measures
+          during development, such as using hardcoded
+          credentials or delaying critical updates.
+        </li>
+        <li>
+          <strong>Risk-Based Prioritization</strong>: Not
+          all technical debt is equal; therefore, developers
+          should assess the impact of each instance of debt
+          based on the potential security risks it
+          introduces. High-risk areas, such as unpatched
+          dependencies or insecure configurations, should be
+          prioritized for refactoring.
+        </li>
+        <li>
+          <strong
+            >Continuous Monitoring and Refactoring</strong
+          >: Implement a continuous process for monitoring
+          technical debt, particularly from a security
+          perspective. Tools like SonarQube or OWASP
+          Dependency-Check can help identify areas where
+          technical debt overlaps with security
+          vulnerabilities, ensuring that refactoring efforts
+          are effectively focused on reducing risks.
+        </li>
+      </ul>
+      <p>
+        Security-oriented refactoring is essential to ensure
+        that software is both maintainable and resilient
+        against attacks. By identifying security smells,
+        applying targeted refactoring techniques, and
+        managing technical debt with a focus on security,
+        developers can create more secure and robust
+        applications.
+      </p>
+      <p>
+        <strong>Example</strong>: Automating Dependency
+        Updates
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+import subprocess 
+ 
+# Check for outdated dependencies 
+def check_outdated_dependencies(): 
+    result = subprocess.run(["pip", "list", "--outdated"], capture_output=True, text=True) 
+    print("Outdated dependencies:") 
+    print(result.stdout) 
+ 
+# Update dependencies 
+def update_dependencies(): 
+    subprocess.run(["pip", "install", "--upgrade", "-r", "requirements.txt"]) 
+    print("Dependencies updated successfully.") 
+ 
+# Usage 
+check_outdated_dependencies() 
+update_dependencies() 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This script automates the process of checking for
+        outdated dependencies and updating them. Regularly
+        updating dependencies reduces the risk of
+        vulnerabilities introduced by older versions of
+        libraries.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

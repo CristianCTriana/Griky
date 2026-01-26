@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">
+        Design and Refactoring & Application Tools and
+        Security
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        3. Threat Modeling and Security Integration
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        This section explores how to incorporate security
+        into software development from the very beginning.
+        Security must be an integral part of design and
+        architecture decisions, not an afterthought. By
+        focusing on threat modeling, applying security by
+        design principles, and integrating advanced testing
+        strategies, developers can effectively preempt
+        vulnerabilities and create robust software systems.
+      </p>
+      <h2>Threat Modeling</h2>
+      <p>
+        Threat modeling is a proactive approach that helps
+        identify potential security vulnerabilities during
+        the design phase of software development. This
+        process allows software engineers to understand how
+        an attacker might compromise a system and then
+        design appropriate mitigations.
+      </p>
+      <ul>
+        <li>
+          <strong>Identifying Threats</strong>: Threat
+          modeling starts by analyzing the architecture,
+          technology stack, and data flows to identify
+          possible threats. Developers need to consider the
+          interactions between system components and how an
+          attacker might exploit these interactions. For
+          example, in an e-commerce application, an attacker
+          might exploit weak authentication mechanisms to
+          gain unauthorized access to user accounts.
+        </li>
+        <li>
+          <strong>Data Flow Diagrams (DFDs</strong>): To
+          support threat modeling,
+          <strong>Data Flow Diagrams (DFDs)</strong> are
+          often employed. These diagrams help visualize how
+          data moves through the system, from external users
+          to internal components. By examining DFDs, you can
+          identify data input and output points, which are
+          likely areas for potential security breaches. For
+          example, a payment gateway would have data flow
+          related to sensitive payment information that
+          needs careful scrutiny, such as ensuring that
+          credit card information is encrypted during
+          transmission.
+        </li>
+      </ul>
+      <p>
+        Using a structured approach like
+        <strong>STRIDE</strong> (Spoofing, Tampering,
+        Repudiation, Information Disclosure, Denial of
+        Service, and Elevation of Privilege), developers can
+        systematically examine threats in various
+        categories. Once threats are identified, they can
+        then design mitigations, such as encryption for
+        information disclosure or authentication for
+        spoofing.
+      </p>
+      <p>
+        <strong>Example</strong>: Using STRIDE for Threat
+        Identification
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+# STRIDE Categories 
+threats = { 
+    "Spoofing": "Fake user credentials", 
+    "Tampering": "Unauthorized data modification", 
+    "Repudiation": "Denying actions", 
+    "Information Disclosure": "Leaking sensitive data", 
+    "Denial of Service": "Overloading the system", 
+    "Elevation of Privilege": "Gaining unauthorized access" 
+} 
+ 
+# Example: Mitigation for Information Disclosure 
+def encrypt_data(data): 
+    return f"encrypted({data})" 
+ 
+sensitive_data = "user_password" 
+print(encrypt_data(sensitive_data)) 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This example demonstrates how to identify threats
+        and apply mitigations, such as encrypting sensitive
+        data to prevent information disclosure.
+      </p>
+      <h2>Security by Design Principles</h2>
+      <p>
+        Security by design means making security a core
+        consideration during the entire system development
+        lifecycle. The principles of security by design aim
+        to reduce the attack surface and ensure that
+        security is part of every decision.
+      </p>
+      <ul>
+        <li>
+          <strong>Least Privilege</strong>: The principle of
+          <strong>least privilege</strong> is foundational
+          to secure system design. This means that every
+          user or system component should only have the
+          minimum privileges necessary to perform its
+          function. By limiting privileges, we reduce the
+          potential damage that could result from a
+          compromised component. For instance, a
+          microservice that only needs read access to a
+          database should not have write or delete
+          privileges. An example of this is configuring
+          database accounts with specific roles that
+          restrict their capabilities, ensuring that even if
+          the account is compromised, the damage is
+          minimized.
+        </li>
+        <li>
+          <strong>Defense in Depth</strong>: Defense in
+          depth is another crucial principle. It involves
+          adding multiple layers of defense, ensuring that
+          even if one layer is breached, subsequent layers
+          will still protect the system. This may include a
+          combination of secure authentication, encrypted
+          communication, and strong network security. For
+          example, even if an attacker manages to bypass a
+          firewall, they still need to deal with secure API
+          gateways and role-based access controls. A
+          practical example is using multi-factor
+          authentication (MFA) along with encrypted sessions
+          to add additional layers of security for user
+          access.
+        </li>
+      </ul>
+      <p>
+        These principles guide architecture decisions and
+        help ensure the software is resilient against
+        various security threats. By embedding these
+        principles into design, it makes it significantly
+        harder for attackers to penetrate the system.
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <h4 class="code-card-title">Arrays</h4>
+
+            <p>
+              Arrays are static data structures that store
+              elements of the same type in contiguous memory
+              locations (Knuth, 1997). They have the
+              following characteristics:
+            </p>
+
+            <ul>
+              <li>
+                Fixed size (in most programming languages)
+              </li>
+              <li>
+                Fast access time — O(1) for any element
+              </li>
+              <li>
+                Inefficient for insertion and deletion in
+                the middle
+              </li>
+            </ul>
+
+            <p class="code-card-note">
+              The following example shows an array in
+              Python:
+            </p>
+
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+class Database: 
+    def __init__(self, role): 
+        self.role = role 
+ 
+    def read_data(self): 
+        return "Reading data" 
+ 
+    def write_data(self): 
+        if self.role != "admin": 
+            raise PermissionError("Write access denied") 
+        return "Writing data" 
+ 
+# Usage 
+db = Database(role="user") 
+print(db.read_data()) 
+try: 
+    print(db.write_data()) 
+except PermissionError as e: 
+    print(e) 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This example enforces the principle of least
+        privilege by restricting write access to admin users
+        only.
+      </p>
+      <h2>Security Testing Strategies</h2>
+      <p>
+        The final piece of effective security integration is
+        testing. Security testing ensures that the system’s
+        defenses are effective and can withstand real-world
+        attacks.
+      </p>
+      <ul>
+        <li>
+          <strong>Penetration Testing</strong>: Penetration
+          testing, often called pentesting, is an active
+          approach to security testing where testers
+          simulate real-world attacks against the system.
+          This helps identify vulnerabilities that could be
+          exploited by an attacker. For example, pentesters
+          might attempt SQL injection attacks to see if the
+          input validation mechanisms are effective. A
+          common scenario is testing a login form to
+          determine if it is susceptible to SQL injection by
+          attempting to bypass authentication using
+          specially crafted inputs.
+        </li>
+        <li>
+          <strong>Fuzz Testing</strong>: Fuzz testing is
+          another strategy, involving inputting random or
+          malformed data to the system to see how it
+          responds. The goal of fuzz testing is to find
+          unexpected vulnerabilities or crash points in the
+          application. For instance, fuzzing a file upload
+          API might uncover issues with how files are
+          validated or stored. An example would be uploading
+          an unusually large file or a file with an
+          unexpected format to check if the application
+          properly handles such edge cases.
+        </li>
+        <li>
+          <strong>Threat Modeling Validation</strong>: After
+          implementing mitigations from the threat modeling
+          phase, it is essential to validate these
+          mitigations to ensure they address the identified
+          threats effectively. This involves revisiting
+          DFDs, reviewing code for adherence to security
+          principles, and ensuring all potential attack
+          vectors are adequately protected. For example, if
+          input validation was identified as a key
+          mitigation, threat modeling validation would
+          involve testing all input fields to ensure proper
+          validation mechanisms are in place.
+        </li>
+      </ul>
+      <p>
+        By moving beyond typical unit testing, developers
+        can ensure that not only does the software work as
+        intended, but that it also resists attempts to
+        compromise its integrity. Security testing should be
+        embedded in the development cycle, often leveraging
+        automated testing tools integrated into continuous
+        integration/continuous deployment (CI/CD) pipelines.
+      </p>
+      <p>
+        Threat modeling and security integration are
+        critical components of developing secure systems. By
+        focusing on identifying vulnerabilities early in the
+        design phase, applying security by design principles
+        like least privilege and defense in depth, and
+        employing rigorous security testing strategies,
+        developers can ensure that the systems they build
+        are resilient against attacks. This proactive
+        approach not only makes software more secure but
+        also reduces costs and time associated with
+        addressing security issues post-deployment,
+        ultimately leading to high-quality software ready
+        for real-world challenges.
+      </p>
+      <p><strong>Example</strong>: Fuzz Testing</p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+import random 
+import string 
+ 
+# Function to test 
+def process_input(data): 
+    if not isinstance(data, str): 
+        raise ValueError("Input must be a string") 
+    if len(data) > 50: 
+        raise ValueError("Input is too long") 
+    return f"Processed: {data}" 
+ 
+# Fuzz testing 
+def fuzz_test(): 
+    for _ in range(100): 
+        # Generate random input 
+        length = random.randint(1, 100) 
+        fuzz_input = ''.join(random.choices(string.ascii_letters + string.digits, k=length)) 
+        try: 
+            print(process_input(fuzz_input)) 
+        except ValueError as e: 
+            print(f"Error: {e}") 
+ 
+# Usage 
+fuzz_test() 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This example generates random inputs to test the
+        process_input function for unexpected behavior. Fuzz
+        testing helps identify edge cases and
+        vulnerabilities that might not be apparent during
+        regular testing.
+      </p>
+      <p>
+        <strong>Example</strong>: Validating Input
+        Sanitization
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+import sqlite3 
+ 
+# Secure function to execute queries 
+def execute_query(query, params): 
+    try: 
+        connection = sqlite3.connect("example.db") 
+        cursor = connection.cursor() 
+        cursor.execute(query, params) 
+        result = cursor.fetchall() 
+        connection.close() 
+        return result 
+    except sqlite3.Error as e: 
+        print(f"Database error: {e}") 
+        return None 
+ 
+# Validate input sanitization 
+def validate_input_sanitization(user_input): 
+    query = "SELECT * FROM users WHERE username = ?" 
+    result = execute_query(query, (user_input,)) 
+    if result: 
+        print("Input sanitization validated successfully.") 
+    else: 
+        print("Potential vulnerability detected.") 
+ 
+# Usage 
+validate_input_sanitization("admin' OR '1'='1")  # Attempt SQL injection 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This example demonstrates how to validate input
+        sanitization by testing for SQL injection
+        vulnerabilities. The use of parameterized queries
+        ensures that user input is properly sanitized,
+        preventing malicious SQL commands from being
+        executed.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
