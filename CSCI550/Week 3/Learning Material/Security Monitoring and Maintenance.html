@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        API Security Risk & Security Practices for Machine
+        Learning Systems
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        4. Security Monitoring and Maintenance
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Security monitoring and maintenance are critical
+        aspects of an organization’s security strategy,
+        ensuring that systems remain secure and resilient
+        against emerging threats. In this section, we will
+        cover continuous security monitoring, incident
+        response planning, and security updates and patches.
+      </p>
+      <h2>4.1 Continuous Security Monitoring</h2>
+      <p>
+        Continuous security monitoring involves the ongoing
+        observation of a system’s security posture to detect
+        anomalies and potential threats in real time. It
+        plays an essential role in identifying attacks and
+        vulnerabilities before they can be exploited.
+      </p>
+      <ul>
+        <li>
+          <strong>Log Analysis</strong>: Logs from
+          applications, servers, and network devices should
+          be continuously analyzed to detect signs of
+          malicious activity. Security Information and Event
+          Management (SIEM) systems can be used to collect
+          and correlate log data, providing insights into
+          potential security incidents.
+        </li>
+        <li>
+          <strong>Network Monitoring</strong>: Monitoring
+          network traffic can help detect unauthorized
+          access attempts, data exfiltration, and other
+          anomalous activities. Tools like Intrusion
+          Detection Systems (IDS) and Intrusion Prevention
+          Systems (IPS) are valuable for monitoring and
+          protecting network resources.
+        </li>
+        <li>
+          <strong>Endpoint Monitoring</strong>: Endpoint
+          detection and response (EDR) tools provide
+          visibility into activities on endpoints, such as
+          workstations and servers. These tools can identify
+          suspicious behavior, isolate compromised devices,
+          and help respond to threats in real time.
+        </li>
+        <li>
+          <strong>Alerting and Automation</strong>:
+          Automated alerts and responses can help security
+          teams quickly identify and mitigate threats.
+          Automated workflows can be designed to respond to
+          specific incidents, such as isolating compromised
+          systems or blocking malicious IP addresses.
+        </li>
+      </ul>
+      <p>
+        Continuous security monitoring allows organizations
+        to identify potential threats early, enabling timely
+        responses to reduce the impact of security
+        incidents.
+      </p>
+      <p>
+        <strong>Example</strong>: Monitoring Logs with
+        Python
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+import logging 
+ 
+# Configure logging 
+logging.basicConfig(filename='security.log', level=logging.INFO) 
+ 
+# Log an event 
+logging.info("User login attempt detected from IP: 192.168.1.1") 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        Logging security events helps monitor system
+        activity and detect potential threats in real time.
+      </p>
+      <h2>4.2 Incident Response Planning</h2>
+      <p>
+        Incident response planning is a structured approach
+        to addressing and managing the aftermath of a
+        security breach or attack. Effective incident
+        response can help limit the damage and reduce
+        recovery time and costs.
+      </p>
+      <ul>
+        <li>
+          <strong>Develop an Incident Response Plan</strong
+          >: An incident response plan (IRP) should outline
+          the steps to take when a security incident occurs.
+          This plan should include procedures for
+          identification, containment, eradication,
+          recovery, and lessons learned.
+        </li>
+        <li>
+          <strong>Incident Response Team (IRT)</strong>:
+          Establishing a dedicated incident response team
+          with defined roles and responsibilities is
+          critical for effectively managing security
+          incidents. The team should include members from
+          IT, legal, communications, and other relevant
+          departments.
+        </li>
+        <li>
+          <strong
+            >Incident Identification and
+            Classification</strong
+          >: The first step in incident response is
+          identifying and classifying the incident based on
+          its severity and potential impact. Accurate
+          classification helps determine the appropriate
+          response actions.
+        </li>
+        <li>
+          <strong>Containment and Eradication</strong>: Once
+          an incident is identified, the next steps are
+          containment and eradication. Containment involves
+          limiting the spread of the threat, while
+          eradication involves removing the root cause of
+          the incident from affected systems.
+        </li>
+        <li>
+          <strong>Recovery and Lessons Learned</strong>:
+          After the threat is eradicated, systems must be
+          restored to normal operations. Recovery may
+          involve restoring data from backups, applying
+          patches, or reinstalling compromised systems.
+          Conducting a post-incident review helps identify
+          gaps in security practices and improve future
+          responses.
+        </li>
+      </ul>
+      <h2>4.3 Security Updates and Patches</h2>
+      <p>
+        Keeping systems up to date with security patches is
+        one of the most effective ways to mitigate
+        vulnerabilities and protect against known threats.
+      </p>
+      <ul>
+        <li>
+          <strong>Patch Management Process</strong>: A
+          formal patch management process should be in place
+          to ensure that security updates are identified,
+          tested, and applied in a timely manner. This
+          process should include testing patches in a
+          staging environment before deploying them to
+          production systems.
+        </li>
+        <li>
+          <strong>Vulnerability Scanning</strong>: Regular
+          vulnerability scans can help identify missing
+          patches and outdated software that may pose a
+          security risk. Automated scanning tools can be
+          used to continuously monitor systems for
+          vulnerabilities and generate reports for
+          remediation.
+        </li>
+        <li>
+          <strong>Prioritization of Patches</strong>: Not
+          all patches are equally critical. Organizations
+          should prioritize patches based on the severity of
+          the vulnerability and the potential impact on the
+          system. Critical patches should be applied as soon
+          as possible to minimize exposure to threats.
+        </li>
+        <li>
+          <strong>Automated Patch Deployment</strong>: Where
+          possible, automate the patch deployment process to
+          ensure timely application of security updates.
+          Automation reduces the risk of human error and
+          ensures that critical patches are not overlooked.
+          By maintaining a robust security monitoring and
+          maintenance program, organizations can proactively
+          address vulnerabilities, respond to incidents
+          effectively, and keep systems secure against
+          evolving threats.
+        </li>
+      </ul>
+      <p>
+        <strong>Example</strong>: Automating Patch
+        Management
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+import os 
+ 
+# Check for updates 
+os.system("sudo apt update") 
+ 
+# Apply updates 
+os.system("sudo apt upgrade -y") 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        Automating updates ensure that systems remain
+        protected against known vulnerabilities by applying
+        patches promptly.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

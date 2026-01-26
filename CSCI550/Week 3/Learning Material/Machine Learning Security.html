@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        API Security Risk & Security Practices for Machine
+        Learning Systems
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        2. Machine Learning Security
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Machine Learning (ML) systems have unique security
+        challenges due to their reliance on large datasets,
+        complex models, and continuous adaptation. In this
+        section, you will explore ML-specific security
+        challenges, model vulnerability assessments, and
+        secure deployment practices.
+      </p>
+      <h2>Machine Learning Security</h2>
+      <p>
+        ML systems present distinct security risks that
+        differ from traditional software applications. Some
+        of the key challenges include:
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Data Poisoning
+          </label>
+          <div class="accordion-content">
+            <p>
+              Attackers can manipulate the training data to
+              introduce biases or vulnerabilities into the
+              model. For example, adding malicious data
+              points to a training dataset can degrade the
+              model’s performance or cause it to make
+              incorrect predictions in specific scenarios.
+              Preventing data poisoning requires stringent
+              data validation, provenance checks, and robust
+              data cleaning practices.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Adversarial Attacks
+          </label>
+          <div class="accordion-content">
+            <p>
+              Adversarial attacks involve subtly
+              manipulating input data to deceive ML models
+              into making incorrect predictions. These
+              attacks exploit the model’s inherent
+              weaknesses, making it misclassify input by
+              introducing carefully crafted perturbations.
+              Defending against adversarial attacks requires
+              training models with adversarial examples,
+              using defensive distillation, and implementing
+              anomaly detection mechanisms.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Model Inversion and Membership Inference
+          </label>
+          <div class="accordion-content">
+            <p>
+              Attackers can reverse-engineer a model’s
+              training data or infer whether specific data
+              points were used during training. Such attacks
+              can compromise user privacy and expose
+              sensitive information. To mitigate these
+              risks, techniques such as differential
+              privacy, regularization, and limiting model
+              output granularity can be employed.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Model Theft
+          </label>
+          <div class="accordion-content">
+            <p>
+              Also known as model extraction, this type of
+              attack involves stealing a model by querying
+              it extensively and using the output to
+              recreate a similar model. Preventing model
+              theft can involve rate limiting, throttling
+              query access, and using watermarking
+              techniques to protect intellectual property.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p>Example: Defending Against Adversarial Attacks</p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+import numpy as np 
+from sklearn.ensemble import RandomForestClassifier 
+ 
+# Train a simple model 
+X_train = np.array([[0, 0], [1, 1], [0, 1], [1, 0]]) 
+y_train = [0, 1, 0, 1] 
+model = RandomForestClassifier() 
+model.fit(X_train, y_train) 
+ 
+# Adversarial example 
+adversarial_input = np.array([[0.1, 0.1]])  # Slightly perturbed input 
+prediction = model.predict(adversarial_input) 
+ 
+print(f"Prediction for adversarial input: {prediction}") 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Adversarial inputs are crafted to deceive ML models.
+        Defensive techniques, such as adversarial training,
+        can improve model robustness against such attacks.
+      </p>
+      <h2>2.2 Model Vulnerability Assessment</h2>
+      <p>
+        Assessing the security of ML models is essential to
+        identify and address vulnerabilities before
+        deployment. Common approaches to model vulnerability
+        assessment include:
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Adversarial Testing
+          </label>
+          <div class="accordion-content">
+            <p>
+              Testing models with adversarial examples helps
+              identify weaknesses that can be exploited. By
+              evaluating a model’s robustness under
+              different types of adversarial inputs,
+              developers can better understand its
+              resilience and implement measures to improve
+              security.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo6" />
+          <label
+            class="accordion-title"
+            for="lo6">
+            Privacy Auditing
+          </label>
+          <div class="accordion-content">
+            <p>
+              Privacy audits involve assessing whether a
+              model leaks sensitive information about its
+              training data. This can be done using
+              membership inference tests to evaluate the
+              risk of exposing individual data points.
+              Techniques like differential privacy can be
+              implemented to minimize privacy risks.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo7" />
+          <label
+            class="accordion-title"
+            for="lo7">
+            Robustness Evaluation
+          </label>
+          <div class="accordion-content">
+            <p>
+              Evaluating a model’s robustness under
+              real-world conditions helps identify its
+              susceptibility to noise, data corruption, and
+              other perturbations. Stress testing with noisy
+              and out-of-distribution data can reveal
+              vulnerabilities that may not be apparent under
+              ideal conditions.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p>Example: Containerizing ML Models with Docker</p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <h4 class="code-card-title">Arrays</h4>
+
+            <p>
+              Arrays are static data structures that store
+              elements of the same type in contiguous memory
+              locations (Knuth, 1997). They have the
+              following characteristics:
+            </p>
+
+            <ul>
+              <li>
+                Fixed size (in most programming languages)
+              </li>
+              <li>
+                Fast access time — O(1) for any element
+              </li>
+              <li>
+                Inefficient for insertion and deletion in
+                the middle
+              </li>
+            </ul>
+
+            <p class="code-card-note">
+              The following example shows an array in
+              Python:
+            </p>
+
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Dockerfile for deploying an ML model 
+FROM python:3.9-slim 
+ 
+WORKDIR /app 
+ 
+COPY requirements.txt requirements.txt 
+RUN pip install -r requirements.txt 
+ 
+COPY model.pkl model.pkl 
+COPY app.py app.py 
+ 
+CMD ["python", "app.py"] 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        Explanation:<br />Containerization isolates the ML
+        model and its dependencies, ensuring a consistent
+        and secure runtime environment.
+      </p>
+      <h2>2.3 Secure ML Deployment Practices</h2>
+      <p>
+        Deploying ML models securely requires addressing
+        multiple aspects of the deployment process,
+        including infrastructure, data handling, and access
+        control.
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo8" />
+          <label
+            class="accordion-title"
+            for="lo8">
+            Containerization and Isolation
+          </label>
+          <div class="accordion-content">
+            <p>
+              Deploying ML models using containerization
+              technologies like Docker can enhance security
+              by isolating the model environment. Containers
+              provide a consistent runtime environment,
+              reducing dependencies and preventing
+              interference between different components.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo9" />
+          <label
+            class="accordion-title"
+            for="lo9">
+            Monitoring and Logging
+          </label>
+          <div class="accordion-content">
+            <p>
+              Continuous monitoring of deployed models is
+              essential for detecting anomalous behavior,
+              such as unexpected changes in model output or
+              unusual input patterns. Logging interactions
+              with the model allows for incident analysis
+              and response, enabling teams to quickly
+              address potential security breaches.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo10" />
+          <label
+            class="accordion-title"
+            for="lo10">
+            Access Control
+          </label>
+          <div class="accordion-content">
+            <p>
+              Restricting access to ML models is crucial to
+              prevent unauthorized use. Role-based access
+              control (RBAC) and multi-factor authentication
+              (MFA) should be employed to limit access to
+              sensitive models and associated data.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo11" />
+          <label
+            class="accordion-title"
+            for="lo11">
+            Model Update and Patch Management
+          </label>
+          <div class="accordion-content">
+            <p>
+              Just like traditional software, ML models need
+              to be updated to address security
+              vulnerabilities. Regularly updating models,
+              retraining with fresh data, and applying
+              security patches to underlying software
+              components help maintain the integrity of
+              deployed models.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo12" />
+          <label
+            class="accordion-title"
+            for="lo12">
+            Secure API Integration
+          </label>
+          <div class="accordion-content">
+            <p>
+              When exposing ML models via APIs, the same
+              security best practices for API design apply.
+              This includes using HTTPS, input validation,
+              rate limiting, and strong authentication
+              mechanisms to ensure that only legitimate
+              users can access the model.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p>
+        By integrating these secure deployment practices,
+        organizations can minimize the risk of attacks on ML
+        models and ensure the safety of their AI-driven
+        systems.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

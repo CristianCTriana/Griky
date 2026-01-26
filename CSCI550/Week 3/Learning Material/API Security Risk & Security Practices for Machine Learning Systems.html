@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        API Security Risk & Security Practices for Machine
+        Learning Systems
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">API Security Fundamentals</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        APIs (Application Programming Interfaces) are
+        crucial components of modern software applications,
+        enabling communication between different software
+        systems and devices. However, their openness also
+        makes them a target for malicious attacks. Ensuring
+        the security of APIs is vital for protecting the
+        integrity, confidentiality, and availability of data
+        and services. In this section, we will discuss API
+        security fundamentals, including authentication and
+        authorization mechanisms, vulnerability assessments,
+        and best practices for API design.
+      </p>
+      <h2>
+        1.1 Authentication and Authorization Mechanisms
+      </h2>
+      <p>
+        Authentication and authorization are foundational
+        aspects of API security.
+      </p>
+      <ul>
+        <li>
+          Authentication is the process of verifying the
+          identity of a user or entity that attempts to
+          access the API. It ensures that the entity is who
+          they claim to be. Some common approaches to API
+          authentication include:
+          <ul>
+            <li>
+              <strong>API Keys</strong>: Unique identifiers
+              that allow users to authenticate when making
+              requests. While API keys are simple to use,
+              they lack fine-grained control, making them
+              suitable for basic security needs but not
+              recommended for sensitive applications.
+            </li>
+            <li>
+              <strong>OAuth 2.0</strong>: A popular, secure
+              authentication framework used to grant limited
+              access to resources on behalf of users without
+              sharing credentials. OAuth 2.0 is often
+              implemented by third-party services, providing
+              access via tokens that expire after a defined
+              duration, thereby reducing risks.
+            </li>
+            <li>
+              <strong>JWT (JSON Web Tokens)</strong>: A
+              compact and self-contained way to transmit
+              identity information between parties, commonly
+              used in stateless environments. JWTs include
+              encrypted claims and can ensure both
+              authentication and authorization.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Authorization defines what authenticated users can
+          do.
+          <ul>
+            <li>
+              <strong
+                >Role-Based Access Control (RBAC)</strong
+              >: This mechanism grants permissions based on
+              the user’s role within an organization (e.g.,
+              administrator, user, guest). It ensures that
+              users only have access to the features or data
+              that match their responsibilities.
+            </li>
+            <li>
+              <strong
+                >Attribute-Based Access Control
+                (ABAC)</strong
+              >: This dynamic approach grants access based
+              on attributes, such as user identity, resource
+              type, and environment. It offers more granular
+              control compared to RBAC.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        These mechanisms form the backbone of secure API
+        usage. By using multi-factor authentication (MFA)
+        combined with robust authorization frameworks, APIs
+        can ensure only legitimate access, reducing the risk
+        of unauthorized data breaches.
+      </p>
+      <p>Example: Implementing JWT Authentication</p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+from flask import Flask, request, jsonify 
+import jwt 
+import datetime 
+ 
+app = Flask(__name__) 
+app.config['SECRET_KEY'] = 'your_secret_key' 
+ 
+# Generate a JWT token 
+@app.route('/login', methods=['POST']) 
+def login(): 
+    auth_data = request.json 
+    if auth_data['username'] == 'admin' and auth_data['password'] == 'password': 
+        token = jwt.encode( 
+            {'user': auth_data['username'], 'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)}, 
+            app.config['SECRET_KEY'], 
+            algorithm='HS256' 
+        ) 
+        return jsonify({'token': token}) 
+    return jsonify({'message': 'Invalid credentials'}), 401 
+ 
+# Protect an API route 
+@app.route('/protected', methods=['GET']) 
+def protected(): 
+    token = request.headers.get('Authorization') 
+    if not token: 
+        return jsonify({'message': 'Token is missing'}), 403 
+    try: 
+        jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256']) 
+        return jsonify({'message': 'Access granted'}) 
+    except jwt.ExpiredSignatureError: 
+        return jsonify({'message': 'Token has expired'}), 403 
+    except jwt.InvalidTokenError: 
+        return jsonify({'message': 'Invalid token'}), 403 
+ 
+if __name__ == '__main__': 
+    app.run(debug=True) 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This example demonstrates how to generate and
+        validate JWT tokens to secure API endpoints.
+      </p>
+      <ul>
+        <li>
+          The /login endpoint generates a JWT token for
+          authenticated users.
+        </li>
+        <li>
+          The /protected endpoint validates the token before
+          granting access. This ensures only authorized
+          users can access protected resources.
+        </li>
+      </ul>
+      <h2>1.2 API Vulnerability Assessment</h2>
+      <p>
+        Assessing the security of an API is a critical
+        practice that helps uncover vulnerabilities before
+        they can be exploited by attackers.
+      </p>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <strong
+                >Broken Object Level Authorization
+                (BOLA)</strong
+              >: Attackers exploit improper access controls
+              to manipulate data they should not be allowed
+              to access. To prevent BOLA, APIs should
+              enforce strict object-level access control for
+              every resource.
+            </li>
+            <li>
+              <strong>Injection Attacks</strong>: Input data
+              can be manipulated to execute harmful commands
+              or queries. Injection attacks, such as SQL
+              Injection, occur when APIs fail to sanitize
+              user input. Adopting prepared statements and
+              proper input validation can mitigate this
+              risk.
+            </li>
+            <li>
+              <strong>Excessive Data Exposure</strong>: APIs
+              may return more data than needed, increasing
+              the attack surface. By limiting data exposure
+              through response filtering, developers can
+              reduce potential risks.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Security Tools</strong>: The following
+          tools are often used for assessing API
+          vulnerabilities:
+          <ul>
+            <li>
+              <strong>OWASP ZAP (Zed Attack Proxy)</strong>:
+              An open-source web application security
+              scanner used for detecting vulnerabilities in
+              web APIs, including injection flaws and
+              authentication weaknesses.
+            </li>
+            <li>
+              <strong>Burp Suite</strong>: A powerful
+              penetration testing tool for API testing,
+              helping identify weaknesses in API endpoints
+              and providing insights into improving the
+              security posture.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        API vulnerability assessments should be integrated
+        into the development cycle, enabling continuous
+        identification and resolution of security issues.
+        Performing regular penetration testing and
+        leveraging automated tools can significantly enhance
+        the resilience of APIs.
+      </p>
+      <p>Example: Preventing SQL Injection</p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Connect to the database 
+connection = sqlite3.connect('example.db') 
+cursor = connection.cursor() 
+ 
+# Vulnerable query (DO NOT USE) 
+# user_input = "'; DROP TABLE users; --" 
+# cursor.execute(f"SELECT * FROM users WHERE username = '{user_input}'") 
+ 
+# Secure query using parameterized queries 
+user_input = "admin" 
+cursor.execute("SELECT * FROM users WHERE username = ?", (user_input,)) 
+result = cursor.fetchall() 
+ 
+print(result) 
+connection.close() 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        Using parameterized queries prevents attackers from
+        injecting malicious SQL commands, safeguarding the
+        database from unauthorized access or data loss.
+      </p>
+      <h2>1.3 Security Best Practices for API Design</h2>
+      <p>
+        Designing secure APIs involves incorporating best
+        practices to safeguard data, infrastructure, and
+        users.
+      </p>
+      <ul>
+        <li>
+          <strong>Least Privilege Principle</strong>: APIs
+          should only provide the minimum necessary
+          permissions for users or applications to perform
+          their intended tasks. Implementing the least
+          privilege ensures that even if credentials are
+          compromised, attackers cannot escalate their
+          access.
+        </li>
+        <li>
+          <strong>Rate Limiting and Throttling</strong>:
+          These mechanisms prevent abuse of APIs by
+          restricting the number of requests allowed over a
+          defined period. By enforcing limits, APIs can
+          deter DoS (Denial of Service) attacks, preserving
+          availability and reducing operational disruptions.
+        </li>
+        <li>
+          <strong
+            >Input Validation and Output Encoding</strong
+          >: APIs must validate input data from users to
+          ensure it follows expected formats and
+          constraints. Preventing malformed input reduces
+          the risk of injection attacks. Additionally,
+          encoding output data before rendering it in a user
+          context helps prevent cross-site scripting (XSS).
+        </li>
+        <li>
+          <strong>HTTPS for Data Encryption</strong>: All
+          API communication should be encrypted using HTTPS.
+          Encrypting data in transit helps prevent attackers
+          from eavesdropping and intercepting sensitive
+          information.
+        </li>
+        <li>
+          <strong>Versioning</strong>: Implementing API
+          versioning ensures compatibility between client
+          applications and API changes, reducing the risk of
+          unexpected failures. It provides a structured way
+          to deprecate outdated API versions without
+          disrupting existing users.
+        </li>
+        <li>
+          <strong>Error Handling</strong>: Proper error
+          messages should avoid revealing sensitive
+          information, such as server details or stack
+          traces, which could assist attackers in crafting
+          exploits. Providing generic error messages while
+          logging detailed errors internally strikes a
+          balance between user experience and security.
+        </li>
+        <li>
+          <strong>API Gateway Usage</strong>: API gateways
+          serve as an intermediary between clients and API
+          services, managing concerns like rate limiting,
+          authentication, and logging. API gateways can
+          centralize these functions, improving efficiency
+          and security for large-scale systems.
+        </li>
+      </ul>
+      <p>
+        These best practices form a solid foundation for
+        building and maintaining secure APIs. By integrating
+        security into the design phase, developers can
+        reduce vulnerabilities, ensuring robust APIs capable
+        of resisting malicious activities.
+      </p>
+      <p>Example: Implementing Rate Limiting</p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+from flask import Flask, request 
+from flask_limiter import Limiter 
+ 
+app = Flask(__name__) 
+limiter = Limiter(app, key_func=lambda: request.remote_addr) 
+ 
+@app.route('/api', methods=['GET']) 
+@limiter.limit("5 per minute")  # Limit to 5 requests per minute 
+def api(): 
+    return "This is a rate-limited API." 
+ 
+if __name__ == '__main__': 
+    app.run(debug=True) 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        Rate limiting prevents abuse by restricting the
+        number of requests a client can make within a
+        specific time frame, protecting APIs from DoS
+        attacks.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

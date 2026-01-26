@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        API Security Risk & Security Practices for Machine
+        Learning Systems
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        3. Security Integration in SDLC
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Integrating security throughout the Software
+        Development Life Cycle (SDLC) is essential for
+        ensuring the robustness and resilience of software
+        systems against security threats. In this section,
+        we will cover security requirements gathering,
+        threat modeling, and security testing and
+        validation.
+      </p>
+      <h2>3.1 Security Requirements Gathering</h2>
+      <p>
+        Security requirements gathering involves identifying
+        and defining the security needs of a software system
+        early in the development process. It ensures that
+        security considerations are embedded into the
+        system’s architecture from the outset. Key
+        activities involved in this phase include:
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Identifying Assets and Stakeholders
+          </label>
+          <div class="accordion-content">
+            <p>
+              The first step in security requirements
+              gathering is to identify all assets that need
+              protection, such as data, services, and
+              infrastructure, along with the stakeholders
+              who have an interest in securing these assets.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Defining Security Objectives
+          </label>
+          <div class="accordion-content">
+            <p>
+              Establish the security goals of the system,
+              such as confidentiality, integrity,
+              availability, and compliance with regulatory
+              requirements. These objectives guide the
+              overall security approach and influence design
+              decisions.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Analyzing Threats and Risks
+          </label>
+          <div class="accordion-content">
+            <p>
+              Conduct a preliminary analysis of potential
+              threats and vulnerabilities to determine the
+              level of risk associated with each asset. This
+              analysis helps prioritize security efforts and
+              ensures that critical components receive
+              appropriate attention.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Identifying Regulatory and Compliance
+            Requirements
+          </label>
+          <div class="accordion-content">
+            <p>
+              Identify any applicable regulations or
+              industry standards that the system must comply
+              with, such as GDPR, HIPAA, or PCI DSS.
+              Ensuring compliance from the beginning can
+              save time and effort later in the development
+              process.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h2>3.2 Threat Modeling</h2>
+      <p>
+        Threat modeling is a structured approach to
+        identifying, analyzing, and mitigating potential
+        security threats to a system. It is a proactive
+        process that helps developers understand the attack
+        surface and design appropriate countermeasures. Key
+        components of threat modeling include:
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Define System Boundaries
+          </label>
+          <div class="accordion-content">
+            <p>
+              Understand the boundaries of the system,
+              including all data flows, components, and
+              trust boundaries. This helps identify areas
+              where attackers may target.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo6" />
+          <label
+            class="accordion-title"
+            for="lo6">
+            Identify Threats
+          </label>
+          <div class="accordion-content">
+            <p>
+              Use techniques like STRIDE (Spoofing,
+              Tampering, Repudiation, Information
+              Disclosure, Denial of Service, Elevation of
+              Privilege) to identify potential threats to
+              the system. Threat identification helps
+              prioritize the security measures required to
+              mitigate risks.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo7" />
+          <label
+            class="accordion-title"
+            for="lo7">
+            Attack Surface Analysis
+          </label>
+          <div class="accordion-content">
+            <p>
+              Assess the system’s attack surface by
+              identifying all points of interaction, such as
+              APIs, user interfaces, and network
+              connections. Minimizing the attack surface
+              reduces the potential entry points for
+              attackers.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo8" />
+          <label
+            class="accordion-title"
+            for="lo8">
+            Document and Prioritize Threats
+          </label>
+          <div class="accordion-content">
+            <p>
+              Document the identified threats and rank them
+              based on their likelihood and potential
+              impact. Prioritizing threats helps focus
+              resources on mitigating the most critical
+              vulnerabilities.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo9" />
+          <label
+            class="accordion-title"
+            for="lo9">
+            Develop Mitigation Strategies
+          </label>
+          <div class="accordion-content">
+            <p>
+              For each identified threat, develop and
+              implement appropriate mitigation strategies.
+              These strategies may include access controls,
+              encryption, input validation, and network
+              segmentation to reduce the risk of successful
+              attacks.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h2>3.3 Security Testing and Validation</h2>
+      <p>
+        Security testing and validation are crucial to
+        ensure that the implemented security measures
+        effectively protect the system. This phase involves
+        various testing approaches to identify
+        vulnerabilities and verify compliance with security
+        requirements.
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo10" />
+          <label
+            class="accordion-title"
+            for="lo10">
+            Static Application Security Testing (SAST)
+          </label>
+          <div class="accordion-content">
+            <p>
+              SAST involves analyzing the source code to
+              identify security vulnerabilities without
+              executing the program. It helps detect coding
+              errors, such as hardcoded credentials, that
+              may lead to security flaws.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo11" />
+          <label
+            class="accordion-title"
+            for="lo11">
+            Dynamic Application Security Testing (DAST)
+          </label>
+          <div class="accordion-content">
+            <p>
+              DAST is performed on a running application to
+              identify vulnerabilities in real-time. It
+              involves simulating attacks, such as SQL
+              injection and cross-site scripting (XSS), to
+              evaluate how the system responds under
+              different scenarios.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo12" />
+          <label
+            class="accordion-title"
+            for="lo12">
+            Penetration Testing
+          </label>
+          <div class="accordion-content">
+            <p>
+              Penetration testing involves simulating
+              real-world attacks to identify vulnerabilities
+              that may not be detected through automated
+              testing. Ethical hackers attempt to exploit
+              weaknesses to determine the system’s
+              resilience.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo13" />
+          <label
+            class="accordion-title"
+            for="lo13">
+            Security Regression Testing
+          </label>
+          <div class="accordion-content">
+            <p>
+              After fixing vulnerabilities, it is essential
+              to perform regression testing to ensure that
+              recent changes have not introduced new
+              security issues. This helps maintain the
+              integrity of the overall security posture.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo14" />
+          <label
+            class="accordion-title"
+            for="lo14">
+            Compliance Testing
+          </label>
+          <div class="accordion-content">
+            <p>
+              Verify that the system complies with relevant
+              regulatory and industry standards. Compliance
+              testing ensures that security controls meet
+              the necessary requirements and helps avoid
+              legal and financial repercussions.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p>
+        By integrating security throughout the SDLC,
+        organizations can proactively address security
+        challenges, reduce vulnerabilities, and build
+        resilient software systems that are less susceptible
+        to attacks.
+      </p>
+      <p><strong>Example</strong>: Using Bandit for SAST</p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Install Bandit 
+pip install bandit 
+ 
+# Run Bandit on a Python project 
+bandit -r my_project/ 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        Bandit scans Python code for security
+        vulnerabilities, such as hardcoded credentials or
+        unsafe function calls, helping developers identify
+        and fix issues early in the development process.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
