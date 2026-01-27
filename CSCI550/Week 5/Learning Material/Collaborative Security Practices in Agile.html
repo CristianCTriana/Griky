@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* Colores base */
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 5 </span>
+      <span class="banner__week-name">
+        Malicious Software: Malware Analysis & Agile
+        Methods, Operations
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        2. Collaborative Security Practices in Agile
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        In the rapidly evolving landscape of software
+        development, integrating robust security measures
+        within Agile methodologies is paramount. Agile
+        frameworks, known for their flexibility and
+        iterative progress, can sometimes overlook security
+        considerations, leading to vulnerabilities. To
+        mitigate this, collaborative security practices are
+        essential, ensuring that security is a shared
+        responsibility across the team. This discussion
+        delves into the pivotal role of Security Champions
+        in Agile teams, the significance of effective
+        communication for resolving security issues, and the
+        incorporation of security perspectives during Agile
+        retrospectives.
+      </p>
+      <h2>
+        Security Roles in Agile Teams: The Security Champion
+      </h2>
+      <p>
+        A Security Champion is a designated team member who
+        advocates for security within the development
+        process. This individual bridges the gap between
+        development and security teams, ensuring that
+        security considerations are integrated into every
+        phase of the Agile workflow.
+      </p>
+      <h3>Responsibilities of a Security Champion</h3>
+      <ul>
+        <li>
+          <strong>Advocacy and Awareness: </strong>Promote
+          security best practices and foster a
+          security-conscious culture within the team.
+        </li>
+        <li>
+          <strong>Education and Training: </strong>Provide
+          guidance on secure coding practices and facilitate
+          training sessions to enhance the team’s security
+          competencies.
+        </li>
+        <li>
+          <strong
+            >Threat Modeling and Risk Assessment: </strong
+          >Participate in identifying potential security
+          threats and assist in developing mitigation
+          strategies.
+        </li>
+        <li>
+          <strong>Liaison Duties: </strong>Serve as the
+          primary contact between the development team and
+          security specialists, ensuring seamless
+          communication and collaboration.
+        </li>
+      </ul>
+      <p>
+        Implementing a Security Champion role has proven
+        effective in embedding security into Agile
+        processes. According to a study published in
+        Springer, organizations employing Security Champions
+        observed improved security practices and heightened
+        security awareness among development teams.
+      </p>
+      <p>
+        <strong>Example</strong>: Assigning Security Tasks
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+# Security Champion role 
+class SecurityChampion: 
+    def __init__(self, name): 
+        self.name = name 
+        self.tasks = [] 
+ 
+    def assign_task(self, task): 
+        self.tasks.append(task) 
+        print(f"Task '{task}' assigned to {self.name}") 
+ 
+# Usage 
+champion = SecurityChampion("Alice") 
+champion.assign_task("Conduct threat modeling") 
+champion.assign_task("Review secure coding practices") 
+print(f"{champion.name}'s Tasks:", champion.tasks) 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This example demonstrates how a Security Champion
+        can be assigned specific security tasks, ensuring
+        accountability and focusing on security objectives.
+      </p>
+      <h2>
+        Effective Communication for Security Issue
+        Resolution
+      </h2>
+      <p>
+        Clear and open communication is the cornerstone of
+        effective security issue resolution in Agile teams.
+        Given the iterative nature of Agile, timely
+        identification and remediation of security concerns
+        are critical.
+      </p>
+      <h3>Strategies for Effective Communication</h3>
+      <ul>
+        <li>
+          <strong>Establish Clear Protocols: </strong>Define
+          roles and responsibilities concerning security
+          activities, ensuring that team members understand
+          their obligations. This clarity fosters
+          accountability and streamlines the escalation of
+          security issues.
+        </li>
+        <li>
+          <strong>Encourage Open Dialogue: </strong>Create
+          an environment where team members feel comfortable
+          discussing security concerns without fear of
+          retribution. Psychological safety is vital for
+          proactive security issue identification.
+        </li>
+        <li>
+          <strong>Utilize Collaborative Tools: </strong
+          >Leverage communication platforms that facilitate
+          real-time information sharing, such as instant
+          messaging, video conferencing, and collaborative
+          documentation tools. These tools bridge
+          communication gaps, especially in distributed
+          teams.
+        </li>
+        <li>
+          <strong>Regular Security Stand-ups:</strong
+          >Incorporate security discussions into daily
+          stand-up meetings to ensure continuous focus on
+          security aspects.
+        </li>
+      </ul>
+      <p>
+        A study by Atlassian emphasizes that communication
+        is crucial when an issue arises, whether it is a
+        small bug or a significant system failure. Even the
+        most comprehensive incident plan requires frequent
+        communication to reach resolution and maintain
+        trust.
+      </p>
+      <h2>Agile Retrospectives with a Security Lens</h2>
+      <p>
+        Retrospectives are integral to Agile practices,
+        providing teams with opportunities to reflect and
+        improve. Incorporating a security perspective into
+        these retrospectives ensures that security
+        considerations are continuously evaluated and
+        enhanced.
+      </p>
+      <h3>Approach to Security-Focused Retrospectives:</h3>
+      <ul>
+        <li>
+          <strong>Dedicated Security Discussions: </strong
+          >Allocate time during retrospectives to
+          specifically address security-related topics, such
+          as recent incidents, potential vulnerabilities,
+          and areas for improvement.
+        </li>
+        <li>
+          <strong>Root Cause Analysis: </strong>For any
+          security issues encountered, perform thorough
+          analyses to identify underlying causes and develop
+          strategies to prevent recurrence.
+        </li>
+        <li>
+          <strong>Actionable Security Improvements: </strong
+          >Develop and assign concrete action items aimed at
+          enhancing security practices, ensuring they are
+          tracked and reviewed in subsequent retrospectives.
+        </li>
+        <li>
+          <strong>Continuous Learning: </strong>Encourage
+          team members to share insights from security
+          training or industry developments, fostering a
+          culture of ongoing education.
+        </li>
+      </ul>
+      <p>
+        By integrating security considerations into
+        retrospectives, teams can iteratively improve their
+        security posture, aligning with the Agile principle
+        of continuous improvement.
+      </p>
+      <p>
+        <strong>Example</strong>: Logging Security
+        Improvements
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+import logging 
+ 
+# Configure logging 
+logging.basicConfig(filename="security_retrospective.log", level=logging.INFO) 
+ 
+# Log security improvements 
+def log_security_improvement(description): 
+    logging.info(f"Security Improvement: {description}") 
+ 
+# Usage 
+log_security_improvement("Implemented input validation for all endpoints") 
+log_security_improvement("Added automated security testing to CI/CD pipeline") 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This script logs security improvements discussed
+        during retrospectives, ensuring a record of actions
+        taken to enhance security.
+      </p>
+      <h2>Conclusion</h2>
+      <p>
+        Collaborative security practices are vital in Agile
+        environments to ensure that security is an integral
+        part of the development process. Roles like the
+        Security Champion, effective communication
+        strategies, and security-focused retrospectives
+        collectively contribute to building secure and
+        resilient software. By embedding these practices,
+        Agile teams can proactively address security
+        challenges, delivering robust products in today’s
+        threat landscape.
+      </p>
+      <h2>Knowledge Check</h2>
+      <div class="quiz">
+        <!--Question 1-->
+        <form class="quick-assess quick-assess-mc">
+          <fieldset class="radio">
+            <legend>
+              <span style="font-size: 19px"
+                >Question : Which of the following is NOT a
+                responsibility of a Security Champion in an
+                Agile team?
+              </span>
+            </legend>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                  <!-- <span class="fas fa-times ans-symbol invisible float-right"></span> -->
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label"
+                    >A. Promoting security best practices
+                    and fostering a security-conscious
+                    culture
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label"
+                    >B. Providing guidance on secure coding
+                    practices through training sessions
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-check ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label"
+                    >C. Acting as the sole individual
+                    responsible for resolving all security
+                    issues
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label"
+                    >D. Serving as a liaison between the
+                    development team and security
+                    specialists
+                  </label>
+                </div>
+              </div>
+            </div>
+            <button
+              type="button"
+              data-toggle="collapse"
+              aria-expanded="false"
+              disabled="disabled"
+              class="btn btn-primary btn-quick-assess">
+              Check Answer
+            </button>
+            <div class="collapse feedback">
+              <p>
+                <strong>Correct answer:</strong>
+                <span style="font-size: 19px"
+                  >C. Acting as the sole individual
+                  responsible for resolving all security
+                  issues
+                </span>
+              </p>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

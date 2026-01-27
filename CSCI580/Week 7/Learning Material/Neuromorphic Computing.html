@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -97,12 +97,86 @@
         width: 110px;
       }
 
-      .icon-list {
-        list-style-type: none !important;
+      ul.lista-svg-custom {
+        list-style: none;
+        padding: 40px;
+        margin: 20px 0;
       }
 
-      .blue-arrow::before {
-        content: "➡️";
+      ul.lista-svg-custom li {
+        position: relative;
+        padding-left: 10px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+      ul.lista-svg-custom li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        background-color: currentColor;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+      }
+
+      ul.color-azul-oscuro li::before {
+        background-color: #004c97;
+      }
+
+      ul.color-cyan li::before {
+        background-color: #05c3de;
+      }
+
+      ul.color-azul-noche li::before {
+        background-color: #041e42;
+      }
+
+      /* ✔️ Check */
+      ul.icono-check li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+      }
+
+      /* ◾ Cuadrado pequeño */
+      ul.icono-cuadrado li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M8 8h8v8H8z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M8 8h8v8H8z"/></svg>');
+      }
+
+      /* ➡️ Flecha derecha */
+      ul.icono-flecha li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>');
+      }
+
+      /* ❌ Cruz (X) */
+      ul.icono-cruz li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+      }
+
+      /* ✳️ Asterisco */
+      ul.icono-asterisco li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M11 2h2v5.17L16.24 3.5l1.76 1.76L14.83 9H20v2h-5.17l3.67 3.24-1.76 1.76L13 12.83V18h-2v-5.17L7.76 16.5l-1.76-1.76L9.17 11H4V9h5.17L5.5 5.76l1.76-1.76L11 7.17z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M11 2h2v5.17L16.24 3.5l1.76 1.76L14.83 9H20v2h-5.17l3.67 3.24-1.76 1.76L13 12.83V18h-2v-5.17L7.76 16.5l-1.76-1.76L9.17 11H4V9h5.17L5.5 5.76l1.76-1.76L11 7.17z"/></svg>');
+      }
+
+      /* ▶️ Play (Triángulo) */
+      ul.icono-play li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M8 5v14l11-7z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M8 5v14l11-7z"/></svg>');
+      }
+
+      /* 🚩 Bandera */
+      ul.icono-bandera li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>');
       }
 
       .btn-primary {
@@ -134,6 +208,49 @@
       .btn-primary:focus a {
         color: inherit !important;
       }
+
+      /* VIDEO RESPONSIVE */
+      .video-wrapper-TopicOne {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive-TopicOne {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+      }
+
+      .video-responsive-TopicOne video,
+      .video-responsive-TopicOne iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+      .digital-guide span.icon {
+        color: #202122 !important;
+        font-size: 24px;
+        margin-right: 10px;
+        line-height: 1;
+      }
     </style>
   </head>
 
@@ -149,6 +266,110 @@
       <h1 class="topic-title">Neuromorphic Computing</h1>
 
       <hr class="divider-line" />
+      <h2
+        style="
+          text-align: center;
+          color: #004c90;
+          font-size: 24px;
+          margin-top: 10px;
+        ">
+        <strong>Learning Challenge</strong>
+      </h2>
+      <p>
+        <strong><!-- PDF info --> </strong>
+      </p>
+      <div class="digital-guide">
+        <strong><span class="icon">ⓘ</span>&nbsp;</strong
+        ><span style="font-family: Lato, sans-serif"
+          >This is not an assignment prompt, but rather an
+          opportunity to reflect on how the week’s concepts
+          apply to real workplace situations.</span
+        >
+      </div>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+        alt="banner-video"
+        style="
+          max-width: 100%;
+          display: block;
+          margin: 0 auto;
+        "
+        width="600" />
+      <!-- ============================
+         VIDEO CENTRADO Y RESPONSIVE
+         ============================ -->
+      <div class="video-wrapper-TopicOne">
+        <div class="video-responsive-TopicOne">
+          <video
+            title="Learning challenge"
+            controls="controls">
+            <source
+              src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Week_1/APUS_Coach_Woman.mp4"
+              type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1"
+            >Transcript: Digital Content Guide
+            Podcast</label
+          >
+          <div class="accordion-content">
+            <p>
+              Welcome, future HR leaders and policy shapers!
+            </p>
+            <p>
+              You are about to embark on an exciting journey
+              that will transform the way you think about
+              human resources and its critical role in
+              organizational success. In this course, we
+              will dive deep into the world of HR policies
+              and strategies. But this isn't just about
+              memorizing rules and regulations. It's about
+              understanding the profound impact that
+              well-crafted HR policies can have on people's
+              lives and on the success of entire
+              organizations.
+            </p>
+            <p>
+              From navigating the complexities of employment
+              law to mastering the art of talent management,
+              from ensuring workplace safety to mediating
+              conflicts, you will gain the skills to become
+              a true HR champion. You will learn how to
+              balance the needs of a multi-generational
+              workforce, protect employee privacy in the
+              digital age, and align HR strategies with
+              organizational goals.
+            </p>
+            <p>
+              By the end of this course, you won't just
+              understand HR policies – you will be equipped
+              to create and implement strategies that can
+              transform workplaces, empower employees, and
+              drive organizational success.
+            </p>
+            <p>
+              So get ready to challenge your assumptions,
+              expand your horizons, and become the kind of
+              HR professional who doesn't just follow best
+              practices, but sets them!
+            </p>
+            <p>
+              Are you ready to redefine what HR can be?
+              Let's get started on this exciting journey
+              together!
+            </p>
+          </div>
+        </div>
+      </div>
 
       <p>
         Neuromorphic computing is an innovative approach to
@@ -368,7 +589,8 @@
         ability to bypass the von Neumann bottleneck. Key
         aspects include the following:
       </p>
-      <ul class="icon-list">
+      <ul
+        class="lista-svg-custom icono-flecha color-azul-oscuro">
         <li class="blue-arrow">
           Integration of Memory and Processing: This
           integration allows for massively parallel data

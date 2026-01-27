@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -148,15 +148,86 @@
         color: inherit !important;
       }
 
-      .icon-list {
-        list-style-type: none !important;
+      ul.lista-svg-custom {
+        list-style: none;
+        padding: 40px;
+        margin: 20px 0;
       }
 
-      .redflag-icon::before {
-        content: "🚩";
+      ul.lista-svg-custom li {
+        position: relative;
+        padding-left: 10px;
+        margin-bottom: 12px;
+        line-height: 1.5;
       }
-      .purple-check::before {
-        content: "✔️";
+      ul.lista-svg-custom li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        background-color: currentColor;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+      }
+
+      ul.color-azul-oscuro li::before {
+        background-color: #004c97;
+      }
+
+      ul.color-cyan li::before {
+        background-color: #05c3de;
+      }
+
+      ul.color-azul-noche li::before {
+        background-color: #041e42;
+      }
+
+      /* ✔️ Check */
+      ul.icono-check li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+      }
+
+      /* ◾ Cuadrado pequeño */
+      ul.icono-cuadrado li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M8 8h8v8H8z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M8 8h8v8H8z"/></svg>');
+      }
+
+      /* ➡️ Flecha derecha */
+      ul.icono-flecha li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>');
+      }
+
+      /* ❌ Cruz (X) */
+      ul.icono-cruz li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+      }
+
+      /* ✳️ Asterisco */
+      ul.icono-asterisco li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M11 2h2v5.17L16.24 3.5l1.76 1.76L14.83 9H20v2h-5.17l3.67 3.24-1.76 1.76L13 12.83V18h-2v-5.17L7.76 16.5l-1.76-1.76L9.17 11H4V9h5.17L5.5 5.76l1.76-1.76L11 7.17z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M11 2h2v5.17L16.24 3.5l1.76 1.76L14.83 9H20v2h-5.17l3.67 3.24-1.76 1.76L13 12.83V18h-2v-5.17L7.76 16.5l-1.76-1.76L9.17 11H4V9h5.17L5.5 5.76l1.76-1.76L11 7.17z"/></svg>');
+      }
+
+      /* ▶️ Play (Triángulo) */
+      ul.icono-play li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M8 5v14l11-7z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M8 5v14l11-7z"/></svg>');
+      }
+
+      /* 🚩 Bandera */
+      ul.icono-bandera li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>');
       }
     </style>
   </head>
@@ -186,7 +257,8 @@
         <h2 style="text-align: center">
           Scaling Neuromorphic System Challenges:
         </h2>
-        <ul class="icon-list">
+        <ul
+          class="lista-svg-custom icono-bandera color-azul-noche">
           <li class="redflag-icon">
             Complexity of Neural Networks: As systems grow,
             managing the complexity of interconnections
@@ -217,7 +289,8 @@
         <h2 style="text-align: center">
           Scaling Quantum Systems Challenges:
         </h2>
-        <ul class="icon-list">
+        <ul
+          class="lista-svg-custom icono-bandera color-azul-noche">
           <li class="redflag-icon">
             Qubit Coherence: Maintaining qubit coherence
             over time becomes more difficult as the number
@@ -251,7 +324,8 @@
         <h2 style="text-align: center">
           Neuromorphic Systems Challenges:
         </h2>
-        <ul class="icon-list">
+        <ul
+          class="lista-svg-custom icono-bandera color-azul-noche">
           <li class="redflag-icon">
             Device Variability: Variations in the physical
             properties of neuromorphic devices can lead to
@@ -268,7 +342,8 @@
         <h2 style="text-align: center">
           Mitigation Strategies:
         </h2>
-        <ul class="icon-list">
+        <ul
+          class="lista-svg-custom icono-check color-azul-noche">
           <li class="purple-check">
             Energy Efficiency: Maintaining low power
             consumption as systems grow in size and
@@ -286,7 +361,8 @@
         <h2 style="text-align: center">
           Quantum Systems Challenges:
         </h2>
-        <ul class="icon-list">
+        <ul
+          class="lista-svg-custom icono-bandera color-azul-noche">
           <li class="redflag-icon">
             Environmental Interactions: Qubits are highly
             sensitive to their environment, leading to
@@ -307,7 +383,8 @@
         <h2 style="text-align: center">
           Mitigation Strategies:
         </h2>
-        <ul class="icon-list">
+        <ul
+          class="lista-svg-custom icono-check color-azul-noche">
           <li class="purple-check">
             Quantum Error Mitigation (QEM) techniques like
             zero-noise extrapolation and probabilistic error
