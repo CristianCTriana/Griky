@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 6 </span>
+      <span class="banner__week-name">
+        Agile Software Development Process, Agile Framework,
+        & Reliability and Resiliency
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Practical Tools and Automation for Agile and
+        Reliability
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Tools are an essential part of Agile workflows,
+        particularly when striving for reliability. By
+        automating testing and monitoring, Agile teams can
+        quickly identify and resolve issues.
+      </p>
+      <h2>
+        Tools Specifically Supporting System Reliability
+      </h2>
+      <p>
+        Reliability-focused tools play a crucial role in
+        ensuring that systems remain stable under various
+        conditions. One such tool is<strong>
+          Chaos Monkey</strong
+        >, developed by Netflix, which is used for
+        <strong>chaos engineering</strong>—the practice of
+        deliberately introducing faults into a system to
+        test its resilience. By randomly terminating
+        instances within an environment, Chaos Monkey helps
+        teams identify weaknesses and ensure that their
+        systems can handle unexpected disruptions without
+        impacting overall stability.
+      </p>
+      <ul>
+        <li>
+          <span
+            ><strong>Gremlin</strong>: Another chaos
+            engineering tool is <strong>Gremlin</strong>,
+            which provides a user-friendly interface for
+            executing controlled failure tests. Gremlin
+            allows teams to run scenarios such as CPU
+            spikes, resource exhaustion, and network delays
+            to evaluate system resiliency.</span
+          >
+        </li>
+        <li>
+          <span
+            ><strong>Resilience4j</strong>: For Java-based
+            systems, <strong>Resilience4j</strong> offers a
+            set of resiliency patterns, including circuit
+            breakers and rate limiters. These tools provide
+            configurable options that can be integrated
+            directly into the application to bolster
+            reliability.</span
+          >
+        </li>
+      </ul>
+      <h2>
+        Integration of Monitoring and Alerting Systems with
+        Agile Workflows
+      </h2>
+      <p>
+        Monitoring and alerting are critical for maintaining
+        system reliability. By integrating these systems
+        into Agile workflows, teams can get real-time
+        insights into system health and respond proactively
+        to potential issues.
+      </p>
+      <ul>
+        <li>
+          <span
+            ><strong>Prometheus and Grafana</strong>: Tools
+            like <strong>Prometheus</strong> (for monitoring
+            and alerting) and <strong>Grafana </strong>(for
+            visualization) are essential for maintaining
+            visibility into system reliability metrics.
+            Agile teams can create
+            <strong>dashboards</strong> that track key
+            performance indicators, such as error rates,
+            response times, and uptime, making it easier to
+            identify and respond to issues during
+            sprints.</span
+          >
+        </li>
+        <li>
+          <span
+            ><strong>New Relic</strong>:
+            <strong>New Relic</strong> is another popular
+            tool that provides detailed insights into
+            application performance and infrastructure
+            health. Integrating New Relic into Agile
+            workflows enables teams to continuously track
+            the impact of changes on system performance,
+            making it easier to address reliability concerns
+            in real-time.</span
+          >
+        </li>
+        <li>
+          <span
+            ><strong>PagerDuty</strong>: To ensure that
+            alerts are actionable,
+            <strong>PagerDuty</strong> can be integrated
+            into the incident management process. PagerDuty
+            helps ensure that when an issue arises, the
+            appropriate team members are notified
+            immediately, facilitating a rapid response that
+            minimizes downtime.</span
+          >
+        </li>
+      </ul>
+      <p>
+        <strong>Example</strong>: Monitoring System Metrics
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre
+              class="line-numbers d2l-code"><code class="language-python">import random 
+ 
+def monitor_system(): 
+    cpu_usage = random.randint(0, 100) 
+    memory_usage = random.randint(0, 100) 
+    print(f"CPU Usage: {cpu_usage}%, Memory Usage: {memory_usage}%") 
+    if cpu_usage &gt; 80 or memory_usage &gt; 80: 
+        print("Alert: High resource usage detected!") 
+ 
+# Usage 
+monitor_system() </code></pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This script simulates monitoring system metrics and
+        raises alerts for high resource usage.
+      </p>
+      <h2>Automation Frameworks for Reliability Testing</h2>
+      <p>
+        Automation is key to maintaining high standards of
+        reliability in an Agile environment. Reliability
+        testing frameworks help teams conduct extensive
+        testing to validate system stability before and
+        after changes are introduced.
+      </p>
+      <ul>
+        <li>
+          <span
+            ><strong>Selenium</strong>: Selenium is an
+            open-source tool widely used for automated
+            functional testing of web applications. It can
+            be configured to execute<strong>
+              reliability checks </strong
+            >as part of an organization’s CI/CD pipeline,
+            ensuring that key functionalities remain stable
+            through software changes.</span
+          >
+        </li>
+        <li>
+          <span
+            ><strong>Jenkins and GitLab CI</strong>: CI/CD
+            tools like<strong> Jenkins</strong> and
+            <strong>GitLab CI </strong>play an important
+            role in automating the deployment and testing
+            processes. By integrating reliability tests into
+            the CI/CD pipeline, these tools help ensure that
+            every code commit is validated against
+            reliability standards before it goes into
+            production.</span
+          >
+        </li>
+        <li>
+          <span
+            ><strong>Chaos Toolkit</strong>: The
+            <strong>Chaos Toolkit</strong> is an open-source
+            chaos engineering framework that allows
+            developers to create and execute chaos
+            experiments with ease. It can be integrated into
+            Agile workflows to validate the reliability of
+            services under simulated failures, helping teams
+            gain confidence in their system’s
+            resilience.</span
+          >
+        </li>
+      </ul>
+      <p>
+        These tools and automation frameworks form the
+        backbone of a reliability-focused Agile development
+        process. By leveraging tools like
+        <strong>Chaos Monkey</strong>,
+        <strong>Prometheus</strong>, and
+        <strong>Jenkins</strong>, Agile teams can
+        proactively identify and address system
+        vulnerabilities, ensuring that their software
+        remains stable, scalable, and resilient.
+      </p>
+      <p>
+        <strong>Example</strong>: Chaos Testing with Random
+        Failures
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre
+              class="line-numbers d2l-code"><code class="language-python">import random 
+ 
+def chaos_test(): 
+    services = ["Service A", "Service B", "Service C"] 
+    failed_service = random.choice(services) 
+    print(f"Simulating failure in {failed_service}") 
+ 
+# Usage 
+chaos_test() </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        This script simulates random service failures to
+        test system resiliency under chaotic conditions.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

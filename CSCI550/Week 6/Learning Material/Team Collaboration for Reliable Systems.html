@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 6 </span>
+      <span class="banner__week-name">
+        Agile Software Development Process, Agile Framework,
+        & Reliability and Resiliency
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        3. Team Collaboration for Reliable Systems
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Effective team collaboration is key to building
+        reliable systems in Agile environments. Reliability
+        and resiliency should be integrated into every
+        aspect of team dynamics, ensuring that the software
+        produced is both functional and dependable.
+      </p>
+      <h2>
+        Agile Ceremonies Focused on Reliability-Driven
+        Iterations
+      </h2>
+      <p>
+        Agile ceremonies offer structured opportunities to
+        incorporate reliability considerations into the
+        software development process. Some key ceremonies
+        that can be leveraged for reliability include sprint
+        planning, daily stand-ups, and restrospectives.
+      </p>
+      <ul>
+        <li>
+          <strong>Sprint Planning</strong>: During sprint
+          planning, reliability tasks should be explicitly
+          discussed and included in the sprint backlog. This
+          ensures that reliability is a shared goal and
+          given equal importance as feature development.
+        </li>
+        <li>
+          <strong>Daily Stand-ups</strong>: Stand-ups are an
+          opportunity to discuss progress on reliability
+          tasks and raise any blockers that could affect
+          system stability. Teams should encourage open
+          discussion about reliability-related issues,
+          ensuring they are addressed promptly.
+        </li>
+        <li>
+          <strong>Retrospectives</strong>: Retrospectives
+          provide a forum for reflecting on past sprints,
+          including assessing the effectiveness of
+          reliability efforts. Teams can discuss what went
+          well in terms of reliability and what can be
+          improved. Conducting
+          <strong>blameless post-mortems</strong> for
+          incidents allows teams to learn from failures and
+          make changes that enhance system resiliency.
+        </li>
+      </ul>
+      <p>
+        <span
+          ><strong>Example</strong>: Automating Daily
+          Stand-up Updates</span
+        >
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre
+              class="line-numbers d2l-code"><code class="language-python">team_updates = [] 
+ 
+def daily_standup_update(member, update): 
+    team_updates.append({"member": member, "update": update}) 
+ 
+# Usage 
+daily_standup_update("Alice", "Completed error handling module.") 
+daily_standup_update("Bob", "Working on database optimization.") 
+for update in team_updates: 
+    print(f"{update['member']}: {update['update']}") </code></pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        <span
+          >This script automates the collection of daily
+          stand-up updates, ensuring team members stay
+          aligned on reliability tasks.</span
+        >
+      </p>
+      <h2>
+        Leveraging Team Dynamics to Build Resilient Systems
+      </h2>
+      <p>
+        <span
+          >Team dynamics play a crucial role in fostering an
+          environment where reliability is prioritized. The
+          following strategies can be used to enhance
+          collaboration and build resilient systems.</span
+        >
+      </p>
+      <ul>
+        <li>
+          <strong>Cross-Functional Teams</strong>: Agile
+          teams should be cross-functional, with members
+          possessing a range of skills, including
+          development, testing, and operations. This
+          diversity of skills ensures that reliability
+          considerations are factored into every aspect of
+          development, from design to deployment.
+        </li>
+        <li>
+          <strong
+            >Shared Responsibility for Reliability</strong
+          >: Reliability should not be the sole
+          responsibility of a specific role, such as QA or
+          DevOps. Instead, it should be a shared
+          responsibility across the team. Developers,
+          testers, and product owners should all be involved
+          in discussions about reliability, contributing
+          their perspectives and expertise.
+        </li>
+        <li>
+          <strong>Pair Programming and Peer Reviews</strong
+          >: Techniques such as<strong>
+            pair programming </strong
+          >and <strong>peer reviews </strong>are highly
+          effective for improving code quality and
+          reliability. By working together, developers can
+          identify potential reliability issues early in the
+          development process, reducing the likelihood of
+          defects.
+        </li>
+      </ul>
+      <h2>
+        Strategies for Distributed and Remote Teams Focused
+        on Reliability
+      </h2>
+      <p>
+        <span
+          >With the rise of distributed and remote work,
+          ensuring reliability in Agile teams requires
+          adapting collaboration practices to suit a
+          dispersed workforce. Here are some strategies for
+          fostering collaboration with a focus on
+          reliability:</span
+        >
+      </p>
+      <ul>
+        <li>
+          <strong>Effective Use of Digital Tools</strong>:
+          Distributed teams must rely on digital tools to
+          collaborate effectively. Tools such as
+          <strong>Slack</strong>,
+          <strong>Zoom</strong>,<strong> Jira</strong>, and
+          <strong>Confluence</strong> can facilitate
+          communication, task management, and knowledge
+          sharing. These tools help ensure that reliability
+          goals are visible to all team members, regardless
+          of location.
+        </li>
+        <li>
+          <strong>Synchronized Collaboration</strong>:
+          Regularly scheduled meetings such as daily
+          standups and sprint planning should be
+          synchronized across time zones as much as
+          possible. This helps ensure that
+          reliability-focused discussions are inclusive and
+          that team members are aligned on reliability
+          goals.
+        </li>
+        <li>
+          <strong>Asynchronous Communication</strong>: Not
+          all communication needs to be synchronous.
+          Distributed teams can leverage asynchronous
+          communication methods, such as detailed
+          documentation and recorded updates, to ensure that
+          reliability tasks and objectives are communicated
+          effectively without relying solely on real-time
+          meetings.
+        </li>
+        <li>
+          <strong>Building a Reliability Culture</strong>:
+          Remote teams must foster a culture that
+          prioritizes reliability. This can be done by
+          explicitly including reliability in team values,
+          celebrating successes related to system stability,
+          and ensuring that reliability tasks are visible
+          and valued within the team’s workflow.
+        </li>
+      </ul>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

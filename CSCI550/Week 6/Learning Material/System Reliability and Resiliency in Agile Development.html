@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 6 </span>
+      <span class="banner__week-name">
+        Agile Software Development Process, Agile Framework,
+        & Reliability and Resiliency
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        4. System Reliability and Resiliency in Agile
+        Development
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Reliability and resiliency are essential components
+        of any modern software system, especially those that
+        operate at scale or in critical environments. Agile
+        frameworks must adapt to include practices that
+        enhance these attributes.
+      </p>
+      <h2>Advanced Resiliency Design Patterns</h2>
+      <p>
+        To build systems that can gracefully handle
+        unexpected disruptions, Agile teams should integrate
+        advanced resiliency design patterns. These patterns
+        are architectural strategies designed to improve
+        system reliability and minimize the impact of
+        failures.
+      </p>
+      <ul>
+        <li>
+          <span
+            ><strong>Circuit Breakers</strong>: A
+            <strong>circuit breaker</strong> is a design
+            pattern that helps prevent cascading failures by
+            stopping the flow of requests to a component
+            that is experiencing failures. When a system
+            detects that a particular service is repeatedly
+            failing, the circuit breaker “trips” and
+            prevents further attempts until the service is
+            likely to be functioning properly again. This
+            helps to maintain overall system stability and
+            avoids exhausting resources on doomed
+            operations.</span
+          >
+        </li>
+        <li>
+          <span
+            ><strong>Bulkheads</strong>: The<strong>
+              bulkhead</strong
+            >
+            pattern is used to isolate different parts of
+            the system, much like compartments on a ship. By
+            compartmentalizing services or components, a
+            failure in one part does not propagate
+            throughout the entire system. This improves
+            system resiliency by limiting the impact of a
+            single component’s failure.</span
+          >
+        </li>
+        <li>
+          <span
+            ><strong>Retry Mechanisms</strong>:
+            <strong>Retry mechanisms</strong> involve
+            attempting failed operations again after a
+            specified delay. This design pattern helps
+            address transient issues that may cause failures
+            temporarily, such as network hiccups or resource
+            contention. By incorporating retry mechanisms,
+            systems can recover from brief disruptions
+            without manual intervention.</span
+          >
+        </li>
+      </ul>
+      <p>
+        These patterns help ensure that the system can
+        tolerate individual component failures and continue
+        operating in a degraded but functional state,
+        thereby improving overall system reliability.
+      </p>
+      <p>
+        <strong>Example</strong>: Circuit Breaker Pattern
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre
+              class="line-numbers d2l-code"><code class="language-python">class CircuitBreaker: 
+    def __init__(self, failure_threshold, recovery_time): 
+        self.failure_threshold = failure_threshold 
+        self.recovery_time = recovery_time 
+        self.failures = 0 
+        self.state = "CLOSED" 
+ 
+    def call(self, func): 
+        if self.state == "OPEN": 
+            print("Circuit is OPEN. Skipping call.") 
+            return None 
+        try: 
+            result = func() 
+            self.failures = 0 
+            return result 
+        except Exception as e: 
+            self.failures += 1 
+            print(f"Failure: {e}") 
+            if self.failures &gt;= self.failure_threshold: 
+                self.state = "OPEN" 
+                print("Circuit is now OPEN.") 
+            return None 
+ 
+# Usage 
+import time 
+ 
+def unreliable_service(): 
+    if time.time() % 2 == 0: 
+        raise Exception("Service failure") 
+    return "Service success" 
+ 
+circuit_breaker = CircuitBreaker(failure_threshold=3, recovery_time=5) 
+for _ in range(5): 
+    print(circuit_breaker.call(unreliable_service)) </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        This example implements a circuit breaker pattern to
+        prevent cascading failures by halting calls to a
+        failing service.
+      </p>
+      <h2>Proactive Incident Management</h2>
+      <p>
+        Proactive incident management is essential for
+        maintaining system reliability. Agile teams should
+        adopt practices that allow them to learn from
+        incidents and continuously improve their processes
+        and systems.
+      </p>
+      <ul>
+        <li>
+          <span
+            ><strong>Incident Post-Mortems</strong>:
+            Conducting
+            <strong>incident post-mortems</strong> after
+            system failures is crucial for identifying the
+            root cause and preventing similar incidents in
+            the future. The goal of a post-mortem is to
+            document what happened, why it happened, and
+            what can be done to prevent recurrence. By
+            taking a blameless approach, teams can focus on
+            learning from the incident rather than assigning
+            blame, fostering a culture of continuous
+            improvement.</span
+          >
+        </li>
+        <li>
+          <span
+            ><strong>Blameless Retrospectives</strong
+            >:<strong> Blameless retrospectives</strong> are
+            Agile ceremonies in which the team reviews
+            incidents and issues that occurred during the
+            sprint. The goal is to identify what went well,
+            what could be improved, and how the team can
+            enhance system reliability moving forward. By
+            keeping these retrospectives blameless, team
+            members feel safe discussing mistakes and
+            sharing ideas for improvement, which ultimately
+            leads to more resilient systems.</span
+          >
+        </li>
+        <li>
+          <span
+            ><strong>Continuous Monitoring</strong>
+            and<strong> Early Detection</strong>:
+            Implementing continuous monitoring and alerting
+            systems enables teams to detect issues before
+            they escalate into major incidents. Tools like
+            <strong>Prometheus</strong>,<strong>
+              Grafana</strong
+            >, or <strong>New Relic</strong> can be
+            integrated into Agile workflows to provide
+            real-time insights into system performance and
+            reliability metrics, allowing teams to act
+            proactively.</span
+          >
+        </li>
+      </ul>
+      <p>
+        Proactive incident management allows Agile teams to
+        evolve their practices, strengthen their systems,
+        and ensure that reliability remains a central focus
+        of their development efforts.
+      </p>
+      <p>
+        <strong>Example</strong>: Logging Incident
+        Post-Mortems
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre
+              class="line-numbers d2l-code"><code class="language-python">import logging 
+ 
+# Configure logging 
+logging.basicConfig(filename="incident_postmortems.log", level=logging.INFO) 
+ 
+def log_postmortem(incident, cause, resolution): 
+    logging.info(f"Incident: {incident}, Cause: {cause}, Resolution: {resolution}") 
+ 
+# Usage 
+log_postmortem("Database outage", "Connection pool exhaustion", "Increased pool size and added monitoring.") </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        This script logs incident post-mortems, documenting
+        causes and resolutions to prevent recurrence.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
