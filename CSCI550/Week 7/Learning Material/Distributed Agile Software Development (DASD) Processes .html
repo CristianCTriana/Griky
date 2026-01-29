@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* VIDEO RESPONSIVE */
+      .video-wrapper-TopicOne {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive-TopicOne {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+      }
+
+      .video-responsive-TopicOne video,
+      .video-responsive-TopicOne iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+      .digital-guide span.icon {
+        color: #202122 !important;
+        font-size: 24px;
+        margin-right: 10px;
+        line-height: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 7 </span>
+      <span class="banner__week-name">
+        Distributed Agile Software Development (DASD)
+        Processes
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        1. Core Principles of Distributed Agile Software
+        Development (DASD)
+      </h1>
+
+      <hr class="divider-line" />
+
+      <h2
+        style="
+          text-align: center;
+          color: #004c90;
+          font-size: 24px;
+          margin-top: 10px;
+        ">
+        <strong>Learning Challenge</strong>
+      </h2>
+      <p>
+        <strong><!-- PDF info --> </strong>
+      </p>
+      <div class="digital-guide">
+        <strong><span class="icon">ⓘ</span>&nbsp;</strong
+        ><span style="font-family: Lato, sans-serif"
+          >This is not an assignment prompt, but rather an
+          opportunity to reflect on how the week’s concepts
+          apply to real workplace situations.</span
+        >
+      </div>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+        alt="banner-video"
+        style="
+          max-width: 100%;
+          display: block;
+          margin: 0 auto;
+        "
+        width="600" />
+      <!-- ============================
+         VIDEO CENTRADO Y RESPONSIVE
+         ============================ -->
+      <div class="video-wrapper-TopicOne">
+        <div class="video-responsive-TopicOne">
+          <video
+            title="Learning challenge"
+            controls="controls">
+            <source
+              src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Week_1/APUS_Coach_Woman.mp4"
+              type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1"
+            >Transcript: Digital Content Guide
+            Podcast</label
+          >
+          <div class="accordion-content">
+            <p>
+              Welcome, future HR leaders and policy shapers!
+            </p>
+            <p>
+              You are about to embark on an exciting journey
+              that will transform the way you think about
+              human resources and its critical role in
+              organizational success. In this course, we
+              will dive deep into the world of HR policies
+              and strategies. But this isn't just about
+              memorizing rules and regulations. It's about
+              understanding the profound impact that
+              well-crafted HR policies can have on people's
+              lives and on the success of entire
+              organizations.
+            </p>
+            <p>
+              From navigating the complexities of employment
+              law to mastering the art of talent management,
+              from ensuring workplace safety to mediating
+              conflicts, you will gain the skills to become
+              a true HR champion. You will learn how to
+              balance the needs of a multi-generational
+              workforce, protect employee privacy in the
+              digital age, and align HR strategies with
+              organizational goals.
+            </p>
+            <p>
+              By the end of this course, you won't just
+              understand HR policies – you will be equipped
+              to create and implement strategies that can
+              transform workplaces, empower employees, and
+              drive organizational success.
+            </p>
+            <p>
+              So get ready to challenge your assumptions,
+              expand your horizons, and become the kind of
+              HR professional who doesn't just follow best
+              practices, but sets them!
+            </p>
+            <p>
+              Are you ready to redefine what HR can be?
+              Let's get started on this exciting journey
+              together!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Distributed Agile Software Development (DASD) brings
+        together the agile philosophy of adaptive planning
+        and iterative development with the practical
+        realities of globally dispersed teams. This
+        combination allows organizations to benefit from the
+        expertise of team members across different
+        locations, but it also presents unique challenges.
+        In this section, we explore the fundamental
+        principles of DASD, highlighting how they differ
+        from traditional Agile methods, and how distributed
+        teams can be structured for optimal efficiency while
+        balancing autonomy and coordination.
+      </p>
+      <h2>
+        1.1 Key Differences between Traditional Agile and
+        DASD
+      </h2>
+      <p>
+        Traditional Agile software development emphasizes
+        co-located teams, frequent in-person meetings, and
+        tight-knit collaboration. Co-location fosters direct
+        communication, facilitates trust, and helps resolve
+        issues in real-time. However, in a distributed
+        setting, Agile must be adapted to accommodate the
+        realities of physical separation, time zone
+        differences, and diverse cultural contexts.
+      </p>
+      <p>
+        One of the key differences is in the approach to
+        communication. In a traditional Agile environment,
+        face-to-face communication is prioritized for its
+        immediacy and clarity. Distributed Agile teams,
+        however, must rely on tools like Slack, Zoom, or
+        Microsoft Teams to bridge the communication gap.
+        These tools help maintain transparency and
+        continuity, but they also introduce challenges such
+        as communication lags and a lack of non-verbal cues,
+        which can impact team dynamics and the clarity of
+        conversations.
+      </p>
+      <p>
+        Another difference lies in managing the cadence of
+        work. Traditional Agile often relies on synchronous
+        ceremonies, such as daily stand-ups, sprint
+        planning, and retrospective meetings. DASD must
+        adapt these ceremonies to accommodate the schedules
+        of geographically dispersed teams. This can mean
+        adopting asynchronous methods—such as recorded
+        meetings or using tools like Trello or Jira for
+        real-time task updates—to ensure all team members
+        remain in sync despite different working hours.
+      </p>
+      <p>
+        Finally, while traditional Agile practices benefit
+        from spontaneous conversations and ad hoc
+        problem-solving (often referred to as “osmotic
+        communication”), DASD needs a more deliberate
+        approach. Distributed teams must establish formal
+        communication protocols and leverage documentation
+        to compensate for the loss of organic information
+        flow.
+      </p>
+      <p>
+        <strong>Example:</strong> Asynchronous Stand-Up Bot
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+from datetime import datetime 
+ 
+# Simulate team members and their updates 
+team_members = { 
+    "Alice": "Completed feature X, starting on bug Y.", 
+    "Bob": "Working on API integration.", 
+    "Charlie": "Fixing deployment pipeline issues." 
+} 
+ 
+# Function to collect updates asynchronously 
+def collect_standup_updates(): 
+    updates = [] 
+    for member, update in team_members.items(): 
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S") 
+        updates.append(f"{timestamp} - {member}: {update}") 
+    return updates 
+ 
+# Usage 
+standup_updates = collect_standup_updates() 
+for update in standup_updates: 
+    print(update) 
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+      <p>
+        This script simulates an asynchronous stand-up bot
+        that collects updates from team members and
+        timestamps them, making it suitable for distributed
+        teams across different time zones.
+      </p>
+      <h2>
+        1.2 Structuring Distributed Teams for Efficiency
+      </h2>
+      <p>
+        Effectively structuring a distributed Agile team
+        requires attention to roles, communication channels,
+        and collaboration tools. The primary goal is to
+        maintain a cohesive team environment where each
+        member feels included and empowered to contribute.
+      </p>
+      <p>
+        <strong>Team Composition and Roles</strong>: In a
+        DASD setting, team roles may need additional
+        granularity. For instance, it can be beneficial to
+        designate a “local coordinator” within each
+        geographical cluster. This person acts as a liaison
+        between local team members and the broader,
+        distributed team, helping to manage communication
+        barriers and coordinate time-sensitive tasks. The
+        Scrum Master also plays a critical role in DASD,
+        ensuring that Agile practices are consistently
+        applied across all locations and that blockers are
+        promptly addressed, regardless of time zone.
+      </p>
+      <p>
+        <strong>Communication Channels</strong>:
+        Establishing clear communication protocols is
+        crucial for distributed teams. This includes
+        defining which tools to use for specific
+        purposes—e.g., Slack for informal communication,
+        Zoom for virtual stand-ups, and Confluence for
+        documentation. Creating a “team charter” that
+        outlines communication norms can help set
+        expectations and reduce misunderstandings.
+      </p>
+      <p>
+        <strong>Collaboration Tools</strong>: Choosing the
+        right collaboration tools can significantly enhance
+        the efficiency of a distributed team. Tools like
+        Miro for whiteboarding, GitHub for code versioning,
+        and Asana or Jira for task management help create a
+        shared workspace where all team members have
+        visibility into the project status. Effective use of
+        these tools can make a distributed team feel more
+        connected and ensure everyone remains aligned with
+        project goals.
+      </p>
+      <p>
+        <strong>Fostering Team Cohesion</strong>:
+        Structuring distributed teams also involves
+        fostering cohesion and trust. Regular virtual
+        team-building activities, cross-location pair
+        programming, and celebrating small wins can
+        contribute to a positive team culture. It is
+        important for distributed Agile teams to
+        intentionally create opportunities for informal
+        interactions, which can mimic the spontaneous
+        conversations of co-located teams and build rapport.
+      </p>
+      <p>
+        <strong>Example</strong>: Task Assignment by Time
+        Zone
+      </p>
+
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <h4 class="code-card-title">Arrays</h4>
+
+            <p>
+              Arrays are static data structures that store
+              elements of the same type in contiguous memory
+              locations (Knuth, 1997). They have the
+              following characteristics:
+            </p>
+
+            <ul>
+              <li>
+                Fixed size (in most programming languages)
+              </li>
+              <li>
+                Fast access time — O(1) for any element
+              </li>
+              <li>
+                Inefficient for insertion and deletion in
+                the middle
+              </li>
+            </ul>
+
+            <p class="code-card-note">
+              The following example shows an array in
+              Python:
+            </p>
+
+            <pre
+              class="line-numbers d2l-code"><code class="language-python"># Team members and their time zones 
+team = { 
+    "Alice": "UTC+1", 
+    "Bob": "UTC-5", 
+    "Charlie": "UTC+8" 
+} 
+ 
+# Tasks to be assigned 
+tasks = ["Develop feature A", "Fix bug B", "Write documentation"] 
+ 
+# Assign tasks based on time zones 
+def assign_tasks(team, tasks): 
+    assignments = {} 
+    for i, member in enumerate(team): 
+        assignments[member] = tasks[i % len(tasks)] 
+    return assignments 
+ 
+# Usage 
+task_assignments = assign_tasks(team, tasks) 
+for member, task in task_assignments.items(): 
+    print(f"{member} ({team[member]}): {task}") </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        This example script assigns tasks to team members
+        based on their availability, ensuring that work
+        progresses smoothly across time zones.
+      </p>
+      <h2>
+        1.3 Balancing Autonomy and Coordination in DASD
+        Environments
+      </h2>
+      <p>
+        One of the biggest challenges in DASD is striking
+        the right balance between team autonomy and
+        coordinated effort. Distributed teams must be
+        autonomous enough to make decisions locally, yet
+        coordinated to ensure their work contributes
+        meaningfully to the overall project.
+      </p>
+      <p>
+        <strong>Empowering Local Decision-Making</strong>:
+        Autonomy in distributed teams can be enhanced by
+        empowering local teams to make decisions that do not
+        affect the broader project scope. For instance, a
+        sub-team working on a specific feature should have
+        the authority to decide on its internal workflow and
+        daily priorities. This autonomy helps reduce the
+        delays that can occur when decisions need approval
+        from stakeholders in different time zones.
+      </p>
+      <p>
+        <strong>Maintaining Coordination</strong>: While
+        local autonomy is crucial, maintaining alignment
+        across the distributed team is equally important. To
+        achieve this, distributed teams often rely on shared
+        backlogs and cross-functional ceremonies. The use of
+        a unified product backlog, accessible to all team
+        members, helps ensure everyone is working towards
+        common goals. Sprint planning sessions should
+        involve representatives from all locations to
+        provide visibility into dependencies and potential
+        roadblocks.
+      </p>
+      <p>
+        <strong>Synchronizing Work Across Time Zones</strong
+        >: Coordination in DASD also involves dealing with
+        the complexities of time zone differences. One
+        common strategy is the “follow-the-sun” model, where
+        work is handed off between teams in different time
+        zones, allowing continuous progress. However, this
+        requires careful planning to ensure handoffs are
+        smooth and all teams have the necessary context.
+        Detailed documentation and thorough sprint planning
+        are essential to mitigate the risks associated with
+        such a workflow.
+      </p>
+      <p>
+        <strong
+          >Establishing Standards and Guidelines</strong
+        >: To balance autonomy with coordination, DASD teams
+        often develop a set of standards and guidelines that
+        apply universally. This includes coding standards,
+        documentation requirements, and workflow protocols.
+        By establishing these shared norms, distributed
+        teams can ensure consistency without stifling the
+        creativity and flexibility that Agile promotes.
+      </p>
+      <p>
+        <strong>Example</strong>: Shared Backlog for
+        Distributed Teams
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre
+              class="line-numbers d2l-code"><code class="language-python"># Shared backlog 
+backlog = [ 
+    {"task": "Implement login feature", "status": "To Do"}, 
+    {"task": "Fix payment gateway bug", "status": "In Progress"}, 
+    {"task": "Write API documentation", "status": "Done"} 
+] 
+ 
+# Function to update task status 
+def update_task_status(task_name, new_status): 
+    for task in backlog: 
+        if task["task"] == task_name: 
+            task["status"] = new_status 
+            print(f"Updated '{task_name}' to '{new_status}'") 
+            return 
+    print(f"Task '{task_name}' not found.") 
+ 
+# Usage 
+update_task_status("Implement login feature", "In Progress") 
+for task in backlog: 
+    print(task) </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        This script demonstrates how a shared backlog can be
+        used to track and update the status of tasks,
+        ensuring coordination across distributed teams.
+      </p>
+      <h2>Knowledge Check</h2>
+      <div class="quiz">
+        <!--Question 1-->
+        <form class="quick-assess quick-assess-mc">
+          <fieldset class="radio">
+            <legend>
+              <span
+                >Question 1: What is the primary difference
+                between traditional Agile and Distributed
+                Agile Software Development (DASD)?
+              </span>
+            </legend>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                  <!-- <span class="fas fa-times ans-symbol invisible float-right"></span> -->
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label">
+                    A. DASD relies on synchronous
+                    communication only.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label">
+                    B. Traditional Agile focuses on
+                    geographically dispersed teams.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-check ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label">
+                    C. DASD requires adaptation of Agile
+                    ceremonies for geographically dispersed
+                    teams.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label">
+                    D. Traditional Agile requires extensive
+                    documentation.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <button
+              type="button"
+              data-toggle="collapse"
+              aria-expanded="false"
+              disabled="disabled"
+              class="btn btn-primary btn-quick-assess">
+              Check Answer
+            </button>
+            <div class="collapse feedback">
+              <p>
+                <span
+                  ><strong>Correct answer:</strong> C. DASD
+                  requires adaptation of Agile ceremonies
+                  for geographically dispersed teams.</span
+                >
+              </p>
+            </div>
+          </fieldset>
+        </form>
+        <form class="quick-assess quick-assess-mc">
+          <fieldset class="radio">
+            <legend>
+              <span
+                >Question 2: Which of the following is a
+                recommended strategy to enhance team
+                cohesion in a Distributed Agile Software
+                Development (DASD) environment?
+              </span>
+            </legend>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                  <!-- <span class="fas fa-times ans-symbol invisible float-right"></span> -->
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label">
+                    A. Avoid scheduling regular meetings to
+                    respect time differences.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label">
+                    B. Implement a strict hierarchical
+                    structure to enforce discipline.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-check ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label">
+                    C. Use regular virtual team-building
+                    activities and cross-location pair
+                    programming.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-check pl-2">
+              <div class="row">
+                <div class="col-1 pr-0 pr-sm-1">
+                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
+                  <span
+                    class="fas fa-times ans-symbol invisible float-right"></span>
+                </div>
+                <div class="col-11">
+                  <input
+                    type="radio"
+                    name="MC-answer"
+                    class="" />
+                  <label class="radio-label">
+                    D. Limit informal communication to focus
+                    on work productivity.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <button
+              type="button"
+              data-toggle="collapse"
+              aria-expanded="false"
+              disabled="disabled"
+              class="btn btn-primary btn-quick-assess">
+              Check Answer
+            </button>
+            <div class="collapse feedback">
+              <p>
+                <span
+                  ><strong>Correct answer:</strong> C. Use
+                  regular virtual team-building activities
+                  and cross-location pair programming.
+                </span>
+              </p>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

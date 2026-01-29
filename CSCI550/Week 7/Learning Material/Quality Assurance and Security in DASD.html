@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 7 </span>
+      <span class="banner__week-name">
+        Distributed Agile Software Development (DASD)
+        Processes
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        3. Quality Assurance and Security in DASD
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        <span style="font-size: 19px"
+          >Quality assurance and security are critical
+          components of Distributed Agile Software
+          Development (DASD), especially given the
+          complexities associated with geographically
+          dispersed teams. You explore how to ensure code
+          quality and consistency, the challenges of
+          implementing DevSecOps in a distributed
+          environment, and the security protocols necessary
+          for remote development and data sharing.</span
+        >
+      </p>
+      <h2>
+        3.1 Ensuring Code Quality and Consistency in
+        Distributed Teams
+      </h2>
+      <p>
+        <span style="font-size: 19px"
+          >Maintaining code quality and consistency across a
+          distributed team can be challenging due to the
+          lack of face-to-face interaction and varying
+          levels of experience among team members. To
+          address these challenges, distributed teams must
+          adopt standardized practices and leverage tools
+          that promote code quality.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Coding Standards</strong>: Establishing
+          clear coding standards is fundamental for
+          maintaining consistency across the team. These
+          standards should be documented and accessible to
+          all team members, ensuring that everyone adheres
+          to the same guidelines. Tools like ESLint for
+          JavaScript or Pylint for Python can be used to
+          enforce these standards automatically, reducing
+          the risk of discrepancies in code quality.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Code Reviews</strong>: Regular code
+          reviews are essential for ensuring code quality in
+          a distributed Agile environment. Code reviews help
+          identify potential issues early, promote knowledge
+          sharing, and ensure that best practices are
+          followed. Tools like GitHub, GitLab, and Bitbucket
+          provide built-in code review features that
+          facilitate collaboration, even when team members
+          are in different locations. Pair programming,
+          either in real-time or asynchronously, can also be
+          an effective way to maintain quality and mentor
+          less experienced developers.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Automated Testing</strong>: Automated
+          testing is crucial for maintaining code quality in
+          a distributed setting. Unit tests, integration
+          tests, and end-to-end tests should be part of the
+          continuous integration/continuous delivery (CI/CD)
+          pipeline to catch issues early. Tools like
+          Jenkins, CircleCI, or GitLab CI can be used to
+          automate the testing process, ensuring that new
+          code does not introduce regressions or bugs.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong
+            >Continuous Integration and Continuous Delivery
+            (CI/CD)</strong
+          >: Implementing a CI/CD pipeline is vital for
+          ensuring code quality and consistency. CI/CD
+          allows for frequent integration of code changes,
+          automated testing, and rapid deployment, reducing
+          the chances of integration issues. Distributed
+          teams benefit from CI/CD by having a consistent
+          process that ensures every code change is tested
+          and validated before being merged into the main
+          codebase.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Example</strong>: Automated Code Review
+          Comments</span
+        >
+      </p>
+      <pre
+        class="line-numbers d2l-code"><code class="language-python"># Sample code snippet 
+code_snippet = """ 
+def add_numbers(a, b): 
+return a+b 
+""" 
+ 
+# Automated code review 
+def review_code(code): 
+    comments = [] 
+    if "return" in code and not code.startswith(" "): 
+        comments.append("Indentation issue: Ensure proper indentation for 'return' statements.") 
+    if "+" in code and " " not in code: 
+        comments.append("Formatting issue: Add spaces around operators.") 
+    return comments 
+ 
+# Usage 
+review_comments = review_code(code_snippet) 
+for comment in review_comments: 
+    print(comment) </code></pre>
+      <p>
+        <span style="font-size: 19px"
+          >This script automates code review by identifying
+          common issues, helping distributed teams maintain
+          consistent code quality.</span
+        >
+      </p>
+      <h2>
+        3.2 Challenges of Implementing DevSecOps in DASD
+        Environments
+      </h2>
+      <p>
+        <span style="font-size: 19px"
+          >DevSecOps integrates security practices into the
+          DevOps pipeline, ensuring that security is
+          considered at every stage of the software
+          development lifecycle. However, implementing
+          DevSecOps in a distributed Agile environment
+          presents unique challenges.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Coordination Across Teams</strong>: In a
+          distributed setting, coordinating security
+          practices across multiple teams can be difficult.
+          Different teams may have varying levels of
+          security expertise, making it challenging to
+          implement consistent security measures. Regular
+          cross-team meetings and workshops can help align
+          security practices and ensure that all team
+          members are aware of the latest security
+          protocols.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Tool Integration</strong>: Integrating
+          security tools into the CI/CD pipeline is a key
+          aspect of DevSecOps. However, distributed teams
+          may face challenges in selecting and configuring
+          tools that work seamlessly across different
+          environments. Tools like Snyk, SonarQube, and
+          OWASP ZAP can be used to identify vulnerabilities,
+          but ensuring that these tools are properly
+          integrated and used consistently requires careful
+          planning and coordination.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Training and Awareness</strong>: Security
+          is everyone’s responsibility, but distributed
+          teams may struggle with ensuring that all members
+          have the necessary security knowledge. Regular
+          training sessions, security-focused
+          retrospectives, and knowledge-sharing initiatives
+          can help build a security-first mindset across the
+          team. Providing access to online resources and
+          certifications can also empower team members to
+          enhance their security skills.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Handling Sensitive Data</strong>:
+          Distributed teams often work with sensitive data,
+          making it crucial to implement strict security
+          protocols to protect this information. Encryption,
+          access control, and regular audits are essential
+          to ensure that data is handled securely throughout
+          the development process.</span
+        >
+      </p>
+      <h2>
+        3.3 Security Protocols for Remote Development and
+        Data Sharing
+      </h2>
+      <p>
+        <span style="font-size: 19px"
+          >Security is a major concern in DASD, particularly
+          when team members are working remotely and sharing
+          sensitive information across different locations.
+          Implementing robust security protocols is
+          essential to protect both the development
+          environment and the data being handled.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Secure Communication Channels</strong>:
+          Ensuring secure communication is a top priority
+          for distributed teams. Tools like Slack and Zoom
+          should be configured with end-to-end encryption to
+          protect sensitive discussions. For even more
+          secure communication, teams can use tools like
+          Signal or ProtonMail for encrypted messaging and
+          email.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Access Control and Authentication</strong
+          >: Implementing strict access control measures is
+          essential to ensure that only authorized
+          individuals have access to the development
+          environment and sensitive data. Multi-factor
+          authentication (MFA) should be required for all
+          team members, and role-based access control (RBAC)
+          should be used to limit access based on the
+          principle of least privilege.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong
+            >VPNs and Secure Development
+            Environments</strong
+          >: Virtual Private Networks (VPNs) should be used
+          to provide a secure connection for remote team
+          members accessing internal resources.
+          Additionally, using secure development
+          environments, such as virtual desktops or isolated
+          containers, can help protect the development
+          infrastructure from unauthorized access or
+          malware.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Data Encryption</strong>: All sensitive
+          data, whether in transit or at rest, should be
+          encrypted to protect it from unauthorized access.
+          Distributed teams should use encryption protocols
+          such as TLS for data in transit and AES for data
+          at rest. Cloud storage solutions used by the team
+          should also support encryption to ensure data
+          security.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong
+            >Regular Security Audits and Penetration
+            Testing</strong
+          >: Regular security audits and penetration testing
+          are essential for identifying vulnerabilities in
+          the development environment. Distributed teams
+          should schedule periodic security assessments to
+          evaluate their security posture and address any
+          identified issues promptly. Tools like Nessus or
+          Burp Suite can be used to conduct these
+          assessments and help ensure the security of the
+          development process.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Example</strong>: Encrypting Sensitive
+          Data</span
+        >
+      </p>
+      <pre
+        class="line-numbers d2l-code"><code class="language-python">from cryptography.fernet import Fernet 
+ 
+# Generate encryption key 
+key = Fernet.generate_key() 
+cipher = Fernet(key) 
+ 
+# Encrypt data 
+def encrypt_data(data): 
+    encrypted = cipher.encrypt(data.encode()) 
+    return encrypted 
+ 
+# Decrypt data 
+def decrypt_data(encrypted_data): 
+    decrypted = cipher.decrypt(encrypted_data).decode() 
+    return decrypted 
+ 
+# Usage 
+sensitive_data = "This is a secret message." 
+encrypted_data = encrypt_data(sensitive_data) 
+print(f"Encrypted: {encrypted_data}") 
+print(f"Decrypted: {decrypt_data(encrypted_data)}") </code></pre>
+      <p>
+        <span style="font-size: 19px"
+          >This script encrypts and decrypts sensitive data,
+          ensuring secure communication and data sharing in
+          distributed teams.</span
+        >
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

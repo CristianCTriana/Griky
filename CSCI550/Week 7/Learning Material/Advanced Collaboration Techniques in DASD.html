@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 7 </span>
+      <span class="banner__week-name">
+        Distributed Agile Software Development (DASD)
+        Processes
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        2. Advanced Collaboration Techniques in DASD
+      </h1>
+
+      <hr class="divider-line" />
+
+      <h1>2. Advanced Collaboration Techniques in DASD</h1>
+      <p>
+        <span style="font-size: 19px"
+          >Distributed Agile Software Development (DASD)
+          requires advanced collaboration techniques to
+          ensure team members stay aligned and productive
+          despite being physically separated. In this
+          section, you will see how to optimize virtual
+          ceremonies, leverage tools for real-time
+          communication and project management, and manage
+          dependencies and tasks across time zones.</span
+        >
+      </p>
+      <h2>2.1 Optimizing Virtual Ceremonies</h2>
+      <p>
+        <span style="font-size: 19px"
+          >Virtual ceremonies, such as daily stand-ups,
+          sprint reviews, and retrospectives, are crucial
+          for maintaining alignment in a distributed Agile
+          environment. To optimize these ceremonies, it is
+          important to adapt their format and timing to suit
+          the needs of a distributed team.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Daily Stand-Ups</strong>: For distributed
+          teams, daily stand-ups should be kept brief and
+          focused, ideally lasting no more than 15 minutes.
+          Teams can use tools like Zoom or Microsoft Teams
+          for live video stand-ups, but asynchronous
+          stand-ups using tools like Slack can also be
+          effective, especially for teams spread across
+          multiple time zones. Asynchronous stand-ups allow
+          team members to post their updates at a time that
+          works for them, ensuring everyone is informed
+          without requiring all members to be available
+          simultaneously.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Sprint Reviews and Retrospectives</strong
+          >: Sprint reviews and retrospectives are vital for
+          assessing progress and identifying areas for
+          improvement. In a distributed setting, these
+          ceremonies can be enhanced by using collaborative
+          tools like Miro or Mural for interactive
+          whiteboarding, which allows all participants to
+          contribute visually, even if they are not
+          co-located. Recording these sessions and sharing
+          the recordings with team members who could not
+          attend live can also help maintain transparency
+          and inclusivity.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Time Management</strong>: Timing is a
+          critical factor in virtual ceremonies. For
+          distributed teams, it is important to schedule
+          meetings at times that are reasonably convenient
+          for all participants, which may involve some
+          compromise. Rotating meeting times can help
+          distribute the inconvenience more equitably among
+          team members in different time zones.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Example</strong>: Retrospective Feedback
+          Collection</span
+        >
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+<pre
+        class="line-numbers d2l-code"><code class="language-python"># Collect feedback from team members 
+feedback = { 
+    "Alice": {"What went well": "Good communication", "What can be improved": "Faster code reviews"}, 
+    "Bob": {"What went well": "Clear requirements", "What can be improved": "Better time zone overlap"}, 
+    "Charlie": {"What went well": "Effective sprint planning", "What can be improved": "More detailed documentation"} 
+} 
+ 
+# Display feedback 
+def display_feedback(feedback): 
+    for member, responses in feedback.items(): 
+        print(f"{member}'s Feedback:") 
+        for category, response in responses.items(): 
+            print(f"  {category}: {response}") 
+        print() 
+ 
+# Usage 
+display_feedback(feedback) </code></pre>
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        <span style="font-size: 19px"
+          >This script collects and displays retrospective
+          feedback asynchronously, making it suitable for
+          distributed teams.</span
+        >
+      </p>
+      <h2>
+        2.2 Tools for Real-Time Communication and Project
+        Management
+      </h2>
+      <p>
+        <span style="font-size: 19px"
+          >Effective communication and project management
+          are the backbone of successful DASD. Selecting the
+          right tools can help bridge the gap between team
+          members who are geographically dispersed.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Communication Tools</strong>: Tools like
+          Slack, Microsoft Teams, and Zoom are essential for
+          maintaining real-time communication. Slack, for
+          example, provides channels for different topics,
+          which helps keep conversations organized and
+          ensures that important information is easily
+          accessible. Microsoft Teams offers an integrated
+          solution for chat, video calls, and file sharing,
+          making it a versatile choice for distributed
+          teams. Zoom is often used for more formal
+          meetings, such as sprint planning and reviews,
+          where face-to-face interaction (albeit virtual)
+          can help build rapport and improve
+          understanding.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong
+            >Collaboration and Whiteboarding Tools</strong
+          >: Tools like Miro, Mural, and Figma are
+          invaluable for collaborative tasks that require
+          visual input, such as brainstorming sessions,
+          design discussions, and retrospectives. These
+          tools provide a shared virtual space where team
+          members can contribute simultaneously, replicating
+          the experience of working on a physical
+          whiteboard.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Project Management Tools</strong>: For
+          project management, tools like Jira, Trello, and
+          Asana help maintain visibility into the status of
+          tasks and ensure everyone knows what they should
+          be working on. Jira is particularly popular in
+          Agile environments for tracking user stories,
+          tasks, and bugs. Trello, with its card-based
+          interface, is well-suited for managing workflows
+          and providing an easy-to-understand visual
+          representation of project progress. Asana can be
+          used to track tasks, set deadlines, and assign
+          responsibilities, ensuring accountability across
+          the team.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Example</strong>: Task Management
+          System</span
+        >
+      </p>
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <p class="code-card-note">
+              The following example shows an array in
+              Python:
+            </p>
+
+            <pre class="line-numbers d2l-code">
+<code class="language-python">
+<pre
+        class="line-numbers d2l-code"><code class="language-python"># Task board 
+task_board = { 
+    "To Do": ["Set up CI/CD pipeline", "Design database schema"], 
+    "In Progress": ["Develop user authentication"], 
+    "Done": ["Create project repository"] 
+} 
+ 
+# Move task between columns 
+def move_task(task, from_column, to_column): 
+    if task in task_board[from_column]: 
+        task_board[from_column].remove(task) 
+        task_board[to_column].append(task) 
+        print(f"Moved '{task}' from '{from_column}' to '{to_column}'") 
+    else: 
+        print(f"Task '{task}' not found in '{from_column}'") 
+ 
+# Usage 
+move_task("Develop user authentication", "In Progress", "Done") 
+for column, tasks in task_board.items(): 
+    print(f"{column}: {tasks}") </code></pre>
+</code>
+      </pre>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        <span style="font-size: 19px"
+          >This example script simulates a task management
+          system, allowing distributed teams to track and
+          update task progress in real time.</span
+        >
+      </p>
+      <h2>
+        2.3 Managing Dependencies and Tasks Across Time
+        Zones
+      </h2>
+      <p>
+        <span style="font-size: 19px"
+          >Managing dependencies and tasks in a distributed
+          Agile environment requires careful planning,
+          especially when team members are spread across
+          multiple time zones. The goal is to minimize
+          blockers and ensure that work progresses smoothly,
+          despite the geographical challenges.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Dependency Mapping</strong>: One
+          effective technique for managing dependencies is
+          to create a dependency map that visually
+          represents the relationships between tasks and
+          teams. This helps identify potential bottlenecks
+          and allows the team to plan around them. Tools
+          like Jira and Confluence can be used to document
+          and track dependencies, making it easier to manage
+          interdependent tasks.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Follow-the-Sun Model</strong>: The
+          “follow-the-sun” model is often used to ensure
+          continuous progress by handing off work between
+          teams in different time zones. This approach
+          requires detailed documentation to ensure that the
+          receiving team has all the necessary content to
+          continue the work without delays. Using shared
+          tools like Confluence for documentation and Slack
+          for asynchronous communication can facilitate
+          smooth handoffs.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong>Overlapping Work Hours</strong>: To
+          facilitate real-time collaboration, it is
+          beneficial to identify overlapping work hours
+          between team members in different time zones.
+          During these overlapping hours, teams can schedule
+          meetings or coordinate tasks that require
+          synchronous communication. For tasks that do not
+          require real-time collaboration, teams can use
+          asynchronous updates through tools like Slack or
+          Jira to keep everyone informed.</span
+        >
+      </p>
+      <p>
+        <span style="font-size: 19px"
+          ><strong
+            >Task Prioritization and Assignment</strong
+          >: Prioritizing tasks based on time zone
+          availability can also help manage dependencies.
+          For example, tasks that require input from
+          multiple locations should be prioritized to ensure
+          that they are completed during overlapping hours.
+          Additionally, assigning tasks in a way that aligns
+          with each team member’s working hours can help
+          maintain productivity and reduce delays.</span
+        >
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
