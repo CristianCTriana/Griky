@@ -81,6 +81,60 @@
         margin-left: auto;
         width: 110px;
       }
+
+      /* ===== Mental Models Grid ===== */
+      .mental-models-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(260px, 1fr)
+        );
+        gap: 1.5rem;
+        margin-top: 30px;
+      }
+
+      /* Card principal */
+      .mm-card {
+        background-color: #ffffff;
+        border-left: 6px solid var(--color-accent);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      /* Interacción sutil */
+      .mm-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Títulos */
+      .mm-card h3 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        color: var(--color-primary);
+        font-size: 22px;
+      }
+
+      /* Listas */
+      .mm-card ul {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card ol {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card li {
+        font-size: 18px;
+        color: var(--color-text);
+        margin-bottom: 8px;
+      }
     </style>
   </head>
 
@@ -100,8 +154,6 @@
 
       <hr class="divider-line" />
 
-      <
-      <h1>2. Emerging Trends in Software Engineering</h1>
       <p>
         <span style="font-size: 19px"
           >The software engineering landscape is rapidly
@@ -120,32 +172,39 @@
           quality.</span
         >
       </p>
-      <ul>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Coding Assistants</strong>: Tools like
-            GitHub Copilot and Tabnine use AI to provide
-            code suggestions, reducing the time developers
-            spend writing boilerplate code.</span
-          >
-        </li>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Automated Testing</strong>: AI-powered
-            testing tools can create, execute, and maintain
-            test cases, identifying bugs more efficiently
-            than traditional methods.</span
-          >
-        </li>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Real-World Impact</strong>: AI-powered
-            tools are enhancing productivity, allowing
-            developers to focus on complex problem-solving
-            rather than mundane coding tasks.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Coding Assistants</strong>: Tools
+                like GitHub Copilot and Tabnine use AI to
+                provide code suggestions, reducing the time
+                developers spend writing boilerplate
+                code.</span
+              >
+            </li>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Automated Testing</strong>:
+                AI-powered testing tools can create,
+                execute, and maintain test cases,
+                identifying bugs more efficiently than
+                traditional methods.</span
+              >
+            </li>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Real-World Impact</strong>:
+                AI-powered tools are enhancing productivity,
+                allowing developers to focus on complex
+                problem-solving rather than mundane coding
+                tasks.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
       <h2>2.2 Quantum Computing in Software Development</h2>
       <p>
         <span style="font-size: 19px"
@@ -155,33 +214,38 @@
           engineering.</span
         >
       </p>
-      <ul>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Potential Impacts</strong>: Quantum
-            algorithms could revolutionize areas such as
-            cryptography, optimization, and machine
-            learning.</span
-          >
-        </li>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Challenges</strong>: The main
-            challenges include the need for specialized
-            knowledge to develop quantum algorithms and the
-            current limitations of quantum hardware.</span
-          >
-        </li>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Future Outlook</strong>: While still in
-            its infancy, quantum computing is expected to
-            have a profound impact on software development,
-            particularly in areas requiring massive
-            computational power.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Potential Impacts</strong>: Quantum
+                algorithms could revolutionize areas such as
+                cryptography, optimization, and machine
+                learning.</span
+              >
+            </li>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Challenges</strong>: The main
+                challenges include the need for specialized
+                knowledge to develop quantum algorithms and
+                the current limitations of quantum
+                hardware.</span
+              >
+            </li>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Future Outlook</strong>: While
+                still in its infancy, quantum computing is
+                expected to have a profound impact on
+                software development, particularly in areas
+                requiring massive computational power.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
       <h2>2.3 Serverless Computing</h2>
       <p>
         <span style="font-size: 19px"
@@ -191,31 +255,37 @@
           software design and scalability.</span
         >
       </p>
-      <ul>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Key Benefits</strong>: Reduced
-            operational overhead, automatic scaling, and
-            cost efficiency, as you only pay for the actual
-            compute time used.</span
-          >
-        </li>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Use Case</strong>: Serverless is ideal
-            for applications with unpredictable workloads,
-            such as event-driven applications or APIs.</span
-          >
-        </li>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Impact on Design</strong>: Encourages
-            the development of stateless functions and
-            microservices, simplifying scalability and
-            reducing infrastructure concerns.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Key Benefits</strong>: Reduced
+                operational overhead, automatic scaling, and
+                cost efficiency, as you only pay for the
+                actual compute time used.</span
+              >
+            </li>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Use Case</strong>: Serverless is
+                ideal for applications with unpredictable
+                workloads, such as event-driven applications
+                or APIs.</span
+              >
+            </li>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Impact on Design</strong>:
+                Encourages the development of stateless
+                functions and microservices, simplifying
+                scalability and reducing infrastructure
+                concerns.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
       <h2>2.4 Edge Computing and Distributed Systems</h2>
       <p>
         <span style="font-size: 19px"
@@ -224,31 +294,38 @@
           response times and saving bandwidth.</span
         >
       </p>
-      <ul>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Key Concepts</strong>: Data processing
-            is performed at the edge of the network rather
-            than in a centralized data center.</span
-          >
-        </li>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Benefits</strong>: Ensures low latency
-            and improves reliability, which is crucial for
-            applications like IoT devices, autonomous
-            vehicles, and augmented reality.</span
-          >
-        </li>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Real-World Example</strong>: Companies
-            like Amazon and Microsoft are investing in edge
-            computing solutions to support distributed
-            systems that require real-time processing.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Key Concepts</strong>: Data
+                processing is performed at the edge of the
+                network rather than in a centralized data
+                center.</span
+              >
+            </li>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Benefits</strong>: Ensures low
+                latency and improves reliability, which is
+                crucial for applications like IoT devices,
+                autonomous vehicles, and augmented
+                reality.</span
+              >
+            </li>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Real-World Example</strong>:
+                Companies like Amazon and Microsoft are
+                investing in edge computing solutions to
+                support distributed systems that require
+                real-time processing.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <hr class="divider-line" />
 

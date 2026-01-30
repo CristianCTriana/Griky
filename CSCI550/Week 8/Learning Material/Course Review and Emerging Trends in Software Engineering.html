@@ -124,6 +124,60 @@
         margin-right: 10px;
         line-height: 1;
       }
+
+      /* ===== Mental Models Grid ===== */
+      .mental-models-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(260px, 1fr)
+        );
+        gap: 1.5rem;
+        margin-top: 30px;
+      }
+
+      /* Card principal */
+      .mm-card {
+        background-color: #ffffff;
+        border-left: 6px solid var(--color-accent);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      /* Interacción sutil */
+      .mm-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Títulos */
+      .mm-card h3 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        color: var(--color-primary);
+        font-size: 22px;
+      }
+
+      /* Listas */
+      .mm-card ul {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card ol {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card li {
+        font-size: 18px;
+        color: var(--color-text);
+        margin-bottom: 8px;
+      }
     </style>
   </head>
 
@@ -289,20 +343,24 @@
         implementation, verification, and maintenance—is
         completed before moving to the next.
       </p>
-      <ul>
-        <li>
-          <strong>Strengths</strong>: Straightforward and
-          easy to manage due to its structured approach.
-          Suitable for projects with well-defined
-          requirements.
-        </li>
-        <li>
-          <strong>Weaknesses</strong>: Inflexibility to
-          accommodate changes. Once a phase is completed,
-          going back to modify earlier phases is costly and
-          challenging.
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>
+              <strong>Strengths</strong>: Straightforward
+              and easy to manage due to its structured
+              approach. Suitable for projects with
+              well-defined requirements.
+            </li>
+            <li>
+              <strong>Weaknesses</strong>: Inflexibility to
+              accommodate changes. Once a phase is
+              completed, going back to modify earlier phases
+              is costly and challenging.
+            </li>
+          </ul>
+        </div>
+      </div>
       <p>
         The Waterfall model is often used in scenarios where
         requirements are clear from the start, such as
@@ -316,41 +374,52 @@
         customer collaboration, and delivering functional
         software in short cycles called sprints.
       </p>
-      <ul>
-        <li>
-          <strong>Strengths</strong>: High adaptability to
-          changes, early delivery of working software, and
-          constant stakeholder engagement.
-        </li>
-        <li>
-          <strong>Weaknesses</strong>: Requires significant
-          customer involvement and may lack documentation.
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>
+              <strong>Strengths</strong>: High adaptability
+              to changes, early delivery of working
+              software, and constant stakeholder engagement.
+            </li>
+            <li>
+              <strong>Weaknesses</strong>: Requires
+              significant customer involvement and may lack
+              documentation.
+            </li>
+          </ul>
+        </div>
+      </div>
       <p>
         The Agile model is suitable for projects with
         evolving requirements. Its success can be seen in
         companies like Spotify, which use Agile to
         continuously deliver improvements to their platform.
       </p>
-      <h3>Other SDLC Models</h3>
-      <ul>
-        <li>
-          <span
-            ><strong>Spiral Model</strong>: Combines
-            iterative development with risk management,
-            making it suitable for high-risk projects.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong>V-Model</strong>: An extension of the
-            Waterfall model that emphasizes testing at each
-            stage of development. Ideal for projects that
-            require rigorous validation.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <h3>Other SDLC Models</h3>
+          <ul>
+            <li>
+              <span
+                ><strong>Spiral Model</strong>: Combines
+                iterative development with risk management,
+                making it suitable for high-risk
+                projects.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>V-Model</strong>: An extension of
+                the Waterfall model that emphasizes testing
+                at each stage of development. Ideal for
+                projects that require rigorous
+                validation.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
       <p>
         Understanding the evolution from rigid, linear
         models like Waterfall to iterative approaches like
@@ -376,23 +445,29 @@
         Master, and Development Team, each with defined
         responsibilities.
       </p>
-      <ul>
-        <li>
-          <span
-            ><strong>Key Concepts</strong>: Daily Stand-ups,
-            Sprint Planning, Sprint Review, and
-            Retrospective.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong>Use Case</strong>: Ideal for projects
-            where requirements change rapidly. For example,
-            in software startups where product features
-            evolve based on customer feedback.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>
+              <span
+                ><strong>Key Concepts</strong>: Daily
+                Stand-ups, Sprint Planning, Sprint Review,
+                and Retrospective.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>Use Case</strong>: Ideal for
+                projects where requirements change rapidly.
+                For example, in software startups where
+                product features evolve based on customer
+                feedback.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <h3>Kanban</h3>
       <p>
         Kanban focuses on visualizing the workflow and
@@ -400,24 +475,28 @@
         Unlike Scrum, Kanban does not prescribe fixed
         iterations.
       </p>
-      <ul>
-        <li>
-          <span
-            ><strong>Key Concepts</strong>: Continuous
-            delivery, Work-In-Progress (WIP) limits, and
-            workflow visualization through Kanban
-            boards.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong>Use Case</strong>: Suitable for teams
-            focused on continuous improvement and
-            maintenance tasks. Microsoft uses Kanban for
-            managing ongoing development work.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>
+              <span
+                ><strong>Key Concepts</strong>: Continuous
+                delivery, Work-In-Progress (WIP) limits, and
+                workflow visualization through Kanban
+                boards.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>Use Case</strong>: Suitable for
+                teams focused on continuous improvement and
+                maintenance tasks. Microsoft uses Kanban for
+                managing ongoing development work.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
       <h3>Extreme Programming (XP)</h3>
       <p>
         XP is a framework that emphasizes technical
@@ -425,21 +504,26 @@
         Test-Driven Development (TDD), pair programming, and
         continuous integration are core to XP.
       </p>
-      <ul>
-        <li>
-          <span
-            ><strong>Key Concepts</strong>: High customer
-            involvement, TDD, pair programming.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong>Use Case</strong>: Useful for projects
-            where product quality is crucial, such as
-            financial software.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>
+              <span
+                ><strong>Key Concepts</strong>: High
+                customer involvement, TDD, pair
+                programming.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>Use Case</strong>: Useful for
+                projects where product quality is crucial,
+                such as financial software.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
       <h2>1.3 DevSecOps</h2>
       <p>
         As software systems grow in complexity, integrating
@@ -465,25 +549,29 @@
         analysis, and automated vulnerability scanning are
         integrated into CI/CD pipelines.
       </p>
-      <ul>
-        <li>
-          <span
-            ><strong>Real-World Example</strong>: Netflix’s
-            “Security Monkey” is an example of automated
-            security testing integrated into their CI/CD
-            pipeline to detect and manage
-            vulnerabilities.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong>Key Practices</strong>: Shift-left
-            security (introducing security earlier in the
-            SDLC), infrastructure as code (IaC), and
-            compliance as code.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>
+              <span
+                ><strong>Real-World Example</strong>:
+                Netflix’s “Security Monkey” is an example of
+                automated security testing integrated into
+                their CI/CD pipeline to detect and manage
+                vulnerabilities.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>Key Practices</strong>: Shift-left
+                security (introducing security earlier in
+                the SDLC), infrastructure as code (IaC), and
+                compliance as code.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
       <h2>1.4 Software Architecture Patterns</h2>
       <p>
         Software architecture patterns are high-level
@@ -492,58 +580,66 @@
         systems that are scalable, maintainable, and secure.
       </p>
       <h3>Monolithic vs. Microservices</h3>
-      <ul>
-        <li>
-          <span
-            ><strong>Monolithic Architecture</strong>:
-            Traditional approach where all components of the
-            software are packaged together. Suitable for
-            small applications but lacks scalability for
-            large systems.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong>Microservices Architecture</strong>:
-            Breaks down the system into smaller,
-            independently deployable services that
-            communicate through APIs.</span
-          >
+      <div class="mental-models-grid">
+        <div class="mm-card">
           <ul>
             <li>
               <span
-                ><strong>Real-World Example</strong>:
-                Companies like Amazon and Netflix utilize
-                microservices to handle scalability and
-                reliability for their large-scale
-                services.</span
+                ><strong>Monolithic Architecture</strong>:
+                Traditional approach where all components of
+                the software are packaged together. Suitable
+                for small applications but lacks scalability
+                for large systems.</span
               >
             </li>
+            <li>
+              <span
+                ><strong>Microservices Architecture</strong
+                >: Breaks down the system into smaller,
+                independently deployable services that
+                communicate through APIs.</span
+              >
+              <ul>
+                <li>
+                  <span
+                    ><strong>Real-World Example</strong>:
+                    Companies like Amazon and Netflix
+                    utilize microservices to handle
+                    scalability and reliability for their
+                    large-scale services.</span
+                  >
+                </li>
+              </ul>
+            </li>
           </ul>
-        </li>
-      </ul>
+        </div>
+      </div>
       <h3>Layered Architecture</h3>
       <p>
         The layered (or tiered) architecture is one of the
         most widely used patterns, consisting of separate
         layers for presentation, business logic, and data.
       </p>
-      <ul>
-        <li>
-          <span
-            ><strong>Strengths</strong>: Easy to understand
-            and develop. Suitable for enterprise-level
-            applications.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong>Weaknesses</strong>: Not ideal for
-            high-performance needs due to tight coupling
-            between layers.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>
+              <span
+                ><strong>Strengths</strong>: Easy to
+                understand and develop. Suitable for
+                enterprise-level applications.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>Weaknesses</strong>: Not ideal for
+                high-performance needs due to tight coupling
+                between layers.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
       <h3>Model-View-Controller (MVC)</h3>
       <p>
         MVC separates the application into three
@@ -552,16 +648,20 @@
         by promoting a clear distinction between business
         logic, user interface, and user input.
       </p>
-      <ul>
-        <li>
-          <span
-            ><strong>Use Case</strong>: Commonly used in web
-            applications. For example, frameworks like
-            Django and Ruby on Rails follow the MVC
-            pattern.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>
+              <span
+                ><strong>Use Case</strong>: Commonly used in
+                web applications. For example, frameworks
+                like Django and Ruby on Rails follow the MVC
+                pattern.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <hr class="divider-line" />
 
