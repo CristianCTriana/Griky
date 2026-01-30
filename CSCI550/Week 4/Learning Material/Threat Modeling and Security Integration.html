@@ -158,13 +158,14 @@
         information disclosure or authentication for
         spoofing.
       </p>
-      <p>
-        <strong>Example</strong>: Using STRIDE for Threat
-        Identification
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Using STRIDE for Threat
+              Identification
+            </h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 # STRIDE Categories 
@@ -185,14 +186,16 @@ sensitive_data = "user_password"
 print(encrypt_data(sensitive_data)) 
 </code>
       </pre>
+            <p>
+              This example demonstrates how to identify
+              threats and apply mitigations, such as
+              encrypting sensitive data to prevent
+              information disclosure.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This example demonstrates how to identify threats
-        and apply mitigations, such as encrypting sensitive
-        data to prevent information disclosure.
-      </p>
+
       <h2>Security by Design Principles</h2>
       <p>
         Security by design means making security a core
@@ -246,33 +249,6 @@ print(encrypt_data(sensitive_data))
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
-            <h4 class="code-card-title">Arrays</h4>
-
-            <p>
-              Arrays are static data structures that store
-              elements of the same type in contiguous memory
-              locations (Knuth, 1997). They have the
-              following characteristics:
-            </p>
-
-            <ul>
-              <li>
-                Fixed size (in most programming languages)
-              </li>
-              <li>
-                Fast access time — O(1) for any element
-              </li>
-              <li>
-                Inefficient for insertion and deletion in
-                the middle
-              </li>
-            </ul>
-
-            <p class="code-card-note">
-              The following example shows an array in
-              Python:
-            </p>
-
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 class Database: 
@@ -296,14 +272,15 @@ except PermissionError as e:
     print(e) 
 </code>
       </pre>
+            <p>
+              This example enforces the principle of least
+              privilege by restricting write access to admin
+              users only.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This example enforces the principle of least
-        privilege by restricting write access to admin users
-        only.
-      </p>
+
       <h2>Security Testing Strategies</h2>
       <p>
         The final piece of effective security integration is
@@ -378,10 +355,11 @@ except PermissionError as e:
         ultimately leading to high-quality software ready
         for real-world challenges.
       </p>
-      <p><strong>Example</strong>: Fuzz Testing</p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Fuzz Testing</h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 import random 
@@ -410,23 +388,21 @@ def fuzz_test():
 fuzz_test() 
 </code>
       </pre>
+            <p>
+              This example generates random inputs to test
+              the process_input function for unexpected
+              behavior. Fuzz testing helps identify edge
+              cases and vulnerabilities that might not be
+              apparent during regular testing.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This example generates random inputs to test the
-        process_input function for unexpected behavior. Fuzz
-        testing helps identify edge cases and
-        vulnerabilities that might not be apparent during
-        regular testing.
-      </p>
-      <p>
-        <strong>Example</strong>: Validating Input
-        Sanitization
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Validating Input Sanitization</h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 import sqlite3 
@@ -457,17 +433,17 @@ def validate_input_sanitization(user_input):
 validate_input_sanitization("admin' OR '1'='1")  # Attempt SQL injection 
 </code>
       </pre>
+            <p>
+              This example demonstrates how to validate
+              input sanitization by testing for SQL
+              injection vulnerabilities. The use of
+              parameterized queries ensures that user input
+              is properly sanitized, preventing malicious
+              SQL commands from being executed.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This example demonstrates how to validate input
-        sanitization by testing for SQL injection
-        vulnerabilities. The use of parameterized queries
-        ensures that user input is properly sanitized,
-        preventing malicious SQL commands from being
-        executed.
-      </p>
 
       <hr class="divider-line" />
 

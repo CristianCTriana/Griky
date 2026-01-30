@@ -308,12 +308,14 @@
           </ul>
         </li>
       </ul>
-      <p>
-        Example: Factory Method for Secure Object Creation
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Factory Method for Secure Object
+              Creation
+            </h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 class SecureConnection: 
@@ -338,15 +340,16 @@ except ValueError as e:
     print(e) 
 </code>
       </pre>
+            <p>
+              This example ensures that only secure
+              protocols (e.g., HTTPS, SSH) are used for
+              creating connections, reducing the risk of
+              insecure configurations.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This example ensures that only secure protocols
-        (e.g., HTTPS, SSH) are used for creating
-        connections, reducing the risk of insecure
-        configurations.
-      </p>
+
       <ul>
         <li>
           <strong>Structural Patterns</strong>
@@ -374,13 +377,13 @@ except ValueError as e:
           </ul>
         </li>
       </ul>
-      <p>
-        <strong>Example</strong>: Decorator Pattern for
-        Adding Security Layers
-      </p>
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Decorator Pattern for Adding Security
+              Layers
+            </h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 class DataProcessor: 
@@ -401,14 +404,15 @@ secure_processor = EncryptionDecorator(processor)
 print(secure_processor.process("sensitive information")) 
 </code>
       </pre>
+            <p>
+              The decorator adds an encryption layer to the
+              data processing, ensuring sensitive
+              information is protected.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        The decorator adds an encryption layer to the data
-        processing, ensuring sensitive information is
-        protected.
-      </p>
+
       <ul>
         <li>
           <strong>Behavioral Patterns</strong>
@@ -484,10 +488,11 @@ print(secure_processor.process("sensitive information"))
           </ul>
         </li>
       </ul>
-      <p>Example: Avoiding Hardcoded Secrets</p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Avoiding Hardcoded Secrets</h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 import os 
@@ -501,14 +506,14 @@ if not API_KEY:
     raise ValueError("API Key not found in environment variables") 
 </code>
       </pre>
+            <p>
+              This example demonstrates how to avoid
+              hardcoding sensitive information by using
+              environment variables.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This example demonstrates how to avoid hardcoding
-        sensitive information by using environment
-        variables.
-      </p>
 
       <hr class="divider-line" />
 

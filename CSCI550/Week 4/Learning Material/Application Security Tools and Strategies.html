@@ -21,21 +21,6 @@
     <link
       rel="stylesheet"
       href="../../../Griky Structure/StylesComponents.css" />
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
-    <!-- Font Awesome CSS -->
-    <link
-      rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
-    <!-- Template CSS -->
-    <link
-      rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
-    <link
-      rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
     <style>
       :root {
         --color-primary: #041e42;
@@ -206,39 +191,13 @@
           environment.
         </li>
       </ul>
-      <p>
-        <strong>Example</strong>: Using Bandit for Static
-        Analysis
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
-            <h4 class="code-card-title">Arrays</h4>
-
-            <p>
-              Arrays are static data structures that store
-              elements of the same type in contiguous memory
-              locations (Knuth, 1997). They have the
-              following characteristics:
-            </p>
-
-            <ul>
-              <li>
-                Fixed size (in most programming languages)
-              </li>
-              <li>
-                Fast access time — O(1) for any element
-              </li>
-              <li>
-                Inefficient for insertion and deletion in
-                the middle
-              </li>
-            </ul>
-
-            <p class="code-card-note">
-              The following example shows an array in
-              Python:
-            </p>
+            <h4>
+              Example: Using Bandit for Static Analysis
+            </h4>
 
             <pre class="line-numbers d2l-code">
 <code class="language-python">
@@ -249,47 +208,21 @@ pip install bandit
 bandit -r my_project/ 
 </code>
       </pre>
+            <p>
+              Bandit scans Python code for security
+              vulnerabilities, such as hardcoded secrets or
+              unsafe function calls.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        Bandit scans Python code for security
-        vulnerabilities, such as hardcoded secrets or unsafe
-        function calls.
-      </p>
-      <p>
-        <strong>Example</strong>: Using Flake8 for Static
-        Analysis
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
-            <h4 class="code-card-title">Arrays</h4>
-
-            <p>
-              Arrays are static data structures that store
-              elements of the same type in contiguous memory
-              locations (Knuth, 1997). They have the
-              following characteristics:
-            </p>
-
-            <ul>
-              <li>
-                Fixed size (in most programming languages)
-              </li>
-              <li>
-                Fast access time — O(1) for any element
-              </li>
-              <li>
-                Inefficient for insertion and deletion in
-                the middle
-              </li>
-            </ul>
-
-            <p class="code-card-note">
-              The following example shows an array in
-              Python:
-            </p>
+            <h4>
+              Example: Using Flake8 for Static Analysis
+            </h4>
 
             <pre class="line-numbers d2l-code">
 <code class="language-python">
@@ -300,16 +233,17 @@ pip install flake8
 flake8 my_project/ 
 </code>
       </pre>
+            <p>
+              Flake8 is a static analysis tool that checks
+              Python code for style violations and potential
+              errors. Integrating Flake8 into the
+              development workflow helps maintain code
+              quality and identify issues early.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        Flake8 is a static analysis tool that checks Python
-        code for style violations and potential errors.
-        Integrating Flake8 into the development workflow
-        helps maintain code quality and identify issues
-        early.
-      </p>
+
       <h2>Security Scanning and Monitoring</h2>
       <p>
         To maintain a strong security posture, continuous
@@ -352,13 +286,14 @@ flake8 my_project/
           to investigate possible brute force attacks.
         </li>
       </ul>
-      <p>
-        <strong>Example</strong>: Continuous Security
-        Scanning with SonarQube
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Continuous Security Scanning with
+              SonarQube
+            </h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Example CI/CD pipeline configuration for SonarQube 
@@ -385,14 +320,15 @@ jobs:
           -Dsonar.login=$SONAR_TOKEN 
 </code>
       </pre>
+            <p>
+              This pipeline integrates SonarQube into CI/CD
+              workflows to automatically scan code for
+              vulnerabilities.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This pipeline integrates SonarQube into CI/CD
-        workflows to automatically scan code for
-        vulnerabilities.
-      </p>
+
       <h2>Vulnerability Management</h2>
       <p>
         Effective vulnerability management ensures that
@@ -503,12 +439,11 @@ jobs:
         to protect against both current and emerging
         threats.
       </p>
-      <p>
-        <strong>Example</strong>: Logging Vulnerabilities
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Logging Vulnerabilities</h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 import logging 
@@ -525,22 +460,20 @@ log_vulnerability("SQL injection vulnerability in login form", "High")
 log_vulnerability("Outdated dependency: requests 2.18.0", "Medium") 
 </code>
       </pre>
+            <p>
+              This example logs vulnerabilities with their
+              descriptions and severity levels. Logging
+              helps track vulnerabilities and prioritize
+              their remediation based on severity.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This example logs vulnerabilities with their
-        descriptions and severity levels. Logging helps
-        track vulnerabilities and prioritize their
-        remediation based on severity.
-      </p>
-      <p>
-        <strong>Example</strong>: Automating Patch
-        Management
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Automating Patch Management</h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 import os 
@@ -552,186 +485,11 @@ os.system("sudo apt update")
 os.system("sudo apt upgrade -y") 
 </code>
       </pre>
-          </div>
-        </div>
-      </div>
-      <p>
-        Automating updates ensure that systems remain
-        protected against known vulnerabilities by applying
-        patches promptly.
-      </p>
-      <h2>Knowledge Check</h2>
-      <div class="quiz">
-        <!--Question 1-->
-        <form class="quick-assess quick-assess-mc">
-          <fieldset class="radio">
-            <legend>
-              <span style="font-size: 19px"
-                >Question 1: Which design pattern is best
-                suited for dynamically selecting secure
-                algorithms or communication protocols based
-                on context?
-              </span>
-            </legend>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <span
-                    class="fas fa-times ans-symbol invisible float-right"></span>
-                  <!-- <span class="fas fa-times ans-symbol invisible float-right"></span> -->
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label"
-                    >A. Observer Pattern
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
-                  <span
-                    class="fas fa-check ans-symbol invisible float-right"></span>
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label"
-                    >B. Strategy Pattern
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
-                  <span
-                    class="fas fa-times ans-symbol invisible float-right"></span>
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label"
-                    >C. Adapter Pattern
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
-                  <span
-                    class="fas fa-times ans-symbol invisible float-right"></span>
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label"
-                    >D. Factory Method
-                  </label>
-                </div>
-              </div>
-            </div>
-            <button
-              type="button"
-              data-toggle="collapse"
-              aria-expanded="false"
-              disabled="disabled"
-              class="btn btn-primary btn-quick-assess">
-              Check Answer
-            </button>
-            <div class="collapse feedback">
-              <p>
-                <strong>Correct answer:</strong>
-                <span style="font-size: 19px"
-                  >b. <strong>Strategy Pattern</strong>
-                  <em>Explanation</em>: The Strategy pattern
-                  allows dynamic selection of secure
-                  algorithms or protocols, enhancing
-                  flexibility while maintaining
-                  security.</span
-                >
-              </p>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-      <div class="card card-standard card-reveal">
-        <div class="card-body">
-          <div class="card-text">
             <p>
-              <span style="font-size: 19px"
-                ><strong>Scenario:</strong> During a
-                security review of a codebase, your team
-                discovers that sensitive API keys are
-                hardcoded in the source code. What are two
-                recommended actions to resolve this issue
-                and prevent it in the future?</span
-              >
+              Automating updates ensure that systems remain
+              protected against known vulnerabilities by
+              applying patches promptly.
             </p>
-            <button
-              type="button"
-              class="btn btn-primary btn-reveal"
-              data-toggle="collapse"
-              aria-expanded="false">
-              Show Answer
-            </button>
-            <div
-              class="collapse"
-              tabindex="0">
-              <p>
-                <span style="font-size: 19px"
-                  >Use a secure secret management tool
-                  (e.g., HashiCorp Vault or AWS Secrets
-                  Manager) to store and retrieve sensitive
-                  information securely.</span
-                >
-              </p>
-              <ol>
-                <li style="font-size: 19px">
-                  <span style="font-size: 19px"
-                    >Use a
-                    <strong
-                      >secure secret management too</strong
-                    >l (e.g., HashiCorp Vault or AWS Secrets
-                    Manager) to store and retrieve sensitive
-                    information securely.</span
-                  >
-                </li>
-                <li style="font-size: 19px">
-                  <span style="font-size: 19px"
-                    >Refactor the code to retrieve the API
-                    keys from
-                    <strong>environment variables </strong
-                    >or secure configurations instead of
-                    hardcoding them directly.</span
-                  >
-                </li>
-              </ol>
-              <p>
-                <span style="font-size: 19px"
-                  ><em>Explanation</em>: Hardcoding
-                  sensitive information is a common
-                  anti-pattern. Using secure tools and
-                  practices helps reduce the risk of
-                  accidental exposure or unauthorized
-                  access.</span
-                >
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -746,11 +504,6 @@ os.system("sudo apt upgrade -y")
       </footer>
     </main>
 
-    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
-    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
-    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
-    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
   </body>
 </html>

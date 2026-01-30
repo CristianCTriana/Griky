@@ -141,13 +141,13 @@
         vigilant in recognizing these smells during code
         reviews and refactoring sessions.
       </p>
-      <p>
-        <strong>Example</strong>: Refactoring Insecure
-        Dependencies
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Refactoring Insecure Dependencies
+            </h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 	# Before Refactoring: Using an outdated library 
@@ -161,14 +161,15 @@ result = new_library.secure_function()
 print(result)  
 </code>
       </pre>
+            <p>
+              Refactoring to replace outdated libraries with
+              secure alternatives reduces the risk of
+              vulnerabilities.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        Refactoring to replace outdated libraries with
-        secure alternatives reduces the risk of
-        vulnerabilities.
-      </p>
+
       <h2>Security-Driven Refactoring Patterns</h2>
       <ul>
         <li>
@@ -209,13 +210,11 @@ print(result)
           secure.
         </li>
       </ul>
-      <p>
-        <strong>Example</strong>: Input Validation
-        Refactoring
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Input Validation Refactoring</h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Before Refactoring: No input validation 
@@ -235,15 +234,15 @@ except ValueError as e:
     print(e) 
 </code>
       </pre>
+            <p>
+              Adding input validation prevents malicious
+              inputs from being processed, reducing the risk
+              of attacks like SQL injection.
+            </p>
           </div>
         </div>
       </div>
 
-      <p>
-        Adding input validation prevents malicious inputs
-        from being processed, reducing the risk of attacks
-        like SQL injection.
-      </p>
       <h2>
         Managing Technical Debt with a Security Perspective
       </h2>
@@ -288,13 +287,11 @@ except ValueError as e:
         developers can create more secure and robust
         applications.
       </p>
-      <p>
-        <strong>Example</strong>: Automating Dependency
-        Updates
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Automating Dependency Updates</h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 import subprocess 
@@ -315,16 +312,16 @@ check_outdated_dependencies()
 update_dependencies() 
 </code>
       </pre>
+            <p>
+              This script automates the process of checking
+              for outdated dependencies and updating them.
+              Regularly updating dependencies reduces the
+              risk of vulnerabilities introduced by older
+              versions of libraries.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This script automates the process of checking for
-        outdated dependencies and updating them. Regularly
-        updating dependencies reduces the risk of
-        vulnerabilities introduced by older versions of
-        libraries.
-      </p>
 
       <hr class="divider-line" />
 
