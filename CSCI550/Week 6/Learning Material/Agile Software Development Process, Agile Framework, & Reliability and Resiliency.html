@@ -124,6 +124,60 @@
         margin-right: 10px;
         line-height: 1;
       }
+
+      /* ===== Mental Models Grid ===== */
+      .mental-models-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(260px, 1fr)
+        );
+        gap: 1.5rem;
+        margin-top: 30px;
+      }
+
+      /* Card principal */
+      .mm-card {
+        background-color: #ffffff;
+        border-left: 6px solid var(--color-accent);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      /* Interacción sutil */
+      .mm-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Títulos */
+      .mm-card h3 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        color: var(--color-primary);
+        font-size: 22px;
+      }
+
+      /* Listas */
+      .mm-card ul {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card ol {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card li {
+        font-size: 18px;
+        color: var(--color-text);
+        margin-bottom: 8px;
+      }
     </style>
   </head>
 
@@ -286,44 +340,49 @@
           <strong>Agile Manifesto</strong>:</span
         >
       </p>
-      <ul>
-        <li>
-          <span
-            ><strong
-              >Individuals and interactions over processes
-              and tools</strong
-            >: Emphasizing the human aspect of
-            development.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong
-              >Working software over comprehensive
-              documentation</strong
-            >: Delivering value through functional
-            software.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong
-              >Customer collaboration over contract
-              negotiation</strong
-            >: Engaging with customers for continuous
-            feedback.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong
-              >Responding to change over following a
-              plan</strong
-            >: Adapting to changes quickly and
-            efficiently.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>
+              <span
+                ><strong
+                  >Individuals and interactions over
+                  processes and tools</strong
+                >: Emphasizing the human aspect of
+                development.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong
+                  >Working software over comprehensive
+                  documentation</strong
+                >: Delivering value through functional
+                software.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong
+                  >Customer collaboration over contract
+                  negotiation</strong
+                >: Engaging with customers for continuous
+                feedback.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong
+                  >Responding to change over following a
+                  plan</strong
+                >: Adapting to changes quickly and
+                efficiently.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <p>
         <span
           >These principles serve as the foundation for all
@@ -395,41 +454,42 @@
           needs:</span
         >
       </p>
-      <ul>
-        <li>
-          <span
-            ><strong>Scrum</strong> works well for larger,
-            more structured teams that need a clear,
-            repeatable process.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong>Kanban</strong> is ideal for teams that
-            require flexibility, especially when dealing
-            with ongoing maintenance or reliability
-            tasks.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong>XP</strong> is suitable when technical
-            rigor is crucial, and there is a need to
-            minimize defects through practices like TDD and
-            pair programming.</span
-          >
-        </li>
-      </ul>
-      <p>
-        <span
-          ><strong>Example</strong>: Implementing a Simple
-          Kanban Board</span
-        >
-      </p>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>
+              <span
+                ><strong>Scrum</strong> works well for
+                larger, more structured teams that need a
+                clear, repeatable process.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>Kanban</strong> is ideal for teams
+                that require flexibility, especially when
+                dealing with ongoing maintenance or
+                reliability tasks.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>XP</strong> is suitable when
+                technical rigor is crucial, and there is a
+                need to minimize defects through practices
+                like TDD and pair programming.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Implementing a Simple Kanban Board
+            </h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python">class KanbanBoard: 
     def __init__(self): 
@@ -459,17 +519,15 @@ kanban.add_task("Fix bug #123", "In Progress")
 kanban.move_task("Implement login feature", "To Do", "In Progress") 
 kanban.move_task("Fix bug #123", "In Progress", "Done") 
 kanban.display_board() </code></pre>
+            <p>
+              This example demonstrates how tasks can be
+              added, moved, and displayed on a Kanban board,
+              reflecting the workflow of an Agile team.
+            </p>
           </div>
         </div>
       </div>
 
-      <p>
-        <span
-          >This example demonstrates how tasks can be added,
-          moved, and displayed on a Kanban board, reflecting
-          the workflow of an Agile team.</span
-        >
-      </p>
       <h3>
         Practical Scenarios for Combining Agile Frameworks
         with DevSecOps Practices
@@ -536,15 +594,14 @@ kanban.display_board() </code></pre>
           afterthought.</span
         >
       </p>
-      <p>
-        <span
-          ><strong>Example</strong>: Adding Security Tasks
-          to a Scrum Sprint Backlog</span
-        >
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Adding Security Tasks to a Scrum
+              Sprint Backlog
+            </h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python"># Define sprint backlog 
 sprint_backlog = [] 
@@ -558,17 +615,14 @@ def add_security_task(task):
 add_security_task("Conduct vulnerability assessment") 
 add_security_task("Implement input validation") 
 print("Sprint Backlog:", sprint_backlog) </code></pre>
+            <p>
+              This example shows how security tasks can be
+              integrated into a Scrum sprint backlog,
+              ensuring security is addressed iteratively.
+            </p>
           </div>
         </div>
       </div>
-
-      <p>
-        <span
-          >This example shows how security tasks can be
-          integrated into a Scrum sprint backlog, ensuring
-          security is addressed iteratively.</span
-        >
-      </p>
 
       <hr class="divider-line" />
 

@@ -168,12 +168,11 @@
         operating in a degraded but functional state,
         thereby improving overall system reliability.
       </p>
-      <p>
-        <strong>Example</strong>: Circuit Breaker Pattern
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Circuit Breaker Pattern</h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python">class CircuitBreaker: 
     def __init__(self, failure_threshold, recovery_time): 
@@ -209,15 +208,15 @@ def unreliable_service():
 circuit_breaker = CircuitBreaker(failure_threshold=3, recovery_time=5) 
 for _ in range(5): 
     print(circuit_breaker.call(unreliable_service)) </code></pre>
+            <p>
+              This example implements a circuit breaker
+              pattern to prevent cascading failures by
+              halting calls to a failing service.
+            </p>
           </div>
         </div>
       </div>
 
-      <p>
-        This example implements a circuit breaker pattern to
-        prevent cascading failures by halting calls to a
-        failing service.
-      </p>
       <h2>Proactive Incident Management</h2>
       <p>
         Proactive incident management is essential for
@@ -281,13 +280,11 @@ for _ in range(5):
         and ensure that reliability remains a central focus
         of their development efforts.
       </p>
-      <p>
-        <strong>Example</strong>: Logging Incident
-        Post-Mortems
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Logging Incident Post-Mortems</h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python">import logging 
  
@@ -299,14 +296,14 @@ def log_postmortem(incident, cause, resolution):
  
 # Usage 
 log_postmortem("Database outage", "Connection pool exhaustion", "Increased pool size and added monitoring.") </code></pre>
+            <p>
+              This script logs incident post-mortems,
+              documenting causes and resolutions to prevent
+              recurrence.
+            </p>
           </div>
         </div>
       </div>
-
-      <p>
-        This script logs incident post-mortems, documenting
-        causes and resolutions to prevent recurrence.
-      </p>
 
       <hr class="divider-line" />
 

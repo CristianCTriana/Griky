@@ -81,6 +81,60 @@
         margin-left: auto;
         width: 110px;
       }
+
+      /* ===== Mental Models Grid ===== */
+      .mental-models-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(260px, 1fr)
+        );
+        gap: 1.5rem;
+        margin-top: 30px;
+      }
+
+      /* Card principal */
+      .mm-card {
+        background-color: #ffffff;
+        border-left: 6px solid var(--color-accent);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      /* Interacción sutil */
+      .mm-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Títulos */
+      .mm-card h3 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        color: var(--color-primary);
+        font-size: 22px;
+      }
+
+      /* Listas */
+      .mm-card ul {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card ol {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card li {
+        font-size: 18px;
+        color: var(--color-text);
+        margin-bottom: 8px;
+      }
     </style>
   </head>
 
@@ -126,40 +180,46 @@
           <strong>MoSCoW</strong> method:</span
         >
       </p>
-      <ul>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Must have</strong>: Critical
-            reliability features that ensure the system is
-            stable and operational. For example,
-            implementing error-handling mechanisms or
-            enhancing monitoring capabilities.</span
-          >
-        </li>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Should have</strong>: Important tasks
-            that significantly improve reliability but are
-            not immediately critical, such as adding
-            redundancy to non-essential components.</span
-          >
-        </li>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Could have</strong>: Reliability tasks
-            that are desirable but can be deferred if there
-            are constraints, like additional logging for
-            diagnostics.</span
-          >
-        </li>
-        <li style="font-size: 19px">
-          <span style="font-size: 19px"
-            ><strong>Won’t have</strong>: Tasks that can be
-            postponed without impacting system reliability
-            in the short term.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Must have</strong>: Critical
+                reliability features that ensure the system
+                is stable and operational. For example,
+                implementing error-handling mechanisms or
+                enhancing monitoring capabilities.</span
+              >
+            </li>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Should have</strong>: Important
+                tasks that significantly improve reliability
+                but are not immediately critical, such as
+                adding redundancy to non-essential
+                components.</span
+              >
+            </li>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Could have</strong>: Reliability
+                tasks that are desirable but can be deferred
+                if there are constraints, like additional
+                logging for diagnostics.</span
+              >
+            </li>
+            <li style="font-size: 19px">
+              <span style="font-size: 19px"
+                ><strong>Won’t have</strong>: Tasks that can
+                be postponed without impacting system
+                reliability in the short term.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <p>
         <span style="font-size: 19px"
           >By categorizing tasks, teams can make informed
@@ -168,15 +228,11 @@
           system health.</span
         >
       </p>
-      <p>
-        <span style="font-size: 19px"
-          ><strong>Example</strong>: Using MoSCoW
-          Prioritization</span
-        >
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Using MoSCoW Prioritization</h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python">tasks = [ 
     {"task": "Implement error handling", "priority": "Must have"}, 
@@ -195,16 +251,15 @@ def prioritize_tasks(tasks):
 prioritized_tasks = prioritize_tasks(tasks) 
 for priority, task_list in prioritized_tasks.items(): 
     print(f"{priority}: {task_list}") </code></pre>
+            <p>
+              This script categorizes tasks based on the
+              MoSCoW prioritization method, helping teams
+              focus on critical reliability tasks.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        <span style="font-size: 19px"
-          >This script categorizes tasks based on the MoSCoW
-          prioritization method, helping teams focus on
-          critical reliability tasks.</span
-        >
-      </p>
+
       <h2>
         Aligning Sprints with Long-Term Reliability Goals
       </h2>
@@ -374,16 +429,13 @@ for priority, task_list in prioritized_tasks.items():
         </div>
       </div>
 
-      <p>
-        <span style="font-size: 19px"
-          ><strong>Example</strong>: Tracking and
-          Refactoring Technical Debt</span
-        >
-      </p>
-
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Tracking and Refactoring Technical
+              Debt
+            </h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python"># Technical debt register 
 technical_debt = [ 
@@ -397,17 +449,14 @@ def refactor_technical_debt(debt):
  
 # Usage 
 refactor_technical_debt(technical_debt) </code></pre>
+            <p>
+              This example tracks technical debt and
+              demonstrates how to prioritize and address it
+              during sprints.
+            </p>
           </div>
         </div>
       </div>
-
-      <p>
-        <span style="font-size: 19px"
-          >This example tracks technical debt and
-          demonstrates how to prioritize and address it
-          during sprints.</span
-        >
-      </p>
 
       <hr class="divider-line" />
 

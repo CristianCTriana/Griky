@@ -81,6 +81,60 @@
         margin-left: auto;
         width: 110px;
       }
+
+      /* ===== Mental Models Grid ===== */
+      .mental-models-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(260px, 1fr)
+        );
+        gap: 1.5rem;
+        margin-top: 30px;
+      }
+
+      /* Card principal */
+      .mm-card {
+        background-color: #ffffff;
+        border-left: 6px solid var(--color-accent);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      /* Interacción sutil */
+      .mm-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Títulos */
+      .mm-card h3 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        color: var(--color-primary);
+        font-size: 22px;
+      }
+
+      /* Listas */
+      .mm-card ul {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card ol {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card li {
+        font-size: 18px;
+        color: var(--color-text);
+        margin-bottom: 8px;
+      }
     </style>
   </head>
 
@@ -124,30 +178,37 @@
         systems can handle unexpected disruptions without
         impacting overall stability.
       </p>
-      <ul>
-        <li>
-          <span
-            ><strong>Gremlin</strong>: Another chaos
-            engineering tool is <strong>Gremlin</strong>,
-            which provides a user-friendly interface for
-            executing controlled failure tests. Gremlin
-            allows teams to run scenarios such as CPU
-            spikes, resource exhaustion, and network delays
-            to evaluate system resiliency.</span
-          >
-        </li>
-        <li>
-          <span
-            ><strong>Resilience4j</strong>: For Java-based
-            systems, <strong>Resilience4j</strong> offers a
-            set of resiliency patterns, including circuit
-            breakers and rate limiters. These tools provide
-            configurable options that can be integrated
-            directly into the application to bolster
-            reliability.</span
-          >
-        </li>
-      </ul>
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>
+              <span
+                ><strong>Gremlin</strong>: Another chaos
+                engineering tool is
+                <strong>Gremlin</strong>, which provides a
+                user-friendly interface for executing
+                controlled failure tests. Gremlin allows
+                teams to run scenarios such as CPU spikes,
+                resource exhaustion, and network delays to
+                evaluate system resiliency.</span
+              >
+            </li>
+            <li>
+              <span
+                ><strong>Resilience4j</strong>: For
+                Java-based systems,
+                <strong>Resilience4j</strong> offers a set
+                of resiliency patterns, including circuit
+                breakers and rate limiters. These tools
+                provide configurable options that can be
+                integrated directly into the application to
+                bolster reliability.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <h2>
         Integration of Monitoring and Alerting Systems with
         Agile Workflows
@@ -201,12 +262,11 @@
           >
         </li>
       </ul>
-      <p>
-        <strong>Example</strong>: Monitoring System Metrics
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Monitoring System Metrics</h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python">import random 
  
@@ -219,13 +279,15 @@ def monitor_system():
  
 # Usage 
 monitor_system() </code></pre>
+            <p>
+              This script simulates monitoring system
+              metrics and raises alerts for high resource
+              usage.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This script simulates monitoring system metrics and
-        raises alerts for high resource usage.
-      </p>
+
       <h2>Automation Frameworks for Reliability Testing</h2>
       <p>
         Automation is key to maintaining high standards of
@@ -285,13 +347,13 @@ monitor_system() </code></pre>
         vulnerabilities, ensuring that their software
         remains stable, scalable, and resilient.
       </p>
-      <p>
-        <strong>Example</strong>: Chaos Testing with Random
-        Failures
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Chaos Testing with Random Failures
+            </h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python">import random 
  
@@ -302,14 +364,14 @@ def chaos_test():
  
 # Usage 
 chaos_test() </code></pre>
+            <p>
+              This script simulates random service failures
+              to test system resiliency under chaotic
+              conditions.
+            </p>
           </div>
         </div>
       </div>
-
-      <p>
-        This script simulates random service failures to
-        test system resiliency under chaotic conditions.
-      </p>
 
       <hr class="divider-line" />
 
