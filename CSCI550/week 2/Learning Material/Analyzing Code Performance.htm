@@ -291,14 +291,16 @@
           </ul>
         </li>
       </ul>
-      <p>
-        The layered architecture divides an application into
-        distinct layers, each handling specific
-        responsibilities. Here’s a practical implementation:
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <p>
+              The layered architecture divides an
+              application into distinct layers, each
+              handling specific responsibilities. Here’s a
+              practical implementation:
+            </p>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Data Layer
@@ -339,17 +341,17 @@ class UserController:
 
 </code>
       </pre>
+            <p>
+              This implementation demonstrates clear
+              separation of concerns: - The Repository layer
+              handles data persistence - The Service layer
+              contains business logic - The Controller layer
+              manages user interactions and request handling
+            </p>
           </div>
         </div>
       </div>
 
-      <p>
-        This implementation demonstrates clear separation of
-        concerns: - The Repository layer handles data
-        persistence - The Service layer contains business
-        logic - The Controller layer manages user
-        interactions and request handling
-      </p>
       <p>
         The layered architecture promotes modularity and
         makes the system easier to maintain and test. Each
@@ -397,10 +399,11 @@ class UserController:
         allowing teams to work independently on different
         services.
       </p>
-      <p>Here’s an example using Flask:</p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <p>Here’s an example using Flask:</p>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 from flask import Flask, jsonify, request 
@@ -435,15 +438,16 @@ def get_orders(user_id):
     return jsonify(orders.get(user_id, [])) 
 </code>
       </pre>
+            <p>
+              This example shows how microservices are
+              independently deployable, communicate via
+              HTTP/REST, have their own data storage, and
+              can be developed and scaled independently.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This example shows how microservices are
-        independently deployable, communicate via HTTP/REST,
-        have their own data storage, and can be developed
-        and scaled independently.
-      </p>
+
       <ul>
         <li>
           <strong>Event-Driven Architecture</strong>: This
@@ -484,10 +488,11 @@ def get_orders(user_id):
         processing, without creating bottlenecks in the
         system.
       </p>
-      <p>Here’s an example:</p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <p>Here’s an example:</p>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
     from abc import ABC, abstractmethod 
@@ -554,14 +559,15 @@ def get_orders(user_id):
       asyncio.run(main()) 
 </code>
       </pre>
+            <p>
+              This example demonstrates an event-driven
+              architecture with async/await patterns in
+              Python. It includes:
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This example demonstrates an event-driven
-        architecture with async/await patterns in Python. It
-        includes:
-      </p>
+
       <p>
         An Event class to represent events in the system, an
         abstract EventHandler class that defines the
@@ -609,14 +615,15 @@ def get_orders(user_id):
         consistent user experience across different client
         devices.
       </p>
-      <p>
-        Here is a comprehensive example using Python that
-        demonstrates both synchronous HTTP and
-        WebSocket-based real-time communication:
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <p>
+              Here is a comprehensive example using Python
+              that demonstrates both synchronous HTTP and
+              WebSocket-based real-time communication:
+            </p>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
     # Server-side implementation 

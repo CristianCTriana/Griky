@@ -124,10 +124,11 @@
           responsibility. This principle helps in reducing
           the complexity of the code and makes it easier to
           understand and maintain. <br />
-          Here is an example:
+
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <p>Here is an example:</p>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Bad Example - Multiple responsibilities 
@@ -167,10 +168,11 @@
           etc.) should be open for extension but closed for
           modification. This encourages developers to extend
           existing code rather than modifying it, which can
-          introduce bugs. <br />Here is an example:
+          introduce bugs. <br />
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <p>Here is an example:</p>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 from abc import ABC, abstractmethod 
@@ -215,10 +217,11 @@ from abc import ABC, abstractmethod
           with objects of a subclass without affecting the
           correctness of the program. This principle ensures
           that a subclass can stand in for its superclass.
-          <br />Here is an example:
+          <br />
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <p>Here is an example:</p>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 from abc import ABC, abstractmethod 
@@ -262,14 +265,17 @@ def race_flying_creatures(creatures: List[FlyingCreature]) -> FlyingCreature:
     return max(creatures, key=lambda c: c.fly_speed()) 
 </code>
       </pre>
+                <p>
+                  This example demonstrates LSP by ensuring
+                  that subtypes can be used in place of
+                  their base types without breaking the
+                  program’s functionality. The improved
+                  design separates behaviors into
+                  appropriate interfaces.
+                </p>
               </div>
             </div>
           </div>
-          This example demonstrates LSP by ensuring that
-          subtypes can be used in place of their base types
-          without breaking the program’s functionality. The
-          improved design separates behaviors into
-          appropriate interfaces.
         </li>
         <li>
           <strong
@@ -278,10 +284,11 @@ def race_flying_creatures(creatures: List[FlyingCreature]) -> FlyingCreature:
           interfaces they do not use. This principle
           promotes the creation of smaller, more specific
           interfaces rather than a large, general-purpose
-          interface. <br />Here is an example:
+          interface. <br />
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <p>Here is an example:</p>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 from abc import ABC, abstractmethod 
@@ -353,12 +360,15 @@ class ImprovedRobot(Workable, Rechargeable):
         print("Charging battery") 
 </code>
       </pre>
+                <p>
+                  This example shows how to split interfaces
+                  into smaller, more focused ones, allowing
+                  classes to implement only the methods they
+                  actually need.
+                </p>
               </div>
             </div>
           </div>
-          This example shows how to split interfaces into
-          smaller, more focused ones, allowing classes to
-          implement only the methods they actually need.
         </li>
         <li>
           <strong
@@ -367,10 +377,11 @@ class ImprovedRobot(Workable, Rechargeable):
           low-level modules. Both should depend on
           abstractions. This principle helps in reducing the
           coupling between different parts of the system.<br />Here
-          is an example:
+
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <p>is an example:</p>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 from abc import ABC, abstractmethod 
@@ -419,13 +430,16 @@ def main():
     mongo_service.save_user(user_data) 
 </code>
       </pre>
+                <p>
+                  This example demonstrates DIP by having
+                  high-level modules that depend on
+                  abstractions rather than concrete
+                  implementations, making the system more
+                  flexible and easier to modify.
+                </p>
               </div>
             </div>
           </div>
-          This example demonstrates DIP by having high-level
-          modules that depend on abstractions rather than
-          concrete implementations, making the system more
-          flexible and easier to modify.
         </li>
       </ol>
 

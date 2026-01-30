@@ -176,27 +176,38 @@ def compare_search_algorithms():
     print(f"Binary search is {linear_time/binary_time:.1f}x faster") 
 </code>
       </pre>
+              <p>
+                This example demonstrates algorithm
+                optimization by comparing two search
+                methods.
+              </p>
+              <br />
+              <ul>
+                <li>
+                  <strong>Linear Search</strong>: Checks
+                  each element sequentially (O(n) time
+                  complexity)
+                </li>
+                <li>
+                  <strong>Binary Search</strong>: Divides
+                  the search space in half each time (O(log
+                  n) time complexity)
+                </li>
+              </ul>
+
+              <p>
+                The code shows how choosing the right
+                algorithm can significantly impact
+                performance. Binary search is much faster
+                for large datasets but requires sorted data.
+                This illustrates the classic space-time
+                tradeoff: we spend extra memory to keep the
+                data sorted but gain dramatically better
+                search performance.
+              </p>
             </div>
           </div>
         </div>
-        This example demonstrates algorithm optimization by
-        comparing two search methods.
-        <br />
-        <strong>Linear Search</strong
-        >: Checks each element sequentially (O(n) time
-        complexity)
-        <br />
-        <strong>Binary Search</strong
-        >: Divides the search space in half each time (O(log
-        n) time complexity)
-        <br />
-        The code shows how choosing the right algorithm can
-        significantly impact performance. Binary search is
-        much faster for large datasets but requires sorted
-        data. This illustrates the classic space-time
-        tradeoff: we spend extra memory to keep the data
-        sorted but gain dramatically better search
-        performance.
 
         <li>
           <strong>Caching</strong>: Implement caching
@@ -238,34 +249,40 @@ class DataService:
         return result 
 </code>
       </pre>
+              <p>
+                This caching example demonstrates three key
+                concepts:
+              </p>
+              <br />
+              <ol>
+                <li>
+                  Basic caching using a dictionary to store
+                  previously computed results
+                </li>
+                <li>
+                  Cache performance monitoring through
+                  hit/miss counting
+                </li>
+                <li>
+                  Comparison between cached and uncached
+                  operations
+                </li>
+              </ol>
+              <p>
+                The implementation shows how caching can
+                significantly improve performance by storing
+                frequently accessed data in memory. The code
+                also includes metrics tracking to help
+                evaluate the cache’s effectiveness. This is
+                a common optimization technique used in
+                real-world applications, especially for
+                expensive operations like database queries
+                or API calls.
+              </p>
             </div>
           </div>
         </div>
-        This caching example demonstrates three key
-        concepts:
-        <br />
-        <ol>
-          <li>
-            Basic caching using a dictionary to store
-            previously computed results
-          </li>
-          <li>
-            Cache performance monitoring through hit/miss
-            counting
-          </li>
-          <li>
-            Comparison between cached and uncached
-            operations
-          </li>
-        </ol>
-        The implementation shows how caching can
-        significantly improve performance by storing
-        frequently accessed data in memory. The code also
-        includes metrics tracking to help evaluate the
-        cache’s effectiveness. This is a common optimization
-        technique used in real-world applications,
-        especially for expensive operations like database
-        queries or API calls.
+
         <li>
           <strong>Lazy Loading</strong>: Load resources only
           when they are needed, rather than at the start of
@@ -299,31 +316,35 @@ class ResourceManager:
         self._resources: Dict[str, ExpensiveResource] = {} 
 </code>
       </pre>
+              <p>The lazy loading pattern demonstrates:</p>
+              <br />
+              <ol>
+                <li>
+                  Delayed initialization of expensive
+                  resources until they are needed
+                </li>
+                <li>
+                  Use of Python’s property decorator to make
+                  lazy loading transparent to users
+                </li>
+                <li>
+                  Resource management through a centralized
+                  manager class
+                </li>
+              </ol>
+              <p>
+                This pattern is particularly useful when
+                dealing with resource-intensive operations.
+                Instead of loading all data at startup, the
+                application only loads what it needs when it
+                needs it. This can significantly improve
+                initial load times and reduce memory usage,
+                especially in large applications.
+              </p>
             </div>
           </div>
         </div>
-        The lazy loading pattern demonstrates:
-        <br />
-        <ol>
-          <li>
-            Delayed initialization of expensive resources
-            until they are needed
-          </li>
-          <li>
-            Use of Python’s property decorator to make lazy
-            loading transparent to users
-          </li>
-          <li>
-            Resource management through a centralized
-            manager class
-          </li>
-        </ol>
-        This pattern is particularly useful when dealing
-        with resource-intensive operations. Instead of
-        loading all data at startup, the application only
-        loads what it needs when it needs it. This can
-        significantly improve initial load times and reduce
-        memory usage, especially in large applications.
+
         <li>
           <strong>Database Optimization</strong>: Optimize
           database queries by indexing, avoiding unnecessary
@@ -416,30 +437,35 @@ if __name__ == "__main__":
     main() 
 </code>
       </pre>
+                <p>This profiling example demonstrates:</p>
+                <ol>
+                  <li>
+                    CPU profiling using cProfile for
+                    identifying performance bottlenecks
+                  </li>
+                  <li>
+                    Memory profiling using memory_profiler
+                    for tracking memory usage
+                  </li>
+                  <li>
+                    Execution time monitoring with detailed
+                    metrics
+                  </li>
+                  <li>
+                    Logging for performance monitoring
+                  </li>
+                  <li>Error handling and reporting</li>
+                </ol>
+                <p>
+                  These tools help developers: identifying
+                  performance bottlenecks, monitoring
+                  resource usage, tracking performance
+                  trends over time, and making data-driven
+                  optimization decisions.
+                </p>
               </div>
             </div>
           </div>
-          This profiling example demonstrates:
-          <ol>
-            <li>
-              CPU profiling using cProfile for identifying
-              performance bottlenecks
-            </li>
-            <li>
-              Memory profiling using memory_profiler for
-              tracking memory usage
-            </li>
-            <li>
-              Execution time monitoring with detailed
-              metrics
-            </li>
-            <li>Logging for performance monitoring</li>
-            <li>Error handling and reporting</li>
-          </ol>
-          These tools help developers: identifying
-          performance bottlenecks, monitoring resource
-          usage, tracking performance trends over time, and
-          making data-driven optimization decisions.
         </li>
       </ul>
 

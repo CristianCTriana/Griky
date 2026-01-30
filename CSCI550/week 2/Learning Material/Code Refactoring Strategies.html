@@ -111,10 +111,11 @@
           codebase, such as duplicated code, long methods,
           or large classes. Identifying these areas is the
           first step in refactoring. <br />
-          <strong>Example: Removing Duplicated Code</strong>
+
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <h4>Example: Removing Duplicated Code</h4>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Before Refactoring: Duplicated Code 
@@ -134,25 +135,29 @@ def calculate_area(shape, *dimensions):
         raise ValueError("Unsupported shape") 
 </code>
       </pre>
+                <p>
+                  In the refactored code, the duplicated
+                  logic for calculating areas is
+                  consolidated into a single function,
+                  improving maintainability and reducing
+                  redundancy.
+                </p>
               </div>
             </div>
           </div>
-          In the refactored code, the duplicated logic for
-          calculating areas is consolidated into a single
-          function, improving maintainability and reducing
-          redundancy.
         </li>
         <li>
           <strong>Incremental Refactoring</strong><br />
           Refactor code in small, manageable increments to
           reduce the risk of introducing bugs. <br />
-          <strong
-            >Example: Incremental Refactoring of a Long
-            Function</strong
-          >
+
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <h4>
+                  Example: Incremental Refactoring of a Long
+                  Function
+                </h4>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Before Refactoring: Long Function 
@@ -184,21 +189,24 @@ def process_data(data):
     return filter_data(transformed_data) 
 </code>
       </pre>
+                <p>
+                  The refactored code breaks a long function
+                  into smaller, reusable functions, making
+                  it easier to test and maintain.
+                </p>
               </div>
             </div>
           </div>
-          The refactored code breaks a long function into
-          smaller, reusable functions, making it easier to
-          test and maintain.
         </li>
         <li>
           <strong>Unit Testing</strong><br />
           Unit tests ensure that the code’s functionality
           remains intact after refactoring.<br />
-          <strong>Example: Adding Unit Tests</strong>
+
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <h4>Example: Adding Unit Tests</h4>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 import unittest 
@@ -229,9 +237,7 @@ if __name__ == "__main__":
           Applying design patterns during refactoring
           improves code structure and maintainability.
           <br />
-          <strong
-            >Example: Applying the Singleton Pattern</strong
-          >
+          <h4>Example: Applying the Singleton Pattern</h4>
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
@@ -252,12 +258,15 @@ singleton2 = Singleton()
 print(singleton1 is singleton2)  # Output: True 
 </code>
       </pre>
+                <p>
+                  The Singleton pattern ensures that only
+                  one instance of the class exists, which
+                  can be useful for managing shared
+                  resources.
+                </p>
               </div>
             </div>
           </div>
-          The Singleton pattern ensures that only one
-          instance of the class exists, which can be useful
-          for managing shared resources.
         </li>
       </ol>
       <h2>3.3 Technical Debt Management</h2>
@@ -273,12 +282,11 @@ print(singleton1 is singleton2)  # Output: True
           <strong>Regular Assessment</strong
           ><br />Periodically assess the codebase for
           technical debt and prioritize areas that need
-          attention.<br /><strong
-            >Example: Identifying Technical Debt</strong
-          >
+          attention.<br />
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <h4>Example: Identifying Technical Debt</h4>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Example of Technical Debt: Hardcoded Values 
@@ -292,21 +300,24 @@ def calculate_discount(price, discount_rate=DISCOUNT_RATE):
     return price * discount_rate 
 </code>
       </pre>
+                <p>
+                  Hardcoded values are a form of technical
+                  debt. Refactoring to use configurable
+                  parameters makes the code more flexible
+                  and easier to maintain.
+                </p>
               </div>
             </div>
           </div>
-          Hardcoded values are a form of technical debt.
-          Refactoring to use configurable parameters makes
-          the code more flexible and easier to maintain.
         </li>
         <li>
           <strong>Allocate Time for Refactoring </strong
           ><br />Set aside dedicated time in the development
-          cycle for addressing technical debt.<br />Example:
-          Scheduled Refactoring
+          cycle for addressing technical debt.<br />
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <h4>Example: Scheduled Refactoring</h4>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Before Refactoring: Inefficient Loop 
@@ -319,24 +330,28 @@ for number in numbers:
 squared_numbers = [number ** 2 for number in numbers] 
 </code>
       </pre>
+                <p>
+                  Refactoring inefficient code (e.g.,
+                  replacing a loop with a list
+                  comprehension) can be scheduled during
+                  dedicated refactoring time to improve
+                  performance and readability.
+                </p>
               </div>
             </div>
           </div>
-          Refactoring inefficient code (e.g., replacing a
-          loop with a list comprehension) can be scheduled
-          during dedicated refactoring time to improve
-          performance and readability.
         </li>
         <li>
           <strong>Documentation</strong><br />Document
           instances of technical debt and the rationale
-          behind them.<br /><strong
-            >Example: Adding Comments for Technical
-            Debt</strong
-          >
+          behind them.<br />
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <h4>
+                  Example: Adding Comments for Technical
+                  Debt
+                </h4>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 # TODO: Replace this with a more efficient algorithm 
@@ -348,12 +363,14 @@ def find_max(numbers):
     return max_number   
 </code>
       </pre>
+                <p>
+                  Adding comments or TODOs helps track
+                  technical debt and provides context for
+                  future developers to address it.
+                </p>
               </div>
             </div>
           </div>
-          Adding comments or TODOs helps track technical
-          debt and provides context for future developers to
-          address it.
         </li>
       </ol>
 

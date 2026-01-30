@@ -181,13 +181,14 @@
           ><br />Automated test execution ensures that tests
           are run automatically whenever code is pushed to
           the repository, providing immediate feedback on
-          the code’s quality. <br /><strong
-            >Example: Automating Tests with GitHub
-            Actions</strong
-          >
+          the code’s quality. <br />
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <h4>
+                  Example: Automating Tests with GitHub
+                  Actions
+                </h4>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 # .github/workflows/ci.yml 
@@ -221,51 +222,58 @@ jobs:
         pytest --junitxml=test-results.xml 
 </code>
       </pre>
+                <p>
+                  The above YAML file configures a GitHub
+                  Actions workflow to automatically run
+                  tests using pytest whenever code is pushed
+                  to the main branch.
+                  <br />This pipeline automates the testing
+                  process, ensuring that any new code
+                  changes are validated immediately. It
+                  checks out the code, sets up Python,
+                  installs dependencies, and runs the tests.
+                </p>
               </div>
             </div>
           </div>
-          The above YAML file configures a GitHub Actions
-          workflow to automatically run tests using pytest
-          whenever code is pushed to the main branch.
-          <br />This pipeline automates the testing process,
-          ensuring that any new code changes are validated
-          immediately. It checks out the code, sets up
-          Python, installs dependencies, and runs the tests.
         </li>
         <li>
           <strong>Test Reporting</strong>Detailed test
           reports provide insights into test results,
           helping teams quickly identify and address
-          issues.<br /><strong
-            >Example: Generating Test Reports with
-            Pytest</strong
-          >
+          issues.<br />
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <h4>
+                  Example: Generating Test Reports with
+                  Pytest
+                </h4>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Run tests and generate an HTML report 
 pytest --html=report.html --self-contained-html 
 </code>
       </pre>
+                <p>
+                  Using the pytest-html plugin, you can
+                  generate a detailed HTML report of the
+                  test results. This report can be
+                  integrated into the CI/CD pipeline to
+                  provide visibility into test outcomes.
+                </p>
               </div>
             </div>
           </div>
-          Using the pytest-html plugin, you can generate a
-          detailed HTML report of the test results. This
-          report can be integrated into the CI/CD pipeline
-          to provide visibility into test outcomes.
         </li>
         <li>
           <strong>Rollback Mechanisms</strong><br />Rollback
           mechanisms ensure system stability by reverting to
-          the last stable version if tests fail.<br /><strong
-            >Example: Rollback Using Git</strong
-          >
+          the last stable version if tests fail.<br />
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <h4>Example: Rollback Using Git</h4>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Rollback to the previous stable commit 
@@ -273,25 +281,29 @@ git reset --hard &lt;last_stable_commit_hash&gt;
 git push --force 
 </code>
       </pre>
+                <p>
+                  If a test fails during the CI/CD pipeline,
+                  the system can automatically revert to the
+                  last stable commit using Git commands.
+                  This ensures that unstable code does not
+                  affect production.
+                </p>
               </div>
             </div>
           </div>
-          If a test fails during the CI/CD pipeline, the
-          system can automatically revert to the last stable
-          commit using Git commands. This ensures that
-          unstable code does not affect production.
         </li>
         <li>
           <strong>Monitoring and Alerts</strong
           ><br />Monitoring and alerting systems notify the
           development team of test failures or performance
           issues in real-time.
-          <strong
-            >Example: Setting Up Alerts with Slack</strong
-          >
+
           <div class="code-cards">
             <div class="code-cards-grid">
               <div class="code-card">
+                <h4>
+                  Example: Setting Up Alerts with Slack
+                </h4>
                 <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Example GitHub Actions workflow with Slack notifications 
@@ -334,19 +346,25 @@ jobs:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
 </code>
       </pre>
+                <p>
+                  This workflow integrates Slack
+                  notifications to alert the team if the
+                  tests fail. The action-slack GitHub Action
+                  sends a message to a Slack channel with
+                  details about the failure.
+                </p>
               </div>
             </div>
           </div>
-          This workflow integrates Slack notifications to
-          alert the team if the tests fail. The action-slack
-          GitHub Action sends a message to a Slack channel
-          with details about the failure. <br />By
-          integrating these practices into CI/CD pipelines,
-          teams can ensure a robust and efficient
-          development workflow. Automated testing, detailed
-          reporting, rollback mechanisms, and real-time
-          alerts collectively enhance the quality and
-          reliability of software delivery.
+          <p>
+            By integrating these practices into CI/CD
+            pipelines, teams can ensure a robust and
+            efficient development workflow. Automated
+            testing, detailed reporting, rollback
+            mechanisms, and real-time alerts collectively
+            enhance the quality and reliability of software
+            delivery.
+          </p>
         </li>
       </ol>
 
