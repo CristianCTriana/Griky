@@ -21,21 +21,6 @@
     <link
       rel="stylesheet"
       href="../../../Griky Structure/StylesComponents.css" />
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
-    <!-- Font Awesome CSS -->
-    <link
-      rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
-    <!-- Template CSS -->
-    <link
-      rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
-    <link
-      rel="stylesheet"
-      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
     <style>
       :root {
         --color-primary: #041e42;
@@ -173,7 +158,8 @@
       </p>
       <div class="digital-guide">
         <strong><span class="icon">ⓘ</span>&nbsp;</strong
-        ><span style="font-family: Lato, sans-serif"
+        ><span
+          style="font-family: Lato, sans-serif; color: #000"
           >This is not an assignment prompt, but rather an
           opportunity to reflect on how the week’s concepts
           apply to real workplace situations.</span
@@ -327,12 +313,11 @@
         to compensate for the loss of organic information
         flow.
       </p>
-      <p>
-        <strong>Example:</strong> Asynchronous Stand-Up Bot
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Asynchronous Stand-Up Bot</h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 from datetime import datetime 
@@ -358,15 +343,16 @@ for update in standup_updates:
     print(update) 
 </code>
       </pre>
+            <p>
+              This script simulates an asynchronous stand-up
+              bot that collects updates from team members
+              and timestamps them, making it suitable for
+              distributed teams across different time zones.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        This script simulates an asynchronous stand-up bot
-        that collects updates from team members and
-        timestamps them, making it suitable for distributed
-        teams across different time zones.
-      </p>
+
       <h2>
         1.2 Structuring Distributed Teams for Efficiency
       </h2>
@@ -426,41 +412,11 @@ for update in standup_updates:
         interactions, which can mimic the spontaneous
         conversations of co-located teams and build rapport.
       </p>
-      <p>
-        <strong>Example</strong>: Task Assignment by Time
-        Zone
-      </p>
 
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
-            <h4 class="code-card-title">Arrays</h4>
-
-            <p>
-              Arrays are static data structures that store
-              elements of the same type in contiguous memory
-              locations (Knuth, 1997). They have the
-              following characteristics:
-            </p>
-
-            <ul>
-              <li>
-                Fixed size (in most programming languages)
-              </li>
-              <li>
-                Fast access time — O(1) for any element
-              </li>
-              <li>
-                Inefficient for insertion and deletion in
-                the middle
-              </li>
-            </ul>
-
-            <p class="code-card-note">
-              The following example shows an array in
-              Python:
-            </p>
-
+            <h4>Example: Task Assignment by Time Zone</h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python"># Team members and their time zones 
 team = { 
@@ -483,15 +439,16 @@ def assign_tasks(team, tasks):
 task_assignments = assign_tasks(team, tasks) 
 for member, task in task_assignments.items(): 
     print(f"{member} ({team[member]}): {task}") </code></pre>
+            <p>
+              This example script assigns tasks to team
+              members based on their availability, ensuring
+              that work progresses smoothly across time
+              zones.
+            </p>
           </div>
         </div>
       </div>
 
-      <p>
-        This example script assigns tasks to team members
-        based on their availability, ensuring that work
-        progresses smoothly across time zones.
-      </p>
       <h2>
         1.3 Balancing Autonomy and Coordination in DASD
         Environments
@@ -552,13 +509,13 @@ for member, task in task_assignments.items():
         teams can ensure consistency without stifling the
         creativity and flexibility that Agile promotes.
       </p>
-      <p>
-        <strong>Example</strong>: Shared Backlog for
-        Distributed Teams
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Shared Backlog for Distributed Teams
+            </h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python"># Shared backlog 
 backlog = [ 
@@ -580,229 +537,14 @@ def update_task_status(task_name, new_status):
 update_task_status("Implement login feature", "In Progress") 
 for task in backlog: 
     print(task) </code></pre>
+            <p>
+              This script demonstrates how a shared backlog
+              can be used to track and update the status of
+              tasks, ensuring coordination across
+              distributed teams.
+            </p>
           </div>
         </div>
-      </div>
-
-      <p>
-        This script demonstrates how a shared backlog can be
-        used to track and update the status of tasks,
-        ensuring coordination across distributed teams.
-      </p>
-      <h2>Knowledge Check</h2>
-      <div class="quiz">
-        <!--Question 1-->
-        <form class="quick-assess quick-assess-mc">
-          <fieldset class="radio">
-            <legend>
-              <span
-                >Question 1: What is the primary difference
-                between traditional Agile and Distributed
-                Agile Software Development (DASD)?
-              </span>
-            </legend>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <span
-                    class="fas fa-times ans-symbol invisible float-right"></span>
-                  <!-- <span class="fas fa-times ans-symbol invisible float-right"></span> -->
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label">
-                    A. DASD relies on synchronous
-                    communication only.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
-                  <span
-                    class="fas fa-times ans-symbol invisible float-right"></span>
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label">
-                    B. Traditional Agile focuses on
-                    geographically dispersed teams.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
-                  <span
-                    class="fas fa-check ans-symbol invisible float-right"></span>
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label">
-                    C. DASD requires adaptation of Agile
-                    ceremonies for geographically dispersed
-                    teams.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
-                  <span
-                    class="fas fa-times ans-symbol invisible float-right"></span>
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label">
-                    D. Traditional Agile requires extensive
-                    documentation.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <button
-              type="button"
-              data-toggle="collapse"
-              aria-expanded="false"
-              disabled="disabled"
-              class="btn btn-primary btn-quick-assess">
-              Check Answer
-            </button>
-            <div class="collapse feedback">
-              <p>
-                <span
-                  ><strong>Correct answer:</strong> C. DASD
-                  requires adaptation of Agile ceremonies
-                  for geographically dispersed teams.</span
-                >
-              </p>
-            </div>
-          </fieldset>
-        </form>
-        <form class="quick-assess quick-assess-mc">
-          <fieldset class="radio">
-            <legend>
-              <span
-                >Question 2: Which of the following is a
-                recommended strategy to enhance team
-                cohesion in a Distributed Agile Software
-                Development (DASD) environment?
-              </span>
-            </legend>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <span
-                    class="fas fa-times ans-symbol invisible float-right"></span>
-                  <!-- <span class="fas fa-times ans-symbol invisible float-right"></span> -->
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label">
-                    A. Avoid scheduling regular meetings to
-                    respect time differences.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
-                  <span
-                    class="fas fa-times ans-symbol invisible float-right"></span>
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label">
-                    B. Implement a strict hierarchical
-                    structure to enforce discipline.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
-                  <span
-                    class="fas fa-check ans-symbol invisible float-right"></span>
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label">
-                    C. Use regular virtual team-building
-                    activities and cross-location pair
-                    programming.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-check pl-2">
-              <div class="row">
-                <div class="col-1 pr-0 pr-sm-1">
-                  <!-- <span class="fas fa-check ans-symbol invisible float-right"></span> -->
-                  <span
-                    class="fas fa-times ans-symbol invisible float-right"></span>
-                </div>
-                <div class="col-11">
-                  <input
-                    type="radio"
-                    name="MC-answer"
-                    class="" />
-                  <label class="radio-label">
-                    D. Limit informal communication to focus
-                    on work productivity.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <button
-              type="button"
-              data-toggle="collapse"
-              aria-expanded="false"
-              disabled="disabled"
-              class="btn btn-primary btn-quick-assess">
-              Check Answer
-            </button>
-            <div class="collapse feedback">
-              <p>
-                <span
-                  ><strong>Correct answer:</strong> C. Use
-                  regular virtual team-building activities
-                  and cross-location pair programming.
-                </span>
-              </p>
-            </div>
-          </fieldset>
-        </form>
       </div>
 
       <hr class="divider-line" />
@@ -814,11 +556,6 @@ for task in backlog:
           alt="APUS Logo" />
       </footer>
     </main>
-    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
-    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
-    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
-    <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
   </body>
 </html>

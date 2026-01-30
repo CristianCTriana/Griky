@@ -100,7 +100,6 @@
 
       <hr class="divider-line" />
 
-      <h1>2. Advanced Collaboration Techniques in DASD</h1>
       <p>
         <span style="font-size: 19px"
           >Distributed Agile Software Development (DASD)
@@ -168,19 +167,15 @@
           team members in different time zones.</span
         >
       </p>
-      <p>
-        <span style="font-size: 19px"
-          ><strong>Example</strong>: Retrospective Feedback
-          Collection</span
-        >
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
-            <pre class="line-numbers d2l-code">
-<code class="language-python">
-<pre
-        class="line-numbers d2l-code"><code class="language-python"># Collect feedback from team members 
+            <h4>
+              Example: Retrospective Feedback Collection
+            </h4>
+            <pre
+              class="line-numbers d2l-code"><code class="language-python"># Collect feedback from team members 
 feedback = { 
     "Alice": {"What went well": "Good communication", "What can be improved": "Faster code reviews"}, 
     "Bob": {"What went well": "Clear requirements", "What can be improved": "Better time zone overlap"}, 
@@ -197,19 +192,16 @@ def display_feedback(feedback):
  
 # Usage 
 display_feedback(feedback) </code></pre>
-</code>
-      </pre>
+
+            <p>
+              This script collects and displays
+              retrospective feedback asynchronously, making
+              it suitable for distributed teams.
+            </p>
           </div>
         </div>
       </div>
 
-      <p>
-        <span style="font-size: 19px"
-          >This script collects and displays retrospective
-          feedback asynchronously, making it suitable for
-          distributed teams.</span
-        >
-      </p>
       <h2>
         2.2 Tools for Real-Time Communication and Project
         Management
@@ -271,24 +263,14 @@ display_feedback(feedback) </code></pre>
           the team.</span
         >
       </p>
-      <p>
-        <span style="font-size: 19px"
-          ><strong>Example</strong>: Task Management
-          System</span
-        >
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
-            <p class="code-card-note">
-              The following example shows an array in
-              Python:
-            </p>
+            <h4>Example: Task Management System</h4>
 
-            <pre class="line-numbers d2l-code">
-<code class="language-python">
-<pre
-        class="line-numbers d2l-code"><code class="language-python"># Task board 
+            <pre
+              class="line-numbers d2l-code"><code class="language-python"># Task board 
 task_board = { 
     "To Do": ["Set up CI/CD pipeline", "Design database schema"], 
     "In Progress": ["Develop user authentication"], 
@@ -308,19 +290,16 @@ def move_task(task, from_column, to_column):
 move_task("Develop user authentication", "In Progress", "Done") 
 for column, tasks in task_board.items(): 
     print(f"{column}: {tasks}") </code></pre>
-</code>
-      </pre>
+            <p>
+              This example script simulates a task
+              management system, allowing distributed teams
+              to track and update task progress in real
+              time.
+            </p>
           </div>
         </div>
       </div>
 
-      <p>
-        <span style="font-size: 19px"
-          >This example script simulates a task management
-          system, allowing distributed teams to track and
-          update task progress in real time.</span
-        >
-      </p>
       <h2>
         2.3 Managing Dependencies and Tasks Across Time
         Zones

@@ -135,7 +135,6 @@
       </p>
       <!--ACORDEON-->
       <div class="accordion">
-        aqui acordeon item
         <div class="accordion-item">
           <input
             type="checkbox"
@@ -228,15 +227,10 @@
         </div>
       </div>
 
-      <p>
-        <span style="font-size: 19px"
-          ><strong>Example</strong>: Data Anonymization for
-          Privacy</span
-        >
-      </p>
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Data Anonymization for Privacy</h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python">import hashlib 
  
@@ -251,18 +245,16 @@ sensitive_data = "user@example.com"
 anonymized_data = anonymize_data(sensitive_data) 
 print(f"Original Data: {sensitive_data}") 
 print(f"Anonymized Data: {anonymized_data}") </code></pre>
+            <p>
+              This script anonymizes sensitive data (e.g.,
+              email addresses) by hashing it, ensuring that
+              user privacy is protected while still allowing
+              the data to be used for analysis.
+            </p>
           </div>
         </div>
       </div>
 
-      <p>
-        <span style="font-size: 19px"
-          >This script anonymizes sensitive data (e.g.,
-          email addresses) by hashing it, ensuring that user
-          privacy is protected while still allowing the data
-          to be used for analysis.</span
-        >
-      </p>
       <h2>
         4.2 Key Regulations Affecting DASD (e.g., GDPR,
         HIPAA Compliance)
@@ -334,15 +326,11 @@ print(f"Anonymized Data: {anonymized_data}") </code></pre>
           not shared inappropriately.</span
         >
       </p>
-      <p>
-        <span style="font-size: 19px"
-          ><strong>Example</strong>: Validating User
-          Consent</span
-        >
-      </p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Validating User Consent</h4>
             <pre
               class="line-numbers d2l-code"><code class="language-python"># Function to validate user consent 
 def validate_consent(user_data): 
@@ -354,17 +342,15 @@ def validate_consent(user_data):
 # Usage 
 user_data = {"name": "John Doe", "email": "john.doe@example.com", "consent": True} 
 validate_consent(user_data) </code></pre>
+            <p>
+              This script checks whether a user has provided
+              explicit consent before processing their data,
+              ensuring compliance with GDPR requirements.
+            </p>
           </div>
         </div>
       </div>
 
-      <p>
-        <span style="font-size: 19px"
-          >This script checks whether a user has provided
-          explicit consent before processing their data,
-          ensuring compliance with GDPR requirements.</span
-        >
-      </p>
       <h2>
         4.3 Using AI Responsibly in DASD to Balance
         Innovation and Ethical Concerns
@@ -445,14 +431,15 @@ validate_consent(user_data) </code></pre>
           technologies.</span
         >
       </p>
-      <p>
-        <span style="font-size: 19px"
-          ><strong>Example</strong>: Detecting Bias in AI
-          Predictions</span
-        >
-      </p>
-      <pre
-        class="line-numbers d2l-code"><code class="language-python">from collections import Counter 
+
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <h4>
+              Example: Detecting Bias in AI Predictions
+            </h4>
+            <pre
+              class="line-numbers d2l-code"><code class="language-python">from collections import Counter 
  
 # Simulated AI predictions 
 predictions = ["Male", "Male", "Male", "Female", "Male", "Male", "Female", "Male"] 
@@ -469,13 +456,14 @@ def detect_bias(predictions):
  
 # Usage 
 detect_bias(predictions) </code></pre>
-      <p>
-        <span style="font-size: 19px"
-          >This script analyzes the distribution of AI
-          predictions to detect potential bias, ensuring
-          fairness and accountability in AI systems.</span
-        >
-      </p>
+            <p>
+              This script analyzes the distribution of AI
+              predictions to detect potential bias, ensuring
+              fairness and accountability in AI systems.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <hr class="divider-line" />
 

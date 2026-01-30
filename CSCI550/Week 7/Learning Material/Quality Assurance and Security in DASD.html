@@ -186,14 +186,13 @@
           codebase.</span
         >
       </p>
-      <p>
-        <span style="font-size: 19px"
-          ><strong>Example</strong>: Automated Code Review
-          Comments</span
-        >
-      </p>
-      <pre
-        class="line-numbers d2l-code"><code class="language-python"># Sample code snippet 
+
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <h4>Example: Automated Code Review Comments</h4>
+            <pre
+              class="line-numbers d2l-code"><code class="language-python"># Sample code snippet 
 code_snippet = """ 
 def add_numbers(a, b): 
 return a+b 
@@ -212,13 +211,15 @@ def review_code(code):
 review_comments = review_code(code_snippet) 
 for comment in review_comments: 
     print(comment) </code></pre>
-      <p>
-        <span style="font-size: 19px"
-          >This script automates code review by identifying
-          common issues, helping distributed teams maintain
-          consistent code quality.</span
-        >
-      </p>
+            <p>
+              This script automates code review by
+              identifying common issues, helping distributed
+              teams maintain consistent code quality.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <h2>
         3.2 Challenges of Implementing DevSecOps in DASD
         Environments
@@ -368,14 +369,13 @@ for comment in review_comments:
           development process.</span
         >
       </p>
-      <p>
-        <span style="font-size: 19px"
-          ><strong>Example</strong>: Encrypting Sensitive
-          Data</span
-        >
-      </p>
-      <pre
-        class="line-numbers d2l-code"><code class="language-python">from cryptography.fernet import Fernet 
+
+      <div class="code-cards">
+        <div class="code-cards-grid">
+          <div class="code-card">
+            <h4>Example: Encrypting Sensitive Data</h4>
+            <pre
+              class="line-numbers d2l-code"><code class="language-python">from cryptography.fernet import Fernet 
  
 # Generate encryption key 
 key = Fernet.generate_key() 
@@ -396,13 +396,14 @@ sensitive_data = "This is a secret message."
 encrypted_data = encrypt_data(sensitive_data) 
 print(f"Encrypted: {encrypted_data}") 
 print(f"Decrypted: {decrypt_data(encrypted_data)}") </code></pre>
-      <p>
-        <span style="font-size: 19px"
-          >This script encrypts and decrypts sensitive data,
-          ensuring secure communication and data sharing in
-          distributed teams.</span
-        >
-      </p>
+            <p>
+              This script encrypts and decrypts sensitive
+              data, ensuring secure communication and data
+              sharing in distributed teams.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <hr class="divider-line" />
 
