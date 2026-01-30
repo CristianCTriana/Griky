@@ -214,10 +214,13 @@
           </div>
         </div>
       </div>
-      <p>Example: Defending Against Adversarial Attacks</p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Defending Against Adversarial Attacks
+            </h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 import numpy as np 
@@ -236,15 +239,16 @@ prediction = model.predict(adversarial_input)
 print(f"Prediction for adversarial input: {prediction}") 
 </code>
       </pre>
+            <p>
+              Adversarial inputs are crafted to deceive ML
+              models. Defensive techniques, such as
+              adversarial training, can improve model
+              robustness against such attacks.
+            </p>
           </div>
         </div>
       </div>
 
-      <p>
-        Adversarial inputs are crafted to deceive ML models.
-        Defensive techniques, such as adversarial training,
-        can improve model robustness against such attacks.
-      </p>
       <h2>2.2 Model Vulnerability Assessment</h2>
       <p>
         Assessing the security of ML models is essential to
@@ -325,37 +329,13 @@ print(f"Prediction for adversarial input: {prediction}")
           </div>
         </div>
       </div>
-      <p>Example: Containerizing ML Models with Docker</p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
-            <h4 class="code-card-title">Arrays</h4>
-
-            <p>
-              Arrays are static data structures that store
-              elements of the same type in contiguous memory
-              locations (Knuth, 1997). They have the
-              following characteristics:
-            </p>
-
-            <ul>
-              <li>
-                Fixed size (in most programming languages)
-              </li>
-              <li>
-                Fast access time — O(1) for any element
-              </li>
-              <li>
-                Inefficient for insertion and deletion in
-                the middle
-              </li>
-            </ul>
-
-            <p class="code-card-note">
-              The following example shows an array in
-              Python:
-            </p>
-
+            <h4>
+              Example: Containerizing ML Models with Docker
+            </h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Dockerfile for deploying an ML model 
@@ -372,14 +352,15 @@ COPY app.py app.py
 CMD ["python", "app.py"] 
 </code>
       </pre>
+            <p>
+              Explanation:<br />Containerization isolates
+              the ML model and its dependencies, ensuring a
+              consistent and secure runtime environment.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        Explanation:<br />Containerization isolates the ML
-        model and its dependencies, ensuring a consistent
-        and secure runtime environment.
-      </p>
+
       <h2>2.3 Secure ML Deployment Practices</h2>
       <p>
         Deploying ML models securely requires addressing

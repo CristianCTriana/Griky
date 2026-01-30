@@ -448,10 +448,11 @@
         resilient software systems that are less susceptible
         to attacks.
       </p>
-      <p><strong>Example</strong>: Using Bandit for SAST</p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example Using Bandit for SAST</h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Install Bandit 
@@ -461,15 +462,16 @@ pip install bandit
 bandit -r my_project/ 
 </code>
       </pre>
+            <p>
+              Bandit scans Python code for security
+              vulnerabilities, such as hardcoded credentials
+              or unsafe function calls, helping developers
+              identify and fix issues early in the
+              development process.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        Bandit scans Python code for security
-        vulnerabilities, such as hardcoded credentials or
-        unsafe function calls, helping developers identify
-        and fix issues early in the development process.
-      </p>
 
       <hr class="divider-line" />
 

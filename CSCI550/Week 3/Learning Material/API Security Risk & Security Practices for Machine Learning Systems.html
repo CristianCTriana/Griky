@@ -331,10 +331,12 @@
         can ensure only legitimate access, reducing the risk
         of unauthorized data breaches.
       </p>
-      <p>Example: Implementing JWT Authentication</p>
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>
+              Example: Implementing JWT Authentication
+            </h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 from flask import Flask, request, jsonify 
@@ -375,24 +377,26 @@ if __name__ == '__main__':
     app.run(debug=True) 
 </code>
       </pre>
+            <p>
+              This example demonstrates how to generate and
+              validate JWT tokens to secure API endpoints.
+            </p>
+            <ul>
+              <li>
+                The /login endpoint generates a JWT token
+                for authenticated users.
+              </li>
+              <li>
+                The /protected endpoint validates the token
+                before granting access. This ensures only
+                authorized users can access protected
+                resources.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <p>
-        This example demonstrates how to generate and
-        validate JWT tokens to secure API endpoints.
-      </p>
-      <ul>
-        <li>
-          The /login endpoint generates a JWT token for
-          authenticated users.
-        </li>
-        <li>
-          The /protected endpoint validates the token before
-          granting access. This ensures only authorized
-          users can access protected resources.
-        </li>
-      </ul>
+
       <h2>1.2 API Vulnerability Assessment</h2>
       <p>
         Assessing the security of an API is a critical
@@ -460,10 +464,11 @@ if __name__ == '__main__':
         leveraging automated tools can significantly enhance
         the resilience of APIs.
       </p>
-      <p>Example: Preventing SQL Injection</p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Preventing SQL Injection</h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 # Connect to the database 
@@ -483,14 +488,16 @@ print(result)
 connection.close() 
 </code>
       </pre>
+            <p>
+              Using parameterized queries prevents attackers
+              from injecting malicious SQL commands,
+              safeguarding the database from unauthorized
+              access or data loss.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        Using parameterized queries prevents attackers from
-        injecting malicious SQL commands, safeguarding the
-        database from unauthorized access or data loss.
-      </p>
+
       <h2>1.3 Security Best Practices for API Design</h2>
       <p>
         Designing secure APIs involves incorporating best
@@ -565,10 +572,11 @@ connection.close()
         reduce vulnerabilities, ensuring robust APIs capable
         of resisting malicious activities.
       </p>
-      <p>Example: Implementing Rate Limiting</p>
+
       <div class="code-cards">
         <div class="code-cards-grid">
           <div class="code-card">
+            <h4>Example: Implementing Rate Limiting</h4>
             <pre class="line-numbers d2l-code">
 <code class="language-python">
 from flask import Flask, request 
@@ -586,15 +594,15 @@ if __name__ == '__main__':
     app.run(debug=True) 
 </code>
       </pre>
+            <p>
+              Rate limiting prevents abuse by restricting
+              the number of requests a client can make
+              within a specific time frame, protecting APIs
+              from DoS attacks.
+            </p>
           </div>
         </div>
       </div>
-      <p>
-        Rate limiting prevents abuse by restricting the
-        number of requests a client can make within a
-        specific time frame, protecting APIs from DoS
-        attacks.
-      </p>
 
       <hr class="divider-line" />
 
