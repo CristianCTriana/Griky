@@ -209,107 +209,146 @@
         support various testing levels and approaches,
         ensuring comprehensive coverage and reliability.
       </p>
-      <h3>Types of Testing Frameworks</h3>
-      <ol>
-        <li>
-          <strong>Unit Testing Frameworks:</strong>
-          <ul>
-            <li>
-              <strong>JUnit</strong> (Java): Feature-rich
-              testing framework with extensive assertion
-              capabilities
-            </li>
-            <li>
-              <strong>pytest</strong> (Python): Flexible
-              framework supporting fixture-based testing
-            </li>
-            <li>
-              <strong>Jest</strong> (JavaScript): Complete
-              testing solution for JavaScript applications
-            </li>
-            <li>
-              <strong>NUnit</strong> (.NET): Comprehensive
-              testing toolkit for .NET applications
-            </li>
-          </ul>
-        </li>
-        <li>
-          <strong>Integration Testing Tools:</strong>
-          <ul>
-            <li>
-              <strong>Selenium</strong>: Web application
-              testing automation
-            </li>
-            <li>
-              <strong>Postman</strong>: API testing and
-              documentation
-            </li>
-            <li>
-              <strong>TestContainers</strong>:
-              Container-based integration testing
-            </li>
-            <li>
-              <strong>Cypress</strong>: Modern web testing
-              framework
-            </li>
-          </ul>
-        </li>
-        <li>
-          <strong>Performance Testing Frameworks:</strong>
-          <ul>
-            <li>
-              <strong>JMeter</strong>: Load and performance
-              testing
-            </li>
-            <li>
-              <strong>K6:</strong> Modern load testing too
-            </li>
-            <li>
-              <strong>Gatling</strong>: Scala-based
-              performance testing
-            </li>
-            <li>
-              <strong>Artillery</strong>: Node.js-based load
-              testing
-            </li>
-          </ul>
-        </li>
-      </ol>
-      <h3>Testing Best Practices:</h3>
-      <ol>
-        <li>
-          <strong>Test Pyramid Implementation:</strong>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lot1" />
+          <label
+            class="accordion-title"
+            for="lot1">
+            Types of Testing Frameworks
+          </label>
+          <div class="accordion-content">
+            <ol>
+              <li>
+                <strong>Unit Testing Frameworks:</strong>
+                <ul>
+                  <li>
+                    <strong>JUnit</strong> (Java):
+                    Feature-rich testing framework with
+                    extensive assertion capabilities
+                  </li>
+                  <li>
+                    <strong>pytest</strong> (Python):
+                    Flexible framework supporting
+                    fixture-based testing
+                  </li>
+                  <li>
+                    <strong>Jest</strong> (JavaScript):
+                    Complete testing solution for JavaScript
+                    applications
+                  </li>
+                  <li>
+                    <strong>NUnit</strong> (.NET):
+                    Comprehensive testing toolkit for .NET
+                    applications
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Integration Testing Tools:</strong>
+                <ul>
+                  <li>
+                    <strong>Selenium</strong>: Web
+                    application testing automation
+                  </li>
+                  <li>
+                    <strong>Postman</strong>: API testing
+                    and documentation
+                  </li>
+                  <li>
+                    <strong>TestContainers</strong>:
+                    Container-based integration testing
+                  </li>
+                  <li>
+                    <strong>Cypress</strong>: Modern web
+                    testing framework
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong
+                  >Performance Testing Frameworks:</strong
+                >
+                <ul>
+                  <li>
+                    <strong>JMeter</strong>: Load and
+                    performance testing
+                  </li>
+                  <li>
+                    <strong>K6:</strong> Modern load testing
+                    too
+                  </li>
+                  <li>
+                    <strong>Gatling</strong>: Scala-based
+                    performance testing
+                  </li>
+                  <li>
+                    <strong>Artillery</strong>:
+                    Node.js-based load testing
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lot2" />
+          <label
+            class="accordion-title"
+            for="lot2">
+            Testing Best Practices
+          </label>
+          <div class="accordion-content">
+            <ol>
+              <li>
+                <strong
+                  >Test Pyramid Implementation:</strong
+                >
 
-          <ul>
-            <li>large number of unit tests at the base</li>
-            <li>fewer integration tests in the middle</li>
-            <li>
-              limited number of end-to-end tests at the top
-            </li>
-          </ul>
-        </li>
-        <li>
-          <strong>Test Automation Strategies:</strong>
-          <ul>
-            <li>
-              Continuous Testing: Integration with CI/CD
-              pipelines
-            </li>
-            <li>
-              Test-Driven Development (TDD): Writing tests
-              before implementation
-            </li>
-            <li>
-              Behavior-Driven Development (BDD):
-              Specification by example
-            </li>
-            <li>
-              Property-Based Testing: Generating test cases
-              automatically
-            </li>
-          </ul>
-        </li>
-      </ol>
+                <ul>
+                  <li>
+                    large number of unit tests at the base
+                  </li>
+                  <li>
+                    fewer integration tests in the middle
+                  </li>
+                  <li>
+                    limited number of end-to-end tests at
+                    the top
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Test Automation Strategies:</strong>
+                <ul>
+                  <li>
+                    Continuous Testing: Integration with
+                    CI/CD pipelines
+                  </li>
+                  <li>
+                    Test-Driven Development (TDD): Writing
+                    tests before implementation
+                  </li>
+                  <li>
+                    Behavior-Driven Development (BDD):
+                    Specification by example
+                  </li>
+                  <li>
+                    Property-Based Testing: Generating test
+                    cases automatically
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
       <h2>4.3 Containerization and Orchestration</h2>
       <p>
         Containerization has revolutionized software
