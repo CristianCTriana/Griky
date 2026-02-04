@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* ENCABEZADO */
+      .header-container h3 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: left;
+        font-size: 28px;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* CONTENEDOR PRINCIPAL */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      h1.section-title,
+      h2.section-subtitle {
+        font-size: 35px;
+        font-weight: 700;
+        color: #041e42;
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #202122;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      .centered-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item
+        input:checked
+        + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #eaf4ff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 1200px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .accordion-content ul {
+        padding-left: 20px;
+      }
+      .accordion-content li {
+        margin-bottom: 10px;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* TABLA DE ASSESSMENTS */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #dcdcdc;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+      }
+      th {
+        background-color: #041e42;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h3 style="text-align: center">
+        <span class="course-code">ISSC661<br /></span>
+        <span style="font-size: 28px">Course Overview</span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <!-- SECCIÓN PRINCIPAL -->
+      <h2
+        class="section-title"
+        style="text-align: center">
+        <span
+          style="
+            font-family: Lato, sans-serif;
+            font-size: 30px;
+            color: #041e40;
+          "
+          >Scope, Learning Objectives, and Assessment</span
+        >
+      </h2>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Course Scope</span
+        >
+      </h3>
+      <div
+        style="
+          display: flex;
+          gap: 100px;
+          align-items: center;
+          padding: 0px 0;
+        ">
+        <div
+          style="
+            flex: 1;
+            min-width: 200px;
+            max-width: 200px;
+          ">
+          <img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/img-course-1_20251120220934262.png"
+            alt=""
+            title=""
+            width="313"
+            height="338"
+            style="float: left" />
+        </div>
+        <div style="flex: 2">
+          <p>
+            This course is a study of the discipline of
+            Information Assurance as it relates to security
+            assessments and evaluations.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Course &amp; Learning Objectives</span
+        >
+      </h3>
+      <p>
+        Select each Course Objective to see the associated
+        Learning Objectives and Assessments.
+      </p>
+      <!-- ACORDEÓN: COURSE AND LEARNING OBJECTIVES -->
+      <div class="accordion">
+        <!-- CO-1 -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co1" />
+          <label
+            class="accordion-title"
+            for="co1"
+            >CO-1: Analyze the principles, practices, and
+            methodologies used to protect and ensure the
+            availability of digital information systems
+            assets.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Learning Objectives</strong></p>
+            <ul>
+              <li>
+                LO-1.1: Define the core principles of
+                information assurance.
+              </li>
+              <li>
+                LO-1.2: Analyze how risk management
+                frameworks support the protection of digital
+                assets.
+              </li>
+              <li>
+                LO-1.3: Assess the limitations of
+                cryptographic systems in the context of
+                emerging threats.
+              </li>
+            </ul>
+            <p><strong>Assessments</strong></p>
+            <ul>
+              <li>
+                Week 1 Discussion: Foundations of
+                Information Assurance&nbsp;
+              </li>
+              <li>
+                Week 3 Discussion: Cryptography and
+                Technical Safeguards
+              </li>
+              <li>
+                Week 7 - Corporate Cybersecurity Strategy
+                Development
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-2 -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co2" />
+          <label
+            class="accordion-title"
+            for="co2"
+            >CO-2: Evaluate organizational, legal,
+            technical, and ethical issues related to
+            securing vital digital assets.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Learning Objectives</strong></p>
+            <ul>
+              <li>
+                LO-2.1: Critique the impact of key
+                cybersecurity laws and regulations on
+                corporate security practices.
+              </li>
+              <li>
+                LO-2.2: Assess ethical dilemmas in
+                cybersecurity decision-making.&nbsp;
+              </li>
+            </ul>
+            <p><strong>Assessments</strong></p>
+            <ul>
+              <li>
+                Week 2 Discussion: Organizational, Legal,
+                and Ethical Dimensions&nbsp;
+              </li>
+              <li>
+                Week 2 - Case Study Analysis: Legal and
+                Ethical Challenges in Corporate
+                Cybersecurity
+              </li>
+              <li>
+                Week 7 - Corporate Cybersecurity Strategy
+                Development
+              </li>
+              <li>
+                Week 8 Discussion: Integration and Future
+                Directions
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-3 -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co3" />
+          <label
+            class="accordion-title"
+            for="co3"
+            >CO-3: Apply incident management and response
+            procedures to real-world cybersecurity
+            scenarios.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Learning Objectives</strong></p>
+            <ul>
+              <li>
+                LO-3.1: Describe the phases of the incident
+                response lifecycle.
+              </li>
+              <li>
+                LO-3.2: Apply incident response procedures
+                to simulated cybersecurity scenarios.
+              </li>
+              <li>
+                LO-3.3: Evaluate the effectiveness of
+                forensic and evidence-handling techniques.
+              </li>
+            </ul>
+            <p><strong>Assessments</strong></p>
+            <ul>
+              <li>
+                Week 4 Discussion: Incident Management and
+                Response&nbsp;
+              </li>
+              <li>
+                Week 5 - Integrated Cybersecurity Analysis:
+                Incident Response and International
+                Cybersecurity Defense
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-4 -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co4" />
+          <label
+            class="accordion-title"
+            for="co4"
+            >CO-4: Compare the convergence of information
+            security, information systems security, and
+            information warfare.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Learning Objectives</strong></p>
+            <ul>
+              <li>
+                LO-4.1: Differentiate between information
+                security, information systems security, and
+                information warfare.
+              </li>
+              <li>
+                LO-4.2: Evaluate the role of corporations in
+                national and international cybersecurity
+                defense.&nbsp;
+              </li>
+            </ul>
+            <p><strong>Assessments</strong></p>
+            <ul>
+              <li>
+                Week 5 Discussion: Convergence of Security
+                and Warfare
+              </li>
+              <li>
+                Week 5 - Integrated Cybersecurity Analysis:
+                Incident Response and International
+                Cybersecurity Defense
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--ACORDEON-->
+        <!--<div class="accordion">aqui acordeon item</div> -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            CO-5: Assess international standards,
+            frameworks, and security acts that influence
+            corporate security strategies.
+          </label>
+          <div class="accordion-content">
+            <p><strong>Learning Objectives</strong></p>
+            <ul>
+              <li>
+                LO-5.1: Identify major international
+                standards and frameworks.
+              </li>
+              <li>
+                LO-5.2: Compare and contrast U.S. and EU
+                data protection laws.
+              </li>
+              <li>
+                LO-5.3: Assess how compliance requirements
+                shape corporate cybersecurity strategies.
+              </li>
+            </ul>
+            <p><strong>Assessments</strong></p>
+            <ul>
+              <li>
+                Week 6 Discussion: International Standards,
+                Frameworks, and Security Acts
+              </li>
+              <li>
+                Week 7 - Discussion: International
+                Standards, Frameworks, and Security Acts
+                Con't
+              </li>
+              <li>
+                Week 7 - Corporate Cybersecurity Strategy
+                Development
+              </li>
+              <li>
+                Week 8 Discussion: Integration and Future
+                Directions
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <!-- PROGRAM LEARNING OUTCOMES -->
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Program Learning Outcomes</span
+        >
+      </h3>
+      <p>
+        Program Learning Outcomes (PLO) serve as a roadmap
+        for educational success and guide the courses that
+        you take
+      </p>
+      <p>
+        This course supports the following concentration
+        PLOs:
+      </p>
+      <ul>
+        <li>
+          Analyze the methodologies for investigating
+          computer-related crime and for incident handling.
+        </li>
+        <li>
+          Appraise the legal and regulatory compliance
+          requirements related to Information Assurance and
+          Information Systems.
+        </li>
+        <li>
+          Analyze the challenges encountered in establishing
+          information systems security, information
+          assurance, and business continuity.
+        </li>
+        <li>
+          Examine the models and methodologies for
+          performing security vulnerability assessment and
+          risk mitigation; also analyze the principles and
+          practices for appraising and certifying systems
+          security.
+        </li>
+      </ul>
+      <hr />
+      <!-- ASSESSMENT COMPONENTS -->
+      <h3>
+        <span style="color: #041e40; font-size: 24px"
+          >| Assessment Components</span
+        >
+      </h3>
+      <p>
+        Your final grade will be calculated using the
+        following category weights:
+      </p>
+      <table style="width: 46.8327%; height: 84.3906px">
+        <tbody>
+          <tr style="height: 40.1953px">
+            <th style="width: 49.0956%">
+              Welcome Discussion
+            </th>
+            <th style="width: 50.9044%">
+              Weekly Discussions
+            </th>
+          </tr>
+          <tr style="height: 44.1953px">
+            <td style="width: 49.0956%">1%</td>
+            <td style="width: 50.9044%">19%</td>
+          </tr>
+        </tbody>
+      </table>
+      <table style="width: auto; height: 84.3906px">
+        <tbody>
+          <tr style="height: 40.1953px">
+            <th style="width: 49.0956%">
+              Week 2 - Case Study Analysis: Legal and
+              Ethical Challenges in Corporate Cybersecurity
+            </th>
+          </tr>
+          <tr style="height: 44.1953px">
+            <td style="width: 49.0956%">25%</td>
+          </tr>
+        </tbody>
+      </table>
+      <table style="width: auto; height: 84.3906px">
+        <tbody>
+          <tr style="height: 40.1953px">
+            <th style="width: 49.0956%">
+              Week 5 - Integrated Cybersecurity Analysis:
+              Incident Response and International
+              Cybersecurity Defense
+            </th>
+          </tr>
+          <tr style="height: 44.1953px">
+            <td style="width: 49.0956%">25%</td>
+          </tr>
+        </tbody>
+      </table>
+      <table style="width: auto; height: 84.3906px">
+        <tbody>
+          <tr style="height: 40.1953px">
+            <th style="width: 49.0956%">
+              Week 7 - Corporate Cybersecurity Strategy
+              Development
+            </th>
+          </tr>
+          <tr style="height: 44.1953px">
+            <td style="width: 50.9044%">30%</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt="logo"
+        class="footer-logo" />
+    </div>
+  </body>
+</html>
