@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* Card principal */
+      .mm-card {
+        background-color: #ffffff;
+        border-left: 6px solid var(--color-accent);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      /* Interacción sutil */
+      .mm-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Títulos */
+      .mm-card h3 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        color: var(--color-primary);
+        font-size: 22px;
+      }
+
+      /* Listas */
+      .mm-card ul {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card ol {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card li {
+        font-size: 18px;
+        color: var(--color-text);
+        margin-bottom: 8px;
+      }
+
+      ul.list-icon {
+        list-style-type: none;
+      }
+
+      ul.list-icon li {
+        content: "";
+      }
+
+      ul.lista-svg-custom {
+        list-style: none;
+        padding: 40px;
+        margin: 20px 0;
+      }
+
+      ul.lista-svg-custom li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+      ul.lista-svg-custom li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        background-color: currentColor;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+      }
+
+      ul.color-azul-noche li::before {
+        background-color: #041e42;
+      }
+
+      ul.icono-check li::before {
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name">
+        Organizational, Legal, and Ethical Dimensions
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Risk Management in a Dynamic Threat Landscape
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Risk management is an essential part of a
+        cybersecurity strategy.
+      </p>
+      <p>
+        A risk lifecycle should include: (Edwards &amp;
+        Weaver, 2024)
+      </p>
+      <br />
+      <!-- Mental Models Cards Grid -->
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul
+            class="lista-svg-custom color-azul-noche icono-check">
+            <li>identification</li>
+            <li>analysis</li>
+            <li>evaluation</li>
+            <li>treatment</li>
+            <li>monitoring</li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        Using qualitative and quantitative methods,
+        organizations should assess the likelihood and
+        impact of potential threats. In order to prioritize
+        risk, tools can be used to help do so, and include
+        heat maps, risk matrices, and scenario analysis.
+        Risk tolerance should be clearly defined in order to
+        guide better decision-making, and organizations must
+        be agile so that they can respond quickly to
+        emerging threats. Risk management involves
+        stakeholder engagement, so that risks are
+        communicated and understood across departments
+        (Edwards &amp; Weaver, 2024). Continuous monitoring
+        and reassessment are needed, as the threat landscape
+        changes.
+      </p>
+      <br />
+
+      <div
+        style="
+          border: 2px solid #05c3de;
+          padding: 30px;
+          border-radius: 10px;
+          text-align: center;
+          background-color: #f0fbfc;
+        ">
+        <p
+          style="
+            margin: 0;
+            font-weight: 600;
+            color: #041e42;
+            font-style: italic;
+          ">
+          "By implementing risk management in daily
+          operations, organizations can make informed
+          decisions, allocate resources effectively, and
+          maintain resiliency (Edwards &amp; Weaver, 2024)."
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
