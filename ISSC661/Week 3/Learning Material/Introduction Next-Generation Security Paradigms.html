@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* VIDEO RESPONSIVE */
+      .video-wrapper-TopicOne {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive-TopicOne {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+      }
+
+      .video-responsive-TopicOne video,
+      .video-responsive-TopicOne iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+      .digital-guide span.icon {
+        color: #202122 !important;
+        font-size: 24px;
+        margin-right: 10px;
+        line-height: 1;
+      }
+
+      /* VIDEO RESPONSIVE */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY (FONDO BLANCO, SOMBRA, +/– AZUL) --- */
+
+      .accordion {
+        margin-top: 40px;
+        font-family: Lato, sans-serif;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      /* Ocultar checkbox */
+      .accordion-item input {
+        display: none;
+      }
+
+      /* TÍTULO */
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / – */
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+
+      /* Estado activo cambia a "–" */
+      .accordion-item
+        input:checked
+        + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+
+      /* Hover */
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      /* CONTENIDO */
+      .accordion-content {
+        max-height: 0;
+        overflow: auto;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      /* Apertura al hacer check */
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      /* Título activo */
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        Cryptography and Technical Safeguards
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Introduction: Next-Generation Security Paradigms
+      </h1>
+
+      <hr class="divider-line" />
+
+      <h2
+        style="
+          text-align: center;
+          color: #004c90;
+          font-size: 24px;
+          margin-top: 10px;
+        ">
+        <strong>Learning Challenge</strong>
+      </h2>
+      <p>
+        <strong><!-- PDF info --> </strong>
+      </p>
+      <div class="digital-guide">
+        <strong><span class="icon">ⓘ</span>&nbsp;</strong
+        ><span style="font-family: Lato, sans-serif"
+          >This is not an assignment prompt, but rather an
+          opportunity to reflect on how the week’s concepts
+          apply to real workplace situations.</span
+        >
+      </div>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+        alt="banner-video"
+        style="
+          max-width: 100%;
+          display: block;
+          margin: 0 auto;
+        "
+        width="600" />
+      <!-- ============================
+         VIDEO CENTRADO Y RESPONSIVE
+         ============================ -->
+      <div class="video-wrapper-TopicOne">
+        <div class="video-responsive-TopicOne">
+          <video
+            title="Learning challenge"
+            controls="controls">
+            <source
+              src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Week_1/APUS_Coach_Woman.mp4"
+              type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1"
+            >Transcript: Digital Content Guide
+            Podcast</label
+          >
+          <div class="accordion-content">
+            <p>
+              Welcome, future HR leaders and policy shapers!
+            </p>
+            <p>
+              You are about to embark on an exciting journey
+              that will transform the way you think about
+              human resources and its critical role in
+              organizational success. In this course, we
+              will dive deep into the world of HR policies
+              and strategies. But this isn't just about
+              memorizing rules and regulations. It's about
+              understanding the profound impact that
+              well-crafted HR policies can have on people's
+              lives and on the success of entire
+              organizations.
+            </p>
+            <p>
+              From navigating the complexities of employment
+              law to mastering the art of talent management,
+              from ensuring workplace safety to mediating
+              conflicts, you will gain the skills to become
+              a true HR champion. You will learn how to
+              balance the needs of a multi-generational
+              workforce, protect employee privacy in the
+              digital age, and align HR strategies with
+              organizational goals.
+            </p>
+            <p>
+              By the end of this course, you won't just
+              understand HR policies – you will be equipped
+              to create and implement strategies that can
+              transform workplaces, empower employees, and
+              drive organizational success.
+            </p>
+            <p>
+              So get ready to challenge your assumptions,
+              expand your horizons, and become the kind of
+              HR professional who doesn't just follow best
+              practices, but sets them!
+            </p>
+            <p>
+              Are you ready to redefine what HR can be?
+              Let's get started on this exciting journey
+              together!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        The digital landscape is evolving rapidly, demanding
+        robust and innovative security mechanisms. As cyber
+        threats grow in complexity, conventional security
+        models often fall short. The next-generation systems
+        must be adaptive, decentralized, and resilient
+        (Barman et al., 2025).
+      </p>
+      <p>
+        Blockchain, with its immutable ledger and consensus
+        mechanisms, offers promising solutions to these
+        challenges. Meanwhile, the fusion of chemistry and
+        graph theory in cryptography represents a radical
+        shift toward biologically inspired security models.
+      </p>
+      <p>
+        Please watch the video, What is Cryptography? Unlock
+        the Secrets Behind Secure Communication!
+      </p>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+        alt="banner"
+        class="banner-image"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%" /><br /><br />
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <iframe
+            src="https://www.youtube.com/embed/jeXah2XhOvU?si=lCgYxRF84QMHdRis"
+            title="What Are HR Policies and Procedures?"
+            allowfullscreen="allowfullscreen"></iframe>
+        </div>
+      </div>
+      <!-- ACORDEÓN -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2"
+            >Transcript: What is Cryptography? Unlock the
+            Secrets Behind Secure Communication!</label
+          >
+          <div class="accordion-content">
+            <h3>Intro</h3>
+            <p>
+              (0:03) Welcome to the new series of cyber
+              security concepts for cyber security students.
+              In today's video, we're demystifying
+              cryptography, a cornerstone of cyber security.
+              By the end of this video, you'll understand
+              how cryptography works and why it's essential
+              for securing data. Let's dive in.
+            </p>
+            <h3>What is Cryptography?</h3>
+            <p>
+              (0:22) Cryptography is the art of securing
+              information by transforming it so only
+              authorized users can access it. It's like
+              writing a secret code that only the intended
+              recipient can decode.
+            </p>
+            <p>
+              (0:31) From protecting sensitive emails to
+              securing financial transactions, cryptography
+              ensures our digital world remains private and
+              trustworthy.
+            </p>
+            <p>
+              (0:40) Cryptography works in two main steps:
+            </p>
+            <ul>
+              <li>
+                <strong>Encryption</strong>: This process
+                transforms readable information or plain
+                text into unreadable gibberish known as
+                cipher text.
+              </li>
+              <li>
+                <strong>Decryption</strong>: The recipient
+                uses a special key to convert the cipher
+                text back into plain text, making the
+                information readable again.
+              </li>
+            </ul>
+            <p>
+              (1:00) Think of it like a locked box:
+              encryption locks it, and decryption unlocks
+              it.
+            </p>
+            <h3>Types of Cryptography</h3>
+            <p>
+              (1:07) There are three main types of
+              cryptography:
+            </p>
+            <ul>
+              <li>
+                <strong>Symmetric Cryptography</strong>:
+                This uses a single key for both encryption
+                and decryption. The sender and recipient
+                share this key. While it's fast, sharing the
+                key securely can be tricky.
+              </li>
+              <li>
+                <strong>Asymmetric Cryptography</strong>:
+                This uses two keys—a public key for
+                encryption and a private key for decryption.
+                It's slower but more secure because the
+                private key never has to be shared.
+              </li>
+              <li>
+                <strong>Hashing</strong>: Unlike encryption,
+                hashing doesn't involve decryption. It
+                converts data into a fixed-length string,
+                like a fingerprint, to verify integrity. A
+                common example is storing hashed passwords.
+              </li>
+            </ul>
+            <p>(1:47) Cryptography is everywhere:</p>
+            <ul>
+              <li>
+                <strong>Online Shopping</strong>: When you
+                enter your credit card details, encryption
+                ensures they're transmitted securely.
+              </li>
+              <li>
+                <strong>Email Communication</strong>: Many
+                email services use encryption to keep your
+                messages private.
+              </li>
+              <li>
+                <strong>Passwords</strong>: Websites store
+                hashed passwords to protect them from being
+                stolen in plain text.
+              </li>
+            </ul>
+            <p>
+              Without cryptography, these everyday actions
+              would be far less secure.
+            </p>
+            <h3>Cryptography Algorithms</h3>
+            <p>
+              (2:11) Let's look at a few widely used
+              cryptographic algorithms:
+            </p>
+            <ul>
+              <li>
+                <strong
+                  >AES (Advanced Encryption
+                  Standard)</strong
+                >: A symmetric encryption algorithm that's
+                fast and highly secure.
+              </li>
+              <li>
+                <strong>RSA</strong>: An asymmetric
+                encryption algorithm used for securing
+                sensitive data like emails and digital
+                signatures.
+              </li>
+              <li>
+                <strong>SHA-256</strong>: A hashing
+                algorithm that ensures data integrity. It's
+                commonly used in blockchain technology.
+              </li>
+            </ul>
+            <p>
+              (2:37) Each algorithm serves a specific
+              purpose in the cryptographic process.
+            </p>
+            <h3>Importance of Cryptography</h3>
+            <p>
+              (2:41) Cryptography is a game-changer in cyber
+              security. It protects:
+            </p>
+            <ul>
+              <li>
+                <strong>Data Confidentiality</strong>:
+                Encryption ensures that only authorized
+                users can access sensitive information.
+              </li>
+              <li>
+                <strong>Data Integrity</strong>: Hashing
+                verifies that data hasn't been tampered with
+                during transmission.
+              </li>
+              <li>
+                <strong>Authentication</strong>: Digital
+                signatures and certificates confirm the
+                identity of users and devices.
+              </li>
+            </ul>
+            <p>
+              (3:07) These features make cryptography a
+              critical defense against cyber threats.
+              However, cryptography isn't foolproof.
+              Attackers use techniques like brute force, key
+              logging, and phishing to bypass encryption.
+            </p>
+            <p>
+              (3:17) That's why strong algorithms and secure
+              practices, like protecting keys, are
+              essential.
+            </p>
+            <h3>Recap</h3>
+            <p>(3:25) Let's recap what we've learned:</p>
+            <ul>
+              <li>
+                Cryptography secures data through
+                encryption, decryption, and hashing.
+              </li>
+              <li>
+                Symmetric and asymmetric cryptography are
+                used for different scenarios.
+              </li>
+              <li>
+                Cryptography is vital for ensuring privacy,
+                integrity, and authenticity in our digital
+                world.
+              </li>
+            </ul>
+            <p>
+              (3:42) As cyber security students, mastering
+              cryptography is essential for defending
+              against evolving threats.
+            </p>
+            <h3>Conclusion / Outro</h3>
+            <p>
+              (4:01) Thanks for watching! If you missed our
+              earlier video on VPNs and proxy servers, check
+              it out to deepen your understanding of secure
+              internet tools.
+            </p>
+            <p>
+              (4:06) Don't forget to check out our blog,
+              <strong>CyberNews on Substack</strong>, where
+              we deliver daily updates on tech and cyber
+              security in a quick summarized format.
+            </p>
+            <p>
+              (4:09) If you found this video helpful, hit
+              like, subscribe, and turn on notifications so
+              you never miss an update. Stay informed, stay
+              secure, and I'll see you in the next episode.
+            </p>
+            <p>
+              (Transcript provided by YouTube. Organized by
+              Copilot, 2025)&nbsp;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

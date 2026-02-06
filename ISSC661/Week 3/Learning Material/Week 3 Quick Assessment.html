@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+
+    <title>Knowledge Check Template</title>
+
+    <!-- Brightspace Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- Template CSS -->
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Lato, sans-serif;
+        background-color: #ffffff;
+        color: #041e40;
+      }
+
+      /* Contenedor general */
+      .kc-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Encabezado */
+      .kc-header {
+        background-color: #041e42;
+        padding: 20px;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .kc-header .week {
+        color: #05c3de;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .kc-header .title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      /* Título principal */
+      .kc-main-title {
+        text-align: center;
+        margin: 30px 0 10px;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      hr {
+        border: none;
+        border-top: 2px solid #e5e5e5;
+        margin: 20px 0 40px;
+      }
+
+      /* Zona de contenido (vacía a propósito) */
+      .kc-content {
+        min-height: 100px;
+      }
+
+      /* Footer */
+      .kc-footer {
+        margin-top: 60px;
+      }
+
+      .kc-footer-line {
+        border-top: 2px solid #e5e5e5;
+        margin-bottom: 20px;
+      }
+
+      .kc-footer-logo {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .kc-footer-logo img {
+        max-width: 150px;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .kc-main-title {
+          font-size: 24px;
+        }
+
+        .kc-header .week,
+        .kc-header .title {
+          font-size: 20px;
+        }
+
+        .kc-footer-logo {
+          justify-content: center;
+        }
+      }
+
+      /* Colores base */
+      .btn-primary {
+        background-color: #05c3de !important;
+        border-color: #05c3de !important;
+        color: #041e42 !important;
+      }
+
+      /* Hover */
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #041e42 !important;
+        border-color: #041e42 !important;
+        color: #ffffff !important;
+      }
+
+      .btn-primary:disabled {
+        opacity: 1 !important;
+      }
+      .btn-primary a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .btn-primary:hover a,
+      .btn-primary:focus a {
+        color: inherit !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kc-header">
+      <div class="week">Week 3</div>
+      <div class="title">
+        Cryptography and Technical Safeguards
+      </div>
+    </div>
+    <div class="kc-wrapper">
+      <h1 class="kc-main-title">Week 3 Quick Assessment</h1>
+      <hr />
+      <!-- Contenido dinámico -->
+      <p>
+        After working through the content this week, check
+        what you have learned in this short, ungraded
+        practice activity. Select the best answer for each
+        question and then check your responses by clicking
+        the “check answer” button.
+      </p>
+      <form class="quick-assess quick-assess-mc">
+        <fieldset class="radio">
+          <legend>
+            <span
+              style="
+                font-family: Lato, sans-serif;
+                font-size: 20px;
+              "
+              ><strong>Question 1: </strong>Which of the
+              following is NOT listed as a cybersecurity
+              challenge in today’s digital landscape?
+            </span>
+          </legend>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-times ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >A. Data breaches
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-times ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >B. Ransomware
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-times ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >C. Identity theft
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-check ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >D. Quantum computing attacks</label
+                >
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <button
+          class="btn btn-primary btn-quick-assess"
+          type="button"
+          data-toggle="collapse"
+          aria-expanded="false">
+          Check Answer
+        </button>
+        <div class="form-check pl-2">
+          <div class="collapse feedback">
+            <p>
+              <strong>Correct answer: </strong>D. Quantum
+              computing attacks
+            </p>
+          </div>
+        </div>
+      </form>
+      <hr />
+      <form class="quick-assess quick-assess-mc">
+        <fieldset class="radio">
+          <legend>
+            <span
+              style="
+                font-family: Lato, sans-serif;
+                font-size: 20px;
+              "
+              ><strong>Question 2: </strong>Blockchain’s
+              immutability and consensus mechanisms make
+              unauthorized alterations nearly impossible
+              without agreement across the network.
+            </span>
+          </legend>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-check ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >True</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-times ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >False</label
+                >
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <button
+          class="btn btn-primary btn-quick-assess"
+          type="button"
+          data-toggle="collapse"
+          aria-expanded="false">
+          Check Answer
+        </button>
+        <div class="form-check pl-2">
+          <div class="collapse feedback">
+            <p><strong>Correct answer:</strong> True</p>
+          </div>
+        </div>
+      </form>
+      <hr />
+      <form class="quick-assess quick-assess-mc">
+        <fieldset class="radio">
+          <legend>
+            <span
+              style="
+                font-family: Lato, sans-serif;
+                font-size: 20px;
+              "
+              ><strong>Question 3: </strong>Chemical‑graph
+              cryptography differs from traditional
+              cryptography because it primarily uses:
+            </span>
+          </legend>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-times ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >A. Numerical keys and algorithms
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-times ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >B. Biometric identifiers
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-check ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >C. Molecular templates and graph
+                  transformations
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-times ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >D. Quantum entanglement</label
+                >
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <button
+          class="btn btn-primary btn-quick-assess"
+          type="button"
+          data-toggle="collapse"
+          aria-expanded="false">
+          Check Answer
+        </button>
+        <div class="form-check pl-2">
+          <div class="collapse feedback">
+            <p>
+              <strong>Correct answer: </strong>C. Molecular
+              templates and graph transformations
+            </p>
+          </div>
+        </div>
+      </form>
+      <hr />
+      <form class="quick-assess quick-assess-mc">
+        <fieldset class="radio">
+          <legend>
+            <span
+              style="
+                font-family: Lato, sans-serif;
+                font-size: 20px;
+              "
+              ><strong>Question 4: </strong>Which of the
+              following is a use case of blockchain in
+              cybersecurity?
+            </span>
+          </legend>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-times ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >A. Digital watermarking of media
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-check ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >B. Decentralized identity management
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-times ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >C. Secure biomedical communication
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-times ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >D. Molecular data encryption</label
+                >
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <button
+          class="btn btn-primary btn-quick-assess"
+          type="button"
+          data-toggle="collapse"
+          aria-expanded="false">
+          Check Answer
+        </button>
+        <div class="form-check pl-2">
+          <div class="collapse feedback">
+            <p>
+              <strong>Correct answer: </strong>B.
+              Decentralized identity management
+            </p>
+          </div>
+        </div>
+      </form>
+      <hr />
+      <form class="quick-assess quick-assess-mc">
+        <fieldset class="radio">
+          <legend>
+            <span
+              style="
+                font-family: Lato, sans-serif;
+                font-size: 20px;
+              "
+              ><strong>Question 5: </strong>Storing
+              chemical‑graph encrypted data on a blockchain
+              combines immutability with confidentiality,
+              creating secure decentralized bioinformatics
+              platforms.
+            </span>
+          </legend>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-check ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >True</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="form-check pl-2">
+            <div class="row">
+              <div class="col-1 pr-0 pr-sm-1">
+                <span
+                  class="fas fa-times ans-symbol invisible float-right"></span>
+              </div>
+              <div class="col-11">
+                <input
+                  type="radio"
+                  name="MC-answer" /><label
+                  class="radio-label"
+                  >False</label
+                >
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <button
+          class="btn btn-primary btn-quick-assess"
+          type="button"
+          data-toggle="collapse"
+          aria-expanded="false">
+          Check Answer
+        </button>
+        <div class="form-check pl-2">
+          <div class="collapse feedback">
+            <p><strong>Correct answer:</strong> True</p>
+          </div>
+        </div>
+      </form>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/js/scripts.min.js"></script>
+      <!-- Footer -->
+      <div class="kc-footer">
+        <div class="kc-footer-line"></div>
+        <div class="kc-footer-logo">
+          <img
+            src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+            alt="logo" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

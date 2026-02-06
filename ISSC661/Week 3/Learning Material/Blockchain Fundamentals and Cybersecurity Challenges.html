@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        Cryptography and Technical Safeguards
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Blockchain Fundamentals and Cybersecurity Challenges
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Blockchain is a decentralized ledger technology that
+        records transactions across a network of computers.
+        Its core attributes of immutability, transparency,
+        and consensus make it a powerful tool for enhancing
+        cybersecurity. Cybersecurity challenges today
+        include data breaches, ransomware, identity theft,
+        and advanced persistent threats. These attacks
+        exploit weaknesses in centralized architectures and
+        outdated protocols. Blockchain counters these
+        vulnerabilities by distributing data across nodes,
+        making unauthorized alterations nearly impossible
+        without consensus (Barman et al., 2025).
+      </p>
+      <h2>Use cases include the following:</h2>
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Identity management
+          </label>
+          <div class="accordion-content">
+            <p>
+              Blockchain enables decentralized identifiers
+              (DIDs), allowing users to control their
+              digital identities without relying on
+              centralized authorities. This reduces the risk
+              of identity theft and enhances privacy. For
+              secure communications, blockchain can
+              facilitate encrypted messaging systems where
+              message integrity is verified through hash
+              functions and timestamps.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Threat detection
+          </label>
+          <div class="accordion-content">
+            <p>
+              By logging system events on a blockchain,
+              organizations can detect anomalies and trace
+              malicious activities. This immutable audit
+              trail supports forensic investigations and
+              compliance with regulatory standards (Barman
+              et al., 2025).
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Supply chain security
+          </label>
+          <div class="accordion-content">
+            <p>
+              By recording every transaction and movement of
+              goods on a blockchain, companies can ensure
+              authenticity and traceability, reducing the
+              risk of counterfeit products and tampering.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4">
+            Secure voting systems
+          </label>
+          <div class="accordion-content">
+            <p>
+              Blockchain can provide transparent,
+              tamper-proof records of votes, enhancing trust
+              in electoral processes.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo5" />
+          <label
+            class="accordion-title"
+            for="lo5">
+            Healthcare data management
+          </label>
+          <div class="accordion-content">
+            <p>
+              Blockchain can protect patient records while
+              enabling authorized sharing across
+              institutions.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo6" />
+          <label
+            class="accordion-title"
+            for="lo6">
+            IoT networks
+          </label>
+          <div class="accordion-content">
+            <p>
+              Blockchain can provide decentralized
+              authentication and firmware updates, reducing
+              the risk of botnet attacks and data leaks.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
