@@ -14,7 +14,35 @@
   // 		"$2"
   // 	],
   // 	"description": "Log output to console"
-  // }
+  // }]
+  "Mental Models Cards Grid (HTML only)": {
+    "prefix": "mm-cards-grid",
+    "body": [
+      "<!-- Mental Models Cards Grid -->",
+      "<div class=\"mental-models-grid\">",
+      "",
+      "  <div class=\"mm-card\">",
+      "    <h3>${1:Card Title}</h3>",
+      "    <ul>",
+      "      <li>${2:First item}</li>",
+      "      <li>${3:Second item}</li>",
+      "      <li>${4:Third item}</li>",
+      "    </ul>",
+      "  </div>",
+      "",
+      "  <div class=\"mm-card\">",
+      "    <h3>${5:Second Card Title}</h3>",
+      "    <ul>",
+      "      <li>${6:First item}</li>",
+      "      <li>${7:Second item}</li>",
+      "      <li>${8:Third item}</li>",
+      "    </ul>",
+      "  </div>",
+      "",
+      "</div>",
+    ],
+    "description": "Reusable HTML-only card grid structure for LMS. Styles handled globally.",
+  },
   "Course Scope & Objectives": {
     "prefix": "!course-scope",
     "body": [

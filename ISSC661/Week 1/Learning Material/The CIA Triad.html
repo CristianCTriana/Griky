@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* VIDEO RESPONSIVE */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY (FONDO BLANCO, SOMBRA, +/– AZUL) --- */
+
+      .accordion {
+        margin-top: 40px;
+        font-family: Lato, sans-serif;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      /* Ocultar checkbox */
+      .accordion-item input {
+        display: none;
+      }
+
+      /* TÍTULO */
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / – */
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+
+      /* Estado activo cambia a "–" */
+      .accordion-item
+        input:checked
+        + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+
+      /* Hover */
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      /* CONTENIDO */
+      .accordion-content {
+        max-height: 0;
+        overflow: auto;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      /* Apertura al hacer check */
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      /* Título activo */
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 1 </span>
+      <span class="banner__week-name">
+        Foundations of Information Assurance
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">The CIA Triad</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        The central model used for information security is
+        known as the CIA triad (Death, 2023). The CIA triad
+        defines the central objectives of confidentiality,
+        integrity, and availability.
+      </p>
+      H5P
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1">
+            Confidentiality
+          </label>
+          <div class="accordion-content">
+            <p>
+              Confidentiality ensures that sensitive
+              information is accessible only to those who
+              are authorized to access it. This is often
+              done through encryption or another access
+              control (Death, 2023). An example of
+              confidentiality would be the need of
+              encryption by a doctor’s office pertaining to
+              patient records that are both stored and data
+              that is transmitted.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo2" />
+          <label
+            class="accordion-title"
+            for="lo2">
+            Integrity
+          </label>
+          <div class="accordion-content">
+            <p>
+              Integrity is the principle that ensures data
+              remains accurate and consistent with policy.
+              This is most often done with techniques such
+              as digital signatures or hashing to illustrate
+              that data has not been tampered with (Death,
+              2023). An example of integrity would be an
+              electronic signature used on loan documents.
+              Before the signature is applied, the system
+              would generate a unique hash of the document.
+              Anything changed after the signature would
+              alter the hash.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo3" />
+          <label
+            class="accordion-title"
+            for="lo3">
+            Availability
+          </label>
+          <div class="accordion-content">
+            <p>
+              Availability guarantees that data and systems
+              are accessible when needed (Death, 2023). This
+              often requires redundancy or a backup and a
+              means of a continuity of operations. An
+              example of availability would be having
+              multiple servers that create backups of data
+              so that in the event of an interruption,
+              access is still available.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p>
+        The following video introduces Information Security
+        and the CIA Triad.
+      </p>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+        alt="banner"
+        class="banner-image"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%" /><br /><br />
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <iframe
+            src="https://www.youtube.com/embed/JcVEbDMwNx8?si=yNvm8vEGnwe-Qo2K"
+            title="What Are HR Policies and Procedures?"
+            allowfullscreen="allowfullscreen"></iframe>
+        </div>
+      </div>
+      <!-- ACORDEÓN -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo4" />
+          <label
+            class="accordion-title"
+            for="lo4"
+            >Transcript</label
+          >
+          <div class="accordion-content">
+            <h3>Introduction</h3>
+            <p>
+              (0:00) In this lesson we'll look at
+              fundamental concepts that underpin the world
+              of information security. Let's dive in.
+            </p>
+            <p>
+              (0:07) Information security, often referred to
+              as infosec, is all about safeguarding data
+              resources from unauthorized access, attacks,
+              theft, or damage. Data can be vulnerable at
+              rest, in transit, or during processing. To
+              ensure secure information, we focus on
+              confidentiality, integrity, and availability.
+            </p>
+            <h3>CIA Triad</h3>
+            <p>
+              (0:28) We use the CIA Triad. First,
+              confidentiality: this means that information
+              can only be accessed by authorized
+              individuals. Second, integrity ensures that
+              data remains unaltered and is only modified by
+              authorized parties. Third, availability: this
+              means information must be readily accessible
+              to those authorized to use it.
+            </p>
+            <p>
+              (0:51) These three principles form the
+              backbone of information security. As security
+              specialists, you'll find you're always seeking
+              the best balance of all three components.
+            </p>
+            <h3>Access Control</h3>
+            <p>
+              (1:02) An access control system ensures that
+              an information system meets the goals of the
+              CIA Triad. Access control dictates how
+              subjects like users, devices, or processes
+              interact with objects like networks, servers,
+              databases, apps, or files.
+            </p>
+            <p>
+              (1:18) Modern access control is implemented
+              through identity and access management (IAM),
+              consisting of four main processes:
+            </p>
+            <ul>
+              <li>
+                Identification: creating unique accounts for
+                users, devices, or processes.
+              </li>
+              <li>
+                Authentication: proving the identity of
+                subjects through credentials.
+              </li>
+              <li>
+                Authorization: determining and enforcing
+                rights for subjects on resources.
+              </li>
+              <li>
+                Accounting: tracking authorized resource
+                usage and detecting unauthorized access.
+              </li>
+            </ul>
+            <p>
+              (1:44) Access control is essential for both
+              people and systems, ensuring that only
+              legitimate actions are permitted.
+            </p>
+            <h3>Non-Repudiation</h3>
+            <p>
+              (1:58) Some security models and researchers
+              identify other properties of secure systems.
+              The most important of these is
+              non-repudiation.
+            </p>
+            <p>
+              (2:00) Non-repudiation means a person can't
+              deny doing something, such as creating,
+              modifying, or sending a resource. For example,
+              providing proof of authenticity and integrity
+              of data that's sent or received.
+            </p>
+            <h3>Gap Analysis</h3>
+            <p>
+              (2:14) Gap analysis is a process that assesses
+              how well an organization's security systems
+              align with a cybersecurity framework. Security
+              functions have specific goals achieved through
+              security controls.
+            </p>
+            <p>
+              (2:27) To select the right controls,
+              organizations use frameworks to guide them.
+              Frameworks provide structure and guidance for
+              security programs. Gap analysis identifies
+              deviations from framework requirements and
+              recommends remediation, helping organizations
+              maintain cybersecurity, meet compliance
+              requirements, and prioritize investments.
+            </p>
+            <h3>Zero Trust</h3>
+            <p>
+              (2:48) Zero trust is a security model that
+              treats all devices, users, and services as
+              untrusted, regardless of location within or
+              outside the network's perimeter. This model
+              relies on fundamental concepts for
+              comprehensive security, including adaptive
+              identity, threat scope reduction, and
+              policy-driven access control.
+            </p>
+            <p>
+              (3:10) Adaptive identity recognizes that
+              identities change and need continuous
+              verification. Threat scope reduction limits
+              access to resources on a need-to-know basis,
+              reducing attack surfaces. Policy-driven access
+              control enforces access restrictions based on
+              user identity, device posture, and network
+              context.
+            </p>
+            <p>
+              (3:32) Zero trust separates the control plane
+              and data plane for flexibility and
+              scalability. In a zero trust architecture, the
+              control plane manages policies and
+              authorization, while the data plane handles
+              secure data transfer. Separating these planes
+              enhances flexibility and security, allowing
+              for granular control and continuous
+              monitoring.
+            </p>
+            <h3>Conclusion</h3>
+            <p>
+              (4:04) And that's it for this lesson. In this
+              lesson, we introduced you to fundamental
+              information security concepts. We first looked
+              at information security applied through the
+              CIA Triad. Then we discussed access control,
+              which establishes how subjects interact with
+              objects in a system.
+            </p>
+            <p>
+              (4:21) Next, we talked about gap analysis and
+              how it helps you know where to improve your
+              security programs. We finished this lesson by
+              reviewing zero trust security concepts and how
+              those concepts are applied through control
+              planes and data planes in a zero trust model.
+            </p>
+            <p>
+              (Transcript provided by YouTube. Organized by
+              Copilot, 2025)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

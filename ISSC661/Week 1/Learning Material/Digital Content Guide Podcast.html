@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      /* cuando está abierto cambia a "-" */
+      .accordion-item
+        input:checked
+        + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h3
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        ">
+        <span style="font-size: 20px; color: #05c3de"
+          >Week 1</span
+        ><br /><span style="font-size: 28px"
+          >Foundations of Information Assurance</span
+        >
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/71.png"
+        alt="banner image"
+        class="banner-image" />
+      <!-- VIDEO RESPONSIVE -->
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <video
+            title="Podcast"
+            controls="controls">
+            <source
+              src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Digital%20Content%20Guide%20Podcast%20-%20CODE%20-%20Week%201.mp4"
+              type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1"
+            >Transcript: Digital Content Guide
+            Podcast</label
+          >
+          <div class="accordion-content">
+            <p>
+              Welcome, future HR leaders and policy shapers!
+            </p>
+            <p>
+              You are about to embark on an exciting journey
+              that will transform the way you think about
+              human resources and its critical role in
+              organizational success. In this course, we
+              will dive deep into the world of HR policies
+              and strategies. But this isn't just about
+              memorizing rules and regulations. It's about
+              understanding the profound impact that
+              well-crafted HR policies can have on people's
+              lives and on the success of entire
+              organizations.
+            </p>
+            <p>
+              From navigating the complexities of employment
+              law to mastering the art of talent management,
+              from ensuring workplace safety to mediating
+              conflicts, you will gain the skills to become
+              a true HR champion. You will learn how to
+              balance the needs of a multi-generational
+              workforce, protect employee privacy in the
+              digital age, and align HR strategies with
+              organizational goals.
+            </p>
+            <p>
+              By the end of this course, you won't just
+              understand HR policies – you will be equipped
+              to create and implement strategies that can
+              transform workplaces, empower employees, and
+              drive organizational success.
+            </p>
+            <p>
+              So get ready to challenge your assumptions,
+              expand your horizons, and become the kind of
+              HR professional who doesn't just follow best
+              practices, but sets them!
+            </p>
+            <p>
+              Are you ready to redefine what HR can be?
+              Let's get started on this exciting journey
+              together!
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Digital%20Content%20Guide%20Podcast%20-%20Strategic%20Management%20-%20Week%201.mp3"
+            type="audio/mp3" />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="logo"
+          width="110" />
+      </p>
+    </div>
+  </body>
+</html>
