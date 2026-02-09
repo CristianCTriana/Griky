@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">
+        Incident Management and Response
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Digital Forensics Fundamentals
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        Digital forensics is the backbone of incident
+        analysis. It is the collection, preservation, and
+        analysis of digital evidence (Johansen, 2025). Key
+        principles include:
+      </p>
+      <p class="standard-text">
+        <img
+          src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+          alt="banener"
+          style="max-width: 100%" />
+      </p>
+
+      <div class="tabs-container">
+        <input
+          type="radio"
+          name="group-name"
+          id="tab1"
+          checked="checked" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab2" />
+        <input
+          type="radio"
+          name="group-name"
+          id="tab3" />
+
+        <div class="tabs">
+          <label for="tab1"
+            >Maintaining Chain of Custody</label
+          >
+          <label for="tab2">Ensuring Data Integrity</label>
+          <label for="tab3">Using Validated Tools</label>
+        </div>
+
+        <div class="content content-1">
+          <p class="standard-text">
+            Maintaining the chain of custody – documenting
+            evidence handling to ensure the integrity of the
+            evidence
+          </p>
+        </div>
+
+        <div class="content content-2">
+          <p class="standard-text">
+            Ensuring data integrity – data that is accurate
+            and complete
+          </p>
+        </div>
+
+        <div class="content content-3">
+          <p class="standard-text">
+            Using validated tools – tools that have been
+            tested and found to be accurate
+          </p>
+        </div>
+      </div>
+
+      <p>
+        Several forensic techniques can be used, such as
+        disk imaging, file carving, and timeline analysis.
+      </p>
+
+      <div
+        style="
+          display: flex;
+          gap: 15px;
+          flex-wrap: wrap;
+          margin: 30px 0;
+          justify-content: center;
+        ">
+        <div
+          style="
+            border: 2px solid #004c97;
+            color: #004c97;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 19px;
+          ">
+          Disk Imaging
+        </div>
+        <div
+          style="
+            border: 2px solid #004c97;
+            color: #004c97;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 19px;
+          ">
+          File Carving
+        </div>
+        <div
+          style="
+            border: 2px solid #004c97;
+            color: #004c97;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 19px;
+          ">
+          Timeline Analysis
+        </div>
+      </div>
+
+      <p>
+        In order for investigators to reconstruct events.
+      </p>
+
+      <div
+        style="
+          background-color: #041e42;
+          color: #ffffff;
+          padding: 30px;
+          border-radius: 8px;
+          margin: 35px 0;
+          position: relative;
+        ">
+        <div
+          style="
+            width: 50px;
+            height: 4px;
+            background-color: #05c3de;
+            margin-bottom: 15px;
+          "></div>
+
+        <p
+          style="
+            margin: 0;
+            text-align: justify;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #fff;
+          ">
+          Evidence admissibility should always be considered
+          throughout the process, as determining what
+          happened is not the only factor; it is also about
+          prosecution (Edwards & Weaver, 2024).
+        </p>
+      </div>
+
+      <p>
+        Organizations should invest in forensic capabilities
+        as they not only support incident response but also
+        threat intelligence (Goldschmidt, 2025).
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

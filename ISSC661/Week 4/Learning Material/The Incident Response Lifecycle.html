@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* VIDEO RESPONSIVE */
+
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">
+        Incident Management and Response
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        The Incident Response Lifecycle
+      </h1>
+
+      <hr class="divider-line" />
+      <p style="margin-bottom: 25px; text-align: justify">
+        Edwards and Weaver (2024) outlined a comprehensive
+        incident response lifecycle comprising preparation,
+        detection, analysis, containment, eradication,
+        recovery, and post-incident review.
+      </p>
+      <p style="margin-bottom: 25px; text-align: justify">
+        Playbooks and predefined procedures are important,
+        as is testing them regularly (Johansen, 2025).
+        Goldschmidt (2025) added a strategic layer,
+        proposing a capability development model that aligns
+        lifecycle stages with organizational maturity.
+      </p>
+
+      <div
+        style="
+          background-color: #f0f7ff;
+          border-left: 6px solid #004c97;
+          padding: 20px;
+          border-radius: 0 4px 4px 0;
+        ">
+        <p
+          style="
+            margin: 0;
+            font-weight: 500;
+            color: #041e42;
+          ">
+          Together, these perspectives highlight that
+          effective incident response is both a technical
+          and organizational endeavor.
+        </p>
+      </div>
+
+      <p>
+        <img
+          src="/content/enforced/1027208-ISSC661_development_site_griky_english/Designer.jpeg"
+          alt="Preparation, identification, Containment, Eradication, Recovery, Lessons Learned"
+          title="Preparation, identification, Containment, Eradication, Recovery, Lessons Learned"
+          data-d2l-editor-default-img-style="true"
+          style="
+            max-width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          " />
+      </p>
+
+      <br />
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+        alt="banner"
+        class="banner-image"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%" /><br />
+
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <iframe
+            src="https://www.youtube.com/embed/X4lPEpATNxg?si=0a6mx7UspOxtIxGq"
+            title="What Are HR Policies and Procedures?"
+            title="What Are HR Policies and Procedures?"
+            allowfullscreen="allowfullscreen"></iframe>
+        </div>
+      </div>
+
+      <!-- ACORDEÓN -->
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1"
+            >Transcript: The Six Phases of Incident
+            Response</label
+          >
+
+          <div
+            style="overflow: auto"
+            class="accordion-content">
+            <h3>Introduction</h3>
+            <p>
+              (0:06) So you've just seen something strange.
+              Perhaps the logs on your VPN server show a
+              user who's sitting right next to you has also
+              just logged in from Hong Kong.
+            </p>
+            <p>
+              (0:15) Or someone on your customer service
+              team notes they can see an accounting file
+              that no one should have access to. Something
+              strange has definitely happened.
+            </p>
+            <p>
+              (0:23) Is that strange thing a cyber incident?
+              How do you decide and what do you need to do
+              in case you decide that it is?
+            </p>
+            <p>
+              (0:30) Just about anything—from discovering
+              malware to identifying suspicious user
+              activity—could be legally defined as a cyber
+              incident under HIPAA security regulations.
+            </p>
+            <p>
+              (0:40) So how do you know when it's time to
+              implement a full incident response plan?
+            </p>
+            <p>
+              (0:46) The correct answer is that it's always
+              time to implement your incident response plan.
+            </p>
+            <h3>Key Elements</h3>
+            <p>
+              (0:51) Let's go over the key elements of an
+              incident response plan and important things to
+              consider when you think you may have been the
+              target of a cyber attack.
+            </p>
+            <p>
+              (1:00) Incident response is typically broken
+              down into six phases:
+            </p>
+            <ul>
+              <li><strong>Preparation</strong></li>
+              <li><strong>Identification</strong></li>
+              <li><strong>Containment</strong></li>
+              <li><strong>Eradication</strong></li>
+              <li><strong>Recovery</strong></li>
+              <li><strong>Lessons Learned</strong></li>
+            </ul>
+            <p>
+              (1:11) Most organizations mainly focus on
+              containment, eradication, and recovery—and
+              completely skip lessons learned. But the truth
+              is, this last phase is potentially one of the
+              most important.
+            </p>
+            <h3>Preparation</h3>
+            <p>
+              (1:27) Preparation is as straightforward as
+              making sure you have a trained incident
+              response team—either employed, on retainer, or
+              at least someone's business card so you know
+              who to call.
+            </p>
+            <h3>Identification</h3>
+            <p>
+              (1:42) An incident is initially identified in
+              any number of ways, leading you to start your
+              response plan with only slight awareness of
+              what the incident may be.
+            </p>
+            <p>
+              (1:51) The identification phase is meant to
+              clear this part up. This phase also includes
+              the investigation of the depth of the
+              compromise, its source, and its success or
+              failure.
+            </p>
+            <p>
+              (2:01) Identification is done through a review
+              of log files—lots and lots of log files. The
+              important consideration at this point is not
+              to disrupt any potential evidence of the
+              incident.
+            </p>
+            <p>
+              (2:14) A well-trained and equipped response
+              team will be able to rapidly parse log files,
+              review forensic images, and do so without
+              damaging any evidence in the process.
+            </p>
+            <h3>Containment</h3>
+            <p>
+              (2:28) Containment often happens concurrently
+              with identification or immediately following.
+              Damaged systems are removed from production,
+              devices are isolated, and compromised accounts
+              are locked down.
+            </p>
+            <p>(2:41) The bleeding stops here.</p>
+            <h3>Eradication</h3>
+            <p>
+              (2:49) Eradication is exactly what it sounds
+              like—removing and remediating any damage
+              discovered in the identification phase.
+            </p>
+            <p>
+              (2:57) This is normally done by restoring
+              systems from backup and re-imaging workstation
+              systems.
+            </p>
+            <p>
+              (3:02) It's important to note that proper
+              eradication of a cyber infection should be
+              done by trained professionals and should only
+              be done after comprehensive investigation of
+              the incident is completed.
+            </p>
+            <p>
+              (3:13) Time and time again, small
+              organizations will be quick to delete,
+              restore, and re-image after the first sign of
+              an incident—before they've learned how the
+              attacker got in or how much damage was really
+              done.
+            </p>
+            <p>
+              (3:24) In many cases, when systems are reset
+              so quickly, the organization has no way of
+              going back to learn what happened and, as a
+              result, is often hit by the same type of
+              attack again and again.
+            </p>
+            <h3>Recovery</h3>
+            <p>
+              (3:40) Recovery is the testing of the fixes in
+              the eradication phase and the transition back
+              to normal operations.
+            </p>
+            <p>
+              (3:44) Vulnerabilities are remediated,
+              compromised accounts have passwords changed or
+              removed altogether and replaced with more
+              secure methods of access.
+            </p>
+            <p>
+              (3:55) Functionality is tested and day-to-day
+              business resumes.
+            </p>
+            <h3>Lessons Learned</h3>
+            <p>
+              (4:04) The last phase is one that many
+              organizations skip, but it's arguably the most
+              important to prevent future incidents.
+            </p>
+            <p>
+              (4:12) Lessons learned involve reviewing the
+              steps that were taken during each phase and
+              improving both your incident response
+              capability and your security footprint.
+            </p>
+            <p>
+              (4:21) If you rush to get back up and running
+              but never stop to consider the implications of
+              what caused the security incident, you may
+              never improve your cybersecurity standing.
+            </p>
+            <p>
+              (4:34) Whether it was human error, security
+              holes, or flaws in a security product, your
+              organization should review what went wrong and
+              use the incident as a stepping stone to work
+              toward a solution.
+            </p>
+            <p>
+              (4:40) Without this stage, you may find
+              yourself running back through these steps
+              again and again with every subsequent
+              preventable incident.
+            </p>
+            <h3>What Now</h3>
+            <p>
+              (4:56) Incident responses are best performed
+              by persons trained and equipped for it, with
+              proven processes and full support from
+              leadership within the business.
+            </p>
+            <p>
+              (5:05) In addition, with the advent of cyber
+              insurance, it's becoming more and more common
+              for a full response to be required before
+              settlement can be made.
+            </p>
+            <p>
+              (5:13) If you have any questions about cyber
+              incident response or suspect you may be
+              compromised, contact InProgressive today—we're
+              here to help.
+            </p>
+            <p>
+              (Transcript provided by YouTube. Organized by
+              Copilot, 2025)&nbsp;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="See more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+      <!--ACORDEON-->
+      <!--<div class="accordion">aqui acordeon item</div> -->
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="lo2" />
+        <label
+          class="accordion-title"
+          for="lo2">
+          Preparation
+        </label>
+        <div class="accordion-content">
+          <p
+            style="
+              margin-bottom: 20px;
+              text-align: justify;
+            ">
+            Preparation involves creating policies, training
+            staff, and establishing communication protocols.
+            An incident response plan (IRP) is the
+            cornerstone of preparedness. IRPs should be
+            aligned with business objectives and regulatory
+            requirements.
+          </p>
+
+          <p style="margin: 0">
+            Key components include roles and
+            responsibilities, escalation procedures,
+            communication strategies, and integration with
+            business continuity plans (Edwards & Weaver,
+            2024).
+          </p>
+
+          <p
+            style="
+              margin-bottom: 20px;
+              text-align: justify;
+            ">
+            An organization should have a playbook for each
+            incident type (ransomware, insider threats, data
+            breaches, etc.) and should be updated regularly
+            (Johansen, 2025).
+          </p>
+
+          <p
+            style="
+              margin-bottom: 25px;
+              text-align: justify;
+            ">
+            An IRP should also evolve through capability
+            assessments and a gap analysis so that
+            organizations assess their current state,
+            desired capabilities, and targeted improvements
+            (Goldschmidt, 2025).
+          </p>
+
+          <p>
+            Overall, a fully developed IRP ensures that when
+            an incident occurs, the response is swift,
+            coordinated, and effective.
+          </p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="lo3" />
+        <label
+          class="accordion-title"
+          for="lo3">
+          Detection and Analysis
+        </label>
+        <div class="accordion-content">
+          <p
+            style="
+              margin-bottom: 20px;
+              text-align: justify;
+            ">
+            Detection is the first technical step in
+            incident response and requires monitoring
+            systems and identifying anomalies. This involves
+            identifying signs of compromise through logs,
+            alerts, and behavioral anomalies.
+          </p>
+
+          <div
+            style="
+              border-left: 5px solid #05c3de;
+              background-color: #ffffff;
+              padding: 20px;
+              margin: 20px 0;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            ">
+            <p style="margin: 0; margin-bottom: 10px">
+              <strong style="color: #041e42"
+                >Baselining normal activity</strong
+              >
+              is important in order to detect deviations
+              (Johansen, 2025).
+            </p>
+            <p
+              style="
+                margin-top: 10px;
+                margin-bottom: 0;
+                font-size: 18px;
+              ">
+              The use of Security Information and Event
+              Management (SIEM) systems, intrusion detection
+              systems (IDS), and threat intelligence feeds
+              should be used.
+            </p>
+          </div>
+
+          <p
+            style="
+              margin-bottom: 20px;
+              text-align: justify;
+            ">
+            Analysis involves understanding the scope,
+            impact, and root cause of the incident. Digital
+            forensics plays a critical role here through
+            memory analysis, disk imaging, and log
+            correlation (Johansen, 2025).
+          </p>
+
+          <p style="margin-bottom: 0; text-align: justify">
+            Analysis is linked to capability maturation, as
+            investing in tools and training enables
+            organizations to grow and overcome incidents
+            more quickly (Goldschmidt, 2025). Ultimately,
+            timely and accurate analysis better informs
+            containment decisions (Edwards & Weaver, 2024).
+          </p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="lo4" />
+        <label
+          class="accordion-title"
+          for="lo4">
+          Containment and Eradication
+        </label>
+        <div class="accordion-content">
+          <div style="margin-bottom: 25px">
+            <p
+              style="
+                margin-bottom: 15px;
+                text-align: justify;
+              ">
+              Containment aims to isolate affected systems
+              and prevent further damage and can be done
+              through network segmentation, account
+              suspension, or service shutdowns (Edwards &
+              Weaver, 2024). However, containment strategies
+              should be based on incident severity and
+              business impact.
+            </p>
+          </div>
+
+          <div
+            style="
+              border: 1px solid #004c97;
+              border-radius: 6px;
+              padding: 20px;
+              background-color: #ffffff;
+              margin-bottom: 25px;
+            ">
+            <p
+              style="
+                margin-bottom: 15px;
+                text-align: justify;
+              ">
+              On the other hand, eradication involves
+              removing the threat from the environment. This
+              can be done through methods such as malware
+              removal, patching vulnerabilities, and
+              cleaning infected files (Johansen, 2025).
+            </p>
+            <p style="margin: 0">
+              It is critical that the root causes be
+              determined before eradication is carried out
+              to prevent reinfection (Johansen, 2025).
+            </p>
+          </div>
+
+          <div
+            style="
+              background-color: #041e42;
+
+              padding: 15px;
+              border-radius: 4px;
+              text-align: center;
+            ">
+            <p style="margin: 0; color: #ffffff">
+              Containment and eradication require
+              coordination across IT, legal, and executive
+              teams (Goldschmidt, 2025). Coordination
+              minimizes downtime and reputational damage.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="lo5" />
+        <label
+          class="accordion-title"
+          for="lo5">
+          Recovery and Restoration
+        </label>
+        <div class="accordion-content">
+          <p>
+            Recovery restores systems to operational status.
+            Validated backups, system integrity checks, and
+            phased restoration are important (Edwards &
+            Weaver, 2024). Recovery must be documented and
+            monitored to ensure no residual threats remain.
+          </p>
+          <div
+            style="
+              background-color: #f0f7ff;
+              padding: 20px;
+              border-radius: 6px;
+              border: 1px solid #d0e3f0;
+              margin: 25px 0;
+            ">
+            <ul>
+              <li>
+                Systems must be verified as clean before
+                reintroduction (Johansen, 2025).
+              </li>
+              <li>
+                Recovery is a test of resilience
+                (Goldschmidt, 2025).
+              </li>
+              <li>
+                Post-recovery audits should be performed to
+                identify areas of improvement (Goldschmidt,
+                2025).
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <input
+          type="checkbox"
+          id="lo6" />
+        <label
+          class="accordion-title"
+          for="lo6">
+          Post-Incident Review and Continuous Improvement
+        </label>
+        <div class="accordion-content">
+          <p
+            style="
+              margin-bottom: 20px;
+              text-align: justify;
+            ">
+            The final stage is reflection through a
+            post-incident review to determine what went
+            well, what failed, and what can be improved
+            (Edwards & Weaver, 2024).<br />These reviews
+            should feed into
+          </p>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(
+                auto-fit,
+                minmax(200px, 1fr)
+              );
+              gap: 15px;
+              margin: 25px 0;
+            ">
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid #05c3de;
+                padding: 15px;
+                border-radius: 5px;
+                text-align: center;
+              ">
+              <strong style="color: #041e42"
+                >Policy Updates</strong
+              >
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid #05c3de;
+                padding: 15px;
+                border-radius: 5px;
+                text-align: center;
+              ">
+              <strong style="color: #041e42"
+                >Training Programs</strong
+              >
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid #05c3de;
+                padding: 15px;
+                border-radius: 5px;
+                text-align: center;
+              ">
+              <strong style="color: #041e42"
+                >System Enhancements</strong
+              >
+            </div>
+          </div>
+
+          <p
+            style="
+              margin-bottom: 20px;
+              text-align: justify;
+            ">
+            Incident reports should also include timelines,
+            actions taken, and forensic findings to support
+            legal proceedings, insurance claims, and
+            compliance audits (Johansen, 2025).
+          </p>
+
+          <div
+            style="
+              background-color: #f0f7ff;
+              border-left: 6px solid #004c97;
+              padding: 20px;
+              margin-top: 20px;
+            ">
+            <p style="margin: 0; text-align: justify">
+              All of these documents can assist in the
+              feedback loop that encourages incident data to
+              be used for continuous improvements and
+              building long-term resilience (Goldschmidt,
+              2025).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
