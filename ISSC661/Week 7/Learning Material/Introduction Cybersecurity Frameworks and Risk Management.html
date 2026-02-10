@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* VIDEO RESPONSIVE */
+
+      .video-wrapper {
+        width: 100%;
+
+        max-width: 800px;
+
+        margin: 0 auto;
+      }
+
+      .video-responsive {
+        position: relative;
+
+        width: 100%;
+
+        padding-bottom: 56.25%;
+
+        height: 0;
+
+        overflow: hidden;
+
+        border-radius: 12px;
+
+        background: #000;
+
+        margin-bottom: 30px;
+
+        border: 8px solid #05c3de;
+      }
+
+      .video-responsive iframe {
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 7 </span>
+      <span class="banner__week-name">
+        International Standards, Frameworks, and Security
+        Acts Con’t
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Introduction: Cybersecurity Frameworks and Risk
+        Management
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p style="margin-bottom: 25px; text-align: justify">
+        Cybersecurity governance, risk, and compliance (GRC)
+        are foundational pillars in managing digital threats
+        and ensuring organizational resilience. Frameworks
+        such as the
+        <span style="color: #004c97; font-weight: bold"
+          >NIST Risk Management Framework (RMF)</span
+        >, the
+        <span style="color: #004c97; font-weight: bold"
+          >NIST Cybersecurity Framework (CSF)</span
+        >, and
+        <span style="color: #004c97; font-weight: bold"
+          >NIST SP 800-53</span
+        >
+        provide structured approaches to identifying,
+        assessing, and mitigating cyber risks.
+      </p>
+
+      <div
+        style="
+          border-left: 5px solid #05c3de;
+          padding-left: 20px;
+          margin-bottom: 30px;
+        ">
+        <p style="margin: 0; text-align: justify">
+          These frameworks are not merely technical
+          checklists; they are strategic tools that align
+          cybersecurity with business objectives, regulatory
+          requirements, and operational realities.
+        </p>
+      </div>
+
+      <p style="margin-bottom: 25px; text-align: justify">
+        The NIST Risk Management Framework (RMF) is a
+        structured process developed by the National
+        Institute of Standards and Technology to guide
+        organizations in managing information security and
+        privacy risks. Although it is most often used by
+        federal agencies and contractors, it is increasingly
+        being adopted by the private sector.
+      </p>
+
+      <h2>The RMF consists of seven steps:</h2>
+
+      <div class="griky-timeline">
+        <div class="griky-tl-container">
+          <!-- Línea central -->
+          <div class="griky-tl-line"></div>
+          <div class="griky-tl-item">
+            <div class="griky-tl-axis">
+              <div class="griky-tl-dot"></div>
+            </div>
+            <div class="griky-tl-card">
+              <h3 class="griky-tl-title">Prepare</h3>
+            </div>
+          </div>
+          <div class="griky-tl-item">
+            <div class="griky-tl-axis">
+              <div class="griky-tl-dot"></div>
+            </div>
+            <div class="griky-tl-panel">
+              <h3 class="griky-tl-title">Categorize</h3>
+            </div>
+          </div>
+          <div class="griky-tl-item">
+            <div class="griky-tl-axis">
+              <div class="griky-tl-dot"></div>
+            </div>
+            <div class="griky-tl-panel">
+              <h3 class="griky-tl-title">Select</h3>
+            </div>
+          </div>
+          <div class="griky-tl-item">
+            <div class="griky-tl-axis">
+              <div class="griky-tl-dot"></div>
+            </div>
+            <div class="griky-tl-panel">
+              <h3 class="griky-tl-title">Implement</h3>
+            </div>
+          </div>
+          <div class="griky-tl-item">
+            <div class="griky-tl-axis">
+              <div class="griky-tl-dot"></div>
+            </div>
+            <div class="griky-tl-panel">
+              <h3 class="griky-tl-title">Assess</h3>
+            </div>
+          </div>
+          <div class="griky-tl-item">
+            <div class="griky-tl-axis">
+              <div class="griky-tl-dot"></div>
+            </div>
+            <div class="griky-tl-panel">
+              <h3 class="griky-tl-title">Authorize</h3>
+            </div>
+          </div>
+          <div class="griky-tl-item">
+            <div class="griky-tl-axis">
+              <div class="griky-tl-dot"></div>
+            </div>
+            <div class="griky-tl-panel">
+              <h3 class="griky-tl-title">Monitor</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background-color: #041e42;
+          padding: 30px;
+          border-radius: 8px;
+          margin-bottom: 30px;
+        ">
+        <p
+          style="
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-align: justify;
+          ">
+          Each step is designed to ensure that security and
+          privacy considerations are integrated throughout
+          the system life cycle. Its integration with
+          enterprise risk management (ERM) frameworks allows
+          cybersecurity to be treated as a
+          <span style="color: #05c3de; font-weight: bold"
+            >business risk rather than a technical
+            issue</span
+          >.
+        </p>
+        <p
+          style="
+            color: #ffffff;
+            margin: 0;
+            text-align: justify;
+          ">
+          The RMF’s emphasis on accountability,
+          documentation, and continuous monitoring makes it
+          a cornerstone of effective cybersecurity
+          governance.
+        </p>
+      </div>
+
+      <p
+        style="
+          margin-bottom: 15px;
+          font-weight: bold;
+          color: #004c97;
+        ">
+        Please watch the following video,
+        <em
+          >CertMike Explains NIST Risk Management
+          Framework</em
+        >
+      </p>
+
+      <br />
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+        alt="banner"
+        class="banner-image"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%" />
+      <br />
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <iframe
+            src="https://www.youtube.com/embed/d8Z1RyhmRXg?si=gpP9wpw4Wq6k4tQD"
+            title="What Are HR Policies and Procedures?"
+            title="What Are HR Policies and Procedures?"
+            allowfullscreen="allowfullscreen"></iframe>
+        </div>
+      </div>
+
+      <!-- ACORDEÓN -->
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1"
+            >Transcript: CertMike Explains NIST Risk
+            Management Framework</label
+          >
+
+          <div class="accordion-content">
+            <h3>Introduction</h3>
+            <p>
+              (0:00) Hi there, I'm Mike Chapel and in this
+              Cert Mike Explains video I'm going to walk you
+              through a topic that's showing up on many
+              cybersecurity certification exams: the Risk
+              Management Framework published by the National
+              Institute for Standards and Technology (NIST).
+            </p>
+            <p>
+              (0:15) I'll tell you why the framework exists,
+              how you can use it, and then explain the seven
+              steps in the NIST risk management process.
+            </p>
+            <p>
+              (0:24) Risk management is a complex topic, and
+              fortunately, organizations don't need to
+              design their own risk management processes
+              from the ground up.
+            </p>
+            <p>
+              (0:33) Risk management frameworks provide
+              proven, time-tested techniques for performing
+              enterprise risk management.
+            </p>
+            <p>
+              (0:41) One of the most widely used risk
+              management frameworks was developed by the
+              National Institute of Standards and
+              Technology, a U.S. federal government agency.
+            </p>
+            <p>
+              (0:50) Their process is mandatory for many
+              government computer systems, but private
+              organizations have also widely adopted this
+              framework because they find it to be a helpful
+              approach.
+            </p>
+            <h3>NIST Special Publication 800-37</h3>
+            <p>
+              (1:01) The details of the framework are found
+              in NIST Special Publication 800-37.
+            </p>
+            <p>
+              (1:07) This document runs over 60 pages and
+              includes a lot of detail on the framework.
+              It's great reading for anyone involved in risk
+              management.
+            </p>
+            <p>
+              (1:16) That publication is available for free
+              on NIST's website.
+            </p>
+            <h3>Gather Information</h3>
+            <p>
+              (1:20) Before beginning the risk management
+              process, an organization should gather
+              information from two different categories.
+            </p>
+            <p>
+              (1:27) The first set of information is about
+              the technology architecture and includes
+              reference models, technical details, business
+              process information, and information system
+              boundaries.
+            </p>
+            <p>
+              (1:39) The second input to the process is
+              organization-specific information, including
+              the laws, regulations, and policies that
+              apply; the strategy of the organization; its
+              priorities; resource availability; and supply
+              chain information.
+            </p>
+            <p>
+              (1:55) We can then take all of this
+              information gathered during preparation and
+              begin the six-step NIST risk management
+              process.
+            </p>
+            <h3>Free Study Plans</h3>
+            <p>
+              (2:04) Before I explain the six steps of that
+              process, I just want to take a moment to
+              invite you to visit my website at
+              <strong>certmike.com</strong>.
+            </p>
+            <p>
+              (2:12) On that site, I have free study plans
+              put together to help you earn your next
+              cybersecurity certification.
+            </p>
+            <p>
+              (2:18) The plans tie together content you'll
+              find in study guides, video courses, and
+              practice tests to help you prepare for your
+              next certification exam and pass that test on
+              the first try.
+            </p>
+            <p>
+              (2:31) Also, if you're enjoying this Cert Mike
+              Explains video, please take a moment to click
+              the like button below to help other people
+              discover it. If you subscribe to my channel,
+              you'll be among the first to see my new
+              cybersecurity videos when they come out.
+            </p>
+            <h3>Risk Management Process</h3>
+            <p>
+              (2:44) Okay, back to the risk management
+              process. After gathering information about the
+              technology architecture and the organization
+              itself, the process enters
+              <strong>Step 1</strong>, where we categorize
+              the information system being assessed as well
+              as the information that's stored, processed,
+              and transmitted by that system.
+            </p>
+            <p>
+              (3:02) We normally do this by performing an
+              impact assessment.
+            </p>
+            <p>
+              (3:06) Then we move on to
+              <strong>Step 2</strong>, where the
+              organization selects the security controls
+              that should be used to manage the risks to the
+              information system.
+            </p>
+            <p>
+              (3:15) This selection is based upon the
+              system's categorization from Step 1. We likely
+              begin with a standard baseline of controls and
+              then add or subtract specific controls to
+              tailor the specification to the system's
+              needs.
+            </p>
+            <p>
+              (3:31) After we do that selection, we move on
+              to <strong>Step 3</strong>, where we actually
+              implement those selected controls.
+            </p>
+            <p>
+              (3:38) In <strong>Step 4</strong>, we perform
+              a control assessment to determine whether the
+              controls were correctly implemented, operate
+              correctly, and meet security requirements.
+            </p>
+            <p>
+              (3:49) After we finish that assessment, we
+              enter <strong>Step 5</strong>, where we
+              authorize operation of the information system.
+            </p>
+            <p>
+              (3:56) In the federal government,
+              authorization is a very formal process where a
+              senior government official must accept any
+              remaining risks.
+            </p>
+            <p>
+              (4:05) Then, once the system is authorized and
+              running, we move on to
+              <strong>Step 6</strong> of the process, where
+              we monitor the security controls on an ongoing
+              basis to ensure their continued effectiveness
+              and make sure we respond to any environmental
+              changes.
+            </p>
+            <p>
+              (4:20) If this monitoring detects significant
+              issues, the cycle can begin again.
+            </p>
+            <p>
+              (4:24) This risk management framework helps
+              provide structure for the way an organization
+              approaches making decisions about risk.
+            </p>
+            <p>
+              (4:32) In practice, you'll want to adapt these
+              steps to meet the needs of your own
+              organization.
+            </p>
+            <h3>Conclusion</h3>
+            <p>
+              (4:37) I hope this video helped you understand
+              the NIST Risk Management Framework. If it did,
+              please click the like button below and
+              subscribe to my channel for more cybersecurity
+              content.
+            </p>
+            <p>
+              (Transcript provided by YouTube. Organized by
+              Copilot, 2025)&nbsp;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
