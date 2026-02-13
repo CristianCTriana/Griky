@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+      /* PDF info */
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+      .digital-guide span.icon {
+        color: #202122;
+        font-size: 24px;
+        margin-right: 10px;
+        line-height: 1;
+      }
+
+      /* ENCABEZADO */
+      .header-container h3 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* TÍTULO PRINCIPAL */
+      .main-title {
+        text-align: center;
+        color: #041e42;
+        font-size: 35px;
+        font-weight: 700;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+
+      /* TEXTO GENERAL */
+      .text-content {
+        font-size: 19px;
+        color: #202122;
+        text-align: justify;
+        margin-bottom: 20px;
+      }
+
+      /* DIVIDER */
+      .divider-line {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      /* IMÁGENES CENTRADAS */
+      .centered-image {
+        display: block;
+        margin: 30px auto;
+        max-width: 750px;
+        width: 100%;
+        height: auto;
+      }
+
+      /* CANVA EMBED */
+      .canva-embed {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 56.25%; /* 16:9 aspect ratio */
+        margin: 30px 0;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(63, 69, 81, 0.16);
+      }
+      .canva-embed iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: none;
+      }
+
+      /* GETTING STARTED BOX */
+      .getting-started {
+        background-color: #041e42;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 30px;
+      }
+      .getting-started h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 0;
+      }
+      .getting-started ul {
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+      .getting-started ul li {
+        font-size: 19px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        .main-title {
+          font-size: 28px;
+        }
+        .getting-started ul li {
+          font-size: 17px;
+        }
+        /* --- ACORDEÓN CSS-ONLY --- */
+        .accordion {
+          margin-top: 30px;
+          font-family: Lato, sans-serif;
+        }
+        .accordion-item {
+          border-radius: 8px;
+          margin-bottom: 15px;
+          background: #ffffff;
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+          overflow: hidden;
+          border: 1px solid #e5e5e5;
+        }
+        .accordion-item input {
+          display: none;
+        }
+        .accordion-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 18px 20px;
+          font-size: 20px;
+          font-weight: 600;
+          color: #03244d;
+          background: #ffffff;
+          cursor: pointer;
+          border-bottom: 1px solid #e5e5e5;
+          transition:
+            background 0.2s ease,
+            color 0.2s ease;
+          position: relative;
+        }
+        .accordion-title::after {
+          content: "+";
+          font-size: 22px;
+          font-weight: bold;
+          color: #004c90;
+          transition:
+            transform 0.2s ease,
+            color 0.2s ease;
+        }
+        .accordion-item
+          input:checked
+          + .accordion-title::after {
+          content: "–";
+          color: #004c90;
+        }
+        .accordion-title:hover {
+          background: #f5faff;
+        }
+        .accordion-content {
+          max-height: 0;
+          overflow: hidden;
+          background: #ffffff;
+          color: #03244d;
+          padding: 0 20px;
+          font-size: 17px;
+          line-height: 1.5;
+          transition:
+            max-height 0.35s ease,
+            padding 0.3s ease;
+        }
+        .accordion-item input:checked ~ .accordion-content {
+          max-height: 800px;
+          padding: 20px;
+        }
+        .accordion-item input:checked + .accordion-title {
+          background: #eaf4ff;
+          color: #041e42;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h3>
+        <span class="course-code">PSYC550</span>
+        <span class="course-title">Course Overview</span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <!-- TÍTULO PRINCIPAL -->
+      <h1 class="main-title">Welcome to course</h1>
+      <hr class="divider-line" />
+      <!-- TEXTO INTRO -->
+
+      <!-- BANNER CENTRADO -->
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/APUS%20CINTILLOS%20-%20PLANTILLA.png"
+        alt="banner"
+        class="centered-image" />
+      <!-- CANVA EMBED -->
+      <div class="canva-embed">
+        <iframe
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/24988541/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player_1769548853&amp;entry_id=1_ka8xui6d"
+          allowfullscreen="allowfullscreen"
+          allow="fullscreen"></iframe>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1"
+            >Transcript: PSYC550 Professional Ethics &amp;
+            Standards</label
+          >
+          <div
+            style="overflow: auto"
+            class="accordion-content">
+            <p>[MUSIC PLAYING] NARRATOR:</p>
+            <p>
+              Welcome to PSYC550: Professional Ethics &amp;
+              Standards — where your journey into the heart
+              of professional psychology begins. In this
+              graduate-level course, you’ll dive deep into
+              the ethical, legal, and professional
+              principles that guide psychologists in
+              therapy, research, and assessment.
+            </p>
+            <p>
+              Why is this important? Because ethical
+              decision-making isn’t just a requirement —
+              it’s the foundation of trust, integrity, and
+              impact in psychology.
+            </p>
+            <p>
+              You’ll explore the APA ethics code, apply
+              federal and state laws to real-world dilemmas,
+              analyze ethical challenges across settings,
+              and develop sound decision-making strategies —
+              all while sharpening cultural awareness and
+              identifying personal biases.
+            </p>
+            <p>
+              By the end, you won’t just understand ethics —
+              you’ll be ready to lead with professionalism
+              and integrity in every aspect of your
+              practice.
+            </p>
+            <p>[MUSIC PLAYING]</p>
+            <p>
+              Script generated by Copilot, 2026. Edited by
+              APUS.
+            </p>
+          </div>
+        </div>
+        <hr class="divider-line" />
+        <!-- GETTING STARTED -->
+        <div class="getting-started">
+          <h2>| Getting Started</h2>
+          <ul>
+            <li>
+              Review the syllabus and this course overview
+              (Good news! You're in that right now!) for all
+              course activities, due dates, and policies.
+            </li>
+            <li>
+              Introduce yourself to the class in the Week 1
+              Introduction Discussion.
+            </li>
+            <li>Begin reading the materials in Week 1.</li>
+          </ul>
+        </div>
+        <div class="content-wrapper">
+          <!-- PDF info -->
+          <div
+            class="digital-guide"
+            style="text-align: center">
+            <span style="color: #004c90"
+              ><strong
+                ><span style="font-size: 24px"
+                  >Important Note: Welcome Discussion
+                  <br /></span></strong></span
+            >The Welcome Discussion topic serves as your
+            official entry into the course.&nbsp;
+            <p style="text-align: center">
+              Your initial post in the Welcome Discussion
+              must be submitted by 11:59 p.m. ET on Sunday
+              the first week of the course to maintain your
+              course enrollment.
+              <strong
+                >Students who do not post to this forum
+                before this deadline will be automatically
+                dropped from the course.</strong
+              >
+            </p>
+          </div>
+          <hr class="divider-line" />
+          <!-- FOOTER -->
+          <img
+            src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+            alt="logo"
+            class="footer-logo" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

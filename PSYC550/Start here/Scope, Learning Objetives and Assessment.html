@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* ENCABEZADO */
+      .header-container h3 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: left;
+        font-size: 28px;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* CONTENEDOR PRINCIPAL */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      h1.section-title,
+      h2.section-subtitle {
+        font-size: 35px;
+        font-weight: 700;
+        color: #041e42;
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #202122;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      .centered-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item
+        input:checked
+        + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #eaf4ff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 1200px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .accordion-content ul {
+        padding-left: 20px;
+      }
+      .accordion-content li {
+        margin-bottom: 10px;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* TABLA DE ASSESSMENTS */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #dcdcdc;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+      }
+      th {
+        background-color: #041e42;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h3 style="text-align: center">
+        <span class="course-code">PSYC550<br /></span>
+        <span style="font-size: 28px">Course Overview</span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <!-- SECCIÓN PRINCIPAL -->
+      <h2
+        class="section-title"
+        style="text-align: center">
+        <span
+          style="
+            font-family: Lato, sans-serif;
+            font-size: 30px;
+            color: #041e40;
+          "
+          >Scope, Learning Objectives, and Assessment</span
+        >
+      </h2>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Course Scope</span
+        >
+      </h3>
+      <div
+        style="
+          display: flex;
+          gap: 100px;
+          align-items: center;
+          padding: 0px 0;
+        ">
+        <div
+          style="
+            flex: 1;
+            min-width: 200px;
+            max-width: 200px;
+          ">
+          <img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/img-course-1_20251120220934262.png"
+            alt=""
+            title=""
+            width="313"
+            height="338"
+            style="float: left" />
+        </div>
+        <div style="flex: 2">
+          <p>
+            This course examines the ethical, legal and
+            professional issues relevant to the practice of
+            professional psychology.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Course &amp; Learning Objectives</span
+        >
+      </h3>
+      <p>
+        Select each Course Objective to see the associated
+        Learning Objectives and Assessments.
+      </p>
+      <!-- ACORDEÓN: COURSE AND LEARNING OBJECTIVES -->
+      <div class="accordion">
+        <!-- CO-1 -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co1" />
+          <label
+            class="accordion-title"
+            for="co1"
+            >CO-1: Examine the American Psychological
+            Association (APA) code of professional ethics
+            and other standards relative to research,
+            practice, and training in psychology.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Learning Objectives</strong></p>
+            <ul>
+              <li>
+                LO-1.1: Differentiate between aspiration
+                ethics and mandatory ethics.
+              </li>
+              <li>
+                LO-1.2: Analyze the role of ethics codes in
+                making ethical decisions.
+              </li>
+              <li>
+                LO-1.3: Evaluate the relationship between
+                ethical codes and laws.
+              </li>
+            </ul>
+            <p><strong>Assessments</strong></p>
+            <ul>
+              <li>
+                Week 1 - Discussion: Introductions and
+                Balancing Personal and Professional Roles
+              </li>
+              <li>
+                Week 6 - Assignment: Human Research
+                Protection Foundational Training
+              </li>
+              <li>
+                Week 8 - Discussion: Ethical Issues in
+                Organizations and Reflection on Course
+                Learning
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-2 -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co2" />
+          <label
+            class="accordion-title"
+            for="co2"
+            >CO-2: Apply the APA ethics code and federal and
+            state laws to ethical dilemmas.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Learning Objectives</strong></p>
+            <ul>
+              <li>
+                LO-2.1: Examine the role of professional
+                boundaries.
+              </li>
+              <li>
+                LO-2.2: Differentiate between
+                confidentiality, privilege, and privacy.
+              </li>
+              <li>
+                LO-2.3: Explain the requirements and
+                challenges of mandated reporting.
+              </li>
+            </ul>
+            <p><strong>Assessments</strong></p>
+            <ul>
+              <li>
+                Week 2 - Discussion: Managing Boundaries and
+                Multiple Relationships
+              </li>
+              <li>Week 4 - Discussion: Confidentiality</li>
+              <li>
+                Week 5 - Discussion: Ethical Issues in
+                Therapy
+              </li>
+              <li>
+                Week 7 - Assignment: Cultural Competency
+                Essay
+              </li>
+              <li>
+                Week 8 - Discussion: Ethical Issues in
+                Organizations and Reflection on Course
+                Learning
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-3 -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co3" />
+          <label
+            class="accordion-title"
+            for="co3"
+            >CO-3: Analyze ethical concerns encountered in a
+            variety of research, practice, and educational
+            settings.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Learning Objectives</strong></p>
+            <ul>
+              <li>
+                LO-3.1: Examine informed consent
+                requirements across different settings.
+              </li>
+              <li>
+                LO-3.2: Explain requirements for protection
+                of humans and other animals participating in
+                research.
+              </li>
+              <li>
+                LO-3.3: Examine ethical issues encountered
+                in non-traditional settings.
+              </li>
+            </ul>
+            <p><strong>Assessments</strong></p>
+            <ul>
+              <li>
+                Week 2 - Discussion: Managing Boundaries and
+                Multiple Relationships
+              </li>
+              <li>Week 3 - Assignment: Case Analysis</li>
+              <li>Week 4 - Discussion: Confidentiality</li>
+              <li>
+                Week 5 - Discussion: Ethical Issues in
+                Therapy
+              </li>
+              <li>
+                Week 6 - Assignment: Human Research
+                Protection Foundational Training
+              </li>
+              <li>
+                Week 8 - Discussion: Ethical Issues in
+                Organizations and Reflection on Course
+                Learning
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-4 -->
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co4" />
+          <label
+            class="accordion-title"
+            for="co4"
+            >CO-4: Use sound professional decision-making
+            models in the critical analysis of ethical
+            dilemmas.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Learning Objectives</strong></p>
+            <ul>
+              <li>
+                LO-4.1: Examine the relationship between
+                ethics and self-care.
+              </li>
+              <li>
+                LO-4.2: Differentiate between common ethical
+                decision-making models.
+              </li>
+            </ul>
+            <p><strong>Assessments</strong></p>
+            <ul>
+              <li>
+                Week 1 - Discussion: Introductions and
+                Balancing Personal and Professional Roles
+              </li>
+              <li>Week 3 - Assignment: Case Analysis</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co4" />
+          <label
+            class="accordion-title"
+            for="co4"
+            >CO-5: Appraise a conscientiousness for a
+            variety of cultures and personal biases.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Learning Objectives</strong></p>
+            <ul>
+              <li>
+                LO-5.1: Examine how personal beliefs and
+                values can impact professional decision
+                making.
+              </li>
+              <li>
+                LO-5.2: Describe the importance of
+                understanding cultural differences.
+              </li>
+            </ul>
+            <p><strong>Assessments</strong></p>
+            <ul>
+              <li>
+                Week 5 - Discussion: Ethical Issues in
+                Therapy
+              </li>
+              <li>
+                Week 7 - Assignment: Cultural Competency
+                Essay
+              </li>
+              <li>
+                Week 8 - Discussion: Ethical Issues in
+                Organizations and Reflection on Course
+                Learning
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <!-- PROGRAM LEARNING OUTCOMES -->
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Program Learning Outcomes</span
+        >
+      </h3>
+      <p>
+        Program Learning Outcomes (PLO) serve as a roadmap
+        for educational success and guide the courses that
+        you take.
+      </p>
+      <p>This course supports the following PLOs:</p>
+      <ul>
+        <li>
+          Demonstrate a broad knowledge of psychology's core
+          domains, an understanding of psychology as a
+          science, and advanced knowledge in an area of
+          concentration.
+        </li>
+        <li>
+          Evaluate research questions and methodology to
+          solve contemporary problems, based on a critical
+          review of psychological and other scientific
+          literature.
+        </li>
+        <li>
+          Develop defensible ethical decisions and behaviors
+          based on the Ethical Principles of the American
+          Psychological Association.
+        </li>
+        <li>
+          Deliver ideas in a clear and professional manner
+          appropriate to an audience and consistent with
+          style expectations of the American Psychological
+          Association.
+        </li>
+        <li>
+          Accurately identify gaps in own knowledge and
+          abilities and then accept the use constructive
+          feedback to improve academic performance.
+        </li>
+        <li>
+          Evaluate own cultural competency and how biases
+          and assumptions can influence human interactions.
+        </li>
+      </ul>
+      <hr />
+      <!-- ASSESSMENT COMPONENTS -->
+      <h3>
+        <span style="color: #041e40; font-size: 24px"
+          >| Assessment Components</span
+        >
+      </h3>
+      <p>
+        Your final grade will be calculated using the
+        following category weights:
+      </p>
+      <table style="width: 46.8327%; height: 84.3906px">
+        <tbody>
+          <tr style="height: 40.1953px">
+            <th style="width: 49.0956%">Assignments</th>
+            <th style="width: 50.9044%">Discussions</th>
+          </tr>
+          <tr style="height: 44.1953px">
+            <td style="width: 49.0956%">60%</td>
+            <td style="width: 50.9044%">40%</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt="logo"
+        class="footer-logo" />
+    </div>
+  </body>
+</html>
