@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* ENCABEZADO */
+      .header-container h3 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: left;
+        font-size: 28px;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* CONTENEDOR PRINCIPAL */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      h1.section-title,
+      h2.section-subtitle {
+        font-size: 35px;
+        font-weight: 700;
+        color: #041e42;
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #202122;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      .centered-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item
+        input:checked
+        + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #eaf4ff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 1200px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .accordion-content ul {
+        padding-left: 20px;
+      }
+      .accordion-content li {
+        margin-bottom: 10px;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* TABLA DE ASSESSMENTS */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #dcdcdc;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+      }
+      th {
+        background-color: #041e42;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h3 style="text-align: center">
+        <span class="course-code">ISSC661<br /></span>
+        <span style="font-size: 28px">Wrapping Up</span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <!-- SECCIÓN PRINCIPAL -->
+      <h2
+        class="section-title"
+        style="text-align: center">
+        <span
+          style="
+            font-family: Lato, sans-serif;
+            font-size: 30px;
+            color: #041e40;
+          "
+          >Course Conclusion</span
+        >
+      </h2>
+      <hr />
+      <p>
+        As you complete this course and look forward to
+        ISSC662 or some other "next step," I hope that this
+        course has contributed to your overall understanding
+        of information security concepts and those
+        associated with risk management and assessment. I
+        wish you success as you continue your academic
+        journey.
+      </p>
+
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Don't Forget!</span
+        >
+      </h3>
+      <p>
+        Also, please don't forget to take a moment to
+        complete the end-of-course survey that you will
+        receive in your APUS email following the completion
+        of the course. At APUS, we value your thoughts and
+        opinions. They allow us to continually improve both
+        as instructors and content-creators.
+      </p>
+    </div>
+
+    <img
+      src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+      alt="logo"
+      class="footer-logo" />
+  </body>
+</html>

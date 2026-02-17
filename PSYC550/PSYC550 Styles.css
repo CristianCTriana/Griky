@@ -1,0 +1,356 @@
+/* --- VARIABLES Y CONFIGURACIÓN BASE --- */
+:root {
+  --inst-dark: #041e42; /* Azul Oscuro */
+  --inst-medium: #004c97; /* Azul Medio */
+  --inst-cyan: #05c3de; /* Cian Vivo */
+  --inst-text: #202122; /* Texto Principal */
+  --inst-gray-bg: #fcfcfc; /* Fondo Gris Muy Claro */
+  --inst-blue-bg: #f0fbfc; /* Fondo Azul Muy Claro */
+}
+
+ul {
+  font-size: 19px;
+}
+
+.topic-highlight-box {
+  background-color: var(--inst-gray-bg);
+  border-left: 5px solid var(--inst-cyan);
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Tarjetas (Grids) */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  );
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.topic-card {
+  background-color: var(--inst-gray-bg);
+  border: 1px solid #e1e4e8;
+  border-top: 5px solid var(--inst-medium);
+  padding: 25px;
+  border-radius: 4px;
+}
+
+/* Bloque Oscuro (Cierres e Impacto) */
+.topic-dark-box {
+  background-color: var(--inst-dark);
+  color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Etiquetas / Badges */
+.topic-badge {
+  display: inline-block;
+  background-color: var(--inst-blue-bg);
+  border: 1px solid var(--inst-cyan);
+  color: var(--inst-medium);
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin: 5px;
+}
+
+/* Utilidades de Texto */
+.topic-justify {
+  text-align: justify;
+}
+.topic-bold {
+  font-weight: 700;
+}
+.topic-italic {
+  font-style: italic;
+}
+.text-dark {
+  color: var(--inst-dark);
+}
+.text-medium {
+  color: var(--inst-medium);
+}
+.text-cyan {
+  color: var(--inst-cyan);
+}
+
+/* --- COMPONENTES --- */
+
+/* Enlaces estilizados */
+.topic-link {
+  color: var(--inst-medium);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--inst-cyan);
+  transition: background-color 0.2s;
+}
+.topic-link:hover {
+  background-color: var(--inst-blue-bg);
+}
+
+/* Caja Destacada (Borde Izquierdo) */
+.topic-highlight-box {
+  background-color: var(--inst-gray-bg);
+  border-left: 5px solid var(--inst-cyan);
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Caja de "Ethics vs Laws" (Diferenciación) */
+.topic-comparison-box {
+  background-color: var(--inst-blue-bg);
+  border: 1px solid #e1e4e8;
+  border-top: 4px solid var(--inst-medium);
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 4px;
+}
+
+/* Tarjeta / Lista Estructurada */
+.topic-card-list {
+  background-color: var(--inst-dark);
+  color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+/* Lista Numerada Personalizada */
+.topic-numbered-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: section;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Diseño responsivo */
+  gap: 15px;
+}
+
+.topic-numbered-list li {
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.topic-numbered-list li::before {
+  counter-increment: section;
+  content: counter(section);
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 32px;
+  height: 32px;
+  background-color: var(--inst-cyan);
+  color: var(--inst-dark);
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* --- UTILIDADES PARA ACORDEONES --- */
+
+/* Asegura que el texto dentro del acordeón tenga el tamaño correcto */
+.topic-accordion-content {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--inst-text);
+  text-align: justify;
+}
+
+/* Grid compacto para listas largas (Como las 10 secciones) */
+.topic-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  );
+  gap: 10px;
+  margin-top: 20px;
+  background-color: var(--inst-gray-bg);
+  padding: 20px;
+  border-radius: 4px;
+  border-left: 4px solid var(--inst-medium);
+}
+
+.topic-compact-item {
+  padding: 5px 0;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+/* --- TARJETAS DE PROPÓSITO (Fisher) --- */
+.topic-purpose-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  );
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.topic-purpose-card {
+  background-color: var(--inst-gray-bg);
+  border: 1px solid #e1e4e8;
+  border-top: 4px solid var(--inst-cyan); /* Borde superior Cian */
+  padding: 25px;
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+.topic-purpose-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.topic-card-title {
+  color: var(--inst-dark);
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 20px;
+}
+
+/* --- LISTA DE PASOS (Procesos Secuenciales) --- */
+.topic-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+  counter-reset: step;
+}
+
+.topic-step-list li {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 20px;
+}
+
+/* Círculo numérico más grande y elegante */
+.topic-step-list li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background-color: var(--inst-medium); /* Azul medio */
+  color: #ffffff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Título del paso (opcional, para negritas al inicio) */
+.topic-step-title {
+  display: block;
+  font-weight: 700;
+  color: var(--inst-dark);
+  margin-bottom: 5px;
+}
+
+/* --- LISTA DE DOS COLUMNAS (Para listas largas > 10 ítems) --- */
+.topic-two-col-list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(350px, 1fr)
+  ); /* 2 columnas responsivas */
+  gap: 15px 30px; /* Espacio vertical y horizontal */
+  margin: 25px 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: long-list;
+}
+
+.topic-two-col-list li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #f0f0f0; /* Separador sutil */
+  padding-bottom: 5px;
+}
+
+/* Números compactos */
+.topic-two-col-list li::before {
+  counter-increment: long-list;
+  content: counter(long-list) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--inst-medium);
+  font-weight: 800;
+  font-size: 19px;
+}
+
+/* Título H1 Estilizado (Por si acaso viene en el HTML) */
+.topic-heading {
+  color: var(--inst-dark);
+  border-bottom: 3px solid var(--inst-cyan);
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* --- ETIQUETAS VISUALES (Tags) --- */
+.topic-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0 25px 0;
+}
+
+.topic-tag {
+  background-color: var(--inst-blue-bg);
+  color: var(--inst-dark);
+  border: 1px solid var(--inst-cyan);
+  padding: 8px 16px;
+  border-radius: 20px; /* Borde redondeado tipo píldora */
+  font-weight: 600;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* --- CAJA DE ALERTA (Burnout) --- */
+.topic-alert-box {
+  background-color: var(--inst-gray-bg);
+  border: 1px solid #e1e4e8;
+  border-left: 6px solid var(--inst-dark); /* Borde oscuro para seriedad */
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 4px;
+}
+
+.topic-box-list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  );
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.topic-box-item {
+  border: 1px solid #e1e4e8;
+  border-top: 4px solid #05c3de;
+  padding: 20px;
+  background-color: #fcfcfc;
+  border-radius: 4px;
+}
