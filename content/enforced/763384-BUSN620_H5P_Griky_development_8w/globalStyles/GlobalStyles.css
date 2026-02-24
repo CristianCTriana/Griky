@@ -3,6 +3,36 @@
    =============================== */
 
 /* ---- BODY BASE ---- */
+
+
+.week-end-box {
+        background-color: #041e42 !important;
+        padding: 40px 20px;
+        text-align: center;
+        color: #ffffff !important;
+        font-size: 26px;
+        margin-top: 60px;
+        font-weight: 700;
+        border-radius: 8px;
+      }
+ .week-end-box p {
+        margin: 5px 0;
+        font-size: 24px;
+        font-weight: 600;
+        color: white !important;
+      }
+ .week-end-box h2 {
+       
+        color: white !important;
+      }
+ .week-end-box h1 {
+       
+        color: white !important;
+      }
+ .week-end-box h3 {
+       
+        color: white !important;
+      }
 body {
     margin: 0;
     padding: 0;
@@ -38,19 +68,20 @@ a, label, input, textarea {
 ========================= */
 
 /* UL directamente dentro del content wrapper */
-.content-wrapper > ul,
-.content-wrapper > ol {
+.content-wrapper ul,
+.content-wrapper ol {
   margin: 16px 0;
   padding-left: 24px;
 }
 
 /* LI SOLO de esas listas */
-.content-wrapper > ul > li,
-.content-wrapper > ol > li {
+.content-wrapper ul li,
+.content-wrapper ol li {
   font-family: 'Lato', sans-serif;
   font-size: 19px;
   line-height: 1.6;
-  color: #202122;
+  color: #041E42 !important;;
+  
   margin-bottom: 8px;
 }
 /* ---- TÍTULOS ---- */
@@ -111,7 +142,7 @@ hr {
 
 .header-title .week {
     font-size: 20px;
-    color: #05c3de ;
+    color: #041E42 ;
 }
 
 .header-title .main-title {
@@ -124,7 +155,8 @@ hr {
     margin-bottom: 10px;
     font-size: 35px;
     text-align: left;
-    color: #041e40;
+    color: 
+    #041E42;
 }
 
 .divider-line {
@@ -212,13 +244,16 @@ hr {
     margin-top: 40px;
     font-family: Lato, sans-serif;
 }
+.accordion-content p {
+    color: #041E42;
+}
 
 .accordion-item {
     border-radius: 8px;
     margin-bottom: 15px;
     background: #ffffff;
     box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    overflow: hidden;
+    overflow: auto;
     border: 1px solid #e5e5e5;
 }
 
@@ -266,7 +301,7 @@ hr {
 /* CONTENIDO */
 .accordion-content {
     max-height: 0;
-    overflow: hidden;
+    overflow: auto;
     background: #ffffff;
     color: #03244d;
     padding: 0 20px;
@@ -298,7 +333,7 @@ hr {
     margin-bottom: 15px;
     background: #ffffff;
     box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    overflow: hidden;
+    overflow: auto;
     border: 1px solid #e5e5e5;
 }
 
@@ -346,7 +381,7 @@ hr {
 /* CONTENIDO */
 .accordion-content {
     max-height: 0;
-    overflow: hidden;
+    overflow: auto;
     background: #ffffff;
     color: #03244d;
     padding: 0 20px;
@@ -381,4 +416,8 @@ color: #202122;
 font-size: 24px;
 margin-right: 10px;
 line-height: 1;
+}
+
+.topic-numbered-list li {
+color: #ffffff;
 }
