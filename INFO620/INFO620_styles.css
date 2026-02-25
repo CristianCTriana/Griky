@@ -1,0 +1,161 @@
+.topic-content p,
+.topic-content ul,
+.topic-content li {
+  font-family: "Lato", sans-serif;
+  font-size: 19px;
+  color: #041e42;
+  line-height: 1.6;
+}
+.info-box-light {
+  background-color: #eaf4ff;
+  border-left: 6px solid #05c3de;
+  padding: 25px 30px;
+  border-radius: 8px;
+  margin: 30px 0;
+}
+.info-box-light p:last-child,
+.info-box-light ul:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-content {
+  font-size: 19px !important;
+}
+.accordion-content p,
+.accordion-content li {
+  font-family: "Lato", sans-serif !important;
+  font-size: 19px !important;
+  color: #041e42 !important;
+  line-height: 1.6;
+}
+
+.topic-figure {
+  margin: 40px auto;
+  text-align: center;
+  max-width: 100%;
+}
+.topic-figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e5e5;
+}
+
+.architecture-content p,
+.architecture-content ul,
+.architecture-content li {
+  font-family: "Lato", sans-serif !important;
+  font-size: 19px !important;
+  color: #041e42 !important;
+  line-height: 1.6;
+}
+
+h3.architecture-title {
+  color: #05c3de;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eaf4ff;
+  padding-bottom: 8px;
+}
+
+.advantages-box {
+  background-color: #eaf4ff;
+  border-left: 6px solid #05c3de;
+  padding: 20px 30px;
+  border-radius: 8px;
+  margin: 25px 0;
+}
+
+.advantages-box ul:last-child {
+  margin-bottom: 0;
+}
+
+.table-apus th,
+.table-apus td,
+.table-apus caption {
+  font-family: "Lato", sans-serif !important;
+  font-size: 19px !important;
+  color: #041e42 !important;
+  line-height: 1.6;
+}
+
+.table-apus tbody th[scope="row"] {
+  font-weight: 700;
+  background-color: #f5faff;
+}
+
+.topic-main-title {
+  color: #05c3de;
+  font-family: "Lato", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eaf4ff;
+  padding-bottom: 10px;
+}
+
+h3.topic-subtitle {
+  color: #041e42;
+  font-family: "Lato", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+h4.topic-sub-subtitle {
+  color: #041e42;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.cardinality-list-box {
+  background-color: #f5faff;
+  border: 1px solid #cce5ff;
+  border-radius: 8px;
+  padding: 20px 20px 20px 30px;
+  margin: 25px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.cardinality-list-box li {
+  margin-bottom: 15px;
+}
+.cardinality-list-box li:last-child {
+  margin-bottom: 0;
+}
+
+.schema-box {
+  background-color: #eaf4ff;
+  border-left: 6px solid #041e42;
+  padding: 20px 30px;
+  border-radius: 0 8px 8px 0;
+  margin: 25px 0;
+}
+
+.schema-box ul:last-child {
+  margin-bottom: 0;
+}
+
+.ordered-highlight-box {
+  background-color: #f5faff;
+  border: 1px solid #cce5ff;
+  border-radius: 8px;
+  padding: 20px 20px 20px 30px;
+  margin: 25px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.ordered-highlight-box li {
+  margin-bottom: 15px;
+}
+.ordered-highlight-box li:last-child {
+  margin-bottom: 0;
+}

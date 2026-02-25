@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name">
+        ER/EER Modeling and UML Class Diagrams
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        UML Class Diagrams and Converting Conceptual Models
+        to Logical Schemas
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Although ER/EER diagrams are dominant in database
+          design, UML class diagrams are widely used in
+          object-oriented system analysis. Understanding UML
+          empowers database professionals to collaborate
+          with software teams and integrate conceptual
+          models into full system architectures.
+        </p>
+
+        <h2 class="topic-main-title">
+          UML Class Diagram Elements
+        </h2>
+        <p>UML class diagrams consist of the following:</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>Classes (entities)</li>
+            <li>Attributes (data properties)</li>
+            <li>
+              Operations (methods; typically omitted in
+              database contexts)
+            </li>
+            <li>Associations (relationships)</li>
+            <li>Multiplicity indicators (cardinality)</li>
+          </ul>
+        </div>
+
+        <p>
+          In UML, multiplicities such as 0..1, 1..*, or *
+          precisely represent relationship participation and
+          cardinality.
+        </p>
+
+        <h3 class="topic-subtitle">
+          Connecting ER and UML Models
+        </h3>
+        <p>
+          A Customer-Order ER model can be translated into
+          UML as follows:
+        </p>
+
+        <div class="schema-box">
+          <ul>
+            <li>
+              Customer
+              <ul>
+                <li>Attributes: CustomerID, Name, Email</li>
+              </ul>
+            </li>
+            <li>
+              Order
+              <ul>
+                <li>Attributes: OrderID, DatePlaced</li>
+              </ul>
+            </li>
+            <li>
+              Association: Customer 1..1 — places — 0..*
+              Order
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          This dual mapping enhances the alignment between
+          the conceptual and the software engineering
+          perspectives.
+        </p>
+
+        <h4 class="topic-sub-subtitle">
+          Converting ER/EER Models into Relational Schemas
+        </h4>
+        <p>
+          Once the conceptual model is finalized, the next
+          step is converting it into a logical relational
+          schema. This follows transformation rules such as
+          the following:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>Each entity → a table</li>
+            <li>Simple attributes → columns</li>
+            <li>
+              Composite attributes → decomposed into simpler
+              fields
+            </li>
+            <li>M:N relationships → associative tables</li>
+            <li>
+              1:1 relationships → merged or
+              cross-referenced, depending on participation
+            </li>
+            <li>
+              EER specialization → PK inheritance rules,
+              depending on disjointedness and participation
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          These transformations bridge the Week 2 and Week 3
+          content.
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

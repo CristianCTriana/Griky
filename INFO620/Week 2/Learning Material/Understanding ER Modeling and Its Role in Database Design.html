@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name"
+        >ER/EER Modeling and UML Class Diagrams</span
+      >
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Understanding ER Modeling and Its Role in Database
+        Design
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Entity-relationship modeling is the foundation of
+          conceptual database design. ER models provide a
+          structured way to represent real-world concepts
+          (entities), their descriptive properties
+          (attributes), and the relationships that connect
+          them. Khurana (2024) emphasizes that conceptual
+          modeling must occur before logical or physical
+          design because it captures the semantic meaning of
+          data: what it represents, how it is used, and how
+          it relates to other data.
+        </p>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-identifying" />
+            <label
+              class="accordion-title"
+              for="acc-identifying">
+              <span
+                role="heading"
+                aria-level="4"
+                >Identifying Entities</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                Entities represent distinct objects or
+                concepts within a business context. Common
+                types of entities include the following:
+              </p>
+              <ul>
+                <li>People (Customer, Employee)</li>
+                <li>Things (Product, Vehicle)</li>
+                <li>Events (Order, Payment)</li>
+                <li>Locations (Warehouse, Region)</li>
+              </ul>
+              <p>
+                To identify entities, you must analyze a
+                narrative and distinguish nouns that
+                represent stable, meaningful objects.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-attributes" />
+            <label
+              class="accordion-title"
+              for="acc-attributes">
+              <span
+                role="heading"
+                aria-level="4"
+                >Attributes and Data Characteristics</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                Each entity has attributes that describe it.
+                For example, a Customer entity may have
+                Name, Phone, and Email attributes.
+                Attributes can be
+              </p>
+              <ul>
+                <li>simple versus composite,</li>
+                <li>
+                  single-valued versus multivalued, or
+                </li>
+                <li>stored versus derived.</li>
+              </ul>
+              <p>
+                The selection and classification of
+                attributes shape database flexibility and
+                normalization.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-relationships" />
+            <label
+              class="accordion-title"
+              for="acc-relationships">
+              <span
+                role="heading"
+                aria-level="4"
+                >Defining Relationships</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                Relationships express logical connections
+                between entities. Common types include the
+                following:
+              </p>
+              <ul>
+                <li>One-to-one (1:1)</li>
+                <li>One-to-many (1:N)</li>
+                <li>Many-to-many (M:N)</li>
+              </ul>
+              <p>
+                Khurana (2024) stresses accuracy in
+                relationship representation because
+                relational databases require M:N
+                relationships to be resolved with
+                associative entities.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_2/../assets/w2_Customer_Order_Product_entities.png"
+            alt="An ER diagram showing Customer-Order-Product entities with cardinalities."
+            title="An ER diagram showing Customer-Order-Product entities with cardinalities." />
+        </figure>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation" />
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

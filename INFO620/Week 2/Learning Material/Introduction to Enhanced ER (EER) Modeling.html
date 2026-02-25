@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name">
+        ER/EER Modeling and UML Class Diagrams
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Introduction to Enhanced ER (EER) Modeling
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          EER modeling extends the traditional ER model to
+          capture richer semantics and more complex business
+          rules. According to Khurana (2024), EER is
+          essential for modern enterprise environments that
+          require hierarchical structures and specialized
+          data types.
+        </p>
+
+        <h2 class="topic-main-title">
+          Specialization and Generalization
+        </h2>
+        <p>
+          Two complementary concepts represent hierarchical
+          relationships:
+        </p>
+
+        <div class="ordered-highlight-box">
+          <ol>
+            <li>
+              <span style="font-weight: bold"
+                >Specialization</span
+              ><br />A top-level entity is divided into
+              subentities based on distinguishing
+              characteristics.<br />Example: Employee →
+              FullTimeEmployee, PartTimeEmployee.
+            </li>
+            <li>
+              <span style="font-weight: bold"
+                >Generalization</span
+              ><br />Multiple entities are combined into a
+              higher-level entity.<br />Example: Car, Truck
+              → Vehicle.
+            </li>
+          </ol>
+        </div>
+
+        <h3 class="topic-subtitle">
+          Constraints in EER Models
+        </h3>
+        <p>
+          EER diagrams also include constraints that control
+          the hierarchical structure:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              <strong>Disjoint versus overlapping: </strong
+              >Determines whether an instance may belong to
+              one or multiple subentities.
+            </li>
+            <li>
+              <strong
+                >Total versus partial participation:</strong
+              >
+              Indicates whether all or only some supertype
+              instances must belong to subtypes.
+            </li>
+          </ul>
+        </div>
+
+        <h4 class="topic-sub-subtitle">
+          Categories (Union Types)
+        </h4>
+        <p>
+          Some business environments require entities formed
+          from multiple disjoint entity sets. For<br />example,
+          PaymentRecipient may be a Customer or a Supplier.
+        </p>
+        <p>
+          Categories ensure that models accurately capture
+          complex, real-world semantics.
+        </p>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_2/../assets/w2_EER_hierarchy.png"
+            alt="EER hierarchy showing Vehicle as a supertype with Car and Truck as subtypes."
+            title="EER hierarchy showing Vehicle as a supertype with Car and Truck as subtypes." />
+        </figure>
+
+        <h4 class="topic-sub-subtitle">
+          Conceptual Scenario
+        </h4>
+        <p>
+          A university may model its community members as
+          follows:
+        </p>
+
+        <div class="schema-box">
+          <ul>
+            <li>Person (supertype)</li>
+            <li>Student, Faculty, Alumni (subtypes)</li>
+          </ul>
+        </div>
+
+        <p>
+          Specialization attributes (e.g., EnrollmentStatus)
+          determine the subtype placement.
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt="APUS Logo" />
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

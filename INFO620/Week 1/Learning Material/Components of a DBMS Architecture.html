@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 1 </span>
+      <span class="banner__week-name">
+        Database Concepts, Architecture, and Components
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Components of a DBMS Architecture
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        A DBMS is composed of multiple interacting
+        components that manage data efficiently.
+        Understanding these components is essential for
+        analyzing system behavior, performance, and
+        administrative responsibilities. According to
+        Khurana (2024), there are five major DBMS
+        architectural components.
+      </p>
+
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="Click “+” to see more information"
+          style="max-width: 100%"
+          width="600" />
+      </p>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="acc-1" />
+          <label
+            class="accordion-title"
+            for="acc-1">
+            <span
+              role="heading"
+              aria-level="3"
+              >1. Query Processor</span
+            >
+          </label>
+          <div class="accordion-content">
+            <p>
+              The query processor translates high-level SQL
+              queries into low-level instructions. Its
+              functions include the following:
+            </p>
+            <ul>
+              <li>Parsing</li>
+              <li>Query optimization</li>
+              <li>Execution planning</li>
+            </ul>
+            <p>
+              A poorly optimized query processor can slow
+              performance dramatically, especially in
+              enterprise systems, where thousands of queries
+              run concurrently.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="acc-2" />
+          <label
+            class="accordion-title"
+            for="acc-2">
+            <span
+              role="heading"
+              aria-level="3"
+              >2. Storage Manager</span
+            >
+          </label>
+          <div class="accordion-content">
+            <p>
+              The storage manager controls the interaction
+              between logical structures (tables, indexes)
+              and physical storage (blocks, pages, files).
+              Its responsibilities include the following:
+            </p>
+            <ul>
+              <li>File management</li>
+              <li>Buffer management</li>
+              <li>Data access methods</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="acc-3" />
+          <label
+            class="accordion-title"
+            for="acc-3">
+            <span
+              role="heading"
+              aria-level="3"
+              >3. Transaction Manager</span
+            >
+          </label>
+          <div class="accordion-content">
+            <p>
+              The transaction manager enforces the
+              <em>ACID</em> properties (atomicity,
+              consistency, isolation, and durability). This
+              allows multiple users to interact with the
+              database safely, without interfering with each
+              other’s operations.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="acc-4" />
+          <label
+            class="accordion-title"
+            for="acc-4">
+            <span
+              role="heading"
+              aria-level="3"
+              >4. Metadata Catalog</span
+            >
+          </label>
+          <div class="accordion-content">
+            <p>
+              The metadata catalog stores definitions of
+              tables, indexes, schemas, constraints,
+              relationships, and permissions. This catalog
+              is essential for query validation and
+              optimization.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="acc-5" />
+          <label
+            class="accordion-title"
+            for="acc-5">
+            <span
+              role="heading"
+              aria-level="3"
+              >5. Concurrency Control &amp; Recovery</span
+            >
+          </label>
+          <div class="accordion-content">
+            <p>
+              The concurrency control and recovery
+              subsystems prevent conflicts and ensure that
+              databases can recover from crash failures or
+              incomplete transactions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <figure class="topic-figure">
+        <img
+          src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_1/../assets/w1_User_Queries.png"
+          alt="chart showing User Queries pointing towards Query Processor. Query Processor points towards Transaction Manager and Storage Manager. Storage Manager leads into Data Files."
+          title="chart showing User Queries pointing towards Query Processor. Query Processor points towards Transaction Manager and Storage Manager. Storage Manager leads into Data Files." />
+      </figure>
+
+      <p>
+        Understanding the roles of these components will
+        help you analyze system architecture and identify
+        potential performance bottlenecks.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

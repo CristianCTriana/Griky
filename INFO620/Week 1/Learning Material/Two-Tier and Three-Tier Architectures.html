@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 1 </span>
+      <span class="banner__week-name">
+        Database Concepts, Architecture, and Components
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Two-Tier and Three-Tier Architectures
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="architecture-content">
+        <p>
+          Enterprise systems rely on robust architectural
+          designs that allow users to access data
+          efficiently and securely. The two most common
+          architectural patterns presented in this course
+          are the two-tier and three-tier models.
+        </p>
+
+        <h3 class="architecture-title">
+          Two-Tier Architecture
+        </h3>
+
+        <p>
+          In a <em>two-tier system</em>, an application
+          communicates directly with the database server.
+          This model is common in small or mid-sized
+          applications, but it presents limitations in
+          scalability and security. The application layer
+          must handle the business logic, communication, and
+          user interface responsibilities.
+        </p>
+
+        <h3 class="architecture-title">
+          Three-Tier Architecture
+        </h3>
+
+        <!-- [Image of three-tier database architecture diagram] -->
+
+        <p>
+          A <em>three-tier system</em> introduces a middle
+          layer, such as an application server, between the
+          user interface and the database. This approach
+          provides significant advantages:
+        </p>
+
+        <div class="advantages-box">
+          <ul>
+            <li>
+              <strong>Scalability:</strong> Middle-tier load
+              balancing supports more users.
+            </li>
+            <li>
+              <strong>Security:</strong> The database is not
+              directly exposed to clients.
+            </li>
+            <li>
+              <strong>Maintainability:</strong> Business
+              logic is centralized.
+            </li>
+            <li>
+              <strong>Performance:</strong> Application
+              servers cache, batch, optimize, and coordinate
+              requests.
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          Three-tier architectures are used in enterprise
+          web systems, cloud-based services, and distributed
+          platforms. Most modern DBMS deployments rely on
+          n-tier (multitier) extensions of this model,
+          especially in cloud environments, where
+          microservices are common.
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

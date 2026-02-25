@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 2 </span>
+      <span class="banner__week-name">
+        ER/EER Modeling and UML Class Diagrams
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Constructing ER Diagrams with Cardinality and
+        Constraints
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Enterprise-level databases require precise
+          representation of how entities interact. The ER
+          diagram formalizes these interactions using
+          graphical symbols, crow’s foot notation, and
+          integrity constraints.
+        </p>
+
+        <h2 class="topic-main-title">Cardinality Types</h2>
+        <p>
+          <em>Cardinality </em>defines the number of entity
+          instances that may participate in a relationship.
+          The three primary cardinalities are as follows:
+        </p>
+
+        <div class="cardinality-list-box">
+          <ol>
+            <li>
+              One-to-One (1:1)<br /><em>Example:</em> Each
+              building has one facilities manager.
+            </li>
+            <li>
+              One-to-Many (1:N)<br /><em>Example:</em> One
+              customer can place many orders.
+            </li>
+            <li>
+              Many-to-Many (M:N)<br /><em>Example:</em>
+              Students enroll in multiple courses, and
+              courses have multiple students.
+            </li>
+          </ol>
+        </div>
+
+        <p>
+          Relational databases require M:N relationships to
+          be decomposed into two 1:N relationships using a
+          bridge (or associative) entity.
+        </p>
+
+        <h3 class="topic-subtitle">
+          Participation (Optionality)
+        </h3>
+        <p>
+          <em>Participation </em>determines whether an
+          entity’s involvement in a relationship is
+          mandatory or optional. For example:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              A department must have a manager (mandatory).
+            </li>
+            <li>
+              An employee may have a parking space
+              (optional).
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          Participation rules ensure accurate system
+          constraints and prevent invalid data states.
+        </p>
+
+        <h4 class="topic-sub-subtitle">
+          Keys in ER Models
+        </h4>
+        <p>
+          <em>Keys </em>serve as identifiers within the
+          model, as follows:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              <em>Primary keys</em> uniquely identify entity
+              instances.
+            </li>
+            <li>
+              <em>Foreign keys</em> enforce referential
+              integrity in later relational schemas.
+            </li>
+            <li>
+              <em>Candidate keys</em> provide alternative
+              identification options.
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          These concepts directly support normalization,
+          which you will learn about in Week 4.
+        </p>
+
+        <h4 class="topic-sub-subtitle">Applied Example</h4>
+        <p>
+          A retail business scenario might include the
+          following:
+        </p>
+
+        <div class="schema-box">
+          <ul>
+            <li>Customer (CustomerID PK)</li>
+            <li>Order (OrderID PK, CustomerID FK)</li>
+            <li>Product (ProductID PK)</li>
+            <li>
+              OrderLine (OrderID FK, ProductID FK, Quantity)
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          This example demonstrates resolving M:N
+          relationships via OrderLine.
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
