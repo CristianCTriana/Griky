@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">
+        Functional Dependencies and Normalization
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Boyce-Codd Normal Form (BCNF) and Normalization
+        Trade-Offs
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Boyce-Codd normal form (BCNF) is a more rigorous
+          form of 3NF. It addresses anomalies that remain in
+          cases in which candidate keys overlap or relations
+          include multiple composite keys.
+        </p>
+
+        <h2 class="topic-main-title">
+          Requirements for BCNF
+        </h2>
+        <p>A relation is in BCNF if</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>it is in 3NF, and</li>
+            <li>every determinant is a candidate key.</li>
+          </ul>
+        </div>
+
+        <h3 class="topic-subtitle">
+          Example of BCNF Violation
+        </h3>
+        <div class="schema-box">
+          <p>
+            Teaching(Professor, Course, Room)<br />
+            <strong>Rule:</strong><br />
+            Course → Room<br />
+            (Professor, Course) is the key, but Course is
+            not a candidate key.
+          </p>
+        </div>
+        <p>This violates BCNF.</p>
+
+        <h3 class="topic-subtitle">
+          Correct Decomposition
+        </h3>
+
+        <div class="schema-box">
+          <p>
+            CourseRoom(Course, Room)<br />
+            ProfessorCourse(Professor, Course)
+          </p>
+        </div>
+
+        <h4 class="topic-sub-subtitle">
+          When BCNF Is Required
+        </h4>
+        <p>
+          BCNF is ideal for eliminating all redundancy but
+          may require additional joins during query
+          execution.
+        </p>
+
+        <h5 class="topic-sub-subtitle">
+          Normalization versus Performance
+        </h5>
+        <p>
+          Although normalization strengthens integrity, it
+          can increase query complexity. Designers must
+          evaluate trade-offs between the benefits and the
+          costs.
+        </p>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <h4>Benefits:</h4>
+            <ul>
+              <li>Cleaner, more accurate data</li>
+              <li>Reduced anomalies</li>
+              <li>Easier maintenance</li>
+            </ul>
+          </div>
+          <div class="comparison-card costs-card">
+            <h4>Costs:</h4>
+            <ul>
+              <li>More tables → more joins</li>
+              <li>Potential performance overhead</li>
+              <li>Higher complexity for developers</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          Many enterprise systems first normalize to 3NF,
+          then selectively denormalize for analytical or
+          high-performance scenarios.
+        </p>
+
+        <h5 class="topic-sub-subtitle">
+          Real-World Example: E-Commerce Database
+        </h5>
+        <p>
+          A highly normalized inventory system supports the
+          following:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>Accurate stock tracking</li>
+            <li>
+              Reduction of redundant product information
+            </li>
+            <li>Ease of internationalizing descriptions</li>
+            <li>
+              Reliable reporting across distributed
+              warehouses
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          However, reporting systems may denormalize tables
+          into star schemas (covered in Week 7).
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">
+        Functional Dependencies and Normalization
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        The First Normal Form (1NF) and Eliminating
+        Repeating Groups
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          <em>Normalization&nbsp;</em>involves decomposing
+          relations through progressively restrictive normal
+          forms. The first step is transforming data
+          structures to satisfy
+          <em>first normal form</em> (1NF) requirements.
+        </p>
+
+        <h2 class="topic-main-title">
+          Requirements for 1NF
+        </h2>
+        <p>A relation is in 1NF if</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              All cell values are atomic (indivisible),
+            </li>
+            <li>
+              There are no repeating groups or arrays, and
+            </li>
+            <li>Each tuple is unique.</li>
+          </ul>
+        </div>
+
+        <div class="info-box-light">
+          <p>Example of Nonatomic Data</p>
+          <p>
+            An attribute such as PhoneNumbers = {555-1234,
+            555-6789} violates 1NF.
+          </p>
+        </div>
+
+        <h3 class="topic-subtitle">
+          Corrected 1NF Structure
+        </h3>
+        <p>Create a separate relation:</p>
+
+        <div class="schema-box">
+          <p>CustomerPhone(CustomerID, PhoneNumber)</p>
+        </div>
+
+        <h4 class="topic-sub-subtitle">
+          Eliminating Repeating Groups
+        </h4>
+        <p>Consider the following relation:</p>
+
+        <div class="schema-box">
+          <p>Order(OrderID, CustomerID, ProductList)</p>
+          <p>
+            ProductList = (ProductA, ProductB, ProductC)
+          </p>
+          <p>
+            This violates 1NF.<br />
+            <em>Solution:</em><br />
+            OrderLine(OrderID, ProductID, Quantity)
+          </p>
+        </div>
+
+        <h5 class="topic-sub-subtitle">Why 1NF Matters</h5>
+        <p>
+          1NF is foundational for avoiding structural
+          inconsistencies that complicate indexing,
+          querying, and updates. Without 1NF, relational
+          algebra and SQL cannot operate effectively
+          (Khurana, 2024).
+        </p>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_4/../assets/w4_nonatomic_columns.png"
+            alt="A table showing nonatomic columns before and after decomposition into 1NF."
+            title="A table showing nonatomic columns before and after decomposition into 1NF." />
+        </figure>
+
+        <div class="info-box-light">
+          <h5
+            class="topic-sub-subtitle"
+            style="
+              margin-top: 0;
+              padding-top: 0;
+              border: none;
+            ">
+            Example Case: Student Enrollment
+          </h5>
+          <p>
+            A Student record contains the following:<br />
+            CoursesEnrolled = {IN302, IN315, IN425}<br />
+            This must be decomposed into a StudentCourse
+            relation.
+          </p>
+          <p>
+            Understanding 1NF ensures that later normal
+            forms can be applied correctly.
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

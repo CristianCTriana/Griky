@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">
+        Functional Dependencies and Normalization
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Second Normal Form (2NF) and Third Normal Form (3NF)
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Once a relation meets 1NF standards, designers
+          evaluate whether it satisfies
+          <em>second normal form </em>(2NF) and<em>
+            third normal form</em
+          >
+          (3NF) requirements.
+        </p>
+
+        <h2 class="topic-main-title">Second Normal Form</h2>
+        <p>A relation is in 2NF if</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>it is already in 1NF, and</li>
+            <li>
+              all nonkey attributes are fully functionally
+              dependent on the entire primary key.
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="topic-subtitle">
+          Addressing Partial Dependencies
+        </h3>
+        <p>
+          Example of 2NF violation:<br />
+          (OrderID, ProductID) → ProductName<br />
+          However, ProductName is not dependent on OrderID.
+        </p>
+
+        <p>Corrected structure:</p>
+
+        <div class="schema-box">
+          <p>
+            Product(ProductID, ProductName)<br />
+            OrderLine(OrderID, ProductID, Quantity)
+          </p>
+        </div>
+
+        <h2 class="topic-main-title">Third Normal Form</h2>
+        <p>A relation is in 3NF if</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>it is in 2NF, and</li>
+            <li>there are no transitive dependencies.</li>
+          </ul>
+        </div>
+
+        <h3 class="topic-subtitle">
+          Example of 3NF Violation
+        </h3>
+        <p>
+          Student(StudentID → DepartmentID →
+          DepartmentChair)
+        </p>
+
+        <p>To resolve this:</p>
+
+        <div class="schema-box">
+          <p>
+            Student(StudentID, DepartmentID)<br />
+            Department(DepartmentID, DepartmentChair)
+          </p>
+        </div>
+
+        <h3 class="topic-subtitle">
+          Benefits of 2NF and 3NF
+        </h3>
+        <p>These forms reduce the following issues:</p>
+
+        <div class="pills-container">
+          <span class="pill-badge">Redundancy</span>
+          <span class="pill-badge">Update anomalies</span>
+          <span class="pill-badge"
+            >Storage inconsistency</span
+          >
+          <span class="pill-badge"
+            >Data corruption risks</span
+          >
+        </div>
+
+        <p>
+          Khurana (2024) stresses that 3NF is the commonly
+          accepted standard for most transactional
+          databases.
+        </p>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_4/../assets/w4_1NF%20to%202NF%20to%203NF.png"
+            alt="A diagram showing decomposition from 1NF to 2NF to 3NF using sample relations."
+            title="A diagram showing decomposition from 1NF to 2NF to 3NF using sample relations." />
+        </figure>
+
+        <div class="info-box-light">
+          <h3
+            class="topic-subtitle"
+            style="
+              margin-top: 0;
+              padding-top: 0;
+              border: none;
+            ">
+            Case Example
+          </h3>
+          <p>
+            Consider the following:<br />
+            Course(CourseID, InstructorID, InstructorName,
+            Department)
+          </p>
+          <p>
+            InstructorName and Department depend on
+            InstructorID, not CourseID, which causes
+            transitive dependencies.
+          </p>
+          <p>Correct decomposition:</p>
+          <div
+            class="schema-box"
+            style="margin-bottom: 0">
+            <p>
+              Instructor(InstructorID, InstructorName,
+              Department)<br />
+              Course(CourseID, InstructorID)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* VIDEO RESPONSIVE */
+      .video-wrapper-TopicOne {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive-TopicOne {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+      }
+
+      .video-responsive-TopicOne video,
+      .video-responsive-TopicOne iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+      .digital-guide span.icon {
+        color: #202122 !important;
+        font-size: 24px;
+        margin-right: 10px;
+        line-height: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4</span>
+      <span class="banner__week-name"
+        >Functional Dependencies and Normalization</span
+      >
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Understanding Functional Dependencies
+      </h1>
+
+      <hr class="divider-line" />
+
+      <h2
+        style="
+          text-align: center;
+          color: #004c90;
+          font-size: 24px;
+          margin-top: 10px;
+        ">
+        <strong>Learning Challenge</strong>
+      </h2>
+      <div class="digital-guide">
+        <strong><span class="icon">ⓘ</span>&nbsp;</strong
+        ><span style="font-family: Lato, sans-serif"
+          >This is not an assignment prompt, but rather an
+          opportunity to reflect on how the week’s concepts
+          apply to real workplace situations.</span
+        >
+      </div>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+        alt="Check the following video"
+        style="
+          max-width: 100%;
+          display: block;
+          margin: 0 auto;
+        "
+        width="600" />
+      <!-- ============================
+         VIDEO CENTRADO Y RESPONSIVE
+         ============================ -->
+      <div class="video-wrapper-TopicOne">
+        <div class="video-responsive-TopicOne">
+          <video
+            title="Learning challenge"
+            controls="controls">
+            <source
+              src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Week_1/APUS_Coach_Woman.mp4"
+              type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1"
+            >Transcript: Digital Content Guide
+            Podcast</label
+          >
+          <div class="accordion-content">
+            <p>
+              Welcome, future HR leaders and policy shapers!
+            </p>
+            <p>
+              You are about to embark on an exciting journey
+              that will transform the way you think about
+              human resources and its critical role in
+              organizational success. In this course, we
+              will dive deep into the world of HR policies
+              and strategies. But this isn't just about
+              memorizing rules and regulations. It's about
+              understanding the profound impact that
+              well-crafted HR policies can have on people's
+              lives and on the success of entire
+              organizations.
+            </p>
+            <p>
+              From navigating the complexities of employment
+              law to mastering the art of talent management,
+              from ensuring workplace safety to mediating
+              conflicts, you will gain the skills to become
+              a true HR champion. You will learn how to
+              balance the needs of a multi-generational
+              workforce, protect employee privacy in the
+              digital age, and align HR strategies with
+              organizational goals.
+            </p>
+            <p>
+              By the end of this course, you won't just
+              understand HR policies – you will be equipped
+              to create and implement strategies that can
+              transform workplaces, empower employees, and
+              drive organizational success.
+            </p>
+            <p>
+              So get ready to challenge your assumptions,
+              expand your horizons, and become the kind of
+              HR professional who doesn't just follow best
+              practices, but sets them!
+            </p>
+            <p>
+              Are you ready to redefine what HR can be?
+              Let's get started on this exciting journey
+              together!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-content">
+        <p>
+          <em>Functional dependencies</em> (FDs) form the
+          mathematical basis of normalization. They describe
+          relationships between attributes within a relation
+          and reveal how data elements depend on one
+          another.
+        </p>
+        <p>
+          According to Khurana (2024), a functional
+          dependency <strong>X → Y </strong>means that for
+          any two tuples in a relation, if they share the
+          same value of <strong>X</strong>, then they must
+          share the same value of <strong>Y</strong>. Here,
+          <strong>X </strong>determines <strong>Y</strong>.
+        </p>
+
+        <h2 class="topic-main-title">
+          Determinants and Dependents
+        </h2>
+        <p>
+          A determinant is the attribute (or set of
+          attributes) on the left side of a dependency,
+          while the dependent attribute is the one
+          determined by it. For example:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              StudentID → StudentName<br />StudentID is the
+              determinant; StudentName is dependent.
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="topic-subtitle">
+          Types of Functional Dependencies
+        </h3>
+        <p>
+          There are multiple types of functional
+          dependencies:
+        </p>
+
+        <div class="ordered-highlight-box">
+          <ol>
+            <li>
+              <strong>Full functional dependency</strong
+              ><br />Y is fully functionally dependent on X
+              if removing any attribute from X invalidates
+              the dependency.
+            </li>
+            <li>
+              <strong>Partial dependency</strong
+              ><br />Occurs when an attribute is dependent
+              on only part of a composite key.<br /><em
+                >Example:</em
+              ><br />(OrderID, ProductID) → ProductName<br />If
+              ProductName depends solely on ProductID, then
+              the dependency is partial.
+            </li>
+            <li>
+              <strong>Transitive dependency</strong
+              ><br />Occurs when X determines Y and Y
+              determines Z, so X indirectly determines Z.<br /><em
+                >Example:</em
+              ><br />EmployeeID → DepartmentID<br />DepartmentID
+              → Manager<br />Therefore, EmployeeID → Manager
+            </li>
+          </ol>
+        </div>
+
+        <p>
+          These dependency types indicate whether a
+          relational design is prone to anomalies.
+        </p>
+
+        <h4 class="topic-sub-subtitle">
+          Identifying FDs from Business Rules
+        </h4>
+        <p>
+          Consider the following rule:<br />“A professor
+          teaches one course each term, but a course may
+          have multiple professors across terms.”
+        </p>
+
+        <p>From this, you can determine the following:</p>
+
+        <div class="schema-box">
+          <p>
+            ProfessorID → CourseID (for a given term)<br />
+            (CourseID, Term) → ProfessorID
+          </p>
+        </div>
+
+        <p>
+          This step of interpreting business rules into
+          dependencies is essential for real database
+          design.
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation" />
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
