@@ -159,3 +159,90 @@ h4.topic-sub-subtitle {
 .ordered-highlight-box li:last-child {
   margin-bottom: 0;
 }
+
+.pills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0 30px 0;
+  justify-content: center;
+}
+
+.pill-badge {
+  background-color: #eaf4ff;
+  color: #041e42 !important;
+  border: 2px solid #05c3de;
+  padding: 8px 25px;
+  border-radius: 5px;
+  /* border-radius: 50px; */
+  font-family: "Lato", sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(4, 30, 66, 0.08);
+}
+
+.css-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  width: 100%;
+}
+
+.css-tabs input[type="radio"] {
+  display: none;
+}
+
+.css-tabs label {
+  padding: 15px 25px;
+  background: #eaf4ff;
+  font-weight: 700;
+  cursor: pointer;
+  color: #041e42;
+  border-radius: 8px 8px 0 0;
+  margin-right: 5px;
+  margin-bottom: 0;
+  border: 2px solid transparent;
+  border-bottom: none;
+  transition:
+    background 0.3s,
+    color 0.3s;
+  font-family: "Lato", sans-serif;
+  font-size: 19px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.css-tabs label:hover {
+  background: #cce5ff;
+}
+
+.css-tabs input[type="radio"]:checked + label {
+  background: #05c3de;
+  color: #041e42;
+  border-color: #05c3de;
+}
+
+.tab-content-container {
+  width: 100%;
+  background: #ffffff;
+  padding: 30px;
+  border: 2px solid #05c3de;
+  border-radius: 0 0 8px 8px;
+  order: 1;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tab-content-container p,
+.tab-content-container ul,
+.tab-content-container li {
+  font-size: 19px !important;
+  color: #041e42 !important;
+  font-family: "Lato", sans-serif !important;
+}
+
+#tab-scenario-1:checked ~ #content-scenario-1,
+#tab-scenario-2:checked ~ #content-scenario-2,
+#tab-scenario-3:checked ~ #content-scenario-3 {
+  display: block;
+}

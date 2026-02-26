@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        Relational Theory, Constraints, and Relational
+        Algebra
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Introduction to Relational Algebra
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          <em>Relational algebra </em>provides the
+          mathematical foundation for querying relational
+          databases. Before SQL, relational algebra served
+          as the primary mechanism for manipulating data.
+          Today, SQL is essentially a declarative
+          implementation of relational algebra concepts.
+        </p>
+        <p>
+          The primary relational algebra operations include
+          the following:
+        </p>
+
+        <div class="ordered-highlight-box">
+          <ol>
+            <li>
+              <strong>Selection (σ)</strong><br />Extracts
+              rows meeting a condition.<br /><em
+                >Example:</em
+              >
+              σ(Customer.City = 'Dallas')(Customer)
+            </li>
+            <li>
+              <strong>Projection (π)</strong><br />Extracts
+              specific columns.<br /><em>Example:</em>
+              π(FirstName, LastName)(Customer)
+            </li>
+            <li>
+              <strong>Union (∪)</strong><br />Combines
+              tuples from two compatible relations.
+            </li>
+            <li>
+              <strong>Set difference (−)</strong
+              ><br />Returns tuples present in one relation
+              but not another.
+            </li>
+            <li>
+              <strong>Cartesian product (×)</strong
+              ><br />Forms pairs of tuples by combining all
+              rows from two relations.
+            </li>
+            <li>
+              <strong>Join (⨝)</strong><br />Combines
+              relations based on related attributes.
+            </li>
+          </ol>
+        </div>
+
+        <p>There are multiple types of joins:</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>Natural join</li>
+            <li>Inner join</li>
+            <li>Outer join (left, right, full)</li>
+          </ul>
+        </div>
+
+        <p>
+          Join operations are fundamental to building
+          complex queries in SQL.
+        </p>
+
+        <h2 class="topic-main-title">
+          Example Query (Algebra to SQL)
+        </h2>
+
+        <!-- [Image comparing a relational algebra expression diagram to its SQL equivalent block] -->
+
+        <div class="schema-box">
+          <p>
+            <strong>Relational Algebra:</strong><br />
+            σ(Customer.City='Dallas')(Customer) ⨝ Order
+          </p>
+
+          <p>
+            <strong>SQL Equivalent:</strong><br />
+
+            SELECT *<br />
+            FROM Customer<br />
+            JOIN Order ON Customer.CustomerID =
+            Order.CustomerID<br />
+            WHERE Customer.City = 'Dallas';
+          </p>
+        </div>
+
+        <p>
+          This direct mapping supports the transition you
+          will make to SQL in later weeks.
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

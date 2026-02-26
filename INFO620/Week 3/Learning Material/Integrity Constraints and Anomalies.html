@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        Relational Theory, Constraints, and Relational
+        Algebra
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Integrity Constraints and Anomalies
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Relational databases rely on constraints to ensure
+          data accuracy and prevent inconsistencies. Without
+          properly enforced constraints, data becomes
+          vulnerable to:
+        </p>
+
+        <div class="pills-container">
+          <span class="pill-badge">Corruption</span>
+          <span class="pill-badge">Redundancy</span>
+          <span class="pill-badge">Anomalies</span>
+        </div>
+        <p style="text-align: center; margin-top: 40px">
+          <img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+            alt="Click “+” to see more information"
+            style="max-width: 100%"
+            width="600" />
+        </p>
+        <div class="accordion">
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-integrity" />
+            <label
+              class="accordion-title"
+              for="acc-integrity">
+              <span
+                role="heading"
+                aria-level="2"
+                >Integrity Constraints</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                Khurana (2024) identifies several
+                categories:
+              </p>
+
+              <div class="ordered-highlight-box">
+                <ol>
+                  <li>
+                    <strong>Domain constraints</strong
+                    ><br />Specify valid attribute
+                    values.<br /><em>Example:</em> Salary
+                    must be a positive number.
+                  </li>
+                  <li>
+                    <strong
+                      >Entity integrity constraints</strong
+                    ><br />Ensure primary keys cannot be
+                    null.
+                  </li>
+                  <li>
+                    <strong
+                      >Referential integrity
+                      constraints</strong
+                    ><br />Require that foreign key values
+                    match existing primary key values.<br />For
+                    example, if an Order references a
+                    CustomerID that does not exist in
+                    Customer, this violates referential
+                    integrity.
+                  </li>
+                  <li>
+                    <strong>Key Constraints</strong
+                    ><br />Prevent duplicate primary key
+                    values.
+                  </li>
+                  <li>
+                    <strong
+                      >Semantic (Business)
+                      Constraints</strong
+                    ><br /><em>Example:</em> An employee’s
+                    end date must come after the start date.
+                  </li>
+                </ol>
+              </div>
+
+              <p>
+                These constraints ensure relational designs
+                remain meaningful and valid.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-anomalies" />
+            <label
+              class="accordion-title"
+              for="acc-anomalies">
+              <span
+                role="heading"
+                aria-level="2"
+                >Update Anomalies</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                Poorly structured schemas can cause three
+                types of anomalies:
+              </p>
+
+              <div class="ordered-highlight-box">
+                <ol>
+                  <li>
+                    <strong>Insertion anomaly</strong
+                    ><br />Occurs when certain attributes
+                    cannot be inserted into the database
+                    without inserting other unnecessary
+                    data.<br /><em>Example:</em> You cannot
+                    add a new product unless a sale is
+                    recorded.
+                  </li>
+                  <li>
+                    <strong>Update anomaly</strong
+                    ><br />Requires modifying multiple
+                    tuples to update a single fact.<br /><em
+                      >Example:</em
+                    >
+                    You must change a customer’s address
+                    across several order records.
+                  </li>
+                  <li>
+                    <strong>Deletion Anomaly</strong
+                    ><br />Deleting one tuple
+                    unintentionally deletes valuable
+                    data.<br /><em>Example:</em> Deleting
+                    the last order for a supplier removes
+                    all information about that supplier.
+                  </li>
+                </ol>
+              </div>
+
+              <p>
+                These issues set the stage for Week 4’s
+                focus on normalization.
+              </p>
+
+              <figure class="topic-figure">
+                <img
+                  src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_3/../assets/w3_update_anomalies.png"
+                  alt="A table exhibiting update anomalies with redundant customer address fields."
+                  title="A table exhibiting update anomalies with redundant customer address fields." />
+              </figure>
+
+              <h2 class="topic-subtitle">
+                Conceptual Example
+              </h2>
+              <p>
+                A single “OrderDetails” table containing
+                Customers, Orders, and Products results in
+                severe redundancy and anomalies. Decomposing
+                this into separate, normalized relations
+                prevents inconsistencies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">
+        Relational Theory, Constraints, and Relational
+        Algebra
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Applying Relational Algebra to Business Scenarios
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Relational algebra is best understood through
+          practical business examples. The following
+          scenarios demonstrate how algebraic operators
+          retrieve meaningful insights.
+        </p>
+
+        <div class="css-tabs">
+          <input
+            type="radio"
+            name="algebra-scenarios"
+            id="tab-scenario-1"
+            checked />
+          <label for="tab-scenario-1"
+            >Scenario 1: Customer and Order
+            Information</label
+          >
+
+          <input
+            type="radio"
+            name="algebra-scenarios"
+            id="tab-scenario-2" />
+          <label for="tab-scenario-2"
+            >Scenario 2: Products Without Orders</label
+          >
+
+          <input
+            type="radio"
+            name="algebra-scenarios"
+            id="tab-scenario-3" />
+          <label for="tab-scenario-3"
+            >Scenario 3: High-Value Customers</label
+          >
+
+          <div
+            id="content-scenario-1"
+            class="tab-content-container">
+            <p>
+              Retrieve customer names and order dates for
+              all orders placed in January.
+            </p>
+
+            <div class="schema-box">
+              <p>
+                <strong>Algebra:</strong><br />
+                π(Customer.Name, Order.Date)(Customer ⨝
+                σ(Date LIKE ‘2025-01%’)(Order))
+              </p>
+            </div>
+
+            <p>Explanation:</p>
+            <ul>
+              <li>Selection isolates January orders</li>
+              <li>
+                Projection extracts only relevant fields
+              </li>
+              <li>
+                Join combines customer and order details
+              </li>
+            </ul>
+          </div>
+
+          <div
+            id="content-scenario-2"
+            class="tab-content-container">
+            <p>
+              Identify all products that have never been
+              ordered.
+            </p>
+
+            <div class="schema-box">
+              <p>
+                <strong>Algebra:</strong><br />
+                Product – π(ProductID)(OrderLine)
+              </p>
+            </div>
+
+            <p>
+              This set difference technique is powerful for
+              identifying missing, incomplete, or unmatched
+              records.
+            </p>
+          </div>
+
+          <div
+            id="content-scenario-3"
+            class="tab-content-container">
+            <p>
+              Identify customers whose total order value
+              exceeds $1,000.
+            </p>
+            <p>
+              This example uses extended algebraic
+              operations:
+            </p>
+            <ul>
+              <li>Grouping</li>
+              <li>Aggregates</li>
+              <li>Joining</li>
+            </ul>
+
+            <div class="schema-box">
+              <p>
+                <strong>Algebra (conceptual form):</strong
+                ><br />
+                π(CustomerID)(σ(SUM(Amount) &gt;
+                1000)(Customer ⨝ Order))
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="topic-main-title">
+          Why Relational Algebra Matters
+        </h2>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              It guarantees logical consistency of queries.
+            </li>
+            <li>
+              It underpins SQL optimization strategies.
+            </li>
+            <li>
+              It enables system designers to reason about
+              data independently of any platform.
+            </li>
+            <li>
+              It forms the basis for query execution
+              planning.
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          Understanding relational algebra ensures that you
+          can design, analyze, and optimize queries long
+          before translating them into SQL.
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
