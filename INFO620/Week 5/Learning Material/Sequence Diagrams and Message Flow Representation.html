@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 5 </span>
+      <span class="banner__week-name">
+        UML Behavioral Modeling
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Sequence Diagrams and Message Flow Representation
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          <strong>Sequence diagrams </strong>show how
+          objects or system components interact over time.
+          They are essential for illustrating how a database
+          participates in workflows.
+        </p>
+        <p>
+          Elements of a sequence diagram include the
+          following:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              <strong>Lifelines:</strong> Participants such
+              as User Interface, Controller, DBMS
+            </li>
+            <li>
+              <strong>Activation bars:</strong> Time spent
+              processing
+            </li>
+            <li>
+              <strong>Messages:</strong> Queries, commands,
+              responses
+            </li>
+            <li>
+              <strong>Return messages:</strong>
+              Acknowledgments or data objects
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          Sequence diagrams emphasize temporal ordering.
+        </p>
+
+        <h2 class="topic-main-title">
+          Example: Login Authentication Process
+        </h2>
+        <p>Consider this example:</p>
+
+        <div class="schema-box">
+          <p>
+            <strong>Participants:</strong> User → Web App →
+            Authentication Service → Database
+          </p>
+        </div>
+
+        <p><strong>Messages:</strong></p>
+
+        <ol class="elegant-numbered-list">
+          <li>User submits credentials</li>
+          <li>Web App sends request to Auth Service</li>
+          <li>
+            Auth Service queries DB:<br />SELECT * FROM
+            Users WHERE Username = ?
+          </li>
+          <li>DB returns result</li>
+          <li>Auth Service validates password</li>
+          <li>Web App returns success/failure</li>
+        </ol>
+
+        <h3 class="topic-subtitle">
+          Relevance to Database Design
+        </h3>
+        <p>These diagrams reveal the following:</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>Required queries and their frequencies</li>
+            <li>
+              Simultaneous operations (impacting concurrency
+              control)
+            </li>
+            <li>Potential bottlenecks in request flow</li>
+            <li>Security checkpoints</li>
+          </ul>
+        </div>
+
+        <p>
+          Understanding message flow is essential for tuning
+          indexes, optimizing SQL, and planning access
+          control.
+        </p>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_5/../assets/w5_UML_sequence.png"
+            alt="UML sequence diagram showing user login with messages between User Interface, Application Server, Authentication Module, and Database."
+            title="UML sequence diagram showing user login with messages between User Interface, Application Server, Authentication Module, and Database." />
+        </figure>
+
+        <h4 class="topic-sub-subtitle">
+          Mapping ER/EER Models to Sequence Behavior
+        </h4>
+        <p>
+          Behavioral diagrams complement static ER
+          structures by answering the following questions:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>Which data are accessed?</li>
+            <li>In what order?</li>
+            <li>By whom?</li>
+            <li>With what conditions?</li>
+            <li>Under what constraints?</li>
+          </ul>
+        </div>
+
+        <p>
+          This interplay ensures the final schema supports
+          the required system functionality.
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

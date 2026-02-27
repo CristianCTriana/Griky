@@ -247,10 +247,6 @@ h3.topic-subtitle {
   display: block;
 }
 
-/* =========================================
-   ESTILOS ESPECÍFICOS - CUADRÍCULA COMPARATIVA
-========================================= */
-
 .comparison-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -260,21 +256,21 @@ h3.topic-subtitle {
 
 @media (max-width: 768px) {
   .comparison-grid {
-    grid-template-columns: 1fr; /* Se apila en móviles */
+    grid-template-columns: 1fr;
   }
 }
 
 .comparison-card {
   background-color: #f5faff;
   border: 1px solid #cce5ff;
-  border-top: 6px solid #05c3de; /* Borde superior azul claro para "Beneficios" */
+  border-top: 6px solid #05c3de;
   border-radius: 8px;
   padding: 20px 25px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .comparison-card.costs-card {
-  border-top: 6px solid #041e42; /* Borde superior azul oscuro para "Costos" */
+  border-top: 6px solid #041e42;
 }
 
 .comparison-card h4 {
@@ -286,5 +282,52 @@ h3.topic-subtitle {
 }
 
 .comparison-card ul:last-child {
+  margin-bottom: 0;
+}
+
+.elegant-numbered-list {
+  list-style-type: none;
+  counter-reset: step-counter;
+  padding-left: 0;
+  margin: 25px 0;
+}
+
+.elegant-numbered-list li {
+  position: relative;
+  padding: 18px 0 18px 40px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #041e42 !important;
+  font-family: "Lato", sans-serif !important;
+  font-size: 19px !important;
+  line-height: 1.6;
+}
+
+.elegant-numbered-list li:last-child {
+  border-bottom: none;
+}
+
+.elegant-numbered-list li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  color: #041e42;
+  font-weight: 700;
+  font-size: 19px;
+}
+
+.top-line-box {
+  background-color: #f5faff;
+  border: 1px solid #cce5ff;
+  border-top: 6px solid #05c3de;
+  border-radius: 8px;
+  padding: 25px 30px;
+  margin: 30px 0;
+  box-shadow: 0 4px 12px rgba(4, 30, 66, 0.05);
+}
+
+.top-line-box p:last-child,
+.top-line-box ul:last-child {
   margin-bottom: 0;
 }

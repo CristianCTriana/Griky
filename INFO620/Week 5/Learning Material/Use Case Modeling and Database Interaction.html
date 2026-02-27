@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 5 </span>
+      <h1 class="banner__week-name">
+        UML Behavioral Modeling
+      </h1>
+    </header>
+
+    <main class="content-wrapper">
+      <h2 class="topic-title">
+        Use Case Modeling and Database Interaction
+      </h2>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          <em>Use case diagrams</em> provide a high-level
+          view of system functionality from the perspective
+          of external actors. They emphasize
+          <em>what a system must do</em>, not
+          <em>how it does it</em>. This makes use cases
+          foundational for understanding database
+          requirements.
+        </p>
+
+        <h2 class="topic-main-title">Identifying Actors</h2>
+        <p>Actors represent the following:</p>
+        <ul>
+          <li>Users (e.g., Customer, Employee, Manager)</li>
+          <li>
+            External systems (e.g., Payment Gateway, HR
+            System)
+          </li>
+          <li>Devices (e.g., Scanner, Mobile App)</li>
+        </ul>
+        <p>
+          Actors must be distinguished by their goals and
+          interactions with the system.
+        </p>
+
+        <h3 class="topic-subtitle">Use Case Elements</h3>
+        <p>
+          A standard use case diagram includes the
+          following:
+        </p>
+        <ul>
+          <li>Actors</li>
+          <li>Use cases (goals or tasks)</li>
+          <li>Associations (lines showing interactions)</li>
+          <li>Includes and Extends relationships</li>
+          <li>System boundary</li>
+        </ul>
+
+        <div class="info-box-light">
+          <p>
+            <strong>Example: </strong>Online Retail Database
+            System
+          </p>
+          <ul>
+            <li>
+              <strong>Actors:</strong> Customer, Inventory
+              System
+            </li>
+            <li>
+              <strong>Use cases:</strong> Place Order,
+              Update Inventory, Track Order
+            </li>
+          </ul>
+          <p>
+            “Place Order” may include the following:
+            Validate Payment, Notify Customer.
+          </p>
+        </div>
+
+        <h4 class="topic-sub-subtitle">
+          Use Cases and Database Requirements
+        </h4>
+        <p>
+          Use cases reveal the queries, updates, and
+          transactions that a database must support. For
+          example:
+        </p>
+
+        <div class="schema-box">
+          <ul>
+            <li>
+              <strong>Use case:</strong> Customer places an
+              order
+            </li>
+            <li>
+              <strong>Database implications:</strong>
+              <ul>
+                <li>Insert into Order table</li>
+                <li>Insert multiple rows into OrderLine</li>
+                <li>Update Product stock</li>
+                <li>Validate CustomerID exists</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          These connections set the stage for Week 6,
+          focusing on database security, and Week 7,
+          focusing on data warehousing.
+        </p>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_5/../assets/w5_UML_use_case.png"
+            alt="UML use case diagram showing Customer placing an order, Inventory System updating stock, and Payment Gateway processing payment."
+            title="UML use case diagram showing Customer placing an order, Inventory System updating stock, and Payment Gateway processing payment." />
+        </figure>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation" />
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

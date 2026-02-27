@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 5 </span>
+      <span class="banner__week-name">
+        UML Behavioral Modeling
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Integrating UML Behavioral Models with Database
+        Design
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          The final part of this week’s content synthesizes
+          how UML behavioral diagrams inform and refine
+          database architecture.
+        </p>
+
+        <h2 class="topic-main-title">
+          Linking Use Cases to Data Requirements
+        </h2>
+        <p>Use case workflows reveal the following:</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>Which tables must exist</li>
+            <li>Which constraints must be enforced</li>
+            <li>Which attributes must be stored</li>
+          </ul>
+        </div>
+
+        <p>
+          For example, “Track Shipment” requires the
+          following:
+        </p>
+
+        <div class="schema-box">
+          <ul>
+            <li>ShippingStatus</li>
+            <li>ShippingDate</li>
+            <li>Carrier information</li>
+          </ul>
+          <p style="margin-top: 15px">
+            Without these fields, the use case fails.
+          </p>
+        </div>
+
+        <h3 class="topic-subtitle">
+          Deriving Transactions from Sequence Diagrams
+        </h3>
+        <p>Sequence diagrams highlight the following:</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>Frequent queries → need indexing</li>
+            <li>
+              Concurrent operations → need locking
+              strategies
+            </li>
+            <li>
+              Error responses → need referential integrity
+              enforcement
+            </li>
+          </ul>
+        </div>
+
+        <h4 class="topic-sub-subtitle">
+          Where Activity and State Diagrams Fit
+        </h4>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <p>
+              Activity diagrams show business processes that
+              lead to the following:
+            </p>
+            <ul>
+              <li>Updates</li>
+              <li>Insertions</li>
+              <li>Deletions</li>
+              <li>Conditional flows</li>
+            </ul>
+          </div>
+          <div class="comparison-card costs-card">
+            <p>
+              State diagrams show how records evolve and
+              where, via the following:
+            </p>
+            <ul>
+              <li>Triggers</li>
+              <li>Stored procedures</li>
+              <li>Cascading updates</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4 class="topic-sub-subtitle">
+          Cross-Functional Integration
+        </h4>
+        <p>
+          UML behavioral models are used collaboratively by
+          the following experts:
+        </p>
+
+        <div class="pills-container">
+          <span class="pill-badge"
+            >Database architects</span
+          >
+          <span class="pill-badge">Software engineers</span>
+          <span class="pill-badge">Business analysts</span>
+          <span class="pill-badge">QA engineers</span>
+          <span class="pill-badge">UI/UX designers</span>
+        </div>
+
+        <p>
+          These teams rely on behavioral diagrams to ensure
+          the following:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              Requirements match database capabilities
+            </li>
+            <li>Business rules are enforced</li>
+            <li>Data integrity is maintained</li>
+            <li>User flows are correctly supported</li>
+          </ul>
+        </div>
+
+        <h4 class="topic-sub-subtitle">
+          Importance for Enterprise-Scale Systems
+        </h4>
+
+        <div class="top-line-box">
+          <p>Large organizations use UML because</p>
+          <ul>
+            <li>it is standardized (OMG);</li>
+            <li>
+              it is tool-supported (Visual Paradigm,
+              Lucidchart, Enterprise Architect);
+            </li>
+            <li>
+              it supports scalable and modular design; and
+            </li>
+            <li>
+              it provides a shared language across teams.
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          Mastering behavioral modeling allows database
+          professionals to design databases that integrate
+          seamlessly with enterprise systems.
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

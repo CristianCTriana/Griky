@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 5 </span>
+      <span class="banner__week-name">
+        UML Behavioral Modeling
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Activity and State Diagrams for Database-Driven
+        Systems
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Activity and state diagrams capture process flows
+          and state transitions that are crucial for
+          understanding system logic and database triggers.
+        </p>
+
+        <h2 class="topic-main-title">Activity Diagrams</h2>
+        <p>
+          <em>Activity diagrams</em> resemble flowcharts but
+          emphasize concurrency and decision points. They
+          have the following key elements:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              <strong>Actions:</strong> Perform query,
+              update record
+            </li>
+            <li>
+              <strong>Decision nodes: </strong>Payment
+              approved?
+            </li>
+            <li>
+              <strong>Fork/Join nodes:</strong> Parallel
+              processing
+            </li>
+            <li>
+              <strong>Swimlanes:</strong> Partition actions
+              by role
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          Consider the following example workflow for Order
+          Fulfillment:
+        </p>
+
+        <ol class="elegant-numbered-list">
+          <li>ReceiveOrder</li>
+          <li>ValidateInventory</li>
+          <li>ProcessPayment</li>
+          <li>UpdateDatabase</li>
+          <li>SendConfirmation</li>
+        </ol>
+
+        <h3 class="topic-subtitle">
+          Relationship to Databases
+        </h3>
+        <p>Activity diagrams reveal when</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>data is created,</li>
+            <li>data is updated,</li>
+            <li>data is validated, and</li>
+            <li>data is archived.</li>
+          </ul>
+        </div>
+
+        <p>
+          They help identify constraints and triggers
+          required in the schema.
+        </p>
+
+        <h2 class="topic-main-title">State Diagrams</h2>
+        <p>
+          <em>State diagrams</em> track lifecycle changes of
+          entities.
+        </p>
+
+        <p>
+          Consider the following example for
+          <em>Order Entity:</em>
+        </p>
+
+        <div class="schema-box">
+          <ul>
+            <li>
+              <strong>States:</strong> New → Paid → Packed →
+              Shipped → Delivered
+            </li>
+            <li>
+              <strong>Events:</strong> PaymentReceived,
+              PackageReady
+            </li>
+            <li>
+              <strong>Transitions:</strong> DB updates
+              moving the order through states
+            </li>
+          </ul>
+        </div>
+
+        <div class="top-line-box">
+          <h3
+            class="topic-subtitle"
+            style="margin-top: 0">
+            Practical Example
+          </h3>
+          <p>
+            A database designer may create a trigger as
+            follows:<br />
+            “When Order moves from ‘Paid’ to ‘Packed’,
+            decrease Product stock.”
+          </p>
+          <p>
+            Thus, state transitions may result in the
+            following:
+          </p>
+          <ul>
+            <li>SQL updates</li>
+            <li>Trigger activation</li>
+            <li>Logging events</li>
+            <li>Audit trail entries</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
