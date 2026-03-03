@@ -117,31 +117,10 @@
           <input
             type="radio"
             name="security-tabs"
-            id="tab-auth"
+            id="tab-1"
             checked />
-          <label for="tab-auth"
-            >Authentication Methods</label
-          >
-
-          <input
-            type="radio"
-            name="security-tabs"
-            id="tab-encrypt" />
-          <label for="tab-encrypt"
-            >Encryption Techniques</label
-          >
-
-          <input
-            type="radio"
-            name="security-tabs"
-            id="tab-network" />
-          <label for="tab-network"
-            >Securing Network Communications</label
-          >
-
-          <div
-            id="content-auth"
-            class="tab-content-container">
+          <label for="tab-1">Authentication Methods</label>
+          <div class="tab-content-container">
             <p>
               Authentication verifies identity before
               granting access. There are several kinds of
@@ -182,9 +161,12 @@
             </p>
           </div>
 
-          <div
-            id="content-encrypt"
-            class="tab-content-container">
+          <input
+            type="radio"
+            name="security-tabs"
+            id="tab-2" />
+          <label for="tab-2">Encryption Techniques</label>
+          <div class="tab-content-container">
             <p>
               Encryption protects data both in transit and
               at rest.
@@ -232,10 +214,15 @@
               applications.
             </p>
           </div>
+          <input
+            type="radio"
+            name="security-tabs"
+            id="tab-3" />
+          <label for="tab-3"
+            >Securing Network Communications</label
+          >
 
-          <div
-            id="content-network"
-            class="tab-content-container">
+          <div class="tab-content-container">
             <p>
               Best practices for securing network
               communications include the following:

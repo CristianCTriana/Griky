@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 7 </span>
+      <span class="banner__week-name"
+        >Data Warehousing, Dimensional Modeling, and
+        OLAP</span
+      >
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Foundations of Data Warehousing and Dimensional
+        Modeling
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="content-wrapper">
+        <div class="intro-section">
+          <p>
+            Data warehouses serve as the centralized
+            repositories in which organizations store data
+            from multiple operational sources for reporting
+            and analysis. Khurana (2024) emphasizes that
+            while OLTP systems are optimized for updates,
+            OLAP and data warehouses are optimized for
+            <em>read performance, aggregation</em>, and
+            <em>historical analysis.</em>
+          </p>
+        </div>
+
+        <hr class="divider-line" />
+
+        <h2>Characteristics of Data Warehouses</h2>
+        <p>
+          According to Bill Inmon and Ralph Kimball, a data
+          warehouse must have the following traits:
+        </p>
+
+        <div class="code-cards">
+          <div class="code-cards-grid">
+            <div class="code-card">
+              <h4 class="code-card-title">
+                Subject-oriented
+              </h4>
+              <p>
+                Organized around major business themes
+                (sales, finance, HR).
+              </p>
+            </div>
+            <div class="code-card">
+              <h4 class="code-card-title">Integrated</h4>
+              <p>
+                Data from multiple sources is standardized.
+              </p>
+            </div>
+            <div class="code-card">
+              <h4 class="code-card-title">Nonvolatile</h4>
+              <p>
+                Data is not overwritten; historical data is
+                preserved.
+              </p>
+            </div>
+            <div class="code-card">
+              <h4 class="code-card-title">Time-variant</h4>
+              <p>
+                Supports time-based analysis (daily,
+                monthly, quarterly).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Extract, Transform, Load (ETL)</h3>
+        <p>
+          Before data reaches the warehouse, it must undergo
+          the following processes:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              <strong>Extraction:</strong> Data is retrieved
+              from various source systems.
+            </li>
+            <li>
+              <strong>Transformation:</strong> Data
+              undergoes cleaning, deduplication, and
+              standardization.
+            </li>
+            <li>
+              <strong>Loading:</strong> The processed data
+              is inserted into the target warehouse tables.
+            </li>
+          </ul>
+        </div>
+        <p>
+          This ETL process supports quality, consistency,
+          and reporting accuracy.
+        </p>
+
+        <hr class="divider-line" />
+
+        <h2>Dimensional Modeling Overview</h2>
+        <p>
+          <em>Dimensional modeling</em> focuses on
+          simplifying data structures for business users. It
+          organizes data into fact tables and dimension
+          tables.
+        </p>
+
+        <div class="dual-box-wrapper">
+          <div class="dual-box">
+            <h4 class="box-inner-title">Fact Tables</h4>
+            <p class="text-box">
+              Contain measurable quantitative data such as:
+            </p>
+            <div class="pills-container">
+              <span class="pill-badge">Sales revenue</span>
+              <span class="pill-badge"
+                >Order quantities</span
+              >
+              <span class="pill-badge"
+                >Processing times</span
+              >
+            </div>
+          </div>
+          <div class="dual-box">
+            <h4 class="box-inner-title">
+              Dimension Tables
+            </h4>
+            <p class="text-box">
+              Provide descriptive attributes such as:
+            </p>
+            <div class="pills-container">
+              <span class="pill-badge"
+                >Customer demographics</span
+              >
+              <span class="pill-badge"
+                >Product details</span
+              >
+              <span class="pill-badge"
+                >Time periods / Geography</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="image-text-inline__media">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/assets/w7_Star_Schema.png"
+            alt="Diagram of a star schema." />
+        </div>
+
+        <div class="image-text-inline">
+          <div class="image-text-inline__text">
+            <h3>Benefits of Dimensional Modeling</h3>
+            <ul>
+              <li>Faster queries and high performance.</li>
+              <li>Intuitive design for analysts.</li>
+              <li>Supports OLAP cube creation.</li>
+              <li>
+                Accommodates historical changes (Type 2
+                SCDs).
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="summary-box">
+          <p>
+            Dimensional models form the core structure of
+            analytical systems and are required for OLAP
+            cube creation, discussed next.
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation" />
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

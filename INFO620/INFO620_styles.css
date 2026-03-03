@@ -181,6 +181,13 @@ h3.topic-subtitle {
   box-shadow: 0 2px 6px rgba(4, 30, 66, 0.08);
 }
 
+.css-tabs
+  input[type="radio"]:checked
+  + label
+  + .tab-content-container {
+  display: block;
+}
+
 .css-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -239,12 +246,6 @@ h3.topic-subtitle {
   font-size: 19px !important;
   color: #041e42 !important;
   font-family: "Lato", sans-serif !important;
-}
-
-#tab-scenario-1:checked ~ #content-scenario-1,
-#tab-scenario-2:checked ~ #content-scenario-2,
-#tab-scenario-3:checked ~ #content-scenario-3 {
-  display: block;
 }
 
 .comparison-grid {
@@ -332,8 +333,12 @@ h3.topic-subtitle {
   margin-bottom: 0;
 }
 
-#tab-auth:checked ~ #content-auth,
-#tab-encrypt:checked ~ #content-encrypt,
-#tab-network:checked ~ #content-network {
-  display: block;
+.dual-box {
+  background-color: #f5faff;
+  border: 1px solid #cce5ff;
+  border-radius: 8px;
+}
+
+.box-inner-title {
+  color: #041e42;
 }

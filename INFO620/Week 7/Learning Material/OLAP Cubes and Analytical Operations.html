@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 7 </span>
+      <span class="banner__week-name">
+        Data Warehousing, Dimensional Modeling, and OLAP
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        OLAP Cubes and Analytical Operations
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          <em>Online analytical processing </em>(OLAP)
+          systems enable business users to explore
+          multidimensional data dynamically.
+        </p>
+        <p>
+          OLAP cubes are built on top of dimensional models
+          and support operations that allow users to drill
+          into, reorganize, and summarize data.
+        </p>
+
+        <h2 class="topic-main-title">
+          OLAP Cube Components
+        </h2>
+
+        <h3 class="topic-subtitle">Measures</h3>
+        <p>
+          OLAP cube quantitative metrics include measures
+          such as the following:
+        </p>
+
+        <div class="pills-container">
+          <span class="pill-badge">Profit</span>
+          <span class="pill-badge">Revenue</span>
+          <span class="pill-badge">Inventory levels</span>
+        </div>
+
+        <h3 class="topic-subtitle">Dimensions</h3>
+        <p>
+          OLAP cube attributes used for grouping or
+          filtering include dimensions such as the
+          following:
+        </p>
+
+        <div class="pills-container">
+          <span class="pill-badge">Region</span>
+          <span class="pill-badge">Time period</span>
+          <span class="pill-badge">Product category</span>
+        </div>
+
+        <h3 class="topic-subtitle">Hierarchies</h3>
+        <p>
+          OLAP cubes use hierarchies—that is, ordered
+          levels, such as the following:
+        </p>
+
+        <div class="schema-box">
+          <ul>
+            <li>Year → Quarter → Month → Day</li>
+            <li>Country → State → City</li>
+          </ul>
+        </div>
+
+        <h3 class="topic-subtitle">OLAP Operations</h3>
+        <p>OLAP operations include the following:</p>
+
+        <ol class="elegant-numbered-list">
+          <li>
+            <strong>Roll-up (aggregation):</strong>
+            Aggregates data to a higher level.<br /><em
+              >Example: </em
+            >Month → Quarter
+          </li>
+          <li>
+            <strong>Drill-down (disaggregation):</strong>
+            Moves from summary to detail.<br /><em
+              >Example:</em
+            >
+            Region → Individual Stores
+          </li>
+          <li>
+            <strong>Slice:</strong> Filters data on one
+            dimension.<br /><em>Example:</em> Sales for 2024
+            only
+          </li>
+          <li>
+            <strong>Dice: </strong>Filters data on two or
+            more dimensions.<br /><em>Example:</em> Sales
+            for 2024 in Region = West AND Category =
+            Electronics
+          </li>
+          <li>
+            <strong>Pivot (rotate): </strong>Reorients the
+            cube to provide different perspectives.
+          </li>
+        </ol>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_7/../assets/w7_OLAP%20cube.png"
+            alt="OLAP cube diagram showing measures, dimensions, and operations such as roll-up, slice, dice, and drill-down."
+            title="OLAP cube diagram showing measures, dimensions, and operations such as roll-up, slice, dice, and drill-down." />
+        </figure>
+
+        <h3 class="topic-subtitle">OLAP Types</h3>
+        <p>There are a few OLAP types:</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              <strong>MOLAP:</strong> Cube stored in
+              multidimensional structures
+            </li>
+            <li>
+              <strong>ROLAP:</strong> Cube simulated through
+              relational tables
+            </li>
+            <li><strong>HOLAP:</strong> Hybrid approach</li>
+          </ul>
+          <p style="margin-top: 15px">
+            ROLAP is common with modern SQL-based
+            warehouses.
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
