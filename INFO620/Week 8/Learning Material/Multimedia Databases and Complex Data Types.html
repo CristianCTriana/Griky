@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 8 </span>
+      <span class="banner__week-name">
+        Advanced Database Applications
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Multimedia Databases and Complex Data Types
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Multimedia databases are responsible for storing
+          and managing nontraditional data types, such as
+          images, videos, audio files, 3D models, and
+          high-resolution graphics. In contrast to
+          traditional databases, which primarily handle
+          structured text and numerical data, multimedia
+          systems require the storage and retrieval of large
+          amounts of unstructured or semi-structured
+          content.
+        </p>
+
+        <h2 class="topic-main-title">
+          1. Characteristics of Multimedia Data
+        </h2>
+
+        <p>Multimedia data is:</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>
+              <strong>High-volume</strong> (video and audio
+              files are large)
+            </li>
+            <li>
+              <strong>Complex </strong>(multiple components
+              — visual, audio, text)
+            </li>
+            <li>
+              <strong>Heterogeneous </strong>(different
+              codecs, resolutions, formats)
+            </li>
+            <li>
+              <strong>Temporal </strong>(time-dependent
+              sequences)
+            </li>
+            <li>
+              <strong>Spatial </strong>(position and
+              orientation data)
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          Traditional relational models struggle with these
+          requirements.
+        </p>
+
+        <h2 class="topic-main-title">
+          2. Multimedia Storage Approaches
+        </h2>
+
+        <h3 class="topic-subtitle">
+          a. BLOB Storage (Binary Large Objects)
+        </h3>
+        <p>
+          Stores raw multimedia content inside the database.
+        </p>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <h4>Pros</h4>
+            <ul>
+              <li>Centralized storage</li>
+              <li>Integrated security</li>
+            </ul>
+          </div>
+          <div class="comparison-card costs-card">
+            <h4>Cons</h4>
+            <ul>
+              <li>High overhead</li>
+              <li>Slow retrieval</li>
+              <li>Large backups</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="topic-subtitle">
+          b. External File Storage with DBMS Metadata
+        </h3>
+        <p>
+          Stores metadata (file path, type, size) in the
+          database; media files reside in external
+          storage.<br />Common in:
+        </p>
+
+        <div class="pills-container">
+          <span class="pill-badge"
+            >Digital asset management</span
+          >
+          <span class="pill-badge"
+            >Streaming platforms</span
+          >
+          <span class="pill-badge"
+            >Medical imaging systems</span
+          >
+        </div>
+
+        <h3 class="topic-subtitle">
+          c. Content-Based Retrieval
+        </h3>
+        <p>
+          Multimedia DBMSs support searches based on
+          features such as:
+        </p>
+
+        <div class="pills-container">
+          <span class="pill-badge">Color histograms</span>
+          <span class="pill-badge">Shape</span>
+          <span class="pill-badge">Texture</span>
+          <span class="pill-badge">Motion</span>
+        </div>
+
+        <p>
+          These retrieval methods go beyond keyword search.
+        </p>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_8/../assets/w8_Multimedia_Database_Architecture.png"
+            alt="Multimedia database architecture showing metadata storage in relational tables and large objects stored in external file repositories."
+            title="Multimedia database architecture showing metadata storage in relational tables and large objects stored in external file repositories." />
+        </figure>
+
+        <h2 class="topic-main-title">3. Use Cases</h2>
+
+        <div class="top-line-box">
+          <ul style="margin-top: 0">
+            <li>
+              Streaming services (video indexing &amp;
+              recommendation engines)
+            </li>
+            <li>
+              Healthcare imaging (MRI, CT scans, X-rays)
+            </li>
+            <li>Surveillance systems</li>
+            <li>Digital libraries and museum archives</li>
+          </ul>
+          <p style="margin-top: 15px; margin-bottom: 0">
+            Multimedia databases require specialized
+            indexing and retrieval algorithms that are not
+            feasible in standard RDBMS environments.
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

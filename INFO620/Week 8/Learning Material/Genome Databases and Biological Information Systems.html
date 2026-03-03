@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 8 </span>
+      <span class="banner__week-name">
+        Advanced Database Applications
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Genome Databases and Biological Information Systems
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Genome databases represent some of the most
+          complex and data-intensive systems in existence.
+          They store DNA sequences, protein interactions,
+          chromosomal maps, and large biological datasets
+          used for medical research, disease prediction, and
+          personalized healthcare.
+        </p>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-genomic-characteristics" />
+            <label
+              class="accordion-title"
+              for="acc-genomic-characteristics">
+              <span
+                role="heading"
+                aria-level="3"
+                >1. Characteristics of Genomic Data</span
+              >
+            </label>
+            <div class="accordion-content">
+              <div class="info-box-light">
+                <ul>
+                  <li>
+                    <strong>Massive volume</strong>
+                    (terabytes per organism; petabytes for
+                    national-level datasets)
+                  </li>
+                  <li>
+                    <strong
+                      >Sequence-based structure</strong
+                    >
+                    (A, T, C, G nucleotides)
+                  </li>
+                  <li>
+                    <strong>Multi-level hierarchy</strong>
+                    (genes → chromosomes → organisms)
+                  </li>
+                  <li>
+                    <strong>High dimensionality</strong>
+                  </li>
+                  <li>
+                    <strong
+                      >Rapidly evolving schemas</strong
+                    >
+                  </li>
+                </ul>
+                <p
+                  style="
+                    margin-top: 15px;
+                    margin-bottom: 0;
+                  ">
+                  Traditional relational systems cannot
+                  efficiently store or query these datasets
+                  due to extreme size and complexity.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-genomic-architecture" />
+            <label
+              class="accordion-title"
+              for="acc-genomic-architecture">
+              <span
+                role="heading"
+                aria-level="3"
+                >2. Genomic Database Architectures</span
+              >
+            </label>
+            <div class="accordion-content">
+              <h4 class="topic-sub-subtitle">
+                a. Flat-File and Document-Based Storage
+              </h4>
+              <p>
+                Used in early genome research; now
+                considered insufficient.
+              </p>
+
+              <h4 class="topic-sub-subtitle">
+                b. Object-Oriented and NoSQL Databases
+              </h4>
+              <p>
+                Store hierarchical and nested genome
+                structures efficiently.<br />Examples:
+              </p>
+
+              <div class="schema-box">
+                <ul>
+                  <li>MongoDB for DNA records</li>
+                  <li>
+                    Neo4j for protein interaction graphs
+                  </li>
+                </ul>
+              </div>
+
+              <h4 class="topic-sub-subtitle">
+                c. Distributed Genomic Repositories
+              </h4>
+              <p>
+                Large institutions use distributed clusters
+                to store and process data:
+              </p>
+
+              <div class="pills-container">
+                <span class="pill-badge">NCBI GenBank</span>
+                <span class="pill-badge">EMBL-EBI</span>
+                <span class="pill-badge"
+                  >DNA Data Bank of Japan</span
+                >
+              </div>
+
+              <p>
+                These systems support massive-scale,
+                globally replicated genomic datasets.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-genomic-tools" />
+            <label
+              class="accordion-title"
+              for="acc-genomic-tools">
+              <span
+                role="heading"
+                aria-level="3"
+                >3. Analytical Tools</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                Genome databases integrate with tools for:
+              </p>
+
+              <div class="pills-container">
+                <span class="pill-badge"
+                  >Sequence alignment</span
+                >
+                <span class="pill-badge"
+                  >Mutation detection</span
+                >
+                <span class="pill-badge"
+                  >Variant analysis</span
+                >
+                <span class="pill-badge"
+                  >Protein folding prediction</span
+                >
+                <span class="pill-badge"
+                  >Machine learning models for disease
+                  classification</span
+                >
+              </div>
+
+              <p>
+                The intersection of databases and
+                bioinformatics is one of the fastest-growing
+                areas in computing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_8/../assets/w8_Genome_Database.png"
+            alt="Genome database diagram showing DNA sequences stored across distributed nodes with references to gene, protein, and chromosome metadata."
+            title="Genome database diagram showing DNA sequences stored across distributed nodes with references to gene, protein, and chromosome metadata." />
+        </figure>
+
+        <div class="top-line-box">
+          <div class="table-responsive">
+            <table
+              style="
+                width: 100%;
+                border-collapse: collapse;
+                text-align: left;
+                font-family: &quot;Lato&quot;, sans-serif;
+                color: #041e42;
+                font-size: 19px;
+              ">
+              <caption>
+                <span
+                  style="
+                    font-family: Lato, sans-serif;
+                    font-size: 24px;
+                    color: #004489;
+                  "
+                  ><strong
+                    >Comparative Summary</strong
+                  ></span
+                >
+              </caption>
+              <thead>
+                <tr
+                  style="border-bottom: 2px solid #041e42">
+                  <th
+                    scope="col"
+                    style="
+                      padding: 12px 10px;
+                      font-weight: 700;
+                    ">
+                    Domain
+                  </th>
+                  <th
+                    scope="col"
+                    style="
+                      padding: 12px 10px;
+                      font-weight: 700;
+                    ">
+                    Key Data Type
+                  </th>
+                  <th
+                    scope="col"
+                    style="
+                      padding: 12px 10px;
+                      font-weight: 700;
+                    ">
+                    Storage Model
+                  </th>
+                  <th
+                    scope="col"
+                    style="
+                      padding: 12px 10px;
+                      font-weight: 700;
+                    ">
+                    Main Challenges
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  style="border-bottom: 1px solid #e5e5e5">
+                  <td style="padding: 12px 10px">
+                    <strong>Mobile</strong>
+                  </td>
+                  <td style="padding: 12px 10px">
+                    Replicated, offline-ready
+                  </td>
+                  <td style="padding: 12px 10px">
+                    Embedded, distributed
+                  </td>
+                  <td style="padding: 12px 10px">
+                    Sync, conflict resolution
+                  </td>
+                </tr>
+                <tr
+                  style="border-bottom: 1px solid #e5e5e5">
+                  <td style="padding: 12px 10px">
+                    <strong>Multimedia</strong>
+                  </td>
+                  <td style="padding: 12px 10px">
+                    Video, audio, images
+                  </td>
+                  <td style="padding: 12px 10px">
+                    BLOB, external objects
+                  </td>
+                  <td style="padding: 12px 10px">
+                    Search &amp; indexing
+                  </td>
+                </tr>
+                <tr
+                  style="border-bottom: 1px solid #e5e5e5">
+                  <td style="padding: 12px 10px">
+                    <strong>GIS</strong>
+                  </td>
+                  <td style="padding: 12px 10px">
+                    Spatial, geographic
+                  </td>
+                  <td style="padding: 12px 10px">
+                    Spatial RDBMS, R-trees
+                  </td>
+                  <td style="padding: 12px 10px">
+                    Spatial joins, precision
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 10px">
+                    <strong>Genomic</strong>
+                  </td>
+                  <td style="padding: 12px 10px">
+                    DNA sequences
+                  </td>
+                  <td style="padding: 12px 10px">
+                    NoSQL, distributed
+                  </td>
+                  <td style="padding: 12px 10px">
+                    Scale, computation
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top: 25px; margin-bottom: 0">
+            These specialized systems reflect the evolution
+            of database technology as modern applications
+            push beyond traditional limits.
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

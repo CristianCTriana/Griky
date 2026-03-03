@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 8 </span>
+      <span class="banner__week-name">
+        Advanced Database Applications
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Mobile Databases and Distributed Data Management
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Mobile databases support applications where data
+          must be accessed, updated, or synchronized across
+          mobile devices, edge environments, and
+          intermittently connected systems. The rise of
+          smartphones, IoT devices, and real-time analytics
+          has made mobile data management essential in
+          modern computing (Khurana, 2024).
+        </p>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-mobile-characteristics" />
+            <label
+              class="accordion-title"
+              for="acc-mobile-characteristics">
+              <span
+                role="heading"
+                aria-level="3"
+                >1. Characteristics of Mobile
+                Databases</span
+              >
+            </label>
+            <div class="accordion-content">
+              <h4 class="topic-sub-subtitle">
+                a. Intermittent Connectivity
+              </h4>
+              <p>
+                Mobile users often lose or regain
+                connectivity, requiring:
+              </p>
+
+              <div class="pills-container">
+                <span class="pill-badge"
+                  >Offline data access</span
+                >
+                <span class="pill-badge"
+                  >Deferred updates</span
+                >
+                <span class="pill-badge"
+                  >Conflict resolution upon
+                  reconnection</span
+                >
+              </div>
+
+              <h4 class="topic-sub-subtitle">
+                b. Replication & Synchronization
+              </h4>
+              <p>
+                Mobile DBMSs maintain replicas of data and
+                must reconcile inconsistencies.<br />Common
+                techniques include:
+              </p>
+
+              <div class="schema-box">
+                <ul>
+                  <li>Timestamp-based methods</li>
+                  <li>Version vectors</li>
+                  <li>
+                    Conflict detection & merging rules
+                  </li>
+                </ul>
+              </div>
+
+              <h4 class="topic-sub-subtitle">
+                c. Lightweight Storage
+              </h4>
+              <p>Mobile devices require:</p>
+
+              <div class="info-box-light">
+                <ul>
+                  <li>Embedded databases (SQLite)</li>
+                  <li>Low footprint storage engines</li>
+                  <li>Minimal processing overhead</li>
+                  <li>Energy-efficient operations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-mobile-challenges" />
+            <label
+              class="accordion-title"
+              for="acc-mobile-challenges">
+              <span
+                role="heading"
+                aria-level="3"
+                >2. Challenges in Mobile Data Systems</span
+              >
+            </label>
+            <div class="accordion-content">
+              <div class="info-box-light">
+                <ul>
+                  <li>Limited memory and battery</li>
+                  <li>Unpredictable network latency</li>
+                  <li>
+                    Security vulnerabilities on user devices
+                  </li>
+                  <li>
+                    Ensuring ACID properties in disconnected
+                    mode
+                  </li>
+                </ul>
+              </div>
+              <p>
+                Despite these challenges, mobile databases
+                power messaging apps, mobile commerce,
+                vehicle navigation systems, and field
+                service applications.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_8/../assets/w8_Architecture.png"
+            alt="Architecture diagram showing a central server, mobile devices with local databases, and synchronization flows between them."
+            title="Architecture diagram showing a central server, mobile devices with local databases, and synchronization flows between them." />
+        </figure>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation" />
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

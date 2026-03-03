@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 8 </span>
+      <span class="banner__week-name">
+        Advanced Database Applications
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        GIS Databases and Spatial Data Management
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Geographic Information Systems (GIS) databases
+          manage <strong>spatial data</strong>, which
+          describes objects in space—coordinates, shapes,
+          boundaries, regions, and landscapes. GIS data
+          differ significantly from relational data due to
+          their geometric structure and need for spatial
+          operations (Khurana, 2024).
+        </p>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-spatial-data" />
+            <label
+              class="accordion-title"
+              for="acc-spatial-data">
+              <span
+                role="heading"
+                aria-level="3"
+                >1. Types of Spatial Data</span
+              >
+            </label>
+            <div class="accordion-content">
+              <div
+                class="dual-box-wrapper"
+                style="margin-top: 20px">
+                <div class="dual-box">
+                  <h4
+                    class="box-inner-title"
+                    style="margin-top: 0">
+                    a. Vector Data
+                  </h4>
+                  <ul>
+                    <li>
+                      Points (e.g., cellular towers, crime
+                      locations)
+                    </li>
+                    <li>Lines (roads, rivers)</li>
+                    <li>
+                      Polygons (city boundaries, land
+                      parcels)
+                    </li>
+                  </ul>
+                </div>
+                <div class="dual-box">
+                  <h4
+                    class="box-inner-title"
+                    style="margin-top: 0">
+                    b. Raster Data
+                  </h4>
+                  <ul>
+                    <li>Pixel-based images</li>
+                    <li>Satellite photographs</li>
+                    <li>Heat maps</li>
+                    <li>Elevation grids</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p>
+                GIS records may contain thousands of
+                attributes associated with each spatial
+                point or area.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-spatial-indexing" />
+            <label
+              class="accordion-title"
+              for="acc-spatial-indexing">
+              <span
+                role="heading"
+                aria-level="3"
+                >2. Spatial Indexing</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                Spatial queries require special-purpose
+                indexing:
+              </p>
+
+              <div class="pills-container">
+                <span class="pill-badge"
+                  >R-trees (most common)</span
+                >
+                <span class="pill-badge">Quad trees</span>
+                <span class="pill-badge">KD-trees</span>
+              </div>
+
+              <p>
+                These structures efficiently support queries
+                such as:
+              </p>
+
+              <div class="schema-box">
+                <ul>
+                  <li>
+                    “Find all locations within 10 miles of
+                    X.”
+                  </li>
+                  <li>
+                    “List all parcels intersecting this
+                    boundary.”
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-gis-sql" />
+            <label
+              class="accordion-title"
+              for="acc-gis-sql">
+              <span
+                role="heading"
+                aria-level="3"
+                >3. GIS SQL Extensions</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                GIS DBMSs (PostGIS, Oracle Spatial) extend
+                SQL with types like:
+              </p>
+
+              <div class="pills-container">
+                <span class="pill-badge">GEOMETRY</span>
+                <span class="pill-badge">POINT</span>
+                <span class="pill-badge">POLYGON</span>
+                <span class="pill-badge"
+                  >MULTILINESTRING</span
+                >
+              </div>
+
+              <p>And functions such as:</p>
+
+              <div class="schema-box">
+                <ul>
+                  <li>ST_Distance()</li>
+                  <li>ST_Intersects()</li>
+                  <li>ST_Buffer()</li>
+                  <li>ST_Within()</li>
+                </ul>
+              </div>
+
+              <div
+                class="info-box-light"
+                style="margin-bottom: 0">
+                <p style="margin-bottom: 0">
+                  GIS-enabled databases are essential for
+                  city planning, logistics, environmental
+                  analysis, and emergency response.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_8/../assets/w8_GIS_Database.png"
+            alt="GIS database diagram with layers representing roads, terrain, population density, and satellite imagery connected to a spatial database engine."
+            title="GIS database diagram with layers representing roads, terrain, population density, and satellite imagery connected to a spatial database engine." />
+        </figure>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
