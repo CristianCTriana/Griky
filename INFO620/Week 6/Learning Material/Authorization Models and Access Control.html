@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 6 </span>
+      <span class="banner__week-name">
+        Database Security and Authorization
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Authorization Models and Access Control
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          An authorization specifies the permissions granted
+          to individuals for data handling. Effective
+          authorization mechanisms safeguard against
+          unauthorized access, modification, or deletion of
+          information. Khurana (2024) delineates three
+          primary authorization models employed in database
+          systems:
+        </p>
+
+        <p style="text-align: center; margin-top: 40px">
+          <img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+            alt="Click “+” to see more information"
+            style="max-width: 100%"
+            width="600" />
+        </p>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-dac" />
+            <label
+              class="accordion-title"
+              for="acc-dac">
+              <span
+                role="heading"
+                aria-level="3"
+                >1. Discretionary access control
+                (DAC):</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                DAC grants privileges based on
+                <em>user identity</em> and allows users to
+                delegate permissions. DAC is
+              </p>
+              <ul>
+                <li>
+                  Common in relational systems such as
+                  MySQL, PostgreSQL, and Oracle
+                </li>
+                <li>
+                  Flexible but vulnerable to privilege
+                  proliferation
+                </li>
+              </ul>
+              <div class="schema-box">
+                <p>
+                  <em>Example:</em><br />
+                  A table owner may grant SELECT privileges
+                  to a colleague.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-mac" />
+            <label
+              class="accordion-title"
+              for="acc-mac">
+              <span
+                role="heading"
+                aria-level="3"
+                >2. Mandatory access control (MAC):</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                MAC assigns security labels to data and
+                users, enforcing strict rules that users
+                cannot override. MAC
+              </p>
+              <ul>
+                <li>
+                  Is used in government and military systems
+                </li>
+                <li>
+                  Uses classification levels: Confidential,
+                  Secret, and Top Secret
+                </li>
+                <li>
+                  Enforces “no read up, no write down”
+                  policies
+                </li>
+              </ul>
+              <p>
+                MAC ensures enforced separation between
+                security levels.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-rbac" />
+            <label
+              class="accordion-title"
+              for="acc-rbac">
+              <span
+                role="heading"
+                aria-level="3"
+                >3. Role-based access control (RBAC):</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                RBAC assigns permissions to <em>roles</em>,
+                and users gain privileges by belonging to
+                roles. RBAC
+              </p>
+              <ul>
+                <li>Is scalable and manageable;</li>
+                <li>
+                  Supports least-privilege principles; and
+                </li>
+                <li>Is common in enterprise systems.</li>
+              </ul>
+              <p>Consider this example:</p>
+              <div class="schema-box">
+                <ul>
+                  <li>Role: “Database Auditor”</li>
+                  <li>
+                    Permissions: SELECT on logs, no UPDATE
+                    privileges
+                  </li>
+                  <li>
+                    Users added to the role inherit
+                    privileges
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="acc-granular" />
+            <label
+              class="accordion-title"
+              for="acc-granular">
+              <span
+                role="heading"
+                aria-level="3"
+                >4. Granular privileges in SQL:</span
+              >
+            </label>
+            <div class="accordion-content">
+              <p>
+                SQL grants privileges such as the following:
+              </p>
+
+              <div class="pills-container">
+                <span class="pill-badge">SELECT</span>
+                <span class="pill-badge">INSERT</span>
+                <span class="pill-badge">UPDATE</span>
+                <span class="pill-badge">DELETE</span>
+                <span class="pill-badge"
+                  >EXECUTE (stored procedures)</span
+                >
+                <span class="pill-badge"
+                  >REFERENCES (FK constraints)</span
+                >
+              </div>
+
+              <p>
+                These privileges can be applied to the
+                following:
+              </p>
+
+              <div class="schema-box">
+                <ul>
+                  <li>Individual tables</li>
+                  <li>Specific columns</li>
+                  <li>Views</li>
+                  <li>Schemas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_6/../assets/w6_authorization_models.png"
+            alt="Diagram comparing DAC, MAC, and RBAC authorization models with examples of access decision flows."
+            title="Diagram comparing DAC, MAC, and RBAC authorization models with examples of access decision flows." />
+        </figure>
+
+        <footer>
+          <p>
+            <img
+              src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+              alt="logo"
+              class="img-fluid"
+              style="max-width: 150px" />
+          </p>
+        </footer>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

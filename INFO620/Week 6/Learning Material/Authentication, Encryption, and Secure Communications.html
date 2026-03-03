@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 6 </span>
+      <span class="banner__week-name">
+        Database Security and Authorization
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Authentication, Encryption, and Secure
+        Communications
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Beyond authorization, strong database security
+          requires robust authentication and secure
+          communication channels.
+        </p>
+
+        <p class="standard-text">
+          <img
+            src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+            alt="Click a topic to see more information"
+            title="Click a topic to see more informationClick a topic to see more information"
+            data-d2l-editor-default-img-style="true"
+            style="max-width: 100%" />
+        </p>
+
+        <div class="css-tabs">
+          <input
+            type="radio"
+            name="security-tabs"
+            id="tab-auth"
+            checked />
+          <label for="tab-auth"
+            >Authentication Methods</label
+          >
+
+          <input
+            type="radio"
+            name="security-tabs"
+            id="tab-encrypt" />
+          <label for="tab-encrypt"
+            >Encryption Techniques</label
+          >
+
+          <input
+            type="radio"
+            name="security-tabs"
+            id="tab-network" />
+          <label for="tab-network"
+            >Securing Network Communications</label
+          >
+
+          <div
+            id="content-auth"
+            class="tab-content-container">
+            <p>
+              Authentication verifies identity before
+              granting access. There are several kinds of
+              authentication:
+            </p>
+
+            <h3 class="topic-subtitle">
+              Password Authentication
+            </h3>
+            <p>
+              Password authentication is the most common,
+              but also the weakest if not combined with the
+              following:
+            </p>
+
+            <div class="info-box-light">
+              <ul>
+                <li>Password complexity enforcement</li>
+                <li>Hashing and salting</li>
+                <li>Multifactor authentication (MFA)</li>
+              </ul>
+            </div>
+
+            <h3 class="topic-subtitle">
+              Token-Based Authentication
+            </h3>
+            <p>
+              <em>Tokens </em>in
+              <em>token-based authentication</em> include
+              API keys, OAuth tokens, and digital
+              certificates.
+            </p>
+
+            <h3 class="topic-subtitle">Kerberos</h3>
+            <p>
+              Kerberos is used in enterprise networks for
+              secure ticket-based authentication.
+            </p>
+          </div>
+
+          <div
+            id="content-encrypt"
+            class="tab-content-container">
+            <p>
+              Encryption protects data both in transit and
+              at rest.
+            </p>
+
+            <h3 class="topic-subtitle">
+              Data-at-Rest Encryption
+            </h3>
+            <p>
+              Data-at-rest encryption blindly encrypts
+              entire files, disks, or tablespaces.<br />This
+              prevents access even if a file is stolen.
+            </p>
+
+            <h3 class="topic-subtitle">
+              Column-Level Encryption
+            </h3>
+            <p>
+              Column-level encryption encrypts sensitive
+              attributes such as the following:
+            </p>
+
+            <div class="pills-container">
+              <span class="pill-badge">SSNs</span>
+              <span class="pill-badge"
+                >Credit card numbers</span
+              >
+              <span class="pill-badge">Passwords</span>
+            </div>
+
+            <h3 class="topic-subtitle">
+              Hashing and Salting
+            </h3>
+            <p>
+              Hashes protect passwords, whereas salts
+              prevent rainbow-table attacks.
+            </p>
+
+            <h3 class="topic-subtitle">
+              Transparent Data Encryption (TDE)
+            </h3>
+            <p>
+              TDE automatically encrypts/decrypts data at
+              the storage level without changing
+              applications.
+            </p>
+          </div>
+
+          <div
+            id="content-network"
+            class="tab-content-container">
+            <p>
+              Best practices for securing network
+              communications include the following:
+            </p>
+
+            <div class="info-box-light">
+              <ul>
+                <li>
+                  Using TLS/SSL for all database connections
+                </li>
+                <li>
+                  Limiting database access to specific IP
+                  ranges
+                </li>
+                <li>
+                  Protecting API endpoints with firewalls
+                  and gateways
+                </li>
+                <li>Disabling plain-text connections</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

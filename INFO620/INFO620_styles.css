@@ -331,3 +331,9 @@ h3.topic-subtitle {
 .top-line-box ul:last-child {
   margin-bottom: 0;
 }
+
+#tab-auth:checked ~ #content-auth,
+#tab-encrypt:checked ~ #content-encrypt,
+#tab-network:checked ~ #content-network {
+  display: block;
+}

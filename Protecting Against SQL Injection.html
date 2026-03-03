@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="/INFO620/INFO620_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 6 </span>
+      <span class="banner__week-name">
+        Database Security and Authorization
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Protecting Against SQL Injection
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="topic-content">
+        <p>
+          Even strong preventive measures are insufficient
+          without continuous monitoring. Enterprise
+          databases must implement auditing, logging, and
+          intrusion detection.
+        </p>
+
+        <h2 class="topic-main-title">Database Auditing</h2>
+        <p>Auditing tracks the following information:</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>Login attempts</li>
+            <li>Data modifications</li>
+            <li>Permissions changes</li>
+            <li>Access to sensitive tables</li>
+          </ul>
+        </div>
+
+        <h3 class="topic-subtitle">Audit Trail Example</h3>
+        <p>
+          When a user updates a salary field, the audit log
+          records the following:
+        </p>
+
+        <div class="schema-box">
+          <ul>
+            <li>Who made the change</li>
+            <li>When it occurred</li>
+            <li>Old and new values</li>
+          </ul>
+        </div>
+        <p>
+          Audit logs support compliance, forensic analysis,
+          and anomaly detection.
+        </p>
+
+        <h2 class="topic-main-title">
+          Monitoring and Alerts
+        </h2>
+        <p>Monitoring tools evaluate the following:</p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>Query performance</li>
+            <li>Suspicious behavior patterns</li>
+            <li>Failed login spikes</li>
+            <li>Unusual data access volumes</li>
+          </ul>
+        </div>
+        <p>
+          Real-time alerts notify administrators of
+          high-risk events.
+        </p>
+
+        <h3 class="topic-subtitle">
+          Intrusion Detection and Prevention
+        </h3>
+        <p>
+          Database intrusion detection systems (DIDS)
+          include the following elements:
+        </p>
+
+        <ol class="elegant-numbered-list">
+          <li>
+            <strong>Signature-based detection:</strong>
+            Matches known attack signatures.
+          </li>
+          <li>
+            <strong>Anomaly-based detection:</strong>
+            Detects behavior outside normal patterns.
+          </li>
+          <li>
+            <strong>Preventive controls: </strong
+            >Automatically block or throttle suspicious
+            sessions.
+          </li>
+        </ol>
+
+        <h4 class="topic-sub-subtitle">
+          The Human Factor: Security Policies
+        </h4>
+        <p>
+          Many breaches result from human error, not
+          technological flaws.<br />Therefore, security
+          policies should include the following:
+        </p>
+
+        <div class="info-box-light">
+          <ul>
+            <li>Acceptable use standards</li>
+            <li>Access request procedures</li>
+            <li>Password policies</li>
+            <li>Data handling guidelines</li>
+            <li>Regular audits of privileges</li>
+            <li>Mandatory security training</li>
+          </ul>
+        </div>
+
+        <div class="top-line-box">
+          <h5
+            class="topic-sub-subtitle"
+            style="margin-top: 0">
+            Putting It All Together
+          </h5>
+          <p>
+            A secure database system must integrate the
+            following layers:
+          </p>
+
+          <div class="pills-container">
+            <span class="pill-badge"
+              >Strong authentication</span
+            >
+            <span class="pill-badge"
+              >Well-designed authorization</span
+            >
+            <span class="pill-badge">Encryption</span>
+            <span class="pill-badge">Network security</span>
+            <span class="pill-badge">Auditing</span>
+            <span class="pill-badge">Monitoring</span>
+            <span class="pill-badge">User training</span>
+          </div>
+
+          <p style="margin-top: 15px">
+            This layered approach is called
+            defense-in-depth.
+          </p>
+        </div>
+
+        <figure class="topic-figure">
+          <img
+            src="/content/enforced/1027224-INFO620_development_site_griky_english/Week_6/../assets/w6_Multilayered_Security.png"
+            alt="Multilayered security diagram illustrating authentication, access control, encryption, and monitoring layers."
+            title="Multilayered security diagram illustrating authentication, access control, encryption, and monitoring layers." />
+        </figure>
+      </div>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo" />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
