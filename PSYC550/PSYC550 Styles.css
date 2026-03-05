@@ -321,7 +321,7 @@ ul {
   color: var(--inst-dark);
   border: 1px solid var(--inst-cyan);
   padding: 8px 16px;
-  border-radius: 20px; /* Borde redondeado tipo píldora */
+  border-radius: 5px; /* Borde redondeado tipo píldora */
   font-weight: 600;
   font-size: 18px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
