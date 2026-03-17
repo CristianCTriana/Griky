@@ -15,7 +15,9 @@
       rel="stylesheet"
       href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
     <style>
-      body {
+      /* Globales */
+      body,
+      .content-wrapper {
         font-family: Lato, sans-serif !important;
         line-height: 1.55;
         font-size: 16px;
@@ -24,28 +26,54 @@
         padding: 0;
       }
 
-      /* Global Lato */
-      *,
-      h1,
-      h2,
-      h3,
-      p,
-      span,
-      div,
-      li,
-      a,
-      button {
-        font-family: Lato, sans-serif !important;
-      }
-
-      /* Contenedor general */
       .content-wrapper {
         max-width: 1100px;
         margin: 0 auto;
         padding: 20px 30px;
+        text-align: center;
       }
 
-      /* Imágenes centradas y responsivas */
+      /* Encabezado Principal */
+      .main-header {
+        background-color: #041e42;
+        padding: 25px 20px;
+        color: white;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      .main-header .week {
+        font-size: 20px;
+        color: #05c3de;
+      }
+      .main-header .title {
+        font-size: 32px;
+        font-weight: 700;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* Títulos y separadores */
+      .section-title {
+        font-size: 32px;
+        color: #041e42;
+        margin-top: 40px;
+        margin-bottom: 0;
+        font-weight: 700;
+        text-align: center;
+      }
+      .summary-title {
+        color: #004c90;
+      }
+      hr.divider {
+        margin: 25px 0;
+        border: none;
+        border-top: 1px solid #ccc;
+      }
+      hr.footer-divider {
+        margin: 40px 0 30px;
+      }
+
+      /* Imágenes */
       .center-img {
         display: block;
         margin: 20px auto;
@@ -54,52 +82,18 @@
         height: auto;
       }
 
-      /* Encabezado */
-      .main-header {
-        background-color: #041e42;
-        padding: 25px 20px;
-        color: white;
-        margin-bottom: 40px;
-        text-align: center;
-      }
-
-      .main-header span.week {
-        font-size: 20px;
-        color: #05c3de;
-      }
-
-      .main-header span.title {
-        font-size: 32px;
-        font-weight: 700;
-        display: block;
-      }
-
-      /* Títulos internos */
-      h2.section-title {
-        font-size: 32px;
-        color: #041e42;
-        margin-top: 40px;
-        font-weight: 700;
-        text-align: center;
-      }
-
-      hr {
-        margin: 25px 0;
-      }
-
-      /* Responsive iframe estándar horizontal (Genially) */
+      /* Contenedores de iFrame (Genially y Canva) */
       .iframe-container {
         position: relative;
         width: 100%;
         max-width: 900px;
         margin: 30px auto;
-        padding-bottom: 56.25%; /* 16:9 */
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
         height: 0;
         overflow: hidden;
         border-radius: 8px;
         background: #000;
       }
-
       .iframe-container iframe {
         position: absolute;
         top: 0;
@@ -109,21 +103,17 @@
         border: none;
       }
 
-      /* ================================
-       CANVA VERTICAL RESPONSIVE (1000x1550)
-       ================================ */
       .iframe-canva-vertical {
         position: relative;
         width: 90%;
         max-width: 900px;
         margin: 30px auto;
-        padding-top: 155%; /* 1550/1000 = 1.55 */
-        height: 10%;
+        padding-top: 155%; /* Aspect Ratio para Canva Vertical */
+        height: 0;
         overflow: hidden;
         border-radius: 8px;
-        background: #000; /* evita parpadeos */
+        background: #000;
       }
-
       .iframe-canva-vertical iframe {
         position: absolute;
         top: 0;
@@ -133,25 +123,10 @@
         border: none;
       }
 
-      /* Cierre final */
-      .week-end-box {
-        background-color: #0cc3df;
-        padding: 40px 20px;
-        text-align: center;
-        color: #041e42;
-        font-size: 26px;
-        margin-top: 60px;
-        font-weight: 700;
-        border-radius: 8px;
+      /* Botón PDF */
+      .pdf-btn-container {
+        margin-bottom: 30px;
       }
-
-      .week-end-box p {
-        margin: 5px 0;
-        font-size: 24px;
-        font-weight: 600;
-      }
-
-      /* PDF button */
       .pdf-btn {
         display: inline-flex;
         align-items: center;
@@ -164,43 +139,68 @@
         border-radius: 8px;
         text-decoration: none;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        transition: 0.2s ease-in-out;
+        transition: background-color 0.2s ease-in-out;
+      }
+      .pdf-btn:hover {
+        background-color: #063b75; /* ¡El efecto hover ha vuelto! */
       }
 
-      .pdf-btn:hover {
-        background-color: #063b75;
-      }
-      .digital-guide {
-        border: 1px solid #041e42;
-        background-color: #f9f9f9;
-        padding: 20px;
+      /* Caja final */
+      .week-end-box {
+        background-color: #0cc3df;
+        padding: 40px 20px;
+        text-align: center;
+        color: #041e42;
+        margin-top: 60px;
         border-radius: 8px;
-        max-width: 800px;
-        margin: 30px auto;
-        font-size: 19px;
-        line-height: 1.6;
       }
-      .digital-guide span.icon {
-        color: #202122;
+      .week-end-box p {
+        margin: 5px 0;
         font-size: 24px;
-        margin-right: 10px;
-        line-height: 1;
+        font-weight: 600;
+      }
+      .week-end-box strong {
+        font-size: 26px;
+        font-weight: 700;
+      }
+
+      /* Footer */
+      .main-footer {
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+        text-align: left;
+      }
+      .main-footer img {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+      .main-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
       }
     </style>
   </head>
   <body>
-    <h1 class="main-header">
-      <span class="week">Week #</span><br /><span
-        class="title"
+    <!-- ENCABEZADO -->
+    <header class="main-header">
+      <span class="week">Week #</span><br />
+      <span class="title"
         >Assessing Organizational Strategy</span
       >
-    </h1>
+    </header>
+
     <!-- CONTENT -->
-    <div
-      class="content-wrapper"
-      style="text-align: center">
+    <main class="content-wrapper">
       <h1 class="section-title">Examples</h1>
-      <hr />
+      <hr class="divider" />
+
       <!-- Responsive IMG 1 -->
       <img
         src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/51.png"
@@ -208,18 +208,19 @@
         alt="Check out the following interactive capsule"
         width="697"
         height="62" />
+
       <!-- GENIALLY 1 (horizontal) -->
       <div class="iframe-container">
         <iframe
           src="https://view.genially.com/690bafbaa9c721b199d454da"
           allowfullscreen="allowfullscreen"></iframe>
       </div>
-      <hr />
+
+      <hr class="divider" />
+
       <!-- SUMMARY HANDOUT -->
-      <h2 class="section-title">
-        <span style="color: #004c90"
-          ><strong>Summary Handout</strong></span
-        >
+      <h2 class="section-title summary-title">
+        Summary Handout
       </h2>
       <img
         src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/21.png"
@@ -227,14 +228,15 @@
         alt="Download the following document"
         width="697"
         height="62" />
+
       <!-- PDF BUTTON -->
-      <div>
+      <div class="pdf-btn-container">
         <a
           href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Plantilla_Infograf%C3%ADa%20_APUS_2.0.pdf"
           download="Week 1 - Summary Handout.pdf"
           target="_blank"
-          class="pdf-btn"
-          rel="noopener">
+          rel="noopener"
+          class="pdf-btn">
           <svg
             width="22"
             height="22"
@@ -246,71 +248,39 @@
             <path
               d="M5 18a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H5z"></path>
           </svg>
-          Week 1 – Summary Handout (PDF) </a
-        >&nbsp;<!-- CANVA VERTICAL FIX -->
+          Week 1 – Summary Handout (PDF)
+        </a>
       </div>
-    </div>
-    <div
-      class="content-wrapper"
-      style="text-align: center">
+
+      <!-- CANVA VERTICAL FIX -->
       <div class="iframe-canva-vertical">
         <iframe
           loading="lazy"
           src="https://www.canva.com/design/DAG32MQxPbc/UOgyOZ-YAgpGzzgjxH_x4w/view?embed">
         </iframe>
       </div>
-      <hr />
-      <!-- PRACTICE VIDEO Section -->
-      <h2 class="section-title">
-        <span style="color: #004c90"
-          ><strong>Practice Video</strong></span
-        >
-      </h2>
-      <h1>
-        <span style="color: #004c90"
-          ><!-- PDF info -->
-        </span>
-      </h1>
-      <div
-        class="digital-guide"
-        style="text-align: left">
-        <strong><span class="icon">ⓘ</span> </strong
-        ><span
-          style="
-            font-family: Lato, sans-serif;
-            color: #1f1f1f;
-          "
-          >This self-assessment is designed to reinforce the
-          week’s material. It is for reflection only and is
-          <strong>not graded.</strong></span
-        >
-      </div>
-      <img
-        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/51.png"
-        class="center-img"
-        alt="Check out the following interactive capsule"
-        width="697"
-        height="62" />
-      <div class="iframe-container">
-        <iframe
-          src="https://view.genially.com/690ba7d38b5b20532740e8d2"
-          allowfullscreen="allowfullscreen"></iframe>
-      </div>
-      <!-- END MESSAGE -->
+
+      <!-- Cierre final -->
       <div class="week-end-box">
         <p>
           <strong>You've finished the week!</strong
           ><br />You can continue to the next one
         </p>
       </div>
-      <!-- FOOTER -->
-      <hr />
-      <img
-        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
-        alt=""
-        role="presentation"
-        width="110"
-        style="float: right" />
-    </div>
+
+      <hr class="divider footer-divider" />
+
+      <!-- FOOTER ESTÁNDAR -->
+      <footer class="main-footer">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation" />
+        <p>
+          Copyright 2026 American Public University System
+          ALL RIGHTS RESERVED
+        </p>
+      </footer>
+    </main>
   </body>
 </html>

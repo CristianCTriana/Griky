@@ -135,14 +135,36 @@
       .btn-primary:focus a {
         color: inherit !important;
       }
+
+      /* Footer */
+      .main-footer {
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+        text-align: left;
+      }
+      .main-footer img {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+      .main-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
     </style>
   </head>
   <body>
-    <div class="kc-header">
+    <header class="kc-header">
       <div class="week">Week #</div>
       <div class="title">Nombre de la semana</div>
-    </div>
-    <div class="kc-wrapper">
+    </header>
+    <main class="kc-wrapper">
       <h1 class="kc-main-title">
         Week 1 - Knowledge Check
       </h1>
@@ -154,15 +176,17 @@
         según lo que pida el cliente.
       --></div>
       <!-- Footer -->
-      <div class="kc-footer">
-        <div class="kc-footer-line"></div>
-        <div class="kc-footer-logo">
-          <img
-            src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
-            alt=""
-            role="presentation" />
-        </div>
-      </div>
-    </div>
+      <hr />
+    </main>
+    <footer class="main-footer">
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation" />
+      <p>
+        Copyright 2026 American Public University System ALL
+        RIGHTS RESERVED
+      </p>
+    </footer>
   </body>
 </html>

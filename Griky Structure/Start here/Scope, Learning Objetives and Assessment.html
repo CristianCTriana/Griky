@@ -12,19 +12,17 @@
       body {
         font-family: Lato, sans-serif;
         color: #202122;
-        font-size: 12px;
         margin: 0;
         padding: 0;
         line-height: 1.6;
       }
 
       /* ENCABEZADO */
-      .header-container h3 {
+      .header-container {
         background-color: #041e42;
         padding: 20px;
         color: white;
-        text-align: left;
-        font-size: 28px;
+        text-align: center;
         margin: 0;
       }
       .header-container .course-code {
@@ -37,6 +35,7 @@
         font-size: 28px;
         display: block;
         margin-top: 5px;
+        font-weight: 700;
       }
 
       /* CONTENEDOR PRINCIPAL */
@@ -46,21 +45,49 @@
         padding: 30px;
       }
 
-      h1.section-title,
-      h2.section-subtitle {
-        font-size: 35px;
+      /* TIPOGRAFÍA Y TÍTULOS */
+      .section-title {
+        font-size: 30px;
         font-weight: 700;
-        color: #041e42;
+        color: #041e40;
+        text-align: center;
         margin-bottom: 15px;
       }
-
+      .section-subtitle {
+        font-size: 24px;
+        font-weight: 700;
+        color: #041e40;
+        margin-top: 25px;
+        margin-bottom: 15px;
+      }
       p,
       li {
         font-size: 19px;
-        line-height: 1.6;
         color: #202122;
+        margin-bottom: 15px;
       }
 
+      /* SECCIÓN COURSE SCOPE (FLEXBOX) */
+      .scope-container {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .scope-image {
+        flex: 1;
+        max-width: 250px;
+      }
+      .scope-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .scope-text {
+        flex: 2;
+      }
+
+      /* DIVIDER */
       hr {
         border: none;
         height: 1px;
@@ -68,17 +95,9 @@
         margin: 25px 0;
       }
 
-      .centered-image {
-        display: block;
-        margin: 20px auto;
-        max-width: 100%;
-        height: auto;
-      }
-
       /* --- ACORDEÓN CSS-ONLY --- */
       .accordion {
         margin-top: 30px;
-        font-family: Lato, sans-serif;
       }
       .accordion-item {
         border-radius: 8px;
@@ -132,7 +151,6 @@
         color: #03244d;
         padding: 0 20px;
         font-size: 17px;
-        line-height: 1.5;
         transition:
           max-height 0.35s ease,
           padding 0.3s ease;
@@ -147,92 +165,92 @@
       }
       .accordion-content ul {
         padding-left: 20px;
+        margin: 0;
       }
       .accordion-content li {
         margin-bottom: 10px;
       }
 
+      /* TABLA DE ASSESSMENTS */
+      .assessment-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      .assessment-table caption {
+        font-size: 19px;
+        color: #041e42;
+        font-weight: 700;
+        padding-bottom: 10px;
+      }
+      .assessment-table th,
+      .assessment-table td {
+        border: 1px solid #dcdcdc;
+        padding: 12px;
+        text-align: center;
+        font-size: 19px;
+      }
+      .assessment-table th {
+        background-color: #041e42;
+        color: white;
+      }
+
       /* FOOTER */
+      footer {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 30px 30px;
+      }
       .footer-logo {
         float: right;
         width: 110px;
         height: auto;
         margin-top: 10px;
       }
-
-      /* TABLA DE ASSESSMENTS */
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-      }
-      table,
-      th,
-      td {
-        border: 1px solid #dcdcdc;
-      }
-      th,
-      td {
-        padding: 12px;
+      .copyright-text {
         text-align: center;
-        font-size: 19px;
-        font-family: Lato, sans-serif;
+        font-size: 11px;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
       }
-      th {
-        background-color: #041e42;
-        color: white;
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .scope-container {
+          flex-direction: column;
+          text-align: center;
+        }
+        .scope-image {
+          margin: 0 auto;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="header-container">
-      <h3 style="text-align: center">
-        <span class="course-code">COURSE_CODE<br /></span>
-        <span style="font-size: 28px">Course Overview</span>
-      </h3>
-    </div>
-    <div class="content-wrapper">
-      <!-- SECCIÓN PRINCIPAL -->
-      <h2
-        class="section-title"
-        style="text-align: center">
-        <span
-          style="
-            font-family: Lato, sans-serif;
-            font-size: 30px;
-            color: #041e40;
-          "
-          >Scope, Learning Objectives, and Assessment</span
-        >
-      </h2>
+    <header class="header-container">
+      <span class="course-code">COURSE_CODE</span>
+      <span class="course-title">Course Overview</span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="section-title">
+        Scope, Learning Objectives, and Assessment
+      </h1>
       <hr />
-      <h3 class="section-subtitle">
-        <span style="font-size: 24px; color: #041e40"
-          >| Course Scope</span
-        >
-      </h3>
-      <div
-        style="
-          display: flex;
-          gap: 100px;
-          align-items: center;
-          padding: 0px 0;
-        ">
-        <div
-          style="
-            flex: 1;
-            min-width: 200px;
-            max-width: 200px;
-          ">
+
+      <h2 class="section-subtitle">| Course Scope</h2>
+
+      <!-- CONTENEDOR FLEXBOX OPTIMIZADO -->
+      <div class="scope-container">
+        <div class="scope-image">
           <img
+            role="presentation"
             src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/img-course-1_20251120220934262.png"
-            alt=""
-            title=""
-            width="313"
-            height="338"
-            style="float: left" />
+            alt="" />
         </div>
-        <div style="flex: 2">
+        <div class="scope-text">
           <p>
             Emphasis in this course will be placed on
             problems and opportunities of business leaders
@@ -248,19 +266,19 @@
           </p>
         </div>
       </div>
+
       <hr />
-      <h3 class="section-subtitle">
-        <span style="font-size: 24px; color: #041e40"
-          >| Course &amp; Learning Objectives</span
-        >
-      </h3>
+
+      <h2 class="section-subtitle">
+        | Course &amp; Learning Objectives
+      </h2>
       <p>
         Select each Course Objective to see the associated
         Learning Objectives and Assessments.
       </p>
-      <!-- ACORDEÓN: COURSE AND LEARNING OBJECTIVES -->
+
+      <!-- ACORDEÓN -->
       <div class="accordion">
-        <!-- CO-1 -->
         <div class="accordion-item">
           <input
             type="checkbox"
@@ -298,7 +316,7 @@
             </ul>
           </div>
         </div>
-        <!-- CO-2 -->
+
         <div class="accordion-item">
           <input
             type="checkbox"
@@ -358,7 +376,7 @@
             </ul>
           </div>
         </div>
-        <!-- CO-3 -->
+
         <div class="accordion-item">
           <input
             type="checkbox"
@@ -401,7 +419,7 @@
             </ul>
           </div>
         </div>
-        <!-- CO-4 -->
+
         <div class="accordion-item">
           <input
             type="checkbox"
@@ -427,13 +445,12 @@
           </div>
         </div>
       </div>
+
       <hr />
-      <!-- PROGRAM LEARNING OUTCOMES -->
-      <h3 class="section-subtitle">
-        <span style="font-size: 24px; color: #041e40"
-          >| Program Learning Outcomes</span
-        >
-      </h3>
+
+      <h2 class="section-subtitle">
+        | Program Learning Outcomes
+      </h2>
       <p>
         Program Learning Outcomes (PLO) serve as a roadmap
         for educational success and guide the courses that
@@ -445,34 +462,63 @@
         should be H4. The accordion text should be bulleted
         PLOs.
       </p>
+
       <hr />
-      <!-- ASSESSMENT COMPONENTS -->
-      <h3>
-        <span style="color: #041e40; font-size: 24px"
-          >| Assessment Components</span
-        >
-      </h3>
+
+      <h2 class="section-subtitle">
+        | Assessment Components
+      </h2>
       <p>
         Your final grade will be calculated using the
         following category weights:
       </p>
-      <table style="width: 46.8327%; height: 84.3906px">
-        <tbody>
-          <tr style="height: 40.1953px">
-            <th style="width: 49.0956%">Assignments</th>
-            <th style="width: 50.9044%">Discussions</th>
+
+      <!-- TABLA OPTIMIZADA -->
+      <table class="assessment-table">
+        <caption>
+          Assessment Components
+        </caption>
+        <thead>
+          <tr>
+            <th
+              scope="col"
+              style="width: 20%">
+              Assignments
+            </th>
+            <th
+              scope="col"
+              style="width: 30%">
+              Discussions
+            </th>
+            <th
+              scope="col"
+              style="width: 50%">
+              Research Project Components
+            </th>
           </tr>
-          <tr style="height: 44.1953px">
-            <td style="width: 49.0956%">70%</td>
-            <td style="width: 50.9044%">30%</td>
+        </thead>
+        <tbody>
+          <tr>
+            <td>32%</td>
+            <td>40%</td>
+            <td>28%</td>
           </tr>
         </tbody>
       </table>
+
       <hr />
+    </main>
+
+    <footer>
       <img
         src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
-        alt="logo"
+        alt=""
+        role="presentation"
         class="footer-logo" />
-    </div>
+      <p class="copyright-text">
+        Copyright 2026 American Public University System ALL
+        RIGHTS RESERVED
+      </p>
+    </footer>
   </body>
 </html>

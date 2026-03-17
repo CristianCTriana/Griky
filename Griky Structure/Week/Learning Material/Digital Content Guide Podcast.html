@@ -14,6 +14,7 @@
         font-family: Lato, sans-serif;
         color: #202122;
         font-size: 14px;
+        margin: 0;
       }
 
       .content-wrapper {
@@ -167,30 +168,50 @@
         background: #eaf4ff;
         color: #041e42;
       }
+
+      /* Footer */
+      .main-footer {
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+        text-align: left;
+      }
+      .main-footer img {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+      .main-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
     </style>
   </head>
   <body>
-    <div style="margin: 0; padding: 0">
-      <h1
-        style="
-          background-color: #041e42;
-          padding: 20px;
-          color: white;
-          text-align: center;
-          margin: 0;
-        ">
-        <span style="font-size: 20px; color: #05c3de"
-          >Week #</span
-        ><br /><span style="font-size: 28px"
-          >Name of the week</span
-        >
-      </h1>
-    </div>
-    <div class="content-wrapper">
+    <header
+      style="
+        margin: 0;
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+      ">
+      <span style="font-size: 20px; color: #05c3de"
+        >Week #</span
+      ><br /><span style="font-size: 28px"
+        >Name of the week</span
+      >
+    </header>
+    <main class="content-wrapper">
       <!-- BANNER RESPONSIVE -->
       <img
-        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/71.png"
-        alt="banner image"
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/APUS%20CINTILLOS%20-%20PLANTILLA.png"
+        alt="Check the following video"
         class="banner-image" />
       <!-- VIDEO RESPONSIVE -->
       <div class="video-wrapper">
@@ -275,13 +296,16 @@
       </div>
       <hr />
       <!-- FOOTER LOGO -->
-      <p style="text-align: right">
-        <img
-          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
-          alt=""
-          role="presentation"
-          width="110" />
+    </main>
+    <footer class="main-footer">
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation" />
+      <p>
+        Copyright 2026 American Public University System ALL
+        RIGHTS RESERVED
       </p>
-    </div>
+    </footer>
   </body>
 </html>

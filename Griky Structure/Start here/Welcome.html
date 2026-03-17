@@ -18,31 +18,15 @@
         line-height: 1.6;
       }
 
+      /* CONTENEDOR PRINCIPAL */
       .content-wrapper {
         max-width: 1000px;
         margin: 0 auto;
         padding: 30px;
       }
-      /* PDF info */
-      .digital-guide {
-        border: 1px solid #041e42;
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 8px;
-        max-width: 800px;
-        margin: 30px auto;
-        font-size: 19px;
-        line-height: 1.6;
-      }
-      .digital-guide span.icon {
-        color: #202122;
-        font-size: 24px;
-        margin-right: 10px;
-        line-height: 1;
-      }
 
       /* ENCABEZADO */
-      .header-container h3 {
+      .header-container {
         background-color: #041e42;
         padding: 20px;
         color: white;
@@ -59,6 +43,7 @@
         font-size: 28px;
         display: block;
         margin-top: 5px;
+        font-weight: 700;
       }
 
       /* TÍTULO PRINCIPAL */
@@ -116,6 +101,77 @@
         border: none;
       }
 
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item
+        input:checked
+        + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff; /* Fondo blanco corregido */
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+
       /* GETTING STARTED BOX */
       .getting-started {
         background-color: #041e42;
@@ -139,12 +195,49 @@
         margin-bottom: 10px;
       }
 
+      /* PDF INFO / DIGITAL GUIDE */
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+        text-align: center; /* Centrado movido al CSS */
+      }
+      .digital-guide-title {
+        color: #004c90;
+        font-size: 24px;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .digital-guide p {
+        margin-bottom: 10px;
+        color: #202122;
+      }
+
       /* FOOTER */
+      footer {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 30px 30px;
+      }
       .footer-logo {
         float: right;
         width: 110px;
         height: auto;
         margin-top: 10px;
+      }
+      .copyright-text {
+        text-align: center;
+        font-size: 11px;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
       }
 
       /* RESPONSIVE */
@@ -155,91 +248,19 @@
         .getting-started ul li {
           font-size: 17px;
         }
-        /* --- ACORDEÓN CSS-ONLY --- */
-        .accordion {
-          margin-top: 30px;
-          font-family: Lato, sans-serif;
-        }
-        .accordion-item {
-          border-radius: 8px;
-          margin-bottom: 15px;
-          background: #ffffff;
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-          overflow: hidden;
-          border: 1px solid #e5e5e5;
-        }
-        .accordion-item input {
-          display: none;
-        }
-        .accordion-title {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 18px 20px;
-          font-size: 20px;
-          font-weight: 600;
-          color: #03244d;
-          background: #ffffff;
-          cursor: pointer;
-          border-bottom: 1px solid #e5e5e5;
-          transition:
-            background 0.2s ease,
-            color 0.2s ease;
-          position: relative;
-        }
-        .accordion-title::after {
-          content: "+";
-          font-size: 22px;
-          font-weight: bold;
-          color: #004c90;
-          transition:
-            transform 0.2s ease,
-            color 0.2s ease;
-        }
-        .accordion-item
-          input:checked
-          + .accordion-title::after {
-          content: "–";
-          color: #004c90;
-        }
-        .accordion-title:hover {
-          background: #f5faff;
-        }
-        .accordion-content {
-          max-height: 0;
-          overflow: hidden;
-          background: #ffffff;
-          color: #03244d;
-          padding: 0 20px;
-          font-size: 17px;
-          line-height: 1.5;
-          transition:
-            max-height 0.35s ease,
-            padding 0.3s ease;
-        }
-        .accordion-item input:checked ~ .accordion-content {
-          max-height: 800px;
-          padding: 20px;
-        }
-        .accordion-item input:checked + .accordion-title {
-          background: #eaf4ff;
-          color: #041e42;
-        }
       }
     </style>
   </head>
   <body>
-    <div class="header-container">
-      <h3>
-        <span class="course-code">COURSE_CODE</span>
-        <span class="course-title">Course Overview</span>
-      </h3>
-    </div>
-    <div class="content-wrapper">
-      <!-- TÍTULO PRINCIPAL -->
+    <header class="header-container">
+      <span class="course-code">COURSE_CODE</span>
+      <span class="course-title">Course Overview</span>
+    </header>
+
+    <main class="content-wrapper">
       <h1 class="main-title">Welcome to course</h1>
       <hr class="divider-line" />
-      <!-- TEXTO INTRO -->
+
       <p class="text-content">
         In this course, you will become familiar with key
         tools that are used to better understand the
@@ -248,18 +269,20 @@
         a comprehensive strategic plan document that is
         appropriate for an executive audience.
       </p>
-      <!-- BANNER CENTRADO -->
+
       <img
         src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/APUS%20CINTILLOS%20-%20PLANTILLA.png"
-        alt="banner"
+        alt="Check the following video"
         class="centered-image" />
-      <!-- CANVA EMBED -->
+
       <div class="canva-embed">
         <iframe
           src="https://www.canva.com/design/DAGlpoYHyEE/t1F1rK3BhH3jL9OtChuatA/watch?embed"
           allowfullscreen="allowfullscreen"
-          allow="fullscreen"></iframe>
+          allow="fullscreen">
+        </iframe>
       </div>
+
       <div class="accordion">
         <div class="accordion-item">
           <input
@@ -318,55 +341,60 @@
             </p>
           </div>
         </div>
-        <hr class="divider-line" />
-        <!-- GETTING STARTED -->
-        <div class="getting-started">
-          <h2>| Getting Started</h2>
-          <ul>
-            <li>
-              Review the syllabus and this course overview
-              (Good news! You're in that right now!) for all
-              course activities, due dates, and policies.
-            </li>
-            <li>
-              Introduce yourself to the class in the Week 1
-              Introduction Discussion.
-            </li>
-            <li>Begin reading the materials in Week 1.</li>
-          </ul>
-        </div>
-        <div class="content-wrapper">
-          <!-- PDF info -->
-          <div
-            class="digital-guide"
-            style="text-align: center">
-            <span style="color: #004c90"
-              ><strong
-                ><span style="font-size: 24px"
-                  >Important Note: Welcome Discussion
-                  <br /></span></strong></span
-            >The Welcome Discussion topic serves as your
-            official entry into the course.&nbsp;
-            <p style="text-align: center">
-              Your initial post in the Welcome Discussion
-              must be submitted by 11:59 p.m. ET on Sunday
-              the first week of the course to maintain your
-              course enrollment.
-              <strong
-                >Students who do not post to this forum
-                before this deadline will be automatically
-                dropped from the course.</strong
-              >
-            </p>
-          </div>
-          <hr class="divider-line" />
-          <!-- FOOTER -->
-          <img
-            src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
-            alt="logo"
-            class="footer-logo" />
-        </div>
       </div>
-    </div>
+
+      <hr class="divider-line" />
+
+      <div class="getting-started">
+        <h2>| Getting Started</h2>
+        <ul>
+          <li>
+            Review the syllabus and this course overview
+            (Good news! You're in that right now!) for all
+            course activities, due dates, and policies.
+          </li>
+          <li>
+            Introduce yourself to the class in the Week 1
+            Introduction Discussion.
+          </li>
+          <li>Begin reading the materials in Week 1.</li>
+        </ul>
+      </div>
+
+      <div class="digital-guide">
+        <span class="digital-guide-title"
+          >Important Note: Welcome Discussion</span
+        >
+        <p>
+          The Welcome Discussion topic serves as your
+          official entry into the course.
+        </p>
+        <p>
+          Your initial post in the Welcome Discussion must
+          be submitted by 11:59 p.m. ET on Sunday the first
+          week of the course to maintain your course
+          enrollment.
+          <strong
+            >Students who do not post to this forum before
+            this deadline will be automatically dropped from
+            the course.</strong
+          >
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+        class="footer-logo" />
+      <p class="copyright-text">
+        Copyright 2026 American Public University System ALL
+        RIGHTS RESERVED
+      </p>
+    </footer>
   </body>
 </html>

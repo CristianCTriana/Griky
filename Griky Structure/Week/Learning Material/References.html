@@ -56,6 +56,28 @@
         height: 42px;
         font-size: 19px;
       }
+
+      /* Footer */
+      .main-footer {
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+        text-align: left;
+      }
+      .main-footer img {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+      .main-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
     </style>
   </head>
   <body
@@ -63,34 +85,35 @@
       color: #202122;
       font-family: Verdana, sans-serif;
       font-size: 12px;
+      margin: 0;
     ">
-    <div class="container-lg">
-      <!-- ENCABEZADO -->
-      <div style="margin: 0; padding: 0">
-        <h1
+    <!-- ENCABEZADO -->
+    <header style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        ">
+        <span
           style="
-            background-color: #041e42;
-            padding: 20px;
-            color: white;
-            text-align: center;
-            margin: 0;
-          ">
-          <span
-            style="
-              font-size: 20px;
-              color: #05c3de;
-              font-family: Lato, sans-serif;
-            "
-            >Week #</span
-          ><br /><span
-            style="
-              font-size: 28px;
-              font-family: Lato, sans-serif;
-            "
-            >Assessing Organizational Strategy</span
-          >
-        </h1>
-      </div>
+            font-size: 20px;
+            color: #05c3de;
+            font-family: Lato, sans-serif;
+          "
+          >Week #</span
+        ><br /><span
+          style="
+            font-size: 28px;
+            font-family: Lato, sans-serif;
+          "
+          >Assessing Organizational Strategy</span
+        >
+      </h1>
+    </header>
+    <main class="container-lg">
       <!-- TITLE -->
       <h2
         style="
@@ -220,23 +243,24 @@
         </div>
       </div>
       <hr />
-      <!-- FOOTER -->
-      <div>
-        <p
-          class="small"
-          style="text-align: center">
-          APUS does not maintain or control third-party
-          websites and is not responsible for the accuracy
-          or accessibility of their content.
-        </p>
-        <img
-          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
-          alt=""
-          role="presentation"
-          width="110"
-          style="float: right" />
-      </div>
-    </div>
-    <!-- container -->
+    </main>
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <p
+        class="small"
+        style="text-align: center">
+        APUS does not maintain or control third-party
+        websites and is not responsible for the accuracy or
+        accessibility of their content.
+      </p>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation" />
+      <p>
+        Copyright 2026 American Public University System ALL
+        RIGHTS RESERVED
+      </p>
+    </footer>
   </body>
 </html>
