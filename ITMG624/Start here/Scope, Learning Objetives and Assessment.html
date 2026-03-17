@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* ENCABEZADO */
+      .header-container {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+        font-weight: 700;
+      }
+
+      /* CONTENEDOR PRINCIPAL */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* TIPOGRAFÍA Y TÍTULOS */
+      .section-title {
+        font-size: 30px;
+        font-weight: 700;
+        color: #041e40;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      .section-subtitle {
+        font-size: 24px;
+        font-weight: 700;
+        color: #041e40;
+        margin-top: 25px;
+        margin-bottom: 15px;
+      }
+      p,
+      li {
+        font-size: 19px;
+        color: #202122;
+        margin-bottom: 15px;
+      }
+
+      /* SECCIÓN COURSE SCOPE (FLEXBOX) */
+      .scope-container {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .scope-image {
+        flex: 1;
+        max-width: 250px;
+      }
+      .scope-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .scope-text {
+        flex: 2;
+      }
+
+      /* DIVIDER */
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+      }
+      .accordion-content-subtitle {
+        font-weight: 700;
+        font-size: 19px;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item
+        input:checked
+        + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff; /* ¡Aquí cambiamos el color de fondo a blanco! */
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 1200px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .accordion-content ul {
+        padding-left: 20px;
+        margin: 0;
+      }
+      .accordion-content li {
+        margin-bottom: 10px;
+      }
+
+      /* TABLA DE ASSESSMENTS */
+      .assessment-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      .assessment-table caption {
+        font-size: 19px;
+        color: #041e42;
+        font-weight: 700;
+        padding-bottom: 10px;
+      }
+      .assessment-table th,
+      .assessment-table td {
+        border: 1px solid #dcdcdc;
+        padding: 12px;
+        text-align: center;
+        font-size: 19px;
+      }
+      .assessment-table th {
+        background-color: #041e42;
+        color: white;
+      }
+
+      /* FOOTER */
+      footer {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 30px 30px;
+      }
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+      .copyright-text {
+        text-align: center;
+        font-size: 11px;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .scope-container {
+          flex-direction: column;
+          text-align: center;
+        }
+        .scope-image {
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-container">
+      <span class="course-code">ITMG624</span>
+      <span class="course-title">Course Overview</span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="section-title">
+        Scope, Learning Objectives, and Assessment
+      </h1>
+      <hr />
+
+      <h2 class="section-subtitle">| Course Scope</h2>
+
+      <!-- CONTENEDOR FLEXBOX OPTIMIZADO -->
+      <div class="scope-container">
+        <div class="scope-image">
+          <img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/img-course-1_20251120220934262.png"
+            alt=""
+            role="presentation" />
+        </div>
+        <div class="scope-text">
+          <p>
+            This course provides students with a strong
+            foundation for effective project management in
+            modern organizations. It begins with a
+            comprehensive introduction to the core
+            components of the project management discipline,
+            including an in-depth examination of the five
+            project management process groups, which builds
+            the knowledge necessary to oversee critical
+            projects. Students will explore the challenges
+            of initiating a project and developing strategic
+            planning approaches to successfully begin the
+            project management cycle. They will then apply
+            these concepts to create practical project
+            management plans used in real-world business
+            environments. The course culminates in the
+            development of a detailed final project,
+            incorporating key concepts such as scope
+            management, risk management, resource
+            management, and schedule development.
+          </p>
+        </div>
+      </div>
+
+      <hr />
+
+      <h2 class="section-subtitle">
+        | Course &amp; Learning Objectives
+      </h2>
+      <p>
+        Select each Course Objective to see the associated
+        Learning Objectives and Assessments.
+      </p>
+
+      <!-- ACORDEÓN -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co1" />
+          <label
+            class="accordion-title"
+            for="co1"
+            >CO-1: Analyze foundation principles of project
+            management based on project life cycle
+            models</label
+          >
+          <div class="accordion-content">
+            <span class="accordion-content-subtitle"
+              >Learning Objectives</span
+            >
+            <ul>
+              <li>
+                LO-1.1: Explain how each key phase of the
+                project life cycle (initiation, planning,
+                execution, monitoring, and controlling, and
+                closing) contributes to project success.
+              </li>
+              <li>
+                LO-1.2: Determine the suitability of project
+                life cycle models (predictive, iterative,
+                and agile) for a given project scenario.
+              </li>
+            </ul>
+            <span class="accordion-content-subtitle"
+              >Assessments</span
+            >
+            <ul>
+              <li>
+                Week 1 – Discussion: Week 1 Introduction
+                Post
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co2" />
+          <label
+            class="accordion-title"
+            for="co2"
+            >CO-2: Analyze attributes of IT project
+            management and Portfolio Management</label
+          >
+          <div class="accordion-content">
+            <span class="accordion-content-subtitle"
+              >Learning Objectives</span
+            >
+            <ul>
+              <li>
+                LO-2.1: Differentiate between IT project
+                management and portfolio management by their
+                key attributes, roles, and decision-making
+                processes within an organization.
+              </li>
+              <li>
+                LO-2.2: Assess how effective portfolio
+                management practices influence the
+                prioritization, alignment, and performance
+                of multiple IT projects within a strategic
+                framework.
+              </li>
+            </ul>
+            <span class="accordion-content-subtitle"
+              >Assessments</span
+            >
+            <ul>
+              <li>
+                Week 2 – Discussion: (Nongraded) Week 2
+                Discussion Interaction
+              </li>
+              <li>
+                Week 2 – Assignment: PowerPoint Assignment -
+                Organizational Capabilities
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co3" />
+          <label
+            class="accordion-title"
+            for="co3"
+            >CO-3: Deconstruct the key elements of a project
+            charter and Statement of Work (SOW).</label
+          >
+          <div class="accordion-content">
+            <span class="accordion-content-subtitle"
+              >Learning Objectives</span
+            >
+            <ul>
+              <li>
+                LO-3.1: Identify the essential components of
+                a project charter and Statement of Work
+                (SOW) and their significance in project
+                initiation and planning.
+              </li>
+              <li>
+                LO-3.2: Evaluate sample project charters and
+                SOWs for clarity in defining project scope,
+                objectives, deliverables, and stakeholder
+                responsibilities.
+              </li>
+              <span class="accordion-content-subtitle"
+                >Assessments</span
+              >
+              <ul>
+                <li>Week 3 – Discussion:</li>
+                <li>
+                  Week 3 – Assignment: Week 3: Project,
+                  Program, and Portfolio Management
+                </li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co4" />
+          <label
+            class="accordion-title"
+            for="co4"
+            >CO-4: Analyze processes of project risk
+            management with Work Breakdown Structure
+            (WBS).</label
+          >
+          <div class="accordion-content">
+            <span class="accordion-content-subtitle"
+              >Learning Objectives</span
+            >
+            <ul>
+              <li>
+                LO-4.1: Articulate strategic analyses,
+                decisions, and action plans in a clear,
+                coherent, and professional manner.
+              </li>
+              <li>
+                LO-4.2: Analyze the common and conflicting
+                interests of various stakeholder groups.
+              </li>
+            </ul>
+            <span class="accordion-content-subtitle"
+              >Assessments</span
+            >
+            <ul>
+              <li>
+                Week 4 – Discussion: (Nongraded) Week 4
+                Discussion Interaction
+              </li>
+              <li>
+                Week 4 – Assignment: Week 4: PowerPoint
+                Assignment- High Performing Teams
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co5" />
+          <label
+            class="accordion-title"
+            for="co5"
+            >CO-5: Analyze processes of realistic scheduling
+            and estimation accuracy.</label
+          >
+          <div class="accordion-content">
+            <span class="accordion-content-subtitle"
+              >Learning Objectives</span
+            >
+            <ul>
+              <li>
+                LO-5.1: Apply scheduling techniques such as
+                critical path analysis and resource leveling
+                to develop realistic timelines.
+              </li>
+              <li>
+                LO-5.2: Evaluate estimation methods (e.g.,
+                bottom-up, analogous, and parametric) for
+                their impact on project cost, duration, and
+                overall accuracy.
+              </li>
+            </ul>
+            <span class="accordion-content-subtitle"
+              >Assessments</span
+            >
+            <ul>
+              <li>
+                Week 5 – Discussion: Week 5: Project
+                Management Templates Discussion
+              </li>
+              <li>
+                Week 5 – Assignment: Week 5: Create Project
+                Charter and SOW
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co6" />
+          <label
+            class="accordion-title"
+            for="co6"
+            >CO-6: Examine key components of
+            high-performance project teams with effective
+            project communications.</label
+          >
+          <div class="accordion-content">
+            <span class="accordion-content-subtitle"
+              >Learning Objectives</span
+            >
+            <ul>
+              <li>
+                LO-6.1: Identify the characteristics, roles,
+                and dynamics that contribute to the
+                development of high-performance project
+                teams.
+              </li>
+              <li>
+                LO-6.2: Analyze communication strategies and
+                tools that enhance collaboration, conflict
+                resolution, and information flow within
+                project teams.
+              </li>
+            </ul>
+            <span class="accordion-content-subtitle"
+              >Assessments</span
+            >
+            <ul>
+              <li>
+                Week 6 – Discussion: Key Components Of
+                High-Performance Project Teams With
+                Effective Project Communications
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co7" />
+          <label
+            class="accordion-title"
+            for="co7"
+            >CO-7: Summarize project success factors and
+            applicable tools, techniques and successful
+            project metrics.</label
+          >
+          <div class="accordion-content">
+            <span class="accordion-content-subtitle"
+              >Learning Objectives</span
+            >
+            <ul>
+              <li>
+                LO-7.1: Identify key factors that influence
+                project success, including stakeholder
+                engagement, scope control, and resource
+                management.
+              </li>
+              <li>
+                LO-7.2: Select appropriate project
+                management tools, techniques, and metrics to
+                measure project performance and outcomes.
+              </li>
+            </ul>
+            <span class="accordion-content-subtitle"
+              >Assessments</span
+            >
+            <ul>
+              <li>
+                Week 7 – Discussion: Week 7: Schedule
+                Management Discussion
+              </li>
+              <li>
+                Week 7 – Assignment: Week 7: PowerPoint
+                Assignment - Project Estimation Techniques
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="co8" />
+          <label
+            class="accordion-title"
+            for="co8"
+            >CO-8: Examine key components of Enterprise
+            Project Management (EPM)</label
+          >
+          <div class="accordion-content">
+            <span class="accordion-content-subtitle"
+              >Learning Objectives</span
+            >
+            <ul>
+              <li>
+                LO-8.1: Describe the core components and
+                functions of Enterprise Project Management
+                (EPM) systems and their support for
+                organizational strategy and decision-making.
+              </li>
+              <li>
+                LO-8.2: Analyze how EPM frameworks and tools
+                integrate project, program, and portfolio
+                management processes to enhance
+                organizational performance and resource
+                utilization.
+              </li>
+            </ul>
+            <span class="accordion-content-subtitle"
+              >Assessments</span
+            >
+            <ul>
+              <li>
+                Week 8 – Discussion: (Nongraded) Week 8
+                Discussion Interaction
+              </li>
+              <li>
+                Week 8 – Assignment: Week 8: Final Research
+                Paper
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <h2 class="section-subtitle">
+        | Program Learning Outcomes
+      </h2>
+      <p>
+        Program Learning Outcomes (PLO) serve as a roadmap
+        for educational success and guide the courses that
+        you take.
+      </p>
+      <p>This course supports the following PLOs:</p>
+      <ul>
+        <li>
+          Apply key management theory, principles, best
+          practices, tools, and technologies associated with
+          information systems.
+        </li>
+        <li>
+          Utilize graduate level critical thinking,
+          reasoning, and writing to defend the logic and the
+          conclusions in scholarly research.
+        </li>
+        <li>
+          Plan the processes, phases, domains, and measures
+          for effectively managing complex information
+          technology projects.
+        </li>
+        <li>
+          Assess the vulnerabilities of information systems
+          with respect to security and the methodologies to
+          mitigate this risk.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2 class="section-subtitle">
+        | Assessment Components
+      </h2>
+      <p>
+        Your final grade will be calculated using the
+        following category weights:
+      </p>
+
+      <!-- TABLA OPTIMIZADA -->
+      <table class="assessment-table">
+        <caption>
+          Assessment Components
+        </caption>
+        <thead>
+          <tr>
+            <th
+              scope="col"
+              style="width: 20%">
+              Assignments
+            </th>
+            <th
+              scope="col"
+              style="width: 30%">
+              Discussions
+            </th>
+            <th
+              scope="col"
+              style="width: 50%">
+              Final Paper
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>20%</td>
+            <td>60%</td>
+            <td>20%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+    </main>
+
+    <footer>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+        class="footer-logo" />
+      <p class="copyright-text">
+        Copyright 2026 American Public University System ALL
+        RIGHTS RESERVED
+      </p>
+    </footer>
+  </body>
+</html>
