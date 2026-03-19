@@ -18,6 +18,10 @@
   --espaciado-lg: 24px;
 }
 
+.letra-cyan {
+  color: var(--color-aqua) !important;
+}
+
 .letra-gris {
   color: var(--color-gris-negro) !important;
 }
