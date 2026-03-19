@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../ITMG624_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .course-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 1 </span>
+      <span class="banner__week-name"
+        >Project Management and Project Work</span
+      >
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Project Life Cycle</h1>
+
+      <hr class="divider-line" />
+
+      <div class="content-wrapper">
+        <p>
+          The project life cycle—which includes the
+          initiation, planning, execution, monitoring and
+          controlling, and closing phases of a project—are
+          foundational principles of project management.
+          Each phase of the project life cycle plays a
+          specific role in promoting project success.
+        </p>
+
+        <!-- Implementación de Acordeón CSS-Only para las fases del proyecto -->
+        <div class="accordion">
+          <!-- Fase 1 -->
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="phase-initiation" />
+            <label
+              class="accordion-title"
+              for="phase-initiation"
+              >Initiation Phase</label
+            >
+            <div class="accordion-content">
+              <p>
+                During the initiation phase, the project is
+                defined, key stakeholders are identified,
+                benefits are clarified, and the project’s
+                “why” is clearly explained to the team,
+                including its significance (Project
+                Management Institute [PMI], 2025).
+              </p>
+            </div>
+          </div>
+
+          <!-- Fase 2 -->
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="phase-planning" />
+            <label
+              class="accordion-title"
+              for="phase-planning"
+              >Planning Phase</label
+            >
+            <div class="accordion-content">
+              <p>
+                The planning phase is then used to transform
+                the project’s initial purpose into a
+                structured path by developing the scope,
+                schedule, cost, quality, resources, risk,
+                and other performance domains critical to
+                meeting the project’s outcomes.
+              </p>
+            </div>
+          </div>
+
+          <!-- Fase 3 -->
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="phase-execution" />
+            <label
+              class="accordion-title"
+              for="phase-execution"
+              >Execution Phase</label
+            >
+            <div class="accordion-content">
+              <p>
+                The execution phase translates the work
+                defined in the project plan into actionable
+                items the project team needs to complete,
+                details the resources they need to
+                coordinate, and identifies the stakeholders
+                they need to interact with to deliver the
+                project in line with expected deliverables.
+              </p>
+            </div>
+          </div>
+
+          <!-- Fase 4 -->
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="phase-monitoring" />
+            <label
+              class="accordion-title"
+              for="phase-monitoring"
+              >Monitoring and Controlling Phase</label
+            >
+            <div class="accordion-content">
+              <p>
+                The monitoring and controlling phase ensures
+                the project’s progress aligns with
+                expectations and performance baselines by
+                tracking progress and deviations and
+                managing project risks.
+              </p>
+            </div>
+          </div>
+
+          <!-- Fase 5 -->
+          <div class="accordion-item">
+            <input
+              type="checkbox"
+              id="phase-closing" />
+            <label
+              class="accordion-title"
+              for="phase-closing"
+              >Closing Phase</label
+            >
+            <div class="accordion-content">
+              <p>
+                Finally, the closing phase ensures
+                acceptable deliverables; contracts reflect
+                agreements; lessons learned are documented
+                and used to improve the next project plan
+                (PMI, 2025).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Caja de resumen para la cita intermedia -->
+        <div class="summary-box">
+          <p>
+            Selecting an ideal project life cycle
+            model—predictive, iterative, or agile—requires
+            determining the level of uncertainty, the pace
+            of change, and stakeholder engagement needs.
+          </p>
+        </div>
+
+        <!-- Grilla inteligente para desglosar los 3 modelos -->
+        <div
+          class="lms-grid-inteligente"
+          style="margin-top: 30px; margin-bottom: 30px">
+          <div class="dual-box">
+            <strong>Predictive</strong>
+            <p class="letra-blanco">
+              Predictive life cycles are often used when the
+              project requirements are stable and well
+              comprehended, allowing for more detailed
+              upfront planning and controlled execution (PMI
+              2021).
+            </p>
+          </div>
+
+          <div class="dual-box">
+            <strong>Iterative</strong>
+            <p class="letra-blanco">
+              An iterative model is better suited when the
+              project team can refine the project solution
+              using frequent cycles of planning and
+              development.
+            </p>
+          </div>
+
+          <div class="dual-box">
+            <strong>Agile</strong>
+            <p class="letra-blanco">
+              However, when the project has high uncertainty
+              or is riddled with rapidly changing needs, the
+              agile life cycle model offers more flexibility
+              through short iterations, ongoing customer
+              collaboration, and incremental value delivery
+              (PMI, 2025).
+            </p>
+          </div>
+        </div>
+
+        <!-- Párrafo final con extracción a lista -->
+        <div class="digital-guide">
+          <p>
+            The <em>PMBOK</em><sup>&reg;</sup
+            ><em> Guide</em> emphasizes tailoring,
+            encouraging project managers to choose a life
+            cycle model based on context rather than
+            defaulting to just one model for all projects.
+            When deciding which project life cycle model to
+            use, project managers should also evaluate key
+            factors such as:
+          </p>
+
+          <ul class="lms-lista-lineas">
+            <li>The project requirements</li>
+            <li>Risk exposure</li>
+            <li>Organizational culture</li>
+            <li>Stakeholder availability (PMI, 2025)</li>
+          </ul>
+
+          <p>
+            For example, a predictive model is more
+            appropriate for compliance-driven projects with
+            precise documentation, while an agile model is
+            better suited to innovation-oriented projects
+            with changing requirements. The goal is to align
+            the project life cycle with the appropriate
+            project attributes so that project managers can
+            enhance the project’s efficiency and
+            adaptability to further validate stakeholder
+            satisfaction.
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation" />
+      <p>
+        Copyright 2026 American Public University System ALL
+        RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
