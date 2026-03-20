@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif !important;
+        color: #202122;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+        font-size: 19px;
+      }
+
+      .title-topic {
+        font-size: 35px;
+        color: #041e40;
+        text-align: center;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .divider-line {
+        margin-top: 0px;
+        margin-bottom: 40px;
+      }
+
+      /* Footer */
+      .main-footer {
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+        text-align: left;
+      }
+      .main-footer img {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+      .main-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+
+      .info-box {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-color: #041e40;
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+
+      .info-box h2 {
+        color: #05c3de;
+      }
+
+      .info-box p {
+        color: #ffffff;
+      }
+
+      .accordion {
+        margin-top: 40px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      /* Título activo */
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: auto;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-content p {
+        color: #041e42;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: auto;
+        border: 1px solid #e5e5e5;
+      }
+
+      /* Ocultar checkbox */
+      .accordion-item input {
+        display: none;
+      }
+
+      /* TÍTULO */
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / – */
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+
+      /* Estado activo cambia a "–" */
+      .accordion-item
+        input:checked
+        + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+
+      /* Hover */
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      a {
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+        color: #004c90;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      style="
+        margin: 0;
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+      ">
+      <span style="color: #05c3de">Week 5</span><br /><span
+        style="font-size: 28px"
+        >Processes of Realistic Scheduling and Estimation
+        Accuracy</span
+      >
+    </header>
+    <main class="content-wrapper">
+      <!-- CONCLUSIONS -->
+      <h1 class="title-topic">Conclusions</h1>
+      <hr class="divider-line" />
+      <p>
+        Realistic scheduling and accurate estimation are
+        foundational to effective project planning and
+        long-term project success. The PMBOK® Guide,
+        provides a structured framework that promotes
+        ethical, reliable, and strategically aligned
+        planning practices. This week, you applied
+        scheduling techniques such as critical path analysis
+        and resource leveling and evaluated estimation
+        methods for their impact on project cost, duration,
+        and overall accuracy. Together, these skills support
+        informed decision-making and help ensure projects
+        are planned and executed with clarity and realism.
+      </p>
+      <p>
+        As you continue engaging with the readings and case
+        studies, focus on strengthening your confidence in
+        applying these techniques and connecting them to
+        real-world situations in your professional
+        environment.
+      </p>
+      <div class="info-box">
+        <div class="featured-icon-fa-icon">
+          <span class="fa fas fa-user-plus"></span>
+        </div>
+        <div class="featured-icon-fa-content">
+          <h2>Call to Action:</h2>
+          <p>
+            As you move forward, identify one specific area
+            of scheduling or estimation you would like to
+            improve in your own practice or organization.
+            Set a clear goal to apply at least one new
+            technique or framework from this week’s lesson
+            in your next project to enhance planning
+            effectiveness and project outcomes.
+          </p>
+        </div>
+      </div>
+      <h2
+        style="
+          font-size: 28px;
+          color: #041e40;
+          margin-top: 25px;
+          margin-bottom: 10px;
+          font-weight: 700;
+        ">
+        Optional Video
+      </h2>
+      <span style="font-size: 19px"
+        ><a
+          href="https://youtu.be/LcZvGRTJnLo?si=5l0uRNO10N3ssuhB"
+          target="_blank"
+          rel="noopener"
+          >The Complete PMBOK Guide 8th Edition [video]</a
+        ></span
+      >
+      <div class="accordion">
+        <div class="accordion-item">
+          <input
+            type="checkbox"
+            id="lo1" />
+          <label
+            class="accordion-title"
+            for="lo1"
+            >Transcript</label
+          >
+
+          <div class="accordion-content">
+            <p>
+              Transcript available with the video and for
+              <a
+                href="/content/enforced/1027225-ITMG624_development_site_griky_english/Week_2/../Transcripts.zip?isCourseFile=true"
+                target="_blank"
+                rel="noopener"
+                >download [zip]</a
+              >
+            </p>
+            <p>
+              00:00:00 PMBOK Guide 8th Ed.<br />00:01:31
+              Initiating a Project or Phase<br />00:02:49
+              Identify Stakeholders<br />00:04:57 Integrate
+              and Align Project Plan<br />00:06:36 Plan
+              Sourcing Strategy<br />00:08:59 Plan
+              Stakeholder Engagement<br />00:10:15 Plan
+              Communications Management<br />00:11:38 Plan
+              Scope Management<br />00:13:05 Elicit and
+              Analyze Requirements<br />00:15:02 Define
+              Scope<br />00:16:33 Develop Scope Structure<br />00:17:41
+              Plan Resource Management<br />00:20:02
+              Estimate Resources<br />00:22:41 Plan Schedule
+              Management<br />00:23:45 Develop Schedule<br />00:27:00
+              Plan Financial Management<br />00:28:21
+              Estimate Costs<br />00:30:19 Develop Budget<br />00:32:46
+              Plan Risk Management<br />00:33:52 Identify
+              Risks<br />00:36:13 Perform Risk Analysis<br />00:38:22
+              Plan Risk Responses<br />00:40:39 Manage
+              Project Execution<br />00:42:18 Manage Quality
+              Assurance<br />00:43:38 Manage Project
+              Knowledge<br />00:45:02 Manage Stakeholder
+              Engagement<br />00:46:53 Manage
+              Communications<br />00:48:52 Acquire
+              Resources<br />00:50:45 Lead the Team<br />00:53:18
+              Implement Risk Responses<br />00:54:24 Monitor
+              and Control Project Performance<br />00:56:05
+              Assess and Implement Changes<br />00:59:03
+              Monitor Stakeholder Engagement<br />01:00:35
+              Monitor Communications<br />01:02:43 Monitor
+              and Control Scope<br />01:05:18 Validate
+              Scope<br />01:06:39 Monitor and Control
+              Resourcing<br />01:08:36 Monitor and Control
+              Schedule<br />01:10:12 Monitor and Control
+              Finance<br />01:11:34 Monitor Risks<br />01:13:00
+              Close Project or Phase<br />01:15:19 Pep Talk
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr class="divider-line" />
+      <!-- FOOTER -->
+    </main>
+    <footer class="main-footer">
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation" />
+      <p>
+        Copyright 2026 American Public University System ALL
+        RIGHTS RESERVED
+      </p>
+    </footer>
+  </body>
+</html>

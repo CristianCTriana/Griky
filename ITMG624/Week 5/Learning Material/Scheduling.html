@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css" />
+    <link
+      rel="stylesheet"
+      href="../../ITMG624_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .course-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 5 </span>
+      <span class="banner__week-name"
+        >Processes of Realistic Scheduling and Estimation
+        Accuracy</span
+      >
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Scheduling</h1>
+
+      <hr class="divider-line" />
+
+      <div class="content-wrapper">
+        <p>
+          This week, you are focusing on one of the most
+          critical aspects of project planning: developing
+          realistic schedules and producing accurate
+          estimates. Even the strongest project ideas will
+          fail if timelines and cost expectations are not
+          achievable. When schedules are overly optimistic
+          or estimates lack supporting logic, projects
+          struggle regardless of team skill or effort.
+        </p>
+        <br />
+
+        <!-- Caja de Objetivos para resaltar las metas de la semana -->
+        <div class="objectives-box">
+          <p>Course Objectives</p>
+          <div class="objectives-list">
+            <span
+              >This lesson aligns with CO-5, which
+              emphasizes how scheduling and estimation
+              accuracy influence project outcomes. Two
+              learning objectives guide your work this
+              week:</span
+            >
+            <ul class="lms-lista-lineas">
+              <li>
+                <strong>LO-5.1</strong> focuses on applying
+                scheduling techniques such as critical path
+                analysis and resource leveling to create
+                timelines teams can realistically follow.
+              </li>
+              <li>
+                <strong>LO-5.2</strong> emphasizes
+                evaluating estimation methods, including
+                bottom-up, analogous, and parametric
+                estimating, and understanding how each
+                affects project duration, cost, and planning
+                accuracy.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          Before applying specific tools, it is important to
+          understand the governance framework described in
+          PMBOK<sup>&reg;</sup> <em>Guide</em>, Chapter 2.4.
+          Governance provides the structure for how projects
+          are approved, planned, and evaluated, ensuring
+          accountability, transparency, and alignment with
+          organizational goals. Strong governance supports
+          realistic scheduling and estimation by requiring
+          evidence-based planning and consistent
+          decision-making standards that stakeholders can
+          trust.
+        </p>
+
+        <p>
+          In practice, scheduling techniques help transform
+          plans into achievable timelines.
+        </p>
+
+        <!-- Tarjeta gráfica limpia usando tu CSS personalizado -->
+        <div class="featured-icon-fa">
+          <div class="featured-icon-fa-icon">
+            <span class="fa fa-users"></span>
+          </div>
+          <div class="featured-icon-fa-content">
+            <h3>For Example</h3>
+            <p class="letra-blanco">
+              In a construction project, the critical path
+              may include site preparation, foundation work,
+              framing, and inspections. Resource leveling
+              ensures that the same construction crew is not
+              scheduled for overlapping tasks across
+              multiple phases.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          By mapping task dependencies and aligning them
+          with actual resource availability, the project
+          manager develops a schedule that is both efficient
+          and realistic, reducing delays caused by
+          overcommitment or poor sequencing.
+        </p>
+
+        <!-- Caja de subsección para el ejemplo de estimación -->
+        <div class="subsection-box">
+          <p>
+            Estimation methods further refine project
+            planning by determining how long tasks will take
+            and what resources they require. In a software
+            development project, a project manager might use
+            bottom-up estimating for coding tasks, analogous
+            estimating for testing based on prior projects,
+            and parametric estimating for documentation
+            using hours-per-page ratios. By comparing these
+            approaches and selecting the most appropriate
+            method for each task, the project manager
+            balances accuracy with efficiency, supporting
+            informed decisions and realistic expectations.
+          </p>
+        </div>
+
+        <!-- Caja de cierre con la lista de errores extraída -->
+        <div class="highlight-box">
+          <h3>Common Pitfalls</h3>
+          <p>
+            Common pitfalls in scheduling and estimation
+            include:
+          </p>
+          <ul class="lms-lista-lineas">
+            <li style="color: #fff !important">
+              Relying too heavily on generic templates.
+            </li>
+            <li style="color: #fff !important">
+              Underestimating resource constraints.
+            </li>
+            <li style="color: #fff !important">
+              Failing to update estimates as conditions
+              change.
+            </li>
+          </ul>
+          <p>
+            These issues can be avoided by using historical
+            data, involving stakeholders early, and
+            regularly reviewing schedules and estimates as
+            the project evolves. As you work through this
+            week&rsquo;s case study, focus on clearly
+            explaining how scheduling and estimation
+            techniques support effective planning, reduce
+            risk, and contribute to overall project success.
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation" />
+      <p>
+        Copyright 2026 American Public University System ALL
+        RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
