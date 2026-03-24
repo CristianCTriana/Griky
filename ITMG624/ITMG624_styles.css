@@ -267,3 +267,15 @@ a {
   color: #004c90;
   text-decoration: underline;
 }
+
+.content-wrapper {
+  padding-left: 40px;
+}
+
+.course-footer {
+  padding-left: 20px;
+}
+
+.logo-footer {
+  margin-right: 20px;
+}

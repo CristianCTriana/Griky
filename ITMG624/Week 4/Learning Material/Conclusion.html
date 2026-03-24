@@ -61,6 +61,7 @@
 
       .info-box {
         display: flex;
+        flex-wrap: nowrap;
         justify-content: center;
         align-content: center;
         background-color: #041e40;
@@ -168,6 +169,46 @@
         color: #004c90;
         text-decoration: underline;
       }
+
+      /* Contenedor Principal */
+      .cta-card {
+        display: flex; /* Alinea los hijos en fila */
+        align-items: flex-start; /* Alinea el icono al inicio (arriba) del texto */
+        background-color: #001a33;
+        padding: 25px;
+        border-radius: 10px;
+        color: #ffffff;
+        gap: 20px; /* Espacio horizontal entre el icono y el texto */
+      }
+
+      /* Tamaño y color del Icono */
+      .cta-icon {
+        font-size: 8rem; /* Ajusta este valor para que iguale la altura del texto */
+        color: #fff; /* Color turquesa */
+        line-height: 1; /* Evita espacios extra verticales en el icono */
+        margin-top: 5px; /* Ajuste fino opcional para alinear con el título */
+      }
+
+      /* Columna de texto */
+      .cta-content {
+        display: flex;
+        flex-direction: column; /* Apila título sobre descripción */
+        gap: 10px; /* Espacio entre título y descripción */
+      }
+
+      .cta-title {
+        color: #00dae6;
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+
+      .cta-description {
+        margin: 0;
+        font-size: 19px;
+        line-height: 1.6;
+        color: #e0e0e0;
+      }
     </style>
   </head>
   <body>
@@ -221,23 +262,26 @@
         planning and execution, ensuring projects remain on
         track and aligned with strategic objectives.
       </p>
-      <div class="info-box">
-        <div class="featured-icon-fa-icon">
-          <span class="fa fas fa-user-plus"></span>
-        </div>
-        <div class="featured-icon-fa-content">
-          <h2>Call to Action:</h2>
-          <p>
+
+      <div class="cta-card">
+        <!-- Columna Izquierda: El Icono -->
+        <i class="fas fa-user-plus cta-icon"></i>
+
+        <!-- Columna Derecha: El Contenido -->
+        <div class="cta-content">
+          <h2 class="cta-title">Call to Action:</h2>
+          <p class="cta-description">
             As you move forward, reflect on one area of WBS
             or risk management you would like to strengthen
             in your own practice or organization. Set a goal
             to apply at least one technique or framework
-            from this week’s lesson in your next project,
+            from this week's lesson in your next project,
             using these tools to improve clarity, mitigate
             risk, and enhance overall project outcomes.
           </p>
         </div>
       </div>
+
       <h2
         style="
           font-size: 28px;
