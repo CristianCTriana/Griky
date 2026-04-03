@@ -1,0 +1,512 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 400px; /* altura visible del acordeón */
+        padding: 20px;
+        overflow-y: auto; /* SCROLL */
+      }
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 1</span><br /><span
+          style="font-size: 28px"
+          >Introducción a la Informática Forense Digital</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/71.png"
+        alt="Listen to the following podcast"
+        class="banner-image"
+        width="644"
+        height="57"
+      />
+      <!-- VIDEO RESPONSIVE -->
+      <div class="video-wrapper" style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_2xf5g0xd&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_y6ksivs3"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W1_ISSC621 _Digital_content_guide_podcast"
+        ></iframe>
+        &nbsp;<!-- <div class="video-responsive"><video title="Podcast" controls="controls">
+            <source src="/content/enforced/1027213-ISSC621_development_site_griky_english/Week_1/PRODUCCION%20W1/W1_ISSC621%20_Digital_content_guide_podcast/W1_ISSC621%20_Digital_content_guide_podcast.mp4" type="video/mp4">
+          </video></div> -->
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast de la Guía de Contenido Digital</label
+          >
+          <div class="accordion-content">
+            <p>
+              Hey—welcome to Computer Forensics, and welcome to Week 1: An
+              Introduction to Digital Forensics.
+            </p>
+            <p>
+              Alright, let’s start with the simplest truth about digital
+              forensics: it’s not about being clever. It’s about being
+              disciplined.
+            </p>
+            <p>
+              People sometimes imagine digital forensics as this dramatic
+              thing—someone in a hoodie, typing fast, pulling secrets out of a
+              computer like it’s a magic trick. But if you try to do real
+              digital forensics that way, you’ll get two outcomes:
+            </p>
+            <ul>
+              <li>you’ll contaminate evidence</li>
+              <li>and nobody will trust your conclusions</li>
+            </ul>
+            <p>
+              So, your job in Week 1 is to build the mindset that protects
+              truth.
+            </p>
+            <p>
+              Because digital forensics is really the process of finding truth
+              in systems that change constantly.
+            </p>
+            <p>A computer changes when it runs.</p>
+            <p>A phone changes when it receives notifications.</p>
+            <p>
+              A cloud system changes when someone logs in;, a token refreshes,
+              or a file syncs. Even opening a file can change timestamps or
+              create new artifacts.
+            </p>
+            <p>
+              So, if you’re careless, you can accidentally create the story you
+              think you’re investigating.
+            </p>
+            <p>That’s why digital forensics is a process.</p>
+            <p>What digital forensics actually is</p>
+            <p>Digital forensics is a disciplined approach to:</p>
+            <ul>
+              <li>identify potential evidence</li>
+              <li>Preserve it</li>
+              <li>collect it</li>
+              <li>examine and analyze it</li>
+              <li>
+                and report what you found in a way that is credible and
+                defensible
+              </li>
+            </ul>
+            <p>Notice what’s missing from that definition: “run a tool.”</p>
+            <p>Tools matter. But tools are not the job.</p>
+            <p>The job is:</p>
+            <ul>
+              <li>evidence integrity</li>
+              <li>repeatability</li>
+              <li>and documentation</li>
+            </ul>
+            <p>
+              In other words: if someone else looked at the same evidence using
+              your method, would they find the same thing?
+            </p>
+            <p>That’s repeatability.</p>
+            <p>
+              And could you explain your steps clearly enough that a skeptical
+              person would believe you didn’t “make it up”?
+            </p>
+            <p>That’s defensibility.</p>
+            <p>Why “preserve first” changes everything</p>
+            <p>
+              Let’s talk about the preserve-first mindset, because it’s the
+              number one habit that separates a forensics professional from a
+              curious person.
+            </p>
+            <p>
+              Imagine you arrive at a scene—maybe it’s a workplace, maybe it’s
+              an internal investigation, maybe it’s a legal case. Someone points
+              at a laptop and says: “That’s the one. That’s the device. Just
+              open it and look.”
+            </p>
+            <p>That moment is the test.</p>
+            <p>
+              If you treat the laptop like a normal computer, you’ll start
+              clicking around. You’ll open the browser. You’ll look at
+              downloads. You’ll search the file system.
+            </p>
+            <p>And you’ll change the system as you do it.</p>
+            <p>Even if you don’t mean to.</p>
+            <p>
+              So, preserve-first means: before you analyze, you protect
+              integrity.
+            </p>
+            <p>That includes:</p>
+            <ul>
+              <li>documenting what you see and the condition of the device</li>
+              <li>recording the time and who is present</li>
+              <li>preventing further changes when possible</li>
+              <li>establishing chain of custody</li>
+              <li>planning for controlled acquisition</li>
+            </ul>
+            <p>This isn’t about being slow. It’s about being reliable.</p>
+            <p>Because speed without integrity is just guessing faster.</p>
+            <p>Chain of custody: not “paperwork,” but credibility</p>
+            <p>
+              Let’s be real—people don’t love the chain of custody. It feels
+              like paperwork. It feels like bureaucracy.
+            </p>
+            <p>
+              But the chain of custody exists because evidence gets challenged.
+            </p>
+            <p>Sometimes evidence gets challenged in court.</p>
+            <p>
+              Sometimes it gets challenged internally. Sometimes HR asks
+              questions. Sometimes leadership asks questions. Sometimes another
+              investigator has to take over.
+            </p>
+            <p>
+              Chain of custody answers the question: Who had the evidence, when,
+              where, and why?
+            </p>
+            <p>
+              And without that record, your work becomes vulnerable to doubt:
+            </p>
+            <ul>
+              <li>“How do we know this wasn’t altered?”</li>
+              <li>“How do we know you didn’t miss something?”</li>
+              <li>
+                “How do we know someone else didn’t handle it before you?”
+              </li>
+              <li>
+                “How do we know the device you analyzed is the same one from the
+                scene?”
+              </li>
+            </ul>
+            <p>The chain of custody protects you, too.</p>
+            <p>
+              It’s not about proving you’re perfect. It’s about proving you were
+              careful and accountable.
+            </p>
+            <p>Evidence integrity: the promise you make to the truth</p>
+            <p>
+              When you work in digital forensics, you are making a promise: “I
+              did not change the evidence in a way that changes the story.”
+            </p>
+            <p>That’s integrity.</p>
+            <p>
+              And because digital systems change naturally, integrity doesn’t
+              mean “nothing ever changed.” It means: changes are controlled,
+              prevented when possible, and documented when they occur.
+            </p>
+            <p>
+              That’s why you’ll often hear about using controlled acquisition
+              methods and validation techniques—like verifying that what you
+              collected matches what you intended to collect.
+            </p>
+            <p>
+              The deeper you go into the course, the more you’ll learn about how
+              investigators protect integrity technically. But in Week 1, your
+              focus is the mindset: protect first, analyze second.
+            </p>
+            <p>What counts as evidence? More than you think</p>
+            <p>
+              One more thing before we wrap Week 1: evidence is not only files.
+            </p>
+            <p>Digital evidence includes:</p>
+            <ul>
+              <li>logins and authentication events</li>
+              <li>system logs</li>
+              <li>file metadata (timestamps, ownership, access patterns)</li>
+              <li>browser artifacts</li>
+              <li>cloud sync activity</li>
+              <li>application logs</li>
+              <li>connected device history</li>
+              <li>network activity indicators</li>
+              <li>and evidence of deletion or concealment</li>
+            </ul>
+            <p>
+              That matters because beginners often focus only on “the file.”
+              Like, “Where is the stolen file?”
+            </p>
+            <p>But a lot of cases are solved by patterns:</p>
+            <ul>
+              <li>repeated access at odd hours</li>
+              <li>logins from unusual locations</li>
+              <li>data transfers that don’t match normal behavior</li>
+              <li>deleted artifacts that still leave traces</li>
+              <li>
+                or configuration decisions that allowed access without
+                permission
+              </li>
+            </ul>
+            <p>
+              So, Week 1 is about building the foundation that lets you
+              interpret those patterns later.
+            </p>
+            <p>A realistic mental rehearsal</p>
+            <p>Let’s do a quick mental rehearsal.</p>
+            <p>Someone says: “We think this employee is stealing data.”</p>
+            <p>
+              Your job is not to accuse. Your job is to preserve and find
+              evidence.
+            </p>
+            <p>So, you ask:</p>
+            <ul>
+              <li>What device or account is involved?</li>
+              <li>What systems did the person have access to?</li>
+              <li>What is the time window?</li>
+              <li>
+                What evidence sources exist—device, cloud logs, access records?
+              </li>
+              <li>
+                What is at risk right now—could evidence be deleted or
+                overwritten?
+              </li>
+              <li>What is the preserve-first plan?</li>
+            </ul>
+            <p>That’s the mental model you’re building.</p>
+            <p>Closing</p>
+            <p>
+              So, as you finish Week 1, here’s the takeaway I want you to keep
+              close:
+            </p>
+            <p>Digital forensics is the discipline of protecting truth.</p>
+            <p>
+              If you preserve evidence, maintain chain of custody, document your
+              actions, and aim for repeatability, you give your findings
+              credibility. And credibility is what makes your work
+              matter—whether the investigation stays internal or ends up in a
+              formal legal process.
+            </p>
+            <p>
+              Next week, you’ll move into Week 2: Types of Internet Crimes &amp;
+              Evidence, where you’ll start connecting crime types to the digital
+              traces they leave behind—and you’ll practice thinking like an
+              investigator who knows where to look, not just how to look.
+            </p>
+            <p>
+              You’re off to a strong start. Keep your mindset disciplined, and
+              everything you learn next will land with more power.&nbsp;
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027260-ISSC621_development_site_griky_spanish/Week_1/PRODUCCION%20W1/W1_ISSC621%20_Digital_content_guide_podcast/W1_ISSC621-_Digital_content_guide_podcast.mp3"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          width="110"
+        />
+      </p>
+      <p style="text-align: center">
+        <span style="font-size: 10px"
+          >Copyright 2026 American Public University System ALL RIGHTS
+          RESERVED</span
+        >
+      </p>
+    </div>
+  </body>
+</html>

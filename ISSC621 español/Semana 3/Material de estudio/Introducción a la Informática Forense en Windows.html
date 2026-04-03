@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <style>
+      body {
+        font-family: Lato, sans-serif !important;
+        color: #041e42;
+        font-size: 19px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      li {
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+        line-height: 1.5;
+        color: #202122;
+      }
+      a {
+        font-size: 19px;
+        font-family: "Lato", sans-serif;
+        color: #004c90;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      h2 {
+        color: #004c90;
+        font-size: 24px;
+        margin-top: 10px;
+      }
+      .header-title {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+      }
+      .header-title .week {
+        font-size: 20px;
+        color: #05c3de;
+      }
+      .header-title .main-title {
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .header-container h3 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ACORDEONES (Solo para el Transcript fijo) */
+      .accordion-item {
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #fff;
+        overflow: hidden;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        padding: 18px 25px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 20px;
+        background: #ffffff;
+        margin: 0;
+      }
+      .accordion-title::after {
+        content: "+";
+        color: #004c90;
+        font-size: 24px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "−";
+      }
+      .accordion-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      .accordion-item input:checked ~ .accordion-body {
+        max-height: 5000px;
+        border-top: 1px solid #e5e5e5;
+      }
+      .scroll-box {
+        padding: 25px;
+      }
+
+      .jumbotron {
+        background: #eaf4ff;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+      }
+      .banner-click {
+        display: block;
+        margin: 20px auto;
+        width: 600px;
+        max-width: 100%;
+      }
+      .logo-footer {
+        float: right;
+        width: 150px;
+        margin: 40px 0;
+      }
+
+      @media (max-width: 768px) {
+        .content-wrapper {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <header class="header-title">
+        <strong
+          ><span class="week" style="color: #05c3de">Semana 3</span></strong
+        ><br /><span class="main-title"
+          >Electrónica de Computadoras y Herramientas de Investigación
+        </span>
+      </header>
+      <main class="content-wrapper">
+        <h1 style="text-align: center">
+          <span style="font-size: 35px"
+            >Introducción a la Informática Forense en Windows</span
+          >
+        </h1>
+        <h2 style="text-align: center; color: #004c90">
+          <strong>Desafío de aprendizaje</strong>
+        </h2>
+        <div
+          style="
+            border: 1px solid #041e42;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+          "
+        >
+          <p>
+            <strong>ⓘ</strong> Esto no es una consigna de evaluación, sino una
+            oportunidad para reflexionar sobre cómo los conceptos de la semana
+            se aplican a situaciones reales del entorno laboral.
+          </p>
+        </div>
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+          style="max-width: 100%; display: block; margin: 0 auto"
+          width="600"
+          alt="Check the following Video"
+        />
+        <div style="text-align: center; margin: 30px 0">
+          <iframe
+            id="kaltura_player"
+            src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_eofqgfxq&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_2tye60q5"
+            width="608"
+            height="402"
+            allowfullscreen="allowfullscreen"
+            webkitallowfullscreen=""
+            mozallowfullscreen=""
+            allow="autoplay *; fullscreen *; encrypted-media *"
+            sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+            frameborder="0"
+            title="W3_ISSC621_LearningChallenge_1"
+          ></iframe>
+          &nbsp;
+          <div class="accordion-item">
+            <input type="checkbox" id="acc-transcript" />
+            <label class="accordion-title" for="acc-transcript"
+              >Transcript: Desafío de aprendizaje</label
+            >
+            <div class="accordion-body">
+              <div class="scroll-box">
+                <p>
+                  Welcome to Week 3. This week is where you stop treating
+                  computers like mystery boxes and start treating them like
+                  evidence systems. When you understand the basics of storage,
+                  memory, and device state, you make better decisions—like what
+                  to collect first, what not to touch, and which tools to use.
+                  As you go through this week, keep asking yourself: “If I take
+                  one wrong step here, what evidence could I change or lose?”
+                  That mindset makes everything you do more defensible.
+                </p>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <p style="text-align: left">
+            La informática forense en Windows se centra en el análisis de los
+            componentes del sistema para descubrir evidencia de actividad del
+            usuario, incidentes de seguridad o comportamientos maliciosos. Un
+            conocimiento sólido de la arquitectura interna de Windows,
+            especialmente del registro y de los artefactos del sistema, es
+            esencial, ya que estos elementos almacenan información crítica sobre
+            la configuración, las aplicaciones instaladas y las acciones del
+            usuario. Los analistas forenses se apoyan en estos artefactos para
+            reconstruir líneas de tiempo e identificar anomalías, garantizando
+            que las investigaciones sean precisas y defendibles.
+          </p>
+          <h2>Análisis del Registro</h2>
+          <p style="text-align: left">
+            El Registro de Windows es una base de datos jerárquica que almacena
+            configuraciones del sistema operativo, del hardware y de las
+            aplicaciones. Es una fuente valiosa de evidencia forense porque
+            registra preferencias del usuario, software instalado y
+            comportamientos del sistema. Los investigadores suelen examinar
+            colmenas (hives) del registro como HKEY_LOCAL_MACHINE y
+            HKEY_CURRENT_USER, que contienen información sobre configuraciones
+            de hardware y ajustes específicos del usuario. La colmena SYSTEM
+            proporciona detalles del hardware, mientras que la colmena SOFTWARE
+            enumera las aplicaciones instaladas (Easttom et al., 2024).
+          </p>
+          <div class="side-text-image">
+            <div class="side-text-image__text">
+              <p style="text-align: left">
+                Algunas claves del registro son especialmente útiles en
+                investigaciones forenses. Las claves Run muestran los programas
+                configurados para iniciarse automáticamente, lo que puede
+                revelar mecanismos de persistencia utilizados por malware. La
+                clave UserAssist registra los programas ejecutados, ofreciendo
+                información sobre la actividad del usuario, mientras que la
+                clave RecentDocs enumera los archivos abiertos recientemente. En
+                conjunto, estos artefactos ayudan a reconstruir el
+                comportamiento del usuario e identificar cambios no autorizados.
+                Las claves del registro también incluyen metadatos como los
+                tiempos LastWrite, que indican cuándo una clave fue modificada
+                por última vez. Estas marcas de tiempo son fundamentales para
+                construir líneas de tiempo, aunque los analistas deben actuar
+                con cautela, ya que los atacantes pueden manipularlas (Easttom
+                et al., 2024).
+              </p>
+            </div>
+            <div class="side-text-image__media">
+              <img
+                src="/content/enforced/1027212-INTL647_development_site_griky_english/ISSC635_scope.png"
+                alt=""
+                title="W1_Icon1"
+                width="326"
+                height="326"
+                role="presentation"
+              />
+            </div>
+          </div>
+          <footer>
+            <hr />
+            <p>
+              <img
+                src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+                alt=""
+                role="presentation"
+                class="logo-footer"
+                width="150"
+                height="39"
+              />
+            </p>
+          </footer>
+        </div>
+      </main>
+      <p style="text-align: center">
+        <span style="font-size: 10px"
+          >Copyright 2026 American Public University System ALL RIGHTS
+          RESERVED</span
+        >
+      </p>
+    </div>
+  </body>
+</html>

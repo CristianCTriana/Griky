@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      /* BIBLIOTECA DE ESTILOS PERSONALIZADA */
+      body,
+      li,
+      .standard-text,
+      .list-group-item {
+        font-family: "Lato", sans-serif !important;
+        font-size: 19px !important;
+        line-height: 1.6;
+        color: #041e42;
+      }
+
+      h1 {
+        font-size: 35px !important;
+        font-weight: bold;
+        color: #041e40;
+        text-align: center;
+        margin-top: 25px;
+      }
+      h2 {
+        font-size: 26px !important;
+        font-weight: 700;
+        color: #004c90;
+        margin-top: 30px;
+      }
+      h3 {
+        font-size: 24px !important;
+        font-weight: 700;
+        color: #041e42;
+      }
+
+      .header-week {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      .divider-line {
+        margin: 20px 0 40px 0;
+        border-top: 1px solid #e5e5e5;
+      }
+
+      /* ESTILOS DE TABS */
+      .list-group-item {
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          color 0.3s;
+        border: 1px solid #dee2e6;
+        color: #041e42 !important;
+      }
+      .list-group-item.active {
+        background-color: #004c90 !important;
+        border-color: #004c90 !important;
+        color: white !important;
+        font-weight: bold;
+      }
+      .tab-content {
+        padding: 30px;
+        border: 1px solid #dee2e6;
+        border-top: none;
+        background: #ffffff;
+        border-radius: 0 0 8px 8px;
+      }
+
+      /* HIGHLIGHT BOX */
+      .highlight-box {
+        padding: 25px;
+        background-color: #041d42;
+        color: white !important;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+      .highlight-box p,
+      .highlight-box li {
+        color: white !important;
+      }
+
+      /* ACORDEONES CSS-ONLY */
+      .accordion-item {
+        border: 1px solid #e5e5e5;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background: #ffffff;
+        font-weight: 600;
+        cursor: pointer;
+        margin: 0;
+        color: #041e42;
+      }
+      .accordion-title::after {
+        content: "+";
+        color: #004c90;
+        font-weight: bold;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background: #fff;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 1000px;
+        padding: 20px;
+        border-top: 1px solid #e5e5e5;
+      }
+
+      /* ESTRUCTURA DEF-CARDS SOLICITADA */
+      .def-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .def-card-wrapper {
+        perspective: 1000px;
+      }
+      .def-card {
+        position: relative;
+        width: 100%;
+        min-height: 260px;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease;
+        cursor: pointer;
+      }
+      .def-card-wrapper:hover .def-card,
+      .def-card.is-flipped {
+        transform: rotateY(180deg);
+      }
+      .def-card-face {
+        position: absolute;
+        inset: 0;
+        padding: 20px;
+        border-radius: 12px;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .def-card-front {
+        background: #041e42;
+        color: #ffffff;
+      }
+      .def-card-front h3 {
+        color: #ffffff !important;
+        margin-bottom: 10px;
+      }
+      .def-card-back {
+        background: #ffffff;
+        color: #041e42;
+        transform: rotateY(180deg);
+        border: 2px solid #041e42;
+      }
+      .def-card-icon {
+        font-size: 24px;
+        margin-top: 15px;
+      }
+
+      .footer-logo {
+        float: right;
+        width: 150px;
+        margin: 40px 0;
+      }
+      .instruction {
+        font-style: italic;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center"></div>
+    <h1 class="header-week">
+      <strong
+        ><span style="font-size: 20px; color: #05c3de">Semana 1</span></strong
+      ><br /><span style="font-size: 28px; font-weight: bold"
+        >Introducción a la Informática Forense Digital</span
+      >
+    </h1>
+    <main class="content-wrapper">
+      <h1><strong>¿Por qué es importante la informática forense?</strong></h1>
+      <hr />
+      <p>
+        La informática forense constituye uno de los aspectos más significativos
+        de la ciberseguridad actual debido a su carácter complementario dentro
+        del entorno de red empresarial. Al aplicar prácticas forenses adecuadas,
+        las organizaciones pueden fortalecer sus mecanismos de respuesta dentro
+        de estrategias de Defensa en Profundidad (Defense-in-Depth) relacionadas
+        con sistemas y redes informáticas. Además, cuando las organizaciones
+        comprenden mejor tanto el marco legal como el tecnológico de la
+        informática forense, pueden obtener información crucial en caso de que
+        un sistema de red haya sido vulnerado, lo que permite emprender acciones
+        legales una vez identificado el responsable.
+      </p>
+      <h2>Peligros de descuidar la informática forense</h2>
+      <p>
+        El descuido o la mala gestión de la informática forense puede tener
+        consecuencias graves. Uno de los mayores riesgos es la destrucción de
+        evidencia vital, lo que la haría inadmisible en los tribunales. En
+        general, los requisitos de admisibilidad son estrictamente aplicados por
+        los tribunales al evaluar evidencia digital, y la falta de un
+        procedimiento forense adecuado puede provocar que dicha evidencia sea
+        excluida. Las organizaciones que no implementen los procedimientos
+        forenses apropiados pueden incurrir en violaciones de leyes relacionadas
+        con el cumplimiento normativo y la protección de datos.
+      </p>
+      <p>
+        La legislación reciente ha convertido la protección de la información de
+        los consumidores en una responsabilidad de alto riesgo para las
+        organizaciones. Además de la responsabilidad civil, una organización
+        puede enfrentar responsabilidad penal si no implementa medidas
+        suficientes de ciberseguridad y forenses que podrían haber mitigado
+        ciertos incidentes. Las leyes vigentes y el propio avance tecnológico
+        imponen obligaciones legales en materia de seguridad; el incumplimiento
+        en estos casos puede dar lugar a multas significativas y acciones
+        legales severas contra las organizaciones. Asimismo, la mayoría de las
+        empresas que han sufrido brechas de datos han experimentado daños
+        reputacionales, pérdida de confianza de los clientes y pérdidas
+        financieras derivadas de demandas colectivas y sanciones regulatorias.
+      </p>
+      <div class="tabs-horizontal">
+        <div class="list-group flex-md-row text-center" role="tablist">
+          <a
+            class="list-group-item list-group-item-action active"
+            data-toggle="list"
+            href="#benefits"
+            role="tab"
+            >Beneficios</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            data-toggle="list"
+            href="#technical"
+            role="tab"
+            >Aspectos Técnicos</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            data-toggle="list"
+            href="#strategy"
+            role="tab"
+            >Administración y Estrategia
+          </a>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="benefits" role="tabpanel">
+            <h3>Beneficios</h3>
+            <p>
+              La informática forense puede resultar especialmente beneficiosa en
+              los ámbitos legal y de cumplimiento normativo; de hecho, puede
+              generar ahorros financieros significativos para la organización.
+              La creciente complejidad de las amenazas cibernéticas ha obligado
+              a muchas empresas a destinar una mayor parte de sus presupuestos
+              de TI a la ciberseguridad. Solo el mercado de software de
+              detección de intrusiones y evaluación de vulnerabilidades supera
+              los 2 mil millones de dólares, lo que demuestra que la demanda de
+              soluciones de seguridad aumenta día a día. Implementar prácticas
+              forenses más sólidas dentro de las organizaciones es una
+              estrategia que les permite detectar y responder mejor a incidentes
+              cibernéticos antes de que ocurran o escalen a brechas costosas.
+            </p>
+            <div class="highlight-box">
+              <h4 style="text-align: center; color: white">
+                Interpretación de Datos de Seguridad
+              </h4>
+              <p>
+                Los dispositivos de seguridad de red pueden proporcionar
+                información valiosa sobre el estado de la seguridad de la red.
+                Algunos dispositivos comunes incluyen:
+              </p>
+              <p style="padding-left: 40px">
+                🔍 <strong>Sistema de Detección de Intrusiones (IDS) </strong>
+              </p>
+              <p style="padding-left: 40px">
+                🧱 <strong>Cortafuegos (Firewalls) </strong>
+              </p>
+              <p style="padding-left: 40px">🌐 <strong>Proxies</strong></p>
+              <p>
+                Sin embargo, aunque estos dispositivos generan información
+                valiosa, las organizaciones a menudo enfrentan dificultades para
+                interpretar y actuar sobre estos datos si no cuentan con
+                capacidades forenses sólidas.
+              </p>
+            </div>
+            <h4>Mejora de la Respuesta ante Amenazas</h4>
+            <p>
+              Las herramientas forenses permiten a los equipos de seguridad
+              realizar análisis profundos de los registros de seguridad,
+              rastrear el origen de los ataques e identificar las
+              vulnerabilidades que los atacantes explotaron. Este enfoque
+              proactivo de la ciberseguridad mejora la capacidad de detección de
+              amenazas, minimiza el tiempo de inactividad de los sistemas y
+              reduce los costos asociados con la recuperación de sistemas y las
+              brechas de datos.
+            </p>
+          </div>
+          <div class="tab-pane fade" id="technical" role="tabpanel">
+            <h3>Aspectos Técnicos</h3>
+            <p>
+              El objetivo principal de la informática forense es la
+              identificación, recolección, preservación y análisis de evidencia
+              digital, manteniendo su integridad para su uso legal. La ciencia
+              forense incluye varios pasos clave:
+            </p>
+            <p class="instruction">
+              Seleccione cada paso para obtener más información.
+            </p>
+            <div class="accordion">
+              <div class="accordion-item">
+                <input type="checkbox" id="step1" />
+                <label class="accordion-title" for="step1"
+                  >Identificación
+                </label>
+                <div class="accordion-content">
+                  <p style="text-align: center; font-size: 40px !important">
+                    👤
+                  </p>
+                  <p>
+                    Esta etapa implica definir el alcance de la investigación e
+                    identificar posibles fuentes de evidencia digital. Los
+                    investigadores determinan qué sistemas, dispositivos o
+                    repositorios de datos pueden contener información relevante
+                    sobre el incidente. El proceso incluye comprender el tipo de
+                    delito o brecha, los sistemas afectados y los datos que
+                    pudieron haber sido comprometidos.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <input type="checkbox" id="step2" />
+                <label class="accordion-title" for="step2">Recolección </label>
+                <div class="accordion-content">
+                  <p style="text-align: center; font-size: 40px !important">
+                    📥
+                  </p>
+                  <p>
+                    Una vez identificadas las fuentes, el siguiente paso es
+                    recopilar la evidencia digital utilizando herramientas y
+                    metodologías forenses adecuadas. Este proceso debe
+                    realizarse cuidadosamente para garantizar que la integridad
+                    de los datos no se vea comprometida. La evidencia recopilada
+                    puede incluir archivos, registros (logs), correos
+                    electrónicos o volcados de memoria de los sistemas
+                    afectados.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <input type="checkbox" id="step3" />
+                <label class="accordion-title" for="step3">Preservación </label>
+                <div class="accordion-content">
+                  <p style="text-align: center; font-size: 40px !important">
+                    🛡️
+                  </p>
+                  <p>
+                    La preservación garantiza que la evidencia digital
+                    recopilada permanezca intacta y sin alteraciones durante
+                    toda la investigación. Esto incluye la creación de valores
+                    hash criptográficos, el almacenamiento seguro y el
+                    establecimiento de una cadena de custodia clara. Mantener el
+                    estado original de los datos es fundamental para su
+                    admisibilidad en procedimientos legales o disciplinarios.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <input type="checkbox" id="step4" />
+                <label class="accordion-title" for="step4">Análisis </label>
+                <div class="accordion-content">
+                  <p style="text-align: center; font-size: 40px !important">
+                    🧠
+                  </p>
+                  <p>
+                    En esta fase, los expertos forenses examinan la evidencia
+                    preservada para descubrir información significativa. El
+                    objetivo es reconstruir los hechos, identificar cómo ocurrió
+                    la brecha, quién podría ser responsable y qué sistemas
+                    fueron afectados. Este paso suele implicar el uso de
+                    software especializado para examinar grandes volúmenes de
+                    datos, recuperar archivos eliminados e identificar contenido
+                    oculto o cifrado.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <input type="checkbox" id="step5" />
+                <label class="accordion-title" for="step5"
+                  >Documentación e Informes
+                </label>
+                <div class="accordion-content">
+                  <p style="text-align: center; font-size: 40px !important">
+                    📝
+                  </p>
+                  <p>
+                    El paso final consiste en documentar minuciosamente todos
+                    los hallazgos, metodologías y conclusiones en un informe
+                    claro y estructurado. Este informe puede utilizarse para la
+                    toma de decisiones internas, procesos judiciales o
+                    cumplimiento de requisitos regulatorios. Una documentación
+                    adecuada también garantiza que la investigación pueda ser
+                    revisada o replicada si es necesario.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="strategy" role="tabpanel">
+            <h3>Administración y Estrategia</h3>
+            <p>
+              Los administradores de sistemas y los expertos en seguridad son
+              facilitadores clave para garantizar que los procesos forenses se
+              realicen correctamente.
+            </p>
+            <ul>
+              <li>
+                Las acciones rutinarias de administración de TI y redes pueden
+                afectar el proceso forense y, en consecuencia, la admisibilidad
+                de la evidencia y la recuperación de datos críticos.
+              </li>
+              <li>
+                Una capacitación adecuada en principios forenses es esencial
+                para evitar la alteración o destrucción accidental de datos.
+              </li>
+            </ul>
+            <h4>Protocolos de Manejo de Evidencia y Preparación</h4>
+            <p>
+              Las mejores prácticas en el manejo de evidencia y en los
+              procedimientos de cadena de custodia deben ser seguidas por los
+              equipos de seguridad. La confiabilidad de la evidencia digital en
+              procedimientos judiciales depende de mantener un registro
+              documentado de cómo la evidencia es recolectada, almacenada y
+              analizada. Asimismo, las organizaciones deben realizar
+              evaluaciones periódicas de preparación forense (forensic
+              readiness) para medir su nivel de preparación ante incidentes
+              cibernéticos.
+            </p>
+            <h4>Defensa en Profundidad (DiD) e Informática Forense</h4>
+            <p>
+              La Defensa en Profundidad (DiD) es un principio fundamental de la
+              ciberseguridad que utiliza defensas en capas, apoyándose en
+              múltiples medidas de seguridad para proteger sistemas y datos. Un
+              modelo de DiD incluye protecciones aplicadas en distintos niveles,
+              desde dispositivos y aplicaciones hasta redes, seguridad física,
+              políticas, procedimientos y concienciación del usuario.
+            </p>
+            <div style="text-align: center; margin: 20px 0">
+              <img
+                src="/content/enforced/1027260-ISSC621_development_site_griky_spanish/Week_1/Wk1_DiD.jpg"
+                alt="Modelo DiD"
+                style="max-width: 440px; width: 100%"
+              />
+            </div>
+            <p>
+              Una estrategia de seguridad debe incorporar defensas multicapa,
+              como cortafuegos, sistemas de detección de intrusiones (IDS),
+              protección de endpoints y capacidades forenses. El US-CERT afirma
+              que el aumento de la resiliencia frente a ataques se logra
+              mediante la implementación de controles de seguridad en capas.
+            </p>
+          </div>
+        </div>
+      </div>
+      <br />
+      <h2>Conceptos Clave de Informática Forense</h2>
+      <p>
+        Ponga a prueba su comprensión de los siguientes conceptos clave de
+        informática forense presentados esta semana. Para cada tarjeta
+        interactiva, desafíese a recordar su definición. Luego, haga clic en la
+        tarjeta para ver cómo le fue.
+      </p>
+      <div class="def-cards-grid">
+        <div class="def-card-wrapper">
+          <div class="def-card">
+            <div class="def-card-face def-card-front">
+              <div>
+                <h3>Datos Persistentes</h3>
+              </div>
+              <p>Haga clic para ver la definición.</p>
+              <span class="def-card-icon">↻</span>
+            </div>
+            <div class="def-card-face def-card-back">
+              <div></div>
+              <p>
+                Datos almacenados en unidades de almacenamiento, como registros
+                (logs), correos electrónicos o archivos del sistema. Permanecen
+                incluso después de apagar el equipo.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="def-card-wrapper">
+          <div class="def-card">
+            <div class="def-card-face def-card-front">
+              <div>
+                <h3>Datos Volátiles</h3>
+              </div>
+              <p>Haga clic para ver la definición.</p>
+              <span class="def-card-icon">↻</span>
+            </div>
+            <div class="def-card-face def-card-back">
+              <div></div>
+              <p>
+                Datos temporales almacenados en memoria (RAM), que se pierden al
+                apagar el sistema; incluyen conexiones de red y procesos en
+                ejecución.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="def-card-wrapper">
+          <div class="def-card">
+            <div class="def-card-face def-card-front">
+              <div>
+                <h3>EnCase</h3>
+              </div>
+              <p>Haga clic para ver la definición.</p>
+              <span class="def-card-icon">↻</span>
+            </div>
+            <div class="def-card-face def-card-back">
+              <div></div>
+              <p>
+                Una herramienta forense integral utilizada para la recuperación,
+                análisis y generación de informes de evidencia digital.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="def-card-wrapper">
+          <div class="def-card">
+            <div class="def-card-face def-card-front">
+              <div>
+                <h3>Cadena de Custodia</h3>
+              </div>
+              <p>Haga clic para ver la definición.</p>
+              <span class="def-card-icon">↻</span>
+            </div>
+            <div class="def-card-face def-card-back">
+              <div></div>
+              <p>
+                Proceso documentado de recolección y manejo de evidencia digital
+                para mantener su integridad legal.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="def-card-wrapper">
+          <div class="def-card">
+            <div class="def-card-face def-card-front">
+              <div>
+                <h3>Defensa en Profundidad (DiD)</h3>
+              </div>
+              <p>Haga clic para ver la definición.</p>
+              <span class="def-card-icon">↻</span>
+            </div>
+            <div class="def-card-face def-card-back">
+              <div></div>
+              <p>
+                Enfoque de seguridad en capas que utilizan cortafuegos, sistemas
+                de detección de intrusiones (IDS), protección de endpoints y
+                herramientas forenses.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          class="footer-logo"
+          width="150"
+          height="39"
+        />
+      </footer>
+    </main>
+    <p style="text-align: center">
+      <span style="font-size: 10px"
+        >Copyright 2026 American Public University System ALL RIGHTS
+        RESERVED</span
+      >
+    </p>
+    <p>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    </p>
+  </body>
+</html>

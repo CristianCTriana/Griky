@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Lato, sans-serif !important;
+        color: #041e42;
+        font-size: 19px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      li {
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+        line-height: 1.5;
+        color: #202122;
+      }
+      a {
+        font-size: 19px;
+        font-family: "Lato", sans-serif;
+        color: #004c90;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      h2 {
+        color: #004c90;
+        font-size: 24px;
+        margin-top: 10px;
+      }
+      .header-title {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+      }
+      .header-title .week {
+        font-size: 20px;
+        color: #05c3de;
+      }
+      .header-title .main-title {
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .header-container h3 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ACORDEONES */
+      .accordion-item {
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #fff;
+        overflow: hidden;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        padding: 18px 25px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 20px;
+        background: #ffffff;
+        margin: 0;
+      }
+      .accordion-title::after {
+        content: "+";
+        color: #004c90;
+        font-size: 24px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "−";
+      }
+      .accordion-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      .accordion-item input:checked ~ .accordion-body {
+        max-height: 5000px;
+        border-top: 1px solid #e5e5e5;
+      }
+      .scroll-box {
+        padding: 25px;
+      }
+
+      .jumbotron {
+        background: #eaf4ff;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+      }
+      .banner-click {
+        display: block;
+        margin: 20px auto;
+        width: 600px;
+        max-width: 100%;
+      }
+      .logo-footer {
+        float: right;
+        width: 150px;
+        margin: 40px 0;
+      }
+
+      @media (max-width: 768px) {
+        .content-wrapper {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h1 class="header-title">
+        <span class="week">Semana 2</span><br /><span class="main-title"
+          >Tipos de Delitos en Internet y Evidencia
+        </span>
+      </h1>
+      <main class="content-wrapper">
+        <h1 style="text-align: center">
+          <span style="font-size: 35px"
+            >Introducción: Intrusiones en Computadoras y Redes</span
+          >
+        </h1>
+        <h2 style="text-align: center; color: #004c90">
+          <strong>Desafío de aprendizaje </strong>
+        </h2>
+        <div
+          style="
+            border: 1px solid #041e42;
+            background-color: #f9f9f9;
+
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+          "
+        >
+          <p>
+            <strong>ⓘ</strong> Esto no es una consigna de evaluación, sino una
+            oportunidad para reflexionar sobre cómo los conceptos de la semana
+            se aplican a situaciones reales del entorno laboral.
+          </p>
+        </div>
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+          style="max-width: 100%; display: block; margin: 0 auto"
+          width="600"
+          alt="Check the following Video"
+        />
+        <div style="text-align: center; margin: 30px 0">
+          <iframe
+            id="kaltura_player"
+            src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_9rgep9cj&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_rbc7nhjg"
+            width="608"
+            height="402"
+            allowfullscreen="allowfullscreen"
+            webkitallowfullscreen=""
+            mozallowfullscreen=""
+            allow="autoplay *; fullscreen *; encrypted-media *"
+            sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+            frameborder="0"
+            title="W2_ISSC621_LearningChallenge_1"
+          ></iframe>
+          &nbsp;
+          <div class="accordion-item">
+            <input type="checkbox" id="acc-transcript" />
+            <label class="accordion-title" for="acc-transcript"
+              >Transcripción: Desafío de aprendizaje
+            </label>
+            <div class="accordion-body">
+              <div class="scroll-box">
+                <p>
+                  Welcome to Week 2. This is where digital forensics starts
+                  feeling real, because you’re moving from definitions to
+                  patterns. When something happens online, it almost always
+                  leaves traces—just not always where people expect. This week,
+                  you’ll learn to slow down, think clearly, and connect crime
+                  types to evidence sources. The more you practice this skill
+                  now, the more confident you’ll be later when cases get messy
+                  and time-sensitive.
+                </p>
+              </div>
+            </div>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <h2>Temas de Ciberseguridad</h2>
+          <p class="instruction">
+            <img
+              src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner%201.png"
+              alt="Click “+” to see more information"
+              class="banner-click"
+              width="600"
+              height="53"
+            />
+          </p>
+          <p></p>
+          <div class="accordion-item">
+            <input type="checkbox" id="acc1" />
+            <label class="accordion-title" for="acc1">Introducción</label>
+            <div class="accordion-body">
+              <div class="scroll-box">
+                <p>
+                  Bots, gusanos, virus, spyware, malware y hacking: estos
+                  términos representan las múltiples formas en que los
+                  ciberdelincuentes se infiltran en hogares, empresas e
+                  instituciones gubernamentales. En lugar de intrusiones
+                  físicas, estos actores explotan vulnerabilidades en
+                  computadoras portátiles, equipos personales, teléfonos
+                  inteligentes y dispositivos inalámbricos mediante técnicas
+                  sofisticadas y código malicioso. En nuestra sociedad
+                  hiperconectada, donde la dependencia de Internet y la
+                  tecnología es generalizada, estas amenazas digitales se han
+                  convertido en una preocupación dominante. A medida que los
+                  ciberataques se vuelven más complejos y frecuentes, tanto
+                  individuos como organizaciones enfrentan una presión creciente
+                  para proteger información sensible e infraestructuras críticas
+                  frente a amenazas de ciberseguridad (<a
+                    href="https://www.csis.org/programs/strategic-technologies-program/significant-cyber-incidents"
+                    target="_blank"
+                    rel="noopener"
+                    >CSIS, s.f.</a
+                  >).
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <input type="checkbox" id="acc2" />
+            <label class="accordion-title" for="acc2">Impacto Económico</label>
+            <div class="accordion-body">
+              <div class="scroll-box">
+                <p>
+                  Las intrusiones cibernéticas tienen un impacto agregado
+                  alarmante. Cada año se pierden miles de millones de dólares
+                  debido a ciberataques, que pueden paralizar organizaciones e
+                  inhabilitar servicios esenciales. Por ejemplo, el ataque
+                  cibernético NotPetya provocó al menos 7.300 millones de
+                  dólares en pérdidas, principalmente debido a sus efectos en
+                  cadena sobre los clientes de las empresas directamente
+                  afectadas (<a
+                    href="https://documents1.worldbank.org/curated/en/099092324164536687/pdf/P17876919ffee4079180e81701969ad0a18.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    >Kotidis &amp; Schreft, 2023</a
+                  >). Más allá de las pérdidas financieras directas, las
+                  organizaciones enfrentan costos relacionados con
+                  investigaciones forenses, reparación de sistemas, litigios
+                  legales y la pérdida de confianza de los clientes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <input type="checkbox" id="acc3" />
+            <label class="accordion-title" for="acc3">Adversarios</label>
+            <div class="accordion-body">
+              <div class="scroll-box">
+                <p>
+                  El panorama de los adversarios cibernéticos es amplio y
+                  diverso, e incluye hackers solitarios, pequeños grupos de
+                  delincuentes expertos en tecnología y unidades de guerra
+                  cibernética patrocinadas por Estados. Algunos hackers actúan
+                  por curiosidad o deseo de notoriedad, explotando debilidades
+                  del sistema simplemente porque pueden hacerlo. Otros
+                  participan en actividades organizadas, atacando a individuos y
+                  organizaciones para robar información personal, financiera y
+                  propiedad intelectual, que luego venden o utilizan para
+                  cometer fraudes en la dark web (<a
+                    href="https://www.cisa.gov/topics/cyber-threats-and-advisories/nation-state-cyber-actors"
+                    target="_blank"
+                    rel="noopener"
+                    >CISA, s.f.-a</a
+                  >).
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <input type="checkbox" id="acc4" />
+            <label class="accordion-title" for="acc4">Seguridad Nacional</label>
+            <div class="accordion-body">
+              <div class="scroll-box">
+                <p>
+                  Más allá de los motivos financieros, las intrusiones
+                  cibernéticas representan importantes preocupaciones de
+                  seguridad nacional. Gobiernos y agencias de inteligencia en
+                  todo el mundo participan en guerras cibernéticas, empleando
+                  técnicas sofisticadas para obtener información clasificada,
+                  destruir infraestructura crítica o interrumpir operaciones
+                  enemigas. Estados-nación han atacado sectores de
+                  infraestructura crítica como energía, nuclear, agua, aviación
+                  y manufactura para recopilar información y obtener acceso a
+                  sistemas de control industrial (<a
+                    href="https://www.dhs.gov/secure-cyberspace-and-critical-infrastructure"
+                    target="_blank"
+                    rel="noopener"
+                    >DHS, s.f.</a
+                  >). Además, organizaciones extremistas utilizan medios
+                  cibernéticos para desestabilizar sociedades, difundir
+                  propaganda y coordinar actos terroristas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <input type="checkbox" id="acc5" />
+            <label class="accordion-title" for="acc5"
+              >Métodos de Intrusión</label
+            >
+            <div class="accordion-body">
+              <div class="scroll-box">
+                <p>
+                  Los métodos de intrusión cibernética evolucionan
+                  constantemente a medida que los hackers desarrollan nuevas
+                  formas de explotar vulnerabilidades en los sistemas digitales.
+                  Técnicas como correos electrónicos de phishing, ataques de
+                  ransomware, ataques de denegación de servicio distribuido
+                  (DDoS) y amenazas persistentes avanzadas (APT) son comunes.
+                  Muchos ataques emplean tácticas de ingeniería social,
+                  manipulando la psicología humana para engañar a los usuarios y
+                  hacer que revelen información sensible o descarguen malware
+                  (<a
+                    href="https://www.cyber.gc.ca/en/guidance/introduction-cyber-threat-environment"
+                    target="_blank"
+                    rel="noopener"
+                    >Canadian Centre for Cyber Security, 2022</a
+                  >).
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <input type="checkbox" id="acc6" />
+            <label class="accordion-title" for="acc6">Medidas Proactivas</label>
+            <div class="accordion-body">
+              <div class="scroll-box">
+                <p>
+                  Dado el aumento en la sofisticación de las amenazas
+                  cibernéticas, las medidas sólidas de ciberseguridad son más
+                  indispensables que nunca. Las organizaciones y los individuos
+                  deben adoptar prácticas de seguridad proactivas, incluyendo
+                  actualizaciones regulares de software, contraseñas robustas,
+                  autenticación multifactor y monitoreo constante de redes. La
+                  colaboración entre gobiernos y empresas es esencial para
+                  fortalecer la resiliencia cibernética mediante inversiones en
+                  tecnologías avanzadas de seguridad y una educación integral en
+                  ciberseguridad para empleados y consumidores (<a
+                    href="https://www.cisa.gov/topics/cybersecurity-best-practices"
+                    target="_blank"
+                    rel="noopener"
+                    >CISA, s.f.-b</a
+                  >).
+                </p>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <hr />
+            <p>
+              <img
+                src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+                alt=""
+                class="logo-footer"
+                role="presentation"
+                width="150"
+                height="39"
+              />
+            </p>
+            <p style="text-align: center">
+              <span style="font-size: 10px"
+                >Copyright 2026 American Public University System ALL RIGHTS
+                RESERVED</span
+              >
+            </p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

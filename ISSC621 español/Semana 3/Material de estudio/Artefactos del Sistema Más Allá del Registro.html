@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <style>
+      /* BIBLIOTECA DE ESTILOS PERSONALIZADA */
+      body,
+      p,
+      li,
+      .standard-text {
+        font-family: "Lato", sans-serif !important;
+        font-size: 19px !important;
+        line-height: 1.6;
+        color: #041e42;
+      }
+
+      h1 {
+        font-size: 35px !important;
+        font-weight: bold;
+        color: #041e40;
+        text-align: center;
+        margin-top: 25px;
+      }
+      h3 {
+        font-size: 24px !important;
+        font-weight: 700;
+        color: #004c90;
+        margin-top: 35px;
+        margin-bottom: 15px;
+      }
+
+      .header-week {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      .footer-logo {
+        float: right;
+        width: 150px;
+        margin: 40px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="header-week">
+      <span style="font-size: 20px; color: #05c3de; font-weight: bold"
+        >Semana 3</span
+      ><br /><span style="font-size: 28px; font-weight: bold"
+        >Electrónica de Computadoras y Herramientas de Investigación
+      </span>
+    </h1>
+    <main class="content-wrapper">
+      <h1>Artefactos del Sistema Más Allá del Registro</h1>
+      <div class="side-text-image">
+        <div class="side-text-image__text">
+          <p>
+            Además del registro, Windows mantiene otros artefactos que son
+            fundamentales para el análisis forense. Los archivos Prefetch,
+            ubicados en el directorio Windows/Prefetch, registran detalles sobre
+            los programas ejecutados recientemente con el fin de optimizar el
+            rendimiento del sistema. Estos archivos incluyen el número de
+            ejecuciones y la última vez que el programa fue ejecutado, lo que
+            permite corroborar información obtenida del registro. Los archivos
+            de acceso directo (.lnk) y las Jump Lists también proporcionan
+            evidencia sobre el acceso a archivos y el uso de aplicaciones,
+            ayudando a los investigadores a construir una visión más completa de
+            la actividad del usuario.
+          </p>
+        </div>
+        <div class="side-text-image__media">
+          <img
+            src="/content/enforced/1027212-INTL647_development_site_griky_english/ISSC635_scope.png"
+            alt=""
+            title="W1_Icon1"
+            width="326"
+            height="326"
+            role="presentation"
+          />
+        </div>
+      </div>
+      <h2>Registros de Eventos</h2>
+      <p>
+        Los Registros de Eventos de Windows ofrecen una vista cronológica de las
+        actividades del sistema, seguridad y aplicaciones. Los registros de
+        seguridad pueden revelar intentos de inicio de sesión, escalaciones de
+        privilegios y bloqueos de cuentas. Los registros del sistema destacan
+        problemas relacionados con el hardware o el sistema operativo (Easttom
+        et al., 2024). Los analistas utilizan herramientas como el Event Viewer
+        o cmdlets de PowerShell para filtrar y exportar entradas relevantes para
+        un análisis más profundo. Los registros de eventos son esenciales para
+        construir líneas de tiempo y correlacionar actividades sospechosas entre
+        diferentes componentes del sistema.
+      </p>
+      <h2>Artefactos del Sistema de Archivos</h2>
+      <p>
+        El sistema de archivos NTFS mantiene metadatos que revelan eventos de
+        creación, modificación y eliminación de archivos. Artefactos como la
+        Master File Table (MFT), $LogFile y $UsnJrnl registran estos cambios.
+        Incluso cuando los archivos son eliminados, a menudo permanecen rastros
+        en estas estructuras, lo que permite su recuperación o la reconstrucción
+        de líneas de tiempo (Easttom et al., 2024). Comprender estos artefactos
+        permite a los investigadores descubrir evidencia oculta o eliminada que
+        los atacantes intentan encubrir.
+      </p>
+      <h2>Análisis de Memoria y Procesos</h2>
+      <p>
+        La informática forense de memoria se enfoca en los datos volátiles
+        almacenados en la RAM, los cuales desaparecen cuando el sistema se
+        apaga. Herramientas como Volatility y Rekall permiten a los analistas
+        examinar imágenes de memoria, identificar procesos ocultos y extraer
+        artefactos como claves de cifrado o historiales de comandos. El análisis
+        de procesos activos puede revelar bibliotecas DLL (Dynamic Link Library)
+        o ejecutables sospechosos que evaden los métodos tradicionales de
+        detección basados en disco (Easttom et al., 2024).
+      </p>
+      <h2>Conexiones y Artefactos de Red</h2>
+      <p>
+        Los artefactos de red proporcionan información sobre comunicaciones
+        externas y posibles exfiltraciones de datos. Los analistas examinan
+        conexiones activas, entradas en caché de DNS y registros del firewall
+        para identificar patrones de tráfico inusuales. Indicadores como
+        direcciones IP extranjeras, puertos no estándar o conexiones fallidas
+        repetidas pueden señalar actividad maliciosa (Easttom et al., 2024). La
+        correlación de estos datos con otros artefactos del sistema permite
+        construir una visión integral del incidente o ataque.
+      </p>
+      <footer>
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          class="footer-logo"
+          width="110"
+          height="29"
+        />
+      </footer>
+    </main>
+    <p style="text-align: center">
+      <span style="font-size: 10px"
+        >Copyright 2026 American Public University System ALL RIGHTS
+        RESERVED</span
+      >
+    </p>
+    <p>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    </p>
+  </body>
+</html>

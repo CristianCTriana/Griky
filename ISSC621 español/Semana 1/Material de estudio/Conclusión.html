@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Conclusion - Week 1</title>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: "Lato", sans-serif !important;
+        font-size: 19px !important;
+        line-height: 1.6;
+        color: #041e42 !important;
+        margin: 0;
+        padding: 0;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* Banner Institucional Superior */
+      .header-title {
+        background-color: #041e42;
+        padding: 25px 20px;
+        color: white !important;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+      }
+
+      .header-title .week {
+        font-size: 20px;
+        color: #05c3de !important;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .header-title .main-title {
+        font-size: 28px;
+        font-weight: bold;
+        display: block;
+        color: #ffffff !important;
+      }
+
+      .title-topic {
+        font-size: 35px;
+        color: #041e42;
+        text-align: center;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .divider-line {
+        margin: 20px 0 40px 0;
+        height: 1px;
+        background: #999c9f;
+        border: 0;
+      }
+
+      /* Accordion Custom Style */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        margin: 0;
+        transition: 0.2s ease;
+      }
+
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+      }
+
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        padding: 0 20px;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 2000px;
+        padding: 20px;
+      }
+
+      /* Learning Challenge Guide */
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+
+      .digital-guide span.icon {
+        color: #202122;
+        font-size: 24px;
+        margin-right: 10px;
+      }
+
+      .banner-image {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px;
+      }
+
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+        border: none; /* ← esto */
+        outline: none; /* ← y esto */
+        box-shadow: none; /* ← por si acaso */
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+        border: none; /* ← también aquí */
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      footer {
+        margin-top: 60px;
+        padding-bottom: 40px;
+      }
+
+      .footer-logo {
+        float: right;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="header-title">
+      <span class="week">Semana 1</span>
+      <span class="main-title"
+        >Introducción a la Informática Forense Digital</span
+      >
+    </h1>
+    <div class="content-wrapper">
+      <h1 class="title-topic">Conclusión</h1>
+      <hr class="divider-line" />
+      <p style="text-align: center; margin-top: 40px">
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+          alt="Click '+' to see more information"
+          style="max-width: 100%"
+          width="600"
+        />
+      </p>
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="c1" />
+          <label for="c1" class="accordion-title">Informática Forense </label>
+          <div class="accordion-content">
+            <p>
+              La informática forense es el campo dedicado a la investigación de
+              delitos digitales mediante la recolección, el examen y la
+              presentación científica de evidencia electrónica. Desempeña un
+              papel crucial en la ciberseguridad moderna y en los procedimientos
+              legales, ya que permite a los profesionales descubrir datos
+              ocultos o eliminados, rastrear accesos no autorizados y
+              reconstruir eventos digitales. Los especialistas forenses analizan
+              discos duros, teléfonos móviles y datos en la nube, utilizando
+              herramientas especializadas y protocolos estrictos para mantener
+              la integridad de la evidencia. Esta disciplina es esencial para
+              identificar a ciberdelincuentes, responder a brechas de seguridad
+              y defenderse contra amenazas internas. Con la creciente
+              dependencia de las tecnologías digitales, contar con profesionales
+              capacitados en informática forense garantiza que los datos
+              críticos puedan recuperarse y utilizarse legalmente en
+              investigaciones o procesos judiciales. Al cerrar la brecha entre
+              las TI y las fuerzas del orden, la informática forense asegura la
+              rendición de cuentas en entornos digitales y ayuda a las
+              organizaciones a responder y recuperarse de incidentes de
+              seguridad de manera efectiva y jurídicamente sólida.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="c2" />
+          <label for="c2" class="accordion-title"
+            >Conceptos Fundamentales
+          </label>
+          <div class="accordion-content">
+            <p>
+              Los conceptos fundamentales de la informática forense abarcan los
+              pasos estructurados que se siguen en cualquier investigación
+              forense: identificación, preservación, análisis y documentación.
+              La identificación implica localizar posibles fuentes de evidencia,
+              como unidades de almacenamiento, dispositivos móviles o
+              servidores. La preservación garantiza que esta evidencia no sea
+              alterada ni manipulada durante la investigación, mediante el uso
+              de bloqueadores de escritura y la creación de imágenes forenses.
+              El análisis es la fase central, en la que se emplean herramientas
+              para descubrir datos relevantes como registros de actividad del
+              usuario, archivos eliminados o rastros de malware. Finalmente, la
+              documentación requiere compilar todos los hallazgos en un informe
+              coherente y legalmente admisible. Estos principios constituyen la
+              base de todas las prácticas forenses, asegurando que las
+              investigaciones sean sistemáticas y legalmente defendibles. El
+              cumplimiento de estos pasos permite a los profesionales mantener
+              la integridad y credibilidad de la evidencia mientras formulan
+              conclusiones fundamentadas. Comprender estos fundamentos es
+              esencial no solo para los especialistas, sino también para las
+              organizaciones que dependen de la preparación forense como parte
+              de su estrategia de ciberseguridad y cumplimiento normativo.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="c3" />
+          <label for="c3" class="accordion-title"
+            >Integridad de la Evidencia Digital
+          </label>
+          <div class="accordion-content">
+            <p>
+              La integridad de la evidencia digital se refiere a mantener el
+              estado original de los datos electrónicos durante toda una
+              investigación forense. Este concepto es fundamental porque la
+              admisibilidad de la evidencia en un tribunal depende en gran
+              medida de su autenticidad y de que no haya sido alterada. Para
+              preservar la integridad, los profesionales forenses utilizan
+              herramientas como bloqueadores de escritura (write blockers),
+              cálculos de valores hash (por ejemplo, MD5, SHA-256) y la creación
+              de imágenes forenses. Estos métodos garantizan que los
+              investigadores analicen copias exactas de los datos originales sin
+              modificarlos. Mantener registros detallados y documentación de la
+              cadena de custodia también respalda la integridad al demostrar
+              cómo fue manejada la evidencia en cada etapa. Sin estas
+              salvaguardas, la evidencia digital podría perder validez legal o
+              ser impugnada durante un proceso judicial. La integridad no solo
+              se relaciona con estándares legales, sino también con la
+              credibilidad profesional y la confianza. Ya sea en la
+              investigación de delitos cibernéticos, brechas de datos o
+              conductas indebidas internas, preservar la integridad de la
+              evidencia digital es lo que permite a los analistas formular
+              conclusiones precisas y respaldar la justicia con hechos digitales
+              incuestionables.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="c4" />
+          <label for="c4" class="accordion-title"
+            >Relevancia Técnica y Legal
+          </label>
+          <div class="accordion-content">
+            <p>
+              La relevancia técnica y legal en la informática forense se refiere
+              a la doble necesidad de aplicar técnicas avanzadas de
+              investigación digital mientras se cumplen las normas y
+              procedimientos legales. Los analistas forenses deben dominar
+              sistemas operativos, sistemas de archivos, redes y análisis de
+              malware; sin embargo, esta experiencia técnica debe alinearse con
+              las reglas que rigen la recolección y admisibilidad de la
+              evidencia. Las consideraciones legales incluyen mantener la cadena
+              de custodia, respetar las leyes de privacidad y cumplir con los
+              requisitos regulatorios. Su relevancia radica en asegurar que la
+              evidencia obtenida técnicamente pueda sostenerse en un tribunal
+              sin ser descalificada por errores procesales. Por ejemplo, aunque
+              un archivo eliminado se recupere con éxito, podría no ser admitido
+              si fue obtenido sin la autorización adecuada. Por lo tanto, la
+              informática forense no es solo una disciplina técnica, sino
+              también jurídica. Integrar estos dos ámbitos permite a los
+              profesionales actuar dentro de marcos éticos y judiciales,
+              maximizando su capacidad para descubrir la verdad y apoyar
+              investigaciones policiales o corporativas.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="c5" />
+          <label for="c5" class="accordion-title"
+            >Integración con la Ciberseguridad
+          </label>
+          <div class="accordion-content">
+            <p>
+              La integración de la ciberseguridad en la informática forense
+              destaca cómo los métodos forenses se incorporan dentro de la
+              estrategia de seguridad más amplia de una organización. En los
+              entornos de TI modernos, incidentes como ataques de ransomware,
+              phishing o accesos no autorizados representan amenazas diarias.
+              Las capacidades forenses ayudan a detectar, analizar y responder a
+              estas amenazas de manera más eficaz. Al integrar herramientas
+              forenses en sistemas como los sistemas de detección de intrusiones
+              (IDS), la protección de endpoints y las plataformas SIEM (Gestión
+              de Información y Eventos de Seguridad), las organizaciones pueden
+              rastrear el origen de los ataques, comprender su impacto y
+              fortalecer sus defensas. La informática forense mejora la
+              respuesta a incidentes al permitir que los equipos reconstruyan
+              líneas de tiempo de los ataques, identifiquen vulnerabilidades
+              explotadas y preserven evidencia para fines legales o de
+              cumplimiento. Este uso proactivo no solo contribuye a la
+              mitigación en tiempo real, sino que también fortalece la
+              resiliencia organizacional al orientar futuras estrategias de
+              gestión de riesgos. En definitiva, la ciberseguridad y la
+              informática forense no son funciones separadas, sino
+              complementarias en la protección de los sistemas de información,
+              la reducción de tiempos de respuesta y la minimización del impacto
+              operativo de las amenazas cibernéticas.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="c6" />
+          <label for="c6" class="accordion-title"
+            >Conciencia sobre Riesgo y Cumplimiento
+          </label>
+          <div class="accordion-content">
+            <p>
+              La conciencia sobre riesgo y cumplimiento normativo en la
+              informática forense se refiere a comprender las consecuencias de
+              no implementar procedimientos adecuados de investigación digital.
+              Las organizaciones que descuidan la preparación forense enfrentan
+              múltiples riesgos, entre ellos sanciones legales, pérdidas
+              financieras y daños reputacionales. Normativas como el GDPR, HIPAA
+              y diversas leyes de protección de datos exigen el manejo seguro de
+              la información digital y mecanismos adecuados de respuesta a
+              incidentes. El incumplimiento puede derivar en multas severas o
+              acciones legales. Desde una perspectiva de gestión de riesgos, las
+              organizaciones sin capacidades forenses están mal preparadas para
+              determinar la causa de brechas de datos, recuperar información
+              perdida o demostrar cumplimiento en auditorías. La informática
+              forense garantiza que la evidencia digital se recoja, preserve y
+              presente conforme a las expectativas legales y regulatorias.
+              Asimismo, permite a las empresas generar confianza entre las
+              partes interesadas al demostrar preparación y responsabilidad. De
+              esta manera, la informática forense cumple no solo una función
+              técnica, sino también estratégica en la gestión del riesgo
+              organizacional y el cumplimiento legal.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="c7" />
+          <label for="c7" class="accordion-title"
+            >Justicia en un Mundo Digital
+          </label>
+          <div class="accordion-content">
+            <p>
+              La justicia en un mundo digital representa el propósito final de
+              la informática forense: asegurar que los delitos digitales se
+              investiguen de manera justa, precisa y conforme a la ley. En una
+              era en la que gran parte de la interacción humana, el comercio y
+              la comunicación se realizan en línea, los delitos cibernéticos
+              como el hacking, el robo de identidad y las brechas de datos se
+              han vuelto comunes. Los investigadores forenses actúan como
+              detectives digitales, descubriendo evidencia que puede vincular a
+              actores maliciosos con sus delitos. Al mantener la cadena de
+              custodia, analizar los datos rigurosamente y seguir las
+              directrices legales, los profesionales forenses contribuyen a que
+              los responsables rindan cuentas ante los tribunales. Su labor
+              respalda tanto la aplicación de la ley en el sector público como
+              la justicia en el sector privado, incluyendo investigaciones
+              internas o revisiones de cumplimiento. Sin la informática forense,
+              muchos delitos digitales quedarían sin resolver debido a la
+              naturaleza oculta de la evidencia electrónica. Por ello, la
+              informática forense es indispensable para el sistema de justicia
+              en un mundo impulsado por la tecnología, ya que aporta
+              transparencia, responsabilidad y verdad en la lucha contra las
+              conductas ilícitas digitales.
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr class="divider-line" />
+      <h2
+        style="
+          text-align: center;
+          color: #004c90;
+          font-size: 24px;
+          font-weight: bold;
+        "
+      >
+        Desafío de aprendizaje
+      </h2>
+      <div class="digital-guide">
+        <strong><span class="icon">ⓘ</span>&nbsp;</strong>Esto no es una
+        consigna de evaluación, sino una oportunidad para reflexionar sobre cómo
+        los conceptos de la semana se aplican a situaciones reales del entorno
+        laboral.
+      </div>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/16.png"
+        class="banner-image"
+        alt="Check the following video"
+      />
+      <div class="video-wrapper" style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_v9ezqcjf&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_b4wqjgst"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="Learning challenge (1)"
+        ></iframe>
+        <!-- <div class="video-responsive"><video title="Learning challenge" controls="controls">
+                <source src="/content/enforced/1027213-ISSC621_development_site_griky_english/Week_1/PRODUCCION%20W1/W1_ISSC621_LearningChallenge/W1_ISSC621_LearningChallenge_2.mp4" type="video/mp4">
+            </video></div> -->
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="transcript1" />
+          <label for="transcript1" class="accordion-title"
+            >Transcripción: Desafío de aprendizaje</label
+          >
+          <div class="accordion-content">
+            <p>
+              Here’s your Week 1 challenge: start thinking like an investigator
+              who expects to be questioned. Every action you take—plugging in a
+              device, copying a file, opening a system—can change evidence if
+              you’re not careful. So, you’re going to practice the mindset of
+              “preserve first, analyze second.” If you build that habit now,
+              every tool and technique you learn later will become more reliable
+              and defensible.
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr class="divider-line" />
+      <footer>
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          class="footer-logo"
+        />
+        <p style="text-align: center">
+          <span style="font-size: 10px"
+            >Copyright 2026 American Public University System ALL RIGHTS
+            RESERVED</span
+          >
+        </p>
+      </footer>
+    </div>
+    <p>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    </p>
+  </body>
+</html>

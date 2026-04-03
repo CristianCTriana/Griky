@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
+    />
+    <style>
+      /* HIGHLIGHT BOX */
+      .highlight-box {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        padding: 25px;
+        background-color: #041d42;
+        color: white;
+        margin-top: 25px;
+        border-radius: 8px;
+      }
+      .highlight-box img {
+        width: 280px;
+        height: auto;
+        border-radius: 8px;
+        flex-shrink: 0;
+      }
+      body {
+        font-family: Lato, sans-serif !important;
+        color: #041e42;
+        font-size: 19px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      h2 {
+        color: #004c90;
+        font-size: 24px;
+        margin-top: 10px;
+      }
+
+      .header-title {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+      }
+
+      .header-title .week {
+        font-size: 20px;
+        color: #05c3de;
+      }
+      .header-title .main-title {
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .header-container h1 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ACORDEONES */
+      .accordion-item {
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        padding: 18px 25px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 20px;
+        background: #ffffff;
+        margin: 0;
+      }
+
+      .accordion-title::after {
+        content: "+";
+        color: #004c90;
+        font-size: 24px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "−";
+      }
+
+      .accordion-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-body {
+        max-height: 5000px;
+        border-top: 1px solid #e5e5e5;
+      }
+
+      .scroll-box {
+        padding: 25px;
+      }
+
+      /* TABS INTERNOS */
+      .tabs-wrapper {
+        margin: 20px 0;
+      }
+      .tabs-wrapper input {
+        display: none;
+      }
+      .tabs-header {
+        display: flex;
+        gap: 2px;
+        flex-wrap: wrap;
+      }
+      .tabs-header label {
+        flex: 1;
+        padding: 12px;
+        background: #041e42;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        min-width: 150px;
+      }
+      .tab-content {
+        display: none;
+        padding: 20px;
+        border: 1px solid #041e42;
+        background: #f9f9f9;
+      }
+
+      #t1:checked ~ .tabs-header label[for="t1"],
+      #t2:checked ~ .tabs-header label[for="t2"],
+      #t3:checked ~ .tabs-header label[for="t3"],
+      #t4:checked ~ .tabs-header label[for="t4"],
+      #t5:checked ~ .tabs-header label[for="t5"],
+      #t6:checked ~ .tabs-header label[for="t6"] {
+        background: #05c3de;
+        color: #041e42;
+      }
+      #t1:checked ~ .tc1,
+      #t2:checked ~ .tc2,
+      #t3:checked ~ .tc3,
+      #t4:checked ~ .tc4,
+      #t5:checked ~ .tc5,
+      #t6:checked ~ .tc6 {
+        display: block;
+      }
+
+      .jumbotron {
+        background: #eaf4ff;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+      }
+      .banner-click {
+        display: block;
+        margin: 20px auto;
+        width: 600px;
+        max-width: 100%;
+      }
+      .logo-footer {
+        float: right;
+        width: 150px;
+        margin: 40px 0;
+      }
+
+      /* CONFIGURACIÓN DE LAS CARDS */
+      .def-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      .def-card-wrapper {
+        perspective: 1000px;
+      }
+      .def-card {
+        position: relative;
+        width: 100%;
+        min-height: 260px;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease;
+        cursor: pointer;
+      }
+      .def-card-wrapper:hover .def-card {
+        transform: rotateY(180deg);
+      }
+      .def-card-face {
+        position: absolute;
+        inset: 0;
+        padding: 20px;
+        border-radius: 12px;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .def-card-front {
+        background: #041e42;
+        color: #ffffff;
+      }
+      .def-card-back {
+        background: #ffffff;
+        color: #041e42;
+        border: 2px solid #041e42;
+        transform: rotateY(180deg);
+      }
+      .def-card-icon {
+        font-size: 24px;
+        margin-top: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .def-cards-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h1 class="header-title">
+        <span class="week">Semana 1</span><br /><span class="main-title"
+          >Introducción a la Informática Forense Digital
+        </span>
+      </h1>
+    </div>
+    <main class="content-wrapper">
+      <h1 style="text-align: center">Fundamentos de la Informática Forense</h1>
+      <h2 style="text-align: center; color: #004c90">
+        <strong>Desafío de aprendizaje </strong>
+      </h2>
+      <div
+        style="
+          border: 1px solid #041e42;
+          background-color: #f9f9f9;
+          padding: 20px;
+          border-radius: 8px;
+          margin: 20px 0;
+        "
+      >
+        <p>
+          <strong>ⓘ</strong> Esto no es una consigna de evaluación, sino una
+          oportunidad para reflexionar sobre cómo los conceptos de la semana se
+          aplican a situaciones reales del entorno laboral.
+        </p>
+      </div>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner.png"
+        style="max-width: 100%; display: block; margin: 0 auto"
+        width="600"
+        alt="Check the following Video"
+      />
+      <div style="margin: 30px 0px; text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_vy67zct9&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_86uq7e0m"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W1_ISSC621_LearningChallenge_1"
+        ></iframe>
+        <!-- <video controls="controls" style="max-width: 800px; width: 100%; border-radius: 8px;">
+            <source src="/content/enforced/1027213-ISSC621_development_site_griky_english/Week_1/PRODUCCION%20W1/W1_ISSC621_LearningChallenge/W1_ISSC621_LearningChallenge_1.mp4" type="video/mp4">
+        </video></div> -->
+        <div class="accordion-item">
+          <input type="checkbox" id="acc-transcript" />
+          <label class="accordion-title" for="acc-transcript"
+            >Transcripción: Desafío de aprendizaje</label
+          >
+          <div class="accordion-body">
+            <div class="scroll-box">
+              <p>
+                Welcome to Week 1. This week sets the tone for the whole course,
+                because digital forensics is less about “being clever” and more
+                about being disciplined. Your job is to protect evidence
+                integrity and tell the truth about what you found and how you
+                found it. As you go through this week, keep one idea in mind: if
+                you can’t explain your process clearly, your findings won’t
+                matter—especially in court or formal review.
+              </p>
+            </div>
+          </div>
+        </div>
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner%201.png"
+          alt="Click '+' to see more information"
+          class="banner-click"
+          width="600"
+          height="53"
+        />
+        <div class="accordion-item">
+          <input type="checkbox" id="acc1" />
+          <label class="accordion-title" for="acc1"
+            >¿Qué es la Informática Forense?</label
+          >
+          <div class="accordion-body">
+            <div class="scroll-box">
+              <div class="jumbotron">
+                <p>
+                  La informática forense es la aplicación de técnicas
+                  científicas y de investigación para identificar, preservar,
+                  analizar y presentar evidencia digital de manera que sea
+                  legalmente admisible.
+                </p>
+              </div>
+              <p>
+                A medida que el mundo se vuelve más interconectado digitalmente,
+                el papel de la informática forense ha adquirido una importancia
+                cada vez mayor, particularmente para administradores de TI,
+                fuerzas del orden, profesionales del derecho y especialistas en
+                ciberseguridad. En un entorno digital donde las brechas de
+                datos, los delitos cibernéticos y los accesos no autorizados son
+                cada vez más frecuentes, contar con la capacidad de rastrear,
+                recuperar e interpretar huellas digitales es esencial tanto para
+                estrategias de seguridad preventivas como reactivas.
+              </p>
+              <p class="instruction">
+                Seleccione cada pestaña a continuación para conocer el proceso
+                de la informática forense:
+              </p>
+              <div class="tabs-wrapper">
+                <input type="radio" name="tabs1" id="t1" checked="checked" />
+                <input type="radio" name="tabs1" id="t2" />
+                <input type="radio" name="tabs1" id="t3" />
+                <input type="radio" name="tabs1" id="t4" />
+                <div class="tabs-header">
+                  <label for="t1">Identificación de evidencia digital </label
+                  >&nbsp;<label for="t2">Preservación </label>&nbsp;<label
+                    for="t3"
+                    >Análisis
+                  </label>
+                  <label for="t4">Documentación del informe </label>
+                </div>
+                <div class="tab-content tc1">
+                  <p><strong>Identificación de evidencia digital </strong></p>
+                  <p>
+                    El proceso de la informática forense comienza con la
+                    identificación de posibles fuentes de evidencia digital.
+                    Estas pueden incluir discos duros, dispositivos móviles,
+                    servidores, almacenamiento en la nube e incluso archivos
+                    eliminados y datos ocultos.
+                  </p>
+                </div>
+                <div class="tab-content tc2">
+                  <p><strong>Preservación </strong></p>
+                  <p>
+                    Una vez identificada, el siguiente paso es la preservación,
+                    que implica proteger la integridad de la evidencia. Los
+                    expertos forenses deben asegurarse de que los datos
+                    permanezcan inalterados desde su estado original,
+                    generalmente mediante el uso de bloqueadores de escritura
+                    (write blockers) y la creación de copias o imágenes
+                    forenses.
+                  </p>
+                </div>
+                <div class="tab-content tc3">
+                  <p><strong>Análisis </strong></p>
+                  <p>
+                    Después de la preservación, la evidencia pasa a la fase de
+                    análisis, en la cual se utilizan herramientas y técnicas
+                    forenses para descubrir información relevante, como la
+                    actividad del usuario, líneas de tiempo o la presencia de
+                    malware. Este paso suele requerir conocimientos técnicos
+                    profundos y una comprensión sólida de los sistemas de
+                    archivos, los sistemas operativos y el comportamiento de las
+                    redes.
+                  </p>
+                </div>
+                <div class="tab-content tc4">
+                  <p><strong>Documentación del informe </strong></p>
+                  <p>
+                    Después del análisis, los hallazgos se documentan
+                    minuciosamente y se recopilan en informes formales. Estos
+                    informes pueden utilizarse en procedimientos judiciales o en
+                    investigaciones internas y deben cumplir con estándares de
+                    precisión, integridad y claridad.
+                  </p>
+                </div>
+              </div>
+              <p>
+                La informática forense desempeña un papel fundamental tanto en
+                la investigación de delitos cibernéticos como en la respuesta a
+                incidentes corporativos. Permite a las organizaciones y a las
+                autoridades comprender la naturaleza de los incidentes
+                digitales, recuperarse de ataques y fortalecer su postura de
+                seguridad. En un mundo cada vez más dependiente de la tecnología
+                de la información, la competencia en informática forense ya no
+                es opcional: es una necesidad esencial para garantizar la
+                rendición de cuentas y la justicia en la era digital.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="acc2" />
+          <label class="accordion-title" for="acc2"
+            >Evidencia latente en la informática forense digital
+          </label>
+          <div class="accordion-body">
+            <div class="scroll-box">
+              <div class="jumbotron">
+                <p>
+                  La evidencia latente se refiere a datos que no son
+                  inmediatamente visibles o accesibles en un dispositivo
+                  digital, pero que pueden recuperarse y analizarse mediante el
+                  uso de herramientas y metodologías forenses especializadas.
+                </p>
+              </div>
+              <p>
+                En el contexto de la informática forense, la evidencia latente
+                puede incluir archivos eliminados, fragmentos de datos
+                residuales, metadatos, registros del sistema, entradas del
+                registro, archivos ocultos, cachés del navegador y restos de
+                actividad del usuario almacenados en diversos sectores de un
+                dispositivo de almacenamiento.
+              </p>
+              <p>
+                Aunque estos datos puedan parecer insignificantes o incluso
+                invisibles para el usuario promedio, con frecuencia contienen
+                información crítica que puede ayudar a reconstruir una línea de
+                tiempo de los hechos, identificar accesos no autorizados o
+                establecer intención en una investigación de delito cibernético
+                o fraude.
+              </p>
+              <h3>Herramientas y técnicas</h3>
+              <p>
+                Los expertos forenses utilizan herramientas avanzadas de
+                software y hardware como EnCase, FTK y Autopsy para descubrir e
+                interpretar evidencia latente. Técnicas como el file carving
+                (recuperación de archivos a partir de fragmentos), la búsqueda
+                por palabras clave y el análisis de memoria permiten a los
+                investigadores recuperar datos de áreas del disco que no son
+                visibles a través de los sistemas operativos estándar. Incluso
+                cuando un archivo es eliminado, los datos suelen permanecer
+                recuperables hasta que son sobrescritos, lo que brinda a los
+                investigadores una valiosa oportunidad para recuperar
+                información esencial.
+              </p>
+              <h3>Valor legal e investigativo</h3>
+              <p>
+                La evidencia latente desempeña un papel fundamental en contextos
+                legales y de investigación. Por ejemplo, los metadatos
+                incrustados en documentos pueden revelar cuándo se creó o
+                modificó un archivo y por quién, detalles que pueden respaldar o
+                contradecir un testimonio. En casos de fraude o amenazas
+                internas (insider threats), los archivos de registro pueden
+                evidenciar patrones inusuales de acceso o cambios no autorizados
+                en sistemas críticos. La naturaleza sutil de la evidencia
+                latente la hace especialmente valiosa en entornos donde las
+                personas intentan ocultar o destruir rastros digitales. En
+                consecuencia, la capacidad de descubrir e interpretar estos
+                datos ocultos es esencial para el éxito de las investigaciones
+                de informática forense y contribuye significativamente a la
+                administración de justicia en la era digital.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="acc3" />
+          <label class="accordion-title" for="acc3"
+            >Desafíos en evolución y el futuro de la informática forense
+          </label>
+          <div class="accordion-body">
+            <div class="scroll-box">
+              <p>
+                La informática forense es una disciplina en constante evolución,
+                moldeada por el rápido avance de la tecnología y la creciente
+                sofisticación de las amenazas cibernéticas. A medida que surgen
+                nuevas tecnologías —como la inteligencia artificial (IA), la
+                computación en la nube, blockchain y las comunicaciones
+                cifradas— los profesionales de la ciberseguridad y los analistas
+                forenses deben adaptar continuamente sus métodos para mantenerse
+                eficaces. Las técnicas forenses tradicionales, que antes se
+                centraban principalmente en discos duros locales y sistemas
+                locales (on-premise), ahora deben ajustarse a entornos de datos
+                distribuidos, servidores remotos, dispositivos móviles y
+                plataformas sincronizadas globalmente.
+              </p>
+              <p class="instruction">
+                Seleccione cada pestaña para obtener más información:
+              </p>
+              <div class="tabs-wrapper">
+                <input type="radio" name="tabs2" id="t5" checked="checked" />
+                <input type="radio" name="tabs2" id="t6" />
+                <div class="tabs-header">
+                  <label for="t5">Cifrado </label>&nbsp;<label for="t6"
+                    >IA y ML (Inteligencia Artificial y Aprendizaje Automático)
+                  </label>
+                </div>
+                <div class="tab-content tc5">
+                  <p>
+                    El cifrado, aunque es esencial para proteger la privacidad
+                    del usuario y la seguridad de los datos, también presenta
+                    desafíos significativos para los investigadores forenses. El
+                    cifrado de extremo a extremo en aplicaciones de mensajería,
+                    el cifrado completo de disco y el almacenamiento seguro en
+                    la nube a menudo impiden el acceso a posibles evidencias, a
+                    menos que se obtengan las claves de descifrado.
+                  </p>
+                  <p>
+                    De manera similar, la adopción generalizada de servicios en
+                    la nube implica que los datos ya no estén confinados a un
+                    único dispositivo físico, lo que obliga a los investigadores
+                    a enfrentar complejidades legales, jurisdiccionales y
+                    técnicas para acceder a información crítica.
+                  </p>
+                </div>
+                <div class="tab-content tc6">
+                  <p>
+                    La inteligencia artificial (IA) y el aprendizaje automático
+                    (ML) también introducen tanto riesgos como oportunidades en
+                    la informática forense.
+                  </p>
+                  <p style="text-align: center">
+                    <span style="font-size: 32px"
+                      ><i class="fas fa-cogs"></i
+                    ></span>
+                  </p>
+                  <p>
+                    Por un lado, las herramientas impulsadas por IA pueden
+                    automatizar aspectos del análisis de datos, la detección de
+                    anomalías y el reconocimiento de patrones, mejorando
+                    significativamente la eficiencia de las investigaciones.
+                  </p>
+                  <p style="text-align: center">
+                    <span style="font-size: 32px"
+                      ><i class="fas fa-mask"></i
+                    ></span>
+                  </p>
+                  <p>
+                    Por otro lado, los actores maliciosos pueden aprovechar la
+                    IA para ocultar sus acciones, generar deepfakes realistas o
+                    llevar a cabo ataques automatizados a gran escala que
+                    resultan difíciles de rastrear mediante métodos
+                    tradicionales.
+                  </p>
+                </div>
+              </div>
+              <br />
+              <p>
+                Dado estos desafíos en constante evolución, el desarrollo
+                profesional continuo es fundamental. Los profesionales de la
+                informática forense deben mantenerse al día con las amenazas
+                emergentes, los cambios regulatorios y las innovaciones
+                tecnológicas. La participación en educación continua,
+                certificaciones del sector e investigación ayuda a garantizar
+                que los investigadores cuenten con los conocimientos y
+                herramientas más actualizados.
+              </p>
+              <p>
+                En última instancia, mantenerse actualizado no es solo una
+                ventaja, sino una necesidad en el campo de la informática
+                forense, donde las herramientas que utilizarán los delincuentes
+                del mañana ya se están desarrollando hoy. Mantenerse ágil e
+                informado permite que la disciplina siga el ritmo de la frontera
+                digital.
+              </p>
+            </div>
+          </div>
+        </div>
+        <br />
+        <h2>Conceptos Clave de Informática Forense</h2>
+        <p>
+          Ponga a prueba su comprensión de los siguientes conceptos clave de
+          informática forense presentados esta semana. Para cada tarjeta
+          interactiva, desafíese a recordar su definición. Luego, haga clic en
+          la tarjeta para ver cómo le fue.
+        </p>
+        <div class="def-cards-grid">
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <h3>Forense</h3>
+                </div>
+                <p>Haga clic para ver la definición.</p>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <div></div>
+                <p>
+                  Aplicación de métodos científicos en investigaciones
+                  criminales y procedimientos legales.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <h3>Evidencia Latente</h3>
+                </div>
+                <p>Haga clic para ver la definición.</p>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <div></div>
+                <p>
+                  Artefactos digitales ocultos como archivos eliminados,
+                  registros o datos cifrados.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="def-card-wrapper">
+            <div class="def-card">
+              <div class="def-card-face def-card-front">
+                <div>
+                  <h3>Integridad Digital</h3>
+                </div>
+                <p>Haga clic para ver la definición.</p>
+                <span class="def-card-icon">↻</span>
+              </div>
+              <div class="def-card-face def-card-back">
+                <div></div>
+                <p>
+                  Garantizar que la evidencia digital permanezca inalterada y
+                  sea legalmente admisible.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2>La Informática Forense en la Práctica</h2>
+        <p>
+          La informática forense es un campo multidisciplinario que integra
+          principios del derecho, la informática y la metodología investigativa
+          para abordar los desafíos de las investigaciones digitales modernas.
+          En su esencia, la disciplina busca garantizar que la evidencia digital
+          —ya sea que provenga de computadoras personales, servidores
+          empresariales, dispositivos móviles o plataformas en la nube— sea
+          recolectada, preservada y analizada de una manera que mantenga su
+          integridad y admisibilidad en un tribunal de justicia. El aspecto
+          legal de la informática forense enfatiza el cumplimiento del debido
+          proceso, los protocolos de cadena de custodia y los estándares
+          probatorios para evitar la contaminación o descalificación de datos
+          críticos durante los procedimientos judiciales.
+        </p>
+        <div class="highlight-box">
+          <p>
+            Desde una perspectiva técnica, la informática forense requiere una
+            comprensión integral de los sistemas operativos, sistemas de
+            archivos, protocolos de red, aplicaciones de software y amenazas de
+            ciberseguridad. Este conocimiento permite a los investigadores
+            desenvolverse en entornos complejos donde la evidencia puede estar
+            oculta, cifrada o deliberadamente ofuscada por los perpetradores. A
+            menudo, los profesionales forenses tienen la tarea de reconstruir
+            líneas de tiempo digitales, recuperar archivos eliminados, analizar
+            datos de registros (logs) y descubrir metadatos que puedan vincular
+            a sospechosos con actividades delictivas.
+          </p>
+        </div>
+        <div>
+          <img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/banner%201.png"
+            alt="Click '+' to see more information"
+            class="banner-click"
+          />
+          <div class="accordion-item">
+            <input type="checkbox" id="acc4" />
+            <label class="accordion-title" for="acc4"
+              >Naturaleza interdisciplinaria
+            </label>
+            <div class="accordion-body">
+              <div class="scroll-box">
+                <p style="text-align: left">
+                  <strong>Naturaleza interdisciplinaria </strong>
+                </p>
+                <p>
+                  La dimensión investigativa implica aplicar pensamiento
+                  crítico, reconocimiento de patrones y razonamiento deductivo
+                  para interpretar la evidencia dentro de su contexto. Los
+                  analistas forenses no solo deben localizar artefactos
+                  digitales, sino también determinar su relevancia para el
+                  incidente en cuestión, distinguir entre una manipulación
+                  intencional y el comportamiento normal del sistema, y
+                  documentar sus hallazgos de manera que puedan resistir el
+                  contrainterrogatorio en un tribunal. La colaboración
+                  interdisciplinaria es común, ya que los expertos en
+                  informática forense pueden trabajar junto con fuerzas del
+                  orden, abogados, equipos de seguridad corporativa y organismos
+                  reguladores.
+                </p>
+                <p>
+                  En última instancia, la fortaleza de la informática forense
+                  radica en su capacidad para combinar la experiencia técnica
+                  con el cumplimiento legal y el rigor investigativo. Esta
+                  integración garantiza que las investigaciones digitales sean
+                  científicamente sólidas y legalmente defendibles,
+                  proporcionando un apoyo crucial en el enjuiciamiento de
+                  delitos cibernéticos, la resolución de disputas y la
+                  administración de justicia en un mundo cada vez más digital.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <input type="checkbox" id="acc5" />
+            <label class="accordion-title" for="acc5"
+              >Herramientas y técnicas
+            </label>
+            <div class="accordion-body">
+              <div class="scroll-box">
+                <p style="text-align: left">
+                  <strong>Herramientas y técnicas </strong>
+                </p>
+                <p>
+                  Los expertos en informática forense dependen de una amplia
+                  variedad de herramientas especializadas, tanto de software
+                  como de hardware, para extraer, analizar y preservar datos de
+                  entornos digitales. Estas herramientas son esenciales para
+                  identificar rastros digitales y descubrir evidencia crítica
+                  proveniente de diversas fuentes, incluyendo discos duros,
+                  unidades de estado sólido (SSD), memoria, dispositivos
+                  móviles, almacenamiento en la nube y registros de tráfico de
+                  red. El uso de software forense avanzado —como EnCase, FTK
+                  (Forensic Toolkit), X-Ways Forensics y Autopsy— permite a los
+                  investigadores realizar análisis profundos de datos,
+                  recuperación de archivos (file carving), búsquedas por
+                  palabras clave y reconstrucción de líneas de tiempo. Estas
+                  herramientas facilitan la recuperación de datos eliminados u
+                  ocultos, proporcionando información valiosa que de otro modo
+                  permanece inaccesible mediante métodos convencionales.
+                </p>
+                <p>
+                  Las herramientas basadas en hardware, como bloqueadores de
+                  escritura (write blockers), dispositivos de adquisición de
+                  imágenes y duplicadores forenses, se utilizan para evitar la
+                  alteración de la evidencia original mientras se crean copias
+                  forenses exactas para su análisis. Este proceso garantiza que
+                  la evidencia permanezca intacta y sin contaminación,
+                  preservando su credibilidad en procedimientos legales. Una vez
+                  que los datos son extraídos, los profesionales forenses
+                  aplican una metodología estructurada para examinar el
+                  contenido, detectar anomalías y correlacionar los hallazgos
+                  con los incidentes reportados.
+                </p>
+                <div class="jumbotron">
+                  <p style="text-align: center">
+                    <strong>Aplicaciones en Investigaciones </strong>
+                  </p>
+                  <p>
+                    La eficacia de estas herramientas se extiende a una amplia
+                    variedad de delitos cibernéticos.
+                  </p>
+                  <p>
+                    En casos de robo de propiedad intelectual (PI), la
+                    informática forense puede revelar transferencias no
+                    autorizadas, comunicaciones por correo electrónico y marcas
+                    de tiempo que indiquen cuándo se accedió o copió información
+                    sensible.
+                  </p>
+                  <p>
+                    En investigaciones de fraude financiero, los analistas
+                    pueden descubrir transacciones falsificadas, documentos
+                    alterados o actividades de inicio de sesión fraudulentas.
+                  </p>
+                  <p>
+                    De manera similar, en casos de suplantación de identidad o
+                    acoso cibernético, la informática forense puede revelar
+                    direcciones IP, huellas digitales de dispositivos, historial
+                    de chat y datos de ubicación que vinculen al sospechoso con
+                    el delito.
+                  </p>
+                </div>
+                <p>
+                  La capacidad de descubrir e interpretar evidencia digital no
+                  solo contribuye al enjuiciamiento penal, sino que también
+                  respalda litigios civiles, investigaciones corporativas y la
+                  respuesta a incidentes. A medida que la tecnología evoluciona,
+                  el desarrollo y perfeccionamiento continuo de las herramientas
+                  forenses sigue siendo esencial para mantenerse al ritmo de
+                  amenazas cada vez más sofisticadas y garantizar que se pueda
+                  hacer justicia en los entornos digitales.
+                </p>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <hr />
+            <p>
+              <img
+                src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+                alt=""
+                role="presentation"
+                class="logo-footer"
+              />
+            </p>
+            <p style="text-align: center">
+              <span style="font-size: 10px"
+                >Copyright 2026 American Public University System ALL RIGHTS
+                RESERVED</span
+              >
+            </p>
+          </footer>
+        </div>
+      </div>
+    </main>
+    <p>
+      <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    </p>
+  </body>
+</html>

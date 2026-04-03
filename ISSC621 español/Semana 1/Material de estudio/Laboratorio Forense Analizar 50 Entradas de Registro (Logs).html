@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      /* BIBLIOTECA DE ESTILOS PERSONALIZADA */
+      body,
+      p,
+      li,
+      .standard-text,
+      .list-group-item {
+        font-family: "Lato", sans-serif !important;
+        font-size: 19px !important;
+        line-height: 1.6;
+        color: #041e42;
+      }
+
+      h1 {
+        font-size: 35px !important;
+        font-weight: bold;
+        color: #041e40;
+        text-align: center;
+        margin-top: 25px;
+      }
+      h2 {
+        font-size: 26px !important;
+        font-weight: 700;
+        color: #004c90;
+        margin-top: 30px;
+      }
+      h3 {
+        font-size: 24px !important;
+        font-weight: 700;
+        color: #041e42;
+      }
+
+      .header-week {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ESTILOS ESPECÍFICOS DEL LAB */
+      textarea#logInput {
+        width: 100%;
+        height: 300px;
+        font-family: monospace !important;
+        font-size: 16px !important;
+        padding: 15px;
+        border: 2px solid #dee2e6;
+        border-radius: 8px;
+        color: #333;
+        background-color: #fdfdfd;
+        resize: vertical;
+      }
+
+      #output {
+        background: #f8f9fa;
+        padding: 20px;
+        border: 1px solid #004c90;
+        border-left: 5px solid #004c90;
+        border-radius: 8px;
+        white-space: pre-wrap;
+        margin-top: 20px;
+        font-family: monospace;
+        color: #041e42;
+        min-height: 60px;
+      }
+
+      .btn-primary {
+        background-color: #004c90 !important;
+        border-color: #004c90 !important;
+        padding: 10px 25px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .instruction-box {
+        background-color: #eaf4ff;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .footer-logo {
+        float: right;
+        width: 150px;
+        margin: 40px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center"></div>
+    <h1 class="header-week">
+      <span style="font-size: 20px; color: #05c3de">Week 1</span><br /><span
+        style="font-size: 28px; font-weight: bold"
+        >Introducción a la Informática Forense Digital</span
+      >
+    </h1>
+    <main class="content-wrapper">
+      <h1>🔍 Laboratorio Forense: Analizar 50 Entradas de Registro (Logs)</h1>
+      <div class="instruction-box">
+        <h2>📝 Instrucciones</h2>
+        <h3>Paso 1:</h3>
+        <p>Revise las entradas de registro manualmente. Busque:</p>
+        <ul>
+          <li>Intentos repetidos de inicio de sesión fallidos</li>
+          <li>Inicios de sesión fuera del horario 08:00–18:00</li>
+          <li>Patrones inusuales provenientes de direcciones IP específicas</li>
+          <li>Cualquier actividad que parezca sospechosa</li>
+        </ul>
+        <p><em>Tome nota de todo lo que considere irregular. </em></p>
+        <h3>Paso 2:</h3>
+        <p>
+          Haga clic en el botón
+          <strong>Analyze Logs (Analizar Registros)</strong> para ejecutar la
+          detección automática. Compare los resultados con sus propios
+          hallazgos.
+        </p>
+      </div>
+      <p>
+        Este laboratorio demuestra la importancia de la informática forense y la
+        necesidad de herramientas automatizadas capaces de analizar grandes
+        volúmenes de datos.
+      </p>
+      <hr />
+      <h2>🧾 Entrada de Registros (50 Entradas)</h2>
+      <textarea id="logInput">
+// Timestamp       IP Address       Action
+2025-04-13T08:00  192.168.1.10      LOGIN_SUCCESS
+2025-04-13T09:15  192.168.1.11      LOGIN_FAILED
+2025-04-13T09:20  192.168.1.12      LOGIN_SUCCESS
+2025-04-13T06:45  192.168.1.11      LOGIN_FAILED
+2025-04-13T10:30  192.168.1.12      LOGIN_SUCCESS
+2025-04-13T07:50  192.168.1.13      LOGIN_FAILED
+2025-04-13T11:00  192.168.1.14      LOGIN_SUCCESS
+2025-04-13T06:10  192.168.1.11      LOGIN_FAILED
+2025-04-13T18:10  192.168.1.10      LOGIN_SUCCESS
+2025-04-13T06:55  192.168.1.11      LOGIN_FAILED
+2025-04-13T08:15  192.168.1.12      LOGIN_SUCCESS
+2025-04-13T07:20  192.168.1.15      LOGIN_FAILED
+2025-04-13T12:45  192.168.1.16      LOGIN_SUCCESS
+2025-04-13T05:30  192.168.1.17      LOGIN_FAILED
+2025-04-13T13:00  192.168.1.18      LOGIN_SUCCESS
+2025-04-13T19:15  192.168.1.14      LOGIN_FAILED
+2025-04-13T07:35  192.168.1.15      LOGIN_FAILED
+2025-04-13T08:00  192.168.1.19      LOGIN_SUCCESS
+2025-04-13T06:25  192.168.1.17      LOGIN_FAILED
+2025-04-13T17:55  192.168.1.13      LOGIN_SUCCESS
+2025-04-13T07:45  192.168.1.20      LOGIN_FAILED
+2025-04-13T10:00  192.168.1.21      LOGIN_SUCCESS
+2025-04-13T08:10  192.168.1.22      LOGIN_SUCCESS
+2025-04-13T06:40  192.168.1.23      LOGIN_FAILED
+2025-04-13T09:25  192.168.1.20      LOGIN_SUCCESS
+2025-04-13T04:30  192.168.1.99      LOGIN_FAILED
+2025-04-13T14:45  192.168.1.25      LOGIN_SUCCESS
+2025-04-13T05:50  192.168.1.26      LOGIN_FAILED
+2025-04-13T08:30  192.168.1.27      LOGIN_SUCCESS
+2025-04-13T18:45  192.168.1.28      LOGIN_SUCCESS
+2025-04-13T06:00  192.168.1.29      LOGIN_FAILED
+2025-04-13T09:05  192.168.1.30      LOGIN_SUCCESS
+2025-04-13T04:45  192.168.1.99      LOGIN_FAILED
+2025-04-13T07:10  192.168.1.99      LOGIN_FAILED
+2025-04-13T11:30  192.168.1.31      LOGIN_SUCCESS
+2025-04-13T16:20  192.168.1.32      LOGIN_SUCCESS
+2025-04-13T18:10  192.168.1.33      LOGIN_SUCCESS
+2025-04-13T07:50  192.168.1.34      LOGIN_FAILED
+2025-04-13T13:40  192.168.1.35      LOGIN_SUCCESS
+2025-04-13T06:35  192.168.1.36      LOGIN_FAILED
+2025-04-13T10:10  192.168.1.37      LOGIN_SUCCESS
+2025-04-13T05:25  192.168.1.38      LOGIN_FAILED
+2025-04-13T08:55  192.168.1.39      LOGIN_SUCCESS
+2025-04-13T17:40  192.168.1.40      LOGIN_SUCCESS
+2025-04-13T06:15  192.168.1.41      LOGIN_FAILED
+2025-04-13T14:00  192.168.1.42      LOGIN_SUCCESS
+2025-04-13T19:10  192.168.1.43      LOGIN_FAILED
+2025-04-13T15:45  192.168.1.44      LOGIN_SUCCESS
+2025-04-13T05:15  192.168.1.45      LOGIN_FAILED</textarea
+      >
+      <div class="text-center">
+        <button class="btn btn-primary mt-3" onclick="analyzeLogs()">
+          Analyze Logs
+        </button>
+      </div>
+      <h3>🔎 Resultado del Análisis</h3>
+      <div id="output">Results will appear here...</div>
+      <footer>
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          class="footer-logo"
+          width="150"
+          height="39"
+        />
+      </footer>
+    </main>
+    <p style="text-align: center">
+      <span style="font-size: 10px"
+        >Copyright 2026 American Public University System ALL RIGHTS
+        RESERVED</span
+      >
+    </p>
+    <p>
+      <script>
+        function analyzeLogs() {
+          const input = document
+            .getElementById("logInput")
+            .value.trim()
+            .split("\n");
+          const suspicious = [];
+          const ipFailures = {};
+
+          input.forEach((line) => {
+            if (!line.trim() || line.startsWith("//")) return;
+
+            const parts = line.trim().split(/\s+/);
+            if (parts.length < 3) return;
+
+            const timestamp = parts[0];
+            const ip = parts[1];
+            const action = parts[2];
+
+            const hourStr = timestamp.split("T")[1];
+            if (!hourStr) return;
+
+            const hour = parseInt(hourStr.split(":")[0], 10);
+
+            if (action === "LOGIN_FAILED") {
+              ipFailures[ip] = (ipFailures[ip] || 0) + 1;
+            }
+
+            if (hour < 8 || hour > 18) {
+              suspicious.push(`⚠️ Off-hours access detected: ${line}`);
+            }
+
+            if (
+              ipFailures[ip] >= 3 &&
+              !suspicious.includes(`🚨 Multiple failed logins from ${ip}`)
+            ) {
+              suspicious.push(`🚨 Multiple failed logins from ${ip}`);
+            }
+          });
+
+          const output = suspicious.length
+            ? suspicious.join("\n")
+            : "✅ No suspicious activity found.";
+          document.getElementById("output").innerText = output;
+        }
+      </script>
+    </p>
+    <p>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    </p>
+  </body>
+</html>

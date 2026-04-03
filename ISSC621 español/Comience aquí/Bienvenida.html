@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <style>
+      body {
+        font-family: "Lato", sans-serif !important;
+        color: #202122;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ENCABEZADO */
+      .header-container {
+        background-color: #041e42;
+        padding: 25px 20px;
+        color: white;
+        text-align: center;
+      }
+
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+        font-weight: bold;
+      }
+
+      /* TÍTULO PRINCIPAL */
+      .main-title {
+        text-align: center;
+        color: #041e42;
+        font-size: 35px;
+        font-weight: 700;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+
+      /* DIVIDER */
+      .divider-line {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      /* BANNER */
+      .centered-image {
+        display: block;
+        margin: 30px auto;
+        max-width: 750px;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      /* CANVA EMBED */
+      .canva-embed {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 56.25%; /* 16:9 aspect ratio */
+        margin: 30px 0;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(63, 69, 81, 0.16);
+      }
+      .canva-embed iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: none;
+      }
+      /* VIDEO EMBED */
+      .video-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 56.25%;
+        margin: 30px 0;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .video-container iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: none;
+      }
+
+      /* ACORDEÓN */
+      .accordion {
+        margin-top: 20px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #041e42;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        margin: 0;
+      }
+
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+        background: #fcfcfc;
+        font-size: 19px;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      /* GETTING STARTED BOX */
+      .getting-started {
+        background-color: #041e42;
+        color: white;
+        padding: 25px;
+        border-radius: 8px;
+        margin: 40px 0;
+      }
+
+      .getting-started h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 0;
+        color: #ffffff;
+      }
+
+      .getting-started ul {
+        padding-left: 20px;
+        margin-top: 15px;
+      }
+
+      .getting-started ul li {
+        font-size: 19px;
+        margin-bottom: 12px;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 400px; /* altura visible del acordeón */
+        padding: 20px;
+        overflow-y: auto; /* SCROLL */
+      }
+      /* IMPORTANT NOTE BOX */
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 25px;
+        border-radius: 8px;
+        margin: 30px auto;
+        font-size: 19px;
+        text-align: center;
+      }
+
+      .footer-logo {
+        float: right;
+        width: 120px;
+        margin: 20px 0;
+      }
+
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="header-container">
+      <span class="course-code">ISSC621</span>
+      <span class="course-title">Descripción General</span>
+    </h1>
+    <div class="content-wrapper">
+      <h1 class="main-title">Bienvenido a ISSC621: Informática Forense</h1>
+      <hr class="divider-line" />
+      <div class="banner-container"></div>
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_wg7ycnjs&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_ulfmh4w0"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="Overview_ISSC621_Welcome"
+        ></iframe>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="trans1" />
+          <label class="accordion-title" for="trans1"
+            >Transcripción: Informática Forense</label
+          >
+          <div class="accordion-content">
+            <p>
+              Welcome to Computer Forensics, where you’re going to learn about
+              digital forensics and the way it actually works in real
+              investigations—not as a collection of cool tools, but as a
+              disciplined process that has to hold up under scrutiny.
+            </p>
+            <p>
+              Over the next eight weeks, you’ll build the mindset and the
+              workflow that forensic professionals rely on when evidence can’t
+              be guessed, rushed, or improvised. Because in digital forensics,
+              it’s not enough to “find something interesting.” You have to be
+              able to explain what you did, prove that you didn’t alter the
+              evidence, and show that your results are reliable—especially if
+              they ever end up in court.
+            </p>
+            <p>
+              This course is designed to take you from the fundamentals to
+              real-world practice. You’ll start by defining what digital
+              forensics is, what counts as evidence, and why chain of custody
+              matters so much. Then you’ll explore different types of internet
+              crimes and the kinds of evidence they leave behind. You’ll learn
+              the basics of computer electronics and the investigation tools
+              used in forensic work. You’ll practice managing a crime
+              scene—because digital evidence doesn’t exist in a vacuum;, it’s
+              part of a bigger investigative context.
+            </p>
+            <p>
+              As the course progresses, you’ll dig into disk and file
+              structures, which is where a lot of forensic truth lives—what is
+              stored, what is deleted, what is hidden, and what can be
+              recovered. You’ll explore what a digital forensics lab does, why
+              labs operate with strict procedures, and how quality control
+              affects credibility. Then you’ll move into mobile forensics,
+              because phones are often the most personal and evidence-rich
+              devices in an investigation—and also some of the most complex to
+              handle responsibly. Finally, you’ll bring it all together with
+              reporting and court-focused communication: how you present
+              findings clearly, how you document your process, and how you make
+              your work stand up under questions.
+            </p>
+            <p>
+              Each week follows a consistent structure to keep you moving from
+              understanding to application. You’ll get:
+            </p>
+            <ul>
+              <li>a week overview to frame what matters most,</li>
+              <li>two short coach videos to guide your thinking,</li>
+              <li>an infographic that gives you a clear visual map,</li>
+              <li>a realistic case story to practice analysis,</li>
+              <li>
+                a self-assessment practice activity with feedback so you can
+                check your understanding,
+              </li>
+              <li>
+                and a podcast-style lesson that connects everything in a
+                natural, conversational way.
+              </li>
+            </ul>
+            <p>
+              By the end of Computer Forensics, you won’t just know what digital
+              forensics is—you’ll be able to think like a forensics
+              professional. You’ll know how to preserve evidence, how to
+              document your actions, how to use tools responsibly, and how to
+              communicate findings in a way that’s credible, defensible, and
+              clear.
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr class="divider-line" />
+      <div class="getting-started">
+        <h2>| Cómo empezar</h2>
+        <ul>
+          <li>
+            Revisa el programa del curso y esta descripción general (¡buenas
+            noticias! Estás en ella ahora mismo) para conocer todas las
+            actividades del curso, las fechas de entrega y las políticas.
+          </li>
+          <li>
+            Preséntate ante la clase en el Debate de Introducción de la Semana
+            1.
+          </li>
+          <li>Comienza a leer los materiales de la Semana 1.</li>
+        </ul>
+      </div>
+      <div class="digital-guide">
+        <span style="color: #004c90; font-weight: bold; font-size: 24px"
+          >Nota importante: Debate de bienvenida</span
+        ><br /><br />El tema del Debate de Bienvenida sirve como tu ingreso
+        oficial al curso.
+        <p>
+          Tu publicación inicial en el Debate de Bienvenida debe enviarse antes
+          de las 11:59 p. m. (ET) del domingo de la primera semana del curso
+          para mantener tu inscripción.
+          <strong
+            >Los estudiantes que no publiquen en este foro antes de esta fecha
+            límite serán dados de baja automáticamente del curso.</strong
+          >
+        </p>
+      </div>
+      <hr class="divider-line" />
+      <div class="clearfix">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          class="footer-logo"
+          role="presentation"
+          width="120"
+          height="31"
+        />
+      </div>
+      <p style="text-align: center">
+        <span style="font-size: 10px"
+          >Copyright 2026 American Public University System ALL RIGHTS
+          RESERVED</span
+        >
+      </p>
+    </div>
+  </body>
+</html>

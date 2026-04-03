@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/fontawesome-free-5.9.0-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/styles.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/css/custom.css"
+    />
+    <title>Chain of Custody</title>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <style>
+      body,
+      p,
+      li {
+        font-family: "Lato", sans-serif !important;
+        font-size: 19px !important;
+        line-height: 1.6;
+        color: #041e42;
+      }
+
+      h1 {
+        font-size: 35px !important;
+        font-weight: bold;
+        color: #041e40;
+        text-align: center;
+        margin-top: 25px;
+      }
+
+      h2 {
+        font-size: 24px !important;
+        font-weight: 700;
+        color: #004c90;
+        margin-top: 35px;
+        margin-bottom: 15px;
+      }
+
+      .header-title {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .header-title .week {
+        font-size: 20px;
+        color: #05c3de;
+        font-weight: bold;
+      }
+
+      .header-title .main-title {
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      .footer-logo {
+        float: right;
+        width: 110px;
+        margin: 40px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-title">
+      <h1 class="week">Week 3</h1>
+      <h1 class="main-title">Gestión de la Escena del Crimen</h1>
+    </div>
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <div class="col-12">
+          <main class="content-wrapper">
+            <h1>Cadena de Custodia</h1>
+            <hr />
+            <h2>Cadena de Custodia en la Informática Forense Digital</h2>
+            <p>
+              La cadena de custodia se refiere al registro documentado e
+              ininterrumpido del control sobre la evidencia, desde su
+              recolección en la escena del crimen hasta su presentación en el
+              tribunal. Garantiza que la evidencia permanezca auténtica, intacta
+              y legalmente admisible (<a
+                href="https://www.ojp.gov/pdffiles1/nij/187736.pdf"
+                target="_blank"
+                rel="noopener"
+                >NIJ [página web]</a
+              >). Este principio es fundamental tanto en la criminalística
+              tradicional como en la informática forense digital. En los casos
+              digitales, la evidencia como discos duros, memorias flash y
+              archivos en la nube debe registrarse y manejarse adecuadamente
+              para mantener su integridad. Incluso una interferencia mínima
+              —como una marca de tiempo modificada o un registro de acceso
+              faltante— puede hacer que la evidencia sea admisible en
+              procedimientos legales (<a
+                href="https://scoredetect.com/chain-of-custody-in-digital-forensics/"
+                target="_blank"
+                rel="noopener"
+                >ScoreDetect [página web]</a
+              >). Una cadena de custodia legalmente aceptable incluye la
+              documentación de cada persona que manipuló la evidencia, las
+              marcas de tiempo, las razones para la transferencia de la
+              evidencia y su almacenamiento seguro. Esto es especialmente
+              crucial en los ciberdelitos, donde la evidencia digital puede
+              alterarse fácilmente.
+            </p>
+
+            <h2>2. Fallas en la Práctica y Consecuencias Legales</h2>
+            <p>
+              Las rupturas en la cadena de custodia —incluso si no son
+              intencionales— pueden comprometer gravemente las investigaciones.
+              Considere un caso en el que los oficiales incautan la computadora
+              portátil de un sospechoso pero la dejan desatendida en un vehículo
+              mientras se detienen a almorzar. Incluso sin manipulación, esa
+              brecha en la custodia introduce una duda razonable (<a
+                href="https://www.law.cornell.edu/wex/chain_of_custody"
+                target="_blank"
+                rel="noopener"
+                >Chain of Custody in Computer Crime: Importance [página web]</a
+              >). En casos legales reales, este tipo de errores ha llevado a los
+              tribunales a descartar evidencia digital clave, resultando en
+              absoluciones no por inocencia, sino por el manejo inadecuado de la
+              evidencia. Estas fallas procesales resaltan que la evidencia
+              digital es tan confiable como lo sea su manejo documentado. Si
+              cualquier etapa —desde la recolección hasta la presentación— se
+              gestiona de manera incorrecta, los tribunales pueden considerar la
+              evidencia como poco confiable.
+            </p>
+
+            <h2>3. Salvaguardas Procesales y Mejores Prácticas</h2>
+            <p>
+              El manejo adecuado incluye el uso de bolsas con evidencia de
+              manipulación (tamper-evident), el registro de todos los accesos y
+              la documentación de cada punto de transferencia. Las herramientas
+              forenses digitales deben generar un valor hash (por ejemplo,
+              SHA-256) de los datos en el momento de la recolección, y
+              nuevamente después de cada paso de análisis para verificar la
+              integridad (<a
+                href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-86.pdf"
+                target="_blank"
+                rel="noopener"
+                >NIST SP 800-86 [página web]</a
+              >). Los investigadores nunca deben trabajar sobre los dispositivos
+              originales. Se crean imágenes forenses (copias bit a bit) que se
+              almacenan de manera segura, garantizando que la evidencia original
+              se conserve intacta. Cada imagen debe verificarse mediante hashes
+              criptográficos para detectar cualquier alteración. Los entornos
+              donde se maneja este tipo de evidencia deben contar con acceso
+              restringido, sistemas de registro y seguridad física adecuada.
+              Cada persona que manipule la evidencia debe estar capacitada para
+              seguir los protocolos de manejo y así reducir errores humanos y
+              omisiones procedimentales. En última instancia, la cadena de
+              custodia no es solo una formalidad procesal: es una salvaguarda
+              legal esencial que garantiza la autenticidad, confiabilidad y
+              admisibilidad de la evidencia digital (<a
+                href="https://www.ncjrs.gov/pdffiles1/nij/199408.pdf"
+                target="_blank"
+                rel="noopener"
+                >NCJRS [página web]</a
+              >).
+            </p>
+            <footer>
+              <img
+                src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+                alt=""
+                class="footer-logo"
+                role="presentation"
+                width="110"
+                height="29"
+              />
+            </footer>
+            <p style="text-align: center">
+              <span style="font-size: 10px"
+                >Copyright 2026 American Public University System ALL RIGHTS
+                RESERVED</span
+              >
+            </p>
+          </main>
+        </div>
+      </div>
+    </div>
+    <p>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/jquery/jquery-3.4.1.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/popper-js/popper.min.js"></script>
+      <script src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/thirdpartylib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    </p>
+  </body>
+</html>
