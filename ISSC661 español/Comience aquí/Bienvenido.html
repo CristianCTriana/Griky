@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+      /* PDF info */
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+      .digital-guide span.icon {
+        color: #202122;
+        font-size: 24px;
+        margin-right: 10px;
+        line-height: 1;
+      }
+
+      /* ENCABEZADO */
+      .header-container h3 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* TÍTULO PRINCIPAL */
+      .main-title {
+        text-align: center;
+        color: #041e42;
+        font-size: 35px;
+        font-weight: 700;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+
+      /* TEXTO GENERAL */
+      .text-content {
+        font-size: 19px;
+        color: #202122;
+        text-align: justify;
+        margin-bottom: 20px;
+      }
+
+      /* DIVIDER */
+      .divider-line {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      /* IMÁGENES CENTRADAS */
+      .centered-image {
+        display: block;
+        margin: 30px auto;
+        max-width: 750px;
+        width: 100%;
+        height: auto;
+      }
+
+      /* CANVA EMBED */
+      .canva-embed {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 56.25%; /* 16:9 aspect ratio */
+        margin: 30px 0;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(63, 69, 81, 0.16);
+      }
+      .canva-embed iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: none;
+      }
+
+      /* GETTING STARTED BOX */
+      .getting-started {
+        background-color: #041e42;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 30px;
+      }
+      .getting-started h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 0;
+      }
+      .getting-started ul {
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+      .getting-started ul li {
+        font-size: 19px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        .main-title {
+          font-size: 28px;
+        }
+        .getting-started ul li {
+          font-size: 17px;
+        }
+        /* --- ACORDEÓN CSS-ONLY --- */
+        .accordion {
+          margin-top: 30px;
+          font-family: Lato, sans-serif;
+        }
+        .accordion-item {
+          border-radius: 8px;
+          margin-bottom: 15px;
+          background: #ffffff;
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+          overflow: hidden;
+          border: 1px solid #e5e5e5;
+        }
+        .accordion-item input {
+          display: none;
+        }
+        .accordion-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 18px 20px;
+          font-size: 20px;
+          font-weight: 600;
+          color: #03244d;
+          background: #ffffff;
+          cursor: pointer;
+          border-bottom: 1px solid #e5e5e5;
+          transition:
+            background 0.2s ease,
+            color 0.2s ease;
+          position: relative;
+        }
+        .accordion-title::after {
+          content: "+";
+          font-size: 22px;
+          font-weight: bold;
+          color: #004c90;
+          transition:
+            transform 0.2s ease,
+            color 0.2s ease;
+        }
+        .accordion-item input:checked + .accordion-title::after {
+          content: "–";
+          color: #004c90;
+        }
+        .accordion-title:hover {
+          background: #f5faff;
+        }
+        .accordion-content {
+          max-height: 0;
+          overflow: hidden;
+          background: #ffffff;
+          color: #03244d;
+          padding: 0 20px;
+          font-size: 17px;
+          line-height: 1.5;
+          transition:
+            max-height 0.35s ease,
+            padding 0.3s ease;
+        }
+        .accordion-item input:checked ~ .accordion-content {
+          max-height: 800px;
+          padding: 20px;
+        }
+        .accordion-item input:checked + .accordion-title {
+          background: #eaf4ff;
+          color: #041e42;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h3>
+        <span class="course-code">ISSC661</span>
+        <span class="course-title">Descripción General</span>
+      </h3>
+    </div>
+    <div class="content-wrapper">
+      <!-- TÍTULO PRINCIPAL -->
+      <h1 class="main-title">Bienvenido/a al curso</h1>
+      <hr class="divider-line" />
+      <!-- TEXTO INTRO -->
+      <p class="text-content">
+        Estás a punto de comenzar un recorrido en uno de los campos más
+        dinámicos e influyentes del mundo digital actual. El aseguramiento de la
+        información no consiste únicamente en proteger datos; se trata de
+        comprender los principios, las prácticas y las responsabilidades éticas
+        que protegen nuestras vidas personales, las organizaciones profesionales
+        y la sociedad en general. Durante las próximas semanas, explorarás cómo
+        las evaluaciones y valoraciones de seguridad constituyen la base de los
+        sistemas digitales resilientes, aprendiendo a analizar riesgos, aplicar
+        estrategias de respuesta a incidentes y desenvolverte en el complejo
+        entorno legal y ético de la ciberseguridad. Ya sea que aspires a liderar
+        en la industria tecnológica, fortalecer las defensas de tu organización
+        o simplemente convertirte en un ciudadano digital más informado, las
+        habilidades y conocimientos que adquieras aquí te permitirán generar un
+        impacto real.
+      </p>
+      <p class="text-content">
+        Este curso está diseñado para despertar tu curiosidad y desafiarte a
+        pensar de manera crítica sobre las amenazas y oportunidades en constante
+        evolución dentro de la ciberseguridad. Trabajarás con marcos de
+        referencia de vanguardia y actividades prácticas que conectan la teoría
+        con la práctica. Al finalizar, no solo comprenderás cómo evaluar y
+        valorar la seguridad de la información, sino que también apreciarás su
+        papel vital en la configuración del futuro de la tecnología, los
+        negocios y la sociedad global. Prepárate para colaborar, innovar y
+        descubrir tu potencial como profesional de la ciberseguridad. Las
+        semanas que vienen prometen crecimiento, desafíos y la oportunidad de
+        convertirte en un líder en la protección de nuestro mundo digital.
+      </p>
+      <!-- BANNER CENTRADO -->
+      <img
+        src="/content/enforced/1027258-ISSC680_development_site_griky_spanish/video_20260331164442188.png"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%"
+        alt="Mira el siguiente video"
+      />
+      <!-- CANVA EMBED -->
+      <div class="canva-embed">
+        <iframe
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/24988541/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player_1765523069&amp;entry_id=1_ti82vf2h"
+          allowfullscreen="allowfullscreen"
+          allow="fullscreen"
+        ></iframe>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: ISSC661 Aseguramiento de la Información: Evaluación
+            y Valoración</label
+          >
+          <div class="accordion-content">
+            <p>
+              Welcome to ISSC661: Information Assurance: Assessment and
+              Evaluation!
+            </p>
+            <p>
+              You are about to embark on a journey into one of the most dynamic
+              and impactful fields in today’s digital world. Information
+              assurance is not just about protecting data; it’s about
+              understanding the principles, practices, and ethical
+              responsibilities that safeguard our personal lives, professional
+              organizations, and society at large. Over the coming weeks, you’ll
+              explore how security assessments and evaluations form the backbone
+              of resilient digital systems, learning to analyze risks, apply
+              incident response strategies, and navigate the complex legal and
+              ethical landscape of cybersecurity. Whether you aspire to lead in
+              the tech industry, strengthen your organization’s defenses, or
+              simply become a more informed digital citizen, the skills and
+              insights you gain here will empower you to make a real difference.
+            </p>
+            <p>
+              This course is designed to ignite your curiosity and challenge you
+              to think critically about the evolving threats and opportunities
+              in cybersecurity. You’ll engage with cutting-edge frameworks and
+              hands-on activities that connect theory to practice. By the end,
+              you’ll not only understand how to assess and evaluate information
+              security, but you’ll also appreciate its vital role in shaping the
+              future of technology, business, and global society. Get ready to
+              collaborate, innovate, and discover your potential as a
+              cybersecurity professional. The weeks ahead promise growth,
+              challenge, and the chance to become a leader in safeguarding our
+              digital world.
+            </p>
+          </div>
+        </div>
+        <hr class="divider-line" />
+        <!-- GETTING STARTED -->
+        <div class="getting-started">
+          <h2>| Primeros Pasos</h2>
+          <ul>
+            <li>
+              Revisa el programa (syllabus) y esta descripción general del curso
+              (¡buenas noticias! Ya estás aquí) para conocer todas las
+              actividades, fechas de entrega y políticas del curso.
+            </li>
+            <li>
+              Preséntate ante la clase en la Discusión de Bienvenida de la
+              Semana 1.
+            </li>
+            <li>Comienza a leer los materiales de la Semana 1.</li>
+          </ul>
+        </div>
+        <div class="content-wrapper">
+          <!-- PDF info -->
+          <div class="digital-guide" style="text-align: center">
+            <span style="color: #004c90"
+              ><strong
+                ><span style="font-size: 24px"
+                  >Nota Importante: Discusión de Bienvenida
+                  <br /></span></strong></span
+            >El tema de la Discusión de Bienvenida sirve como tu ingreso oficial
+            al curso.
+            <p style="text-align: center">
+              Tu publicación inicial en la Discusión de Bienvenida debe enviarse
+              antes de las <strong>11:59 p. m. (hora del Este)</strong> del
+              domingo de la primera semana del curso para mantener tu
+              inscripción. Los estudiantes que no publiquen en este foro antes
+              de este plazo serán dados de baja automáticamente del curso.
+            </p>
+          </div>
+          <hr class="divider-line" />
+          <!-- FOOTER -->
+          <img
+            src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+            alt="logo"
+            class="footer-logo"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

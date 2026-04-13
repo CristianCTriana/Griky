@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="../../../Griky Structure/GlobalStyles.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Griky Structure/StylesComponents.css"
+    />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      /* ===== Mental Models Grid ===== */
+      .mental-models-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        margin-top: 30px;
+      }
+
+      /* Card principal */
+      .mm-card {
+        background-color: #ffffff;
+        border-left: 6px solid var(--color-accent);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      /* Interacción sutil */
+      .mm-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Títulos */
+      .mm-card h3 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        color: var(--color-primary);
+        font-size: 22px;
+      }
+
+      /* Listas */
+      .mm-card ul {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card ol {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      .mm-card li {
+        font-size: 18px;
+        color: var(--color-text);
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Semana 1 </span>
+      <span class="banner__week-name">
+        Fundamentos del Aseguramiento de la Información
+      </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Metodologías para Proteger los Activos Digitales
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        La protección de los activos digitales comienza con un marco sólido de
+        gestión de riesgos que identifique las vulnerabilidades existentes y
+        aplique controles estandarizados como una forma de mitigar dichos
+        riesgos. Estos marcos garantizan la coherencia y el cumplimiento
+        normativo, al tiempo que permiten a las organizaciones priorizar
+        inversiones mediante procesos repetibles que evalúan las áreas de mayor
+        riesgo y minimizan la exposición (Death, 2023). Algunos ejemplos de
+        marcos reconocidos por la industria son:
+      </p>
+      <!-- Mental Models Cards Grid -->
+      <div class="mental-models-grid">
+        <div class="mm-card">
+          <ul>
+            <li>ISO/IEC 27001</li>
+            <li>Marco de Ciberseguridad del NIST</li>
+            <li>PCI DSS</li>
+          </ul>
+        </div>
+      </div>
+      <div class="summary-box">
+        <p>
+          La protección de los activos digitales requiere un enfoque por capas,
+          a menudo descrito como “defensa en profundidad”. Una capa crítica es
+          el control de acceso. Las organizaciones deben asegurarse de que los
+          usuarios del sistema tengan únicamente los permisos necesarios para
+          desempeñar su trabajo <em>(Death, 2023).</em>
+        </p>
+      </div>
+      <p>
+        El control de acceso se fortalece mediante el acceso basado en roles
+        (RBAC) y la autenticación multifactor (MFA). Independientemente de la
+        estrategia utilizada, la supervisión rigurosa es fundamental, además de
+        la implementación de estas herramientas, para poder adaptarse a las
+        amenazas en constante evolución.
+      </p>
+      <p>
+        Además de las medidas técnicas que puede adoptar una organización, las
+        prácticas operativas desempeñan un papel esencial en la protección de
+        los activos digitales. Estas prácticas incluyen copias de seguridad
+        periódicas de los datos, actualizaciones de software, políticas de
+        contraseñas y planificación de respuesta a incidentes, entre otras. La
+        capacitación de los empleados es especialmente importante, ya que los
+        usuarios internos suelen representar la mayor amenaza, ya sea de forma
+        intencional o como resultado de errores humanos. Al combinar controles
+        técnicos con prácticas operativas sólidas, las organizaciones pueden
+        reducir significativamente las vulnerabilidades frente a las amenazas
+        cibernéticas.
+      </p>
+
+      <hr class="divider-line" />
+
+      <footer class="course-footer">
+        <img
+          class="logo-footer"
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="APUS Logo"
+          role="presentation"
+        />
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
