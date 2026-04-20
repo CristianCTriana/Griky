@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="/ISSC642/ISSC642_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .course-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 7 </span>
+      <span class="banner__week-name">Response Planning </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Legal Standards</h1>
+
+      <hr class="divider-line" />
+
+      <div class="lms-contenedor">
+        <p>
+          In a regulated environment, control testing is no longer just a
+          technical best practice; it is a
+          <em>legal requirement.</em> Regulatory bodies and legal frameworks
+          shift the burden of proof onto the organization, requiring them to
+          demonstrate that their security controls are not only present but are
+          functioning effectively.
+        </p>
+
+        <div
+          class="lms-tarjeta-sutil"
+          style="
+            border-left: 6px solid var(--color-aqua);
+            margin: var(--espaciado-lg) 0;
+          "
+        >
+          <h3 style="color: var(--color-azul-noche); margin-top: 0">
+            The Legal Standard of "Due Care"
+          </h3>
+          <p>
+            In many legal jurisdictions, a company can be held liable for a data
+            breach under the principle of negligence. To defend against such
+            claims, an organization must prove it exercised Due Care&mdash;the
+            effort made by an ordinarily prudent party to avoid harm to another.
+          </p>
+          <ul class="lms-lista-puntos">
+            <li>
+              <strong>Due Diligence</strong> is the act of researching and
+              designing the controls (the plan).
+            </li>
+            <li>
+              <strong>Due Care</strong> is the act of implementing and testing
+              those controls (the action).
+            </li>
+            <li>
+              <strong>Legal Impact:</strong> If a control fails and was never
+              tested, a court may rule that the organization failed to meet its
+              "Duty of Care," leading to higher damages and "Gross Negligence"
+              findings.
+            </li>
+          </ul>
+        </div>
+
+        <h2>Regulatory Requirements for Testing</h2>
+        <p>
+          Modern regulations explicitly mandate periodic testing of security
+          safeguards. Failure to produce "Evidence of Testing" during an audit
+          can result in massive fines, even if no breach has occurred.
+        </p>
+
+        <div class="lms-tabla-wrapper">
+          <table class="lms-tabla-dinamica">
+            <caption>
+              Regulatory Requirements for Testing
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center; width: 25%">
+                  Regulation / Law
+                </th>
+                <th scope="col">Testing Requirement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Regulation / Law" style="text-align: center">
+                  <strong>HIPAA (Healthcare)</strong>
+                </td>
+                <td data-label="Testing Requirement">
+                  Requires "Evaluation" (&sect; 164.308(a)(8))&mdash;periodic
+                  technical and non-technical evaluations of security postures.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Regulation / Law" style="text-align: center">
+                  <strong>PCI DSS (Finance)</strong>
+                </td>
+                <td data-label="Testing Requirement">
+                  Requirement 11 mandates regular testing of security systems
+                  and processes, including quarterly vulnerability scans and
+                  annual pen tests.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Regulation / Law" style="text-align: center">
+                  <strong>GDPR (Privacy)</strong>
+                </td>
+                <td data-label="Testing Requirement">
+                  Article 32 requires a process for "regularly testing,
+                  assessing, and evaluating the effectiveness of technical and
+                  organizational measures."
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Regulation / Law" style="text-align: center">
+                  <strong>SOX (Corporate)</strong>
+                </td>
+                <td data-label="Testing Requirement">
+                  Section 404 requires management to assess and report on the
+                  effectiveness of internal controls for financial reporting.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div
+          class="lms-tarjeta-interactiva"
+          style="border-left-color: var(--color-azul-real)"
+        >
+          <h3>Evidence and "Audit Trails"</h3>
+          <p>
+            From a legal perspective, <em>unrecorded testing</em> is equivalent
+            to <em>no testing</em>. Regulatory compliance hinges on the "Audit
+            Trail" - a chronological record that provides documentary evidence
+            of the sequence of activities that have affected a specific
+            operation.
+          </p>
+          <ul class="lms-lista-puntos">
+            <li>
+              <strong>Artifact Collection:</strong> Organizations must retain
+              logs, scan reports, and penetration testing summaries as legal
+              evidence.
+            </li>
+            <li>
+              <strong>Attestation:</strong> Senior leadership (as seen in NIST
+              SP 800-53 or SOX) must often sign off on these test results,
+              creating a chain of accountability that reaches the executive
+              level.
+            </li>
+          </ul>
+        </div>
+
+        <div class="lms-cita-destacada">
+          <h3 style="color: var(--color-aqua); margin-top: 0">
+            The Risk of "The Smoking Gun"
+          </h3>
+          <p style="margin-bottom: 0; color: #fff">
+            While testing is legally required, it also creates a legal record.
+            If a control test identifies a critical failure and leadership fails
+            to remediate it, that test report becomes a "smoking gun" in a
+            lawsuit, proving that the organization had "Actual Knowledge" of the
+            risk but chose to ignore it. To manage this risk, many organizations
+            conduct high-level control testing (like Red Teaming) under
+            Attorney-Client Privilege. By having legal counsel retain the
+            security firm, the resulting reports may be protected from discovery
+            in litigation, allowing the organization to fix the issues without
+            creating an immediately submittable piece of evidence for a
+            plaintiff.
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+      />
+      <p>
+        Copyright 2026 American Public University System ALL RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

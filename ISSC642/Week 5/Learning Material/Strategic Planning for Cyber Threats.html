@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="/ISSC642/ISSC642_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .course-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 5 </span>
+      <span class="banner__week-name">Common Attack Patterns</span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Planning for Cyber Threats</h1>
+
+      <hr class="divider-line" />
+
+      <div class="lms-contenedor">
+        <p>
+          Without testing, the best controls can be vulnerable to data breaches
+          and financial loss (Edwards, 2025). Oftentimes, we will experience
+          leadership in our organizations that does not want to test these
+          controls due to the loss of productivity. However, it is our job as
+          cybersecurity professionals to advise that the loss will be far
+          greater if our intrusion methods are not tested for a certain attack
+          that could cause a massive breach in the organization.
+        </p>
+
+        <div class="lms-destacado-oscuro">
+          <p style="color: #fff">
+            Effective cyber threat planning shifts an organization from a
+            <strong>reactive</strong> "break-fix" mentality to a
+            <strong>proactive</strong> "resilience" posture.
+          </p>
+        </div>
+
+        <p>
+          This requires a synchronized effort between technical leadership and
+          executive stakeholders to ensure that security investments align with
+          business risk.
+        </p>
+
+        <ul class="lms-timeline">
+          <li class="lms-timeline-item">
+            <h2 class="lms-timeline-titulo">1. The Threat Modeling Process</h2>
+            <p>
+              Planning begins with <strong>Threat Modeling</strong>, where an
+              organization identifies its high-value assets (the "crown jewels")
+              and maps out likely attack paths. By using frameworks, planners
+              can visualize how an adversary might move through their specific
+              environment.
+            </p>
+          </li>
+
+          <li class="lms-timeline-item">
+            <h2 class="lms-timeline-titulo">
+              2. Defensive Strategy: Layered Resilience
+            </h2>
+            <p>
+              A robust plan assumes that a breach is inevitable. This "Assume
+              Breach" mentality leads to a Defense-in-Depth architecture, where
+              multiple layers of controls&mdash;Physical, Technical, and
+              Administrative&mdash;work in tandem.
+            </p>
+
+            <ul class="lms-lista-puntos">
+              <li>
+                <strong>Preventative:</strong> Firewalls, MFA, and automated
+                patching
+              </li>
+              <li>
+                <strong>Detective:</strong> SIEM, EDR, and continuous monitoring
+              </li>
+              <li>
+                <strong>Corrective:</strong> Incident Response plans and offline
+                backups
+              </li>
+            </ul>
+          </li>
+
+          <li class="lms-timeline-item">
+            <h2 class="lms-timeline-titulo">3. Continuous Validation</h2>
+            <p>
+              A plan is only as good as its last test. Organizations must move
+              beyond static policies and engage in Continuous Security
+              Validation:
+            </p>
+
+            <ul class="lms-lista-puntos">
+              <li>
+                <strong>Tabletop Exercises (TTX):</strong> Non-technical
+                simulations where leadership discusses how they would handle a
+                crisis (e.g., a ransomware attack).
+              </li>
+              <li>
+                <strong>Red Teaming:</strong> Active, offensive simulations
+                designed to test the effectiveness of the people, processes, and
+                technology in place.
+              </li>
+            </ul>
+          </li>
+
+          <li class="lms-timeline-item">
+            <h2 class="lms-timeline-titulo">4. Metrics and Maturity</h2>
+            <p>
+              Finally, planners must track progress using maturity models like
+              the CMMC or the NIST Cybersecurity Framework. By measuring "Mean
+              Time to Detect" (MTTD) and "Mean Time to Respond" (MTTR),
+              leadership can quantify the effectiveness of their threat planning
+              over time.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+      />
+      <p>
+        Copyright 2026 American Public University System ALL RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

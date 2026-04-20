@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* ENCABEZADO */
+      .header-container {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+        font-weight: 700;
+      }
+
+      /* CONTENEDOR PRINCIPAL */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* TIPOGRAFÍA Y TÍTULOS */
+      .section-title {
+        font-size: 30px;
+        font-weight: 700;
+        color: #041e40;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      .section-subtitle {
+        font-size: 24px;
+        font-weight: 700;
+        color: #041e40;
+        margin-top: 25px;
+        margin-bottom: 15px;
+      }
+      p,
+      li {
+        font-size: 19px;
+        color: #202122;
+        margin-bottom: 15px;
+      }
+
+      /* SECCIÓN COURSE SCOPE (FLEXBOX) */
+      .scope-container {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .scope-image {
+        flex: 1;
+        max-width: 250px;
+      }
+      .scope-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .scope-text {
+        flex: 2;
+      }
+
+      /* DIVIDER */
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #eaf4ff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 1200px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .accordion-content ul {
+        padding-left: 20px;
+        margin: 0;
+      }
+      .accordion-content li {
+        margin-bottom: 10px;
+      }
+
+      /* TABLA DE ASSESSMENTS */
+      .assessment-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      .assessment-table caption {
+        font-size: 19px;
+        color: #041e42;
+        font-weight: 700;
+        padding-bottom: 10px;
+      }
+      .assessment-table th,
+      .assessment-table td {
+        border: 1px solid #dcdcdc;
+        padding: 12px;
+        text-align: center;
+        font-size: 19px;
+      }
+      .assessment-table th {
+        background-color: #041e42;
+        color: white;
+      }
+
+      /* FOOTER */
+      footer {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 30px 30px;
+      }
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+      .copyright-text {
+        text-align: center;
+        font-size: 11px;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .scope-container {
+          flex-direction: column;
+          text-align: center;
+        }
+        .scope-image {
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-container">
+      <span class="course-code">ISSC642</span>
+      <span class="course-title">Course Overview</span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="section-title">Scope, Learning Objectives, and Assessment</h1>
+      <hr />
+
+      <h2 class="section-subtitle">| Course Scope</h2>
+
+      <!-- CONTENEDOR FLEXBOX OPTIMIZADO -->
+      <div class="scope-container">
+        <div class="scope-image">
+          <img
+            role="presentation"
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/img-course-1_20251120220934262.png"
+            alt=""
+          />
+        </div>
+        <div class="scope-text">
+          <p>
+            Students will explore network-based and host-based intrusion
+            detection systems, attack recognition patterns, risk analysis,
+            forensic data collection, and the application of artificial
+            intelligence in threat detection. Real-world scenarios and modern
+            network monitoring tools are discussed to reinforce applied
+            knowledge. The course also reviews the various leadership roles in a
+            security team and organizational complexity as it applies to working
+            with intrusion detection.
+          </p>
+        </div>
+      </div>
+
+      <hr />
+
+      <h2 class="section-subtitle">| Course &amp; Learning Objectives</h2>
+      <p>
+        Select each Course Objective to see the associated Learning Objectives
+        and Assessments.
+      </p>
+
+      <!-- ACORDEÓN -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="co1" />
+          <label class="accordion-title" for="co1"
+            >CO-1: Examine the security roles involved with intrusion
+            detection</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: 700">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-1.1: Describe the fundamental need for an information
+                protection team.
+              </li>
+              <li>
+                LO-1.2: Analyze the roles of cybersecurity leadership and
+                frameworks in organizations.
+              </li>
+            </ul>
+            <p style="font-weight: 700">Assessments</p>
+            <ul>
+              <li>Week 1 Discussion: Security Teams and Leadership Methods</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="co2" />
+          <label class="accordion-title" for="co2"
+            >CO-2: Evaluate the principles of incident handling and
+            reporting.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: 700">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-2.1: Identify the key stages in the incident handling
+                process.
+              </li>
+              <li>
+                LO-2.2: Assess best practices for incident handling and
+                reporting.
+              </li>
+            </ul>
+            <p style="font-weight: 700">Assessments</p>
+            <ul>
+              <li>
+                Week 2 Assignment: How MITRE ATT&amp;CK Assists with Intrusion
+                Detection
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="co3" />
+          <label class="accordion-title" for="co3"
+            >CO-3: Compare and contrast cybersecurity frameworks and how the
+            frameworks are implemented in intrusion detection.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: 700">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-3.1: Differentiate the frameworks used in an information
+                protection team.
+              </li>
+              <li>
+                LO-3.2: Evaluate the strengths and limitations of NIST privacy
+                controls.
+              </li>
+            </ul>
+            <p style="font-weight: 700">Assessments</p>
+            <ul>
+              <li>Week 3 Assignment: Cybersecurity Defense Strategies</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="co4" />
+          <label class="accordion-title" for="co4"
+            >CO-4: Assess the various planning methods for detection and
+            prevention tools, technology, and techniques.&nbsp;</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: 700">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-4.1: Classify different detection and prevention tools,
+                technologies, and techniques.
+              </li>
+              <li>
+                LO-4.2: Critically evaluate the effectiveness of various
+                intrusion detection and prevention tools.
+              </li>
+            </ul>
+            <p style="font-weight: 700">Assessments</p>
+            <ul>
+              <li>Week 4 Discussion: Planning for an Intrusion</li>
+              <li>Week 4 Assignment: Idea Paper and Outline</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="co1" />
+          <label class="accordion-title" for="co1"
+            >CO-5: Explain the methods and techniques for recognizing and
+            profiling attack patterns.&nbsp;</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: 700">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-5.1: Describe common attack patterns and methodologies.
+              </li>
+              <li>
+                LO-5.2: Apply continuous improvement planning for cyber threats.
+              </li>
+            </ul>
+            <p style="font-weight: 700">Assessments</p>
+            <ul>
+              <li>
+                Week 5 Assignment: Adhering to Organizational Complexity in a
+                Cybersecurity Ecosystem &nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="co2" />
+          <label class="accordion-title" for="co2"
+            >CO-6: Assess the implementation of a fail-safe for an intrusion
+            detection system.&nbsp;</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: 700">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-6.1: Explain the role of data mining and artificial
+                intelligence in intrusion detection.
+              </li>
+              <li>
+                LO-6.2: Evaluate the effectiveness of AI-based intrusion
+                detection models.
+              </li>
+            </ul>
+            <p style="font-weight: 700">Assessments</p>
+            <ul>
+              <li>Week 6 Assignment: UEBA and IDS Reliability&nbsp;</li>
+              <li>
+                Week 8 Discussion: Artificial Intelligence (AI), Machine
+                Learning (ML), and Deep Learning (DP)
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="co3" />
+          <label class="accordion-title" for="co3"
+            >CO-7: Develop an incident response plan that incorporates attack
+            tracing, evidence collection, and evidence analysis for legal
+            matters.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: 700">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-7.1: Design an incident response plan incorporating key
+                forensic and investigative processes.
+              </li>
+              <li>
+                LO-7.2: Implement attack tracing and evidence collection
+                techniques in simulated scenarios.
+              </li>
+            </ul>
+            <p style="font-weight: 700">Assessments</p>
+            <ul>
+              <li>Week 7 Assignment: Course Project</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <input type="checkbox" id="co4" />
+          <label class="accordion-title" for="co4"
+            >CO-8: Evaluate technologies that could be emerging threats and
+            bypass intrusion detection.&nbsp;</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: 700">Learning Objectives</p>
+            <ul>
+              <li>LO-8.1: Evaluate intrusion detection vulnerabilities.</li>
+              <li>
+                LO-8.2: Explain improvements for an existing intrusion detection
+                system.&nbsp;
+              </li>
+            </ul>
+            <p style="font-weight: 700">Assessments</p>
+            <ul>
+              <li>Week 7 Assignment: Course Project</li>
+              <li>
+                Week 8 Discussion: Artificial Intelligence (AI), Machine
+                Learning (ML), and Deep Learning (DP)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <h2 class="section-subtitle">| Assessment Components</h2>
+      <p>
+        Your final grade will be calculated using the following category
+        weights:
+      </p>
+
+      <!-- TABLA OPTIMIZADA -->
+      <table class="assessment-table">
+        <caption>
+          Assessment Components
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" style="width: 20%">Assignments</th>
+            <th scope="col" style="width: 30%">Discussions</th>
+            <th scope="col" style="width: 50%">Course Project</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>50%</td>
+            <td>30%</td>
+            <td>20%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+    </main>
+
+    <footer>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+        class="footer-logo"
+      />
+      <p class="copyright-text">
+        Copyright 2026 American Public University System ALL RIGHTS RESERVED
+      </p>
+    </footer>
+  </body>
+</html>

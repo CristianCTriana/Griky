@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="/ISSC642/ISSC642_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .course-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 5 </span>
+      <span class="banner__week-name">Common Attack Patterns</span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Profiling Attack Patterns</h1>
+
+      <hr class="divider-line" />
+
+      <div class="lms-contenedor">
+        <p>
+          Take note that not all attack patterns are technology-based. In fact,
+          regardless of your organization&rsquo;s size, insider threats and
+          attacks can have a pattern of their own. Although we need to use our
+          intrusion detection methods to observe patterns of attack, without
+          performing control testing, an insider could be a vulnerability that
+          exploits our resources (Edwards, 2025).
+        </p>
+
+        <div class="lms-destacado-oscuro">
+          <p style="color: #05c3de">
+            Profiling attack patterns is the process of documenting and
+            analyzing the repeatable methods adversaries use to exploit
+            vulnerabilities.
+          </p>
+          <p style="margin-top: var(--espaciado-md); color: #fff">
+            By shifting focus from who the attacker is to how they behave,
+            security teams can move from reactive blocking to proactive,
+            behavior-based defense.
+          </p>
+        </div>
+
+        <ul class="lms-timeline">
+          <li class="lms-timeline-item">
+            <h2 class="lms-timeline-titulo">1. The Core Frameworks</h2>
+            <p>
+              To profile effectively, the industry relies on standardized
+              "dictionaries" of adversary behavior:
+            </p>
+
+            <ul class="lms-lista-puntos">
+              <li>
+                <strong>MITRE ATT&amp;CK&reg;:</strong> A globally accessible
+                knowledge base of adversary Tactics (the "why" or goal) and
+                Techniques (the "how"). It maps the entire post-compromise
+                lifecycle, from Initial Access to Exfiltration.
+              </li>
+              <li>
+                <strong
+                  >CAPEC&trade; (Common Attack Pattern Enumeration and
+                  Classification):</strong
+                >
+                A dictionary specifically focused on Attack Patterns. While
+                ATT&amp;CK focuses on broad behaviors, CAPEC provides a
+                "blueprint" for specific exploits (e.g., SQL Injection,
+                Cross-Site Scripting).
+              </li>
+              <li>
+                <strong>The Diamond Model:</strong> A framework used to link
+                four core features of an intrusion: Adversary, Capability,
+                Infrastructure, and Victim. This helps analysts see how an
+                attack pattern shifts over time.
+              </li>
+            </ul>
+
+            <figure class="lms-figura">
+              <img
+                src="/content/enforced/1056352-ISSC642_development_site_griky_english/Week_5/Screenshot_22-1-2026_12844_slidemodel.com.jpeg"
+                alt="Diagram of Double Diamond Model, illustrating an iterative process between research, insights, ideation, and prototypes."
+                title="Diagram of Double Diamond Model, illustrating an iterative process between research, insights, ideation, and prototypes."
+                class="lms-imagen-fluida"
+              />
+            </figure>
+          </li>
+
+          <li class="lms-timeline-item">
+            <h2 class="lms-timeline-titulo">2. Categorizing Patterns</h2>
+            <p>
+              Attack patterns are often classified by their level of
+              abstraction: meta, standard, or detailed. Click each level for a
+              brief description and example:
+            </p>
+
+            <div style="margin-top: var(--espaciado-md)">
+              <iframe
+                src="/content/enforced/1056352-ISSC642_development_site_griky_english/Week_5/../assets/Week5_Page1_MM_VisualClickandReveal/ISSC642_MM_VisualClickandReveal.html"
+                style="border: none"
+                title="Categorizing Patterns"
+                width="100%"
+                height="405"
+              ></iframe>
+            </div>
+          </li>
+
+          <li class="lms-timeline-item">
+            <h2 class="lms-timeline-titulo">3. The Profiling Workflow</h2>
+            <p>Effective profiling follows a repeatable analytical loop:</p>
+
+            <ol class="lms-lista-numerada">
+              <li>
+                <strong>Data Collection:</strong> Gathering raw logs (SIEM,
+                EDR), network traffic, and external threat feeds.
+              </li>
+              <li>
+                <strong>Pattern Recognition:</strong> Identifying clusters of
+                activity. For example, if an attacker always registers a domain
+                48 hours before a campaign, that is a recognizable "tempo" or
+                pattern.
+              </li>
+              <li>
+                <strong>TTP Mapping:</strong> Mapping observed behaviors to the
+                MITRE ATT&amp;CK matrix.
+              </li>
+              <li>
+                <strong>Hypothesis Generation:</strong> Using the Analysis of
+                Competing Hypotheses (ACH) to determine the most likely intent
+                based on the observed patterns.
+              </li>
+              <li>
+                <strong>Defensive Tuning:</strong> Creating behavioral alerts
+                (e.g., Sigma or YARA rules) that trigger on the
+                <em>pattern</em> rather than just a specific IP address.
+              </li>
+            </ol>
+          </li>
+
+          <li class="lms-timeline-item">
+            <h2 class="lms-timeline-titulo">
+              4. Why Behavioral Profiling Wins
+            </h2>
+            <p>
+              Profiling attack patterns is superior to traditional
+              "Indicator-based" defense because of the Pyramid of Pain.
+            </p>
+
+            <ul class="lms-lista-puntos">
+              <li>
+                <strong>Low Level:</strong> Blocking Hash values and IP
+                addresses is "easy" for the defender, but "trivial" for the
+                attacker to change.
+              </li>
+              <li>
+                <strong>High Level:</strong> Detecting Tactic, Techniques, and
+                Procedures (TTPs) is "tough" for the defender to build, but it
+                is "painful" for the attacker to change, as it forces them to
+                learn an entirely new way of operating.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+      />
+      <p>
+        Copyright 2026 American Public University System ALL RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="/ISSC642/ISSC642_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .course-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 8 </span>
+      <span class="banner__week-name">Future Intrusions and Threats </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Artificial Intelligence</h1>
+
+      <hr class="divider-line" />
+
+      <div class="lms-contenedor">
+        <p>
+          Although AI can be beneficial for machine learning and fail-safes, it
+          is evident that it can also introduce various vulnerabilities. As
+          criminals become more familiar with the associated security threats of
+          AI, we will see more data poisoning and phishing emails that will
+          bypass our intrusion detection methods (Edwards, 2025). We bring this
+          to your attention not to scare you but rather to inform you. Please
+          never forget that our intrusion detection methods are never finished,
+          as vulnerabilities and exploits will always increase in number.
+        </p>
+
+        <h2>AI in Intrusion Detection: The Double-Edged Sword</h2>
+        <p>
+          Artificial Intelligence has transformed Intrusion Detection Systems
+          (IDS) from static, rule-based tools into dynamic, evolving defenses.
+          However, the same capabilities that empower defenders are also being
+          weaponized by adversaries, creating a high-stakes "AI arms race."
+        </p>
+
+        <div class="lms-tabs-container">
+          <input type="radio" id="tab-ai-1" name="sword-tabs" checked />
+          <input type="radio" id="tab-ai-2" name="sword-tabs" />
+
+          <div class="lms-tabs-header">
+            <label for="tab-ai-1">The Good: Enhancing the Defender</label>
+            <label for="tab-ai-2">The Bad: Empowering the Attacker</label>
+          </div>
+
+          <div class="lms-tab-panel" id="panel-ai-1">
+            <p>
+              AI excels at processing massive datasets and identifying patterns
+              that are invisible to human analysts.
+            </p>
+            <ul class="lms-lista-puntos">
+              <li>
+                <strong>Behavioral Anomaly Detection:</strong> Unlike
+                traditional "Signature-based" IDS, AI can establish a baseline
+                of "normal" network behavior. It can detect a breach based on
+                subtle deviations&mdash;such as a user accessing files at an
+                unusual time&mdash;even if no known malware is used.
+              </li>
+              <li>
+                <strong>Predictive Analysis:</strong> AI can correlate minor
+                events across different parts of a network to predict a
+                large-scale attack before it fully manifests.
+              </li>
+              <li>
+                <strong>Automated Response &amp; Triage:</strong> AI reduces
+                "Alert Fatigue" by automatically filtering out false positives
+                and prioritizing high-risk threats, allowing human analysts to
+                focus on complex investigations.
+              </li>
+              <li>
+                <strong>Deciphering Encrypted Traffic:</strong> Advanced ML
+                models can identify malicious patterns within encrypted traffic
+                (Encrypted Traffic Analytics) without needing to decrypt the
+                data, preserving privacy while maintaining security.
+              </li>
+            </ul>
+          </div>
+
+          <div class="lms-tab-panel" id="panel-ai-2">
+            <p>
+              As defenders adopt AI, threat actors are using "Adversarial AI" to
+              bypass even the most advanced detection systems.
+            </p>
+            <ul class="lms-lista-puntos">
+              <li>
+                <strong>Evasion Attacks:</strong> Attackers use AI to "test"
+                their malware against detection models. By making minute,
+                mathematically calculated changes to a file&rsquo;s code, they
+                can create "adversarial examples" that are functionally
+                malicious but appear benign to an AI-based IDS.
+              </li>
+              <li>
+                <strong>Automated Phishing &amp; Social Engineering:</strong> AI
+                can generate highly convincing, personalized phishing content at
+                scale, increasing the likelihood of an initial intrusion that
+                grants an attacker "legitimate" credentials.
+              </li>
+              <li>
+                <strong>Polymorphic Malware:</strong> Attackers use AI to create
+                malware that constantly changes its own code (signature) and
+                behavior (pattern) to stay one step ahead of detection
+                algorithms.
+              </li>
+              <li>
+                <strong>Model Poisoning:</strong> If an attacker gains access to
+                the data used to "train" an IDS, they can subtly "poison" the
+                dataset, so the AI learns to ignore specific malicious
+                activities as if they were normal.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>The Current Reality: Human-AI Collaboration</h2>
+        <p>
+          The most effective Intrusion Detection strategy today is not
+          "AI-only," but rather <strong>Augmented Intelligence.</strong> While
+          AI provides the speed and scale to process trillions of events,
+          <strong>human intuition</strong> remains vital for understanding
+          context, business impact, and the nuanced "why" behind an attack. The
+          following table provides a comparison of AI-enhanced detection and
+          AI-driven attacks.
+        </p>
+
+        <div class="lms-tabla-wrapper">
+          <table class="lms-tabla-dinamica">
+            <caption>
+              Strategic Comparison
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center">Feature</th>
+                <th scope="col" style="text-align: center">
+                  AI-Enhanced Detection
+                </th>
+                <th scope="col" style="text-align: center">
+                  AI-Driven Attacks
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Feature" style="text-align: center">
+                  <strong>Primary Goal</strong>
+                </td>
+                <td data-label="AI-Enhanced Detection">
+                  Minimize False Positives / Speed up Response
+                </td>
+                <td data-label="AI-Driven Attacks">
+                  Maximize Stealth / Automate Exploitation
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Feature" style="text-align: center">
+                  <strong>Core Technique</strong>
+                </td>
+                <td data-label="AI-Enhanced Detection">
+                  Pattern Matching &amp; Anomaly Detection
+                </td>
+                <td data-label="AI-Driven Attacks">
+                  Generative Mimicry &amp; Model Probing
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Feature" style="text-align: center">
+                  <strong>Weakness</strong>
+                </td>
+                <td data-label="AI-Enhanced Detection">
+                  Vulnerable to "Poisoning" and Evasion
+                </td>
+                <td data-label="AI-Driven Attacks">
+                  High Compute Cost and Technical Complexity
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+      />
+      <p>
+        Copyright 2026 American Public University System ALL RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

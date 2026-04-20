@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <style>
+      /* Globales */
+      body,
+      .content-wrapper {
+        font-family: Lato, sans-serif !important;
+        line-height: 1.55;
+        font-size: 16px;
+        color: #041e42;
+        margin: 0;
+        padding: 0;
+      }
+
+      .content-wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px 30px;
+        text-align: center;
+      }
+
+      /* Encabezado Principal */
+      .main-header {
+        background-color: #041e42;
+        padding: 25px 20px;
+        color: white;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      .main-header .week {
+        font-size: 20px;
+        color: #05c3de;
+      }
+      .main-header .title {
+        font-size: 32px;
+        font-weight: 700;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* Títulos y separadores */
+      .section-title {
+        font-size: 32px;
+        color: #041e42;
+        margin-top: 40px;
+        margin-bottom: 0;
+        font-weight: 700;
+        text-align: center;
+      }
+      .summary-title {
+        color: #004c90;
+      }
+      hr.divider {
+        margin: 25px 0;
+        border: none;
+        border-top: 1px solid #ccc;
+      }
+      hr.footer-divider {
+        margin: 40px 0 30px;
+      }
+
+      /* Imágenes */
+      .center-img {
+        display: block;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+      }
+
+      /* Contenedores de iFrame (Genially y Canva) */
+      .iframe-container {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: 30px auto;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+      }
+      .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .iframe-canva-vertical {
+        position: relative;
+        width: 90%;
+        max-width: 900px;
+        margin: 30px auto;
+        padding-top: 155%; /* Aspect Ratio para Canva Vertical */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+      }
+      .iframe-canva-vertical iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Botón PDF */
+      .pdf-btn-container {
+        margin-bottom: 30px;
+      }
+      .pdf-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #004c97;
+        color: white;
+        padding: 14px 28px;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: background-color 0.2s ease-in-out;
+      }
+      .pdf-btn:hover {
+        background-color: #063b75; /* ¡El efecto hover ha vuelto! */
+      }
+
+      /* Caja final */
+      .week-end-box {
+        background-color: #0cc3df;
+        padding: 40px 20px;
+        text-align: center;
+        color: #041e42;
+        margin-top: 60px;
+        border-radius: 8px;
+      }
+      .week-end-box p {
+        margin: 5px 0;
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .week-end-box strong {
+        font-size: 26px;
+        font-weight: 700;
+      }
+
+      /* Footer */
+      .main-footer {
+        max-width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+        text-align: left;
+      }
+      .main-footer img {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+      .main-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ENCABEZADO -->
+    <header class="main-header">
+      <span class="week">Week 5</span><br />
+      <span class="title">Common Attack Patterns</span>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="content-wrapper">
+      <h1 class="section-title">Examples</h1>
+      <hr class="divider" />
+
+      <!-- Responsive IMG 1 -->
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/51.png"
+        class="center-img"
+        alt="Check out the following interactive capsule"
+        width="697"
+        height="62"
+      />
+
+      <!-- GENIALLY 1 (horizontal) -->
+      <div class="iframe-container">
+        <iframe
+          src="https://view.genially.com/690bafbaa9c721b199d454da"
+          allowfullscreen="allowfullscreen"
+        ></iframe>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- SUMMARY HANDOUT -->
+      <h2 class="section-title summary-title">Summary Handout</h2>
+      <img
+        src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/21.png"
+        class="center-img"
+        alt="Download the following document"
+        width="697"
+        height="62"
+      />
+
+      <!-- PDF BUTTON -->
+      <div class="pdf-btn-container">
+        <a
+          href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Plantilla_Infograf%C3%ADa%20_APUS_2.0.pdf"
+          download="Week 5 - Summary Handout.pdf"
+          target="_blank"
+          rel="noopener"
+          class="pdf-btn"
+        >
+          <svg
+            width="22"
+            height="22"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 2a1 1 0 0 0-2 0v9.586L7.707 9.293a1 1 0 1 0-1.414 1.414l4 4 
+                a1 1 0 0 0 1.414 0l4-4a1 1 0 1 0-1.414-1.414L12 11.586V2z"
+            ></path>
+            <path d="M5 18a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H5z"></path>
+          </svg>
+          Week 5 – Summary Handout (PDF)
+        </a>
+      </div>
+
+      <!-- CANVA VERTICAL FIX -->
+      <div class="iframe-canva-vertical">
+        <iframe
+          loading="lazy"
+          src="https://www.canva.com/design/DAG32MQxPbc/UOgyOZ-YAgpGzzgjxH_x4w/view?embed"
+        >
+        </iframe>
+      </div>
+
+      <!-- Cierre final -->
+      <div class="week-end-box">
+        <p>
+          <strong>You've finished the week!</strong><br />You can continue to
+          the next one
+        </p>
+      </div>
+
+      <hr class="divider footer-divider" />
+
+      <!-- FOOTER ESTÁNDAR -->
+      <footer class="main-footer">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+        />
+        <p>
+          Copyright 2026 American Public University System ALL RIGHTS RESERVED
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

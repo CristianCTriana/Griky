@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="/ISSC642/ISSC642_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .course-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 6 </span>
+      <span class="banner__week-name">Fail-Safes</span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">AI and Intrusion Detection</h1>
+
+      <hr class="divider-line" />
+
+      <div class="lms-contenedor">
+        <p>
+          With all of the outputs that AI can provide, one of its greatest
+          features is how it can be integrated into control testing and failure
+          management (Edwards, 2025). By doing so, it can reduce the likelihood
+          of a network being completely shut down and not having its data
+          accessible. Using these AI features can redefine your
+          organization&rsquo;s approach to failure management (2025), and this
+          could result in a form of fail-safe.
+        </p>
+
+        <h2>Control Testing and Failure Management</h2>
+        <p>
+          In a mature security program, it is not enough to simply implement a
+          control; you must constantly verify its efficacy. Control Testing and
+          Failure Management ensure that security safeguards remain effective
+          against an evolving threat landscape and that the organization can
+          gracefully handle a breakdown in its defenses.
+        </p>
+
+        <div class="lms-tarjeta-interactiva">
+          <h3>Control Testing: The Verification Loop</h3>
+          <p>
+            Control testing is the systematic process of evaluating whether a
+            security safeguard is operating as intended. Controls are evaluated
+            against <strong>Design Effectiveness</strong> (Is it built
+            correctly?) and <strong>Operating Effectiveness</strong> (Is it
+            working consistently?). Common testing methodologies include:
+          </p>
+          <ul class="lms-lista-puntos">
+            <li>
+              <strong>Automated Validation:</strong> Using Breach and Attack
+              Simulation (BAS) tools to continuously "ping" defenses with
+              simulated malicious traffic.
+            </li>
+            <li>
+              <strong>Vulnerability Scanning:</strong> Checking for technical
+              weaknesses that a control (like a patch management policy) was
+              supposed to prevent.
+            </li>
+            <li>
+              <strong>Red Teaming:</strong> Active, offensive simulations where
+              operators attempt to bypass controls to reach a specific
+              objective, testing the "human and process" element alongside the
+              technology.
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="lms-tarjeta-interactiva"
+          style="border-left-color: var(--color-aqua)"
+        >
+          <h3>Failure Management: When Defense Fails</h3>
+          <p>
+            Failure Management is the strategy for what happens when a control
+            is bypassed or misconfigured. In cybersecurity, we operate under the
+            principle of "<strong>Assume Failure.</strong>"
+          </p>
+          <ul class="lms-lista-puntos">
+            <li>
+              <strong>Fail-Safe vs. Fail-Open:</strong> A Fail-Safe (or
+              Fail-Closed) system blocks all access upon failure (prioritizing
+              security), while a Fail-Open system allows access (prioritizing
+              availability or physical safety).
+            </li>
+            <li>
+              <strong>Compensating Controls:</strong> If a primary control
+              cannot be implemented (e.g., an unpatchable legacy server), a
+              compensating control (e.g., strict network isolation) is used to
+              mitigate the risk.
+            </li>
+            <li>
+              <strong>Control Redundancy:</strong> Layering controls so that the
+              failure of one does not lead to a total breach.
+            </li>
+          </ul>
+        </div>
+
+        <h2>The Role of Artificial Intelligence (AI)</h2>
+        <p>
+          AI and Machine Learning (ML) are transforming how organizations test
+          controls and manage failures by moving from static, periodic checks to
+          dynamic, real-time intelligence.
+        </p>
+
+        <p class="standard-text">
+          <img
+            src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+            alt="Click a topic to see more information"
+            title="Click a topic to see more information"
+            data-d2l-editor-default-img-style="true"
+            style="max-width: 100%"
+          />
+        </p>
+
+        <div class="lms-tabs-container">
+          <input type="radio" id="tab-ai-1" name="ai-tabs" checked />
+          <input type="radio" id="tab-ai-2" name="ai-tabs" />
+
+          <div class="lms-tabs-header">
+            <label for="tab-ai-1">AI in Control Testing</label>
+            <label for="tab-ai-2">AI in Failure Management</label>
+          </div>
+
+          <div class="lms-tab-panel" id="panel-ai-1">
+            <ul class="lms-lista-puntos">
+              <li>
+                <strong>Continuous Security Validation:</strong> AI-driven BAS
+                tools can automatically generate and execute new attack patterns
+                based on emerging TTPs (Tactics, Techniques, and Procedures),
+                testing controls against threats before they are seen in the
+                wild.
+              </li>
+              <li>
+                <strong>Automated Red Teaming:</strong> AI can simulate complex
+                adversary behaviors, identifying "blind spots" in log coverage
+                or detection rules that human testers might miss.
+              </li>
+            </ul>
+          </div>
+
+          <div class="lms-tab-panel" id="panel-ai-2">
+            <ul class="lms-lista-puntos">
+              <li>
+                <strong>Predictive Maintenance for Security:</strong> AI can
+                analyze system telemetry to predict when a security
+                control&mdash;such as a firewall cluster or an encryption
+                service&mdash;is likely to fail due to load or hardware issues
+                before the failure occurs.
+              </li>
+              <li>
+                <strong>Self-Healing Infrastructure:</strong> Upon detecting a
+                control failure (e.g., an unauthorized configuration change),
+                AI-driven orchestration can automatically revert the system to a
+                "Known Good" state, providing near-instantaneous remediation.
+              </li>
+              <li>
+                <strong>Noise Reduction:</strong> During a massive control
+                failure (like a DDoS attack), AI filters out the "noise" to
+                identify the root cause, preventing "alert fatigue" for incident
+                responders.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+      />
+      <p>
+        Copyright 2026 American Public University System ALL RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

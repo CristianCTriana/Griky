@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="/ISSC642/ISSC642_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .course-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">IDS and IPS Operations</span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Agile Methods for Intrusion Detection Planning
+      </h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        As mentioned earlier, leadership such as CIS understands the frameworks
+        that need to be implemented in a network. However, what happens when the
+        local leadership, inside the organization, is not aware of how network
+        intrusion should be implemented? With our organizations and networks
+        having reconnaissance implemented at all times, we must find methods to
+        adhere to their demands (Vacca, 2024). For these reasons, an Agile
+        environment is highly recommended.
+      </p>
+
+      <h2>Intrusion Detection: A Primer on Attackers and Their Methods</h2>
+      <p>
+        Intrusion Detection is the art and science of identifying unauthorized
+        attempts to access, manipulate, or disable computer systems. To defend
+        effectively, one must understand the adversary&rsquo;s mindset and the
+        technical fingerprints they leave behind during an intrusion.
+      </p>
+
+      <div class="lms-tarjeta-interactiva">
+        <h3>The Adversary: Who and Why?</h3>
+        <p>
+          Modern intrusions are rarely random. They are driven by specific
+          threat actors with varying levels of sophistication and intent:
+        </p>
+        <ul class="lms-lista-puntos">
+          <li>
+            <strong>Nation-State Actors (APTs):</strong> Highly sophisticated,
+            well-funded, and patient. Their goal is usually long-term espionage
+            or intellectual property theft.
+          </li>
+          <li>
+            <strong>Cybercriminals:</strong> Primarily motivated by profit. They
+            favor high-impact attacks like ransomware or credential theft for
+            sale on the dark web.
+          </li>
+          <li>
+            <strong>Hacktivists:</strong> Motivated by political or social
+            causes. They often focus on disruptive attacks, such as Website
+            defacement or Distributed Denial of Service (DDoS).
+          </li>
+          <li>
+            <strong>Insiders:</strong> Employees or contractors with legitimate
+            access who abuse their privileges for personal gain or revenge.
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="lms-tarjeta-sutil"
+        style="
+          border-left: 6px solid var(--color-azul-noche);
+          margin: var(--espaciado-lg) 0;
+        "
+      >
+        <h3 style="color: var(--color-azul-noche); margin-top: 0">
+          Anatomy of an Intrusion
+        </h3>
+        <p>
+          Attackers generally follow a structured lifecycle, often mapped to the
+          Cyber Kill Chain or the MITRE ATT&amp;CK framework. Detection is most
+          effective when it catches the attacker early in this cycle.
+        </p>
+
+        <ol class="lms-lista-numerada">
+          <li>
+            <strong>Reconnaissance:</strong> Passive or active gathering of
+            information (scanning for open ports, researching employees).
+          </li>
+          <li>
+            <strong>Weaponization &amp; Delivery:</strong> Sending a malicious
+            payload (phishing email, infected USB).
+          </li>
+          <li>
+            <strong>Exploitation:</strong> Triggering the vulnerability (buffer
+            overflows, SQL injection).
+          </li>
+          <li>
+            <strong>Installation &amp; Persistence:</strong> Ensuring they stay
+            in the system even after a reboot (creating new user accounts,
+            modifying startup tasks).
+          </li>
+          <li>
+            <strong>Command &amp; Control (C2):</strong> The infected system
+            "calls home" to the attacker's server for instructions.
+          </li>
+          <li>
+            <strong>Actions on Objectives:</strong> The final goal (exfiltrating
+            data, encrypting files, or lateral movement).
+          </li>
+        </ol>
+      </div>
+
+      <h3 style="color: var(--color-azul-noche)">Detection Methodologies</h3>
+      <p>
+        Intrusion Detection Systems (IDS) use two primary methods to catch these
+        stages in action:
+      </p>
+
+      <div class="lms-tabla-wrapper">
+        <table class="lms-tabla-dinamica">
+          <caption>
+            Comparison of Detection Methods
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Methodology</th>
+              <th scope="col">How it Works</th>
+              <th scope="col">Pros</th>
+              <th scope="col">Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Methodology">
+                <strong>Signature-Based</strong>
+              </td>
+              <td data-label="How it Works">
+                Matches activity against a database of known "bad" patterns
+                (like an antivirus).
+              </td>
+              <td data-label="Pros">
+                Very fast; low false-positive rate for known threats.
+              </td>
+              <td data-label="Cons">Cannot detect "Zero-Day" (new) attacks.</td>
+            </tr>
+            <tr>
+              <td data-label="Methodology"><strong>Anomaly-Based</strong></td>
+              <td data-label="How it Works">
+                Learns what "normal" looks like and flags anything that
+                deviates.
+              </td>
+              <td data-label="Pros">
+                Can catch brand-new, never-before-seen attack on TTPs.
+              </td>
+              <td data-label="Cons">
+                High false-positive rate; requires a "training" period.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div
+        class="lms-tarjeta-interactiva"
+        style="border-left-color: var(--color-aqua)"
+      >
+        <h3>Key Indicators (The "Smoking Gun")</h3>
+        <p>
+          When an intrusion occurs, attackers leave behind Indicators of
+          Compromise (IOCs). Effective detection focuses on:
+        </p>
+        <ul class="lms-lista-puntos">
+          <li>
+            <strong>Network Artifacts:</strong> Unusual outbound traffic to
+            unknown countries, spikes in data transfer, or DNS queries for
+            non-existent domains.
+          </li>
+          <li>
+            <strong>Host Artifacts:</strong> Unexpected registry changes, new
+            large files in temporary directories, or processes running from
+            unusual locations (e.g., cmd.exe running from a web server).
+          </li>
+          <li>
+            <strong>Log Inconsistencies:</strong> Successful logins at 3:00 AM
+            from a location the user has never visited, or multiple failed login
+            attempts followed by a success (Brute Force).
+          </li>
+        </ul>
+      </div>
+
+      <div class="lms-footer">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt="logo"
+          style="max-width: 150px"
+        />
+        <p>
+          Copyright 2026 American Public University System ALL RIGHTS RESERVED
+        </p>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+      />
+      <p>
+        Copyright 2026 American Public University System ALL RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="/ISSC642/ISSC642_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .course-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 3 </span>
+      <span class="banner__week-name">Frameworks and Intrusion Detection </span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">Cybersecurity Leadership</h1>
+
+      <hr class="divider-line" />
+
+      <p>
+        To mitigate risk and provide continuous improvement for security,
+        organizations rely on the practices of the Center for Internet Security
+        (CIS) (Edwards, 2025). Through hardening and benchmarks, the framework
+        assists by providing an outline that will reduce various
+        vulnerabilities. Without the CIS&rsquo;s leadership, organizations would
+        be more prone to intrusions.
+      </p>
+
+      <h2>Leadership in NIST SP 800-53</h2>
+      <p>
+        In NIST SP 800-53 (Revision 5), leadership is not just a high-level
+        concept; it is codified as a set of mandatory management controls. While
+        many families in the catalog are technical, NIST treats leadership as
+        the "engine" that drives the organization's security and privacy
+        posture.
+      </p>
+
+      <p>
+        Leadership responsibilities are primarily addressed through the Program
+        Management (PM) family and the Governance functions.
+      </p>
+
+      <p class="standard-text">
+        <img
+          src="/content/enforced/616595-HRMT600_development_8w/Week_1/../APUS%20CINTILLOS%20-%20Rise.png"
+          alt="Click a topic to see more information"
+          title="Click a topic to see more information"
+          data-d2l-editor-default-img-style="true"
+          style="max-width: 100%"
+        />
+      </p>
+
+      <div class="lms-accordion">
+        <div class="lms-accordion-item">
+          <input type="checkbox" id="acc-nist-1" />
+          <label class="lms-accordion-title" for="acc-nist-1"
+            >The "Program Management" (PM) Family</label
+          >
+          <div class="lms-accordion-content">
+            <p>
+              The PM family is the primary home for leadership-focused controls.
+              Unlike system-level controls (which apply to individual servers or
+              apps), PM controls apply to the entire
+              <strong>organization</strong> and are the direct responsibility of
+              senior executives.
+            </p>
+            <ul class="lms-lista-puntos">
+              <li>
+                <strong>PM-2: Information Security Program Leadership:</strong>
+                Explicitly requires the organization to appoint a senior
+                official (typically the <strong>CISO</strong>) to head the
+                security program. This official must have the authority and
+                resources to manage risk across the enterprise.
+              </li>
+              <li>
+                <strong>PM-19: Privacy Program Leadership:</strong> Similar to
+                PM-2, this requires a designated senior lead for privacy
+                (typically a <strong>Chief Privacy Officer</strong>), ensuring
+                that privacy is not just a legal afterthought but a leadership
+                priority.
+              </li>
+              <li>
+                <strong>PM-29: Risk Management Program Leadership:</strong>
+                Mandates that senior leadership establishes a "Risk Executive"
+                function. This ensures that risk isn't just managed by IT staff
+                in a vacuum but is aligned with the organization's strategic
+                business goals.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lms-accordion-item">
+          <input type="checkbox" id="acc-nist-2" />
+          <label class="lms-accordion-title" for="acc-nist-2"
+            >Accountability and Resource Allocation</label
+          >
+          <div class="lms-accordion-content">
+            <p>
+              NIST SP 800-53 makes it clear that leadership is responsible for
+              the <strong>provisioning of resources.</strong>
+            </p>
+            <ul class="lms-lista-puntos">
+              <li>
+                <strong
+                  >PM-3: Information Security and Privacy Resources:</strong
+                >
+                Leaders must ensure that the security and privacy programs have
+                the necessary funding, personnel, and tools. If a system fails
+                because it was underfunded, NIST points back to a failure in
+                leadership-level controls.
+              </li>
+              <li>
+                <strong
+                  >PM-4: Plan of Action and Milestones (POA&amp;M):</strong
+                >
+                Leadership must oversee the "fix-it lists." They are responsible
+                for reviewing and approving the plans to correct security
+                weaknesses, ensuring accountability for remediation.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lms-accordion-item">
+          <input type="checkbox" id="acc-nist-3" />
+          <label class="lms-accordion-title" for="acc-nist-3"
+            >Governance and Strategy</label
+          >
+          <div class="lms-accordion-content">
+            <p>
+              Leadership is tasked with defining the "rules of the road" for the
+              entire organization:
+            </p>
+            <ul class="lms-lista-puntos">
+              <li>
+                <strong>Governance (GV) Controls:</strong> In the newest
+                versions, leadership is expected to foster a risk-aware culture.
+                This includes setting the "Risk Tolerance" - deciding how much
+                risk the organization is willing to accept in pursuit of its
+                mission.
+              </li>
+              <li>
+                <strong>Mission/Business Process Alignment:</strong> NIST
+                requires leaders to ensure that security controls do not hinder
+                the mission but rather support it by making the organization
+                more resilient.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lms-accordion-item">
+          <input type="checkbox" id="acc-nist-4" />
+          <label class="lms-accordion-title" for="acc-nist-4"
+            >The Authorizing Official (AO) Role</label
+          >
+          <div class="lms-accordion-content">
+            <p>
+              One of the most powerful leadership roles in the NIST ecosystem is
+              the <strong>Authorizing Official.</strong>
+            </p>
+            <ul class="lms-lista-puntos">
+              <li>
+                The AO is a senior executive who has the ultimate authority to
+                permit a system to operate.
+              </li>
+              <li>
+                By signing an <strong>Authorization to Operate (ATO)</strong>,
+                the AO personally accepts the residual risk on behalf of the
+                organization. This places the ultimate "legal and operational
+                hook" on a high-level leader rather than a technical manager.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+      />
+      <p>
+        Copyright 2026 American Public University System ALL RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>

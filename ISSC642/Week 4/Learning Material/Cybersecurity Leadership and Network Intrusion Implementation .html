@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="/ISSC642/ISSC642_styles.css" />
+    <style>
+      :root {
+        --color-primary: #041e42;
+        --color-accent: #05c3de;
+        --color-text: #333;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato, sans-serif !important;
+      }
+
+      /* Bloque del Banner Superior */
+      .banner {
+        background-color: var(--color-primary);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+
+      .banner__week-number {
+        display: block;
+        font-size: 20px;
+        color: var(--color-accent);
+        font-weight: normal;
+      }
+
+      .banner__week-name {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      /* Bloque del Contenido Principal */
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .topic-title {
+        text-align: center;
+        color: var(--color-primary);
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      /* Divider */
+      .divider-line {
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .course-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="banner">
+      <span class="banner__week-number"> Week 4 </span>
+      <span class="banner__week-name">IDS and IPS Operations</span>
+    </header>
+
+    <main class="content-wrapper">
+      <h1 class="topic-title">
+        Cybersecurity Leadership and Network Intrusion Implementation
+      </h1>
+
+      <hr class="divider-line" />
+
+      <div class="lms-contenedor">
+        <p>
+          Due to complexity and scaling, large organizations, compared to
+          smaller organizations, struggle with implementing cybersecurity
+          controls (Edwards, 2025). Agile principles revolve around delivery,
+          feedback, and adaptability for fast-paced environments such as
+          cybersecurity. At the time of this course, CIS 18 provides one of the
+          best planned and structured controls. Therefore, we highly encourage
+          you to review the CIS 18 controls and use them in your research
+          development for the course. Nevertheless, and as we always advise,
+          there is never a one-size-fits-all method for intrusion detection
+          planning or any other cybersecurity practice.
+        </p>
+
+        <h2>The CIS 18 Critical Security Controls (v8.1)</h2>
+        <p>
+          The CIS Critical Security Controls (CIS 18) are a prioritized and
+          prescriptive set of best practices developed by the Center for
+          Internet Security to mitigate the most common and dangerous cyber
+          attacks. Unlike broad frameworks, the CIS Controls are
+          "actions-oriented," focusing on specific safeguards that provide
+          high-value defense.
+        </p>
+
+        <div class="lms-destacado-oscuro">
+          <p style="color: #fff">
+            The current version (v8.1) organizes security into 18 top-level
+            categories as shown in the following table. Each category contains
+            specific "Safeguards" (formerly sub-controls).
+          </p>
+        </div>
+
+        <div class="lms-tabla-wrapper">
+          <table class="lms-tabla-dinamica">
+            <caption>
+              Categories of CIS 18 Critical Security Controls
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center">#</th>
+                <th scope="col">Control</th>
+                <th scope="col">Primary Objective</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>1</strong>
+                </td>
+                <td data-label="Control">Inventory of Assets</td>
+                <td data-label="Primary Objective">
+                  Actively manage all hardware (physical, virtual, cloud) to
+                  know what is on the network.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>2</strong>
+                </td>
+                <td data-label="Control">Inventory of Software</td>
+                <td data-label="Primary Objective">
+                  Manage all software so that only authorized programs are
+                  installed and executed.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>3</strong>
+                </td>
+                <td data-label="Control">Data Protection</td>
+                <td data-label="Primary Objective">
+                  Develop processes to identify, classify, securely handle, and
+                  dispose of sensitive data.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>4</strong>
+                </td>
+                <td data-label="Control">Secure Configuration</td>
+                <td data-label="Primary Objective">
+                  Maintain secure configurations for all enterprise assets and
+                  software (avoiding default settings).
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>5</strong>
+                </td>
+                <td data-label="Control">Account Management</td>
+                <td data-label="Primary Objective">
+                  Manage credentials for user, administrator, and service
+                  accounts across the enterprise.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>6</strong>
+                </td>
+                <td data-label="Control">Access Control</td>
+                <td data-label="Primary Objective">
+                  Use processes and tools to grant and revoke access based on
+                  the principle of least privilege.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>7</strong>
+                </td>
+                <td data-label="Control">Vulnerability Management</td>
+                <td data-label="Primary Objective">
+                  Continuously identify, assess, and remediate vulnerabilities
+                  in systems and software.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>8</strong>
+                </td>
+                <td data-label="Control">Audit Log Management</td>
+                <td data-label="Primary Objective">
+                  Collect and retain audit logs to help detect, understand, and
+                  recover from attacks.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>9</strong>
+                </td>
+                <td data-label="Control">Email &amp; Web Protections</td>
+                <td data-label="Primary Objective">
+                  Improve protections against social engineering through email
+                  and web browser filters.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>10</strong>
+                </td>
+                <td data-label="Control">Malware Defenses</td>
+                <td data-label="Primary Objective">
+                  Control the installation and execution of malicious code on
+                  enterprise assets.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>11</strong>
+                </td>
+                <td data-label="Control">Data Recovery</td>
+                <td data-label="Primary Objective">
+                  Establish and maintain practices sufficient to restore assets
+                  to a trusted pre-incident state.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>12</strong>
+                </td>
+                <td data-label="Control">Network Management</td>
+                <td data-label="Primary Objective">
+                  Securely manage network infrastructure (firewalls, routers)
+                  and their configurations.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>13</strong>
+                </td>
+                <td data-label="Control">Network Monitoring</td>
+                <td data-label="Primary Objective">
+                  Maintain comprehensive network monitoring and defense against
+                  security threats.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>14</strong>
+                </td>
+                <td data-label="Control">Security Awareness</td>
+                <td data-label="Primary Objective">
+                  Train the workforce to be security-conscious and properly
+                  skilled to reduce human risk.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>15</strong>
+                </td>
+                <td data-label="Control">Service Provider Mgmt.</td>
+                <td data-label="Primary Objective">
+                  Evaluate and manage the security of third-party service
+                  providers holding sensitive data.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>16</strong>
+                </td>
+                <td data-label="Control">Application Software</td>
+                <td data-label="Primary Objective">
+                  Manage the security life cycle of in-house and acquired
+                  software to fix weaknesses.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>17</strong>
+                </td>
+                <td data-label="Control">Incident Response</td>
+                <td data-label="Primary Objective">
+                  Build a program to prepare for, detect, and quickly respond to
+                  potential cyber attacks.
+                </td>
+              </tr>
+              <tr>
+                <td data-label="#" style="text-align: center">
+                  <strong>18</strong>
+                </td>
+                <td data-label="Control">Penetration Testing</td>
+                <td data-label="Primary Objective">
+                  Simulate attacks to identify and exploit weaknesses in people,
+                  processes, and technology.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="lms-caja-icono">
+          <img
+            src="/content/enforced/1056352-ISSC642_development_site_griky_english/Week_4/../image_20260122155706185.png"
+            alt="Why it matters graphic"
+            style="max-width: 100px"
+          />
+          <div>
+            <h2 style="margin-top: 0; color: var(--color-azul-noche)">
+              Why It Matters:
+            </h2>
+            <p>
+              The CIS 18 is widely considered the "on-ramp" to compliance. By
+              implementing these controls, an organization automatically aligns
+              with much larger, more complex frameworks like NIST CSF, HIPAA,
+              and PCI DSS. It shifts the focus from "checking boxes" to
+              "stopping attacks."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider-line" />
+    </main>
+
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+      />
+      <p>
+        Copyright 2026 American Public University System ALL RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+  </body>
+</html>
