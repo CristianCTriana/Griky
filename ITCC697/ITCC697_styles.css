@@ -907,15 +907,20 @@
 
 /* ================= LÓGICA DE INTERACTIVIDAD ================= */
 /* Cuando el Radio 1 está chequeado, pintar su etiqueta y mostrar su panel */
-#tab-ai-1:checked ~ .lms-tabs-header label[for="tab-ai-1"],
-#tab-ai-2:checked ~ .lms-tabs-header label[for="tab-ai-2"] {
+.lms-tab-radio-1:checked ~ .lms-tabs-header .lms-tab-label-1,
+.lms-tab-radio-2:checked ~ .lms-tabs-header .lms-tab-label-2,
+.lms-tab-radio-3:checked ~ .lms-tabs-header .lms-tab-label-3,
+.lms-tab-radio-4:checked ~ .lms-tabs-header .lms-tab-label-4 {
   background-color: var(--color-azul-noche);
   color: var(--color-blanco);
   border-color: var(--color-azul-noche);
 }
 
-#tab-ai-1:checked ~ #panel-ai-1,
-#tab-ai-2:checked ~ #panel-ai-2 {
+/* Mostrar Paneles (Soporta hasta 4 pestañas) */
+.lms-tab-radio-1:checked ~ .lms-tab-panel-1,
+.lms-tab-radio-2:checked ~ .lms-tab-panel-2,
+.lms-tab-radio-3:checked ~ .lms-tab-panel-3,
+.lms-tab-radio-4:checked ~ .lms-tab-panel-4 {
   display: block;
 }
 /* ============================================================ */
@@ -1028,5 +1033,99 @@
   .lms-camino-item:nth-child(even)::after,
   .lms-camino-item:nth-child(odd)::after {
     left: 10px; /* Alinea todos los nodos a la izquierda */
+  }
+}
+
+/* =========================================
+   Componente: Tarjetas Giratorias (Flip Cards)
+   ========================================= */
+.lms-flip-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaciado-lg);
+  margin: var(--espaciado-lg) 0;
+}
+
+.lms-flip-tarjeta {
+  background-color: transparent;
+  flex: 1;
+  min-width: 280px;
+  height: 250px;
+  perspective: 1000px; /* Le da la profundidad 3D */
+}
+
+.lms-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+/* Girar al pasar el mouse o hacer tap */
+.lms-flip-tarjeta:hover .lms-flip-inner,
+.lms-flip-tarjeta:focus-within .lms-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.lms-flip-frente,
+.lms-flip-dorso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Necesario para Safari */
+  backface-visibility: hidden;
+  border-radius: 8px;
+  padding: var(--espaciado-lg);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Diseño de la cara frontal */
+.lms-flip-frente {
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  border-bottom: 5px solid var(--color-aqua);
+  align-items: center;
+}
+
+.lms-flip-frente h3 {
+  color: var(--color-blanco);
+  margin: 0;
+}
+
+/* Diseño de la cara trasera */
+.lms-flip-dorso {
+  background-color: var(--color-blanco);
+  color: var(--color-gris-negro);
+  transform: rotateY(180deg); /* Volteado por defecto */
+  border: 1px solid var(--color-aqua);
+  text-align: left;
+}
+
+.lms-flip-dorso h3 {
+  color: var(--color-azul-real);
+  margin-top: 0;
+  border-bottom: 1px solid var(--color-gris);
+  padding-bottom: 8px;
+  font-size: 1.1em;
+}
+
+/* Grilla de 3 columnas para tarjetas */
+.lms-grid-3-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-lg);
+  margin: var(--espaciado-lg) 0;
+}
+
+@media (min-width: 768px) {
+  .lms-grid-3-col {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
