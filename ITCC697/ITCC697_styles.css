@@ -1,0 +1,1032 @@
+/* =========================================
+   1. VARIABLES GLOBALES (Diseño Base)
+   ========================================= */
+:root {
+  /* Paleta de Colores Principales */
+  --color-azul-noche: #041e42;
+  --color-aqua: #05c3de;
+  --color-azul-real: #004c97;
+  --color-gris-negro: #202122;
+  --color-azul-claro: #eaf4ff;
+  --color-blanco: #fff;
+  --color-gris: #fcfcfc;
+
+  /* Tipografía y Espaciado */
+  --fuente-principal: "Lato", sans-serif;
+  --espaciado-sm: 8px;
+  --espaciado-md: 16px;
+  --espaciado-lg: 24px;
+}
+
+.letra-gris {
+  color: var(--color-gris-negro);
+}
+
+.letra-blanco {
+  color: var(--color-blanco);
+}
+
+.letra-azul {
+  color: var(--color-azul-noche);
+}
+
+/* caja estandard */
+.standard-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Caja de nota destacada */
+.lms-caja-info {
+  padding: var(--espaciado-md);
+  margin-bottom: var(--espaciado-md);
+  /*border-radius: 0 0 10px 0; /* Bordes redondeados solo a la derecha */
+  background-color: var(--color-azul-claro);
+  font-size: 19px;
+}
+
+/* borde ligero para dar profundidad */
+.shadow-border {
+  border: 1px solid var(--color-gris-negro);
+}
+
+/* bordes laterales para las cajas */
+.borde-izq-azul {
+  border-left: 5px solid var(--color-azul-noche);
+  border-radius: 0 0 10px 0;
+}
+
+.borde-der-azul {
+  border-right: 5px solid var(--color-azul-noche);
+  border-radius: 10px 0 0 0;
+}
+
+.borde-izq-aqua {
+  border-left: 5px solid var(--color-aqua);
+}
+
+/* bordes superiores para las cajas */
+.borde-sup-azul {
+  border-top: 5px solid var(--color-azul-noche);
+}
+
+.borde-sup-aqua {
+  border-top: 5px solid var(--color-aqua);
+}
+
+/* bonde inferior */
+.borde-inf-aqua {
+  border-bottom: 4px solid var(--color-aqua);
+}
+
+.borde-inf-azul {
+  border-bottom: 4px solid var(--color-azul-real);
+}
+
+/* bordes completos */
+.full-border-aqua {
+  border: 1px solid var(--color-aqua);
+}
+
+.full-border-azul {
+  border: 1px solid var(--color-azul-noche);
+}
+
+/* pildoras */
+.pildora-gris {
+  background-color: var(--color-gris);
+  border: 1px solid var(--color-gris);
+  padding: 15px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.pildora-azul {
+  background-color: var(--color-azul-real);
+  border: 1px solid var(--color-gris);
+  padding: 15px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* estilos para cintillos */
+.banner {
+  display: block;
+  margin: 20px auto 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contenedor responsivo con una sombra sutil */
+.lms-imagen-marco {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-gris);
+  display: block;
+  margin: var(--espaciado-lg) auto;
+}
+
+/* =========================================
+   LAYOUT 1: GRID DINÁMICO
+   ========================================= */
+.lms-grid-inteligente {
+  display: grid;
+  gap: var(--espaciado-md);
+  /* Por defecto en celulares: 1 sola columna */
+  grid-template-columns: 1fr;
+}
+
+/* A partir de pantallas medianas (Tablets y PCs) */
+@media (min-width: 768px) {
+  .lms-grid-inteligente {
+    /* Creamos 2 columnas del mismo ancho */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* LA MAGIA: Si el último elemento es impar (ej. el tercero), 
+     le decimos que ocupe las 2 columnas disponibles */
+  .lms-grid-inteligente > *:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lms-grid-inteligente {
+    /* Creamos 2 columnas del mismo ancho */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================================
+   LAYOUT 2: FLEX MEDIA (Imagen y Texto)
+   ========================================= */
+.lms-flex-media {
+  display: flex;
+  gap: var(--espaciado-lg);
+  /* Por defecto en celular: apilados verticalmente */
+  flex-direction: column;
+  align-items: center; /* Centra el contenido en móvil */
+}
+
+/* La imagen dentro del flex no debe desbordarse */
+.lms-flex-media img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Opcional: bordes redondeados */
+}
+
+/* A partir de pantallas medianas (Tablets y PCs) */
+@media (min-width: 768px) {
+  .lms-flex-media {
+    /* Cambiamos la dirección a horizontal */
+    flex-direction: row;
+    align-items: flex-start; /* Alinea los elementos arriba */
+  }
+
+  /* Hacemos que ambos hijos (ej. div de texto y div de imagen) 
+     se dividan el espacio disponible equitativamente */
+  .lms-flex-media > * {
+    flex: 1;
+  }
+}
+
+/* =========================================
+   LISTA CON SEPARADORES DE LÍNEA
+   ========================================= */
+.lms-lista-lineas {
+  /*list-style: none; /* Quitamos las viñetas por defecto */
+  padding: 0;
+  margin-bottom: var(--espaciado-lg);
+}
+
+.lms-lista-lineas li {
+  padding: var(--espaciado-md) 0; /* Espaciado arriba y abajo, nada a los lados */
+  border-bottom: 1px solid var(--color-azul-noche);
+  display: flex;
+  /* align-items: center; /* Por si quieres poner un ícono junto al texto */
+}
+
+/* El último elemento no necesita línea debajo */
+.lms-lista-lineas li:last-child {
+  border-bottom: none;
+}
+
+/* Efecto hover opcional para que sea interactiva */
+.lms-lista-lineas li:hover {
+  /* Un pequeño desplazamiento suave al pasar el mouse */
+  padding-left: var(--espaciado-sm);
+  transition: all 0.3s ease;
+}
+
+/* =========================================
+   LISTA NUMERADA ELEGANTE (Pasos o Secuencias)
+   ========================================= */
+.lms-lista-numerada {
+  counter-reset: contador-principal;
+  list-style: none;
+  padding-left: 0;
+}
+
+.lms-lista-numerada > li {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: var(--espaciado-md);
+  counter-increment: contador-principal;
+}
+
+/* Dibujamos el número personalizado */
+.lms-lista-numerada > li::before {
+  content: counter(contador-principal);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.lms-sublista-letras {
+  list-style: none;
+  counter-reset: sub-contador;
+  padding-left: 0;
+  margin-top: var(--espaciado-sm);
+}
+
+.lms-sublista-letras > li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 6px;
+  counter-increment: sub-contador;
+}
+
+.lms-sublista-letras > li::before {
+  content: counter(sub-contador, lower-alpha) "."; /* Genera a. b. c. */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-gris-negro);
+  font-weight: bold;
+  background: none;
+  width: auto;
+  height: auto;
+}
+/* =========================================
+   AJUSTES PARA DUAL BOX LISTS
+   ========================================= */
+/* Asegura que los elementos de lista (li) hereden el color blanco
+   dentro de dual-box, sobreescribiendo el !important de GlobalStyles */
+.dual-box ul li {
+  color: #ffffff !important;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+/* Opcional: Le damos el color 'aqua' brillante a los títulos 'strong' de la lista 
+   para resaltar mejor contra el fondo oscuro */
+.dual-box ul li strong {
+  color: var(--color-aqua, #05c3de);
+}
+
+/* =========================================
+   ESTILOS PARA CAJAS DE INFORMACIÓN
+   ========================================= */
+
+/* Caja base con fondo suave */
+.lms-caja-info {
+  background-color: #f8fbff; /* Un azul muy sutil de fondo */
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0; /* Redondeamos solo el lado derecho */
+}
+
+/* Borde izquierdo azul institucional */
+.borde-izq-azul {
+  border-left: 6px solid #004c97; /* Usando tu azul real */
+}
+
+/* Sombra suave para dar profundidad */
+.shadow-border {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Ajuste para listas dentro de la caja de info */
+.lms-caja-info ul {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding-left: 30px;
+}
+
+.lms-caja-info ul li {
+  margin-bottom: 5px;
+  color: #202122; /* Gris oscuro para legibilidad */
+}
+
+/* =========================================
+   BANNER DE INSTRUCCIÓN INTERACTIVA
+   ========================================= */
+.lms-prompt-interactivo {
+  background-color: var(--color-azul-noche, #041e42);
+  color: var(--color-blanco, #ffffff);
+  padding: 16px 24px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: var(--fuente-principal, "Lato", sans-serif);
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(4, 30, 66, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Separa el icono del texto */
+}
+
+/* Animación sutil para invitar a hacer clic (opcional) */
+.prompt-icon {
+  font-size: 24px;
+  animation: bounceDown 2s infinite;
+}
+
+@keyframes bounceDown {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Contenedor Base */
+.lms-contenedor {
+  font-family: var(--fuente-principal);
+  color: var(--color-gris-negro);
+  line-height: 1.6;
+}
+
+/* Jumbotron Modernizado */
+.lms-destacado-aqua {
+  background-color: var(--color-aqua);
+  color: var(--color-gris-negro);
+  padding: var(--espaciado-lg);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: var(--espaciado-lg) 0;
+}
+
+/* Píldoras de Categorías */
+.lms-grilla-pildoras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaciado-sm);
+  list-style: none;
+  padding: 0;
+  margin: var(--espaciado-md) 0;
+}
+
+.lms-pildora {
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  padding: var(--espaciado-sm) var(--espaciado-md);
+  border-radius: 50px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* Imágenes Limpias */
+.lms-imagen-fluida {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: var(--espaciado-lg) auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Caja de Video o Recursos */
+.lms-caja-video {
+  background-color: var(--color-azul-claro);
+  border-left: 6px solid var(--color-azul-real);
+  padding: var(--espaciado-lg);
+  margin: var(--espaciado-lg) 0;
+  border-radius: 4px;
+}
+
+.lms-caja-video p {
+  color: var(--color-azul-noche);
+  margin-bottom: var(--espaciado-md);
+}
+
+.lms-caja-video p:last-child {
+  margin-bottom: 0;
+}
+
+.lms-enlace-video {
+  color: var(--color-azul-real);
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.lms-enlace-video:hover {
+  text-decoration: underline;
+  color: var(--color-azul-noche);
+}
+
+/* Nuevas herramientas para "romper" paredes de texto */
+
+/* Grilla de 2 columnas responsiva */
+.lms-grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-lg);
+  margin: var(--espaciado-lg) 0;
+}
+
+@media (min-width: 768px) {
+  .lms-grid-2-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Tarjetas sutiles para usar dentro de la grilla */
+.lms-tarjeta-sutil {
+  background-color: var(--color-azul-claro);
+  padding: var(--espaciado-lg);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Tarjeta con borde para separar conceptos iniciales */
+.lms-tarjeta-borde {
+  border: 2px solid var(--color-aqua);
+  border-radius: 8px;
+  padding: var(--espaciado-lg);
+  margin-bottom: var(--espaciado-lg);
+  background-color: var(--color-gris);
+}
+
+/* Cita o Conclusión destacada */
+.lms-cita-destacada {
+  border-left: 6px solid var(--color-aqua);
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  padding: var(--espaciado-lg);
+  border-radius: 0 8px 8px 0;
+  margin: var(--espaciado-lg) 0;
+  font-size: 1.05em;
+}
+
+/* Caja para Consejos Prácticos o Recomendaciones */
+.lms-consejo-box {
+  background-color: var(--color-azul-claro);
+  border-left: 6px solid var(--color-aqua);
+  padding: var(--espaciado-lg);
+  border-radius: 0 8px 8px 0;
+  margin: var(--espaciado-lg) 0;
+  color: var(--color-azul-noche);
+}
+
+/* Enmarcado elegante para imágenes o diagramas importantes */
+.lms-figura {
+  margin: var(--espaciado-lg) 0;
+  background-color: var(--color-gris);
+  padding: var(--espaciado-md);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f0f0f0;
+}
+
+/* VIDEO RESPONSIVE */
+
+.video-wrapper {
+  width: 100%;
+
+  max-width: 800px;
+
+  margin: 0 auto;
+}
+
+.video-responsive {
+  position: relative;
+
+  width: 100%;
+
+  padding-bottom: 56.25%;
+
+  height: 0;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background: #000;
+
+  margin-bottom: 30px;
+
+  border: 8px solid #05c3de;
+}
+
+.video-responsive iframe {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+}
+
+/* Componente: Línea de Tiempo */
+.lms-timeline {
+  border-left: 4px solid var(--color-aqua);
+  padding-left: var(--espaciado-lg);
+  margin: var(--espaciado-lg) 0 var(--espaciado-lg) var(--espaciado-lg);
+  list-style: none;
+}
+
+.lms-timeline-item {
+  position: relative;
+  margin-bottom: var(--espaciado-lg);
+}
+
+.lms-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* El "punto" de la línea de tiempo */
+.lms-timeline-item::before {
+  content: "";
+  position: absolute;
+  /* El cálculo alinea el punto exactamente sobre el borde izquierdo */
+  left: calc(var(--espaciado-lg) * -1 - 10px);
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-azul-noche);
+  border: 3px solid var(--color-aqua);
+  border-radius: 50%;
+}
+
+.lms-timeline-titulo {
+  color: var(--color-azul-real);
+  margin-top: 0;
+  margin-bottom: var(--espaciado-sm);
+}
+
+/* Componente: Caja con Ícono/Imagen Lateral */
+.lms-caja-icono {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-md);
+  background-color: var(--color-azul-claro);
+  border-radius: 8px;
+  padding: var(--espaciado-lg);
+  margin: var(--espaciado-lg) 0;
+  border-left: 6px solid var(--color-azul-real);
+}
+
+/* En pantallas de tablet o PC, la imagen se pone a un lado */
+@media (min-width: 768px) {
+  .lms-caja-icono {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.lms-caja-icono img {
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+/* Nuevo Jumbotron de Alto Contraste (Reemplaza al anterior) */
+.lms-destacado-oscuro {
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  padding: var(--espaciado-lg);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: var(--espaciado-lg) 0;
+  border-bottom: 4px solid var(--color-aqua);
+}
+
+/* Acordeón CSS Puro (Sin JS) */
+.lms-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-sm);
+  margin: var(--espaciado-lg) 0;
+}
+
+.lms-accordion-item {
+  border: 1px solid var(--color-aqua);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--color-gris);
+}
+
+.lms-accordion-item input[type="checkbox"] {
+  display: none;
+}
+
+.lms-accordion-title {
+  display: block;
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  padding: var(--espaciado-md) var(--espaciado-lg);
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+.lms-accordion-title:hover {
+  background-color: var(--color-azul-real);
+}
+
+.lms-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    padding 0.4s ease;
+  padding: 0 var(--espaciado-lg);
+  color: var(--color-gris-negro);
+}
+
+/* El truco del checkbox para abrir el panel */
+.lms-accordion-item input[type="checkbox"]:checked ~ .lms-accordion-content {
+  max-height: 1200px; /* Valor alto para que quepa el texto */
+  padding: var(--espaciado-lg);
+}
+
+/* Viñetas personalizadas para dentro de los paneles */
+.lms-lista-puntos {
+  list-style: none;
+  padding-left: 0;
+  margin: var(--espaciado-md) 0;
+}
+
+.lms-lista-puntos li {
+  position: relative;
+  padding-left: var(--espaciado-lg);
+  margin-bottom: var(--espaciado-sm);
+}
+
+.lms-lista-puntos li::before {
+  content: "■";
+  color: var(--color-aqua);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.9em;
+}
+
+/* Contenedor de la tabla para bordes redondeados y sombra */
+.lms-tabla-wrapper {
+  overflow-x: auto;
+  margin: var(--espaciado-lg) 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background-color: var(--color-blanco);
+}
+
+/* Estructura base de la tabla */
+.lms-tabla-dinamica {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--fuente-principal);
+}
+
+.lms-tabla-dinamica caption {
+  caption-side: top;
+  font-weight: bold;
+  color: var(--color-azul-noche);
+  padding: var(--espaciado-md) 0;
+  font-size: 1.2em;
+}
+
+.lms-tabla-dinamica th {
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  padding: var(--espaciado-md);
+  text-align: left;
+  border-bottom: 4px solid var(--color-aqua);
+}
+
+.lms-tabla-dinamica td {
+  padding: var(--espaciado-md);
+  border-bottom: 1px solid var(--color-gris);
+  color: var(--color-gris-negro);
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto cebra sutil */
+.lms-tabla-dinamica tbody tr:nth-child(even) {
+  background-color: #f9fbfd;
+}
+
+/* ========= EL EFECTO DINÁMICO ========= */
+.lms-tabla-dinamica tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+
+.lms-tabla-dinamica tbody tr:hover td {
+  background-color: var(--color-azul-claro);
+  color: var(--color-azul-real);
+  cursor: default;
+}
+
+/* Movimiento sutil del texto en la primera columna al hacer hover */
+.lms-tabla-dinamica tbody tr:hover td:first-child {
+  transform: translateX(4px);
+  font-weight: bold;
+  color: var(--color-aqua);
+}
+/* ======================================== */
+
+/* Responsive: Transformación a Tarjetas en Móviles */
+@media (max-width: 768px) {
+  .lms-tabla-dinamica thead {
+    display: none;
+  }
+  .lms-tabla-dinamica,
+  .lms-tabla-dinamica tbody,
+  .lms-tabla-dinamica tr,
+  .lms-tabla-dinamica td {
+    display: block;
+    width: 100%;
+  }
+  .lms-tabla-dinamica tr {
+    margin-bottom: var(--espaciado-md);
+    border: 1px solid var(--color-aqua);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .lms-tabla-dinamica td {
+    text-align: right;
+    padding-left: 40%;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  .lms-tabla-dinamica td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: var(--espaciado-md);
+    width: 35%;
+    text-align: left;
+    font-weight: bold;
+    color: var(--color-azul-noche);
+  }
+}
+/* Tarjeta Interactiva con efecto de elevación (Hover) */
+.lms-tarjeta-interactiva {
+  background-color: var(--color-blanco);
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid var(--color-azul-real);
+  border-radius: 8px;
+  padding: var(--espaciado-lg);
+  margin: var(--espaciado-lg) 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-left-color 0.3s ease;
+}
+
+/* El efecto dinámico */
+.lms-tarjeta-interactiva:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  border-left-color: var(--color-aqua);
+}
+
+.lms-tarjeta-interactiva h3 {
+  color: var(--color-azul-noche);
+  margin-top: 0;
+  border-bottom: 2px solid var(--color-azul-claro);
+  padding-bottom: var(--espaciado-sm);
+  margin-bottom: var(--espaciado-md);
+}
+
+/* Footer limpio */
+.lms-footer {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: var(--espaciado-lg);
+}
+.lms-footer p {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: var(--espaciado-sm);
+}
+
+/* Componente: Pestañas (Tabs) CSS Puro */
+.lms-tabs-container {
+  position: relative;
+  margin: var(--espaciado-lg) 0;
+}
+
+/* Ocultar los inputs de control */
+.lms-tabs-container input[type="radio"] {
+  display: none;
+}
+
+/* Encabezado de las pestañas */
+.lms-tabs-header {
+  display: flex;
+  border-bottom: 3px solid var(--color-azul-noche);
+  flex-wrap: wrap; /* Para que no se rompa en móviles */
+}
+
+/* Diseño de cada botón de pestaña */
+.lms-tabs-header label {
+  padding: var(--espaciado-md) var(--espaciado-lg);
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--color-azul-noche);
+  background-color: var(--color-gris);
+  border-radius: 8px 8px 0 0;
+  margin-right: 4px;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+}
+
+.lms-tabs-header label:hover {
+  background-color: var(--color-azul-claro);
+}
+
+/* Diseño del panel de contenido */
+.lms-tab-panel {
+  display: none; /* Oculto por defecto */
+  padding: var(--espaciado-lg);
+  background-color: var(--color-blanco);
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  animation: fadeInTab 0.4s ease;
+}
+
+@keyframes fadeInTab {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= LÓGICA DE INTERACTIVIDAD ================= */
+/* Cuando el Radio 1 está chequeado, pintar su etiqueta y mostrar su panel */
+#tab-ai-1:checked ~ .lms-tabs-header label[for="tab-ai-1"],
+#tab-ai-2:checked ~ .lms-tabs-header label[for="tab-ai-2"] {
+  background-color: var(--color-azul-noche);
+  color: var(--color-blanco);
+  border-color: var(--color-azul-noche);
+}
+
+#tab-ai-1:checked ~ #panel-ai-1,
+#tab-ai-2:checked ~ #panel-ai-2 {
+  display: block;
+}
+/* ============================================================ */
+
+/* Contenedor principal del camino */
+.lms-camino-alterno {
+  position: relative;
+  max-width: 900px;
+  margin: var(--espaciado-lg) auto;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* La línea central conectora */
+.lms-camino-alterno::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: var(--color-aqua);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px; /* Centrado exacto */
+  border-radius: 4px;
+}
+
+/* Contenedor de cada semana */
+.lms-camino-item {
+  padding: 0 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: var(--espaciado-lg);
+}
+
+/* Los "nodos" o puntos en la línea central */
+.lms-camino-item::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-blanco);
+  border: 4px solid var(--color-azul-noche);
+  border-radius: 50%;
+  top: 24px;
+  z-index: 1;
+}
+
+/* Tarjetas alineadas a la izquierda (Impares) */
+.lms-camino-item:nth-child(odd) {
+  left: 0;
+}
+.lms-camino-item:nth-child(odd)::after {
+  right: -10px; /* Posiciona el nodo en la línea central */
+}
+
+/* Tarjetas alineadas a la derecha (Pares) */
+.lms-camino-item:nth-child(even) {
+  left: 50%;
+}
+.lms-camino-item:nth-child(even)::after {
+  left: -10px; /* Posiciona el nodo en la línea central */
+}
+
+/* Diseño de la Tarjeta de cada semana */
+.lms-camino-tarjeta {
+  background: var(--color-blanco);
+  border-radius: 8px;
+  padding: var(--espaciado-lg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-top: 5px solid var(--color-azul-noche);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.lms-camino-tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-top-color: var(--color-aqua);
+}
+
+.lms-camino-tarjeta h2 {
+  margin-top: 0;
+  color: var(--color-azul-noche);
+  font-size: 1.2em;
+  margin-bottom: var(--espaciado-sm);
+  border-bottom: 1px solid var(--color-gris);
+  padding-bottom: 8px;
+}
+
+/* =======================================================
+   RESPONSIVE: Para móviles y tablets pequeñas
+   Convierte el zig-zag en una línea recta a la izquierda
+========================================================== */
+@media (max-width: 768px) {
+  .lms-camino-alterno::after {
+    left: 20px; /* Mueve la línea a la izquierda */
+  }
+  .lms-camino-item {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 0;
+  }
+  .lms-camino-item:nth-child(even),
+  .lms-camino-item:nth-child(odd) {
+    left: 0;
+  }
+  .lms-camino-item:nth-child(even)::after,
+  .lms-camino-item:nth-child(odd)::after {
+    left: 10px; /* Alinea todos los nodos a la izquierda */
+  }
+}
