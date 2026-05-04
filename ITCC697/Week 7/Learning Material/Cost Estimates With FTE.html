@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <link rel="stylesheet" href="/ITCC697/ITCC697_styles.css" />
+    <style></style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBanner"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Week 7</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Value in Projects
+        </span>
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Cost Estimates With FTE </strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <div class="lms-contenedor">
+        <p>
+          Some companies associate pro forma salary bands to FTE in order to aid
+          in estimates. (Your finance department and/or human resources
+          department can provide you with details on this.)
+        </p>
+
+        <p
+          style="
+            font-weight: bold;
+            color: var(--color-azul-noche);
+            margin-bottom: var(--espaciado-lg);
+          "
+        >
+          This number can be used to calculate current cost or future estimated
+          savings.
+        </p>
+
+        <!-- Imagen con enmarcado -->
+        <figure class="lms-figura">
+          <h3
+            style="
+              margin-top: 0;
+              margin-bottom: 15px;
+              color: var(--color-azul-noche);
+            "
+          >
+            FTE Band Salary and Hourly Rate Table
+          </h3>
+          <img
+            src="/content/enforced/1056353-ITCC697_development_site_griky_english/Week_7/week7_img2.png"
+            alt="FTE Band Salary and Hourly Rate Table. See image description below for additional detail."
+            class="lms-imagen-fluida"
+          />
+        </figure>
+
+        <!-- Acordeón CSS puro extraído de la figura para mejor accesibilidad -->
+        <div class="lms-accordion">
+          <div class="lms-accordion-item">
+            <input type="checkbox" id="acc-img-fte-bands" />
+            <label class="lms-accordion-title" for="acc-img-fte-bands"
+              >Image Description: FTE Band Salary and Hourly Rate Table</label
+            >
+            <div class="lms-accordion-content">
+              <p>
+                This image displays a <strong>four-column table</strong> that
+                compares <strong>full-time equivalent (FTE) bands</strong>,
+                <strong>annual salary</strong>,
+                <strong>annual work hours</strong>, and
+                <strong>calculated hourly rate</strong>.
+              </p>
+              <p>
+                The table has <strong>five rows of data</strong>, one for each
+                FTE band, labeled <strong>1 through 5</strong>. All employees
+                are assumed to work <strong>2,080 hours per year</strong>, which
+                represents a standard full-time schedule.
+              </p>
+
+              <h4
+                style="
+                  color: var(--color-azul-noche);
+                  margin-top: 15px;
+                  border-bottom: 1px solid var(--color-gris);
+                  padding-bottom: 5px;
+                "
+              >
+                Column 1: FTE Band
+              </h4>
+              <ul class="lms-lista-puntos">
+                <li>Band 1, Band 2, Band 3, Band 4, Band 5</li>
+              </ul>
+
+              <h4
+                style="
+                  color: var(--color-azul-noche);
+                  margin-top: 15px;
+                  border-bottom: 1px solid var(--color-gris);
+                  padding-bottom: 5px;
+                "
+              >
+                Column 2: Annual Salary
+              </h4>
+              <ul class="lms-lista-puntos">
+                <li>FTE Band 1: $25,000</li>
+                <li>FTE Band 2: $30,000</li>
+                <li>FTE Band 3: $60,000</li>
+                <li>FTE Band 4: $120,000</li>
+                <li>FTE Band 5: $250,000</li>
+              </ul>
+
+              <h4
+                style="
+                  color: var(--color-azul-noche);
+                  margin-top: 15px;
+                  border-bottom: 1px solid var(--color-gris);
+                  padding-bottom: 5px;
+                "
+              >
+                Column 3: Annual Hours
+              </h4>
+              <ul class="lms-lista-puntos">
+                <li>All FTE bands: 2,080 hours</li>
+              </ul>
+
+              <h4
+                style="
+                  color: var(--color-azul-noche);
+                  margin-top: 15px;
+                  border-bottom: 1px solid var(--color-gris);
+                  padding-bottom: 5px;
+                "
+              >
+                Column 4: Hourly Rate
+              </h4>
+              <p
+                style="
+                  margin-bottom: 5px;
+                  font-size: 0.9em;
+                  color: var(--color-gris-negro);
+                "
+              >
+                Calculated based on the annual salary divided by 2,080 hours:
+              </p>
+              <ul class="lms-lista-puntos">
+                <li>FTE Band 1: $12.02 per hour</li>
+                <li>FTE Band 2: $14.42 per hour</li>
+                <li>FTE Band 3: $28.84 per hour</li>
+                <li>FTE Band 4: $57.69 per hour</li>
+                <li>FTE Band 5: $120.19 per hour</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          width="110"
+          style="float: right"
+          role="presentation"
+        />
+      </div>
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>

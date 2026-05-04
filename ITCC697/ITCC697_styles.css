@@ -1129,3 +1129,29 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* Tarjeta Destacada (Callout con Icono) */
+.lms-tarjeta-destacada {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 8px;
+  margin: var(--espaciado-lg) 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lms-icono-gigante {
+  flex-shrink: 0; /* Evita que el icono se aplaste en pantallas pequeñas */
+  opacity: 0.9;
+}
+
+/* Adaptación para teléfonos móviles */
+@media (max-width: 768px) {
+  .lms-tarjeta-destacada {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 20px;
+  }
+}
