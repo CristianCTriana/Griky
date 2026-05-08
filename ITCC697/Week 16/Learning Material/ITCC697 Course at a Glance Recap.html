@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/globalStyles/StylesComponents.css"
+    />
+    <style>
+      /* Contenedor principal del módulo */
+      .ct-wrapper {
+        font-family: "Lato", sans-serif;
+        color: #202122;
+        margin-bottom: 40px;
+        padding: 0 30px;
+      }
+
+      .ct-intro-text {
+        font-size: 1.1em;
+        color: #041e42; /* Azul Noche */
+        margin-bottom: 24px;
+      }
+
+      /* Contenedor de la línea */
+      .ct-line-container {
+        position: relative;
+        margin: 40px 0;
+        padding-left: 40px;
+        display: block;
+      }
+
+      /* La línea vertical con gradiente */
+      .ct-line-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 14px;
+        width: 4px;
+        background: linear-gradient(to bottom, #05c3de, #004c97, #041e42);
+        border-radius: 4px;
+        z-index: 0;
+      }
+
+      /* Cada bloque de semana */
+      .ct-block {
+        position: relative;
+        margin-bottom: 50px;
+        display: block !important;
+      }
+
+      /* Forzar la eliminación de cualquier viñeta fantasma del LMS */
+      .ct-block::before,
+      .ct-block::after,
+      .ct-block::marker {
+        display: none !important;
+        content: none !important;
+        background: none !important;
+      }
+
+      /* El círculo indicador en la línea */
+      .ct-circle {
+        position: absolute;
+        top: 15px;
+        left: -40px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        border: 4px solid #05c3de;
+        z-index: 1;
+        transition: transform 0.3s ease;
+        box-sizing: border-box;
+      }
+
+      /* Alternancia de colores automática usando los Hex de tu marca */
+      .ct-block:nth-child(3n + 1) .ct-circle {
+        border-color: #041e42; /* Azul Noche */
+        box-shadow: 0 0 0 4px rgba(4, 30, 66, 0.1);
+      }
+      .ct-block:nth-child(3n + 1) .ct-card {
+        border-top: 5px solid #041e42;
+      }
+
+      .ct-block:nth-child(3n + 2) .ct-circle {
+        border-color: #05c3de; /* Aqua */
+        box-shadow: 0 0 0 4px rgba(5, 195, 222, 0.2);
+      }
+      .ct-block:nth-child(3n + 2) .ct-card {
+        border-top: 5px solid #05c3de;
+      }
+
+      .ct-block:nth-child(3n + 3) .ct-circle {
+        border-color: #004c97; /* Azul Real */
+        box-shadow: 0 0 0 4px rgba(0, 76, 151, 0.15);
+      }
+      .ct-block:nth-child(3n + 3) .ct-card {
+        border-top: 5px solid #004c97;
+      }
+
+      /* La tarjeta de contenido */
+      .ct-card {
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 24px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        display: block;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Efecto Hover */
+      .ct-block:hover .ct-card {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+      .ct-block:hover .ct-circle {
+        transform: scale(1.1);
+      }
+
+      /* Tipografía interna */
+      .ct-title h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-size: 1.25em;
+        color: #041e42;
+        border: none;
+      }
+      .ct-content ol {
+        margin-bottom: 0;
+        padding-left: 20px;
+        color: #202122;
+      }
+      .ct-content li {
+        margin-bottom: 6px;
+      }
+      .ct-content p {
+        margin-top: 0;
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBanner"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Week 16</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Next Steps
+        </span>
+      </h1>
+    </div>
+    <h1
+      class="title-topic"
+      style="text-align: center; color: #041e40; font-size: 35px"
+    >
+      <span style="font-family: Lato, sans-serif"
+        ><strong>ITCC697 Course at a Glance: Recap </strong></span
+      >
+    </h1>
+    <div class="ct-wrapper">
+      <p class="ct-intro-text">
+        Here’s what we accomplished throughout this journey:&nbsp;
+      </p>
+
+      <div class="ct-line-container">
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 1: Course Overview&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>Introduction to the capstone process&nbsp;</li>
+                <li>
+                  Understanding the Scholar–Practitioner / “Pracademic”
+                  model&nbsp;
+                </li>
+                <li>
+                  Overview of the three major course deliverables:&nbsp;
+                  <ol>
+                    <li>Proposal&nbsp;</li>
+                    <li>Business Case&nbsp;</li>
+                    <li>Pitch Deck&nbsp;</li>
+                  </ol>
+                </li>
+                <li>Weekly discussion check-ins begin&nbsp;</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 2: Proposal Creation&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>Learn the purpose and structure of a proposal&nbsp;</li>
+                <li>
+                  Build the A3 (problem, background, current state, analysis,
+                  proposal, resources, risks)&nbsp;
+                </li>
+                <li>Start drafting the three- to five-page proposal&nbsp;</li>
+                <li>Quiz on Business Case fundamentals&nbsp;</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 3: Business Case Structure&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>
+                  Learn differences between proposal and business case&nbsp;
+                </li>
+                <li>Submit the proposal&nbsp;</li>
+                <li>
+                  Study the business case sections (problem, analysis,
+                  alternatives, ROI, risks, etc.)&nbsp;
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 4: Details of the Business Case&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <p>Deep dive into:&nbsp;</p>
+              <ol>
+                <li>Executive summary&nbsp;</li>
+                <li>Background&nbsp;</li>
+                <li>Detailed analysis&nbsp;</li>
+                <li>Alternatives&nbsp;</li>
+                <li>Goals / deliverables&nbsp;</li>
+                <li>Resources&nbsp;</li>
+                <li>Risks&nbsp;</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 5: Stakeholder Analysis&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>Identify stakeholders&nbsp;</li>
+                <li>Use SIPOC, RACI, political landscape tools&nbsp;</li>
+                <li>Learn stakeholder-mapping and action-planning&nbsp;</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 6: Detailed Analysis&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>
+                  Research-driven examination of the “current state”&nbsp;
+                </li>
+                <li>
+                  Use internal data, literature, industry research, and
+                  trends&nbsp;
+                </li>
+                <li>Draft Stakeholder Support Matrix&nbsp;</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 7: Value in Projects&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>
+                  Learn ROI, financial measures, FTE, cost estimates&nbsp;
+                </li>
+                <li>
+                  Discussion post on how your organization tracks FTE
+                  value&nbsp;
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 8: Change Management&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>
+                  ADKAR, Kotter, Lewin, resistance, planned vs. emergent
+                  change&nbsp;
+                </li>
+                <li>Discussion: Stakeholder communication&nbsp;</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 9: Alternatives&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>
+                  9 dots puzzle, constraints, RAID model, cost &amp; complexity
+                  of alternatives&nbsp;
+                </li>
+                <li>Continue building business case&nbsp;</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 10: Cost/Benefit/ROI&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>
+                  Incremental revenue, hard vs. soft savings, cost avoidance,
+                  implementation costs&nbsp;
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 11: Risks &amp; Issues&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>
+                  PESTLE, risk registers, issue logs, risk responses&nbsp;
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 12: High-Level Project Planning&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>Gantt chart basics&nbsp;</li>
+                <li>Right to left planning&nbsp;</li>
+                <li>Estimating time and scope&nbsp;</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 13: Recommendations&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>Writing a compelling recommendation&nbsp;</li>
+                <li>Choosing among alternatives&nbsp;</li>
+                <li>
+                  Connecting the recommendation to problem, goals, and
+                  analysis&nbsp;
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 14: Executive Summary&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>Write the Executive Summary last&nbsp;</li>
+                <li>
+                  Create strong openings, key findings, benefits/impact, and
+                  call to action&nbsp;
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 15: Rule of Three + Final Business Case Due&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <p>Learn persuasive structure:&nbsp;</p>
+              <ol>
+                <li>Tell them what you're going to tell them&nbsp;</li>
+                <li>Tell them&nbsp;</li>
+                <li>Tell them what you told them&nbsp;</li>
+                <li>Submit the full business case (up to 50 pages)&nbsp;</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-block">
+          <div class="ct-circle"></div>
+          <div class="ct-card">
+            <div class="ct-title">
+              <h2>Week 16: Next Steps + Final Presentation Deck&nbsp;</h2>
+            </div>
+            <div class="ct-content">
+              <ol>
+                <li>Create and submit the 20-slide pitch deck&nbsp;</li>
+                <li>
+                  Reflect on tools, frameworks, and your project journey&nbsp;
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>
