@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <style>
+      a {
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+        color: #004c90;
+        text-decoration: underline;
+      }
+
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* ENCABEZADO */
+      .header-container {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        font-size: 28px;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* CONTENEDOR PRINCIPAL */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      h1.section-title,
+      h2.section-subtitle {
+        font-size: 35px;
+        font-weight: 700;
+        color: #041e42;
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #202122;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      .centered-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #eaf4ff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 1200px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .accordion-content ul {
+        padding-left: 20px;
+      }
+      .accordion-content li {
+        margin-bottom: 10px;
+      }
+
+      /* TABLA DE ASSESSMENTS */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #dcdcdc;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+      }
+      th {
+        background-color: #041e42;
+        color: white;
+      }
+
+      /* Logo Footer */
+      .logo-footer {
+        display: block;
+        margin-left: auto;
+        width: 110px;
+      }
+
+      .course-footer p {
+        text-align: center;
+        font-size: 11px !important;
+        color: #555555;
+        clear: both;
+        padding-top: 30px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-container">
+      <span class="course-code">ITCC697<br /></span>
+      <h1 style="font-size: 28px">Wrapping Up</h1>
+    </header>
+    <main class="content-wrapper">
+      <!-- SECCIÓN PRINCIPAL -->
+      <h2 class="section-title" style="text-align: center">
+        <span
+          style="font-family: Lato, sans-serif; font-size: 30px; color: #041e40"
+          >Course Conclusion</span
+        >
+      </h2>
+      <hr />
+
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40">| Closing Words </span>
+      </h3>
+      <p>
+        I trust you were able to build a network of resources and classmates you
+        may consult outside of the classroom. Again, I appreciate your hard work
+        as the entire class benefited from your participation. It was a pleasure
+        to have you in the class. I wish you well in all of your endeavors and
+        note, “You control your future, your destiny. What you think about comes
+        about. By recording your dreams and goals on paper, you set in motion
+        the process of becoming the person you most want to be. [Keep] your
+        future in good hands, your own.” Mark Victor Hansen quote
+      </p>
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Course Evaluations
+        </span>
+      </h3>
+      <p>
+        Please use the provided course evaluation you will receive shortly after
+        completing the course to provide some valuable information regarding the
+        teaching and curriculum you experienced in this course. I will post your
+        final grade by Sunday of this week. Again, your participation in the End
+        of Course Discussion feedback is really helpful for future courses
+        and your input is instrumental to successful course delivery and
+        the ability to continue to meet our mission at the university.
+      </p>
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Continuing Your Progress
+        </span>
+      </h3>
+      <p>
+        Continue your progress by consulting with your academic advisor as you
+        complete selected requirements for your academic plan. Remember to
+        consider the depth of skills and knowledge required for future courses
+        prior to enrolling as the more information you know about your course,
+        the greater degree of success you will experience during course
+        completion. Your success is important to us!
+      </p>
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Additional Resources
+        </span>
+      </h3>
+      <p>
+        For additional resources for continuing your studies, career
+        opportunities, or just guidance for exploring more about various IT
+        career fields, considering the following links below:
+      </p>
+      <p>For more information about computer programmers, visit</p>
+      <p>
+        <a href="http://www.acm.org/" target="_blank" rel="noopener"
+          >Association for Computing Machinery</a
+        >
+      </p>
+      <p>
+        <a href="http://www.computer.org/" target="_blank" rel="noopener"
+          >Institute of Electrical and Electronics Engineers Computer Society
+        </a>
+      </p>
+      <p>For information about IT education, visit</p>
+      <p>
+        <a
+          href="https://atecentral.net/r3312/national_workforce_center_for_emerging_technologies_nwcet"
+          target="_blank"
+          rel="noopener"
+          >National Workforce Center for Emerging Technologies
+        </a>
+      </p>
+      <p>
+        For information about opportunities for women pursuing IT careers, visit
+      </p>
+      <p>
+        <a href="http://www.ncwit.org/" target="_blank" rel="noopener"
+          >National Center for Women and Information Technology</a
+        >
+      </p>
+      <p>
+        <a href="http://www.bls.gov/home.htm" target="_blank" rel="noopener"
+          >U.S. Bureau of Labor Statistics</a
+        >
+      </p>
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40">| Stay Connected! </span>
+      </h3>
+      <ul>
+        <li>
+          See the
+          <a
+            href="http://www.apus.edu/social-media-center/index"
+            target="_blank"
+            rel="noopener"
+            >APUS Social Media</a
+          >
+          page
+        </li>
+        <li>
+          <a href="http://www.apus.edu/about-us/" target="_blank" rel="noopener"
+            >About APUS</a
+          >
+        </li>
+        <li>
+          You may also participate in the AMU/APU Research and Scholarship Team
+          (RAST) Student Organization and increase your interactions with other
+          research and publishing professionals. Please see the link below for
+          more insights on
+          <a
+            href="https://www.amu.apus.edu/student-activities/orgs/rast/"
+            target="_blank"
+            rel="noopener"
+            >Eligibility and Leadership Opportunities [webpage](this link opens
+            in a new window/tab)</a
+          >. The purpose of the AMU/APU Research and Scholarship Team (RAST) is
+          to pursue and promote research and mentoring opportunities for
+          institutional members in an effort to foster collaboration, share
+          resources, develop researching capabilities and academic quality,
+          encourage academic exchange and joint research, and facilitate
+          networking amongst faculty and students globally. If interested,
+          please complete the following:
+          <ul>
+            <li>
+              Chapter Interest and Election Link:
+              <a
+                href="https://forms.office.com/r/LDjsPwt3tA"
+                target="_blank"
+                rel="noopener"
+                >https://forms.office.com/r/LDjsPwt3tA</a
+              >
+            </li>
+            <li>
+              Complete this link to enroll in the organization:
+              <a
+                href="https://apus.formstack.com/forms/membershipapp"
+                target="_blank"
+                rel="noopener"
+                >https://apus.formstack.com/forms/membershipapp</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          Remember to start creating your own professional network that you can
+          use for work recommendations!
+        </li>
+      </ul>
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40">| Don't Forget! </span>
+      </h3>
+      <p>
+        Also, please don't forget to take a moment to complete the end-of-course
+        survey that you will receive in your APUS email following the completion
+        of the course. At APUS we value your thoughts and opinions. They allow
+        us to continually improve both as instructors and content-creators.
+      </p>
+    </main>
+    <hr />
+    <footer class="course-footer">
+      <img
+        class="logo-footer"
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+      />
+      <p>
+        Copyright 2026 American Public University System ALL RIGHTS RESERVED
+      </p>
+    </footer>
+  </body>
+</html>
