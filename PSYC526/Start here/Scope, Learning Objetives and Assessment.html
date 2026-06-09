@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* ENCABEZADO */
+      .header-container h1 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: left;
+        font-size: 28px;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* CONTENEDOR PRINCIPAL */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      h1.section-title,
+      h2.section-subtitle {
+        font-size: 35px;
+        font-weight: 700;
+        color: #041e42;
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #202122;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      .centered-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #eaf4ff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 1200px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .accordion-content ul {
+        padding-left: 20px;
+      }
+      .accordion-content li {
+        margin-bottom: 10px;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* TABLA DE ASSESSMENTS */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #dcdcdc;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+      }
+      th {
+        background-color: #041e42;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h1 style="text-align: center">
+        <span class="course-code">PSYC526<br /></span>
+        <span style="font-size: 28px">Course Overview</span>
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- SECCIÓN PRINCIPAL -->
+      <h2 class="section-title" style="text-align: center">
+        <span
+          style="font-family: Lato, sans-serif; font-size: 30px; color: #041e40"
+          >Scope, Learning Objectives, and Assessment</span
+        >
+      </h2>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40">| Course Scope</span>
+      </h3>
+      <div
+        style="display: flex; gap: 100px; align-items: center; padding: 0px 0"
+      >
+        <div style="flex: 1; min-width: 200px; max-width: 200px">
+          <img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/img-course-1_20251120220934262.png"
+            alt=""
+            title=""
+            width="313"
+            height="338"
+            style="float: left"
+            role="presentation"
+          />
+        </div>
+        <div style="flex: 2">
+          <p>
+            This graduate course is a study of psychopathology from a current
+            diagnostic, cultural, and theoretical perspective. Students will
+            critically examine current classification systems (DSM-5-TR and
+            ICD-11) with a special emphasis on how sociocultural, historical,
+            and contextual issues inform our understandings of normality,
+            expressions of psychological symptoms, and our diagnostic and
+            assessment practices. Culturally informed assessment and
+            formulation, including the DSM-5-TR Cultural Formulation Interview,
+            will be discussed. We will cover anxiety disorders, mood disorders,
+            trauma- and stressor-related disorders, personality disorders,
+            cultural syndromes, and global mental health. The course will be
+            research-based with a strong emphasis on evaluating and
+            understanding different cross-cultural views of mental disorders and
+            practicing diagnostic reasoning and decision-making on
+            course-relevant case material. The student will be prepared to
+            critically evaluate and understand the complexities of
+            psychopathology, formulate case conceptualizations from a culturally
+            responsive lens, and discuss ethical and structural issues that
+            impact access to care and mental health disparities.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Course &amp; Learning Objectives</span
+        >
+      </h3>
+      <p>
+        Select each Course Objective to see the associated Learning Objectives
+        and Assessments.
+      </p>
+      <!-- ACORDEÓN: COURSE AND LEARNING OBJECTIVES -->
+      <div class="accordion">
+        <!-- CO-1 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co1" />
+          <label class="accordion-title" for="co1"
+            >CO-1: Examine major theoretical and nosological approaches to
+            defining and understanding psychopathology.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-1.1: Explain the biological, psychological, sociocultural
+                models of psychopathology.
+              </li>
+              <li>
+                LO-1.2: Describe the diagnostic features and etiological models
+                of depressive and bipolar disorders.
+              </li>
+              <li>
+                LO-1.3: Identify diagnostic criteria and subtypes of psychotic
+                disorders.
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>
+                Week 1: Discussion: Foundations of Psychopathology &amp;
+                Cultural Perspectives Foundations of Psychopathology &amp;
+                Cultural Perspectives
+              </li>
+              <li>Week 3: Assignment: Annotated Bibliography</li>
+              <li>
+                Week 4: Discussion: Mood Disorders, Suicide, and Cultural
+                Determinants of Emotion
+              </li>
+              <li>Week 8: Assignment: Final Paper</li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-2 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co2" />
+          <label class="accordion-title" for="co2"
+            >CO-2: Compare current diagnostic systems.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-2.1: Distinguish between the DSM-5-TR and ICD-11 diagnostic
+                systems.
+              </li>
+              <li>
+                LO-2.2: Use the DSM-5-TR Cultural Formulation Interview (CFI)
+                with case material.
+              </li>
+              <li>
+                LO-2.3: Describe diagnostic criteria for major personality
+                disorders.
+              </li>
+              <li>
+                LO-2.4: Compare categorical vs. trait-based (alternative DSM)
+                models.
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>
+                Week 1: Discussion: Foundations of Psychopathology &amp;
+                Cultural Perspectives Foundations of Psychopathology &amp;
+                Cultural Perspectives
+              </li>
+              <li>
+                Week 2: Discussion: Assessment, Diagnosis, and Cultural
+                Formulation
+              </li>
+              <li>
+                Week 6: Discussion: Personality Disorders &amp; Cultural Norms
+                of Personality
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-3 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co3" />
+          <label class="accordion-title" for="co3"
+            >CO-3: Examine culturally informed assessment and diagnostic
+            formulation.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-3.1: Evaluate assessment tools for cultural validity and
+                bias.
+              </li>
+              <li>
+                LO-3.2: Examine a culturally informed diagnostic interview.
+              </li>
+              <li>
+                LO-3.3: Identify diagnostic features of ASD, ADHD, and
+                neurocognitive disorders.
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>
+                Week 2: Discussion: Assessment, Diagnosis, and Cultural
+                Formulation
+              </li>
+              <li>Week 3: Assignment: Annotated Bibliography</li>
+              <li>Week 7: Discussion: Neurodevelopmental Psychopathology</li>
+              <li>Week 8: Assignment: Final Paper</li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-4 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co4" />
+          <label class="accordion-title" for="co4"
+            >CO-4: Analyze ways in which culture, identity, and historical
+            context can impact symptom presentation, explanatory models,
+            help-seeking, and diagnosis.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-4.1: Examine the influence of culture on concepts of
+                normalcy, abnormality, and distress.
+              </li>
+              <li>
+                LO-4.2: Assess cultural syndromes in relation to diagnosis.
+              </li>
+              <li>
+                LO-4.3: Evaluate culture-bound syndromes related to fear, panic,
+                and trauma.
+              </li>
+              <li>
+                LO-4.4: Compare cross-cultural differences in emotion regulation
+                and mood expression.
+              </li>
+              <li>
+                LO-4.5: Describe biological, cognitive, and cultural models of
+                hallucinations and delusions.
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>
+                Week 1: Discussion: Foundations of Psychopathology &amp;
+                Cultural Perspectives Foundations of Psychopathology &amp;
+                Cultural Perspectives
+              </li>
+              <li>Week 3: Assignment: Annotated Bibliography</li>
+              <li>
+                Week 4: Discussion: Mood Disorders, Suicide, and Cultural
+                Determinants of Emotion
+              </li>
+              <li>
+                Week 5: Discussion: Psychotic Disorders &amp; Severe Mental
+                Illness
+              </li>
+              <li>Week 8: Assignment: Final Paper</li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-5 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co2" />
+          <label class="accordion-title" for="co2"
+            >CO-5: Summarize cross-cultural and global research on mental
+            disorders, including culture-specific syndromes and idioms of
+            distress.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-5.1: Identify diagnostic criteria and mechanisms of anxiety
+                and trauma disorders
+              </li>
+              <li>
+                LO-5.2: Assess stigma and cultural barriers to the treatment of
+                mood disorders.
+              </li>
+              <li>
+                LO-5.3: Identify global risk factors and culturally specific
+                protective factors for suicide.
+              </li>
+              <li>
+                LO-5.4: Contrast course and prognostic differences across
+                nations and cultural contexts.
+              </li>
+              <li>
+                LO-5.5: Analyze how cultural norms shape perceptions of adaptive
+                vs. maladaptive personality traits.
+              </li>
+              <li>
+                LO-5.6: Evaluate cultural and systemic factors&nbsp;affecting
+                diagnosis and access to services.
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>Week 3: Assignment: Annotated Bibliography</li>
+              <li>
+                Week 4: Discussion: Mood Disorders, Suicide, and Cultural
+                Determinants of Emotion
+              </li>
+              <li>
+                Week 5: Discussion: Psychotic Disorders &amp; Severe Mental
+                Illness
+              </li>
+              <li>
+                Week 6: Discussion: Personality Disorders &amp; Cultural Norms
+                of Personality
+              </li>
+              <li>Week 7: Discussion: Neurodevelopmental Psychopathology</li>
+              <li>Week 8: Assignment: Final Paper</li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-6 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co3" />
+          <label class="accordion-title" for="co3"
+            >CO-6: Apply key concepts from psychopathology to case material to
+            formulate biopsychosocial-cultural conceptualizations and
+            differential diagnoses.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-6.1: Distinguish cross-cultural differences in anxiety
+                presentations (e.g., somatic vs. cognitive symptoms).
+              </li>
+              <li>
+                LO-6.2: Examine psychotic symptoms in cultural and spiritual
+                contexts.
+              </li>
+              <li>
+                LO-6.3: Evaluate cultural biases and controversies in PD
+                diagnosis.
+              </li>
+              <li>
+                LO-6.4: Analyze somatic symptom disorders through a
+                biopsychosocial and cultural lens.
+              </li>
+              <li>
+                LO-6.5: Integrate biological, psychological, social, and
+                cultural factors into clinical formulations.
+              </li>
+              <li>
+                LO-6.6: Develop culturally responsive treatment plans. &nbsp;
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>Week 3: Assignment: Annotated Bibliography</li>
+              <li>
+                Week 5: Discussion: Psychotic Disorders &amp; Severe Mental
+                Illness
+              </li>
+              <li>
+                Week 6: Discussion: Personality Disorders &amp; Cultural Norms
+                of Personality
+              </li>
+              <li>Week 7: Discussion: Neurodevelopmental Psychopathology</li>
+              <li>Week 8: Assignment: Final Paper</li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-7 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co4" />
+          <label class="accordion-title" for="co4"
+            >CO-7: Evaluate ethical concerns in the field of psychopathology,
+            including stigma, systemic inequities, and barriers to care with a
+            focus on cultural humility and social justice.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-7.1: Identify ethical considerations in cross-cultural
+                diagnosis.
+              </li>
+              <li>
+                LO-7.2: Examine the impact of historical trauma, migration, and
+                displacement on psychopathology.
+              </li>
+              <li>
+                LO-7.3: Explain inequities in neurodevelopmental diagnoses among
+                multilingual or minority children.
+              </li>
+              <li>LO-7.4: Apply multicultural ethics to case examples.</li>
+              <li>
+                LO-7.5: Evaluate controversies and future directions in
+                psychopathology.
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>
+                Week 2: Discussion: Assessment, Diagnosis, and Cultural
+                Formulation
+              </li>
+              <li>Week 3: Assignment: Annotated Bibliography</li>
+              <li>Week 7: Discussion: Neurodevelopmental Psychopathology</li>
+              <li>Week 8: Assignment: Final Paper</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <!-- ASSESSMENT COMPONENTS -->
+      <h3>
+        <span style="color: #041e40; font-size: 24px"
+          >| Assessment Components</span
+        >
+      </h3>
+      <p>
+        Your final grade will be calculated using the following category
+        weights:
+      </p>
+      <table
+        style="width: 60.8327%; height: 84.3906px; border-collapse: collapse"
+        border="1"
+      >
+        <caption>
+          <span style="font-size: 19px; color: #041e42"
+            >Assessment Components</span
+          >
+        </caption>
+        <tbody>
+          <tr style="height: 40.1953px">
+            <th style="width: 49.0939%" scope="row">Written Assignments</th>
+            <th style="width: 50.9061%" scope="row">Discussions</th>
+          </tr>
+          <tr style="height: 44.1953px">
+            <td style="width: 49.0939%">35%</td>
+            <td style="width: 50.9061%">65%</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+        class="footer-logo"
+      />
+    </div>
+  </body>
+</html>

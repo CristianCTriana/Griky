@@ -1,0 +1,363 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ENCABEZADO */
+      .header-container h1 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+      .header-container .week-text {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .title-text {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      .highlight-box {
+        padding: 25px;
+        background-color: #041d42;
+        color: white;
+        margin-top: 25px;
+        border-radius: 8px;
+        line-height: 1.8;
+      }
+
+      h1.section-title,
+      h2.section-subtitle,
+      h3.section-subtitle {
+        font-size: 28px;
+        font-weight: 700;
+        color: #041e42;
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #202122;
+      }
+
+      a {
+        color: #004c90;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      ul {
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      .centered-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        h1.section-title,
+        h2.section-subtitle,
+        h3.section-subtitle {
+          font-size: 24px;
+        }
+        p,
+        li {
+          font-size: 17px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h1>
+        <span class="week-text">PSYC601&nbsp;<br /></span>
+        <span class="title-text">Descripción General</span>
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1 class="section-title" style="text-align: center">
+        <span style="font-size: 32px">Directrices</span>
+      </h1>
+      <hr />
+      <p>
+        A continuación, se destacan elementos y apoyos que son específicos de
+        este curso. Incluye los requisitos tecnológicos, lineamientos de
+        integridad académica, uso de Inteligencia Artificial Generativa (Gen-AI)
+        y el estilo de citación preferido.
+      </p>
+      <h2 class="section-subtitle">| Requisitos Tecnológicos Específicos</h2>
+      <p>
+        Este curso no requiere tecnologías específicas adicionales para
+        completarse con éxito.
+      </p>
+      <h2 class="section-subtitle">| Integridad Académica</h2>
+      <p>
+        Este curso se rige por los
+        <a
+          href="https://www.apu.apus.edu/student-handbook/university-policies-and-code-of-conduct/apus-student-code-of-conduct/standards-of-student-conduct/"
+          target="_blank"
+          rel="noopener"
+          >Estándares de Conducta Estudiantil [página web]</a
+        >
+        presentados en el Manual del Estudiante.
+      </p>
+      <h2 class="section-subtitle">
+        <span style="color: #004c90"
+          >| Uso de Inteligencia Artificial Generativa
+        </span>
+      </h2>
+      <p>
+        Este curso fomenta la exploración y el uso de herramientas y recursos de
+        Inteligencia Artificial Generativa (Gen-AI). Las pautas incluyen:
+      </p>
+      <ul>
+        <li style="list-style-type: none">
+          <ul>
+            <li>
+              <strong>Exploración:</strong> Siéntete libre de experimentar con
+              tecnologías, algoritmos y frameworks de IA Generativa. La
+              curiosidad impulsa la innovación, y explorar la IA Generativa
+              puede llevar a descubrimientos fascinantes.
+            </li>
+            <li>
+              <strong>Integridad académica: </strong>Al utilizar IA Generativa,
+              mantén la integridad académica. Cita correctamente cualquier
+              contenido o código generado por IA, tal como lo harías con
+              cualquier otro trabajo académico.
+            </li>
+            <li>
+              <strong>Colaboración:</strong> Colabora con tus compañeros y
+              discute los conceptos de IA Generativa. Aprender de las
+              experiencias de los demás enriquece el proceso educativo.
+            </li>
+            <li>
+              <strong>Consideraciones éticas: </strong>Ten en cuenta las
+              implicaciones éticas. Comprende el impacto de la IA Generativa en
+              la sociedad, la privacidad y el sesgo.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="highlight-box">
+        <h3 style="font-size: 20px; margin-top: 15px; text-align: center">
+          <strong
+            ><span style="color: #ffffff"
+              >Revisa las actividades individuales para conocer las pautas
+              específicas de IA Generativa.&nbsp;<br /></span></strong
+          ><strong
+            ><span style="color: #ffffff"
+              >Consulta&nbsp;<a
+                href="/d2l/le/lessons/1027230/topics/20397059"
+                target="_blank"
+                rel="noopener"
+                ><span style="color: #05c3de"
+                  >IA Generativa en el Aula [página de contenido]</span
+                ></a
+              >
+              para más detalles.</span
+            ></strong
+          >
+        </h3>
+      </div>
+      <p style="text-align: center; margin-top: 40px">
+        <span style="font-family: Lato, sans-serif"
+          ><img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/See%20more%20inf.png"
+            alt='Click "+" to see more information'
+            title="See more information"
+            data-d2l-editor-default-img-style="true"
+            style="max-width: 100%"
+            width="600"
+        /></span>
+      </p>
+      <!-- --- ACORDEÓN: Citation, Gen-AI Citing, Transcripts --- -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="citation" />
+          <label class="accordion-title" for="citation"
+            >Estilo de citación</label
+          >
+          <div class="accordion-content">
+            <p>
+              Este curso utiliza el formato y las citas
+              <a
+                href="https://www.apus.edu/apus-library/resources/writing/apa-style/"
+                target="_blank"
+                rel="noopener"
+                >APA [página web]</a
+              >.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="genai-citing" />
+          <span style="color: #004c90"
+            ><label class="accordion-title" for="genai-citing"
+              >Citar el uso de IA Generativa</label
+            ></span
+          >
+          <div class="accordion-content">
+            <p>
+              El estudiante debe incluir la siguiente declaración en las
+              actividades para reconocer el uso de una herramienta de IA
+              Generativa:
+            </p>
+            <p>
+              <em
+                >"Utilicé [Nombre de la herramienta de IA Generativa], un
+                sistema de IA Generativa creado por [Proveedor de la herramienta
+                de IA Generativa], para completar esta actividad. [Nombre de la
+                herramienta de IA Generativa] fue empleada para los siguientes
+                propósitos: [p. ej., generar ideas, corregir el texto, dar
+                formato a las citas, asistir en secciones específicas del
+                trabajo]."</em
+              >
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="transcripts" />
+          <label class="accordion-title" for="transcripts"
+            >Transcripciones del curso</label
+          >
+          <div class="accordion-content">
+            <p>
+              Todas las transcripciones están disponibles en una sola descarga:
+              <a
+                href="course_transcripts.zip?isCourseFile=true"
+                target="_blank"
+                rel="noopener"
+                >Archivo Zip de Transcripciones PSYC601 [descarga].</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        class="footer-logo"
+        role="presentation"
+        width="110"
+        height="29"
+      />
+    </div>
+  </body>
+</html>

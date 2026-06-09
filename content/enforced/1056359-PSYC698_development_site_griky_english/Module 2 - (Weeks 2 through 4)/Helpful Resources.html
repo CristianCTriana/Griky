@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1056359-PSYC698_development_site_griky_english/Styles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1056359-PSYC698_development_site_griky_english/Styles/StylesComponents.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1056359-PSYC698_development_site_griky_english/Styles/PSYC698_styles.css"
+    />
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBanner"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Week 2</span
+        ><br />
+        <span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Accessing and Cleaning Data (Weeks 2 through 4)</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Helpful Resources</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+
+      <div class="lms-takeaway-note featured-icon-fa">
+        <div class="lms-takeaway-icon featured-icon-fa-icon" aria-hidden="true">
+          <span style="font-size: 25px" class="fas fa-book"></span>
+        </div>
+        <p>
+          A quick Google search on cleaning data for analysis will turn up a lot
+          of resources for how to clean your data, from addressing specific
+          issues such as the different ways you can account for missing data, to
+          addressing specific ways to do these things in various platforms that
+          you might use for analyzing your data (Excel, SPSS, Jamovi/JSPP,
+          programming languages like Python or R, etc.). You may even find
+          yourself using more than one platform for analyzing your data.
+        </p>
+      </div>
+
+      <p>
+        <span style="font-size: 19px"
+          >Here are some resources that you might find helpful:</span
+        >
+      </p>
+
+      <p>
+        <span style="font-size: 19px"
+          >For a video overview of the process of cleaning your data, check out
+          this YouTube video from Alex the Analyst:</span
+        >
+      </p>
+
+      <div
+        style="text-align: center; width: 100%; max-width: 100%; margin: 10px 0"
+      >
+        <img
+          src="/content/enforced/1056359-PSYC698_development_site_griky_english/instructional_banners/banner_check_video.png"
+          alt="Check the following video"
+          style="max-width: 100%; height: auto; display: block; margin: 0 auto"
+        />
+      </div>
+
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <iframe
+            src="https://www.youtube.com/embed/WpX2F2BS3Qc?si=TSYuA65szW_nd12s"
+            title="What is Data Cleaning? | Data Fundamentals for Beginners"
+            allowfullscreen="allowfullscreen"
+          ></iframe>
+        </div>
+      </div>
+
+      <div
+        style="text-align: center; width: 100%; max-width: 100%; margin: 10px 0"
+      >
+        <img
+          src="/content/enforced/1056359-PSYC698_development_site_griky_english/instructional_banners/banner_click_plus_more_info.png"
+          alt="Click the plus sign to see more information"
+          style="max-width: 100%; height: auto; display: block; margin: 0 auto"
+        />
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="acc-1" />
+          <label class="accordion-title" for="acc-1"
+            >Transcript: What is Data Cleaning? | Data Fundamentals for
+            Beginners</label
+          >
+          <div class="accordion-content">
+            <p class="standard-text">
+              what's going on everybody welcome back to another video today
+              we're going to be talking all about data cleaning. Now data
+              cleaning is an essential part of working with any data and so this
+              is a very core fundamental concept that anybody who works with
+              data will need to know. As a data analyst I've cleaned data in
+              almost any way that you can imagine so I'm very excited to talk
+              about this topic. Let's not waste any time let's J on my screen
+              and take a look.
+            </p>
+            <p class="standard-text">
+              Alright so let's take a look at what data cleaning actually is.
+              Data cleaning is the process of identifying and fixing issues AKA
+              dirty data in your data to ensure it's accurate, consistent, and
+              complete. Let's take a look at these patient names on the right
+              hand side really quickly. These are all my names but just in
+              different versions or variation. This is very dirty so we have
+              Alex freeberg, Alexander freeberg, Alex F, Alexander F, Alex
+              freeberg with a u, Alejandro freeberg. These are all the same
+              person—that's all me—but if you're looking at this in a database
+              it's going to consider all these people different.
+            </p>
+            <p class="standard-text">
+              And so what we would have to do to clean up this data is we would
+              have to make all of these names consistent and the same. Maybe we
+              do that by saying okay all these people have the same date of
+              birth, they're all male, they all have the same Social Security
+              number. So with all of those things we could say yes these are all
+              the same person and we could make all these patient names Alex
+              freeberg with an E. That would really clean up this data a lot.
+            </p>
+            <p class="standard-text">
+              Why do we need to clean data at all? What is the reason that we do
+              this? One is to ensure accuracy because you're going to be giving
+              this data to stakeholders or your boss or a customer and they're
+              going to expect that this data is accurate. But if you're giving
+              them bad data then they may make bad decisions with that data and
+              that's going to come back on you. Next it improves efficiency—when
+              you are working with clean data it is 10 times easier to analyze
+              and use that data in any way you need rather than it being really
+              messy and really difficult to work with. Lastly it builds trust,
+              and stakeholders and customers and clients want to be able to
+              trust that what you're giving them, the data that you're using, is
+              actually accurate and complete. And so those stakeholders are
+              really going to trust you if that data is clean and accurate and
+              you can find insights with that data.
+            </p>
+            <p class="standard-text">
+              Now let's take a look at some other examples of dirty data and
+              these are not all of the examples but these are many of them. Here
+              in this data we have columns and rows like an Excel file. We have
+              a name, a phone number, an email address, and an address. In each
+              of these you can see a lot of mistakes. Take for example Le in the
+              name column—we have things like punctuation marks and
+              abbreviations. These are the same person just like we looked at in
+              the example with my name. These are all the same person but each
+              of these records requires a different row of data because it isn't
+              standardized or cleaned.
+            </p>
+            <p class="standard-text">
+              Let's look at phone number. This one shows us missing data and
+              this is a very common one where you're collecting phone numbers
+              and all of a sudden you just don't have a phone number, so you're
+              missing that data. Now what are you going to do with that when
+              you're cleaning it? Maybe you need to populate that data, maybe
+              that is something that you can get from another data source or you
+              know it and you can actually put it in there. That is a way you
+              can clean that data up.
+            </p>
+            <p class="standard-text">
+              Next we have mixed numbers and letters. It may look like 831 262
+              2149 but that one is actually an l and so this is just a classic
+              case of bad data. They should all be in the same format with the
+              phone number but they're not. Some have dashes, some have commas,
+              some don't have anything, and some even have letters. That's very
+              very messy.
+            </p>
+            <p class="standard-text">
+              Next we have email address. Now within this one they're all
+              somewhat different—right, we all have different email
+              addresses—and again that's just a standardization making them all
+              the same issue. But we also have something like a non-printable
+              character. Now there are specific characters within computer
+              systems that you just shouldn't be putting or really can't put in
+              specific data types. If this is a string that may be a character
+              that you shouldn't have or can't have—that's going to mess up your
+              data.
+            </p>
+            <p class="standard-text">
+              Lastly in the address section we have two issues here. We have
+              messy structure and format, so some are capitalized, some of the
+              data is capitalized versus not capitalized. We also have
+              incomplete data. For example we have Emily renelli Boulevard but
+              we don't have a number, we don't have a city, we don't have a
+              state. There's just incomplete and that makes it really difficult
+              to work with that data.
+            </p>
+            <p class="standard-text">
+              Now here we have something called a data cleaning cycle and I
+              really like this visualization because it shows that data cleaning
+              is not just a onetime thing. It is something that you have to
+              continuously do and I have—and I've experienced this a lot over my
+              years as a data analyst—once you clean data it isn't necessarily
+              perfectly cleaned. You kind of have to go back and clean it as you
+              go and it's never really perfect, it's just really usable.
+            </p>
+            <p class="standard-text">
+              This cycle typically starts at the very top. So we have importing
+              data; this is just bringing in data from other systems usually
+              through some data collection system like a data pipeline that we
+              talked about in the data collection lesson last time. Next we have
+              merging data sets; this is combining multiple data sources into
+              one data set. Next we have rebuilding missing data; this is where
+              you're handling incomplete data or you're actually filling in that
+              missing data.
+            </p>
+            <p class="standard-text">
+              Next we have standardization and normalization. Standardization is
+              where you're making sure that the data follows a consistent format
+              so all the date formats are the same. For example if we go back to
+              this one we can make sure that the address is all
+              standardized—they all have an address, a City, a state, and maybe
+              a zip code if you need. They all have the same data. Next we have
+              normalization; this is a little bit different because you're
+              adjusting data to a common scale without distorting the data
+              itself.
+            </p>
+            <p class="standard-text">
+              Next we have D duplication and this is where you may have
+              duplicates of data in your columns. For example maybe we have 100
+              Columns of Alex freeberg and we don't need 100 columns—it's all
+              the exact same data. We would want to remove 99 of those to just
+              keep the one that we actually need. Next we have what they call
+              verification and enrichment; this is really just data quality.
+              You're going through and you're validating your data making sure
+              that your data is accurate. Then lastly you're saving this clean
+              data in the format that you need for your next processes whether
+              it's analyzing or using in some type of product.
+            </p>
+            <p class="standard-text">
+              Now one thing I want to mention on here is that this cycle is not
+              perfect. In fact I usually do D duplication earlier on within this
+              cycle but it really depends on the data itself. Sometimes you're
+              importing, merging, rebuilding, and then going back and getting
+              more data and then importing, merging, and rebuilding. So this
+              isn't a perfect cycle, this isn't exactly what you should do every
+              time, but these are often the steps that I am taking when I'm
+              cleaning data.
+            </p>
+            <p class="standard-text">
+              Now data cleaning is very specific to different tools and I have a
+              lot of different videos on how to exactly clean data with full
+              projects on data cleaning in SQL and Tableau and powerbi and
+              Python and Excel. And so if you want to learn Hands-On how to
+              actually clean data go check out those videos because they are
+              fantastic to learn how to actually clean data. With that being
+              said thank you guys so much for watching I really appreciate it if
+              you like this video be sure to like And subscribe and I will see
+              you in the next one.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        <span style="font-size: 19px"
+          ><span xml:lang="EN-US" data-contrast="auto"
+            >Another good resource for a general overview of the process of
+            cleaning data is the Statology website's </span
+          ><a
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://www.statology.org/cleaning-and-preparing-data-for-analysis-a-beginners-guide/"
+            ><span xml:lang="EN-US" data-contrast="none"
+              ><span data-ccp-charstyle="Hyperlink"
+                >Cleaning and Preparing Data for Analysis: A Beginner's
+                Guide</span
+              ><span data-ccp-charstyle="Hyperlink"> [webpage]</span></span
+            ></a
+          ><span xml:lang="EN-US" data-contrast="auto">
+            by Iván Palomares Carrascosa. If you poke around on the Statology
+            website, you will also find lots of information on statistics and
+            how to conduct analyses in many different types of platforms. I
+            recommend bookmarking their site.</span
+          ></span
+        >
+      </p>
+
+      <p>
+        <span style="font-size: 19px"
+          ><span xml:lang="EN-US" data-contrast="auto"
+            >Stony Brook University also has a helpful website guide for data
+            cleaning – </span
+          ><a
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://guides.library.stonybrook.edu/data-cleaning-and-wrangling/introduction"
+            ><span xml:lang="EN-US" data-contrast="none"
+              ><span data-ccp-charstyle="Hyperlink"
+                >Data Cleaning and Wrangling Guide</span
+              ><span data-ccp-charstyle="Hyperlink"> [webpage]</span
+              ><span data-ccp-charstyle="Hyperlink">.</span></span
+            ></a
+          ><span xml:lang="EN-US" data-contrast="auto">
+            They have details on how to address various aspects of data cleaning
+            and show how to do it using Excel, Python, and R.</span
+          ></span
+        >
+      </p>
+
+      <hr />
+      <div>
+        <img
+          src="https://myclassroom.apus.edu/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          width="110"
+          style="float: right"
+        />
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://myclassroom.apus.edu/content/enforced/1056359-PSYC698_development_site_griky_english/assets/sorting/js/components.js"></script>
+  </body>
+</html>

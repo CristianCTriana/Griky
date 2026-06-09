@@ -1,0 +1,447 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 3</span><br /><span
+          style="font-size: 28px"
+          >Ética en la Investigación Cualitativa</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente podcast"
+        title="Escucha el siguiente podcast"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_2w0iq25q&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_5fsaccwj"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W3_PSYC601_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content" style="overflow: auto">
+            <p>
+              Welcome back to PSYC601: Qualitative Methods. This is Week 3, and
+              the topic is Interviewing as Structured Creative Conversation.
+              Interviewing is one of the most common and powerful tools in
+              qualitative research, and it is also one of the most
+              misunderstood. Many people think interviewing is simply talking to
+              someone and asking questions. In qualitative research,
+              interviewing is a method. It requires design, ethical care, and
+              skillful listening, and it is aimed at producing data about
+              meaning, experience, and context.
+            </p>
+            <p>
+              In Week 2, you focused on ethics, including consent,
+              confidentiality, power dynamics, and minimizing harm. Those
+              ethical habits carry directly into interviewing, because
+              interviews are often where close contact happens. In Week 3, you
+              build a practical skill set. You will learn how to design
+              interview questions that invite depth, how to choose an interview
+              structure, how to build rapport, and how to probe for meaning
+              without leading participants.
+            </p>
+            <p>
+              You will also focus on the role of the interviewer. The
+              interviewer influences what participants share through wording,
+              tone, pacing, identity, and reactions. That is why reflexivity
+              matters. If you can notice your assumptions and your impulses, you
+              can interview with more clarity and credibility.
+            </p>
+            <p>
+              By the end of Week 3, you should be able to design a
+              semi-structured interview guide and conduct an interview that
+              produces rich, ethically collected qualitative data.
+            </p>
+            <p>
+              Let us start with a core idea: qualitative interviewing is
+              structured, but it is also creative. "Structured" does not mean
+              rigid. It means purposeful. An interview is guided by a research
+              question and a plan for what kinds of experiences and meanings you
+              want to explore. "Creative" does not mean improvised. It means
+              responsive. It means you follow the participant's language and
+              meaning, and you remain open to unexpected insights.
+            </p>
+            <p>
+              So what makes an interview qualitative? The purpose is one
+              difference. In many surveys or structured interviews, the purpose
+              is to capture consistent responses that can be compared easily. In
+              qualitative interviewing, the purpose is to explore depth,
+              context, and interpretation. You want stories, examples,
+              metaphors, and descriptions. You want to understand how the
+              participant makes sense of what happened, not only what happened.
+            </p>
+            <p>
+              Now let us talk about interview structures, because the structure
+              you choose affects the kind of data you can gather.
+            </p>
+            <p>
+              A fully structured interview uses the same questions in the same
+              order for every participant, with limited flexibility. This can be
+              useful when comparability is the main goal and when the topic is
+              narrow. But it can limit depth because the interviewer may not
+              follow unexpected but important topics.
+            </p>
+            <p>
+              A semi-structured interview is the most common format in
+              qualitative research. It includes a set of core open-ended
+              questions, but it allows flexibility through probing and
+              follow-up. This format balances consistency with depth. You can
+              compare topics across participants, but you can also follow
+              meaning when something important appears.
+            </p>
+            <p>
+              An unstructured interview is more open. It might begin with one
+              broad prompt, and then the conversation flows based on what the
+              participant brings up. This can produce very rich data, but it can
+              be harder to manage, especially for new interviewers or sensitive
+              topics. It can also make comparison across participants more
+              difficult.
+            </p>
+            <p>
+              So how do you choose? Think about your research question and your
+              participants. If you need to cover certain topics and you want
+              ethical control over sensitive questions, semi-structured is often
+              a strong choice.
+            </p>
+            <p>
+              Now let us move into question design, because question design is
+              where many interviews rise or fall.
+            </p>
+            <p>
+              Strong qualitative questions are open-ended. They invite
+              description, not yes-or-no answers. Instead of asking, "Do you
+              feel anxious," you might ask, "Can you tell me about a time when
+              anxiety felt present, and what that was like for you?" Instead of
+              asking, "How often do you use social media," you might ask, "Can
+              you describe how social media fits into a typical day, and what it
+              means to you?"
+            </p>
+            <p>
+              Another element is neutrality. A neutral question does not assume
+              a conclusion. For example, asking, "How has social media harmed
+              your confidence?" assumes harm. A more neutral question is, "How
+              does social media affect you, if it affects you at all?"
+              Neutrality protects credibility because it reduces the chance that
+              you will steer participants toward a narrative you expect.
+            </p>
+            <p>
+              Sequencing matters too. Many qualitative interview guides move
+              from broad to specific and from less sensitive to more sensitive.
+              This helps build rapport and gives participants time to ease into
+              the conversation. For example, you might begin with background and
+              general experience, then move into specific incidents, then move
+              into emotions or meaning, and then move into reflection and
+              coping.
+            </p>
+            <p>
+              Now let us talk about probing. Probing is how you invite depth
+              without taking over the conversation. A probe is a follow-up
+              question that asks for clarification, examples, and meaning. It
+              might sound like, "Can you tell me more about that?" "What did you
+              mean when you said you felt behind?" "Can you give me an example?"
+              "How did that affect you?" "What happened next?"
+            </p>
+            <p>
+              Probes are powerful because participants often speak in shorthand.
+              They might say, "It was a lot," or "I felt judged," or "I shut
+              down." Your job is to ask what those phrases mean in their lived
+              experience. That is where qualitative data becomes rich.
+            </p>
+            <p>
+              Listening is the other half of probing. Skilled interviewers
+              listen for meaning, emotion, and language patterns. They notice
+              metaphors, repeated words, and shifts in tone. They also notice
+              what is not said. Silence can be important. Sometimes people need
+              time to remember or to decide how to speak. If you fill every
+              silence with a new question, you may prevent depth.
+            </p>
+            <p>
+              Now let us connect interviewing to ethics. Ethical interviewing
+              includes consent reminders, respect for boundaries, and awareness
+              of distress. It includes making sure participants know they can
+              skip questions. It includes checking in when a topic becomes
+              sensitive. It includes protecting privacy in how you record and
+              store data. Ethical interviewing also includes understanding your
+              role. Participants may seek advice or support. You should have a
+              plan for how you will respond while keeping boundaries clear.
+            </p>
+            <p>
+              Reflexivity matters in interviewing too. Your identity, your tone,
+              and your assumptions shape the interaction. If you show approval
+              when a participant says something, they may lean into that
+              perspective. If you react with surprise, they may shut down.
+              Reflexivity means noticing those reactions and staying grounded.
+              It also means reflecting after the interview about what influenced
+              the conversation.
+            </p>
+            <p>
+              So what does it look like to do this well? It looks like an
+              interview where the participant feels respected, the conversation
+              has a clear purpose, and the interviewer follows meaning with
+              curiosity and care. It also looks like documentation. A good
+              interviewer takes notes about context, reactions, and decisions.
+              Those notes become part of the data.
+            </p>
+            <p>
+              If you want a practical takeaway for Week 3, it is this: do not
+              try to ask everything. Ask fewer questions, ask them well, and
+              listen deeply. That is what turns a conversation into qualitative
+              data.
+            </p>
+            <p>Let us close with reflection questions.</p>
+            <p>
+              First, think of a topic you would like to interview about. What
+              open-ended question would invite a story rather than an opinion?
+              Try to write one prompt that starts with "Tell me about…" or "Can
+              you walk me through…"
+            </p>
+            <p>
+              Second, think about probes. What follow-up question would invite
+              meaning? "What did that mean to you?" is often more powerful than
+              "Why did you do that?"
+            </p>
+            <p>
+              Third, consider rapport and neutrality. How would you ask about a
+              sensitive topic in a way that does not impose judgment? How would
+              you create space for participants to describe positive, negative,
+              or mixed experiences?
+            </p>
+            <p>
+              Finally, consider ethics. What would you say at the beginning of
+              an interview to clarify boundaries, confidentiality, and the
+              option to skip questions?
+            </p>
+            <p>
+              If you can answer these questions, you are building the practical
+              interviewing mindset that will support your work throughout the
+              course.
+            </p>
+            <p>
+              Thank you for listening to the Week 3 podcast. This week focused
+              on interviewing as structured creative conversation. In Week 4,
+              you will shift to content and media analysis, where you study
+              meaning in documents, media, and cultural artifacts. You will
+              learn how to collect, code, and interpret texts and media
+              systematically, with the same commitment to rigor and ethics.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/Week_3/PRODUCCION%20W3/W3_PSYC601_Digital_content_guide_podcast/W3_PSYC601_Digital_content_guide_podcast.mp3?ou=1027230"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          width="110"
+          role="presentation"
+        />
+      </p>
+    </div>
+  </body>
+</html>

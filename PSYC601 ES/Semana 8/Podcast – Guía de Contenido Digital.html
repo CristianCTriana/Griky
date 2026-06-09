@@ -1,0 +1,466 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 8</span><br /><span
+          style="font-size: 28px"
+          >Observación Participante</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente podcast"
+        title="Escucha el siguiente podcast"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_wqdqwc2f&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_89skpnva"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W8_PSYC601_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content" style="overflow: auto">
+            <p>
+              Welcome back to PSYC601: Qualitative Methods. This is Week 8, and
+              the topic is Participant Observation. This is your final week, and
+              it builds directly on Week 7, where you learned about ethnography
+              and field research. Participant observation is one of the most
+              powerful and demanding qualitative methods, because it places the
+              researcher inside the setting while also asking the researcher to
+              observe and document it with clarity and ethical care.
+            </p>
+            <p>
+              Participant observation is exactly what it sounds like: you
+              participate in a setting while observing it. The goal is to learn
+              what a setting means from within, not only from the outside. When
+              you participate, you gain access to routines, relationships, and
+              lived experience. You learn what people do, what they say they do,
+              and how they make sense of their actions in real time.
+            </p>
+            <p>
+              But participation also creates responsibility. Your presence
+              influences the setting. People react to you. Relationships form.
+              Boundaries can blur. So the method requires intentional role
+              decisions, careful documentation, and reflexivity about influence.
+            </p>
+            <p>
+              In Week 8, you will explore the spectrum of participation roles,
+              ethical considerations, and fieldnote strategies that help you
+              balance involvement with credibility. By the end of this week, you
+              should be able to design a participant observation plan and
+              explain how your role shaped what you learned.
+            </p>
+            <p>
+              Let us begin with the participation spectrum. Not all participant
+              observation looks the same. Researchers make deliberate choices
+              about how involved they will be.
+            </p>
+            <p>
+              At one end is the observer role. In this role, you participate
+              minimally. You watch, listen, and take notes, but you do not take
+              on responsibilities in the setting. This can reduce influence, but
+              it can also limit access. People may treat you as an outsider. You
+              may not understand the full meaning of what you see because you
+              are not experiencing it.
+            </p>
+            <p>
+              In the middle is the participant observer role. Here, you
+              participate in limited ways that support access and understanding.
+              You might help set up an event, join a group activity, or take on
+              a small volunteer role. You are still clearly a researcher, and
+              you maintain boundaries, but you are involved enough that people
+              interact with you more naturally.
+            </p>
+            <p>
+              At the other end is the full participant role. In this role, you
+              are deeply involved, sometimes even taking on a role that is
+              central to the setting. This can produce strong access, but it
+              raises significant ethical and credibility challenges because your
+              influence is high and role boundaries can blur.
+            </p>
+            <p>
+              Most beginner field researchers benefit from participant observer
+              roles rather than full participation. It provides access without
+              creating overwhelming role conflict.
+            </p>
+            <p>
+              Now let us talk about role clarity. Role clarity is one of the
+              most important ethical practices in participant observation.
+              People in the setting should understand, as appropriate, what you
+              are doing there, what your role is, and what you will do with the
+              information you observe. Role clarity also protects you. It
+              prevents people from assuming you are a counselor, supervisor,
+              evaluator, or advocate when you are not.
+            </p>
+            <p>
+              Role clarity often involves working with leaders or gatekeepers to
+              define what you can do. For example, in a community mentoring
+              program, your role might be to help with logistics, assist with
+              activities, and observe interactions, but not to provide
+              counseling or make decisions about participants. In a campus
+              organization, your role might be to attend meetings, help with
+              planning tasks, and observe how decisions are made, but not to
+              take leadership authority.
+            </p>
+            <p>
+              Now let us talk about ethics, because ethics becomes more complex
+              with participation. You have already learned that ethics is
+              continuous. In participant observation, you are often building
+              relationships over time, which increases the chance of sensitive
+              moments. People may share personal information casually. You might
+              witness conflict, harm, or distress. You might be asked to take
+              sides.
+            </p>
+            <p>
+              Ethical practice requires boundaries. If someone asks you for
+              professional advice you cannot provide, you should clarify your
+              role and redirect them to appropriate resources. If someone shares
+              sensitive information, you should handle it respectfully and
+              consider how to document it without creating identification risk.
+              If a situation becomes uncomfortable or harmful, you may need to
+              change your role, pause participation, or leave.
+            </p>
+            <p>
+              Consent can also be more complicated. In interviews, consent is
+              often a clear moment. In field settings, consent can be ongoing
+              and layered. You may have organizational permission, but
+              individuals may still feel uncomfortable. You should pay attention
+              to cues and be prepared to adjust. Ethical fieldwork is
+              responsive.
+            </p>
+            <p>
+              Privacy is another major issue. In participant observation, you
+              may witness conversations that were not intended to be "data." You
+              must decide what to record and how to record it. A good practice
+              is to avoid documenting unnecessary identifying details and to
+              focus on interaction patterns and meaning rather than personal
+              specifics. When writing up findings, you should protect anonymity
+              through de-identification and careful quotation choices.
+            </p>
+            <p>
+              Now let us move into fieldnotes, because fieldnotes are the
+              method's backbone. In participant observation, you often cannot
+              take detailed notes while actively participating. You may have to
+              take brief jottings and then write full fieldnotes afterward. That
+              is normal. What matters is that your final notes are detailed and
+              time-aware.
+            </p>
+            <p>
+              A strong participant observation fieldnote often includes time
+              stamps and sequence. It captures what happened in order. It also
+              captures setting context: where you were, who was present in
+              general terms, what the environment was like, and what the
+              activity structure was.
+            </p>
+            <p>
+              It also separates description, analytic interpretation, and
+              reflexive reflection. Description is what happened, including key
+              language and interaction. Analytic interpretation is what you
+              think it might mean: emerging patterns, norms, tensions, and
+              possible explanations. Reflexive reflection is how your
+              participation influenced events and what you noticed. Reflexivity
+              might include things like: did people behave differently when you
+              helped versus when you sat quietly? Did someone seek your
+              approval? Did your identity influence who approached you?
+            </p>
+            <p>
+              This is where credibility comes in. In participant observation,
+              you cannot pretend you are neutral. Credibility comes from making
+              influence visible and interpreting with honesty. One strong
+              strategy is to compare observations across moments with different
+              levels of participation. For example, you might notice that a
+              group behaves more formally when you are new, but more naturally
+              after repeated presence. Or you might notice that conflict is
+              suppressed when you are actively involved, but more visible when
+              you take a quieter role. Those comparisons help you interpret the
+              setting without overgeneralizing from one interaction.
+            </p>
+            <p>
+              Now let us connect participant observation to analysis. Analysis
+              often involves identifying norms, routines, roles, and meaning
+              systems. You might ask: what behaviors are rewarded, and what
+              behaviors are discouraged? Who has influence, and how is that
+              influence expressed? What rituals exist, such as greetings, inside
+              jokes, or decision processes? How is belonging signaled? How is
+              conflict managed? How do people learn the rules?
+            </p>
+            <p>
+              Participant observation is valuable because it reveals the gap
+              between formal statements and actual practice. A program might
+              have written values about inclusion, but observation might reveal
+              subtle barriers. A group might say it values open conversation,
+              but observation might reveal that certain people dominate turn
+              taking. These observations are not accusations. They are evidence
+              of how social life works in practice.
+            </p>
+            <p>
+              As you complete Week 8, it is also helpful to reflect on what you
+              have built across the course. You have learned how to ask
+              qualitative questions, how to practice ethics, how to interview,
+              how to analyze documents and media, how to study stories and
+              conversation, how to use analytic frameworks, and how to conduct
+              fieldwork. Participant observation brings many of those skills
+              together. It requires ethical sensitivity, reflexivity, systematic
+              documentation, and structured interpretation.
+            </p>
+            <p>
+              If you want a simple takeaway for Week 8, it is this:
+              participation can deepen understanding, but only when it is
+              intentional, bounded, and reflexively documented. When you manage
+              role decisions carefully, you can learn from within a setting
+              without losing credibility or ethical clarity.
+            </p>
+            <p>Let us close with reflection questions.</p>
+            <p>
+              First, imagine a setting you could ethically study through
+              participant observation. What role would you choose: observer,
+              participant observer, or active participant, and why?
+            </p>
+            <p>
+              Second, what boundaries would you set? What would you do in the
+              setting, and what would you refuse to do to protect role clarity
+              and participant safety?
+            </p>
+            <p>
+              Third, what would you document? What interaction patterns,
+              routines, or norms would be most relevant to your research
+              question?
+            </p>
+            <p>
+              Finally, how would you practice reflexivity? What parts of your
+              identity and perspective might influence what you notice? How
+              would you record observer effects and interpret them honestly?
+            </p>
+            <p>
+              These reflection questions help you practice the Week 8 mindset:
+              intentional participation, strong documentation, and ethical
+              accountability.
+            </p>
+            <p>
+              Thank you for listening to the Week 8 podcast and for completing
+              PSYC601: Qualitative Methods. You now have a toolkit for designing
+              and conducting qualitative research with rigor and ethical care.
+              As you move forward, remember the core habits that create
+              credibility: clear questions, respectful methods, transparent
+              analysis, and reflexive awareness of your role.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/Week_8/PRODUCCION%20W8/W8_PSYC601_Digital_content_guide_podcast/W8_PSYC601_Digital_content_guide_podcast.mp3?ou=1027230"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          width="110"
+          role="presentation"
+        />
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,3124 @@
+/* =========================================
+   1. VARIABLES GLOBALES (Paleta de Marca APUS)
+   ========================================= */
+:root {
+  /* Colores Oficiales */
+  --color-navy-blue: #041e42;
+  --color-royal-blue: #004c97;
+  --color-aqua-blue: #05c3de;
+
+  /* Colores Neutros permitidos */
+  --color-blanco: #ffffff;
+  --color-gris-fondo: #f8f9fa; /* Un gris muy tenue para separar fondos */
+  --color-texto-principal: #333333;
+
+  /* Espaciados Base */
+  --espaciado-md: 16px;
+  --espaciado-lg: 24px;
+  --espaciado-xl: 32px;
+}
+
+/* =========================================
+   2. ESTILOS DE TEXTO GENERALES
+   ========================================= */
+.lms-parrafo {
+  color: var(--color-texto-principal);
+  line-height: 1.6;
+  margin-bottom: var(--espaciado-md);
+  font-size: 19px;
+}
+
+/* =========================================
+   3. COMPONENTE: CAJAS DE DESTACADO (Callout)
+   ========================================= */
+.lms-callout {
+  background-color: var(--color-gris-fondo);
+  border-left: 6px solid var(--color-aqua-blue);
+  padding: var(--espaciado-lg);
+  margin: var(--espaciado-xl) 0;
+  border-radius: 0 8px 8px 0; /* Suaviza las esquinas derechas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra estática para profundidad */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease; /* Transición fluida */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Efecto dinámico sutil al pasar el mouse */
+.lms-callout:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lms-callout p {
+  margin: 0;
+  color: var(--color-navy-blue);
+  font-size: 1.15rem;
+}
+
+.lms-callout strong {
+  font-weight: 700;
+}
+
+/* =========================================
+   CONTENEDOR INTRODUCTORIO
+   ========================================= */
+.lms-intro-box {
+  background-color: #f0f4f8; /* Tono muy suave derivado del azul */
+  border-top: 5px solid var(--color-royal-blue);
+  padding: var(--espaciado-lg);
+  border-radius: 8px;
+  margin-bottom: var(--espaciado-xl);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.lms-intro-box p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-texto-principal);
+  line-height: 1.7;
+}
+
+/* =========================================
+   ACORDEONES INTERACTIVOS (Detalles/Resumen)
+   ========================================= */
+.lms-accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-md);
+}
+
+.lms-accordion {
+  background-color: var(--color-blanco);
+  border: 1px solid #e2e8f0;
+  border-left: 6px solid var(--color-aqua-blue);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.lms-accordion:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateX(4px); /* Pequeño salto a la derecha al pasar el mouse */
+}
+
+/* Estilo del botón/título del acordeón */
+.lms-accordion summary {
+  padding: var(--espaciado-md) var(--espaciado-lg);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-navy-blue);
+  background-color: var(--color-gris-fondo);
+  cursor: pointer;
+  list-style: none; /* Oculta la flecha por defecto */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease;
+}
+
+/* Ocultar flecha en navegadores basados en WebKit (Chrome, Safari) */
+.lms-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Icono personalizado de suma/resta animado */
+.lms-accordion summary::after {
+  content: "+";
+  font-size: 1.8rem;
+  color: var(--color-royal-blue);
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+/* Cambios cuando el acordeón está abierto */
+.lms-accordion[open] {
+  border-left-color: var(--color-royal-blue);
+}
+
+.lms-accordion[open] summary {
+  background-color: var(--color-blanco);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.lms-accordion[open] summary::after {
+  content: "−";
+  transform: rotate(180deg);
+  color: var(--color-navy-blue);
+}
+
+/* Contenido interno del acordeón */
+.lms-accordion-content {
+  padding: var(--espaciado-lg);
+  background-color: var(--color-blanco);
+}
+
+.lms-accordion-content p:last-child {
+  margin-bottom: 0;
+}
+/* =========================================
+   CONTENEDOR INTRODUCTORIO (Actualizado con Flexbox)
+   ========================================= */
+.lms-intro-box {
+  background-color: #f0f4f8;
+  border-top: 5px solid var(--color-royal-blue);
+  padding: var(--espaciado-lg);
+  border-radius: 8px;
+  margin-bottom: var(--espaciado-xl);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-lg);
+  align-items: center; /* Centrado en móviles */
+}
+
+/* En pantallas de computadora, el texto va a la derecha de la imagen */
+@media (min-width: 768px) {
+  .lms-intro-box {
+    flex-direction: row;
+  }
+}
+
+.lms-intro-box p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-texto-principal);
+  line-height: 1.7;
+}
+
+/* =========================================
+   ILUSTRACIÓN PURA EN CSS (Clasificación)
+   ========================================= */
+.lms-css-icon {
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  position: relative;
+  /* Margen extra en escritorio para separar del texto */
+  margin-right: 15px;
+}
+
+/* Bloque Navy (Fondo Izquierda) */
+.lms-css-icon::before {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background-color: var(--color-navy-blue);
+  top: 0;
+  left: 0;
+  border-radius: 6px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Bloque Aqua (Fondo Derecha) */
+.lms-css-icon::after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background-color: var(--color-aqua-blue);
+  bottom: 0;
+  right: 0;
+  border-radius: 6px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Bloque Royal (Centro Superpuesto) */
+.lms-css-icon-center {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-royal-blue);
+  top: 20px;
+  left: 20px;
+  border-radius: 6px;
+  z-index: 2;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease; /* Efecto dinámico */
+}
+
+/* Dinamismo al pasar el mouse por toda la caja introductoria */
+.lms-intro-box:hover .lms-css-icon-center {
+  transform: scale(1.1) translate(-2px, -2px);
+}
+
+/* =========================================
+   BLOQUES DE LECTURA (Para separar definiciones largas)
+   ========================================= */
+.lms-definition-block {
+  background-color: var(--color-blanco);
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid var(--color-royal-blue);
+  padding: var(--espaciado-lg);
+  margin: var(--espaciado-lg) 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.3s ease;
+}
+
+.lms-definition-block:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   NOTA CRÍTICA (Reemplazo de la tarjeta Bootstrap)
+   ========================================= */
+.lms-important-note {
+  background-color: var(--color-navy-blue);
+  border-left: 8px solid var(--color-aqua-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-lg);
+  box-shadow: 0 4px 12px rgba(4, 30, 66, 0.2); /* Sombra basada en el Navy Blue */
+  transition: transform 0.3s ease;
+}
+
+/* En pantallas de computadora, alineamos el icono a la izquierda */
+@media (min-width: 768px) {
+  .lms-important-note {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.lms-important-note:hover {
+  transform: translateY(-3px);
+}
+
+.lms-note-icon {
+  font-size: 3.5rem;
+  color: var(--color-aqua-blue);
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.lms-note-content h2 {
+  color: var(--color-blanco);
+  margin-top: 0;
+  margin-bottom: var(--espaciado-sm);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.lms-note-content p {
+  color: var(--color-blanco);
+  margin: 0;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  opacity: 0.95; /* Suaviza ligeramente el blanco para no cansar la vista */
+}
+
+/* =========================================
+   GRILLA DE DEFINICIONES (2 Columnas)
+   ========================================= */
+.lms-def-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 columna en móviles */
+  gap: var(--espaciado-lg);
+  margin-bottom: var(--espaciado-xl);
+}
+
+/* En pantallas de computadora, se divide en 2 columnas iguales */
+@media (min-width: 768px) {
+  .lms-def-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Tarjetas de la Grilla */
+.lms-def-card {
+  background-color: var(--color-blanco);
+  border-radius: 8px;
+  padding: var(--espaciado-xl) var(--espaciado-lg) var(--espaciado-lg);
+  border-top: 5px solid var(--color-royal-blue);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* Marca de agua decorativa usando CSS puro (Comillas gigantes) */
+.lms-def-card::before {
+  content: "\201C"; /* Código de comilla inglesa */
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-size: 8rem;
+  color: #f0f4f8; /* Gris azulado muy sutil */
+  font-family: serif;
+  line-height: 1;
+  z-index: 0;
+}
+
+/* Asegura que el texto esté por encima de la marca de agua */
+.lms-def-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.lms-def-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 76, 151, 0.15); /* Sombra Royal Blue */
+}
+
+/* =========================================
+   BANNER DE NOTA CRÍTICA
+   ========================================= */
+.lms-banner-note {
+  background-color: var(--color-navy-blue);
+  color: var(--color-blanco);
+  padding: var(--espaciado-xl);
+  border-radius: 8px;
+  margin: var(--espaciado-xl) 0;
+  text-align: center;
+  position: relative;
+  border-bottom: 6px solid var(--color-aqua-blue);
+  box-shadow: 0 10px 20px rgba(4, 30, 66, 0.2);
+}
+
+.lms-banner-note h2 {
+  color: var(--color-aqua-blue);
+  margin-top: 0;
+  margin-bottom: var(--espaciado-md);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.lms-banner-note p {
+  color: var(--color-blanco);
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   BLOQUE FINAL ASIMÉTRICO (ICD-11)
+   ========================================= */
+.lms-outro-block {
+  background-color: var(--color-gris-fondo);
+  border-right: 8px solid var(--color-aqua-blue); /* Borde a la derecha para variar */
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  border-radius: 8px 0 0 8px;
+  margin-top: var(--espaciado-xl);
+}
+
+/* =========================================
+   REPRODUCTOR DE PODCAST (Wrapper para iframe)
+   ========================================= */
+.lms-podcast-wrapper {
+  background-color: var(--color-gris-fondo);
+  border: 1px solid #e2e8f0;
+  border-left: 6px solid var(--color-royal-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg);
+  margin-bottom: var(--espaciado-xl);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-md);
+}
+
+.lms-podcast-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-royal-blue);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Punto intermitente CSS para simular "Reproduciendo/Audio" */
+.lms-podcast-label::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-aqua-blue);
+  border-radius: 50%;
+  animation: pulse-audio 2s infinite;
+}
+
+@keyframes pulse-audio {
+  0% {
+    box-shadow: 0 0 0 0 rgba(5, 195, 222, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(5, 195, 222, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(5, 195, 222, 0);
+  }
+}
+
+/* Hace que el iframe de Kaltura sea responsivo */
+.lms-podcast-wrapper iframe {
+  width: 100% !important;
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+/* =========================================
+   CAJA DE REFLEXIÓN (Llamada a la acción)
+   ========================================= */
+.lms-reflect-box {
+  background-color: var(--color-navy-blue);
+  border-top: 6px solid var(--color-aqua-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  color: var(--color-blanco);
+  box-shadow: 0 8px 20px rgba(4, 30, 66, 0.15);
+  text-align: center;
+}
+
+.lms-reflect-box h2 {
+  color: var(--color-aqua-blue);
+  margin-top: 0;
+  margin-bottom: var(--espaciado-md);
+  font-size: 1.8rem;
+}
+
+.lms-reflect-box p {
+  font-size: 1.15rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =========================================
+   LLAMADA DE ATENCIÓN CON ICONO (Para notas breves)
+   ========================================= */
+.lms-icon-callout {
+  background-color: var(--color-royal-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-lg);
+  box-shadow: 0 4px 10px rgba(0, 76, 151, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.lms-icon-callout:hover {
+  transform: translateY(-3px);
+}
+
+.lms-icon-callout .fas {
+  font-size: 3rem;
+  color: var(--color-aqua-blue);
+  flex-shrink: 0;
+}
+
+.lms-icon-callout p {
+  color: var(--color-blanco);
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Apilar en celulares */
+@media (max-width: 768px) {
+  .lms-icon-callout {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* =========================================
+   CAJA DE CASO DE ESTUDIO (Case Example)
+   ========================================= */
+.lms-case-study {
+  border: 2px solid var(--color-navy-blue);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: var(--espaciado-xl) 0 var(--espaciado-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.lms-case-study-header {
+  background-color: var(--color-navy-blue);
+  color: var(--color-blanco);
+  padding: var(--espaciado-md) var(--espaciado-lg);
+}
+
+.lms-case-study-header h3 {
+  margin: 0;
+  color: var(--color-aqua-blue);
+  font-size: 1.4rem;
+}
+
+.lms-case-study-body {
+  background-color: var(--color-gris-fondo);
+  padding: var(--espaciado-lg);
+}
+
+.lms-case-study-body p {
+  margin: 0;
+}
+
+/* =========================================
+   GRILLA DE COMPARACIÓN (Lado a Lado)
+   ========================================= */
+.lms-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-lg);
+  margin-bottom: var(--espaciado-xl);
+}
+
+@media (min-width: 768px) {
+  .lms-compare-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lms-compare-card {
+  background-color: var(--color-blanco);
+  border: 1px solid #e2e8f0;
+  border-top: 5px solid var(--color-aqua-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.lms-compare-card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+}
+
+/* Tarjeta izquierda azul real, tarjeta derecha aqua */
+.lms-compare-card:nth-child(1) {
+  border-top-color: var(--color-royal-blue);
+}
+
+.lms-compare-card h4 {
+  color: var(--color-navy-blue);
+  margin-top: 0;
+  margin-bottom: var(--espaciado-md);
+  font-size: 1.25rem;
+  border-bottom: 2px solid #f0f4f8;
+  padding-bottom: 8px;
+}
+
+/* =========================================
+   TEXTO INTRODUCTORIO DESTACADO
+   ========================================= */
+.lms-intro-lead {
+  font-size: 1.1rem;
+  color: var(--color-navy-blue);
+  border-bottom: 2px solid var(--color-aqua-blue);
+  padding-bottom: var(--espaciado-md);
+  margin-bottom: var(--espaciado-lg);
+}
+
+/* =========================================
+   LAYOUT EDITORIAL (Críticas al Modelo Categórico)
+   ========================================= */
+.lms-categorical-wrapper {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 columna en móviles */
+  gap: var(--espaciado-lg);
+  margin-bottom: var(--espaciado-xl);
+}
+
+/* En pantallas de computadora, creamos una lectura de 2 columnas */
+@media (min-width: 992px) {
+  .lms-categorical-wrapper {
+    grid-template-columns: 2fr 1fr; /* El texto ocupa el 66% y el callout el 33% */
+    align-items: center;
+  }
+}
+
+.lms-categorical-text {
+  border-left: 4px solid var(--color-royal-blue);
+  padding-left: var(--espaciado-md);
+}
+
+.lms-categorical-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Barra Lateral (Sidebar Callout) */
+.lms-sidebar-callout {
+  background-color: var(--color-navy-blue);
+  color: var(--color-blanco);
+  padding: var(--espaciado-lg);
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(4, 30, 66, 0.15);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaciado-md);
+  transition: transform 0.3s ease;
+}
+
+.lms-sidebar-callout:hover {
+  transform: translateY(-5px);
+}
+
+.lms-sidebar-callout .fas {
+  font-size: 2.5rem;
+  color: var(--color-aqua-blue);
+}
+
+.lms-sidebar-callout p {
+  margin: 0;
+  color: var(--color-blanco);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   BLOQUE DIMENSIONAL (Contraste Visual)
+   ========================================= */
+.lms-dimensional-block {
+  background-color: var(--color-gris-fondo);
+  border-right: 6px solid var(--color-aqua-blue); /* Borde a la derecha para romper la simetría */
+  padding: var(--espaciado-lg);
+  border-radius: 8px 0 0 8px;
+  margin-bottom: var(--espaciado-lg);
+}
+
+.lms-dimensional-block p {
+  margin: 0;
+}
+
+/* =========================================
+   NUEVOS CONTENEDORES CON FLEXBOX (Actualización)
+   ========================================= */
+.lms-intro-lead-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espaciado-lg);
+  border-bottom: 2px solid var(--color-aqua-blue);
+  padding-bottom: var(--espaciado-md);
+  margin-bottom: var(--espaciado-lg);
+}
+
+.lms-intro-lead-wrapper p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-navy-blue);
+}
+
+.lms-dimensional-block {
+  background-color: var(--color-gris-fondo);
+  border-right: 6px solid var(--color-aqua-blue);
+  padding: var(--espaciado-lg);
+  border-radius: 8px 0 0 8px;
+  margin-bottom: var(--espaciado-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-md);
+}
+
+@media (min-width: 768px) {
+  .lms-dimensional-block {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================
+   ILUSTRACIONES 100% CSS
+   ========================================= */
+
+/* 1. Icono Debate (Círculos interceptados) */
+.lms-css-icon-debate {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  margin-top: 5px;
+}
+.lms-css-icon-debate::before,
+.lms-css-icon-debate::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+.lms-css-icon-debate::before {
+  background-color: var(--color-navy-blue);
+  top: 0;
+  left: 0;
+  opacity: 0.85;
+}
+.lms-css-icon-debate::after {
+  background-color: var(--color-aqua-blue);
+  bottom: 5px;
+  right: 5px;
+  opacity: 0.85;
+}
+.lms-intro-lead-wrapper:hover .lms-css-icon-debate::before {
+  transform: translate(-3px, -3px);
+}
+.lms-intro-lead-wrapper:hover .lms-css-icon-debate::after {
+  transform: translate(3px, 3px);
+}
+
+/* 2. Icono Categórico (Bloques separados) */
+.lms-css-icon-categorical {
+  display: flex;
+  gap: 8px;
+  margin-bottom: var(--espaciado-md);
+}
+.lms-css-icon-categorical span {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background-color: var(--color-royal-blue);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+.lms-css-icon-categorical span:nth-child(1) {
+  opacity: 0.5;
+}
+.lms-css-icon-categorical span:nth-child(2) {
+  opacity: 0.75;
+}
+.lms-css-icon-categorical span:nth-child(3) {
+  opacity: 1;
+}
+
+/* Efecto de cascada al pasar el mouse por el texto */
+.lms-categorical-text:hover .lms-css-icon-categorical span:nth-child(1) {
+  transform: translateY(-3px);
+}
+.lms-categorical-text:hover .lms-css-icon-categorical span:nth-child(2) {
+  transform: translateY(-5px);
+}
+.lms-categorical-text:hover .lms-css-icon-categorical span:nth-child(3) {
+  transform: translateY(-7px);
+  background-color: var(--color-aqua-blue);
+}
+
+/* 3. Icono Dimensional (Barra continua / Slider) */
+.lms-css-icon-dimensional {
+  flex-shrink: 0;
+  width: 65px;
+  height: 14px;
+  background: linear-gradient(
+    to right,
+    var(--color-navy-blue),
+    var(--color-aqua-blue)
+  );
+  border-radius: 10px;
+  position: relative;
+  margin-top: 6px;
+}
+.lms-css-icon-dimensional::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-blanco);
+  border: 3px solid var(--color-royal-blue);
+  border-radius: 50%;
+  top: -4px;
+  left: 10%;
+  transition: left 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.lms-dimensional-block:hover .lms-css-icon-dimensional::after {
+  left: 60%; /* El slider se mueve solo cuando el estudiante lee el párrafo */
+}
+
+/* =========================================
+   ICONO CSS "HISTORIA/TIEMPO" (Reloj minimalista)
+   ========================================= */
+.lms-css-icon-history {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--color-navy-blue);
+  border-radius: 50%;
+  position: relative;
+  margin-top: 5px;
+}
+
+/* Manecilla de las horas */
+.lms-css-icon-history::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 18px;
+  background-color: var(--color-royal-blue);
+  bottom: 21px; /* Posicionado desde el centro */
+  left: 19px;
+  border-radius: 2px;
+  transform-origin: bottom center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Manecilla de los minutos */
+.lms-css-icon-history::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 4px;
+  background-color: var(--color-aqua-blue);
+  top: 21px; /* Posicionado desde el centro */
+  left: 21px;
+  border-radius: 2px;
+  transform-origin: left center;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animación dinámica solo al pasar el ratón por el párrafo introductorio */
+.lms-intro-lead-wrapper:hover .lms-css-icon-history::before {
+  transform: rotate(360deg);
+}
+.lms-intro-lead-wrapper:hover .lms-css-icon-history::after {
+  transform: rotate(90deg);
+}
+
+/* =========================================
+   LÍNEA DE TIEMPO VERTICAL (Timeline)
+   ========================================= */
+.lms-timeline {
+  position: relative;
+  margin: var(--espaciado-xl) 0;
+  padding: 0;
+  list-style: none; /* Quitamos los números por defecto para el diseño visual */
+}
+
+/* La línea vertical central */
+.lms-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 4px;
+  background-color: var(--color-aqua-blue);
+  border-radius: 2px;
+}
+
+.lms-timeline-item {
+  position: relative;
+  margin-bottom: var(--espaciado-xl);
+  padding-left: 60px; /* Deja espacio para la línea y el punto */
+}
+
+.lms-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Los nodos/puntos en la línea de tiempo */
+.lms-timeline-dot {
+  position: absolute;
+  top: 0;
+  left: -18px; /* Centrado respecto a la línea (20px) */
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-navy-blue);
+  border: 4px solid var(--color-blanco);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.lms-timeline-item:hover .lms-timeline-dot {
+  transform: scale(1.3);
+  background-color: var(--color-royal-blue);
+}
+
+/* La tarjeta de contenido de la línea de tiempo */
+.lms-timeline-content {
+  background-color: var(--color-blanco);
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid var(--color-royal-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.lms-timeline-item:hover .lms-timeline-content {
+  transform: translateX(6px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.lms-timeline-content h2 {
+  margin-top: 0;
+  color: var(--color-navy-blue);
+  font-size: 1.4rem;
+  margin-bottom: var(--espaciado-md);
+  border-bottom: 1px solid #f0f4f8;
+  padding-bottom: 8px;
+}
+
+.lms-timeline-content p {
+  margin-bottom: 0;
+  color: var(--color-texto-principal);
+}
+
+/* =========================================
+   BLOQUE SOCIOCULTURAL (Énfasis final)
+   ========================================= */
+.lms-sociocultural-block {
+  background-color: var(--color-gris-fondo);
+  border-left: 6px solid var(--color-navy-blue);
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  border-radius: 0 8px 8px 0;
+  margin: var(--espaciado-xl) 0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+/* =========================================
+   BLOQUE DE ÉNFASIS (Para resaltar ideas continuas)
+   ========================================= */
+.lms-quote-box {
+  background-color: var(--color-gris-fondo);
+  border-left: 8px solid var(--color-royal-blue);
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.03);
+  transition: border-left-color 0.3s ease;
+}
+
+.lms-quote-box:hover {
+  border-left-color: var(--color-aqua-blue);
+}
+
+.lms-quote-box h2 {
+  color: var(--color-navy-blue);
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: var(--espaciado-sm);
+}
+
+.lms-quote-box p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-texto-principal);
+}
+
+/* =========================================
+   TARJETA DE NOTA FLOTANTE ("It is Worth Noting")
+   ========================================= */
+.lms-note-card {
+  background-color: var(--color-navy-blue);
+  color: var(--color-blanco);
+  padding: var(--espaciado-xl);
+  border-radius: 8px;
+  margin: var(--espaciado-xl) 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 15px rgba(4, 30, 66, 0.15);
+  position: relative;
+  overflow: hidden; /* Mantiene el efecto de luz dentro de la caja */
+}
+
+/* Efecto de luz Aqua en la esquina */
+.lms-note-card::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background-color: var(--color-aqua-blue);
+  border-radius: 50%;
+  opacity: 0.15;
+  transition: transform 0.5s ease;
+}
+
+.lms-note-card:hover::before {
+  transform: scale(1.6);
+  opacity: 0.25;
+}
+
+.lms-note-card h2 {
+  color: var(--color-aqua-blue);
+  margin-top: 0;
+  font-size: 1.6rem;
+  position: relative;
+  z-index: 1; /* Asegura que el texto esté sobre el efecto de luz */
+}
+
+.lms-note-card p {
+  color: var(--color-blanco);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   DISEÑO EN 2 COLUMNAS (Para romper párrafos largos)
+   ========================================= */
+.lms-two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-md);
+  margin-bottom: var(--espaciado-lg);
+}
+
+/* En escritorio se divide en 2 columnas exactas */
+@media (min-width: 768px) {
+  .lms-two-col {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espaciado-xl);
+  }
+}
+
+/* =========================================
+   CAJA DE REFLEXIÓN ("To me,")
+   ========================================= */
+.lms-reflection-box {
+  border: 2px dashed var(--color-aqua-blue);
+  background-color: #f8fbfd; /* Un tono neutro súper suave derivado del azul */
+  padding: var(--espaciado-xl);
+  border-radius: 12px;
+  text-align: center;
+  margin: var(--espaciado-xl) 0;
+  transition: all 0.3s ease;
+}
+
+.lms-reflection-box:hover {
+  background-color: var(--color-blanco);
+  border-style: solid;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(5, 195, 222, 0.15);
+}
+
+.lms-reflection-box h2 {
+  color: var(--color-royal-blue);
+  margin-top: 0;
+  margin-bottom: var(--espaciado-md);
+  font-size: 1.6rem;
+}
+
+.lms-reflection-box p {
+  margin: 0;
+  color: var(--color-navy-blue);
+  font-size: 1.1rem;
+  font-style: italic; /* La cursiva le da el toque de nota personal */
+  line-height: 1.6;
+}
+
+/* =========================================
+   FLUJO CONCEPTUAL (Para párrafos consecutivos)
+   ========================================= */
+.lms-sequence-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-md);
+  margin-bottom: var(--espaciado-xl);
+  border-left: 2px dashed #cbd5e1; /* Línea conectora gris sutil */
+  padding-left: var(--espaciado-md);
+  margin-left: 10px; /* Separación del borde izquierdo de la pantalla */
+}
+
+.lms-sequence-item {
+  background-color: var(--color-blanco);
+  padding: var(--espaciado-md) var(--espaciado-lg);
+  border-radius: 6px;
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Efecto sutil al pasar el cursor para mantener la interactividad */
+.lms-sequence-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  background-color: #fcfcfc;
+}
+
+/* Los puntos conectores en la línea punteada */
+.lms-sequence-item::before {
+  content: "";
+  position: absolute;
+  left: calc(
+    -1.3 * var(--espaciado-md) - 8px
+  ); /* Posicionamiento exacto sobre la línea */
+  top: 22px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--color-blanco);
+  border: 3px solid var(--color-navy-blue); /* Color por defecto */
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.lms-sequence-item:hover::before {
+  transform: scale(1.3);
+}
+
+/* Variamos los colores de los nodos usando tu paleta */
+.lms-sequence-item:nth-child(1)::before {
+  border-color: var(--color-aqua-blue);
+}
+.lms-sequence-item:nth-child(2)::before {
+  border-color: var(--color-royal-blue);
+}
+.lms-sequence-item:nth-child(3)::before {
+  border-color: var(--color-navy-blue);
+}
+
+.lms-sequence-item p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =========================================
+   CAJA DE ILUSTRACIÓN (Ejemplos integrados)
+   ========================================= */
+.lms-illustration-box {
+  background-color: #f4f8fc; /* Gris azulado muy suave */
+  border-left: 6px solid var(--color-aqua-blue);
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  gap: var(--espaciado-lg);
+  align-items: flex-start;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+  transition: background-color 0.3s ease;
+}
+
+.lms-illustration-box:hover {
+  background-color: var(--color-blanco);
+  box-shadow: 0 6px 12px rgba(5, 195, 222, 0.1);
+}
+
+/* Icono de Lupa 100% CSS */
+.lms-css-icon-search {
+  width: 26px;
+  height: 26px;
+  border: 3px solid var(--color-royal-blue);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.lms-css-icon-search::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 4px;
+  background-color: var(--color-royal-blue);
+  border-radius: 2px;
+  bottom: -5px;
+  right: -8px;
+  transform: rotate(45deg);
+}
+
+.lms-illustration-content h2 {
+  color: var(--color-navy-blue);
+  margin-top: 0;
+  margin-bottom: var(--espaciado-sm);
+  font-size: 1.5rem;
+}
+
+.lms-illustration-content p {
+  margin: 0;
+  color: var(--color-texto-principal);
+  line-height: 1.6;
+}
+
+/* =========================================
+   GRILLA DE FICHAS CLÍNICAS (Ejemplos)
+   ========================================= */
+.lms-examples-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-lg);
+  margin-top: var(--espaciado-lg);
+  margin-bottom: var(--espaciado-xl);
+}
+
+@media (min-width: 768px) {
+  .lms-examples-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lms-example-card {
+  background-color: var(--color-blanco);
+  border: 1px solid #e2e8f0;
+  border-top: 6px solid var(--color-navy-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  box-shadow: 0 4px 10px rgba(4, 30, 66, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-top-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.lms-example-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(4, 30, 66, 0.12);
+  border-top-color: var(--color-aqua-blue);
+}
+
+.lms-example-card h3 {
+  color: var(--color-royal-blue);
+  margin-top: 0;
+  margin-bottom: var(--espaciado-md);
+  font-size: 1.4rem;
+  border-bottom: 2px dotted #e2e8f0;
+  padding-bottom: 10px;
+}
+
+.lms-example-card p {
+  margin-bottom: var(--espaciado-sm);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.lms-example-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   ESTILO EDITORIAL (Letra Capitular para el inicio)
+   ========================================= */
+.lms-editorial-lead {
+  font-size: 1.05rem;
+  color: var(--color-texto-principal);
+  line-height: 1.7;
+  margin-bottom: var(--espaciado-xl);
+}
+
+/* La gran letra inicial */
+.lms-editorial-lead::first-letter {
+  float: left;
+  font-size: 3.8rem;
+  line-height: 0.8;
+  margin-right: 10px;
+  margin-top: 4px;
+  color: var(--color-aqua-blue);
+  font-weight: 900;
+}
+
+/* =========================================
+   TARJETA DE CLASIFICACIÓN (Para el párrafo de 3 puntos)
+   ========================================= */
+.lms-classification-card {
+  background-color: var(--color-blanco);
+  border: 1px solid #e2e8f0;
+  border-top: 5px solid var(--color-royal-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  box-shadow: 0 6px 15px rgba(0, 76, 151, 0.08);
+  margin-bottom: var(--espaciado-xl);
+  position: relative;
+}
+
+/* Icono CSS: 3 pilares representando las 3 formas descritas en el texto */
+.lms-classification-card::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  right: 30px;
+  width: 40px;
+  height: 24px;
+  background-image:
+    linear-gradient(var(--color-aqua-blue), var(--color-aqua-blue)),
+    linear-gradient(var(--color-navy-blue), var(--color-navy-blue)),
+    linear-gradient(var(--color-royal-blue), var(--color-royal-blue));
+  background-size:
+    10px 24px,
+    10px 14px,
+    10px 19px; /* Diferentes alturas */
+  background-position:
+    0 bottom,
+    15px bottom,
+    30px bottom; /* Alinear abajo */
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.lms-classification-card:hover::before {
+  transform: translateY(-3px);
+}
+
+.lms-classification-card p {
+  margin: 0;
+}
+
+/* =========================================
+   BANNER DE SÍNTESIS (Cierre del concepto)
+   ========================================= */
+.lms-synthesis-banner {
+  background: linear-gradient(
+    135deg,
+    var(--color-navy-blue),
+    var(--color-royal-blue)
+  );
+  color: var(--color-blanco);
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  border-radius: 8px;
+  margin-bottom: var(--espaciado-xl);
+  border-left: 6px solid var(--color-aqua-blue);
+  box-shadow: 0 4px 10px rgba(4, 30, 66, 0.2);
+}
+
+.lms-synthesis-banner p {
+  margin: 0;
+  color: var(--color-blanco);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   TARJETA DE INSIGHT HORIZONTAL (Reemplazo Card 1)
+   ========================================= */
+.lms-insight-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: var(--espaciado-xl) 0;
+  box-shadow: 0 4px 12px rgba(4, 30, 66, 0.08);
+  border: 1px solid #e2e8f0;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.lms-insight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(4, 30, 66, 0.15);
+}
+
+.lms-insight-icon {
+  background-color: var(--color-navy-blue);
+  color: var(--color-aqua-blue);
+  padding: var(--espaciado-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+/* En pantallas de computadora, la hacemos horizontal */
+@media (min-width: 768px) {
+  .lms-insight-card {
+    flex-direction: row;
+  }
+  .lms-insight-icon {
+    flex: 0 0 120px; /* Ancho fijo para el icono */
+  }
+}
+
+.lms-insight-icon .fas {
+  font-size: 3rem; /* Reducido de 100px a un tamaño elegante */
+}
+
+.lms-insight-text {
+  background-color: var(--color-blanco);
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  display: flex;
+  align-items: center;
+}
+
+.lms-insight-text p {
+  margin: 0;
+  color: var(--color-navy-blue);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* =========================================
+   CINTA DE ÉNFASIS ACADÉMICO (Reemplazo Card 2)
+   ========================================= */
+.lms-training-focus {
+  background-color: #f8fbfd; /* Tono muy claro basado en tu paleta */
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: var(--espaciado-md) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Barra lateral de color Royal Blue */
+.lms-training-focus::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background-color: var(--color-royal-blue);
+}
+
+.lms-training-icon {
+  flex-shrink: 0;
+  background-color: var(--color-blanco);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  color: var(--color-royal-blue);
+  font-size: 1.5rem;
+}
+
+.lms-training-focus p {
+  margin: 0;
+  color: var(--color-texto-principal);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   TARJETA DE INSIGHT HORIZONTAL (Reemplazo Card 1)
+   ========================================= */
+.lms-insight-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: var(--espaciado-xl) 0;
+  box-shadow: 0 4px 12px rgba(4, 30, 66, 0.08);
+  border: 1px solid #e2e8f0;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.lms-insight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(4, 30, 66, 0.15);
+}
+
+.lms-insight-icon {
+  background-color: var(--color-navy-blue);
+  color: var(--color-aqua-blue);
+  padding: var(--espaciado-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+/* En pantallas de computadora, la hacemos horizontal */
+@media (min-width: 768px) {
+  .lms-insight-card {
+    flex-direction: row;
+  }
+  .lms-insight-icon {
+    flex: 0 0 120px; /* Ancho fijo para el icono */
+  }
+}
+
+.lms-insight-icon .fas {
+  font-size: 3rem; /* Reducido de 100px a un tamaño elegante */
+}
+
+.lms-insight-text {
+  background-color: var(--color-blanco);
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  display: flex;
+  align-items: center;
+}
+
+.lms-insight-text p {
+  margin: 0;
+  color: var(--color-navy-blue);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* =========================================
+   CINTA DE ÉNFASIS ACADÉMICO (Reemplazo Card 2)
+   ========================================= */
+.lms-training-focus {
+  background-color: #f8fbfd; /* Tono muy claro basado en tu paleta */
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: var(--espaciado-md) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Barra lateral de color Royal Blue */
+.lms-training-focus::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background-color: var(--color-royal-blue);
+}
+
+.lms-training-icon {
+  flex-shrink: 0;
+  background-color: var(--color-blanco);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  color: var(--color-royal-blue);
+  font-size: 1.5rem;
+}
+
+.lms-training-focus p {
+  margin: 0;
+  color: var(--color-texto-principal);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   TARJETA DE PRINCIPIO (Efecto Offset 3D)
+   ========================================= */
+.lms-principle-wrapper {
+  position: relative;
+  margin: var(--espaciado-xl) 0 var(--espaciado-xl) 25px; /* Margen izquierdo para el icono flotante */
+}
+
+/* El borde desfasado (sombra decorativa) */
+.lms-principle-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -8px;
+  right: 8px;
+  bottom: -8px;
+  border: 2px solid var(--color-aqua-blue);
+  border-radius: 8px;
+  z-index: 0;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.lms-principle-wrapper:hover::before {
+  transform: translate(4px, 4px); /* Se mueve ligeramente al pasar el mouse */
+  border-color: var(--color-royal-blue);
+}
+
+.lms-principle-card {
+  position: relative;
+  background-color: var(--color-blanco);
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: var(--espaciado-lg) var(--espaciado-lg) var(--espaciado-lg) 50px;
+  z-index: 1; /* Asegura que la caja blanca esté sobre el borde decorativo */
+}
+
+/* Icono redondo flotando a la izquierda */
+.lms-principle-icon {
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-navy-blue);
+  color: var(--color-blanco);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 10px rgba(4, 30, 66, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.lms-principle-wrapper:hover .lms-principle-icon {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lms-principle-card p {
+  margin: 0;
+  color: var(--color-navy-blue);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   NOTA CENTRAL (Estilo Marcapáginas / Takeaway)
+   ========================================= */
+.lms-takeaway-note {
+  background-color: #f8fbfd; /* Gris-azul muy claro */
+  border-top: 4px solid var(--color-royal-blue);
+  border-bottom: 4px solid var(--color-royal-blue);
+  padding: 2.5rem 2rem 1.5rem 2rem; /* Más padding arriba por el icono */
+  margin: 3.5rem auto; /* Auto lo centra horizontalmente */
+  max-width: 85%; /* Lo hace ligeramente más estrecho que los párrafos normales */
+  position: relative;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.3s ease;
+}
+
+.lms-takeaway-note:hover {
+  box-shadow: 0 8px 25px rgba(0, 76, 151, 0.1);
+}
+
+/* Icono cuadrado redondeado flotando arriba al centro */
+.lms-takeaway-icon {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-aqua-blue);
+  color: var(--color-navy-blue);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  box-shadow: 0 4px 8px rgba(5, 195, 222, 0.3);
+  transition: top 0.3s ease;
+}
+
+.lms-takeaway-note:hover .lms-takeaway-icon {
+  top: -30px; /* Sube un poquito al pasar el ratón */
+}
+
+.lms-takeaway-note p {
+  margin: 0;
+  color: var(--color-texto-principal);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* =========================================
+   ESTILOS EDITORIALES PARA PÁRRAFOS
+   ========================================= */
+
+/* Párrafo 1: Estilo de Apertura */
+.lms-lead-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--color-navy-blue);
+  margin-bottom: var(--espaciado-xl);
+  padding-top: var(--espaciado-md);
+  border-top: 4px solid var(--color-aqua-blue);
+  font-weight: 400;
+}
+
+/* Párrafo 3: Columnas de Detalle */
+.lms-text-columns {
+  column-count: 1; /* Por defecto en móvil 1 */
+  column-gap: var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  color: var(--color-texto-principal);
+  text-align: justify;
+}
+
+@media (min-width: 992px) {
+  .lms-text-columns {
+    column-count: 2; /* En escritorio se divide en 2 columnas */
+    column-rule: 1px solid #e2e8f0; /* Línea divisoria sutil entre columnas */
+  }
+}
+
+/* Párrafo 5: Reflexión Final */
+.lms-closing-thought {
+  background-color: #fcfcfc;
+  padding: var(--espaciado-lg);
+  border-left: 4px dotted var(--color-royal-blue);
+  margin-top: var(--espaciado-xl);
+  font-style: normal;
+  border-radius: 0 8px 8px 0;
+}
+
+.lms-closing-thought p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   CAJA DE LECTURA RÁPIDA (Quick Read)
+   ========================================= */
+.lms-quick-read-card {
+  background-color: var(--color-blanco);
+  border: 2px solid var(--color-aqua-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin-bottom: var(--espaciado-xl);
+  box-shadow: 0 4px 10px rgba(5, 195, 222, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.lms-quick-read-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(5, 195, 222, 0.15);
+}
+
+.lms-quick-read-card h2 {
+  color: var(--color-navy-blue);
+  margin-top: 0;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Agrega un icono de libro automáticamente al lado del título */
+.lms-quick-read-card h2::before {
+  content: "\f02d"; /* Código Unicode de FontAwesome para libro */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: var(--color-aqua-blue);
+}
+
+.lms-quick-read-card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Da un estilo profesional a los enlaces dentro de esta caja */
+.lms-quick-read-card a {
+  color: var(--color-royal-blue);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0, 76, 151, 0.2);
+  transition: border-color 0.3s ease;
+}
+
+.lms-quick-read-card a:hover {
+  border-color: var(--color-royal-blue);
+}
+
+/* =========================================
+   BLOQUE DE EVIDENCIA (Reemplaza Card 1)
+   ========================================= */
+.lms-evidence-block {
+  background: linear-gradient(
+    135deg,
+    var(--color-navy-blue),
+    var(--color-royal-blue)
+  );
+  border-radius: 12px;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  color: var(--color-blanco);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-lg);
+  box-shadow: 0 8px 15px rgba(4, 30, 66, 0.15);
+}
+
+@media (min-width: 768px) {
+  .lms-evidence-block {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.lms-evidence-icon {
+  font-size: 3rem;
+  color: var(--color-aqua-blue);
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.lms-evidence-text p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-blanco);
+}
+
+/* =========================================
+   CAJA DE CONTEXTO (Para párrafos densos)
+   ========================================= */
+.lms-context-box {
+  background-color: #f4f8fc;
+  border-left: 5px solid var(--color-royal-blue);
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.lms-context-box p {
+  margin: 0;
+  color: var(--color-texto-principal);
+  line-height: 1.7;
+}
+
+/* =========================================
+   CINTA DE AUDIENCIA (Reemplaza Card 2)
+   ========================================= */
+.lms-audience-ribbon {
+  background-color: var(--color-aqua-blue);
+  color: var(--color-navy-blue);
+  border-radius: 12px;
+  padding: var(--espaciado-md) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-lg);
+  box-shadow: 0 4px 10px rgba(5, 195, 222, 0.15);
+}
+
+/* En escritorio se vuelve una "píldora" completamente redonda */
+@media (min-width: 768px) {
+  .lms-audience-ribbon {
+    border-radius: 50px;
+  }
+}
+
+.lms-audience-icon {
+  background-color: var(--color-blanco);
+  color: var(--color-royal-blue);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.lms-audience-ribbon p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   PÁRRAFO FINAL (Conclusión)
+   ========================================= */
+.lms-final-word {
+  font-size: 1.1rem;
+  color: var(--color-navy-blue);
+  text-align: center;
+  margin-top: var(--espaciado-xl);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* =========================================
+   TARJETAS GEMELAS (Para párrafos complementarios densos)
+   ========================================= */
+.lms-twin-paragraphs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-lg);
+  margin-bottom: var(--espaciado-xl);
+}
+
+/* En pantallas grandes, se dividen en dos columnas exactas */
+@media (min-width: 992px) {
+  .lms-twin-paragraphs {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch; /* Hace que ambas cajas tengan la misma altura */
+  }
+}
+
+/* Tarjeta Izquierda (Estilo Sólido Suave) */
+.lms-twin-left {
+  background-color: #f4f8fc; /* Gris-azul muy claro */
+  border-left: 6px solid var(--color-royal-blue);
+  border-radius: 0 8px 8px 0;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Tarjeta Derecha (Estilo Limpio con Sombra) */
+.lms-twin-right {
+  background-color: var(--color-blanco);
+  border: 1px solid #e2e8f0;
+  border-right: 6px solid var(--color-aqua-blue);
+  border-radius: 8px 0 0 8px;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  box-shadow: 0 6px 15px rgba(4, 30, 66, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Formato unificado del texto interno */
+.lms-twin-paragraphs p {
+  margin: 0 0 12px 0;
+  line-height: 1.65;
+  font-size: 1.05rem;
+  color: var(--color-texto-principal);
+}
+
+.lms-twin-paragraphs p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   CAJA DE REFLEXIÓN (Actividad)
+   ========================================= */
+.lms-reflection-box {
+  background-color: #f8fbfd;
+  border-left: 5px solid var(--color-aqua-blue);
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.lms-reflection-box h2 {
+  color: var(--color-navy-blue);
+  margin-top: 0;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Añadimos un icono de "foco/idea" automáticamente */
+.lms-reflection-box h2::before {
+  content: "\f0eb";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400; /* Regular style para el icono */
+  color: var(--color-aqua-blue);
+  font-size: 1.6rem;
+}
+
+.lms-reflection-box p {
+  margin-bottom: 0;
+  color: var(--color-texto-principal);
+  font-size: 1.05rem;
+}
+
+/* =========================================
+   CONTENEDOR DE VIDEO RESPONSIVO (16:9)
+   ========================================= */
+.lms-video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Mantiene proporción 16:9 */
+  height: 0;
+  overflow: hidden;
+  margin-bottom: var(--espaciado-xl);
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(4, 30, 66, 0.15);
+  background-color: #000; /* Fondo negro mientras carga */
+}
+
+.lms-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* =========================================
+   ACORDEÓN NATIVO HTML5 (Para Transcripciones)
+   ========================================= */
+.lms-transcript-accordion {
+  background-color: var(--color-blanco);
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: var(--espaciado-xl);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.lms-transcript-accordion summary {
+  background-color: var(--color-navy-blue);
+  color: var(--color-blanco);
+  padding: var(--espaciado-md) var(--espaciado-xl);
+  cursor: pointer;
+  list-style: none; /* Oculta la flecha por defecto del navegador */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.lms-transcript-accordion summary::-webkit-details-marker {
+  display: none; /* Para Safari */
+}
+
+.lms-transcript-accordion summary h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-blanco);
+  font-weight: 500;
+}
+
+/* Flecha animada personalizada */
+.lms-transcript-accordion summary::after {
+  content: "\f078"; /* Flecha hacia abajo de FontAwesome */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  transition: transform 0.3s ease;
+}
+
+.lms-transcript-accordion[open] summary::after {
+  transform: rotate(180deg); /* Gira la flecha al abrir */
+}
+
+.lms-transcript-accordion[open] summary {
+  background-color: var(--color-royal-blue); /* Cambia de color al abrir */
+}
+
+/* Área de texto de la transcripción */
+.lms-transcript-content {
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  max-height: 20em; /* Mantiene tu regla original para no alargar la página */
+  overflow-y: auto;
+  background-color: #fcfcfc;
+  border-top: 1px solid #cbd5e1;
+}
+
+.lms-transcript-content p {
+  margin-bottom: 12px;
+  font-size: 0.95rem; /* Texto un poquito más pequeño para diferenciarlo del contenido principal */
+  line-height: 1.6;
+}
+
+/* =========================================
+   BLOQUE DE EVIDENCIA (Reutilizado)
+   ========================================= */
+.lms-evidence-block {
+  background: linear-gradient(
+    135deg,
+    var(--color-navy-blue),
+    var(--color-royal-blue)
+  );
+  border-radius: 12px;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  color: var(--color-blanco);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-lg);
+  box-shadow: 0 8px 15px rgba(4, 30, 66, 0.15);
+}
+
+@media (min-width: 768px) {
+  .lms-evidence-block {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.lms-evidence-icon {
+  font-size: 3rem;
+  color: var(--color-aqua-blue);
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.lms-evidence-text p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-blanco);
+}
+
+/* =========================================
+   CAJA DE CONTEXTO GLOBAL (Para concepto WEIRD)
+   ========================================= */
+.lms-global-context {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-lg);
+  background-color: var(--color-blanco);
+  border: 2px solid var(--color-aqua-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  box-shadow: 0 4px 15px rgba(5, 195, 222, 0.08);
+}
+
+@media (min-width: 768px) {
+  .lms-global-context {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.lms-global-icon {
+  font-size: 2.5rem;
+  color: var(--color-aqua-blue);
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.lms-global-context p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-texto-principal);
+}
+
+/* =========================================
+   CAJA DE IMPLICACIÓN (Conclusión final)
+   ========================================= */
+.lms-implication-box {
+  background-color: #f4f8fc;
+  border-left: 6px solid var(--color-navy-blue);
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin-top: var(--espaciado-xl);
+  border-radius: 0 8px 8px 0;
+}
+
+.lms-implication-box p {
+  margin: 0;
+  color: var(--color-texto-principal);
+  line-height: 1.7;
+}
+
+/* =========================================
+   CAJA DE EJEMPLO ("For Instance")
+   ========================================= */
+.lms-example-box {
+  background-color: var(--color-blanco);
+  border: 1px solid #e2e8f0;
+  border-left: 6px solid var(--color-aqua-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  box-shadow: 0 6px 15px rgba(4, 30, 66, 0.05);
+}
+
+.lms-example-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* El icono 'plus-square' da un aire clínico sutil y ordenado */
+.lms-example-icon {
+  font-size: 1.8rem;
+  color: var(--color-aqua-blue);
+}
+
+.lms-example-box h2 {
+  margin: 0;
+  color: var(--color-navy-blue);
+  font-size: 1.4rem;
+}
+
+.lms-example-box p {
+  margin: 0;
+  color: var(--color-texto-principal);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+/* =========================================
+   CAJA DE CONCEPTO CLAVE (Para definiciones)
+   ========================================= */
+.lms-concept-box {
+  background-color: var(--color-blanco);
+  border: 1px solid #e2e8f0;
+  border-top: 5px solid var(--color-royal-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg) var(--espaciado-xl);
+  margin: var(--espaciado-xl) 0;
+  box-shadow: 0 4px 10px rgba(0, 76, 151, 0.08);
+}
+
+.lms-concept-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Icono sutil para definiciones estructurales */
+.lms-concept-icon {
+  font-size: 1.8rem;
+  color: var(--color-royal-blue);
+}
+
+.lms-concept-box h2 {
+  margin: 0;
+  color: var(--color-navy-blue);
+  font-size: 1.4rem;
+}
+
+.lms-concept-box p {
+  margin: 0;
+  color: var(--color-texto-principal);
+  line-height: 1.65;
+}
+
+.lms-path-node {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+/* El punto conector de cada nodo */
+.lms-path-node::before {
+  content: "";
+  position: absolute;
+  left: calc(-2.5rem - 11px); /* Ajuste para centrar el punto en la línea */
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-blanco);
+  border: 4px solid var(--color-aqua-blue);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 4px var(--color-blanco); /* Crea un "corte" en la línea vertical */
+}
+
+/* Variaciones de color para los puntos según la importancia */
+.lms-path-node.node-royal::before {
+  border-color: var(--color-royal-blue);
+  background-color: var(--color-royal-blue);
+}
+
+.lms-path-node.node-navy::before {
+  border-color: var(--color-navy-blue);
+  background-color: var(--color-navy-blue);
+}
+
+/* =========================================
+   PANELES DE TEXTO (Para romper párrafos largos)
+   ========================================= */
+.lms-text-panel {
+  background-color: var(--color-azul-claro);
+  padding: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  border-left: 4px solid var(--color-aqua-blue);
+}
+
+.lms-text-panel p {
+  margin: 0;
+  color: var(--color-gris-negro);
+  line-height: 1.7;
+}
+
+.lms-plain-text {
+  color: var(--color-texto-principal);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Ajuste para que las cajas anteriores encajen perfecto en la línea */
+.lms-path-node .lms-concept-box,
+.lms-path-node .lms-evidence-block,
+.lms-path-node .lms-implication-box {
+  margin: 0; /* Quitamos el margen externo porque el nodo ya lo tiene */
+}
+
+/* =========================================
+   CAMINO DE LECTURA (TIMELINE LAYOUT) -
+   ========================================= */
+.lms-learning-path {
+  /* ¡Corregido! Cambiamos a azul noche para que la línea SÍ sea visible */
+  border-left: 3px solid var(--color-navy-blue);
+  margin: 2rem 0 2rem 1.5rem;
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+/* =========================================
+   NUEVO: GRILLA PARA TEXTO E IMÁGENES
+   ========================================= */
+.lms-node-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-lg);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  /* Por defecto: Texto ancho, Imagen delgada a la derecha */
+  .lms-node-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+  /* Variante: Imagen a la izquierda, Texto a la derecha */
+  .lms-node-grid.img-left {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.lms-img-responsive {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid var(--color-aqua-blue);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Grilla para los 4 Modelos Teóricos */
+.ct-modelos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+.ct-modelo-card {
+  background-color: var(--color-azul-claro, #eaf4ff);
+  border-left: 4px solid var(--color-navy-blue, #041e42);
+  padding: 16px;
+  color: var(--color-gris-negro, #202122);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Grilla Comparativa (Mitad y Mitad) */
+.ct-hipotesis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.ct-hipotesis-card {
+  border-top: 3px solid var(--color-aqua, #05c3de);
+  padding-top: 12px;
+  margin-top: 10px;
+}
+
+/* Grilla de 3 Columnas para Trastornos */
+.ct-trastornos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.ct-trastorno-card {
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.ct-trastorno-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(----color-royal-blue, #004c97);
+}
+
+/* Línea de Tiempo (Timeline) para la Sección de Cultura */
+.ct-timeline {
+  margin-top: 24px;
+  margin-bottom: 40px;
+  padding-left: 12px;
+}
+.ct-timeline-item {
+  position: relative;
+  padding-left: 32px;
+  padding-bottom: 32px;
+  border-left: 3px solid var(--color-aqua, #05c3de);
+}
+/* Eliminar borde del último elemento */
+.ct-timeline-item:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+/* Círculo indicador de la línea de tiempo */
+.ct-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -11px; /* Centrado sobre el borde de 3px */
+  top: 0;
+  width: 19px;
+  height: 19px;
+  background-color: var(--color-blanco, #fff);
+  border: 4px solid var(----color-royal-blue, #004c97);
+  border-radius: 50%;
+}
+.ct-timeline-item p {
+  margin-top: -4px; /* Alinear el texto con el círculo */
+  margin-bottom: 0;
+}
+
+/* =========================================
+   NUEVO COMPONENTE: BLOQUE DESTACADO CON ICONO
+   Ideal para "Important to Note" o alertas
+   ========================================= */
+.lms-bloque-destacado {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-navy-blue);
+  color: var(--color-blanco);
+  padding: var(--espaciado-lg);
+  margin: var(--espaciado-lg) 0;
+  border-radius: 8px;
+  border-left: 8px solid var(--color-aqua-blue);
+  gap: var(--espaciado-lg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.lms-destacado-icono .fas {
+  font-size: 60px;
+  color: var(--color-aqua-blue);
+}
+
+.lms-destacado-texto h3 {
+  color: var(--color-blanco);
+  margin-top: 0;
+  margin-bottom: var(--espaciado-sm);
+}
+
+.lms-destacado-texto p {
+  margin: 0;
+  color: var(--color-blanco);
+  line-height: 1.6;
+}
+
+/* Ajuste de accesibilidad y responsividad para móviles */
+@media (max-width: 768px) {
+  .lms-bloque-destacado {
+    flex-direction: column;
+    text-align: center;
+  }
+  .lms-bloque-destacado {
+    border-left: none;
+    border-top: 8px solid var(--color-aqua-blue);
+  }
+}
+
+/* =========================================
+   COMPONENTE DINÁMICO: SECCIÓN OSCURA Y TARJETAS 2x2
+   (Reemplazo interactivo para listas de viñetas)
+   ========================================= */
+.lms-seccion-oscura {
+  background-color: var(--color-navy-blue);
+  padding: var(--espaciado-xl);
+  border-radius: 12px;
+  margin: var(--espaciado-xl) 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.lms-seccion-oscura h2 {
+  color: var(--color-aqua-blue);
+  margin-top: 0;
+  border-bottom: 2px solid var(--color-royal-blue);
+  padding-bottom: var(--espaciado-md);
+}
+
+.lms-seccion-oscura .lms-parrafo {
+  color: var(--color-blanco);
+}
+
+/* Grilla para las tarjetas (Responsive) */
+.lms-grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-md);
+  margin-top: var(--espaciado-lg);
+}
+
+@media (min-width: 768px) {
+  .lms-grid-2-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tarjetas individuales de síntomas */
+.lms-tarjeta-sintoma {
+  background-color: var(--color-blanco);
+  color: var(--color-texto-principal);
+  padding: var(--espaciado-lg);
+  border-radius: 8px;
+  border-left: 6px solid var(--color-royal-blue);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.lms-tarjeta-sintoma:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border-left-color: var(--color-aqua-blue);
+}
+
+/* =========================================
+   COMPONENTE: CAJA GRÁFICA PARA ESTUDIOS
+   (Especial para destacar párrafos académicos)
+   ========================================= */
+.lms-caja-grafica-estudio {
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--color-gris-fondo);
+  border: 1px solid rgba(0, 76, 151, 0.12); /* Opacidad suave sobre royal blue */
+  border-left: 6px solid var(--color-royal-blue);
+  padding: var(--espaciado-lg);
+  margin: var(--espaciado-xl) 0;
+  border-radius: 4px 12px 12px 4px;
+  gap: var(--espaciado-lg);
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* Gráfico / Emblema generado 100% en CSS */
+.lms-grafica-css {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(
+    135deg,
+    var(--color-royal-blue),
+    var(--color-navy-blue)
+  );
+  border-radius: 50%;
+  color: var(--color-blanco);
+  position: relative;
+  box-shadow: 0 4px 8px rgba(4, 30, 66, 0.15);
+}
+
+/* Anillo exterior decorativo e interactivo en CSS */
+.lms-grafica-css::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px dashed var(--color-aqua-blue);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.lms-grafica-css .fas {
+  font-size: 22px;
+  color: var(--color-aqua-blue);
+}
+
+.lms-caja-grafica-contenido p {
+  margin: 0;
+  color: var(--color-texto-principal);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Bloque estilizado para el párrafo de cierre */
+.lms-conclusion-destacada {
+  border-top: 1px solid rgba(5, 195, 222, 0.25);
+  padding-top: var(--espaciado-lg);
+  margin-top: var(--espaciado-xl);
+  font-style: italic;
+  position: relative;
+}
+
+.lms-conclusion-destacada::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background-color: var(--color-aqua-blue);
+}
+
+/* Adaptabilidad para dispositivos móviles */
+@media (max-width: 768px) {
+  .lms-caja-grafica-estudio {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--espaciado-lg) var(--espaciado-md);
+  }
+  .lms-grafica-css {
+    margin-bottom: var(--espaciado-sm);
+  }
+}
+
+/* =========================================
+   COMPONENTE: CAJA GRÁFICA PARA ESTUDIOS
+   (Especial para destacar párrafos académicos)
+   ========================================= */
+.lms-caja-grafica-estudio {
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--color-gris-fondo);
+  border: 1px solid rgba(0, 76, 151, 0.12); /* Opacidad suave sobre royal blue */
+  border-left: 6px solid var(--color-royal-blue);
+  padding: var(--espaciado-lg);
+  margin: var(--espaciado-xl) 0;
+  border-radius: 4px 12px 12px 4px;
+  gap: var(--espaciado-lg);
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* Gráfico / Emblema generado 100% en CSS */
+.lms-grafica-css {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(
+    135deg,
+    var(--color-royal-blue),
+    var(--color-navy-blue)
+  );
+  border-radius: 50%;
+  color: var(--color-blanco);
+  position: relative;
+  box-shadow: 0 4px 8px rgba(4, 30, 66, 0.15);
+}
+
+/* Anillo exterior decorativo e interactivo en CSS */
+.lms-grafica-css::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px dashed var(--color-aqua-blue);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.lms-grafica-css .fas {
+  font-size: 22px;
+  color: var(--color-aqua-blue);
+}
+
+.lms-caja-grafica-contenido p {
+  margin: 0;
+  color: var(--color-texto-principal);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Bloque estilizado para el párrafo de cierre */
+.lms-conclusion-destacada {
+  border-top: 1px solid rgba(5, 195, 222, 0.25);
+  padding-top: var(--espaciado-lg);
+  margin-top: var(--espaciado-xl);
+  font-style: italic;
+  position: relative;
+}
+
+.lms-conclusion-destacada::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background-color: var(--color-aqua-blue);
+}
+
+/* Adaptabilidad para dispositivos móviles */
+@media (max-width: 768px) {
+  .lms-caja-grafica-estudio {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--espaciado-lg) var(--espaciado-md);
+  }
+  .lms-grafica-css {
+    margin-bottom: var(--espaciado-sm);
+  }
+}
+
+/* =========================================
+   NUEVO COMPONENTE: TARJETA DUAL (Icono Lateral)
+   (Variación visual para romper monotonía)
+   ========================================= */
+.lms-tarjeta-dual {
+  display: flex;
+  background-color: var(--color-blanco);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: var(--espaciado-xl) 0;
+  border: 1px solid rgba(4, 30, 66, 0.1); /* Borde sutil basado en navy-blue */
+}
+
+.lms-dual-icono {
+  background-color: var(--color-royal-blue);
+  color: var(--color-blanco);
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lms-dual-icono .fas {
+  font-size: 38px;
+}
+
+.lms-dual-texto {
+  padding: var(--espaciado-lg);
+  flex: 1;
+}
+
+/* Ajuste responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .lms-tarjeta-dual {
+    flex-direction: column;
+  }
+  .lms-dual-icono {
+    width: 100%;
+    padding: var(--espaciado-md) 0;
+  }
+}
+
+/* =========================================
+   NUEVO COMPONENTE: PANEL DE ENFOQUE DIAGNÓSTICO
+   (Ideal para romper bloques de texto clínico)
+   ========================================= */
+.lms-panel-diagnostico {
+  background-color: var(--color-blanco);
+  border-left: 6px solid var(--color-royal-blue);
+  border-right: 1px solid rgba(4, 30, 66, 0.08);
+  border-top: 1px solid rgba(4, 30, 66, 0.08);
+  border-bottom: 1px solid rgba(4, 30, 66, 0.08);
+  border-radius: 4px 12px 12px 4px;
+  padding: var(--espaciado-lg);
+  margin: var(--espaciado-xl) 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  display: flex;
+  gap: var(--espaciado-lg);
+  align-items: flex-start;
+}
+
+.lms-diagnostico-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(
+    0,
+    76,
+    151,
+    0.08
+  ); /* Tono royal-blue con opacidad suave */
+  border-radius: 8px;
+  color: var(--color-royal-blue);
+}
+
+.lms-diagnostico-badge .fas {
+  font-size: 20px;
+}
+
+.lms-diagnostico-texto {
+  flex: 1;
+}
+
+.lms-diagnostico-texto p {
+  margin: 0;
+  color: var(--color-texto-principal);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  .lms-panel-diagnostico {
+    flex-direction: column;
+    gap: var(--espaciado-md);
+  }
+  .lms-diagnostico-badge {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* =========================================
+   COMPONENTE: TARJETAS DE INTRODUCCIÓN A VIDEOS
+   ========================================= */
+.lms-tarjeta-video {
+  background-color: var(--color-blanco);
+  border: 1px solid rgba(4, 30, 66, 0.08);
+  border-top: 5px solid var(--color-royal-blue);
+  border-radius: 8px;
+  padding: var(--espaciado-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.lms-tarjeta-video h2 {
+  font-size: 1.15rem;
+  color: var(--color-navy-blue);
+  border-bottom: 2px dotted var(--color-aqua-blue);
+  padding-bottom: var(--espaciado-sm);
+  margin-top: 0;
+  margin-bottom: var(--espaciado-md);
+}
+
+/* =========================================
+   COMPONENTE: LISTA DE VIÑETAS MODERNAS
+   ========================================= */
+.lms-lista-viñetas {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.lms-lista-viñetas li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-texto-principal);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.lms-lista-viñetas li::before {
+  content: "\f105"; /* Icono de flecha de FontAwesome */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--color-aqua-blue);
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   COMPONENTE: ENVOLTURA PARA VIDEOS
+   ========================================= */
+.lms-video-contenedor {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(4, 30, 66, 0.15);
+  margin: var(--espaciado-xl) 0;
+  border: 4px solid var(--color-navy-blue);
+  background-color: #000; /* Fondo negro por si el iframe tarda en cargar */
+}
+
+/* =========================================
+   COMPONENTE: ACORDEÓN NATIVO Y SEMÁNTICO
+   ========================================= */
+.lms-acordeon-nativo {
+  background-color: var(--color-blanco);
+  border: 1px solid rgba(4, 30, 66, 0.15);
+  border-radius: 8px;
+  margin-bottom: var(--espaciado-xl);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.lms-acordeon-nativo summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espaciado-lg);
+  background-color: var(--color-gris-fondo);
+  cursor: pointer;
+  list-style: none; /* Oculta la flecha por defecto en la mayoría de navegadores */
+  border-left: 6px solid var(--color-royal-blue);
+}
+
+.lms-acordeon-nativo summary::-webkit-details-marker {
+  display: none; /* Oculta la flecha por defecto en Safari/Chrome antiguos */
+}
+
+.lms-acordeon-nativo summary h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-navy-blue);
+}
+
+.lms-acordeon-icono {
+  color: var(--color-royal-blue);
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+/* Magia CSS: Gira la flecha cuando el acordeón se abre */
+.lms-acordeon-nativo[open] .lms-acordeon-icono {
+  transform: rotate(180deg);
+}
+
+.lms-acordeon-nativo[open] summary {
+  border-bottom: 1px solid rgba(4, 30, 66, 0.1);
+}
+
+.lms-acordeon-contenido {
+  padding: var(--espaciado-lg);
+  background-color: var(--color-blanco);
+}
+
+.lms-acordeon-contenido p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   NUEVO COMPONENTE: SECCIÓN ACADÉMICA
+   Reemplazo para .lms-caja-info
+   ========================================= */
+.lms-seccion-academica {
+  background: linear-gradient(
+    135deg,
+    var(--color-blanco) 0%,
+    var(--color-gris-fondo) 100%
+  );
+  border-left: 6px solid var(--color-navy-blue);
+  padding: var(--espaciado-lg);
+  margin: var(--espaciado-xl) 0;
+  border-radius: 0 12px 12px 0; /* Bordes suaves solo a la derecha */
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.05); /* Profundidad sin distracción */
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.lms-seccion-academica h2,
+.lms-seccion-academica h3 {
+  color: var(--color-navy-blue);
+  margin-top: 0;
+}
+
+/* =========================================
+   COMPONENT: GRILLA DE TARJETAS CONCEPTUALES
+   ========================================= */
+.lms-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-lg);
+  margin: var(--espaciado-xl) 0;
+}
+
+@media (min-width: 768px) {
+  .lms-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.lms-info-card {
+  background-color: var(--color-blanco);
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid var(--color-aqua);
+  padding: var(--espaciado-lg);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.lms-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lms-info-card h3 {
+  color: var(--color-navy-blue);
+  margin-top: 0;
+  margin-bottom: var(--espaciado-md);
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--color-royal-blue);
+  padding-bottom: 8px;
+}
+
+.lms-info-card p {
+  color: var(--color-texto-principal);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Tabla Estilizada - LMS */
+.lms-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-family: var(--fuente-principal, sans-serif);
+  background-color: var(--color-blanco);
+  border: 1px solid #dee2e6;
+}
+
+.lms-table thead {
+  background-color: var(--color-navy-blue, #041e42);
+  color: var(--color-blanco);
+}
+
+.lms-table th,
+.lms-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.lms-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* Efecto Hover en las filas */
+.lms-table tbody tr:hover {
+  background-color: var(--color-azul-claro, #eaf4ff);
+  transition: background-color 0.3s ease;
+}
+
+/* Zebra striping suave para legibilidad */
+.lms-table tbody tr:nth-child(even) {
+  background-color: #fcfcfc;
+}
+
+/* Responsividad básica para tablas */
+@media (max-width: 600px) {
+  .lms-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+.featured-icon-fa {
+  padding: 0;
+  margin: 0;
+}

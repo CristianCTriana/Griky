@@ -1,0 +1,544 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* ENCABEZADO */
+      .header-container h1 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: left;
+        font-size: 28px;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* CONTENEDOR PRINCIPAL */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      h1.section-title,
+      h2.section-subtitle {
+        font-size: 35px;
+        font-weight: 700;
+        color: #041e42;
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #202122;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      .centered-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #eaf4ff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 1200px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .accordion-content ul {
+        padding-left: 20px;
+      }
+      .accordion-content li {
+        margin-bottom: 10px;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* TABLA DE ASSESSMENTS */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #dcdcdc;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+      }
+      th {
+        background-color: #041e42;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h1 style="text-align: center">
+        <span class="course-code">PSYC601&nbsp;<br /></span>
+        <span style="font-size: 28px">Descripción General</span>
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- SECCIÓN PRINCIPAL -->
+      <h2 class="section-title" style="text-align: center">
+        <span
+          style="font-family: Lato, sans-serif; font-size: 30px; color: #041e40"
+          >Alcance, Objetivos de Aprendizaje y Evaluación</span
+        >
+      </h2>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40">| Alcance del Curso</span>
+      </h3>
+      <div
+        style="display: flex; gap: 100px; align-items: center; padding: 0px 0"
+      >
+        <div style="flex: 1; min-width: 200px; max-width: 200px">
+          <img
+            src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/Week_0_Students/PSYC601_scope.png"
+            alt=""
+            title=""
+            width="313"
+            height="338"
+            style="float: left"
+            role="presentation"
+          />
+        </div>
+        <div style="flex: 2">
+          <p>
+            "Este curso ofrece una descripción general de la intersección de
+            métodos de investigación que se enmarcan bajo la rúbrica de la
+            metodología cualitativa. Al examinar estos múltiples enfoques de los
+            métodos cualitativos, el curso abordará cuestiones de ética en la
+            investigación, métodos de entrevista, análisis de conversación y
+            discurso, análisis de contenido y medidas no intrusivas. La
+            finalización de este curso tendrá aplicaciones en la investigación
+            pura, así como en evaluaciones clínicas."
+          </p>
+        </div>
+      </div>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Objetivos del Curso y de Aprendizaje</span
+        >
+      </h3>
+      <p>
+        Selecciona cada Objetivo del Curso para ver los Objetivos de Aprendizaje
+        y Evaluaciones asociados.
+      </p>
+      <!-- ACORDEÓN: COURSE AND LEARNING OBJECTIVES -->
+      <div class="accordion">
+        <!-- CO-1 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co1" />
+          <label class="accordion-title" for="co1"
+            >CO-1: Analizar críticamente las características clave de los
+            métodos de investigación cualitativa.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Objetivos de Aprendizaje</strong></p>
+            <ul>
+              <li>
+                LO-1.1: Aplicar comprensiones teóricas de confiabilidad y
+                validez a los métodos cualitativos.
+              </li>
+              <li>
+                LO-1.2: Explicar los principios fundamentales de los principales
+                enfoques de investigación cualitativa.
+              </li>
+              <li>
+                LO-1.3: Evaluar preguntas de investigación adecuadas para cada
+                enfoque cualitativo.<br />LO-1.4: Analizar críticamente las
+                características clave de los métodos de investigación
+                cualitativa.
+              </li>
+            </ul>
+            <p><strong>Evaluaciones</strong></p>
+            <ul>
+              <li>
+                Semana 1 – Discusión: Presentaciones e Introducción a los
+                Métodos Cualitativos
+              </li>
+              <li>
+                Semana 3 - Discusión: La Entrevista como Conversación
+                Estructurada y Creativa
+              </li>
+              <li>
+                Semana 3 – Actividad: Ética en la Investigación Cualitativa
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-2 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co2" />
+          <label class="accordion-title" for="co2"
+            >CO-2: Aplicar marcos éticos para alcanzar resultados de
+            investigación cualitativa.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Objetivos de Aprendizaje</strong></p>
+            <ul>
+              <li>
+                LO-2.1: Examinar estrategias para mantener la integridad ética y
+                la confidencialidad de los participantes.
+              </li>
+              <li>
+                LO-2.2: Evaluar marcos éticos en cuanto a su relevancia y
+                aplicación.
+              </li>
+              <li>
+                LO-2.3: Diferenciar los principios éticos clave relevantes para
+                la investigación cualitativa.
+              </li>
+              <li>
+                LO-2.4: Analizar dilemas éticos comúnmente encontrados en la
+                investigación cualitativa.
+              </li>
+            </ul>
+            <p><strong>Evaluaciones</strong></p>
+            <ul>
+              <li>
+                Semana 2 – Discusión: Ética en la Investigación Cualitativa
+              </li>
+              <li>
+                Semana 3 – Discusión: La Entrevista como Conversación
+                Estructurada y Creativa
+              </li>
+              <li>
+                Semana 3 – Actividad: Ética en la Investigación Cualitativa
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-3 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co3" />
+          <label class="accordion-title" for="co3"
+            >CO-3: Implementar la metodología de entrevista semiestructurada
+            para recopilar datos cualitativos.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Objetivos de Aprendizaje</strong></p>
+            <ul>
+              <li>
+                LO-3.1: Resumir las mejores prácticas para registrar,
+                transcribir y gestionar datos de entrevistas.
+              </li>
+              <li>
+                LO-3.2: Interpretar datos de entrevistas semiestructuradas para
+                identificar temas y patrones.
+              </li>
+              <li>
+                LO-3.3: Evaluar las fortalezas y limitaciones de las entrevistas
+                semiestructuradas.
+              </li>
+            </ul>
+            <p><strong>Evaluaciones</strong></p>
+            <ul>
+              <li>
+                Semana 3 – Discusión: La Entrevista como Conversación
+                Estructurada y Creativa
+              </li>
+              <li>Semana 4 – Discusión: Análisis de Contenido y Medios</li>
+              <li>
+                Semana 3 – Actividad: Ética en la Investigación Cualitativa
+              </li>
+              <li>Semana 5 – Actividad: Análisis de Contenido</li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-4 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co4" />
+          <label class="accordion-title" for="co4"
+            >CO-4: Evaluar la efectividad de diferentes marcos analíticos
+            cualitativos para contextos de investigación específicos.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Objetivos de Aprendizaje</strong></p>
+            <ul>
+              <li>
+                LO-4.1: Interpretar datos cualitativos utilizando múltiples
+                lentes analíticas.
+              </li>
+              <li>
+                LO-4.2: Comparar y contrastar los principales marcos analíticos
+                cualitativos.
+              </li>
+              <li>
+                LO-4.3: Evaluar la idoneidad de marcos analíticos específicos
+                para diferentes preguntas de investigación.
+              </li>
+            </ul>
+            <p><strong>Evaluaciones</strong></p>
+            <ul>
+              <li>Semana 5 - Actividad: Análisis de Contenido</li>
+              <li>Semana 6 - Discusión: Exploraciones en Marcos Analíticos</li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-5 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co5" />
+          <label class="accordion-title" for="co5"
+            >CO-5: Analizar las diferencias clave entre los principales enfoques
+            cualitativos.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Objetivos de Aprendizaje</strong></p>
+            <ul>
+              <li>
+                LO-5.1: Aplicar los principios de la investigación cualitativa a
+                la investigación de campo.
+              </li>
+              <li>
+                LO-5.2: Analizar críticamente estudios cualitativos publicados
+                en cuanto a su adecuación metodológica.
+              </li>
+              <li>
+                LO-5.3: Evaluar el impacto de la posicionalidad del investigador
+                y la reflexividad en la toma de decisiones éticas.
+              </li>
+            </ul>
+            <p><strong>Evaluaciones</strong></p>
+            <ul>
+              <li>
+                Semana 8 - Discusión: Observación Participante y Reflexión del
+                Curso
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-6 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co6" />
+          <label class="accordion-title" for="co6"
+            >CO-6: Evaluar marcos éticos relacionados con el desarrollo de
+            resultados de investigación etnográfica cualitativa.</label
+          >
+          <div class="accordion-content">
+            <p><strong>Objetivos de Aprendizaje</strong></p>
+            <ul>
+              <li>
+                LO-6.1: Analizar los desafíos éticos específicos del trabajo de
+                campo etnográfico.
+              </li>
+              <li>
+                LO-6.2: Aplicar marcos éticos a escenarios etnográficos del
+                mundo real.
+              </li>
+              <li>
+                LO-6.3: Diseñar un plan de investigación etnográfica que
+                incorpore salvaguardas éticas.
+              </li>
+              <li>
+                LO-6.4: Explicar las implicaciones éticas de representar las
+                voces y experiencias de los participantes.
+              </li>
+            </ul>
+            <p><strong>Evaluaciones</strong></p>
+            <ul>
+              <li>Semana 7 - Actividad: Investigación Etnográfica</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <!-- PROGRAM LEARNING OUTCOMES -->
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Resultados de Aprendizaje del Programa</span
+        >
+      </h3>
+      <p>
+        Los Resultados de Aprendizaje del Programa (PLO) sirven como hoja de
+        ruta para el éxito educativo y orientan los cursos que tomas.
+      </p>
+      <p>Este curso apoya los siguientes PLO:</p>
+      <ul>
+        <li>
+          Demostrar un amplio conocimiento de los dominios centrales de la
+          psicología, una comprensión de la psicología como ciencia y
+          conocimiento avanzado en un área de concentración.
+        </li>
+        <li>
+          Evaluar preguntas de investigación y metodología para resolver
+          problemas contemporáneos, basándose en una revisión crítica de la
+          literatura psicológica y científica.
+        </li>
+        <li>
+          Desarrollar decisiones y comportamientos éticos defendibles basados en
+          los Principios Éticos de la Asociación Americana de Psicología.
+        </li>
+        <li>
+          Comunicar ideas de manera clara y profesional, apropiada para una
+          audiencia y coherente con las expectativas de estilo de la Asociación
+          Americana de Psicología.
+        </li>
+        <li>
+          Identificar con precisión las brechas en el propio conocimiento y
+          habilidades, y luego aceptar y utilizar la retroalimentación
+          constructiva para mejorar el desempeño académico.
+        </li>
+        <li>
+          Evaluar la propia competencia cultural y cómo los sesgos y
+          suposiciones pueden influir en las interacciones humanas.
+        </li>
+      </ul>
+      <hr />
+      <!-- ASSESSMENT COMPONENTS -->
+      <h3>
+        <span style="color: #041e40; font-size: 24px"
+          >| Componentes de Evaluación</span
+        >
+      </h3>
+      <p>
+        La calificación final del curso se calculará con base en las siguientes
+        ponderaciones:
+      </p>
+      <table
+        style="width: 60.8327%; height: 84.3906px; border-collapse: collapse"
+        border="1"
+      >
+        <caption>
+          <span style="font-size: 19px; color: #041e42"
+            >Componentes de Evaluación
+          </span>
+        </caption>
+        <tbody>
+          <tr style="height: 40.1953px">
+            <th style="width: 49.0939%" scope="row">Actividades</th>
+            <th style="width: 50.9061%" scope="row">Foros de Discusión</th>
+          </tr>
+          <tr style="height: 44.1953px">
+            <td style="width: 49.0939%">&nbsp;32%</td>
+            <td style="width: 50.9061%">68%</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <p>
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          class="footer-logo"
+          role="presentation"
+          width="110"
+          height="29"
+        />
+      </p>
+    </div>
+  </body>
+</html>

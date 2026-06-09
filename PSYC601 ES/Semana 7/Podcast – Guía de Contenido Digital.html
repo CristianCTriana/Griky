@@ -1,0 +1,449 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 7</span><br /><span
+          style="font-size: 28px"
+          >Comprensión de la Etnografía y la Investigación de Campo</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente podcast"
+        title="Escucha el siguiente podcast"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_oh45prl2&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_0r4wv5ex"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W7_PSYC601_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content" style="overflow: auto">
+            <p>
+              Welcome back to PSYC601: Qualitative Methods. This is Week 7, and
+              the topic is Understanding Ethnography and Field Research. Up to
+              this point in the course, you have worked with interviews, texts,
+              media, and analytic frameworks. This week shifts your attention to
+              a method that is deeply connected to context. Ethnography and
+              field research are about studying social life as it unfolds, in
+              the settings where it actually happens.
+            </p>
+            <p>
+              Ethnography is often described as the study of culture, but
+              culture here does not only mean nationality or ethnicity. Culture
+              can also mean the norms and routines of a group, the unspoken
+              rules of a workplace, the interaction patterns of a community, or
+              the shared meaning system of an organization. Ethnography helps
+              you understand how those norms and meanings shape behavior.
+            </p>
+            <p>
+              Field research is a broader term that includes ethnographic
+              approaches. The core idea is that you spend time in a setting and
+              learn through observation, participation, and relationship
+              building. Instead of relying only on what people say about their
+              lives, you see how life is organized in practice.
+            </p>
+            <p>
+              In Week 7, you focus on field entry, the role of the researcher,
+              positionality, and fieldnotes as data. You also connect
+              ethnography to ethics, because being present in people's spaces
+              creates ongoing responsibilities. By the end of the week, you
+              should be able to design a basic field research plan and explain
+              what makes fieldwork credible.
+            </p>
+            <p>
+              Let us start with what ethnography is designed to capture.
+              Ethnography is interested in the taken-for-granted. It is
+              interested in what people do without explaining it because it
+              feels normal to them. Many norms are invisible when you only
+              interview people, because people forget to mention what feels
+              obvious. Fieldwork helps you see those patterns.
+            </p>
+            <p>
+              For example, imagine you are studying belonging among first-year
+              college students. If you ask students directly, they might
+              describe friends, clubs, or loneliness. Those are valuable. But in
+              the field, you might notice subtle patterns: who saves seats for
+              whom, who gets greeted by name, who lingers after meetings, who
+              gets included in decision making, and who remains on the edge of a
+              group. Those patterns can reveal how belonging is built or blocked
+              in daily interaction.
+            </p>
+            <p>
+              Now, fieldwork requires entry, and entry is not only logistical.
+              It is relational and ethical. You need to think about access and
+              gatekeepers. Gatekeepers are individuals or structures that
+              control entry to a setting. In a school, it might be
+              administrators. In a clinic, it might be supervisors and ethics
+              boards. In a community organization, it might be leaders. Ethical
+              entry means you clarify your purpose, obtain appropriate
+              permissions, and communicate in a way that respects the setting.
+            </p>
+            <p>
+              Entry also includes role decisions. Will you be an observer only,
+              or will you participate in some activities. How visible will you
+              be. What will you tell people about your role. These decisions
+              influence what you see and how people respond to you.
+            </p>
+            <p>
+              This leads to a major concept: the researcher is never invisible.
+              Your presence influences the setting. People may act differently
+              when they know they are being observed. This is not a reason to
+              abandon ethnography. It is a reason to practice reflexivity. You
+              document how your presence may shape what happens, and you
+              interpret your findings with that awareness.
+            </p>
+            <p>
+              Repeated engagement can also reduce observer effects. When people
+              see you regularly, your presence becomes part of the environment.
+              This is one reason ethnography often involves time. You need time
+              not only to collect more data, but also to understand context and
+              build trust.
+            </p>
+            <p>
+              Now let us talk about positionality. Positionality refers to how
+              your identity and social location shape your access, your
+              relationships, and your interpretations. You might be an insider
+              in some ways and an outsider in others. For example, if you are
+              studying a youth program and you are an adult, you may be an
+              outsider in age and authority. If you share a cultural background,
+              you may be closer in other ways. Positionality affects what people
+              share with you and what they assume you understand.
+            </p>
+            <p>
+              Reflexivity is how you manage positionality. Reflexivity means
+              writing about your assumptions, reactions, and influence. It means
+              noticing where you feel comfortable and where you feel awkward. It
+              means noticing what you pay attention to and what you overlook.
+              Reflexivity is not self-indulgence. It is a credibility practice.
+              It shows that you are aware of your role as an instrument of
+              research.
+            </p>
+            <p>
+              Fieldnotes are the primary data in ethnography, so fieldnote
+              quality matters. Many new field researchers write notes that are
+              too general, like "the atmosphere was welcoming." That might be
+              true, but it is not evidence. Evidence comes from thick
+              description. Thick description includes details about setting,
+              sequence, interaction, language, and context.
+            </p>
+            <p>
+              A strong fieldnote often separates three kinds of writing. First
+              is descriptive writing: what you saw, who was there, what
+              happened, what was said. Second is analytic writing: what you
+              think it might mean, what patterns you notice, what questions
+              emerge. Third is reflexive writing: how you felt, what assumptions
+              you brought, how your presence might have influenced events.
+            </p>
+            <p>
+              This structure helps you avoid mixing interpretation into
+              description too early. It also helps you analyze later, because
+              you can return to descriptive notes as evidence and use analytic
+              notes as early hypotheses.
+            </p>
+            <p>
+              Now let us talk about ethics in the field, because fieldwork
+              creates ongoing ethical decisions. You might not have a single
+              consent moment like in an interview. Consent can be more complex.
+              In some settings, you may obtain formal consent from participants
+              or organizations. In other settings, especially public spaces,
+              observation might be ethically acceptable without formal consent,
+              but you still have responsibilities. You must think about privacy,
+              harm, and identification risk.
+            </p>
+            <p>
+              You should be careful about recording identifying details. You
+              should consider whether people reasonably expect privacy in that
+              setting. You should think about whether documenting an interaction
+              could create risk if it were recognized. You should also be
+              prepared for sensitive moments. If a conflict escalates, if
+              someone discloses harm, or if people become uncomfortable, you may
+              need to pause, shift your focus, or leave. Ethical fieldwork is
+              not passive. It includes active decisions to minimize harm.
+            </p>
+            <p>
+              Another ethical issue is boundaries. When you spend time in a
+              setting, relationships can form. People may start to see you as a
+              friend, helper, or ally. That can be meaningful, but it can also
+              blur roles. A field researcher should be clear about their role
+              and should avoid making promises they cannot keep. Boundaries
+              protect both participants and the integrity of the research.
+            </p>
+            <p>
+              Now, how does analysis work in ethnography. Ethnographic analysis
+              often involves identifying patterns in routines, norms, and
+              meaning systems. You might code fieldnotes, compare across sites
+              or time periods, and build themes. Your analytic memos become
+              important here, because they capture emerging interpretations and
+              help you refine your understanding.
+            </p>
+            <p>
+              A key strength of ethnography is that it can reveal contradictions
+              between what people say and what they do. That does not mean
+              people are dishonest. It means social life is complex. People
+              might value inclusion in principle while still practicing subtle
+              exclusion. Fieldwork can reveal those tensions and help you
+              understand how norms operate in practice.
+            </p>
+            <p>
+              If you want a simple summary of Week 7, it is this: ethnography
+              teaches you to study the social world as it is lived, not only as
+              it is described. It requires time, thick description, reflexivity,
+              and ethical care. When done well, it produces a kind of
+              understanding that is difficult to achieve through interviews
+              alone.
+            </p>
+            <p>Let us close with reflection questions.</p>
+            <p>
+              First, think of a setting you could observe ethically. What norms
+              do you suspect operate there? What routines shape behavior?
+            </p>
+            <p>
+              Second, what would you write in fieldnotes? What would count as
+              description? What would count as interpretation? What would count
+              as reflexive reflection?
+            </p>
+            <p>
+              Third, consider positionality. How might your identity affect
+              access and interaction in that setting? What would people assume
+              about you and how might that shape what they do?
+            </p>
+            <p>
+              Finally, consider ethics. What privacy risks exist, and how would
+              you minimize them? What boundaries would you set so your role
+              stays clear?
+            </p>
+            <p>
+              These questions help you practice ethnographic thinking: slow
+              observation, careful documentation, and awareness of context and
+              responsibility.
+            </p>
+            <p>
+              Thank you for listening to the Week 7 podcast. This week focused
+              on ethnography and field research as methods for understanding
+              social life in context. In Week 8, you will focus on participant
+              observation, which deepens the balance between observing and
+              participating and strengthens your ability to document and
+              interpret social life while maintaining ethical boundaries.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/Week_7/PRODUCCION%20W7/W7_PSYC601_Digital_content_guide_podcast/W7_PSYC601_Digital_content_guide_podcast.mp3?ou=1027230"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          width="110"
+          role="presentation"
+        />
+      </p>
+    </div>
+  </body>
+</html>

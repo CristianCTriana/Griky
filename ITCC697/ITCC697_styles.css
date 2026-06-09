@@ -826,7 +826,7 @@
   border-left-color: var(--color-aqua);
 }
 
-.lms-tarjeta-interactiva h3 {
+.lms-tarjeta-interactiva h2 {
   color: var(--color-azul-noche);
   margin-top: 0;
   border-bottom: 2px solid var(--color-azul-claro);

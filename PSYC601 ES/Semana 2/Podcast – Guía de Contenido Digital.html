@@ -1,0 +1,457 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 2</span><br /><span
+          style="font-size: 28px"
+          >Ética en la Investigación Cualitativa</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente podcast"
+        title="Escucha el siguiente podcast"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_3gbnot3w&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_pwfrs00r"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W1_PSYC601_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content">
+            <p>
+              Welcome back to PSYC601: Qualitative Methods. This is Week 2, and
+              the topic is Ethics in Qualitative Research. In Week 1, you
+              learned that qualitative research is a rigorous approach to
+              understanding meaning, experience, and context. In Week 2, you
+              focus on something that makes that rigor possible: ethical
+              responsibility. Qualitative research often involves real people
+              sharing real parts of their lives. That means ethical practice is
+              not a checklist. It is a mindset and a set of decisions you make
+              throughout the study.
+            </p>
+            <p>
+              When people hear "research ethics," they often imagine forms,
+              approvals, and compliance procedures. Those are important, but
+              they are not the whole story. In qualitative work, ethics shows up
+              in everyday moments: how you invite someone to participate, what
+              you say before an interview starts, how you respond when someone
+              becomes emotional, and how you protect details that could identify
+              a participant even when you remove names.
+            </p>
+            <p>
+              In Week 2, you will examine core ethical principles that guide
+              research: respect for persons, beneficence, and justice. You will
+              apply these principles to qualitative contexts where relationships
+              are closer and boundaries can be more complex. You will also focus
+              on informed consent as an ongoing process, confidentiality and
+              privacy, power dynamics, and planning for sensitive topics.
+            </p>
+            <p>
+              By the end of the week, you should be able to anticipate common
+              ethical risks and design practical protections that support both
+              participant safety and research credibility.
+            </p>
+            <p>
+              Let us begin with the core principles, because they provide a
+              framework for decision making.
+            </p>
+            <p>
+              Respect for persons is about autonomy. Participants have the right
+              to decide whether to participate and what they share. Respect is
+              not only about obtaining a signature. It is about ensuring people
+              understand what they are agreeing to and that they feel free to
+              say no.
+            </p>
+            <p>
+              Beneficence is about minimizing harm and maximizing potential
+              benefit. In qualitative research, harm can look like emotional
+              distress, loss of privacy, or social risk, such as workplace
+              consequences if participation becomes known. Beneficence requires
+              you to think ahead about risks and create practical controls.
+            </p>
+            <p>
+              Justice is about fairness. It asks whether the burdens and
+              benefits of research are distributed fairly. Are you recruiting
+              participants because it is easy to access them, even if
+              participation creates risk for them? Are you excluding voices that
+              should be included? Justice also matters when working with
+              vulnerable populations.
+            </p>
+            <p>
+              Now, let us focus on consent, because this is where qualitative
+              ethics often becomes more complex. Informed consent means
+              participants understand the purpose, procedures, risks, benefits,
+              and their rights, including the right to withdraw. But in
+              qualitative research, consent is often ongoing. Topics can shift.
+              Unexpected sensitive material can come up. Participants can
+              realize midway through that a story feels more personal than they
+              expected.
+            </p>
+            <p>
+              So ethical consent is not just a document. It is a conversation
+              you revisit. That might mean checking in during an interview,
+              reminding participants they can skip questions, and clarifying
+              that they can stop at any time. It also means using language that
+              participants actually understand. If consent language is full of
+              technical terms, participants might sign without comprehension,
+              and that undermines autonomy.
+            </p>
+            <p>
+              Now let us talk about confidentiality and anonymity. People often
+              confuse these concepts. Confidentiality means you protect
+              participant information from disclosure. Anonymity means no one,
+              including the researcher, can identify the participant. In many
+              qualitative studies, full anonymity is impossible because you know
+              who you interviewed. So the goal is confidentiality, which
+              requires careful handling of data.
+            </p>
+            <p>
+              Here is the complication: qualitative data can identify people
+              even if you remove names. Details about a job title, a location, a
+              specific incident, or a timeline can be enough to reveal identity,
+              especially in small communities. That is why de-identification is
+              more than deleting names. It can involve changing or generalizing
+              nonessential details. It can involve using broader categories. It
+              can involve removing unique phrases that reveal identity. The goal
+              is to protect identity while preserving meaning.
+            </p>
+            <p>
+              Data security matters too. Ethical confidentiality includes secure
+              storage, access control, and careful decisions about who can view
+              raw data. It also includes thinking about where recordings and
+              transcripts live, how they are backed up, and whether they are
+              encrypted.
+            </p>
+            <p>
+              Now let us address power dynamics. Qualitative research is
+              relational. The researcher often asks personal questions and
+              invites disclosure. Power dynamics can shape what participants
+              say, what they withhold, and whether they feel pressure to
+              participate.
+            </p>
+            <p>
+              Power can come from many sources: institutional authority, social
+              status, age, professional role, or perceived expertise. For
+              example, if you are interviewing students and you also teach them,
+              they may feel pressure to participate or to give answers they
+              think you want. If you are interviewing employees and their
+              manager supports the study, employees may worry about
+              consequences. Ethical practice requires you to reduce coercion.
+              That might mean using neutral recruiters, avoiding direct
+              recruitment of people you supervise, and clearly stating that
+              participation has no impact on evaluation or relationships.
+            </p>
+            <p>
+              Now, let us discuss minimizing harm when sensitive topics arise.
+              If you study discrimination, trauma, grief, addiction, or mental
+              health, some distress is possible. Distress does not automatically
+              mean the research is unethical, but it does mean you need a plan.
+            </p>
+            <p>
+              A plan can include setting expectations before the interview,
+              reminding participants they can pause, skip, or stop, and offering
+              breaks. It can include having a list of support resources
+              available. It can include a protocol for what you will do if
+              someone discloses current risk. The exact response depends on
+              context and professional boundaries, but the key point is that you
+              should not improvise under pressure. You should plan.
+            </p>
+            <p>
+              This leads to another important ethical concept: boundaries.
+              Researchers are not therapists, unless the study is explicitly
+              designed that way and the researcher is qualified and assigned to
+              that role. Participants may still ask for help, advice, or
+              intervention. A responsible researcher clarifies what they can and
+              cannot do. They can listen, provide resources, and encourage
+              support. They should not promise outcomes they cannot deliver.
+              Boundaries protect participants from false expectations and
+              protect the integrity of the research relationship.
+            </p>
+            <p>
+              Now let us talk about reflexivity again, because ethics and
+              reflexivity are connected. Reflexivity includes awareness of how
+              your identity, assumptions, and reactions influence what
+              participants share. If you react with surprise, skepticism, or
+              approval, participants may adjust what they say. Ethical
+              interviewing includes self-awareness and a commitment to
+              respectful, nonjudgmental listening.
+            </p>
+            <p>
+              Representation is another ethical responsibility. In qualitative
+              research, you often use direct quotes and narratives. That creates
+              a responsibility to represent participants fairly and avoid using
+              quotes in ways that distort meaning. It also creates a
+              responsibility to avoid sensationalizing sensitive experiences.
+              Ethical representation asks: are you telling this story in a way
+              that respects the participant's intent and dignity?
+            </p>
+            <p>
+              Finally, ethics includes transparency. Researchers should document
+              ethical decisions and be able to explain them. If you changed your
+              consent process mid-study, you should document why. If you altered
+              identifying details, you should document what you did and how you
+              preserved meaning. That documentation is part of credibility.
+            </p>
+            <p>
+              So how do you bring all of this into practice? A useful way is to
+              treat ethics like a research skill. You plan for it, you practice
+              it, you document it, and you revisit it.
+            </p>
+            <p>
+              If you want a simple checklist to remember, think of four
+              categories: consent, privacy, power, and harm. For each category,
+              ask: what is the risk, and what is my control? That mindset will
+              help you design ethical studies that are both respectful and
+              credible.
+            </p>
+            <p>Let us close with reflection questions.</p>
+            <p>
+              First, think about a topic you would like to study qualitatively.
+              What ethical risks are most likely? Consent misunderstandings?
+              Privacy concerns? Power dynamics? Potential distress?
+            </p>
+            <p>
+              Second, what practical controls would you use? Would you revisit
+              consent during the interview? Would you use stronger
+              de-identification? Would you separate recruitment from authority?
+              Would you create a distress protocol and provide resources?
+            </p>
+            <p>
+              Third, consider representation. If you were writing findings, how
+              would you protect participant dignity while still communicating
+              the meaning of what they shared?
+            </p>
+            <p>
+              These reflection questions help you practice ethical planning as
+              an active part of research design, not an afterthought.
+            </p>
+            <p>
+              Thank you for listening to the Week 2 podcast. This week is about
+              building ethical habits that protect participants and strengthen
+              the credibility of your work. In Week 3, you will focus on
+              interviewing as structured creative conversation, including
+              question design, rapport, listening, and how to capture meaning
+              through dialogue while staying grounded in ethical practice.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="Week_1/PRODUCCION%20W1/W1_PSYC601_Digital_content_guide_podcast/W1_PSYC601_Digital_content_guide_podcast.mp3?ou=1027230"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          width="110"
+          role="presentation"
+        />
+      </p>
+    </div>
+  </body>
+</html>

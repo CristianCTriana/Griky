@@ -1,0 +1,446 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 6</span><br /><span
+          style="font-size: 28px"
+          >Exploraciones en Marcos Analíticos</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente podcast"
+        title="Escucha el siguiente podcast"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_r1df93y4&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_b7y3g45s"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W6_PSYC601_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content" style="overflow: auto">
+            <p>
+              Welcome back to PSYC601: Qualitative Methods. This is Week 6, and
+              the topic is Explorations in Analytical Frameworks. By this point
+              in the course, you have talked about interviews, ethics, media
+              artifacts, and language-focused approaches like narrative and
+              conversation analysis. Now you turn to a question that every
+              qualitative researcher faces sooner or later: what do you do with
+              all of the data once you have it? Qualitative datasets can feel
+              rich and exciting, but they can also feel overwhelming. Analytical
+              frameworks help you turn that richness into credible
+              interpretation.
+            </p>
+            <p>
+              Let us start with the problem frameworks are designed to solve.
+              Imagine you have five interview transcripts. Each transcript is
+              twenty pages. You have field notes from observations. You have
+              documents, emails, or posts. You might have recordings you still
+              need to transcribe. If you try to hold all of that in your head,
+              you will either get lost or you will jump too quickly to
+              conclusions based on the most memorable moments.
+            </p>
+            <p>
+              Analytical frameworks give you structure. They are not the same
+              thing as theory, and they are not rigid templates that force data
+              to fit a predetermined answer. A framework is a set of guiding
+              steps and tools that help you organize, compare, refine, and
+              explain your interpretations. In other words, frameworks help you
+              make your reasoning visible.
+            </p>
+            <p>
+              In Week 6, you will explore how frameworks support coding, theme
+              development, comparison across cases, memo writing, and
+              documentation of analytic choices. By the end of the week, you
+              should be able to select an approach that fits your research
+              question and apply it in a way that strengthens credibility.
+            </p>
+            <p>
+              A useful starting point is to think of analysis as a chain. You
+              start with data, which might be a transcript excerpt, an
+              observation note, or a paragraph from a document. You then create
+              codes, which are labels that capture meaning, action, or concept.
+              You then organize codes into themes, which are broader patterns
+              that connect multiple pieces of data. You then write claims, which
+              are interpretations that answer the research question. Finally,
+              you support claims with evidence, which includes direct excerpts
+              that demonstrate how the theme appears in the data.
+            </p>
+            <p>
+              This chain sounds simple, but it solves a major credibility
+              problem. It prevents analysis from becoming a list of opinions. It
+              also prevents analysis from becoming a collection of quotes with
+              no interpretation. Instead, it creates a pathway that a reader can
+              follow.
+            </p>
+            <p>
+              Now let us talk about coding, because coding is often the first
+              concrete step in many frameworks. Coding is the process of marking
+              segments of data and labeling them in a way that helps you
+              recognize patterns. Early in analysis, coding is usually broad.
+              You might label a segment "feeling judged," "seeking support,"
+              "conflict with expectations," or "trying to cope." Some frameworks
+              encourage you to use participants' own language for early codes,
+              because it keeps you close to the data and reduces premature
+              interpretation.
+            </p>
+            <p>
+              As coding continues, the task shifts. You begin to notice which
+              codes appear across multiple cases and which codes are rare or
+              context-specific. You begin to compare how the same concept
+              appears in different participants. For example, "support" might
+              mean emotional encouragement for one participant and financial
+              help for another. Constant comparison, which is a common feature
+              across many analytic approaches, helps you see those differences
+              and refine your understanding.
+            </p>
+            <p>
+              Refinement is another important step. Many people think that once
+              a code exists, it should never change. In qualitative work, codes
+              often evolve. You might merge two overlapping codes. You might
+              split a broad code into more precise sub-codes. You might rename a
+              code as you understand it better. The key is not to avoid change.
+              The key is to document change.
+            </p>
+            <p>
+              This is where memo writing becomes central. Analytic memos are
+              short written reflections that capture your reasoning as it
+              develops. A memo might answer questions like: Why am I merging
+              these codes. What is the difference between these two themes. What
+              assumptions am I bringing into this interpretation. What evidence
+              supports this claim. Memos are not busywork. They are the place
+              where analysis becomes explicit. They also create a record that
+              helps you explain your process to others.
+            </p>
+            <p>
+              Another useful concept is the audit trail. An audit trail is a
+              record of what you did, when you did it, and why you made changes.
+              It can include versions of your codebook, notes about coding
+              revisions, memos, and decisions about sampling or data selection.
+              The audit trail is a credibility tool because it shows that your
+              findings did not appear magically. They emerged through a
+              transparent process.
+            </p>
+            <p>
+              Now let us talk about framework fit, because not every analysis
+              goal is the same. Some studies are descriptive. They aim to
+              summarize patterns and categories. Other studies are interpretive.
+              They aim to explain meaning, identity, and context. Other studies
+              focus on process. They aim to describe how something unfolds over
+              time, including stages, turning points, and shifts.
+            </p>
+            <p>
+              If your question asks, "What are common experiences of
+              first-generation students seeking support," a descriptive and
+              interpretive approach might work well. If your question asks, "How
+              do people adapt after job loss over time," a process-oriented
+              approach might be more fitting. If your question asks, "How is
+              identity constructed through storytelling," a narrative framework
+              may be most appropriate. Frameworks are tools, so the tool should
+              match the task.
+            </p>
+            <p>
+              It can also help to distinguish between frameworks and theories. A
+              theory is often a set of concepts and relationships that explain a
+              phenomenon. A framework is the structured approach you use to
+              analyze data. They can connect. For example, you might use a
+              theory to inform what you look for, but you still need a framework
+              to guide how you code, compare, and build claims. You can also do
+              inductive analysis, where themes emerge from the data without
+              starting from a strong theoretical lens. Even then, you still use
+              structured steps. Inductive does not mean unstructured.
+            </p>
+            <p>
+              A common mistake is to treat analysis like a scavenger hunt for
+              quotes that support a conclusion you already believe. Frameworks
+              help prevent that by encouraging iterative comparison and by
+              requiring evidence for claims. Another common mistake is to treat
+              analysis like a summary of everything participants said.
+              Frameworks help prevent that by pushing you to identify patterns
+              that answer the research question, not simply repeat the data.
+            </p>
+            <p>
+              Let us make this practical. Imagine you are studying help-seeking
+              among college students. You have interviews where students talk
+              about anxiety, stigma, friends, counseling services, and time
+              constraints. Without a framework, you might simply list those
+              topics. With a framework, you might begin with initial codes like
+              "fear of judgment," "uncertainty about services," "self-reliance,"
+              and "relief after disclosure." You might compare across cases and
+              discover that "self-reliance" functions differently depending on
+              family expectations. You might refine themes into something like
+              "earning the right to seek help" or "managing identity risk." You
+              might then support those themes with excerpts and show how your
+              coding decisions led to your claims.
+            </p>
+            <p>
+              Notice what changed. You did not lose the richness of the data.
+              You gained a structure that makes your interpretation clear and
+              defensible.
+            </p>
+            <p>
+              Week 6 is also a reminder that qualitative analysis is not only
+              about technique. It is also about judgment. Frameworks do not
+              eliminate the researcher's role. They make the researcher's role
+              more transparent. They help you be honest about the choices you
+              made and the reasoning you used. That honesty is part of rigor.
+            </p>
+            <p>
+              If you want one phrase to carry into the rest of the course, it is
+              this: make your logic visible. When you do that, your analysis
+              becomes easier to communicate, easier to evaluate, and easier to
+              trust.
+            </p>
+            <p>Let us close with reflection questions.</p>
+            <p>
+              First, think about a small piece of qualitative data you have
+              seen, maybe a short interview excerpt or a paragraph from a
+              document. What is one initial code you would apply, using the
+              participant's language when possible.
+            </p>
+            <p>
+              Second, what might that code connect to in a broader theme. What
+              would the theme be called, and how would you define it.
+            </p>
+            <p>
+              Third, what claim would that theme support, and what excerpt would
+              you use as evidence. If you cannot find evidence, that is a sign
+              your claim needs revision.
+            </p>
+            <p>
+              Finally, consider documentation. If you changed a code or merged
+              themes, how would you record the reason. What memo would you write
+              so your future self, or a reader, could follow your reasoning.
+            </p>
+            <p>
+              These questions help you practice Week 6 skills: coding,
+              comparison, memo writing, and transparent interpretation.
+            </p>
+            <p>
+              Thank you for listening to the Week 6 podcast. This week focused
+              on analytical frameworks and how they support credible
+              interpretation. In Week 7, you will shift into ethnography and
+              field research, where observation, context, and reflexivity become
+              central to how you collect and interpret qualitative data.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/Week_6/PRODUCCION%20W6/W6_PSYC601_Digital_content_guide_podcast/W6_PSYC601_Digital_content_guide_podcast.mp3?ou=1027230"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          width="110"
+          role="presentation"
+        />
+      </p>
+    </div>
+  </body>
+</html>

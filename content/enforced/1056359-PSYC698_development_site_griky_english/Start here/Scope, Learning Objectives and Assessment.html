@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* ENCABEZADO */
+      .header-container h1 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: left;
+        font-size: 28px;
+        margin: 0;
+      }
+      .header-container .course-code {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .course-title {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      /* CONTENEDOR PRINCIPAL */
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      h1.section-title,
+      h2.section-subtitle {
+        font-size: 35px;
+        font-weight: 700;
+        color: #041e42;
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #202122;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      .centered-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #eaf4ff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 1200px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+      .accordion-content ul {
+        padding-left: 20px;
+      }
+      .accordion-content li {
+        margin-bottom: 10px;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* TABLA DE ASSESSMENTS */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #dcdcdc;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+        font-size: 19px;
+        font-family: Lato, sans-serif;
+      }
+      th {
+        background-color: #041e42;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h1 style="text-align: center">
+        <span class="course-code">PSYC698<br /></span>
+        <span style="font-size: 28px">Course Overview</span>
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- SECCIÓN PRINCIPAL -->
+      <h2 class="section-title" style="text-align: center">
+        <span
+          style="font-family: Lato, sans-serif; font-size: 30px; color: #041e40"
+          >Scope, Learning Objectives, and Assessment</span
+        >
+      </h2>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40">| Course Scope</span>
+      </h3>
+      <div
+        style="display: flex; gap: 100px; align-items: center; padding: 0px 0"
+      >
+        <div style="flex: 1; min-width: 200px; max-width: 200px">
+          <img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/img-course-1_20251120220934262.png"
+            alt=""
+            title=""
+            width="313"
+            height="338"
+            style="float: left"
+            role="presentation"
+          />
+        </div>
+        <div style="flex: 2">
+          <p>
+            This course guides the student through conducting and completing
+            original research using archival data.
+          </p>
+        </div>
+      </div>
+      <hr />
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Course &amp; Learning Objectives</span
+        >
+      </h3>
+      <p>
+        Select each Course Objective to see the associated Learning Objectives
+        and Assessments.
+      </p>
+      <!-- ACORDEÓN: COURSE AND LEARNING OBJECTIVES -->
+      <div class="accordion">
+        <!-- CO-1 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co1" />
+          <label class="accordion-title" for="co1"
+            >CO-1: Construct a discipline-relevant research project with at
+            least one specific, measurable, and directional hypothesis.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-1.1: Explain a relevant research problem an associate clear,
+                testable hypotheses.
+              </li>
+              <li>
+                LO-1.2: Develop a comprehensive literature review to support the
+                research hypothesis and&nbsp;gaps in existing research.
+              </li>
+              <li>
+                LO-1.3: Discuss the implications of research findings in the
+                context of the existing literature and theoretical framework.
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>
+                Module 1 - Welcome Discussion (Introduction and Thesis
+                Topic/Hypothesis)
+              </li>
+              <li>Module 1 - Assignment: Prospectus &amp; IRB Confirmation</li>
+              <li>
+                Module 2 - Discussion: Your Data Preparation Action Plan and
+                Progress
+              </li>
+              <li>
+                Module 2 - Assignment: Draft Introduction Chapter Revision
+              </li>
+              <li>Module 2 - Assignment: Draft Methodology Chapter Revision</li>
+              <li>
+                Module 3 - Discussion: Your Analysis Action Plan and Progress
+              </li>
+              <li>Module 3 - Assignment: Draft Literature Review Chapter</li>
+              <li>Module 6 - Discussion: Thesis Project Reflective Summary</li>
+              <li>Module 6 - Assignment: Final Thesis&nbsp;</li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-2 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co2" />
+          <label class="accordion-title" for="co2"
+            >CO-2: Apply the appropriate research design (methodology), archival
+            database, and statistical analyses to effectively test the
+            hypothesis.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+            <ul>
+              <li>
+                LO-2.1: Examine&nbsp;archival databases to gather quantitative
+                data necessary for hypothesis testing.&nbsp;
+              </li>
+              <li>
+                LO-2.2: Apply the statistical analysis that will be used to test
+                the hypothesis.
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>
+                Module 1 - Welcome Discussion (Introduction and Thesis
+                Topic/Hypothesis)
+              </li>
+              <li>Module 1 - Assignment: Prospectus &amp; IRB Confirmation</li>
+              <li>
+                Module 2 - Discussion: Your Data Preparation Action Plan and
+                Progress
+              </li>
+              <li>
+                Module 2 - Assignment: Draft Introduction Chapter Revision
+              </li>
+              <li>Module 2 - Assignment: Draft Methodology Chapter Revision</li>
+              <li>
+                Module 3 - Discussion: Your Analysis Action Plan and Progress
+              </li>
+              <li>Module 3 - Assignment: Draft Literature Review Chapter</li>
+              <li>Module 6 - Discussion: Thesis Project Reflective Summary</li>
+              <li>Module 6 - Assignment: Final Thesis&nbsp;</li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-3 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co3" />
+          <label class="accordion-title" for="co3"
+            >CO-3: Interpret statistical output for research outcomes.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+
+            <ul>
+              <li>
+                LO-3.1:&nbsp;Organize relevant quantitative data for a research
+                question.&nbsp;
+              </li>
+              <li>
+                LO-3.2: Assess statistical analysis to determine whether the
+                data supports or refutes the hypothesis.
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>Module 4 - Discussion: Results Action Plan and Progress</li>
+              <li>Module 4 - Assignment: Results Chapter</li>
+              <li>Module 6 - Discussion: Thesis Project Reflective Summary</li>
+              <li>Module 6 - Assignment: Final Thesis&nbsp;</li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-4 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co4" />
+          <label class="accordion-title" for="co4"
+            >CO-4: Apply standards of the American Psychological Association to
+            competent writing.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+
+            <ul>
+              <li>
+                LO-4.1: Demonstrate&nbsp;proficiency&nbsp;in APA formatting and
+                citation style.&nbsp;
+              </li>
+              <li>
+                LO-4.2: Produce a well-structured and logically organized
+                research paper.
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>
+                Module 2 - Discussion: Your Data Preparation Action Plan and
+                Progress
+              </li>
+              <li>
+                Module 2 - Assignment: Draft Introduction Chapter Revision
+              </li>
+              <li>Module 2 - Assignment: Draft Methodology Chapter Revision</li>
+              <li>
+                Module 3 - Discussion: Your Analysis Action Plan and Progress
+              </li>
+              <li>Module 3 - Assignment: Draft Literature Review Chapter</li>
+              <li>Module 4 - Discussion: Results Action Plan and Progress</li>
+              <li>Module 4 - Assignment: Results Chapter</li>
+              <li>Module 5 - Discussion: Action Plan and Progress</li>
+              <li>Module 5 - Assignment: Discussion Chapter</li>
+              <li>Module 6 - Discussion: Thesis Project Reflective Summary</li>
+              <li>Module 6 - Assignment: Final Thesis&nbsp;</li>
+            </ul>
+          </div>
+        </div>
+        <!-- CO-5 -->
+        <div class="accordion-item">
+          <input type="checkbox" id="co5" />
+          <label class="accordion-title" for="co5"
+            >CO-5: Apply the Ethical Principles of the American Psychological
+            Association.</label
+          >
+          <div class="accordion-content">
+            <p style="font-weight: bold">Learning Objectives</p>
+
+            <ul>
+              <li>
+                LO-5.1: Develop strategies to ensure ethical compliance in the
+                design and conduct of research.&nbsp;
+              </li>
+              <li>
+                LO-5.2: Produce a completed thesis report consistent with
+                ethical principles of the American Psychological Association.
+              </li>
+            </ul>
+            <p style="font-weight: bold">Assessments</p>
+            <ul>
+              <li>
+                Module 1 - Welcome Discussion (Introduction and Thesis
+                Topic/Hypothesis)
+              </li>
+              <li>Module 1 - Assignment: Prospectus &amp; IRB Confirmation</li>
+              <li>
+                Module 2 - Discussion: Your Data Preparation Action Plan and
+                Progress
+              </li>
+              <li>
+                Module 2 - Assignment: Draft Introduction Chapter Revision
+              </li>
+              <li>Module 2 - Assignment: Draft Methodology Chapter Revision</li>
+              <li>
+                Module 3 - Discussion: Your Analysis Action Plan and Progress
+              </li>
+              <li>Module 3 - Assignment: Draft Literature Review Chapter</li>
+              <li>Module 4 - Discussion: Results Action Plan and Progress</li>
+              <li>Module 4 - Assignment: Results Chapter</li>
+              <li>Module 5 - Discussion: Action Plan and Progress</li>
+              <li>Module 5 - Assignment: Discussion Chapter</li>
+              <li>Module 6 - Discussion: Thesis Project Reflective Summary</li>
+              <li>Module 6 - Assignment: Final Thesis&nbsp;</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <!-- PROGRAM LEARNING OUTCOMES -->
+      <h3 class="section-subtitle">
+        <span style="font-size: 24px; color: #041e40"
+          >| Program Learning Outcomes</span
+        >
+      </h3>
+      <p>
+        Program Learning Outcomes (PLO) serve as a roadmap for educational
+        success and guide the courses that you take.&nbsp;
+      </p>
+      <p>This course supports the following PLOs:</p>
+      <ul>
+        <li>
+          Demonstrate a broad knowledge of psychology’s core domains, an
+          understanding of psychology as a science, and advanced knowledge in an
+          area of concentration.
+        </li>
+        <li>
+          Evaluate research questions and methodology&nbsp;to solve contemporary
+          problems, based on a critical review of psychological and other
+          scientific literature.&nbsp;
+        </li>
+        <li>
+          Develop defensible ethical decisions and behaviors based on the
+          Ethical Principles of the American Psychological Association.
+        </li>
+        <li>
+          Deliver ideas in a clear and professional manner appropriate
+          to&nbsp;an audience and consistent with style expectations of the
+          American Psychological Association.
+        </li>
+        <li>
+          Accurately identify&nbsp;gaps&nbsp;in one's&nbsp;own knowledge and
+          abilities and then accept and use constructive feedback to improve
+          academic performance.
+        </li>
+        <li>
+          Evaluate one's&nbsp;own cultural competency and how biases and
+          assumptions can influence human interactions.&nbsp;
+        </li>
+      </ul>
+      <hr />
+      <!-- ASSESSMENT COMPONENTS -->
+      <h3>
+        <span style="color: #041e40; font-size: 24px"
+          >| Assessment Components</span
+        >
+      </h3>
+      <p>
+        Your final grade will be calculated using the following category
+        weights:
+      </p>
+      <table
+        style="width: 46.8327%; height: 84.3906px; border-collapse: collapse"
+        border="1"
+      >
+        <caption>
+          <span style="font-size: 19px; color: #041e42"
+            >Assessment Components</span
+          >
+        </caption>
+        <tbody>
+          <tr style="height: 40.1953px">
+            <th style="width: 49.0939%" scope="row">Assignments</th>
+            <th style="width: 50.9061%" scope="row">Discussions</th>
+          </tr>
+          <tr style="height: 44.1953px">
+            <td style="width: 49.0939%">85%</td>
+            <td style="width: 50.9061%">15%</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt="logo"
+        class="footer-logo"
+      />
+    </div>
+  </body>
+</html>

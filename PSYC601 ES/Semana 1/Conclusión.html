@@ -1,0 +1,223 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif !important;
+        color: #202122;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px;
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif !important;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition: 0.2s ease;
+        position: relative;
+      }
+
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        margin-left: 12px;
+        transition: 0.2s ease;
+      }
+
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .title-topic {
+        font-size: 35px;
+        color: #041e40;
+        text-align: center;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .divider-line {
+        margin-top: 0px;
+        margin-bottom: 40px;
+      }
+
+      .digital-guide {
+        border: 1px solid #041e42;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.6;
+      }
+      .digital-guide span.icon {
+        color: #202122;
+        font-size: 24px;
+        margin-right: 10px;
+        line-height: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 1</span><br /><span
+          style="font-size: 28px"
+          >Introducción a los Métodos Cualitativos</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- CONCLUSIONS -->
+      <h1 class="title-topic"><strong>Conclusión</strong></h1>
+      <hr class="divider-line" />
+      <p style="font-size: 19px">
+        <span style="color: #202122"
+          >En conjunto, entonces, ¿cuáles son las fortalezas de realizar
+          investigación cualitativa? Bien, en primer lugar, una característica
+          principal es que se enfoca en eventos ordinarios que ocurren de manera
+          natural en entornos naturales (en contraposición a entornos de
+          laboratorio altamente controlados). En segundo lugar, dado que la
+          influencia del contexto no se elimina de los datos, la posibilidad de
+          comprender la influencia de ese contexto es sólida. Esto significa que
+          una tercera fortaleza de la investigación cualitativa es su riqueza y
+          su potencial para revelar la complejidad. Por último, la flexibilidad
+          inherente de la investigación cualitativa la hace adaptable y
+          atractiva para una variedad de entornos y significados, especialmente
+          cuando el objetivo es el descubrimiento.&nbsp;</span
+        >
+      </p>
+      <!-- LEARNING CHALLENGE -->
+      <hr class="divider-line" />
+      <!-- FOOTER -->
+      <div>
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          width="110"
+          style="float: right"
+          role="presentation"
+        />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,448 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 4</span><br /><span
+          style="font-size: 28px"
+          >Análisis de Contenido y Medios</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente podcast"
+        title="Escucha el siguiente podcast"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_rrtskcf3&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_abvu7gy2"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W4_PSYC601_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content" style="overflow: auto">
+            <p>
+              Welcome back to PSYC601: Qualitative Methods. This is Week 4, and
+              the topic is Content and Media Analysis. Up to this point, you
+              have focused on methods that involve direct interaction with
+              participants, especially interviewing. This week expands your view
+              of data. In content and media analysis, the "participants" are
+              often texts, images, and cultural artifacts that already exist.
+              Instead of asking people what they think, you study the messages
+              that are already circulating in public and organizational life.
+            </p>
+            <p>
+              Content and media analysis are powerful because so much of human
+              meaning is produced and shared through communication. News
+              articles shape public understanding. Social media frames identity
+              and norms. Advertisements tell stories about what should matter.
+              Organizational emails reveal priorities and assumptions. When you
+              analyze these materials qualitatively, you can understand how
+              issues are framed, how identities are represented, and how values
+              and power dynamics appear in everyday messages.
+            </p>
+            <p>
+              In Week 4, you will learn how to design a content or media
+              analysis study. That includes choosing a research question,
+              building a dataset of artifacts, creating a coding approach, and
+              analyzing patterns and themes. You will also focus on two
+              important concepts: manifest content, which is what is explicit
+              and visible, and latent content, which is what is implied,
+              assumed, or communicated indirectly.
+            </p>
+            <p>
+              By the end of the week, you should be able to design a small
+              content or media analysis project and describe how your sampling
+              and coding choices support credibility.
+            </p>
+            <p>
+              Let us start with what content and media analysis studies. In
+              simple terms, it studies messages. It studies what is said, what
+              is shown, how it is said, and what it implies. The "data" might be
+              written text, images, audio, video, or combinations, such as a
+              social media post with a caption and a video clip. The method you
+              choose depends on the research question.
+            </p>
+            <p>
+              For example, you might ask: How do news outlets frame adolescent
+              mental health? How do campus wellness emails describe stress and
+              responsibility? How do advertisements use mental health language
+              to sell products? How do online communities represent identity and
+              coping? These questions do not require interviews. The evidence is
+              already present in public or organizational communication.
+            </p>
+            <p>
+              Now, a key difference between this method and interviewing is that
+              you do not have the ability to probe the artifact. A document
+              cannot answer follow-up questions. That means you have to be
+              careful about context. Where did the artifact come from? Who
+              created it? For what audience? Under what constraints? A social
+              media post is not the same as a policy document. A marketing
+              campaign is not the same as a personal blog. Context shapes
+              meaning.
+            </p>
+            <p>
+              This is where sampling decisions become extremely important.
+              Sampling is how you select the artifacts you will analyze. In
+              qualitative content analysis, sampling is usually purposeful. You
+              choose artifacts that are relevant to your research question, and
+              you document your selection rules clearly.
+            </p>
+            <p>
+              A strong sampling plan includes things like: what sources you will
+              use, what time period you will study, what inclusion criteria you
+              will apply, and what you will exclude. For example, you might
+              study all campus wellness emails sent during a semester, or you
+              might study news articles from three major outlets during one
+              month, or you might study posts under a specific hashtag during a
+              defined week. The key is transparency. Readers should be able to
+              understand what your dataset includes and why.
+            </p>
+            <p>
+              Sampling also shapes what you can claim. If you analyze one week
+              of posts under one hashtag, you can identify patterns in that
+              dataset. You cannot claim that you have captured all social media
+              discourse. That does not make the study weak. It means your
+              conclusions should match your data scope.
+            </p>
+            <p>
+              Now let us move into coding, which is the backbone of systematic
+              analysis. Coding means labeling segments of data in a way that
+              helps you identify patterns. A codebook is a document that defines
+              your codes, explains when to use them, and often provides
+              examples.
+            </p>
+            <p>
+              In content and media analysis, your codes can capture different
+              aspects of the artifact. You might code topics, such as "stress,"
+              "therapy," "self-care," or "product promotion." You might code
+              tone, such as "supportive," "humorous," "dismissive," or "urgent."
+              You might code framing, such as "individual responsibility,"
+              "systemic problem," "medical issue," or "identity expression."
+            </p>
+            <p>
+              This is where manifest and latent content analysis becomes useful.
+              Manifest content refers to what is explicitly present. If an email
+              says, "Try breathing exercises," that is manifest content. Latent
+              content refers to underlying meaning or assumptions. For example,
+              an email might imply that stress is an individual problem to
+              manage, rather than a structural issue. That assumption is not
+              always stated directly, but it is communicated through language
+              and framing.
+            </p>
+            <p>
+              Manifest analysis can be more straightforward, but it can miss
+              what matters most. Latent analysis can be more interpretive, which
+              means it requires discipline and reflexivity. You should not treat
+              your first interpretation as truth. You should look for patterns
+              across artifacts and ground your interpretation in evidence.
+            </p>
+            <p>
+              Reflexivity plays a big role here. Because you are interpreting
+              artifacts, your assumptions can shape what you see. For example,
+              if you are skeptical about wellness culture, you may interpret any
+              wellness message as marketing or blame. If you are supportive of
+              wellness messaging, you may interpret it as helpful even when it
+              places responsibility on individuals. Reflexivity means noticing
+              your reactions, writing notes, and checking whether your
+              interpretations are supported consistently by the data.
+            </p>
+            <p>
+              Another credibility issue is consistency. Coding should be applied
+              consistently across artifacts. If you change codes mid-way, that
+              can be fine, but you should document the change and explain why.
+              Iteration is common in qualitative work, but transparency is what
+              makes iteration credible.
+            </p>
+            <p>
+              Now let us talk about ethics, because even though you are not
+              interviewing participants, ethical considerations still exist. If
+              you are analyzing public content, you still need to consider
+              privacy and harm. Public does not always mean harmless. People may
+              not expect their posts to be studied or quoted. In some cases, it
+              may be appropriate to paraphrase rather than quote directly. In
+              other cases, it may be appropriate to remove identifying details
+              even if content is public.
+            </p>
+            <p>
+              Ethical practice in content and media analysis includes thinking
+              about how your work could affect the people or communities
+              represented. It also includes respecting platform norms and
+              institutional guidelines.
+            </p>
+            <p>
+              Let us consider a practical example. Suppose you want to analyze
+              short-form videos about anxiety. You could create a dataset of
+              posts using hashtags and a time window. You would define inclusion
+              criteria, such as language, relevance, and content type. Then you
+              would develop a codebook. You might code manifest topics like
+              symptoms, coping, humor, and advice. You might code latent framing
+              like identity, trend, medicalization, or moral judgment. You might
+              code tone and commercial elements. As you code, you would write
+              reflexive notes about your reactions. After coding, you would look
+              for patterns. You might find that coping tips are common but often
+              simplified. You might find that humor reduces stigma but sometimes
+              trivializes. You might find that commercial messaging is
+              intertwined with mental health language. Those findings would be
+              grounded in the dataset and explained clearly.
+            </p>
+            <p>
+              The overall goal of Week 4 is to help you see texts and media as
+              meaningful data and to analyze them systematically. It is a way to
+              study meaning in the world as it is communicated, not only as it
+              is remembered in interviews.
+            </p>
+            <p>Let us close with reflection questions.</p>
+            <p>
+              First, what kind of media or documents might be useful data for a
+              topic you care about? News articles, social media posts, wellness
+              emails, advertisements, policy documents, or online forums are all
+              possibilities.
+            </p>
+            <p>
+              Second, what would your sampling plan look like? What sources
+              would you include, and what time window would make sense? How
+              would you define inclusion criteria in a way that is clear and
+              defensible?
+            </p>
+            <p>
+              Third, what codes would you use? Try writing one manifest code and
+              one latent code. The manifest code might capture an explicit
+              topic. The latent code might capture framing or assumption.
+            </p>
+            <p>
+              Finally, what reflexive notes might you need? What assumptions do
+              you bring to that topic, and how might those assumptions shape
+              your interpretation?
+            </p>
+            <p>
+              These questions help you practice the core Week 4 skills:
+              sampling, coding, interpretation, and reflexivity.
+            </p>
+            <p>
+              Thank you for listening to the Week 4 podcast. This week focused
+              on content and media analysis as a way to study meaning in texts
+              and cultural artifacts. In Week 5, you will move into narrative
+              and conversation analysis, where you focus more directly on how
+              stories are structured and how meaning is created through language
+              and interaction.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/Week_4/PRODUCCION%20W4/W4_PSYC601_Digital_content_guide_podcast/W4_PSYC601_Digital_content_guide_podcast.mp3?ou=1027230"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          width="110"
+          role="presentation"
+        />
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,433 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 1</span><br /><span
+          style="font-size: 28px"
+          >Introducción a los Métodos Cualitativos</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/Escucha el siguiente Podcast.png"
+        alt="Escucha el siguiente Podcast"
+        class="banner-image"
+        width="665"
+        height="59"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_a0s9w8q8&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_vp32fomp"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W1_PSYC601_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content" style="overflow: auto">
+            <p>
+              Welcome to PSYC601: Qualitative Methods. This is Week 1, and the
+              topic is Introduction to Qualitative Methods. This week is your
+              starting point for learning how qualitative researchers study
+              meaning, experience, and context. If you have ever read a
+              statistic and thought, "That tells me something, but it does not
+              tell me what it feels like," you are already close to the logic of
+              qualitative inquiry. Qualitative research helps you understand the
+              human side of a phenomenon, including how people interpret what is
+              happening and how social context shapes experience.
+            </p>
+            <p>
+              Let us begin with what you will learn this week. You will learn
+              what qualitative research is and why it matters. You will learn
+              how qualitative inquiry differs from quantitative research, not
+              because one is better, but because they are designed to answer
+              different questions. You will also begin learning two concepts
+              that will stay with you throughout the course: the idea that the
+              researcher is an instrument of inquiry, and the importance of
+              reflexivity, which is the habit of reflecting on how your
+              perspective influences the research process.
+            </p>
+            <p>
+              By the end of Week 1, you should be able to describe when
+              qualitative methods are a good fit, what kinds of questions
+              qualitative researchers ask, and what makes qualitative research
+              systematic and credible.
+            </p>
+            <p>
+              If you are new to qualitative research, you might be carrying a
+              misconception that qualitative work is informal, or that it is
+              simply collecting stories without structure. This week is designed
+              to replace that misconception with a more accurate picture.
+              Qualitative research can be creative, but it is also rigorous. It
+              requires planning, thoughtful data collection, and careful
+              analysis.
+            </p>
+            <p>
+              So what is qualitative research, really? At its core, qualitative
+              research is a systematic approach to understanding meaning and
+              experience. It asks questions like: How do people interpret a life
+              event? How do communities define what is normal or acceptable? How
+              do people make decisions when they are uncertain? How do
+              identities develop and change across contexts? These questions are
+              not easily answered by measuring a variable on a scale. They
+              require listening, observing, and interpreting in a structured
+              way.
+            </p>
+            <p>
+              One way to understand qualitative research is to think about the
+              type of knowledge it produces. Quantitative research often
+              produces estimates and relationships: how much, how often, what
+              predicts, what differs. Qualitative research often produces
+              explanation and insight: how people describe something, what
+              themes show up across experiences, how meaning is constructed,
+              what tensions exist, and why a situation feels the way it does
+              from the inside.
+            </p>
+            <p>
+              This does not mean qualitative research ignores structure. In
+              fact, structure is what makes it credible. A qualitative
+              researcher makes deliberate choices about participants, data
+              sources, and methods. They decide what questions to ask and how to
+              ask them. They record and document what they see and hear. They
+              analyze data systematically, looking for patterns and differences,
+              and they build interpretations that are grounded in evidence.
+            </p>
+            <p>
+              Let us make this concrete with an example. Imagine you are
+              studying burnout among graduate students. A quantitative approach
+              might measure stress levels, hours worked, and symptoms, then test
+              what predicts burnout. That can be valuable. But what if you want
+              to understand what burnout means to students? Some students may
+              define burnout as exhaustion. Others may define it as loss of
+              motivation. Others may define it as a moral failure, like they are
+              not strong enough. Those meanings matter because they shape coping
+              strategies and willingness to seek help.
+            </p>
+            <p>
+              Qualitative methods are especially useful when you are exploring a
+              topic that is not well understood, or when you suspect that
+              existing measures are not capturing the full story. They are also
+              useful when you want to understand processes, such as how people
+              move through a transition over time, or how a workplace culture
+              shapes behavior. In these cases, the research goal is not to
+              reduce complexity. It is to understand it.
+            </p>
+            <p>
+              Now let us talk about the researcher as an instrument. This is one
+              of the most important ideas in qualitative research. In many
+              quantitative designs, the goal is to minimize the influence of the
+              researcher through standardized instruments and controlled
+              procedures. In qualitative research, the researcher is part of the
+              instrument. Your questions, your listening, your attention, and
+              your interpretations shape the research.
+            </p>
+            <p>
+              That is why reflexivity matters. Reflexivity is not the same as
+              bias. Reflexivity is the practice of noticing your assumptions and
+              how they might influence what you see. For example, if you believe
+              that burnout is mainly about workload, you may miss themes about
+              belonging, uncertainty, or identity. If you assume that a
+              participant's explanation is exaggerated, you may not probe in a
+              way that reveals deeper meaning. Reflexivity helps you remain open
+              and disciplined. It helps you avoid treating your first
+              interpretation as the only interpretation.
+            </p>
+            <p>
+              Another key concept in qualitative research is credibility.
+              Credibility is about trustworthiness. It is the idea that your
+              findings should be supported by evidence and that your process
+              should be transparent. Credibility comes from many practices:
+              careful documentation, systematic analysis, and clarity about how
+              you moved from raw data to interpretation.
+            </p>
+            <p>
+              You will learn more about specific credibility strategies later in
+              the course, but even in Week 1 you can start building the mindset.
+              Do not think of qualitative findings as opinions. Think of them as
+              interpretations that must be supported, explained, and grounded.
+            </p>
+            <p>
+              Now, you might be wondering: how do qualitative researchers
+              actually collect data? There are many methods, but some of the
+              most common include interviews, observations, focus groups, and
+              document or media analysis. The data might be transcripts, field
+              notes, recordings, images, or written artifacts. The common theme
+              is that the data is rich and contextual. It captures language,
+              meaning, and interaction, not only numbers.
+            </p>
+            <p>
+              Finally, let us address a common question: can qualitative
+              research be combined with quantitative research? Yes. Mixed
+              methods research combines strengths by using qualitative inquiry
+              to explore meaning and quantitative methods to test patterns, or
+              by using qualitative work to interpret quantitative results. The
+              choice depends on the research question and what kind of knowledge
+              you need.
+            </p>
+            <p>
+              So as you move through Week 1, practice asking yourself: what kind
+              of question am I asking? Am I trying to measure and compare, or am
+              I trying to understand meaning and experience? Neither is wrong.
+              The skill is matching method to purpose.
+            </p>
+            <p>
+              This week is not only about definitions. It is about a mindset
+              shift. It is about learning to value context, language, and lived
+              experience as legitimate data, and learning to treat
+              interpretation as a disciplined research act.
+            </p>
+            <p>
+              Let us close with a few reflection questions to help you practice
+              qualitative thinking.
+            </p>
+            <p>
+              First, think of a psychology topic you care about, such as stress,
+              identity, belonging, grief, motivation, or resilience. What would
+              a quantitative question look like for that topic? It might focus
+              on prevalence, correlation, or predictors.
+            </p>
+            <p>
+              Now, what would a qualitative question look like? It might focus
+              on how people describe the experience, what meanings they attach
+              to it, or how context shapes it. Notice how the qualitative
+              question opens space for interpretation.
+            </p>
+            <p>
+              Second, consider your own assumptions. If you were studying that
+              topic, what would you expect to find? What would you assume
+              participants mean when they use certain words? Reflexivity begins
+              with noticing those expectations before you interpret the data.
+            </p>
+            <p>
+              Finally, ask yourself what credibility would require. If you made
+              a claim about people's experiences, what evidence would you need
+              to support it? How would you show your reasoning clearly?
+            </p>
+            <p>
+              These questions help you practice the habits that make qualitative
+              research strong: matching methods to goals, reflecting on
+              perspective, and grounding interpretation in evidence.
+            </p>
+            <p>
+              Thank you for listening to the Week 1 podcast. As you work through
+              this week's materials, focus on understanding qualitative research
+              as a rigorous approach to meaning and context. In Week 2, you will
+              move into ethics in qualitative research, including consent,
+              confidentiality, power dynamics, and the responsibilities that
+              come with working closely with participants.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="Week_1/PRODUCCION%20W1/W1_PSYC601_Digital_content_guide_podcast/W1_PSYC601_Digital_content_guide_podcast.mp3?ou=1027230"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          width="110"
+          role="presentation"
+        />
+      </p>
+    </div>
+  </body>
+</html>

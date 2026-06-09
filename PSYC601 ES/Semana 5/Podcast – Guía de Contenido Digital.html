@@ -1,0 +1,445 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Week 5</span><br /><span
+          style="font-size: 28px"
+          >Análisis de Narrativa y Conversación</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente podcast"
+        title="Escucha el siguiente podcast"
+        data-d2l-editor-default-img-style="true"
+        style="max-width: 100%"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_txbtriz7&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_p69dym9n"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W5_PSYC601_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content" style="overflow: auto">
+            <p>
+              Welcome back to PSYC601: Qualitative Methods. This is Week 5, and
+              the topic is Narrative and Conversation Analysis. In earlier
+              weeks, you focused on qualitative research as a way to study
+              meaning, ethics, interviewing, and the analysis of texts and
+              media. This week you shift your attention in a subtle but
+              important way. You are not only interested in what people say. You
+              are interested in how they say it. You are interested in the
+              structure of stories and the organization of talk.
+            </p>
+            <p>
+              Narrative analysis and conversation analysis are both approaches
+              that treat language as more than a container for information. They
+              treat language as action. People use stories to organize
+              experience, to make sense of what happened, and to present
+              themselves to others. People use conversation to negotiate
+              understanding, manage relationships, and coordinate social life in
+              real time.
+            </p>
+            <p>
+              In Week 5, you will learn the basics of narrative analysis,
+              including how to identify story elements, turning points, and
+              identity positioning. You will also learn the basics of
+              conversation analysis, including turn taking, sequence, pauses,
+              overlaps, and repairs. You will practice noticing evidence that is
+              not only content, but structure.
+            </p>
+            <p>
+              By the end of the week, you should be able to explain the
+              difference between narrative and conversation analysis and apply
+              basic tools from both approaches to a transcript.
+            </p>
+            <p>
+              As you work through this week, a helpful mindset is to slow down.
+              Read a transcript like you are listening closely. Notice what is
+              emphasized, what is repeated, and what is avoided. That is where
+              meaning often lives.
+            </p>
+            <p>
+              Let us start with narrative analysis. Narrative analysis focuses
+              on stories. A story is not only a long dramatic account. People
+              tell stories constantly, even in short form. "Yesterday I tried to
+              call my mom, and it turned into a fight" is a story. "I thought I
+              was doing fine, but then I broke down in the parking lot" is a
+              story. Stories organize experience by selecting events and
+              arranging them in a meaningful sequence.
+            </p>
+            <p>
+              Narrative analysis asks: how is the story structured? What is
+              treated as the beginning, the conflict, the turning point, and the
+              outcome? What events are included, and what events are left out?
+              What moral or lesson is implied? How does the storyteller position
+              themselves? Are they the agent who makes choices, or are they the
+              person events happen to? How do they position other people: as
+              supportive, threatening, absent, or misunderstood?
+            </p>
+            <p>
+              One practical way to start narrative analysis is to identify core
+              story elements. You can look for the setting, which is where and
+              when the story takes place. You can look for characters, including
+              who is present and who is missing. You can look for the plot
+              sequence: what happened first, what happened next, what changed,
+              and what resulted. You can look for the turning point, which is
+              the moment when something shifts. You can also look for how the
+              storyteller frames meaning, such as what they learned, what they
+              regret, what they value, or what they believe the story proves
+              about themselves.
+            </p>
+            <p>
+              Now, narrative analysis is particularly useful for studying
+              identity. People often use stories to answer the question, "Who am
+              I?" They may not say it directly, but it appears through
+              positioning. For example, someone who describes job loss as a
+              betrayal may position themselves as wronged and powerless. Someone
+              who describes job loss as a wake-up call may position themselves
+              as adaptive and agentic. The event can be similar, but the
+              narrative framing changes the meaning.
+            </p>
+            <p>
+              Narrative analysis also pays attention to time. People can narrate
+              events as permanent, temporary, cyclical, or transformative.
+              Someone might say, "This is just how my life always goes," which
+              implies permanence and inevitability. Someone else might say,
+              "That was a turning point," which implies transformation. Those
+              time frames matter for how people imagine their future.
+            </p>
+            <p>
+              Now let us shift to conversation analysis. Conversation analysis
+              studies talk in interaction. It is not focused on what people
+              think internally. It is focused on what people do through talk. It
+              looks at how people take turns, how they respond to each other,
+              and how meaning is negotiated moment by moment.
+            </p>
+            <p>
+              Turn taking is a basic feature of conversation. People tend to
+              take turns in structured ways, even when the conversation feels
+              informal. Conversation analysis examines how people claim the
+              floor, how they yield it, and how interruptions or overlaps
+              happen. These details can signal power, alignment, conflict, or
+              urgency.
+            </p>
+            <p>
+              Sequence is another important element. Conversations often have
+              predictable patterns, such as question and answer, invitation and
+              acceptance, complaint and response, story and evaluation.
+              Conversation analysis looks at how those sequences unfold. For
+              example, a person might offer a complaint, and the other person
+              might respond with empathy, with advice, with minimization, or
+              with a topic change. Each response shapes what becomes possible
+              next.
+            </p>
+            <p>
+              Repairs are another key concept. Repairs are moments when speakers
+              correct themselves, rephrase, clarify, or fix misunderstandings.
+              You hear repairs all the time: "I mean…" "No, that is not what I
+              meant" "Let me say that differently." Repairs are interesting
+              because they reveal where meaning is fragile. They show what the
+              speaker is trying to accomplish and how they adjust their language
+              to do it.
+            </p>
+            <p>
+              Pauses, timing, and overlap can also matter. A long pause can
+              signal uncertainty, discomfort, or reflection. Overlap can signal
+              enthusiasm, agreement, or competition for the floor. In
+              conversation analysis, these timing details can be evidence, which
+              is why transcription can be very detailed in this approach.
+            </p>
+            <p>
+              Now, you might be wondering how these methods apply to interviews,
+              since interviews are not natural everyday conversation. Interviews
+              are structured interactions. That structure shapes what is said
+              and how. In interviews, the interviewer often controls turn taking
+              through questions. But you still see interaction patterns. You
+              still see hesitation, repairs, and negotiation of meaning. If an
+              interviewee says, "I do not know how to explain it," and then
+              tries again, that is identity and meaning work happening in the
+              moment.
+            </p>
+            <p>
+              So what is the practical difference between narrative analysis and
+              conversation analysis? Narrative analysis focuses on story
+              structure and meaning framing. Conversation analysis focuses on
+              interaction structure and how talk is organized. They can overlap,
+              but they are not the same.
+            </p>
+            <p>
+              Let us take a simple example. Suppose a participant tells a story
+              about a conflict with a supervisor. Narrative analysis would
+              examine the story arc: how the supervisor is portrayed, what the
+              turning point was, and what the story implies about the
+              participant's identity and values. Conversation analysis would
+              examine how the story is told in interaction: where pauses occur,
+              how the interviewer responds, whether the participant repairs or
+              rephrases, and how agreement or disagreement is negotiated.
+            </p>
+            <p>
+              Both approaches require care in representation. When you quote a
+              story or a conversational segment, you are sharing someone's
+              words. That creates ethical responsibility to protect privacy and
+              to avoid using excerpts out of context. It also requires
+              transparency about how you analyzed the data. In narrative and
+              conversation analysis, small excerpts can carry a lot of meaning,
+              so you must show how you interpreted them.
+            </p>
+            <p>
+              If you want a simple takeaway for Week 5, it is this: meaning is
+              not only in topics. Meaning is in structure. It is in turning
+              points, in identity positioning, in repairs, in pauses, and in how
+              people respond to each other. When you learn to see that, you gain
+              a deeper understanding of human experience as it is expressed in
+              language.
+            </p>
+            <p>Let us close with reflection questions.</p>
+            <p>
+              First, think about a story someone has told you recently. What was
+              the turning point? How did the person position themselves in the
+              story? Did they present themselves as agentic, helpless,
+              resilient, guilty, or proud?
+            </p>
+            <p>
+              Second, think about a moment of misunderstanding in a
+              conversation. What repair happened? How did the speaker correct or
+              clarify? What did that reveal about what mattered to them?
+            </p>
+            <p>
+              Third, if you were analyzing a transcript, what evidence would you
+              use to support a claim? In narrative analysis, you might use
+              excerpts that show turning points or identity language. In
+              conversation analysis, you might use excerpts that show turn
+              taking patterns or repairs.
+            </p>
+            <p>
+              These reflection questions help you practice Week 5 listening:
+              slower, more attentive, and more sensitive to structure.
+            </p>
+            <p>
+              Thank you for listening to the Week 5 podcast. This week focused
+              on narrative and conversation analysis as ways to study meaning
+              through story and interaction. In Week 6, you will explore
+              analytical frameworks, which provide structured ways to guide
+              interpretation and strengthen your reasoning across different
+              qualitative methods.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027282-PSYC601_development_site_griky_spanish/Week_5/PRODUCCION%20W5/W5_PSYC601_Digital_content_guide_podcast/W5_PSYC601_Digital_content_guide_podcast.mp3?ou=1027230"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          width="110"
+          role="presentation"
+        />
+      </p>
+    </div>
+  </body>
+</html>
