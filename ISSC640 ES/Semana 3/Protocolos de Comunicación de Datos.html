@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/StylesComponents.css"
+    />
+    <style>
+      /* VIDEO RESPONSIVE */
+      .video-wrapper-TopicOne {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive-TopicOne {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+      }
+
+      .video-responsive-TopicOne video,
+      .video-responsive-TopicOne iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* VIDEO CLIENTE */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBannerr"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Semana 3</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Protocolos de Red, Puertos y el Modelo OSI</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Protocolos de Comunicación de Datos</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>&nbsp;</p>
+      <p>
+        De manera similar a los idiomas que los seres humanos utilizamos para
+        comunicarnos, las computadoras emplean su propio lenguaje para
+        intercambiar información, denominado protocolo. Cada tipo de
+        comunicación utiliza un protocolo específico. Por ejemplo, para enviar
+        mensajes de correo electrónico se utiliza SMTP (Simple Mail Transfer
+        Protocol), y para navegar por un sitio web se emplea HTTP (Hypertext
+        Transfer Protocol). Sin protocolos, los dispositivos no podrían
+        interpretar la información intercambiada, lo que generaría caos y fallos
+        en la comunicación.&nbsp;
+      </p>
+      <p>
+        <img
+          src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/How_SMTP_Works.png"
+          alt="Diagram of data being sent via SMTP."
+          title="Diagram of data being sent via SMTP."
+          data-d2l-editor-default-img-style="true"
+          style="max-width: 100%"
+        />
+      </p>
+      <p></p>
+      <p></p>
+      <p>
+        La función principal de un protocolo es garantizar que los datos estén
+        correctamente formateados. El protocolo SMTP no es en realidad tan
+        simple como su nombre podría sugerir. Lo que el usuario final percibe es
+        un correo electrónico de apariencia sencilla, pero en segundo plano
+        existen numerosos estándares que determinan cómo debe estar formateado
+        ese correo, de dónde proviene y hacia dónde se dirige. Es fundamental
+        distinguir entre tres protocolos de gran importancia: TCP (Transmission
+        Control Protocol), UDP (User Datagram Protocol) e IP (Internetwork
+        Protocol).
+      </p>
+      <p>
+        TCP proporciona un flujo confiable de bytes entre aplicaciones que se
+        ejecutan en hosts que se comunican a través de la red. TCP realiza
+        corrección de errores, de modo que si se presenta algún problema con los
+        datos durante la transmisión, estos se retransmiten para garantizar que
+        toda la información sea recibida correctamente. TCP requiere el
+        establecimiento y cierre formal de una conexión mediante el protocolo de
+        enlace de tres vías (Three-Way Handshake) antes de transferir cualquier
+        dato, por lo que se trata de un protocolo orientado a la conexión.<br /><br />
+      </p>
+      <div class="objectives-box">
+        <p>
+          | Gracias a su confiabilidad, TCP es esencial para aplicaciones donde
+          la integridad de los datos es crítica:
+        </p>
+        <div class="objectives-list">
+          <span
+            >✅ World Wide Web (HTTP/HTTPS): Al navegar por un sitio web.<br />✅
+            Correo electrónico (SMTP): Para garantizar que ninguna parte del
+            mensaje se pierda.<br />✅ Transferencia de archivos (FTP, SFTP):
+            Para asegurar la integridad de los archivos.</span
+          >
+        </div>
+      </div>
+      <div class="highlight-box">
+        <!-- Título opcional: usar p.highlight-title (no h3 fijo) -->
+        <p style="text-align: center">
+          <strong
+            ><span style="font-size: 20px"
+              >Como se puede observar en el ejemplo de los protocolos que
+              utilizan TCP, los datos recibidos deben ser perfectos.
+              &amp;nbsp;No es deseable que un correo electrónico presente
+              errores o datos corruptos.</span
+            ></strong
+          >
+        </p>
+      </div>
+      <p>
+        Estos protocolos funcionan en conjunto con TCP e IP. TCP garantiza la
+        entrega, mientras que IP transporta los datos, proporciona el
+        direccionamiento y determina la ruta a través de los distintos segmentos
+        de la red.
+      </p>
+      <p>
+        IP es responsable del direccionamiento y el enrutamiento; lleva los
+        datos hasta su destino. Es un protocolo sin conexión y no realiza
+        ninguna verificación de errores, razón por la cual trabaja en estrecha
+        colaboración con TCP.
+      </p>
+      <p>
+        El direccionamiento IPv4 ha estado en uso en la mayoría de las redes
+        desde principios de la década de 1980 y ha experimentado diversas
+        mejoras. La más significativa es IPv6, que utiliza un esquema de
+        direccionamiento diferente y ofrece una cantidad de direcciones
+        considerablemente mayor que IPv4. Esto fue absolutamente necesario dado
+        que comenzamos a agotar las direcciones IPv4 disponibles en el dominio
+        público y en Internet. El siguiente video explica los fundamentos de los
+        protocolos de Internet y la estratificación de protocolos.
+      </p>
+      <div
+        style="text-align: center; width: 100%; max-width: 100%; margin: 10px 0"
+      >
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Cintillos_Español/video.png"
+          alt="Mira el siguiente video"
+          style="
+            display: block;
+            margin: 20px auto;
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+          "
+        />
+      </div>
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <iframe
+            src="https://www.youtube.com/embed/ISrJ5ojvOgA?si=Uu32fipVGpnt4KxP&amp;wmode=opaque"
+            allowfullscreen="allowfullscreen"
+          ></iframe>
+        </div>
+        <!-- Accordion headings should be changed to respect page hierarchy -->
+        <div class="accordion">
+          <div class="accordion-item">
+            <input type="checkbox" id="acc-7" />
+            <label class="accordion-title" for="acc-7"
+              >Transcripción: Redes 101 - Los Fundamentos de los
+              Protocolos</label
+            >
+            <div class="accordion-content">
+              <p><strong>Introduction</strong></p>
+              <p>
+                (0:02) Hello my name is David Brumley. In this video we're going
+                to look at the very basics of networking. In particular we'll
+                cover Network protocols, protocol layering, and the suite of
+                Internet protocols tcpip. I'll give it really just a high level
+                overview of how they work.
+              </p>
+              <p><strong>Computer Network Links</strong></p>
+              <p>
+                (0:22) So computers are connected these days via networks. So we
+                have here a computer let's call it a b c and d, and what I've
+                represented here by these arrows is computer network links.
+              </p>
+              <p>
+                (0:36) Now the computer network links are just the ways the
+                computer can talk, and these may be via wires over wired
+                protocols like Ethernet or over the air via protocols like
+                802.11.
+              </p>
+              <p>
+                (0:52) Now the goal of these networks of course is to enable
+                these computers to talk, and in particular they're going to send
+                messages back and forth.
+              </p>
+              <p>(1:00) Now these messages are often called packets.</p>
+              <p>
+                (1:04) So a packet is really just another word for a type of
+                message that computers are passing back and forth.
+              </p>
+              <p>
+                (1:12) Now computers are going to exchange these messages but of
+                course computers only do what they're programmed to do, and the
+                way we program computers to pass messages so that the message D
+                sends is the message B can read is via protocols.
+              </p>
+              <p>
+                (1:34) Protocols specify how and when a computer should talk and
+                how it should respond when being spoken to.
+              </p>
+              <p><strong>Protocols</strong></p>
+              <p>
+                (1:43) So as an analogy let's think of protocols that humans
+                follow.
+              </p>
+              <p>
+                (1:46) For example if we have Alice and Bob here and Bob sends
+                says hi to Alice, a common protocol is well of course Alice has
+                to say hi back.
+              </p>
+              <p>
+                (2:01) And then if Bob follows up with I have a question, then
+                Alice of course is going to as part of you know the normal
+                protocol of people talking saying what is it, and then Bob would
+                of course ask his question.
+              </p>
+              <p>
+                (2:18) And so really this protocol is just a set of conventions
+                that people agree to.
+              </p>
+              <p>
+                (2:23) Now humans agree to these protocols implicitly. It's just
+                part of our social culture on how we go about talking. Computers
+                of course we have to program with specific protocols.
+              </p>
+              <p><strong>What are Protocols</strong></p>
+              <p>
+                (2:37) So in particular we're going to focus in this lecture on
+                network protocols which are just the set of rules governing the
+                exchange of data between computers.
+              </p>
+              <p>
+                (2:45) So recall that computers are going to be passing messages
+                which are also sometimes called packets.
+              </p>
+              <p>
+                (2:52) Now the protocols themselves define all aspects of this
+                communication.
+              </p>
+              <p>
+                (2:57) For example there are protocols that dictate how one
+                computer will find another computer.
+              </p>
+              <p>
+                (3:01) For example we have computers A and B here. Maybe B is
+                google.com and a is your home computer.
+              </p>
+              <p>
+                (3:12) When your home computer wants to find google.com it has
+                to look it up by name and in particular it has to look up what's
+                called IP address. This is its Internet Protocol address.
+              </p>
+              <p>
+                (3:25) This is really just how the computer would reference this
+                particular computer be as opposed to using this name google.com.
+              </p>
+              <p>
+                (3:31) There's also protocols for how data is sent back and
+                forth.
+              </p>
+              <p>
+                (3:35) For example when they want to send packets back and forth
+                there has to be a message but there may also be data that
+                includes for example the sender and the recipient.
+              </p>
+              <p>
+                (3:53) And of course for specific applications like say HTTP
+                there may be special formatting that has to apply there.
+              </p>
+              <p>
+                (3:58) For example in HTTP there's a message called get and what
+                get means is well of course get a particular web page.
+              </p>
+              <p>
+                (4:07) Now when you submit a form there's actually a separate
+                message type called post that submits the form data.
+              </p>
+              <p>
+                (4:12) And so part of the HTTP protocol defines how getting a
+                page work and how posting a form works.
+              </p>
+              <p><strong>Protocol Stacks</strong></p>
+              <p>
+                (4:22) One of the cool things about protocols is they can be
+                layered or stacked.
+              </p>
+              <p>(4:28) And I've shown here a common set of protocol stacks.</p>
+              <p>
+                (4:30) At the very bottom of the stack is what's called the
+                network layer and examples of this are things like ethernet.
+              </p>
+              <p>
+                (4:37) Now ethernet is a type of wire of course but it's also a
+                protocol and it's the type of protocol that transmits over that
+                wire.
+              </p>
+              <p>(4:49) Or for example ethernet's also used in 802.11.</p>
+              <p>
+                (4:52) Now this provides really kind of a low-level protocol
+                that specifies how packets should be formatted on the physical
+                wires of the physical medium like the wireless network.
+              </p>
+              <p>
+                (5:04) Above that lies the internet layer and in the internet
+                layer are things like the IP protocol.
+              </p>
+              <p>
+                (5:11) Which specify for example the source address and the
+                destination address of host on the internet.
+              </p>
+              <p>
+                (5:19) Above that is the host to host transport layer and two of
+                the classic protocols is well the first one is called user data
+                ground protocol which is a very simple protocol used to send
+                packets between A and B.
+              </p>
+              <p>
+                (5:35) It provides no reliability guarantees and it's really
+                kind of the simplest protocol you can think of.
+              </p>
+              <p>
+                (5:41) As well as one called TCP or this stands for transport
+                control protocol.
+              </p>
+              <p>
+                (5:46) And this is a more advanced protocol that provides for
+                example reliability and other features.
+              </p>
+              <p>
+                (5:57) Now these are really the such basic protocols in on on
+                the internet that collectively they're called TCP IP.
+              </p>
+              <p>
+                (6:06) And they're ubiquitous on the internet. Most
+                communication is going to use tcpip.
+              </p>
+              <p>
+                (6:10) And in future videos when we look at wire shark we'll
+                actually look at some of the data inside these packets.
+              </p>
+              <p>
+                (6:16) Above tcpip are specific application layer protocols.
+              </p>
+              <p>
+                (6:20) For example one would be HTTP or hypertext transfer
+                protocol, which is of course used on the web.
+              </p>
+              <p><strong>Layering</strong></p>
+              <p>
+                (6:32) Now I mentioned these protocols can be layered and the
+                way they're actually layered is in a sense it's like embedding.
+              </p>
+              <p>
+                (6:39) So we have here as I mentioned the ethernet protocol
+                which is a very low-level protocol.
+              </p>
+              <p>
+                (6:45) And it has an Ethernet header that specifies kind of like
+                at the wire level the source and destination address.
+              </p>
+              <p>(6:54) And then it has room for data.</p>
+              <p>
+                (6:57) Now in that data is where we put the next higher level
+                protocol.
+              </p>
+              <p>(7:00) So this fits inside this region right here.</p>
+              <p>
+                (7:05) So this IP message or this IP packet is the data of an
+                Ethernet packet.
+              </p>
+              <p>
+                (7:11) And of course this has an IP header and it has some IP
+                data.
+              </p>
+              <p>
+                (7:15) And as I mentioned the IP header includes things like the
+                source and destination address.
+              </p>
+              <p>
+                (7:19) And inside the data of it could be for example a UDP
+                header.
+              </p>
+              <p>
+                (7:22) And on top of UDP is an application layer message for
+                example DNS.
+              </p>
+              <p><strong>HTTP</strong></p>
+              <p>
+                (7:31) Now here's just another example of layered protocols and
+                this one I've given is for HTTP.
+              </p>
+              <p>
+                (7:35) And I'm going to go at it instead of from the bottom up
+                I'm going to go from the top down.
+              </p>
+              <p>
+                (7:42) Now in HTTP there could be a very long message that you
+                want to send.
+              </p>
+              <p>(7:45) For example this could be an entire web page.</p>
+              <p>(7:47) Which may be kilobytes in size.</p>
+              <p>
+                (7:52) Now this web page gets chunked up into individual
+                packets.
+              </p>
+              <p>
+                (7:59) And each packet each chunk of data gets sent in a packet.
+              </p>
+              <p>
+                (8:10) And each one of these packets for example in HTTP is sent
+                over the TCP protocol.
+              </p>
+              <p>
+                (8:17) And the TCP protocol is layered on top of the IP
+                protocol.
+              </p>
+              <p>
+                (8:20) And the IP protocol is layered on top of the ethernet
+                protocol.
+              </p>
+              <p><strong>Summary</strong></p>
+              <p>
+                (8:27) So in this lecture we covered a couple different things.
+              </p>
+              <p>
+                (8:29) We talked about Network protocols and network Protocols
+                are really just a convention for computers to communicate
+                information and data.
+              </p>
+              <p>
+                (8:37) We talked about protocol layering how protocols can lie
+                on top of one another.
+              </p>
+              <p>(8:42) And I described the tcpip suite and gave examples.</p>
+              <p>
+                (8:45) For example I talked about DNS going on top of UDP going
+                on top of Ip going on top of ethernet.
+              </p>
+              <p>
+                (8:59) And I talked about HTTP being on top of TCP being on top
+                of Ip being on top of ethernet.
+              </p>
+              <p>(9:09) So that's a really quick introduction.</p>
+              <p>
+                (9:11) You should go read of course other resources to get in
+                more indepth view.
+              </p>
+              <p>
+                (9:15) But I hope this give you a high level idea of how things
+                work.
+              </p>
+              <p>(9:17) Until next time always keep hacking.</p>
+              <p>
+                (Transcript provided by YouTube. Organized by Copilot, 2026)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Template JavaScript -->
+    <hr />
+    <div>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+        width="110"
+        style="float: right"
+      />
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>

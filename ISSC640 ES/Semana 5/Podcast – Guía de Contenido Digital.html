@@ -1,0 +1,891 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 400px; /* altura visible del acordeón */
+        padding: 20px;
+        overflow-y: auto; /* SCROLL */
+      }
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 5</span><br /><span
+          style="font-size: 28px"
+          >Dispositivos de Red e Interconexión</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente Podcast"
+        class="banner-image"
+        width="665"
+        height="59"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_adhxw8uc&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_mbl1bc2v"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W5_ISSC640_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content">
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{8}"
+                paraid="3"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Welcome back to ISSC640. This is Week 5, and the&nbsp;topic
+                  is&nbsp;Network Devices and Internetworking. In Week 4, you
+                  looked at network media and connectivity and learned that
+                  physical and wireless conditions shape everything above them.
+                  Week 5 adds the next layer of foundation: the devices that
+                  make networks work. When you understand what each device does,
+                  you can diagnose problems faster&nbsp;and you can&nbsp;explain
+                  network behavior with clarity.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{12}"
+                paraid="5"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >A network is not one thing. It is a system of components that
+                  work together: access points, switches, routers, and security
+                  devices. Each&nbsp;component&nbsp;has a job. Each job is
+                  linked to a specific type of decision. When something fails,
+                  your goal is to&nbsp;find&nbsp;which decision is
+                  failing.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{14}"
+                paraid="6"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >During Week 5, you will focus&nbsp;in&nbsp;three concepts.
+                  First, you will learn the roles of common network devices and
+                  what problems each one solves. Second, you will understand
+                  internetworking, which is how separate networks are connected
+                  so traffic can move across boundaries. Third, you will
+                  practice a troubleshooting mindset that maps symptoms to
+                  device roles, so you can focus on the
+                  correct&nbsp;component&nbsp;instead of guessing.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{16}"
+                paraid="7"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >By the end of Week 5, you should be able to explain the
+                  difference between switching and routing, describe how
+                  wireless access integrates into a LAN,
+                  and&nbsp;identify&nbsp;why boundary devices are common sources
+                  of widespread outages.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{18}"
+                paraid="8"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Let us begin with the idea of a device as a role. A device
+                  name is less important than the function. If you memorize
+                  device terms without understanding what they do,
+                  troubleshooting will feel like guesswork. If you understand
+                  roles, troubleshooting becomes a set of logical
+                  tests.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{20}"
+                paraid="9"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto">A&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >wireless access point</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;provides wireless connectivity to a local network. It
+                  connects wireless clients to the LAN, translating radio
+                  communication into wired network access. The access point is
+                  usually not responsible for routing traffic to the internet,
+                  but it&nbsp;is responsible for&nbsp;whether wireless clients
+                  can connect reliably and whether they can reach the LAN. That
+                  is why a common symptom pattern is: wired
+                  devices&nbsp;work,&nbsp;wireless devices do not. When you see
+                  that pattern, you focus on wireless conditions and the access
+                  point role.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{22}"
+                paraid="10"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto">A&nbsp;</span
+                ><span data-contrast="auto">switch</span
+                ><span data-contrast="auto"
+                  >&nbsp;connects devices within a local network segment.
+                  Switches forward traffic inside a LAN based on local
+                  addressing. In practical terms, a switch enables many devices
+                  to communicate on the same local network. If a switch fails,
+                  you often see local connectivity failures: devices cannot
+                  reach each other, or a large set of devices in one area loses
+                  access. Switch issues can be caused by hardware failure, power
+                  loss, misconfiguration, or physical link problems, which you
+                  learned about in Week 4.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{24}"
+                paraid="11"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto">A&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto">router</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;connects&nbsp;different networks. A router decides
+                  where to send traffic next when the destination is not on the
+                  local network. This is the core of&nbsp;internetworking. If
+                  you want to reach an external site, a different subnet, or a
+                  cloud service, you need&nbsp;routing. This is why a common
+                  symptom pattern is: internal access works, but external access
+                  fails. When internal works, your
+                  LAN&nbsp;switching&nbsp;is&nbsp;likely functional. When
+                  external fails,&nbsp;your&nbsp;routing or boundary
+                  configuration may be the problem.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{26}"
+                paraid="12"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto">A&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto">firewall</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;filters traffic based on security rules. Firewalls
+                  often sit at boundaries, controlling what enters and leaves a
+                  network. Firewalls can block traffic by destination, by port,
+                  by protocol, or by other conditions. Because firewalls can
+                  be&nbsp;very specific, they often create selective failures.
+                  For example, web browsing might work, but one application
+                  fails because a specific port is blocked. When you see
+                  selective failure, you consider filtering rules, ports, and
+                  the service requirements from Week 3.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{28}"
+                paraid="13"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now,&nbsp;internetworking. Internetworking is the process of
+                  connecting multiple&nbsp;networks&nbsp;so they function
+                  together. Inside a building, you have local switching and
+                  wireless access. When traffic needs to reach another network,
+                  such as the internet or another office, it crosses a boundary
+                  device, usually a router or&nbsp;firewall. That boundary
+                  device uses routing rules and security policies
+                  to&nbsp;determine&nbsp;whether traffic can pass and where it
+                  should go.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{30}"
+                paraid="14"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Think of internetworking as a path. A user device sends
+                  traffic to the local network. The local network forwards it to
+                  a boundary device. The boundary device&nbsp;forwards&nbsp;it
+                  to an upstream network, often a provider. Eventually, the
+                  traffic reaches the destination service. The return traffic
+                  follows a similar path in reverse. If any device on that path
+                  makes the wrong decision, communication fails.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{32}"
+                paraid="15"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now let us connect this to troubleshooting. Troubleshooting
+                  in Week 5 is often about&nbsp;identifying&nbsp;the
+                  boundary.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{34}"
+                paraid="16"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >If a user cannot access anything at all, you start with
+                  connectivity and media, as Week 4 taught you. If the user can
+                  access the LAN but not the internet, you suspect the boundary
+                  device. If only wireless fails, you suspect wireless access.
+                  If only one application fails, you suspect a port
+                  or&nbsp;firewall&nbsp;rule. These&nbsp;symptom
+                  patterns&nbsp;are clues. They are not proofs, but they guide
+                  your first tests.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{36}"
+                paraid="17"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Let us take the scenario: internal file shares work, but no
+                  external websites load. What does that&nbsp;mean.&nbsp;It
+                  suggests that local connectivity is intact. The switch
+                  is&nbsp;likely forwarding&nbsp;local traffic. The wireless
+                  access point might be working if wireless clients can still
+                  access internal resources. That points to the boundary device.
+                  The boundary device might have a missing default route,
+                  a&nbsp;down upstream&nbsp;interface, a
+                  DNS&nbsp;forwarding&nbsp;problem, or&nbsp;a
+                  firewall&nbsp;policy issue that blocks outbound
+                  traffic.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{38}"
+                paraid="18"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >A missing default route is a classic example. If a router
+                  does not know where to send traffic that is not local, it
+                  cannot&nbsp;forward&nbsp;it. So even with stable links, the
+                  internet appears “down.” This is why configuration control and
+                  monitoring matter.&nbsp;A small change&nbsp;can have&nbsp;a
+                  large impact.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{40}"
+                paraid="19"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now consider another scenario: wireless users cannot connect
+                  or cannot get stable access, but wired devices are fine. That
+                  points to access points, wireless interference, and wireless
+                  configuration. In that case, changing router settings would
+                  not be a smart first step. You would start with
+                  wireless&nbsp;checks:&nbsp;is the access point online, is the
+                  SSID present, is authentication working, is there congestion,
+                  and is signal coverage adequate.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{42}"
+                paraid="20"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now consider a selective scenario: web browsing works, but a
+                  specific application fails. That often points to filtering,
+                  ports, or service-side issues. You might look
+                  at&nbsp;firewall&nbsp;rule changes, port reachability, and
+                  application requirements. This connects back to the ports and
+                  OSI model from Week 3.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{44}"
+                paraid="21"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Week 5 also emphasizes that network devices make forwarding
+                  decisions. Switches forward based on local addressing. Routers
+                  forward based on IP routing rules. Firewalls filter based on
+                  policies. Access points mediate wireless access. When you see
+                  a failure,&nbsp;ask:&nbsp;which decision is failing. That
+                  question transforms troubleshooting from guesswork into
+                  analysis.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{47}"
+                paraid="22"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now, a practical note: many organizations combine functions
+                  in modern devices. A single device can be a router and&nbsp;a
+                  firewall. A wireless router in a home might combine switching,
+                  routing, wireless access, and security filtering. That does
+                  not change the core roles. It simply means you must think
+                  about which function is involved.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{49}"
+                paraid="23"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Week 5 is also a reminder about documentation and change
+                  management. Many widespread outages are not mysterious. They
+                  are caused by configuration changes. If you
+                  change&nbsp;firewall&nbsp;rules, you can break an application.
+                  If you change routing, you can break external access. If you
+                  change switch configurations, you can isolate users. Strong
+                  teams manage this with backups, approval processes, and the
+                  ability to roll back quickly.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{51}"
+                paraid="24"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Finally, Week 5 connects directly to Week 6, which will focus
+                  on internetworking in more detail through IPv4 and IPv6
+                  addressing. Routing depends on addressing. If addressing is
+                  incorrect or inconsistent, device decisions will
+                  fail.&nbsp;So&nbsp;Week 5 gives you the device roles, and Week
+                  6 gives you the addressing logic that devices use
+                  to&nbsp;connect&nbsp;networks.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{53}"
+                paraid="25"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >So&nbsp;the Week 5 takeaway is this: device roles define
+                  responsibilities, and responsibilities guide troubleshooting.
+                  When you map the device path and&nbsp;identify&nbsp;the
+                  boundary, you often find the issue faster.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{55}"
+                paraid="26"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Let us close with reflection questions. Consider completing
+                  the following optional activity.&nbsp;&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{57}"
+                paraid="27"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Choose a common activity, such as opening a cloud document.
+                  List the devices involved from the user to the service: access
+                  point or wired connection, switch, router,&nbsp;firewall,
+                  provider link, and destination service.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{59}"
+                paraid="28"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now, for each device, write one failure that could occur. For
+                  example, an access point could have congestion, a switch port
+                  could have errors, a router could have a missing default
+                  route, and&nbsp;a firewall&nbsp;could block a required
+                  port.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{61}"
+                paraid="29"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Finally, consider a symptom pattern: internal works but
+                  external fails. Which device role would you investigate first,
+                  and what would you check?</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{63}"
+                paraid="30"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >If you can answer those questions, you are thinking in Week 5
+                  terms: device roles, internetwork paths, and boundary-focused
+                  troubleshooting.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{2ef74f7a-caac-4f71-ab4f-1375f9c399d9}{65}"
+                paraid="31"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Thank you for listening to the Week 5 podcast for ISSC640.
+                  This week focused on network devices and internetworking and
+                  how device roles guide troubleshooting and communication. In
+                  Week 6, you will deepen internetworking by learning IPv4 and
+                  IPv6 addressing and how correct addressing supports routing
+                  and connectivity across networks.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/Week_5/PRODUCCION%20W5/W5_ISSC640_Digital_content_guide_podcast/W5_ISSC640_Digital_content_guide_podcast.MP3"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          width="110"
+        />
+      </p>
+    </div>
+  </body>
+</html>

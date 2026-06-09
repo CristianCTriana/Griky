@@ -1,0 +1,924 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 400px; /* altura visible del acordeón */
+        padding: 20px;
+        overflow-y: auto; /* SCROLL */
+      }
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 7</span><br /><span
+          style="font-size: 28px"
+          >Servicios en la Nube</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente Podcast"
+        class="banner-image"
+        width="665"
+        height="59"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_5hbsrzhb&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_if5lrisl"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W7_ISSC640_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content">
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{8}"
+                paraid="3"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Welcome back to ISSC640. This is Week 7, and the topic is
+                  Cloud Services. In Week 6, you focused on IP addressing and
+                  learned that addressing and
+                  gateways&nbsp;determine&nbsp;whether traffic can be routed.
+                  Week 7 brings all the pieces together. Cloud services sit
+                  outside your local network, which means access depends on the
+                  entire path: local connectivity, boundary devices, WAN
+                  performance, DNS, and identity systems.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{10}"
+                paraid="4"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"></span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{12}"
+                paraid="5"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Cloud services are now central to modern work. Email, file
+                  storage, collaboration, identity systems, and many business
+                  applications are delivered from cloud environments. That
+                  convenience comes with a key operational reality: your users
+                  are now highly dependent on external services and the network
+                  path that reaches them.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{14}"
+                paraid="6"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >To help you achieve your Week 7 goals, we will focus on three
+                  concepts this week. First, you will understand what cloud
+                  services are, at a practical level, and how organizations use
+                  them. Second, you will understand the shared responsibility
+                  idea, meaning what the provider handles and what your
+                  organization still must handle. Third, you will practice
+                  troubleshooting cloud issues by separating the path into three
+                  categories: local environment, provider connectivity, and
+                  service-side availability.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{16}"
+                paraid="7"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >By the end of Week 7, you should be able to hear “the cloud
+                  is down” and respond with a structured plan: what to test,
+                  what evidence to collect, and how to communicate findings
+                  clearly.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{18}"
+                paraid="8"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Let us start with what cloud services mean in practical
+                  terms. A cloud service is a resource delivered over a network
+                  rather than hosted locally. That resource might be an
+                  application, storage, identity, or infrastructure. The cloud
+                  is not one place. It is a set of distributed systems managed
+                  by providers.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{20}"
+                paraid="9"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Common cloud service categories include hosted applications,
+                  cloud storage, identity services, and infrastructure
+                  resources. Many organizations use cloud email, cloud file
+                  sharing, cloud collaboration tools, and cloud-hosted business
+                  applications. Some also use cloud infrastructure to run
+                  servers and platforms.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{22}"
+                paraid="10"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now, here is the key Week 7 idea: cloud adoption shifts
+                  responsibility rather than removing it. The provider manages
+                  parts of the service infrastructure, but your organization
+                  still manages the ability to reach the service and the ability
+                  to authenticate and authorize users. If your internet link is
+                  saturated, users will blame the cloud. If your DNS fails,
+                  users will blame the cloud. If your identity system is
+                  misconfigured, users will blame the cloud. If&nbsp;a
+                  firewall&nbsp;blocks a required port, users will blame the
+                  cloud. This is why support teams need an end-to-end
+                  troubleshooting approach.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{24}"
+                paraid="11"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >A useful way to think about cloud access is a simple path. A
+                  user device connects through Wi-Fi or wired LAN. Traffic
+                  passes through switches and reaches a boundary device such as
+                  a router or&nbsp;firewall. It then crosses an ISP or WAN link.
+                  It then reaches the cloud provider network. Finally, it
+                  reaches the service itself. Along the way, name resolution and
+                  identity services often play&nbsp;a central role.</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{26}"
+                paraid="12"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Now let us talk about the dependencies you should always
+                  consider.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{28}"
+                paraid="13"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto">First is&nbsp;</span
+                ><span data-contrast="auto">local connectivity</span
+                ><span data-contrast="auto"
+                  >, which includes wired media, wireless conditions, and basic
+                  access to the local gateway. If the local connection is
+                  unstable, cloud services will appear unstable.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{30}"
+                paraid="14"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto">Second is&nbsp;</span
+                ><span data-contrast="auto">boundary devices</span
+                ><span data-contrast="auto"
+                  >, such as routers and firewalls. These devices route traffic
+                  outward and apply filtering policies. Misconfiguration here
+                  can block specific services or all external
+                  access.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{32}"
+                paraid="15"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto">Third is&nbsp;</span
+                ><span data-contrast="auto"
+                  >WAN performance and ISP connectivity</span
+                ><span data-contrast="auto"
+                  >. Cloud services depend on internet performance. Bandwidth
+                  saturation, high latency, jitter, and packet loss can degrade
+                  cloud applications, especially real-time services like
+                  video.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{34}"
+                paraid="16"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Fourth is&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >DNS and identity</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >. DNS&nbsp;is required to&nbsp;translate service names into
+                  destination addresses. Identity is&nbsp;required&nbsp;for
+                  authentication and authorization. A cloud email service might
+                  be fully operational, but if DNS fails or authentication
+                  fails, users cannot access it.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{36}"
+                paraid="17"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now, the most practical skill in Week 7 is separating the
+                  problem into categories. When users&nbsp;say&nbsp;“the cloud
+                  is down,” you ask: is it local, is it transit, or is it
+                  service?</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{38}"
+                paraid="18"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >A quick way to test this is comparison.&nbsp;If users on a
+                  different network can access the service, then the service is
+                  likely available, and the issue is local or transit.&nbsp;If
+                  users everywhere cannot access the service, and
+                  the&nbsp;provider&nbsp;status&nbsp;indicates&nbsp;issues, then
+                  it might be&nbsp;service-side. If only one site has issues,
+                  suspect the WAN link, local DNS, or boundary devices at that
+                  site.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{40}"
+                paraid="19"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Let us walk through a realistic scenario. Suppose cloud email
+                  is unavailable on the corporate network. Users see
+                  authentication prompts, or the login page does not load. A few
+                  users on a hotspot can access email. That tells you a lot. It
+                  suggests the cloud service is&nbsp;reachable&nbsp;and the user
+                  accounts can authenticate, at least from another network. So
+                  now you focus on the corporate path.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{42}"
+                paraid="20"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >You might test DNS resolution for the service domain on the
+                  corporate network. If DNS fails or resolves incorrectly,
+                  clients will not reach the correct service endpoints. If DNS
+                  is correct, you might test whether
+                  the&nbsp;firewall&nbsp;blocks required connections. If
+                  filtering is correct, you might test WAN reachability. If WAN
+                  is healthy, you might test identity integration and
+                  authentication paths.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{44}"
+                paraid="21"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Notice the pattern. You are not guessing. You are isolating
+                  dependencies.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{47}"
+                paraid="22"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now consider another scenario. A cloud file service feels
+                  slow during peak hours, and the branch office reports the
+                  worst experience. That suggests a bandwidth and congestion
+                  issue at the branch. In Week 2, you learned that WAN links
+                  can&nbsp;saturate. In Week 6, you learned that addressing and
+                  gateways must be correct. In Week 7, you combine those ideas.
+                  Cloud performance differs by site because the path differs by
+                  site. The fix might be a WAN upgrade, traffic prioritization,
+                  or scheduling changes, not a change to the cloud service
+                  itself.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{49}"
+                paraid="23"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now consider a selective failure scenario. One cloud
+                  application fails after&nbsp;a firewall&nbsp;policy update,
+                  but other cloud apps still work. That is a clue. It suggests
+                  that the&nbsp;firewall&nbsp;change blocked a specific
+                  destination, protocol, or port needed by that application. In
+                  that case, blaming the cloud provider will waste time. Your
+                  best move is to examine what changed and test reachability to
+                  the service endpoints.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{51}"
+                paraid="24"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Week 7 also emphasizes communication. During cloud incidents,
+                  leaders often want a fast answer. Your job is to provide a
+                  clear explanation that respects the
+                  shared&nbsp;responsibility&nbsp;reality. You can say, “The
+                  cloud provider appears available, but internal DNS resolution
+                  is failing,” or “The branch WAN link is saturated during peak
+                  hours,” or “A firewall policy is blocking the required service
+                  port.” Those statements are specific and
+                  actionable.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{53}"
+                paraid="25"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Cloud services also require monitoring strategies. Because
+                  services are external, you need monitoring that reflects the
+                  end-to-end path. That can include connectivity checks, DNS
+                  resolution checks for critical
+                  domains,&nbsp;authentication&nbsp;health checks, and WAN
+                  performance monitoring. The goal is early detection and faster
+                  isolation. If you can detect that DNS resolution is failing
+                  before tickets flood in, you can reduce downtime and user
+                  frustration.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{55}"
+                paraid="26"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Finally, Week 7 prepares you for Week 8, which focuses on
+                  network administration and support. Cloud services change
+                  support work because you must manage vendor relationships,
+                  escalate effectively, document dependencies, and coordinate
+                  communication during outages. Week 8 will take the technical
+                  skills you built and connect them to operational practice:
+                  monitoring, ticket handling, documentation, escalation, and
+                  user support.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{57}"
+                paraid="27"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >So&nbsp;the Week 7 takeaway is this: cloud services increase
+                  dependency on the network path and on identity and DNS.
+                  Troubleshooting cloud issues requires separating local,
+                  transit, and service causes. When you map the path and test
+                  dependencies, you can diagnose faster and communicate more
+                  responsibly.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{59}"
+                paraid="28"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Let us close&nbsp;with&nbsp; an&nbsp;optional
+                  activity.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{61}"
+                paraid="29"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Pick one cloud service, such as email or file storage. Draw
+                  the path from the user to the service. Label at least four
+                  dependencies: local Wi-Fi or LAN, boundary device, ISP or WAN
+                  link, and DNS or identity.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{63}"
+                paraid="30"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Now, choose one dependency and write a quick test you would
+                  use. For example, test DNS resolution for the service domain,
+                  test reachability to the gateway, or compare access from
+                  another network.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{65}"
+                paraid="31"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Finally, write one sentence you would use to brief leadership
+                  during an incident, separating what you know from what you are
+                  still testing.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{67}"
+                paraid="32"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >If you can answer those questions, you have the Week 7 skill:
+                  cloud troubleshooting as end-to-end path analysis, not
+                  guesswork.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{4d376a8e-ab59-45cb-a5f8-2efa732cda79}{69}"
+                paraid="33"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Thank you for listening to the Week 7 podcast for ISSC640.
+                  This week focused on cloud services and how cloud access
+                  depends on local connectivity, boundary devices, WAN
+                  performance, DNS, and identity systems. In Week 8, you will
+                  focus on network administration and support and learn how
+                  monitoring, documentation, escalation, and
+                  communication&nbsp;keep&nbsp;networks reliable in real
+                  organizations.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/Week_7/PRODUCCION%20W7/W7_ISSC640_Digital_content_guide_podcast/W7_ISSC640_Digital_content_guide_podcast.MP3"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          width="110"
+        />
+      </p>
+    </div>
+  </body>
+</html>

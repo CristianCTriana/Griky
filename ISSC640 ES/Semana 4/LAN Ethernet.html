@@ -1,0 +1,1192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/StylesComponents.css"
+    />
+    <style>
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBanner"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Semana 4</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Medios de Red y Conectividad&nbsp;</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>LAN Ethernet&nbsp;</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        El protocolo Ethernet opera en la Capa de Enlace de Datos (Capa 2) y la
+        Capa Física (Capa 1) del modelo OSI. No solo especifica cómo se formatea
+        una "trama" en la capa de Enlace de Datos, sino que también establece
+        especificaciones sobre el cableado LAN, que muchas personas denominan
+        "Cable Ethernet." El Cable Ethernet recibe otros nombres como "CAT 7" o
+        "Par Trenzado."
+      </p>
+      <div class="tabs-container">
+        <input type="radio" name="tabs-1" id="tab1" checked="checked" />
+        <input type="radio" name="tabs-1" id="tab2" />
+        <div class="tabs">
+          <label for="tab1">Capa de Enlace de Datos</label>&nbsp;<label
+            for="tab2"
+            >Capa Física</label
+          >
+        </div>
+        <div class="content content-1">
+          <p>
+            <strong>Capa de Enlace de Datos: </strong>Ethernet encapsula los
+            datos que recibe de la capa superior, es decir, la Capa de Red (Capa
+            3), y los divide en pequeños fragmentos llamados tramas. Cada trama
+            contiene las direcciones MAC de origen y destino (identificadores
+            únicos de hardware), así como datos de verificación de errores
+            (puedes ver una trama Ethernet a continuación). Una dirección MAC es
+            el número de serie permanente o "dirección física" de un dispositivo
+            de red, utilizada para entregar paquetes de datos (o tramas) al
+            dispositivo de destino. Puedes verificar la dirección MAC de tu PC
+            con Windows mediante el siguiente comando: 'ipconfig /all', y podrás
+            ver tu Dirección Física (Dirección MAC).
+          </p>
+          <div class="table-responsive">
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp;
+            <div class="table-wrapper">
+              <table class="table-apus table" style="width: 97.2027%">
+                <caption>
+                  Trama Ethernet
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col" style="width: 15.7484%; text-align: center">
+                      <p>Campo</p>
+                    </th>
+                    <th scope="col" style="width: 32.1475%; text-align: center">
+                      <p>Valor Hexadecimal</p>
+                    </th>
+                    <th scope="col" style="width: 27.5922%; text-align: center">
+                      <p>Valor Binario&nbsp;</p>
+                    </th>
+                    <th scope="col" style="width: 24.5987%; text-align: center">
+                      <p>Descripción</p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="width: 15.7484%">
+                      <span style="font-size: 16px">Preámbulo y SFD</span>
+                    </td>
+                    <td style="width: 32.1475%">
+                      <span style="font-size: 16px"
+                        >07:10:10:10:10:10:10:10:D5</span
+                      >
+                    </td>
+                    <td style="width: 27.5922%">
+                      <span style="font-size: 16px"
+                        >(Bytes de sincronización)&nbsp;</span
+                      >
+                    </td>
+                    <td style="width: 24.5987%">
+                      <span style="font-size: 16px"
+                        >Enviado por la NIC; raramente se muestra en detalle en
+                        los registros</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 15.7484%">
+                      <span style="font-size: 16px">MAC de Destino</span>
+                    </td>
+                    <td style="width: 32.1475%">
+                      <span style="font-size: 16px">00:1A:2B:3C:4D:5E</span>
+                    </td>
+                    <td style="width: 27.5922%">
+                      <span style="font-size: 16px">00000000:00011010:...</span>
+                    </td>
+                    <td style="width: 24.5987%">
+                      <span style="font-size: 16px"
+                        >La dirección MAC del dispositivo al que se dirige la
+                        trama (por ejemplo, tu router).</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 15.7484%">
+                      <span style="font-size: 16px">MAC de Origen</span>
+                    </td>
+                    <td style="width: 32.1475%">
+                      <span style="font-size: 16px"
+                        >00:0C:29:A1:B2:C3&nbsp;</span
+                      >
+                    </td>
+                    <td style="width: 27.5922%">
+                      <span style="font-size: 16px">00000000:00001100:...</span>
+                    </td>
+                    <td style="width: 24.5987%">
+                      <span style="font-size: 16px"
+                        >La dirección MAC del dispositivo que envía la trama
+                        (por ejemplo, la NIC de tu laptop).</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 15.7484%">
+                      <span style="font-size: 16px">Tipo / Longitud</span>
+                    </td>
+                    <td style="width: 32.1475%">
+                      <span style="font-size: 16px">08:00</span>
+                    </td>
+                    <td style="width: 27.5922%">
+                      <span style="font-size: 16px">00001000:00000000</span>
+                    </td>
+                    <td style="width: 24.5987%">
+                      <span style="font-size: 16px"
+                        >Este valor (0800 en hexadecimal) indica que la sección
+                        de Datos/Carga útil contiene un paquete
+                        IPv4.&nbsp;</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 15.7484%">
+                      <span style="font-size: 16px">Datos / Carga útil</span>
+                    </td>
+                    <td style="width: 32.1475%">
+                      <span style="font-size: 16px"
+                        >45:00:00:2E:37:34:00:00...</span
+                      >
+                    </td>
+                    <td style="width: 27.5922%">
+                      <span style="font-size: 16px">(Variable)</span>
+                    </td>
+                    <td style="width: 24.5987%">
+                      <span style="font-size: 16px"
+                        >El paquete IP completo (incluyendo su propio encabezado
+                        y los datos reales del usuario) se coloca aquí.</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 15.7484%">
+                      <span style="font-size: 16px"
+                        >Secuencia de Verificación de Trama (FCS)</span
+                      >
+                    </td>
+                    <td style="width: 32.1475%">
+                      <span style="font-size: 16px">A3:4F:9C:22</span>
+                    </td>
+                    <td style="width: 27.5922%">
+                      <span style="font-size: 16px">(Variable)</span>
+                    </td>
+                    <td style="width: 24.5987%">
+                      <span style="font-size: 16px"
+                        >Se utiliza para verificar errores en la
+                        transmisión.</span
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="content content-2">
+          <p>
+            <strong>Capa Física: </strong>Ethernet especifica los medios físicos
+            (como el par trenzado, también conocido como cable Ethernet) y los
+            conectores (como el RJ45) utilizados para transmitir las señales
+            eléctricas u ópticas que representan los datos.
+          </p>
+          <ul>
+            <li>
+              <strong>Los cables de Par Trenzado</strong> se clasifican (Cat)
+              según las especificaciones de rendimiento para la frecuencia
+              máxima (ancho de banda) y la tasa de datos soportada (velocidad),
+              como se muestra en la tabla a continuación. La distancia máxima
+              para la mayoría es de 100 metros (328 pies). Estos cables se
+              utilizan normalmente en LAN debido a sus limitaciones en la
+              longitud del cable y su menor susceptibilidad al entorno exterior.
+              El núcleo de estos cables está hecho de cobre y transporta señales
+              eléctricas. Los cables de Par Trenzado (también conocidos como
+              cable Ethernet) utilizan cuatro pares de cables. Cada par está
+              trenzado para reducir las señales de ruido electromagnético.&nbsp;
+            </li>
+          </ul>
+          <p>
+            <img
+              src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/Week_0_Instructors/Picture2.jpg"
+              alt="Close-up image depicting components that make up a fiber optic cable."
+              title="Close-up image depicting components that make up a fiber optic cable."
+              data-d2l-editor-default-img-style="true"
+              style="
+                max-width: 100%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+              "
+              width="947"
+              height="947"
+            />
+          </p>
+          <div class="table-responsive">
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp;
+            <div class="table-wrapper">
+              <table
+                class="table-apus table"
+                style="width: 99.9096%; border-collapse: collapse"
+                border="1"
+              >
+                <caption>
+                  <strong>Cables de Par Trenzado</strong>
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col" style="width: 18.3822%; text-align: center">
+                      <p><strong>Categoría y Tasa de Datos Máxima</strong></p>
+                    </th>
+                    <th scope="col" style="width: 20.2064%; text-align: center">
+                      <p><strong>Ancho de Banda Máximo</strong></p>
+                    </th>
+                    <th scope="col" style="width: 22.5919%; text-align: center">
+                      <p><strong>Distancia Máxima (a Tasa Máxima)</strong></p>
+                    </th>
+                    <th scope="col" style="width: 18.2419%; text-align: center">
+                      <p><strong>Estándar Ethernet Común</strong></p>
+                    </th>
+                    <th scope="col" style="width: 20.6274%; text-align: center">
+                      <p style="text-align: center"><strong>Notas</strong></p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="width: 18.3822%">
+                      <p>
+                        <strong
+                          ><span style="font-size: 16px">Cat 5e</span></strong
+                        >
+                      </p>
+                      <p>
+                        <span style="font-size: 16px">1 Gbps (1000 Mbps)</span>
+                      </p>
+                    </td>
+                    <td style="width: 20.2064%">
+                      <span style="font-size: 16px">100 MHz</span>
+                    </td>
+                    <td style="width: 22.5919%">
+                      <span style="font-size: 16px">100 m</span>
+                    </td>
+                    <td style="width: 18.2419%">
+                      <span style="font-size: 16px"
+                        >1000BASE-T (Gigabit Ethernet)</span
+                      >
+                    </td>
+                    <td style="width: 20.6274%">
+                      <span style="font-size: 16px"
+                        >El más utilizado para redes modernas básicas.</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 18.3822%">
+                      <p>
+                        <strong
+                          ><span style="font-size: 16px">Cat 6</span></strong
+                        >
+                      </p>
+                      <p>
+                        <span style="font-size: 16px">1 Gbps (1000 Mbps)</span>
+                      </p>
+                    </td>
+                    <td style="width: 20.2064%">
+                      <span style="font-size: 16px">250 MHz</span>
+                    </td>
+                    <td style="width: 22.5919%">
+                      <span style="font-size: 16px">100 m</span>
+                    </td>
+                    <td style="width: 18.2419%">
+                      <span style="font-size: 16px">1000BASE-T</span>
+                    </td>
+                    <td style="width: 20.6274%">
+                      <span style="font-size: 16px"
+                        >Puede soportar 10 Gbps en distancias más cortas (hasta
+                        55 m).</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 18.3822%">
+                      <p>
+                        <strong
+                          ><span style="font-size: 16px">Cat 6A</span></strong
+                        >
+                      </p>
+                      <p>
+                        <span style="font-size: 16px"
+                          >10 Gbps (10,000 Mbps)</span
+                        >
+                      </p>
+                    </td>
+                    <td style="width: 20.2064%">
+                      <span style="font-size: 16px">500 MHz</span>
+                    </td>
+                    <td style="width: 22.5919%">
+                      <span style="font-size: 16px">100 m</span>
+                    </td>
+                    <td style="width: 18.2419%">
+                      <span style="font-size: 16px">10GBASE-T</span>
+                    </td>
+                    <td style="width: 20.6274%">
+                      <span style="font-size: 16px"
+                        >Cat 6 "Aumentado"; soporta 10 Gbps en los 100 m
+                        completos.&nbsp;</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 18.3822%">
+                      <p>
+                        <strong
+                          ><span style="font-size: 16px">Cat 7</span></strong
+                        >
+                      </p>
+                      <p><span style="font-size: 16px">10 Gbps</span></p>
+                    </td>
+                    <td style="width: 20.2064%">
+                      <span style="font-size: 16px">600 MHz</span>
+                    </td>
+                    <td style="width: 22.5919%">
+                      <span style="font-size: 16px">100 m</span>
+                    </td>
+                    <td style="width: 18.2419%">
+                      <span style="font-size: 16px">10GBASE-T</span>
+                    </td>
+                    <td style="width: 20.6274%">
+                      <span style="font-size: 16px"
+                        >Requiere un blindaje más complejo; no está reconocido
+                        oficialmente por la TIA/EIA.</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 18.3822%">
+                      <p>
+                        <strong
+                          ><span style="font-size: 16px">Cat 8</span></strong
+                        >
+                      </p>
+                      <p><span style="font-size: 16px">25/40 Gbps</span></p>
+                    </td>
+                    <td style="width: 20.2064%">
+                      <span style="font-size: 16px">2000 MHz (2 GHz)</span>
+                    </td>
+                    <td style="width: 22.5919%">
+                      <span style="font-size: 16px">30 m</span>
+                    </td>
+                    <td style="width: 18.2419%">
+                      <span style="font-size: 16px">25GBASE-T, 40GBASE-T</span>
+                    </td>
+                    <td style="width: 20.6274%">
+                      <span style="font-size: 16px"
+                        >Se utiliza principalmente en centros de datos para
+                        enlaces de corta distancia entre servidores y
+                        switches.&nbsp;</span
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <p>
+        El siguiente video te guía a través de los pasos básicos para instalar
+        el cableado, los conectores y el panel de parcheo de una red Ethernet
+        para una pequeña oficina. También se explica el proceso de prueba, que
+        es fundamental para garantizar que las computadoras estén conectadas
+        correctamente.
+      </p>
+      <div
+        style="text-align: center; width: 100%; max-width: 100%; margin: 10px 0"
+      >
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Cintillos_Español/video.png"
+          alt="Mira el siguiente video"
+          style="
+            display: block;
+            margin: 20px auto;
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+          "
+        />
+      </div>
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <iframe
+            src="https://www.youtube.com/embed/szU7-MGaeiw?si=TMhvSFkKtlgLyOv9&amp;wmode=opaque"
+            allowfullscreen="allowfullscreen"
+          ></iframe>
+        </div>
+        <!-- Accordion headings should be changed to respect page hierarchy -->
+        <div class="accordion">
+          <div class="accordion-item">
+            <input type="checkbox" id="acc-11" />
+            <label class="accordion-title" for="acc-11"
+              >Transcripción: Cableado de una red de oficina</label
+            >
+            <div class="accordion-content">
+              <p>
+                <strong>Installing Network Wiring in a Small Office</strong>
+              </p>
+              <p>
+                (0:00) Hey there. This video is about installing network wiring
+                in a small office. So, I'm standing in what will become the
+                reception area of a small doctor's office.
+              </p>
+              <p>
+                (0:14) You can see, I've got three outlets that are in progress
+                right now. One's there, one over there, one over there. And the
+                way that you wire up a network for a small office, or actually
+                in a scale-able sense even for a big office, are similar.
+              </p>
+              <p>
+                (0:33) The idea is still the same. You start in one central
+                location.
+              </p>
+              <p><strong>Central Network Location</strong></p>
+              <p>
+                (0:37) So, in this little room right here is our network
+                cabinet. This is a central location. This is where all the
+                network wires have to come back to.
+              </p>
+              <p>
+                (0:46) This network cabinet has the blue network cables inside
+                of it. These are category five (Cat5e) unshielded twisted pair
+                cables that are for ethernet. And you can get a box of that at
+                your local hardware store.
+              </p>
+              <p>
+                (1:02) Usually a box of 1000 feet costs about $100 US, or maybe
+                a little bit less. Fire-rated is more expensive, so if you don't
+                need fire-rated try to avoid that.
+              </p>
+              <p>
+                (1:12) Anyway, what happened is that I brought the cable box in
+                here.
+              </p>
+              <p>
+                (1:17) You know, that reel of a thousand feet of cable. And I
+                pull these individual blue wires from this central point up
+                through that hole back there into the ceiling.
+              </p>
+              <p><strong>Running Cables Through the Ceiling</strong></p>
+              <p>
+                (1:26) If you see this false ceiling here, above the ceiling
+                tiles, that's just an empty space up there. If you've never had
+                the opportunity to stick your head up there, usually there is
+                just empty space above those tiles.
+              </p>
+              <p>
+                (1:32) Sometimes there is insulation on top of them, but
+                generally you have anywhere from two to sometimes as much as six
+                or eight feet of empty space up there.
+              </p>
+              <p>
+                (1:43) Anyway, you run those wires from that central point and
+                through the ceiling. If you will just imagine with me, if you
+                could see up above those tiles, you would see a couple blue
+                wires going across the ceiling above those tiles, and then they
+                come down the wall.
+              </p>
+              <p><strong>Running Cables Through Walls</strong></p>
+              <p>
+                (1:57) Now most walls in commercial construction are usually
+                hollow. So as you can see in there, there is about three inches
+                of empty space.
+              </p>
+              <p>
+                (2:04) Sometimes they're not hollow. Sometimes they have
+                insulation in them. And then, depending on unique circumstances,
+                you may have walls that just simply don't have any space at all.
+                And that's a whole different ball of wax.
+              </p>
+              <p>
+                (2:16) But the short version of this story is you need to get
+                these network wires from that central point where we just were
+                to every outlet location where you're going to need an Ethernet
+                connection.
+              </p>
+              <p><strong>Outlet Termination and Labeling</strong></p>
+              <p>
+                (2:25) And then what you do is you put these category five
+                modular ends on them.
+              </p>
+              <p>
+                (2:34) Those modular ends then, in turn, fit into a wall plate.
+              </p>
+              <p>
+                (2:41) OK? And then the wall plate is labeled with the number.
+                Now why do we have to have a number?
+              </p>
+              <p>
+                (2:46) Well, the reason we have a number is so that we know that
+                for that outlet right there, which is D06, short for Data number
+                six.
+              </p>
+              <p>
+                (2:57) Let me bring you back here. I'll show you a little bit
+                later that I'm going to mount a patch panel in here.
+              </p>
+              <p>
+                (3:00) And that patch panel will have a 1, 2, 3, 4, 5, 6, et
+                cetera. So that "D06" will match the "six" on the patch panel
+                there.
+              </p>
+              <p>
+                (3:11) That will become our horizontal network wiring system,
+                which we will use to connect the router or switches that will
+                live in this cabinet out to all the various locations.
+              </p>
+              <p><strong>Office Locations and Finished Outlets</strong></p>
+              <p>
+                (3:22) So, I've got a receptionist office. I've also got patient
+                exam rooms.
+              </p>
+              <p>
+                (3:30) See? Here's an outlet that I have run the cable to, but I
+                haven't put the face plate on yet.
+              </p>
+              <p>
+                (3:36) So when I'm all done, there will be faceplates on all
+                those outlet locations with a corresponding number that relates
+                to the patch panel in the back.
+              </p>
+              <p>(3:45) And then that will be my network wiring system.</p>
+              <p>
+                (3:47) OK, I'll show you a little bit more in a few minutes.
+              </p>
+              <p><strong>Terminating an Ethernet Jack</strong></p>
+              <p>
+                (3:52) OK, so now I'm going to wire an outlet here for you. I'm
+                going to terminate this jack.
+              </p>
+              <p>
+                (3:57) The slang word is RJ-45, but the formal word is actually
+                8P8C.
+              </p>
+              <p>
+                (4:04) So for instance, these little guys right here, these are
+                modular ends with the RJ-45 outlet.
+              </p>
+              <p>
+                (4:12) They're often called RJ-45, but the real term is 8P8C.
+                Anyway, RJ-45 is what they get called a lot.
+              </p>
+              <p>
+                (4:21) So I've got this guy right here. And on my wire I strip
+                back some of the jacket.
+              </p>
+              <p>
+                (4:27) I kind of do this by rubbing my scissors on the edge. And
+                then sometimes, depending on the type of cable you're working
+                with, the cable might be brittle enough that you can just kind
+                of snap it off.
+              </p>
+              <p>
+                (4:34) Then I get rid of my excess rip cord or dental floss,
+                depends on what you want to call it.
+              </p>
+              <p><strong>Cable Jacket Removal Advice</strong></p>
+              <p>
+                (4:41) Now, this method I use is not really recommended. I've
+                been doing this for so long that I have developed a touch that I
+                can do this and pretty safely say that I'm not nicking any of
+                the wires on the inside.
+              </p>
+              <p>
+                (4:48) But if you're new at this, I recommend you make that
+                opening cut like that with your scissors, but then take the rip
+                cord and pull back some, sort of like you're peeling a banana.
+              </p>
+              <p>
+                (5:00) Then get rid of the skin by cutting it off after that,
+                because that way you avoid nicking the wires inside.
+              </p>
+              <p>(5:06) Maybe when I do the next one I'll show you that.</p>
+              <p><strong>Punch-Down Wiring Patterns</strong></p>
+              <p>
+                (5:12) OK, so these jacks, depending on what brand you get, all
+                come with a different punch-down pattern.
+              </p>
+              <p>
+                (5:16) What I mean is see how this has got white blue and then
+                blue, then white green and green, and also white orange and
+                orange, white brown and brown, and so forth.
+              </p>
+              <p>
+                (5:24) They correspond colors on these wires. And you can look
+                up other videos on YouTube about how to punch down on a category
+                five jack.
+              </p>
+              <p>
+                (5:33) So this is just kind of a quick and dirty to help round
+                out the video a little bit.
+              </p>
+              <p>
+                (5:36) But what I do is match the pattern of the wires to the
+                colors on the sides of the jack.
+              </p>
+              <p>
+                (5:40) And what I was going to say is, it depends on what brand
+                of jack you get, this pattern could be different. So you have to
+                pay attention to the colors.
+              </p>
+              <p><strong>568A vs 568B Standard</strong></p>
+              <p>
+                (5:48) There's two sets of colors here. The top row is what they
+                call 568A. You can see a little bitty "A" right there.
+              </p>
+              <p>
+                (5:56) And the lower pattern is what they call 568B. See a
+                little bitty "B" right there in the middle.
+              </p>
+              <p>
+                (6:01) So I'm going to be using 568B. It is the more commonly
+                used wiring scheme.
+              </p>
+              <p>
+                (6:05) There's nothing wrong with 568A or 568B, at least in my
+                mind, but I'm just partial to B.
+              </p>
+              <p>
+                (6:10) And what matters is that if you do 568B on your jack,
+                that when you do your patch panel, that also needs to be done in
+                568B style so it matches.
+              </p>
+              <p><strong>Punching Down the Wires</strong></p>
+              <p>
+                (6:22) OK, so what I'm doing right now is I'm taking the wires
+                and I'm spreading them out into the little grooves with the wire
+                colors that correspond to the colors on the side of the jack.
+              </p>
+              <p>
+                (6:34) So I'm taking the orange pair here, and I'm putting the
+                white orange in the front groove and the solid orange in the
+                back.
+              </p>
+              <p>(6:38) This corresponds to the pattern right there for B.</p>
+              <p>
+                (6:41) And once I get that all done, I'm going to just
+                double-check it one more time, because an ounce of prevention is
+                certainly worth a pound of cure.
+              </p>
+              <p>
+                (6:52) Because by the time you get this thing all put back
+                together and then go to test it, if it doesn't work, it's
+                certainly worth having spent just an extra couple seconds to
+                review your work.
+              </p>
+              <p>
+                (7:02) So what I do is I look closely and I say, OK, I've got
+                the white/orange and orange. I've got white blue and blue, white
+                brown and brown, white green and green.
+              </p>
+              <p>
+                (7:13) And once I've decided that it checks out OK, I take my
+                punch-down tool right here.
+              </p>
+              <p>(7:20) And I use my 110 punch to terminate the jack.</p>
+              <p><strong>Finishing the Installation</strong></p>
+              <p>
+                (7:24) Now, when you do this you'll want to do it against the
+                wall, but it will scar the wall.
+              </p>
+              <p>
+                (7:27) So what I try to do is do it down near the outlet surface
+                itself, because once I put a plate on it, it will cover up
+                anything that might have scarred by me doing this.
+              </p>
+              <p>
+                (7:37) As you do this, if you're doing it right, what should
+                happen is the sharp end of the tool should be perforating or
+                even breaking off the wire right there.
+              </p>
+              <p>
+                (7:49) Now you'll notice I just threw the excess wires into the
+                wall, and someone called me out on that the other day when I was
+                making a video on a similar topic.
+              </p>
+              <p>
+                (7:55) And so they said, well why'd you throw it in there when
+                you could just throw it in the trash can?
+              </p>
+              <p>
+                (8:00) Listen, for any of you trolls out there thinking about
+                making comments about that, if you did this stuff day in and day
+                out like I do, you would get tired of making—
+              </p>
+              <p><strong>Handling Excess Wire and Jack Accessories</strong></p>
+              <p>
+                (8:15) Trips to the trash can. Throwing a few pieces of excess
+                wire inside the drywall isn't going to hurt anything.
+              </p>
+              <p>
+                (8:22) Now with this particular brand of jack, not all jacks,
+                but this jack comes with a little zip-tie or a wire tie that you
+                can wrap around the very base, which kind of helps reinforce the
+                wire jacket right there.
+              </p>
+              <p>
+                (8:37) And if you do this right, ideally, the wire jacket should
+                mate right up against the bottom of the jack.
+              </p>
+              <p>
+                (8:42) What you shouldn't have is a lot of exposed wire hanging
+                out of the back of the jack.
+              </p>
+              <p>
+                (8:47) This one also comes with caps. Most do come with caps.
+                Some do not. But most come with caps that you put on after
+                you're done.
+              </p>
+              <p>
+                (8:54) Also what I'll do is, since I wrote the number on the
+                cable when I was pulling these earlier, I'll take the number and
+                I'll write it on the side of the jack just to help reinforce
+                with a visual.
+              </p>
+              <p>(9:07) This is my number.</p>
+              <p><strong>Labeling and Mounting the Outlet</strong></p>
+              <p>
+                (9:07) OK, then I'll also be using a label maker. We use a label
+                maker to put a 3 across the top here.
+              </p>
+              <p>(9:19) Now snap that insert into the back of the plate.</p>
+              <p>
+                (9:25) OK, I'm going to terminate the white one now. And then
+                when I'm all done with that, we will go put labels on and put
+                that into the wall.
+              </p>
+              <p>(9:35) OK.</p>
+              <p><strong>Terminating the Patch Panel</strong></p>
+              <p>
+                (9:37) Alright, so now we've reached a point where I have put
+                all the outlets on all over the office.
+              </p>
+              <p>
+                (9:42) Now it's time to terminate the patch panel. So remember,
+                this is my cabinet where all the wires come to.
+              </p>
+              <p>(9:45) Alright, and here's all my data cables.</p>
+              <p>
+                (9:50) What I did when I was installing them is I wrote, oops
+                drops, on there. When I was installing the cables, I wrote the
+                numbers on the end with the marker pen.
+              </p>
+              <p>
+                (10:05) So what I'm going to do is, just like those jacks I
+                showed you that I was terminating, the patch panel is just kind
+                of like a more aggregated version of the jack.
+              </p>
+              <p>
+                (10:13) So here I've got twenty-four cat5 ap8c connectors. So on
+                the back I've got twenty-four corresponding places to punch down
+                the cables.
+              </p>
+              <p>
+                (10:24) And they're numbered one, two, three, four, et cetera.
+              </p>
+              <p>
+                (10:29) So what I'm going to do is take my cables in the number
+                that they're ordered and match them up with the numbers here and
+                punch them all down.
+              </p>
+              <p>
+                (10:36) And then I'll have a complete network pathway between
+                the numbers here in the front and the jacks out there with the
+                corresponding numbers.
+              </p>
+              <p>
+                (10:45) So let's get that done. I'll show you what that looks
+                like.
+              </p>
+              <p><strong>Punching Down the Patch Panel</strong></p>
+              <p>
+                (10:50) Terminating the patch panel is really no different than
+                terminating the individual jacks, except now all the places for
+                the punch-downs are all just very tightly integrated together.
+              </p>
+              <p>
+                (10:58) As you can see, there's the same pattern there. The top
+                one is 568A, the bottom one is 568B.
+              </p>
+              <p>
+                (11:07) See how it's got white blue, then solid blue, white
+                orange, solid orange, et cetera.
+              </p>
+              <p>(11:11) This is the B section.</p>
+              <p>
+                (11:13) So that's what I did. I've got white blue and blue,
+                white orange and orange, white green and green, brown and brown.
+              </p>
+              <p><strong>Patch Panel Workflow Approach</strong></p>
+              <p>(11:18) There's a couple of different ways you can do this.</p>
+              <p>
+                (11:23) Some people prefer to lay out all their stuff first and
+                then do the terminations.
+              </p>
+              <p>(11:26) I kind of like to go one or two at a time.</p>
+              <p>
+                (11:30) So I'll spread one out like that, kind of that Y shape,
+                where the wires in the green are shorter and the blues and the
+                browns have to stretch a little more each side.
+              </p>
+              <p>(11:37) And then I'll go ahead and terminate those.</p>
+              <p>
+                (11:40) And then I'll go on to number two, then three, then
+                four, five, and six, et cetera, and so on.
+              </p>
+              <p><strong>Installing in New vs Existing Systems</strong></p>
+              <p>
+                (11:43) So this is nice to do when you're doing a brand new
+                installation, because you can actually take the patch panel and
+                lay it down on something flat like this and terminate the wires.
+              </p>
+              <p>
+                (11:52) Versus when you're adding a wire to a system that's
+                already been installed.
+              </p>
+              <p>
+                (11:55) You kind of have to reach up inside the cabinet and
+                terminate the wire on the back of the patch panel while it's
+                already mounted.
+              </p>
+              <p>
+                (12:02) So I'm going to get that done and show you what it looks
+                like when I'm all done.
+              </p>
+              <p><strong>Completed Terminations and Caps</strong></p>
+              <p>
+                (12:10) OK, now the patch panel has got all the eight wires
+                terminated on it.
+              </p>
+              <p>
+                (12:14) And this one comes with these little caps that you can
+                put on the back to kind of help block off air and maybe help
+                reinforce the connection.
+              </p>
+              <p>
+                (12:22) I personally am not a big fan of those, because I
+                believe that if you do your wire management right and you've
+                done your terminations right, there is no reason why those wires
+                should pop back out of there.
+              </p>
+              <p>
+                (12:30) They'll come out of there if your wires are not managed
+                correctly and there's too much tension pulling them out of the
+                sockets.
+              </p>
+              <p>
+                (12:37) But anyway, if yours comes with the caps, go ahead and
+                put the caps on. It doesn't hurt anything.
+              </p>
+              <p>(12:45) Like I said, I'm just not a big fan of the caps.</p>
+              <p><strong>Managing Cable Slack</strong></p>
+              <p>
+                (12:47) Anyway, so now that my terminations are done, what will
+                happen next is I'm going to have to really manage my wire back
+                into the cabinet.
+              </p>
+              <p>
+                (12:53) So basically taking this slack and just kind of dressing
+                it in there along the walls.
+              </p>
+              <p>
+                (13:02) And then ultimately my patch panel is going to get
+                mounted up in there.
+              </p>
+              <p>
+                (13:09) And then I can start doing some testing on my outlets
+                and my patch panel.
+              </p>
+              <p>(13:16) OK, I'll show you that a little bit.</p>
+              <p><strong>Service Loops and Cabinet Flexibility</strong></p>
+              <p>
+                (13:20) Alright, so the patch panel is done and mounted and
+                armed.
+              </p>
+              <p>
+                (13:27) You'll notice that there's this maze of wires running
+                around and down and up and across.
+              </p>
+              <p>
+                (13:36) That's actually for a reason, and I may have gone just a
+                little crazy with that.
+              </p>
+              <p>
+                (13:42) That's known as a service loop, and it's there for a
+                couple of reasons.
+              </p>
+              <p>
+                (13:46) One is if for some reason something happens to the cable
+                near the patch panel, it gives you the reserve amount of slack
+                to be able to pull some more slack and re-terminate the cable
+                that was cut off at the end and re-terminate it.
+              </p>
+              <p>
+                (13:59) The second thing it does is gives you the flexibility to
+                move the patch panel.
+              </p>
+              <p>
+                (14:03) So say the network configuration changed one day and we
+                need to move things around.
+              </p>
+              <p>
+                (14:08) We can move this panel down to here, or if they decided
+                to put in like a floor-mounted network rack, say over here in
+                this corner by the closet.
+              </p>
+              <p>
+                (14:19) I've got a good six feet of slack that I could move that
+                patch panel without having to rerun all those cables again.
+              </p>
+              <p><strong>Network Cabinet Alternatives</strong></p>
+              <p>
+                (14:28) And also while we're on the topic of the network
+                cabinet, this just happens to be the one that I'm using for this
+                doctor's office.
+              </p>
+              <p>
+                (14:33) You don't need to go get one of these big network
+                cabinets.
+              </p>
+              <p>
+                (14:37) You can simply get a patch panel, and they make these
+                little one-U or two-U hinged brackets that you just mount on the
+                wall.
+              </p>
+              <p>
+                (14:44) So all you really need for instances like this little
+                white board, you can just get a little white board like that,
+                mounted horizontally instead of vertically.
+              </p>
+              <p>
+                (14:52) And you can put the little hinge bracket on there with a
+                patch panel.
+              </p>
+              <p>
+                (14:58) OK, those are very inexpensive. The hinge bracket, I
+                think, is about twenty bucks.
+              </p>
+              <p>
+                (15:02) You can get an inexpensive patch panel off Amazon or a
+                moderate price for probably about the same, about twenty
+                dollars.
+              </p>
+              <p><strong>Testing the Network Cabling</strong></p>
+              <p>(15:08) OK, now I'm going to begin the testing.</p>
+              <p>(15:15) So now I'm down to testing.</p>
+              <p>
+                (15:18) So I've got two different ways I can test this thing.
+              </p>
+              <p>
+                (15:21) You're looking at right here is called the certifier.
+              </p>
+              <p>
+                (15:21) It's an expensive piece of equipment. It's designed to
+                stress the wire and test it for its maximum capacity to certify
+                that it's either cat5, cat5e, or cat6, et cetera.
+              </p>
+              <p>
+                (15:29) I recommend, on the other hand, that you use something
+                simple like this.
+              </p>
+              <p><strong>Continuity Testing</strong></p>
+              <p>
+                (15:33) This is just a continuity tester, and it works really
+                simply.
+              </p>
+              <p>(15:33) It's got an RJ45 or an 8P8C connector on both ends.</p>
+              <p>
+                (15:39) And when it's connected to two ends of the cable, it
+                simply sends current down the line on each pair.
+              </p>
+              <p>(15:49) OK, so I'm going to turn it on right now.</p>
+              <p>
+                (15:54) And what it does is, at the far end, you should see
+                these little lights turn green in order.
+              </p>
+              <p>
+                (15:59) If any of them are red, or if it goes out of order, or
+                if one of the lights doesn't light up, that means there's
+                something wrong with either the cable.
+              </p>
+              <p>
+                (16:03) But most likely what's wrong is something that you
+                terminated incorrectly.
+              </p>
+              <p>
+                (16:07) So either one of the ends of the jack is either not
+                terminated right or didn't get terminated all the way.
+              </p>
+              <p>
+                (16:15) OK, so again I'm recommending you just get a continuity
+                checker.
+              </p>
+              <p>
+                (16:18) I have to use this special certifier tester because I'm
+                doing work commercially and I have to provide results to my
+                client.
+              </p>
+              <p><strong>Performing a Test Example</strong></p>
+              <p>(16:25) Alright, so let's show you how this works.</p>
+              <p>(16:29) So let's take, for instance, D1.</p>
+              <p>(16:29) So I plug my little continuity tester into D1.</p>
+              <p>(16:37) I've got it turned on.</p>
+              <p>
+                (16:37) Then I'm going to take this other little guy and go back
+                to the patch panel.
+              </p>
+              <p>(16:44) Plug him into port one.</p>
+              <p>(16:44) And what I should see after I hook it up.</p>
+              <p>(16:53) Is I should see these lights turn green.</p>
+              <p>(16:59) And I'm not.</p>
+              <p>(16:59) Which makes me wonder if I got my numbers mixed up.</p>
+              <p>(17:04) Yeah, I got my numbers mixed up.</p>
+              <p>(17:04) D1 and D2 are flipped.</p>
+              <p>
+                (17:08) So I just got to go back and swap those cables and make
+                sure that they're in the right spot by the right labels.
+              </p>
+              <p><strong>Final Result</strong></p>
+              <p>
+                (17:12) OK, so that's what it should look like when you test the
+                cable and it tests out OK.
+              </p>
+              <p>(17:16) OK.</p>
+              <p>(17:17) And that about concludes this.</p>
+              <p>(17:17) Thank you.</p>
+              <p>
+                (Transcript provided by YouTube. Organized by Copilot, 2026)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <h2>Cables de fibra óptica</h2>
+      <p>
+        La fibra óptica constituye la columna vertebral de la red, reemplazando
+        el cableado de cobre tradicional en aplicaciones de alta capacidad que
+        requieren un gran ancho de banda. Dado que la longitud máxima del cable
+        de fibra óptica es considerablemente mayor que la de los cables
+        Ethernet, los cables de fibra óptica se utilizan para conectar LANs
+        entre sí dentro de un área metropolitana. El núcleo de los cables de
+        fibra óptica es de plástico o vidrio, lo que hace que su manejo sea más
+        complejo y requiera licencias especiales. Otros usos de los cables de
+        fibra incluyen:
+      </p>
+      <div
+        style="text-align: center; width: 100%; max-width: 100%; margin: 10px 0"
+      >
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Cintillos_Español/mas_informacion.png"
+          alt='Haz clic en "+" para ver más información'
+          style="
+            display: block;
+            margin: 20px auto;
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+          "
+        />
+      </div>
+      <p style="text-align: center">
+        <iframe
+          src="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1027274&amp;type=lti&amp;rCode=00D22884-7DC5-4408-809B-589E36B04C5A-1187129"
+          title="- Carousel with numbers"
+          allowfullscreen="allowfullscreen"
+          allow="microphone *; camera *; autoplay *"
+          height="600"
+          width="779"
+        ></iframe
+        ><strong></strong>
+      </p>
+    </div>
+    <!-- Template JavaScript -->
+    <hr />
+    <div>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        width="110"
+        style="float: right"
+        role="presentation"
+      />
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>

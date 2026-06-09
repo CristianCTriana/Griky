@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/StylesComponents.css"
+    />
+    <style>
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBanner"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Semana 3</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Protocolos de Red, Puertos y el Modelo OSI&nbsp;</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Los Puertos de Protocolo&nbsp;</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        Los puertos de protocolo son puntos de entrada virtuales utilizados por
+        los protocolos de la Capa de Transporte, como TCP (Protocolo de Control
+        de Transmisión) y UDP (Protocolo de Datagramas de Usuario), para
+        diferenciar entre distintos servicios.
+      </p>
+      <p>
+        Existe un rango de puertos bien conocidos (0–1023): estos están
+        reservados para servicios y protocolos comunes de uso generalizado, como
+        SMTP, del que hemos hablado anteriormente en el curso, o HTTP, que se
+        utiliza para acceder a sitios web. La siguiente tabla presenta una lista
+        de puertos bien conocidos que debes aprender. Esta lista no solo se
+        utiliza en muchos exámenes de certificación de la industria, como
+        Security+ o Network+, sino que también tiene aplicaciones prácticas.
+        Cuando desees configurar un firewall, necesitarás usar estos números de
+        puerto para otorgar o denegar acceso en las Listas de Control de Acceso
+        que se estén configurando.
+      </p>
+      <div class="table-wrapper">
+        <table class="table-apus">
+          <caption>
+            Puertos Comunes
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Número de Puerto</th>
+              <th scope="col">Protocolo</th>
+              <th scope="col">Protocolo de Transporte</th>
+              <th scope="col">Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Número de Puerto"><strong>20</strong></td>
+              <td data-label="Protocolo">FTP-Data</td>
+              <td data-label="Protocolo de Transporte">TCP</td>
+              <td data-label="Descripción">
+                Protocolo de Transferencia de Archivos (transferencia de datos)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>21</strong></td>
+              <td data-label="Protocolo">FTP</td>
+              <td data-label="Protocolo de Transporte">TCP</td>
+              <td data-label="Descripción">
+                Protocolo de Transferencia de Archivos (conexión de control /
+                comandos)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>22</strong></td>
+              <td data-label="Protocolo">SSH</td>
+              <td data-label="Protocolo de Transporte">TCP</td>
+              <td data-label="Descripción">
+                Shell Seguro (inicio de sesión remoto seguro y transferencia de
+                archivos)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>23</strong></td>
+              <td data-label="Protocolo">Telnet</td>
+              <td data-label="Protocolo de Transporte">TCP</td>
+              <td data-label="Descripción">
+                Servicio de inicio de sesión remoto (sin cifrado)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>25</strong></td>
+              <td data-label="Protocolo">SMTP</td>
+              <td data-label="Protocolo de Transporte">TCP</td>
+              <td data-label="Descripción">
+                Protocolo Simple de Transferencia de Correo (envío de email)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>53</strong></td>
+              <td data-label="Protocolo">DNS</td>
+              <td data-label="Protocolo de Transporte">TCP/UDP</td>
+              <td data-label="Descripción">
+                Sistema de Nombres de Dominio (traducción de nombres de dominio
+                a direcciones IP)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>67</strong></td>
+              <td data-label="Protocolo">DHCP (Servidor)</td>
+              <td data-label="Protocolo de Transporte">UDP</td>
+              <td data-label="Descripción">
+                Protocolo de Configuración Dinámica de Host (lado del servidor)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>68</strong></td>
+              <td data-label="Protocolo">DHCP (Cliente)</td>
+              <td data-label="Protocolo de Transporte">UDP</td>
+              <td data-label="Descripción">
+                Protocolo de Configuración Dinámica de Host (lado del cliente)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>80</strong></td>
+              <td data-label="Protocolo">HTTP</td>
+              <td data-label="Protocolo de Transporte">TCP</td>
+              <td data-label="Descripción">
+                Protocolo de Transferencia de Hipertexto (tráfico web estándar)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>110</strong></td>
+              <td data-label="Protocolo">POP3</td>
+              <td data-label="Protocolo de Transporte">TCP</td>
+              <td data-label="Descripción">
+                Protocolo de Oficina de Correos v3 (recuperación de email)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>123</strong></td>
+              <td data-label="Protocolo">NTP</td>
+              <td data-label="Protocolo de Transporte">UDP</td>
+              <td data-label="Descripción">
+                Protocolo de Tiempo de Red (sincronización de hora)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>143</strong></td>
+              <td data-label="Protocolo">IMAP</td>
+              <td data-label="Protocolo de Transporte">TCP</td>
+              <td data-label="Descripción">
+                Protocolo de Acceso a Mensajes de Internet (gestión y
+                recuperación de email)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>443</strong></td>
+              <td data-label="Protocolo">HTTPS</td>
+              <td data-label="Protocolo de Transporte">TCP</td>
+              <td data-label="Descripción">
+                HTTP Seguro (tráfico web cifrado)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Número de Puerto"><strong>3389</strong></td>
+              <td data-label="Protocolo">RDP</td>
+              <td data-label="Protocolo de Transporte">TCP</td>
+              <td data-label="Descripción">
+                Protocolo de Escritorio Remoto (control remoto de una
+                computadora)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        El siguiente video desglosa los puertos de red y los números de puerto,
+        explicando sus tipos, su función en las redes, las implicaciones de
+        seguridad y cómo se utilizan en escenarios del mundo real.
+      </p>
+      <div
+        style="text-align: center; width: 100%; max-width: 100%; margin: 10px 0"
+      >
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Cintillos_Español/video.png"
+          alt="Mira el siguiente video"
+          style="
+            display: block;
+            margin: 20px auto;
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+          "
+        />
+      </div>
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <iframe
+            src="https://www.youtube.com/embed/yLuaVkxvmk4?si=pVui3csgz71pIHgp&amp;wmode=opaque"
+            allowfullscreen="allowfullscreen"
+          ></iframe>
+        </div>
+        <!-- Accordion headings should be changed to respect page hierarchy -->
+        <div class="accordion">
+          <div class="accordion-item">
+            <input type="checkbox" id="acc-9" />
+            <label class="accordion-title" for="acc-9"
+              >Transcripción: Puertos de Red y Números de Puerto Explicados:
+              Fundamentos de Redes</label
+            >
+            <div class="accordion-content">
+              <p><strong>Intro</strong></p>
+              <p>
+                (0:00) Did you know that every time you browse the web, send an
+                email or stream a video, your data flows through specific ports?
+                These network ports act like doors, directing internet traffic
+                to the right places. But most people don't even realize they
+                exist.
+              </p>
+              <p>
+                (0:15) In this video, we'll break down what port numbers are,
+                how they work and why they matter in networking and online
+                security. Without further ado, let's dive in.
+              </p>
+              <p><strong>What Is a Port Number?</strong></p>
+              <p>
+                (0:24) A port number is a numerical identifier assigned to
+                specific processes or services on a device, helping computers
+                and servers communicate over a network. Just like a building's
+                address directs mail to the right location, a port number
+                ensures that incoming and outgoing data reaches the correct
+                application.
+              </p>
+              <p>
+                (0:42) Every online activity - whether browsing a website,
+                sending an email or transferring a file - uses a designated port
+                number to streamline communication. For example, web traffic
+                typically uses port 80 for HTTP or 443 for HTTPS, ensuring that
+                browsers and web servers exchange information smoothly.
+              </p>
+              <p>
+                (1:02) Port numbers are always paired with an IP address,
+                forming a structured format like this. Here 80 specifies the
+                service handling the connection. If you're not familiar with how
+                IP addresses work, check out our separate video explaining them.
+              </p>
+              <p><strong>How Ports Work in Networking?</strong></p>
+              <p>
+                (1:17) Now that we know what port numbers are, let's see how
+                they actually work in networking. Ports help computers and
+                servers manage multiple network connections by ensuring data
+                reaches the correct application.
+              </p>
+              <p>
+                (1:28) When a device sends a request, like loading a website or
+                checking email, it includes a source port (assigned temporarily
+                by the system) and a destination port (specific to the requested
+                service, like 80 for HTTP). The receiving device uses this
+                destination port to forward data to the right process, then
+                responds using the sender's source port, keeping communication
+                organized.
+              </p>
+              <p>
+                (1:51) Ports function at Layer 4 of the OSI model - the
+                Transport Layer - working with TCP and UDP to control data flow.
+                If you're not familiar with the OSI model, we have a video
+                explaining it. You can also check out our video on network
+                protocols to learn more about TCP, UDP and other network
+                protocols.
+              </p>
+              <p><strong>Commonly Used Port Numbers</strong></p>
+              <p>
+                (2:10) Now that we understand how ports work, let's go over some
+                of the most commonly used ones. Out of the 65,536 port numbers
+                available, only a handful are widely used for essential
+                services.
+              </p>
+              <p>
+                (2:24) Port 80 for HTTP and port 443 for HTTPS handle web
+                traffic. File transfers rely on port 21 for FTP and port 22 for
+                secure transfers with SFTP and SSH.
+              </p>
+              <p>
+                (2:38) Email services use port 25 and port 587 for sending
+                emails with SMTP, while port 143 and port 993 handle receiving
+                emails with IMAP. The Domain Name System, or DNS, runs on port
+                53, helping convert website names into IP addresses.
+              </p>
+              <p>
+                (2:57) Other important ports include port 23, used for remote
+                access with Telnet, though it's mostly replaced by SSH, and port
+                3389, which enables Remote Desktop connections (RDP). These
+                well-known ports help keep the internet running smoothly,
+                ensuring data reaches the right place.
+              </p>
+              <p><strong>Ports &amp; Network Security</strong></p>
+              <p>
+                (3:14) Now let's see how ports play a crucial role in both
+                network security and cybersecurity. Firewalls help control
+                access to ports, managing which connections are allowed or
+                blocked. They act as gatekeepers, allowing or blocking traffic
+                based on port numbers and predefined rules.
+              </p>
+              <p>
+                (3:31) For example, a firewall might block port 21 to prevent
+                unauthorized FTP access or restrict port 3389 to limit Remote
+                Desktop connections. Many firewalls use stateful packet
+                inspection or SPI to monitor ongoing connections and ensure only
+                legitimate traffic gets through.
+              </p>
+              <p>
+                (3:50) Closing unused ports reduces the risk of cyberattacks
+                like port scanning and unauthorized access attempts. Firewalls
+                are a key defense against threats like DDoS attacks and malware,
+                which often exploit open ports. To learn more, check out our
+                separate video on firewalls. And for a deeper dive into cyber
+                threats, see our video on common cyberattacks.
+              </p>
+              <p><strong>Types of Network Ports</strong></p>
+              <p>
+                (4:12) Now that we've seen how firewalls use ports for security,
+                let's break down the different types of ports and how they are
+                categorized. Well-known ports, ranging from 0 to 1023, are
+                reserved for essential services discussed in the previous
+                chapters.
+              </p>
+              <p>
+                (4:26) Registered ports, ranging from 1024 to 49,151, are
+                assigned to specific applications and services, such as database
+                management or gaming servers.
+              </p>
+              <p>
+                (4:38) Dynamic or private ports, ranging from 49,152 to 65,535,
+                are temporarily assigned by operating systems for client-side
+                communications. Within this range, ephemeral ports are
+                short-lived and automatically chosen for outbound connections,
+                like the source port 49,218 we saw earlier.
+              </p>
+              <p>
+                (5:00) These ports allow devices to establish multiple
+                simultaneous connections without conflicts, automatically
+                closing when no longer needed. Understanding these categories
+                helps in network management, security configurations and
+                troubleshooting connectivity issues.
+              </p>
+              <p><strong>How to Check Open Ports?</strong></p>
+              <p>
+                (5:16) Now that we've explored the different types of ports and
+                their role in networking, let's see how you can check which
+                ports are open on a device. One of the most widely used tools
+                for this is Nmap, which scans for open ports and provides
+                details about active services.
+              </p>
+              <p>
+                (5:30) For a quick check on Windows, you can use the "netstat"
+                command in the Command Prompt with "netstat -an" to list active
+                connections and their corresponding ports.
+              </p>
+              <p>
+                (5:39) On Linux and macOS, commands like "ss -tuln" or "lsof -i"
+                can help identify open ports and their associated processes.
+                Many online services also allow users to test open ports
+                remotely by entering an IP address.
+              </p>
+              <p>
+                (5:55) Understanding open ports is important for both
+                troubleshooting network issues and improving security by closing
+                unnecessary ones.
+              </p>
+              <p><strong>Port Forwarding</strong></p>
+              <p>
+                (6:03) Now that we know how to check open ports, let's look at
+                how they can be used to allow external access. Port forwarding
+                is a technique that allows external devices to access services
+                on a private network by directing traffic from a specific port
+                on a router to a designated device.
+              </p>
+              <p>
+                (6:20) This is commonly used for hosting game servers, remote
+                desktop access and running web servers from home networks. When
+                a request reaches the router on a forwarded port, it redirects
+                the data to the appropriate internal IP address and port.
+              </p>
+              <p>
+                (6:34) However, improper configuration can expose a network to
+                security risks, making it important to forward only necessary
+                ports and use firewalls for protection. Many routers offer
+                manual port forwarding settings, while UPnP or Universal Plug
+                and Play can automate the process for some applications.
+              </p>
+              <p><strong>Reserved vs Unassigned Ports</strong></p>
+              <p>
+                (6:53) Now let's discuss reserved and unassigned ports. Ports
+                can be categorized as either reserved or unassigned, depending
+                on whether they have been officially designated for specific
+                services.
+              </p>
+              <p>
+                (7:04) Reserved ports are those assigned by the Internet
+                Assigned Numbers Authority or IANA for well-known services, such
+                as HTTP and DNS. These ports are typically standardized to
+                ensure compatibility across networks.
+              </p>
+              <p>
+                (7:17) On the other hand, unassigned ports have not been
+                officially designated for any specific use. They remain
+                available for dynamic allocation by applications or private
+                services.
+              </p>
+              <p>
+                (7:28) While some unassigned ports may later receive official
+                assignments, others can be used freely by organizations and
+                developers for custom networking needs. Understanding this
+                distinction helps prevent conflicts and ensures efficient port
+                management in networks.
+              </p>
+              <p><strong>Port Scanning</strong></p>
+              <p>
+                (7:44) Next let's take a look at port scanning and its role in
+                ethical hacking. Port scanning is the process of scanning a
+                network or device to identify open ports and services that may
+                be available for communication.
+              </p>
+              <p>
+                (7:56) Ethical hackers use port scanning to assess the security
+                of a network, identifying potential vulnerabilities that could
+                be exploited by malicious actors. By scanning open ports,
+                ethical hackers can uncover services that may be exposed or
+                improperly secured, allowing organizations to address weaknesses
+                before they are exploited.
+              </p>
+              <p>
+                (8:16) Tools like Nmap and other vulnerability scanners are
+                commonly used in this process, helping security professionals
+                evaluate the strength of firewalls and network defenses.
+              </p>
+              <p>
+                (8:25) It's important to note that while port scanning is a
+                valuable technique for security testing, it should only be
+                performed with permission, as unauthorized scanning can be
+                considered illegal in many jurisdictions.
+              </p>
+              <p><strong>Conclusions</strong></p>
+              <p>
+                (8:37) In conclusion, ports are a fundamental part of
+                networking, enabling communication between devices and services
+                across the internet.
+              </p>
+              <p>
+                (8:45) From well-known ports used for essential protocols to
+                dynamic ports that allow multiple connections, understanding how
+                ports work helps in both troubleshooting and securing networks.
+              </p>
+              <p>
+                (8:55) Firewalls, NAT and port forwarding all rely on ports to
+                manage traffic efficiently, while ethical hackers use port
+                scanning to identify vulnerabilities.
+              </p>
+              <p>
+                (9:05) Whether configuring networks, securing systems or simply
+                learning how data flows online, knowing about ports is essential
+                for navigating the digital world.
+              </p>
+              <p>
+                (9:14) This marks the end of our exploration of network ports.
+                If you found it helpful, consider subscribing to our channel and
+                liking the video.
+              </p>
+              <p>
+                (9:22) Feel free to check out our other videos on related
+                topics. Thank you for watching.
+              </p>
+              <p>
+                (Transcript provided by YouTube. Organized by Copilot,
+                2026)&nbsp;
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Template JavaScript -->
+    <hr />
+    <div>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        width="110"
+        style="float: right"
+        role="presentation"
+      />
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,315 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <title>ISSC640 Guidelines</title>
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ENCABEZADO */
+      .header-container h1 {
+        background-color: #041e42;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin: 0;
+      }
+      .header-container .week-text {
+        font-size: 20px;
+        color: #05c3de;
+        display: block;
+        font-weight: 700;
+      }
+      .header-container .title-text {
+        font-size: 28px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      .highlight-box {
+        padding: 25px;
+        background-color: #041d42;
+        color: white;
+        margin-top: 25px;
+        border-radius: 8px;
+        line-height: 1.8;
+      }
+
+      h1.section-title,
+      h2.section-subtitle,
+      h3.section-subtitle {
+        font-size: 28px;
+        font-weight: 700;
+        color: #041e42;
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-size: 19px;
+        line-height: 1.6;
+        color: #202122;
+      }
+
+      a {
+        color: #004c90;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      ul {
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #dcdcdc;
+        margin: 25px 0;
+      }
+
+      .centered-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* --- ACORDEÓN CSS-ONLY --- */
+      .accordion {
+        margin-top: 30px;
+        font-family: Lato, sans-serif;
+      }
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+      .accordion-item input {
+        display: none;
+      }
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+      .accordion-title::after {
+        content: "+";
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+      }
+      .accordion-item input:checked + .accordion-title::after {
+        content: "–";
+        color: #004c90;
+      }
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+
+      /* FOOTER */
+      .footer-logo {
+        float: right;
+        width: 110px;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        h1.section-title,
+        h2.section-subtitle,
+        h3.section-subtitle {
+          font-size: 24px;
+        }
+        p,
+        li {
+          font-size: 17px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h1>
+        <span class="week-text">ISSC640</span>
+        <span class="title-text">Descripción general del curso</span>
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1 class="section-title" style="text-align: center">
+        <span style="font-size: 32px">Directrices</span>
+      </h1>
+      <hr />
+      <p>
+        A continuación se destacan los elementos y apoyos que son exclusivos de
+        este curso. &nbsp;Incluye qué tecnología específica se necesita para
+        este curso, si aplica; orientación sobre integridad académica en las
+        evaluaciones del curso, incluyendo el uso de IA generativa; y el estilo
+        de citación preferido.&nbsp;
+      </p>
+      <h2 class="section-subtitle">| Necesidades tecnológicas específicas</h2>
+      <p>
+        Este curso no requiere tecnologías especiales para su finalización
+        exitosa.
+      </p>
+      <h2 class="section-subtitle">| Integridad académica</h2>
+      <p>
+        Este curso se rige por las
+        <a
+          href="https://www.apu.apus.edu/student-handbook/university-policies-and-code-of-conduct/apus-student-code-of-conduct/standards-of-student-conduct/"
+          target="_blank"
+          rel="noopener"
+          >Normas de Conducta Estudiantil [página web]</a
+        >
+        presentadas en el Manual del Estudiante.
+      </p>
+      <p style="text-align: center; margin-top: 40px">
+        <span style="font-family: Lato, sans-serif"
+          ><img
+            src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Cintillos_Español/mas_informacion.png"
+            alt='Haz clic en "+" para ver más información'
+            style="
+              display: block;
+              margin: 20px auto;
+              max-width: 600px;
+              width: 100%;
+              height: auto;
+            "
+        /></span>
+      </p>
+      <!-- --- ACORDEÓN: Citation, Gen-AI Citing, Transcripts --- -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="citation" />
+          <label class="accordion-title" for="citation"
+            >Estilo de citación</label
+          >
+          <div class="accordion-content">
+            <p>
+              Este curso utiliza el formato y las citas de
+              <a
+                href="https://www.apus.edu/apus-library/resources/writing/apa-style/"
+                target="_blank"
+                rel="noopener"
+                >APA 7.ª edición [página web]</a
+              >.
+            </p>
+            <p>
+              Los requisitos de estilo de citación NO aplican en las
+              Discusiones. Describe las fuentes utilizadas, pero no se requieren
+              citas completas.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="genai-citing" />
+          <span style="color: #004c90"
+            ><label class="accordion-title" for="genai-citing"
+              >Citar el uso de IA generativa</label
+            ></span
+          >
+          <div class="accordion-content">
+            <p>
+              El estudiante debe incluir la siguiente declaración en las
+              actividades para reconocer el uso de una herramienta de IA
+              generativa:
+            </p>
+            <p>
+              <em
+                >"Utilicé [Nombre de la herramienta de IA generativa], un
+                sistema de IA generativa creado por [Proveedor de la herramienta
+                de IA generativa], para completar esta actividad. [Nombre de la
+                herramienta de IA generativa] fue empleada para los siguientes
+                propósitos: [p. ej., generar ideas, revisar y editar borradores,
+                dar formato a citas y referencias, asistir con la [sección o
+                partes específicas] del trabajo]."</em
+              >
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="transcripts" />
+          <label class="accordion-title" for="transcripts"
+            >Transcripciones del curso</label
+          >
+          <div class="accordion-content">
+            <p>
+              Todas las transcripciones de este curso están disponibles en una
+              única descarga:&nbsp;<a
+                href="https://www.apu.apus.edu/student-handbook/university-policies-and-code-of-conduct/apus-student-code-of-conduct/standards-of-student-conduct/"
+                target="_blank"
+                rel="noopener"
+                >Archivo ZIP de transcripciones ISSC640 [descarga].</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+        class="footer-logo"
+        width="110"
+        height="29"
+      />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/StylesComponents.css"
+    />
+    <style>
+      /* VIDEO RESPONSIVE */
+      .video-wrapper-TopicOne {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive-TopicOne {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #000;
+      }
+
+      .video-responsive-TopicOne video,
+      .video-responsive-TopicOne iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* VIDEO CLIENTE */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBannerr"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Semana 5</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Dispositivos de Red e Interconexión de Redes</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Dispositivos de Infraestructura de Red</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        Comprender cómo se mueven los datos a través de una red comienza por
+        reconocer los diferentes dispositivos que dirigen el tráfico en las
+        distintas capas del modelo OSI. Dos de los componentes más fundamentales
+        —los switches y los routers— trabajan en conjunto para garantizar que
+        los datos lleguen al destino correcto de manera eficiente, ya sea dentro
+        de una red local o a través de múltiples redes interconectadas.
+      </p>
+      <h2>Switches</h2>
+      <p>
+        Los switches de Capa 2 son dispositivos de red que operan en la Capa de
+        Enlace de Datos (Capa 2) del modelo OSI. Su función principal es
+        reenviar tramas de datos entre dispositivos dentro de la misma Red de
+        Área Local (LAN).
+      </p>
+      <p>
+        <img
+          src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/Week_0_Instructors/Picture3.png"
+          alt="Up-close image of switches in a network."
+          title="Up-close image of switches in a network."
+          data-d2l-editor-default-img-style="true"
+          style="
+            max-width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          "
+          width="370"
+          height="370"
+        />
+      </p>
+      <p>
+        Lo hacen de manera eficiente utilizando las direcciones de Control de
+        Acceso al Medio (MAC) de los dispositivos, que son direcciones físicas
+        únicas grabadas en la tarjeta de interfaz de red (NIC) de cada
+        dispositivo. Estos dispositivos de Capa 2 registran las direcciones MAC
+        de los nodos de la LAN y las almacenan en memoria. Cuando un nodo desea
+        comunicarse con otro nodo en la red, el switch sabe exactamente a qué
+        puerto está conectado el nodo de destino. Esto hace que la comunicación
+        sea mucho más eficiente.&nbsp;
+      </p>
+      <p>
+        En el siguiente diagrama, se pueden observar varios equipos conectados a
+        un switch junto con algunos servidores y un router. Los equipos pueden
+        comunicarse a través del switch para acceder a los servidores. También
+        pueden comunicarse con el switch para acceder al router (puerta de
+        enlace predeterminada) y conectarse a Internet.
+      </p>
+      <p>
+        <img
+          src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/Week_0_Instructors/Picture4.png"
+          alt="Diagram of PCs connected to a switch with servers and a router."
+          title="Diagram of PCs connected to a switch with servers and a router."
+          data-d2l-editor-default-img-style="true"
+          style="
+            max-width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          "
+          width="624"
+          height="341"
+        />
+      </p>
+      <h2>Routers</h2>
+      <p>
+        La función principal de un router es conectar dos o más tipos diferentes
+        de redes (como la red doméstica con Internet o dos LAN de oficinas
+        distintas). Los routers operan en la Capa de Red (Capa 3) del modelo OSI
+        y utilizan direcciones IP para determinar la ruta más eficiente por la
+        que los paquetes de datos deben viajar entre redes. Otra función de los
+        routers, cuando se utilizan en grandes redes empresariales, es
+        seleccionar la mejor ruta a través de la red para enviar los datos. Esto
+        se denomina enrutamiento dinámico, y puede consultarse en
+        la&nbsp;sección siguiente. Varios equipos en la red pueden conectarse al
+        mismo puerto del router para alcanzar el destino remoto. Esto se logra
+        mediante el switch. Todos los equipos y el router estarán conectados al
+        switch y, por lo tanto, todos los equipos podrán comunicarse con el
+        router conectado. El router que proporciona acceso a Internet
+        generalmente se denomina puerta de enlace predeterminada.&nbsp;
+      </p>
+      <p>
+        <img
+          src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/Week_0_Instructors/Picture5.png"
+          alt="Diagram showing connections between PCs, a router, a switch, and the Internet."
+          title="Diagram showing connections between PCs, a router, a switch, and the Internet."
+          width="436"
+          height="436"
+          style="display: block; margin-left: auto; margin-right: auto"
+        />
+      </p>
+    </div>
+    <!-- Template JavaScript -->
+    <hr />
+    <div>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        role="presentation"
+        width="110"
+        style="float: right"
+      />
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>

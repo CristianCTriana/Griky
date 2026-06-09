@@ -1,0 +1,1002 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 400px; /* altura visible del acordeón */
+        padding: 20px;
+        overflow-y: auto; /* SCROLL */
+      }
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 2</span><br /><span
+          style="font-size: 28px"
+          >Fundamentos de Comunicación de Datos: LAN, MAN y WAN</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente Podcast"
+        class="banner-image"
+        width="665"
+        height="59"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_37jd4mkc&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_lmit519i"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W2_ISSC640_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content">
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{6}"
+                paraid="2"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Welcome back to ISSC640. This is Week 2, and the topic is
+                  Data Communication Basics: LAN, MAN, and WAN. In Week 1, you
+                  looked at the history of the internet and the trends shaping
+                  modern networks. This week you shift into a skill you will use
+                  constantly in networking: understanding network scale and
+                  tracing the path that data follows from a user to a
+                  destination.</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{8}"
+                paraid="3"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >When people experience a network problem, they often describe
+                  it with one word: “slow.” Your job, as someone learning
+                  networking fundamentals, is to turn “slow” into a more precise
+                  diagnosis. Is the problem inside the building, across a
+                  provider link, or at the destination&nbsp;service.&nbsp;Does
+                  the problem involve bandwidth, latency, jitter, or packet
+                  loss</span
+                ><span xml:lang="EN-US" data-contrast="auto">?</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;When you can answer those questions, you can
+                  troubleshoot efficiently and communicate clearly.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{10}"
+                paraid="4"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Among your Week 3 goals,&nbsp;you fill&nbsp;focus on three
+                  concepts. First, you will learn the difference between LAN,
+                  MAN, and WAN networks and what those categories mean in
+                  practice. Second, you will learn basic data communication
+                  characteristics, such as bandwidth and latency, and why they
+                  matter. Third, you will practice mapping communication paths
+                  and choosing the right metrics based on where the traffic
+                  travels.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{12}"
+                paraid="5"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >By the end of the week, you should be able to look at a
+                  scenario and say: this&nbsp;likely lives&nbsp;in the LAN, or
+                  it&nbsp;likely involves&nbsp;the WAN, and here is how I would
+                  confirm it.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{14}"
+                paraid="6"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Let us start with the three terms: LAN, MAN, and
+                  WAN.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{16}"
+                paraid="7"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto">A&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto">LAN</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >, or local area network, is the network you control inside a
+                  small geographic area, like a home, an office floor, a
+                  building, or a campus segment.&nbsp;A LAN typically uses
+                  switches and wireless access points to connect
+                  devices.&nbsp;The LAN is usually where you have the
+                  most&nbsp;control, because&nbsp;you own
+                  the&nbsp;equipment&nbsp;and you can see the
+                  configuration.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{18}"
+                paraid="8"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto">A&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto">MAN</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >, or metropolitan area network, connects sites across a city
+                  or a regional area. Think of multiple buildings in the same
+                  city that need to share connectivity. Not every organization
+                  uses the term MAN daily, but the concept matters. A connection
+                  across a city often has&nbsp;different
+                  characteristics&nbsp;than an internal LAN. It may use provider
+                  infrastructure, shared fiber, or regional
+                  services.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{20}"
+                paraid="9"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto">A&nbsp;</span
+                ><span data-contrast="auto">WAN</span
+                ><span data-contrast="auto"
+                  >, or wide area network, connects sites across long distances.
+                  A WAN often relies heavily on service providers. If you
+                  connect a branch office in one state to a headquarters in
+                  another, or if you connect an office to a major cloud region,
+                  you are relying on WAN characteristics. A WAN often has higher
+                  delay than a LAN, and troubleshooting requires you to consider
+                  external dependencies.</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{22}"
+                paraid="10"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now, in real environments, these categories overlap. An
+                  organization might have a LAN in each site,
+                  a&nbsp;provider&nbsp;network connecting sites regionally, and
+                  WAN connectivity to cloud services and remote offices. That is
+                  why the key skill is not memorizing&nbsp;a definition. The key
+                  skill is&nbsp;identifying&nbsp;where the
+                  traffic&nbsp;goes&nbsp;and which segments it
+                  crosses.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{24}"
+                paraid="11"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Once you can name the segment, you can think about data
+                  communication characteristics.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{26}"
+                paraid="12"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >The first characteristic is&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto">bandwidth</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >. Bandwidth is how much data can be transmitted per
+                  unit&nbsp;of&nbsp;time. People often think of bandwidth as the
+                  primary measure of network quality. It matters, but it is not
+                  the whole story. Bandwidth is especially important when many
+                  users share a link or when applications move&nbsp;large
+                  amounts&nbsp;of data. If a WAN circuit is small and many
+                  people are using video meetings, file sync, and cloud tools at
+                  the same time, bandwidth can become saturated. When bandwidth
+                  saturates, queues form, delays increase, and packet loss can
+                  appear.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{28}"
+                paraid="13"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >The second characteristic is&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto">latency</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >. Latency is the delay between sending and receiving. Latency
+                  is influenced by distance, routing, and processing. On a LAN,
+                  latency is&nbsp;usually low. Across a WAN, latency is higher
+                  because traffic travels farther and crosses more devices.
+                  Latency matters for interactive applications. A file download
+                  can tolerate higher latency, but interactive work, like voice,
+                  video, and remote desktops, can feel uncomfortable when
+                  latency grows.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{30}"
+                paraid="14"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >The third characteristic is&nbsp;</span
+                ><span data-contrast="auto">jitter</span
+                ><span data-contrast="auto"
+                  >, which is variation in latency. Jitter is especially
+                  important for real-time applications. Even if average latency
+                  is acceptable, high jitter can cause choppy audio and unstable
+                  video. This is why a speed test can show high bandwidth, but a
+                  voice call still sounds bad. The timing variation is the
+                  problem.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{32}"
+                paraid="15"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >The fourth characteristic is&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto">packet loss</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >. Packet loss means some data never arrives. Loss can occur
+                  because of congestion, poor wireless conditions, interface
+                  errors, or other issues. Many modern applications
+                  can&nbsp;recover from&nbsp;small amounts&nbsp;of loss, but
+                  real-time services degrade quickly. Loss also forces
+                  retransmission, which increases delay and reduces effective
+                  throughput.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{34}"
+                paraid="16"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Now, let us connect these characteristics back to LAN, MAN,
+                  and WAN troubleshooting.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{36}"
+                paraid="17"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >When you troubleshoot&nbsp;a LAN&nbsp;issue, you often start
+                  with local signals: switch status, Wi-Fi health,
+                  local&nbsp;utilization, and device connectivity.
+                  You&nbsp;ask:&nbsp;are there errors on interfaces, is a
+                  wireless channel crowded, are users far from access points, is
+                  there interference, is a loop causing broadcast storms, or is
+                  a device&nbsp;misconfigured.</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{38}"
+                paraid="18"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >When you troubleshoot a WAN issue, you look at provider link
+                  metrics: bandwidth usage, latency, error rates, and packet
+                  loss across the circuit. You also look for time patterns. WAN
+                  problems often show up during peak hours when links are
+                  saturated. That is why comparing performance at&nbsp;different
+                  times&nbsp;can reveal congestion. WAN troubleshooting also
+                  often requires escalation. A provider might need to
+                  investigate routing or link health. The best escalations
+                  include evidence: timestamps, measured loss, and documented
+                  symptoms.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{40}"
+                paraid="19"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >For MAN-like connections, you blend both. You might have more
+                  provider control than a long-distance WAN, but you still rely
+                  on external infrastructure. The mindset is the
+                  same:&nbsp;identify&nbsp;the segment and measure what
+                  matters.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{42}"
+                paraid="20"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Now, let us practice the most valuable habit for Week 2:
+                  mapping the communication path.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{44}"
+                paraid="21"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Pick an everyday activity: a user joins a video meeting. What
+                  is the&nbsp;path?</span
+                ><span xml:lang="EN-US" data-contrast="auto">.</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;It begins on the user’s device. It moves across the
+                  local Wi-Fi or wired LAN. It passes through a router
+                  or&nbsp;firewall&nbsp;at the site. It crosses the internet
+                  provider network, which is part of the WAN. It reaches the
+                  video service infrastructure, which could
+                  be&nbsp;cloud-hosted. That is the end-to-end path.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{47}"
+                paraid="22"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now, if the user says the meeting is choppy, you can test
+                  each segment. Is Wi-Fi stable? Is the site router overloaded?
+                  Is the WAN link saturated? Is there&nbsp;measured&nbsp;packet
+                  loss? Is latency unusually high? Are other sites affected? If
+                  only one site is affected, that points to local or WAN issues.
+                  If many sites are affected, that points to a shared external
+                  dependency or the service itself.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{49}"
+                paraid="23"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >This is why comparing sites is powerful. If the headquarters
+                  is fine and the branch office is struggling, you can focus on
+                  what differs. Often, the difference is bandwidth&nbsp;plan,
+                  Wi-Fi environment, or local network design. This reduces
+                  guesswork.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{51}"
+                paraid="24"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Let us talk about common failure patterns and how they relate
+                  to LAN and WAN.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{53}"
+                paraid="25"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >A classic pattern is&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >peak-hour slowdown</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;at a branch office. During the
+                  day,&nbsp;performance&nbsp;is fine. During midday, when video
+                  meetings and file syncing increase, performance collapses.
+                  That often&nbsp;indicates&nbsp;WAN saturation. The fix might
+                  be more bandwidth, traffic prioritization, or scheduling large
+                  transfers outside peak periods.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{55}"
+                paraid="26"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Another pattern is&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >wireless instability</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >. A user moves around, and connectivity drops. Or many users
+                  connect, and performance becomes inconsistent. That
+                  often&nbsp;indicates&nbsp;Wi-Fi congestion, poor placement,
+                  interference, or configuration issues. The fix might involve
+                  access point placement, channel planning, or upgrading
+                  capacity.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{57}"
+                paraid="27"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Another pattern is&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >high latency to distant services</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >. If a user is far from a cloud region, latency can be
+                  higher. Applications that require frequent interaction can
+                  feel slower, even if bandwidth is adequate. The fix might
+                  involve choosing closer service
+                  regions,&nbsp;optimizing&nbsp;routing, or using performance
+                  acceleration techniques, depending on the
+                  environment.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{59}"
+                paraid="28"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now,&nbsp;a final&nbsp;theme for Week 2 is communication.
+                  Networking is technical, but support work is also
+                  communication. When you can explain, “This issue appears on
+                  the WAN link because we see bandwidth saturation and increased
+                  packet loss during peak hours,” you build trust. When you can
+                  document the path and show metrics, you can escalate
+                  effectively. When you can explain the difference between
+                  bandwidth and latency, users better understand why a
+                  high-speed connection can still feel slow.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{61}"
+                paraid="29"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >In Week 3, you will build on Week 2 by studying protocols,
+                  ports, and the OSI model. Those tools give you a structured
+                  way to&nbsp;locate&nbsp;failures at different layers, from
+                  physical links to application services. Week 2 gives you the
+                  geography, LAN, MAN, and WAN. Week 3 gives you the layered
+                  model to diagnose what is failing within those
+                  segments.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{63}"
+                paraid="30"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Let us close with reflection questions.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{65}"
+                paraid="31"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Choose a common task, such as loading a cloud file or joining
+                  a video meeting.&nbsp;Describe the path in three segments:
+                  local network, provider network, and destination
+                  service.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{67}"
+                paraid="32"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now name two performance factors most likely to affect the
+                  task. For video,&nbsp;think&nbsp;latency, jitter, and loss.
+                  For file transfers, think bandwidth and congestion. For
+                  login,&nbsp;think&nbsp;latency and reliability.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{69}"
+                paraid="33"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Finally, if the task fails at one site but not another, what
+                  is the first difference you
+                  would&nbsp;investigate.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{71}"
+                paraid="34"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >If you can answer those questions, you are building the Week
+                  2 habit: trace the path, measure what matters, and let
+                  evidence guide your troubleshooting.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{dd628a86-a951-4f8d-adf3-ab2f3f375867}{73}"
+                paraid="35"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Thank you for listening to the Week 2 podcast for ISSC640.
+                  This week focused on data communication basics and the
+                  differences between LAN, MAN, and WAN environments, with
+                  emphasis on tracing communication paths and understanding
+                  bandwidth, latency, jitter, and packet loss. In Week 3, you
+                  will study network protocols, ports, and the OSI model to
+                  deepen your troubleshooting and communication skills.</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/Week_2/PRODUCCION%20W2/W2_ISSC640_Digital_content_guide_podcast/W2_ISSC640_Digital_content_guide_podcast.MP3"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          width="110"
+        />
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/StylesComponents.css"
+    />
+    <style>
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBanner"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Semana 6</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Interconexión de redes (Parte 2: Direccionamiento IPv4 e
+          IPv6)&nbsp;</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Traducción de Direcciones de Red&nbsp;</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        NAT se implementa en un dispositivo, como un router, que conecta tanto
+        tu red privada (usando direcciones IP privadas no enrutables, como
+        192.168.x.x) como el internet público (usando una única dirección IP
+        pública enrutable asignada por tu ISP). Nota que NAT fue una solución
+        temporal, y la industria consideró que todas las organizaciones
+        comenzarían a utilizar IPv6.&nbsp;
+      </p>
+      <p>
+        A continuación se presenta una breve descripción del funcionamiento de
+        NAT:
+      </p>
+      <div class="griky-timeline">
+        <div class="griky-tl-container">
+          <div class="griky-tl-item">
+            <div class="griky-tl-axis">
+              <div class="griky-tl-dot"></div>
+            </div>
+            <div class="griky-tl-card">
+              <span style="font-size: 20px"
+                ><strong>Tráfico saliente (de privado a público)</strong
+                >&nbsp;</span
+              ><br />
+              <ol>
+                <li>
+                  <strong>Origen del paquete: </strong>Un dispositivo en la red
+                  privada envía un paquete destinado a un servidor público.
+                </li>
+                <li>
+                  <strong>Interceptación por el router: </strong>El router
+                  recibe el paquete. Detecta que la IP de origen es una
+                  dirección privada y que el destino es una dirección pública,
+                  lo que indica la necesidad de realizar una traducción.
+                </li>
+                <li>
+                  <strong>Traducción:</strong> El router realiza dos
+                  modificaciones fundamentales:
+                  <ul>
+                    <li>
+                      Reemplaza la IP de origen privada con la dirección IP
+                      pública del router.
+                    </li>
+                    <li>
+                      Asigna un número de puerto de origen único y temporal a la
+                      sesión, como '36780'.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Registro en la tabla:</strong> El router registra esta
+                  traducción en su tabla NAT.
+                </li>
+                <li>
+                  <strong>Envío del paquete:</strong> El paquete modificado, que
+                  ahora aparenta originarse desde la IP pública del router y el
+                  puerto asignado, es enviado al internet público.
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="griky-tl-item">
+            <div class="griky-tl-axis">
+              <div class="griky-tl-dot"></div>
+            </div>
+            <div class="griky-tl-card">
+              <span style="font-size: 20px"
+                ><strong>Tráfico entrante (de público a privado)</strong
+                >&nbsp;</span
+              ><br />
+              <ol>
+                <li>
+                  <strong>Llegada de la respuesta:</strong> El servidor público
+                  envía un paquete de respuesta. La IP de destino es la IP
+                  pública del router y el puerto de destino es el puerto
+                  asignado '36780'.
+                </li>
+                <li>
+                  <strong>Consulta de la tabla por el router: </strong>El router
+                  recibe el paquete y consulta su tabla NAT en busca de una
+                  entrada que coincida con la dirección de destino y el puerto
+                  entrantes.
+                </li>
+                <li>
+                  <strong>Traducción inversa:</strong> El router encuentra la
+                  entrada correspondiente y realiza la traducción inversa:
+                  <ul>
+                    <li>
+                      Reemplaza la IP de destino pública con la dirección IP
+                      privada original.
+                    </li>
+                    <li>
+                      Reemplaza el puerto asignado con el puerto de origen
+                      original del dispositivo.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Reenvío del paquete: </strong>El paquete es enviado al
+                  dispositivo original, que recibe los datos de forma
+                  transparente, sin ser consciente de que tuvo lugar la
+                  traducción.
+                </li>
+              </ol>
+            </div>
+          </div>
+          <!-- Repeat griky-tl-item for each event -->
+        </div>
+      </div>
+      <p>
+        Puedes ver el siguiente video para obtener una explicación más detallada
+        de este proceso.
+      </p>
+      <div
+        style="text-align: center; width: 100%; max-width: 100%; margin: 10px 0"
+      >
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Cintillos_Español/video.png"
+          alt="Mira el siguiente video"
+          style="
+            display: block;
+            margin: 20px auto;
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+          "
+        />
+      </div>
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <iframe
+            src="https://www.youtube.com/embed/FTUV0t6JaDA?si=Khpzzfa2zMfoSgh1&amp;wmode=opaque"
+            allowfullscreen="allowfullscreen"
+          ></iframe>
+        </div>
+        <!-- Accordion headings should be changed to respect page hierarchy -->
+        <div class="accordion">
+          <div class="accordion-item">
+            <input type="checkbox" id="acc-16" />
+            <label class="accordion-title" for="acc-16"
+              >Transcripción: NAT explicado - Traducción de Direcciones de
+              Red</label
+            >
+            <div class="accordion-content">
+              <p>
+                <strong
+                  >Introduction to Network Address Translation (NAT)</strong
+                >
+              </p>
+              <p>
+                (0:00) NAT stands for network address translation, and this is a
+                service that is used in routers. Its purpose is to translate a
+                set of IP addresses to another set of IP addresses, and the
+                reason for having the NAT service is to help preserve the
+                limited amount of IP version 4 public IP addresses that we have
+                available around the world.
+              </p>
+              <p><strong>Why NAT Exists: IPv4 Address Limitations</strong></p>
+              <p>
+                (0:26) When the IP version 4 address was created, engineers
+                didn't realize how big the internet will become. Because even
+                though there were over 4 billion IP version 4 addresses
+                available, the engineers thought that that would be enough, but
+                obviously they were wrong.
+              </p>
+              <p>
+                (0:44) So in order to prevent a shortage of public IP version 4
+                addresses, engineers developed private IP addresses and network
+                address translation.
+              </p>
+              <p><strong>Public and Private IP Addresses</strong></p>
+              <p>
+                (0:57) Now there are two different types of IP version 4
+                addresses. There's public and there is private.
+              </p>
+              <p>
+                (1:04) Public IP addresses are publicly registered on the
+                Internet. You have to have a public IP address if you want to go
+                on the internet, and there are approximately 4 billion public IP
+                addresses available.
+              </p>
+              <p>(1:19) So they are limited.</p>
+              <p>
+                (1:21) Now private IP addresses are different. Private IP
+                addresses are not publicly registered, so you cannot directly
+                access the internet with a private IP.
+              </p>
+              <p>
+                (1:33) Private IP addresses are only used internally such as
+                inside a home or business. They are not used out on the public
+                Internet, and your router is what assigns your internal devices
+                a private IP.
+              </p>
+              <p><strong>Why NAT Is Needed in Homes and Businesses</strong></p>
+              <p>
+                (1:49) So for example, most homes and businesses are not going
+                to have just one device that needs internet access. Chances are
+                that they are going to have multiple devices that need access to
+                the Internet.
+              </p>
+              <p>
+                (2:02) So those devices need a public IP address if they want to
+                access the Internet. Now, you could contact your internet
+                service provider and ask them for these additional public IP
+                addresses for all of your devices, but that's going to be more
+                expensive, unnecessary, and more importantly, it would also be a
+                waste of public IP addresses.
+              </p>
+              <p>
+                (2:27) And let's face it, if every device in the world had their
+                own public IP address, we would have ran out of public IP
+                addresses already.
+              </p>
+              <p><strong>How NAT Works</strong></p>
+              <p>
+                (2:35) So instead, we can have our router assign the devices
+                inside our home or business private IP addresses, and when our
+                devices need to access the Internet, their private IP address
+                will be translated by NAT in the router to the one public IP
+                address that we have been given.
+              </p>
+              <p>
+                (3:01) So again, this is what NAT does. It translates a set of
+                IP addresses to another set of IP addresses.
+              </p>
+              <p>
+                (3:06) So not only does it translate private to public, but also
+                translates public to private.
+              </p>
+              <p>
+                (3:13) Because if a computer out on the internet wants to
+                communicate with a computer on this private network, then the
+                public IP address needs to be translated by NAT to the private
+                IP address for that computer.
+              </p>
+              <p><strong>The Future: IPv6 and Life Without NAT</strong></p>
+              <p>
+                (3:30) Now in the future, we won't need NAT or private IP
+                addresses, and this is because of the new generation of an IP
+                address called IP version 6.
+              </p>
+              <p>
+                (3:38) With IP version 6, every single device in the world will
+                have its own public IP address.
+              </p>
+              <p>
+                (3:48) So there is no need for IP address translation, and this
+                is because IP version 6 is able to produce over 340 undecillion
+                IP addresses, so that's the number.
+              </p>
+              <p>
+                (Transcript provided by YouTube. Organized by Copilot,
+                2026)&nbsp;
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <p>
+        La siguiente tabla enumera los rangos de tres direcciones IP privadas.
+        El departamento de IT de la organización determinará qué dirección
+        privada utilizar, según el número de nodos y la cantidad de segmentos
+        disponibles.
+      </p>
+      <div class="table-responsive">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp;
+        <div class="table-wrapper">
+          <table class="table-apus table" style="width: 91.9505%">
+            <caption>
+              Rangos de Direcciones IP
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" style="width: 27.4068%; text-align: center">
+                  <p>Rango de direcciones&nbsp;</p>
+                </th>
+                <th scope="col" style="width: 24.9153%; text-align: center">
+                  <p>Notación CIDR</p>
+                </th>
+                <th scope="col" style="width: 23.8893%; text-align: center">
+                  <p>Número de direcciones</p>
+                </th>
+                <th scope="col" style="width: 23.8893%; text-align: center">
+                  <p>Caso de uso típico&nbsp;</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="width: 27.4068%">10.0.0.0 a 10.255.255.255</td>
+                <td style="width: 24.9153%">10.0.0.0/8</td>
+                <td style="width: 23.8893%">Aproximadamente 16,7 millones</td>
+                <td style="width: 23.8893%; text-align: center">
+                  Redes empresariales de gran escala
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 27.4068%">172.16.0.0 a 172.31.255.255</td>
+                <td style="width: 24.9153%">172.16.0.0/12</td>
+                <td style="width: 23.8893%">Aproximadamente 1,0 millón</td>
+                <td style="width: 23.8893%">Redes de tamaño mediano</td>
+              </tr>
+              <tr>
+                <td style="width: 27.4068%">192.168.0.0 a 192.168.255.255</td>
+                <td style="width: 24.9153%">192.168.0.0/16</td>
+                <td style="width: 23.8893%">Aproximadamente 65.536</td>
+                <td style="width: 23.8893%">
+                  Redes domésticas y de pequeñas oficinas (las más comunes)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Template JavaScript -->
+    <hr />
+    <div>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        width="110"
+        style="float: right"
+        role="presentation"
+      />
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,1057 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 400px; /* altura visible del acordeón */
+        padding: 20px;
+        overflow-y: auto; /* SCROLL */
+      }
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 1</span><br /><span
+          style="font-size: 28px"
+          >Historia y Tendencias de Internet</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente Podcast"
+        class="banner-image"
+        width="665"
+        height="59"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_vbmg31uo&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_3xj46uye"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W1_ISSC640_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content">
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{8}"
+                paraid="3"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Welcome to ISSC640. This is Week 1, and the topic is Internet
+                  History and Trends. This week sets the foundation for
+                  everything that comes next. Networking can feel like a
+                  collection of technical details, ports, devices, models, and
+                  addresses. History and trends give those details meaning. When
+                  you understand how the internet developed and why networks
+                  changed over time, you can learn the technical parts faster
+                  and make better decisions when you support real
+                  systems.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{10}"
+                paraid="4"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"></span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{12}"
+                paraid="5"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Let's&nbsp;start with a practical truth. Networks do not
+                  exist in&nbsp;a vacuum. They evolve because people and
+                  organizations need new things: faster communication, shared
+                  resources, reliable services, and secure access. As those
+                  needs expand, networks expand. Standards&nbsp;emerge. New
+                  tools appear. Expectations&nbsp;rise. Today, most
+                  organizations depend on networks for everything from email and
+                  file access to video meetings, cloud applications, and
+                  identity services. When the network has a problem, the
+                  business has a problem.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{14}"
+                paraid="6"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Among your Week 1 goals, you will focus on two concepts.
+                  First, you will build a high-level understanding of how the
+                  internet grew into what it is today. Second, you will connect
+                  that evolution to modern trends that shape what network
+                  professionals support: higher bandwidth demand, mobility,
+                  cloud services, and an expanding number of connected devices.
+                  By the end of the week, you should be able to explain why
+                  those trends change network requirements and why they change
+                  troubleshooting priorities.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{16}"
+                paraid="7"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >This week is not about memorizing dates. It is about
+                  understanding the story of growth, standardization, and
+                  changing expectations.</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{18}"
+                paraid="8"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >A useful way to think about internet history is to focus on
+                  themes rather&nbsp;than&nbsp;a long timeline. The most
+                  important themes are interconnection, standardization,
+                  expansion, and dependence.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{20}"
+                paraid="9"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Interconnection</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;is&nbsp;the&nbsp;foundational idea. Early networks were
+                  often separate islands. The breakthrough was connecting
+                  networks so information could move across boundaries. Once
+                  networks could interconnect, the value of each network
+                  increased, because users were no longer limited to one system.
+                  Interconnection also created new challenges. If
+                  you&nbsp;connect&nbsp;networks, you need rules for how devices
+                  address each other, how data is packaged, and how traffic is
+                  routed.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{22}"
+                paraid="10"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >That brings&nbsp;us to&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >standardization</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >. A network is most useful when different systems can
+                  communicate. Standards are the reason networking does not
+                  require every organization to invent its own rules. When
+                  common protocols are adopted, devices and services can work
+                  together. Standardization does not remove complexity, but it
+                  creates a shared language. In this course, you will later
+                  study protocol models and&nbsp;addressing. In Week 1, the key
+                  idea is that standards made widespread connectivity
+                  possible.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{24}"
+                paraid="11"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto">Next is&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto">expansion</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >. As networks grew, more users&nbsp;joined&nbsp;and more
+                  services became network dependent. This growth increased
+                  expectations. People wanted faster access, lower delay, and
+                  better reliability. A simple message system expanded into web
+                  access, streaming, real-time collaboration, and cloud-based
+                  work. Growth also increased diversity. Networks began to
+                  support many device types and&nbsp;many
+                  usage&nbsp;patterns.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{26}"
+                paraid="12"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Finally, we have&nbsp;</span
+                ><span xml:lang="EN-US" data-contrast="auto">dependence</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >. At a certain point, networks stopped being optional. They
+                  became critical infrastructure. When organizations moved
+                  essential operations online, network availability became
+                  business continuity.&nbsp;This is why modern networking
+                  includes not only connectivity, but also planning, redundancy,
+                  monitoring, and support processes.&nbsp;The more dependent a
+                  business is on the network, the higher the cost of downtime,
+                  and the higher the expectations for rapid
+                  resolution.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{28}"
+                paraid="13"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Now let us connect these themes to modern trends, because
+                  trends explain why networking feels different today than it
+                  did in older environments.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{30}"
+                paraid="14"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Trend one&nbsp;is bandwidth demand.</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;Even if you do not work in a technical role, you
+                  have&nbsp;probably noticed&nbsp;that modern work includes
+                  video meetings, streaming training content, cloud file
+                  synchronization, and real-time collaboration tools. These
+                  services can be sensitive to delay and packet loss, not only
+                  raw speed. This is why “the internet is fast” is not a
+                  complete statement. A network can have high speed but still
+                  perform poorly for real-time services if latency and stability
+                  are weak.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{32}"
+                paraid="15"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >For network support, this trend increases the importance of
+                  capacity planning and monitoring. If you do not measure usage
+                  patterns, you cannot predict where bottlenecks will appear. If
+                  you do not understand peak usage, you cannot explain why
+                  performance is fine in the morning and painful in the
+                  afternoon. Bandwidth demand also changes user expectations.
+                  People expect smooth video and instant access, even when that
+                  depends on many components working well.</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{34}"
+                paraid="16"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto">Trend two is mobility.</span
+                ><span data-contrast="auto"
+                  >&nbsp;Networks used to be strongly tied to fixed locations
+                  and wired connections. Mobility changed that. Wi-Fi became the
+                  default for many users. Devices became more diverse. Users
+                  began to move between home, office, campus, and public
+                  networks. Mobility makes&nbsp;connectivity on the
+                  go&nbsp;easy, but it also makes troubleshooting harder.
+                  Wireless environments are affected by interference,
+                  congestion, placement, and device behavior. A user might
+                  experience issues that appear to be “internet problems,” but
+                  the real issue is local wireless conditions.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{36}"
+                paraid="17"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >For network professionals, mobility increases the need for
+                  wireless design, site planning, and user education. It also
+                  increases the importance of distinguishing local problems from
+                  external ones. If the Wi-Fi is unstable,&nbsp;the&nbsp;cloud
+                  applications will look unstable. If the Wi-Fi is crowded,
+                  video meetings will degrade. In modern environments, “network
+                  troubleshooting” often begins with checking the local
+                  connection quality.</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{38}"
+                paraid="18"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Trend&nbsp;three is&nbsp;cloud services.</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;Cloud adoption is one of the biggest shifts in modern
+                  networking. When an organization moves email, file storage,
+                  and business applications to cloud services, traffic patterns
+                  change. Instead of many services being hosted inside the
+                  building, services are accessed over the internet. That shifts
+                  dependencies. Now, internet performance, DNS resolution,
+                  identity systems, and external service availability directly
+                  affect productivity.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{40}"
+                paraid="19"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >A common misunderstanding is the idea
+                  that&nbsp;the&nbsp;cloud means the organization no longer
+                  needs network support. The reality is that&nbsp;the&nbsp;cloud
+                  shifts responsibility rather than removing it. The cloud
+                  provider manages certain parts of the infrastructure, but the
+                  organization still needs reliable
+                  connectivity,&nbsp;appropriate security&nbsp;controls, and
+                  monitoring that can&nbsp;identify&nbsp;where a problem is
+                  occurring. If users cannot access a cloud service, the support
+                  team must&nbsp;determine&nbsp;whether the issue is local
+                  Wi-Fi, the internet circuit, DNS, identity, or the cloud
+                  service itself. This requires end-to-end visibility and clear
+                  escalation paths.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{42}"
+                paraid="20"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >The&nbsp;Cloud also changes security assumptions.
+                  Identity-based access becomes central. Multi-factor
+                  authentication is common. Single sign-on becomes critical. If
+                  identity services fail, users lose access to many applications
+                  at once. This is a major shift from older environments where a
+                  single application outage did not necessarily affect
+                  everything else.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{44}"
+                paraid="21"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Trend four is the explosion of connected devices.</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;The number of endpoints keeps growing. This includes
+                  laptops and phones, but also printers, cameras, sensors, and
+                  other “smart” devices. More devices&nbsp;means&nbsp;more
+                  management complexity and more potential points of failure. It
+                  also increases security&nbsp;risk. A device with weak
+                  configuration can become a path for disruption.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{47}"
+                paraid="22"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >For network administrators and support teams, more
+                  devices&nbsp;means&nbsp;stronger inventory, clearer
+                  segmentation, and better documentation. It also means stronger
+                  processes for onboarding, patching, and decommissioning
+                  devices. Without those processes, troubleshooting
+                  becomes&nbsp;guesswork&nbsp;and security becomes
+                  reactive.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{49}"
+                paraid="23"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now, how does all of this help you in Week&nbsp;1.&nbsp;It
+                  helps you build a mental model that you will use throughout
+                  the course. When you learn about LANs and WANs, you will
+                  understand why traffic patterns&nbsp;changed. When you learn
+                  about protocols and the OSI model, you will see how layers
+                  help you troubleshoot modern services. When you learn about
+                  devices, you will understand how the network is built to
+                  handle growth and diversity.</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{51}"
+                paraid="24"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >When you learn about IP addressing, you will see why
+                  addressing and routing exist at all. When you learn about
+                  cloud services, you will already have context for why cloud
+                  changes network responsibility.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{53}"
+                paraid="25"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >So, what is the practical takeaway for Week 1? It is this:
+                  networking is shaped by history and pressured by trends. When
+                  you understand the pressures, you
+                  can&nbsp;anticipate&nbsp;problems and design better
+                  support.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{55}"
+                paraid="26"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >If an organization adopts cloud services, you should expect
+                  higher dependence on internet connectivity and identity
+                  services. If an organization relies on mobility, you should
+                  expect Wi-Fi design and troubleshooting to be central. If an
+                  organization increases video collaboration, you should expect
+                  performance sensitivity to latency and stability. If an
+                  organization adds many connected devices, you should expect
+                  inventory and segmentation to matter more.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{57}"
+                paraid="27"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >This week is your reminder that networks are living systems.
+                  They evolve. They absorb new demands. And the people
+                  supporting them must evolve as well.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{59}"
+                paraid="28"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >In Week 2, you will shift into data communication basics:
+                  LAN, MAN, and WAN. You will take the big picture from Week 1
+                  and connect it to how networks are structured and how data
+                  moves across different scales.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{61}"
+                paraid="29"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Let us close with a simple reflection.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{63}"
+                paraid="30"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Choose one modern trend: cloud adoption, mobility, remote
+                  work, or connected devices. Now answer three
+                  questions.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{65}"
+                paraid="31"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >First, how does this trend change bandwidth demand or
+                  performance sensitivity?</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{67}"
+                paraid="32"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Second, how does this trend change reliability expectations
+                  and outage impact?&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{69}"
+                paraid="33"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Third, how does this trend change security needs, especially
+                  around identity and access?&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{71}"
+                paraid="34"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Then add one final sentence: how does this trend change what
+                  support teams must monitor and document.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{73}"
+                paraid="35"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >If you can answer those questions, you are thinking like a
+                  network professional who can connect context to
+                  practice.</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{75}"
+                paraid="36"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"></span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{77}"
+                paraid="37"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"></span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{f0ff356c-0ccc-4986-a6e5-616b699f16bc}{79}"
+                paraid="38"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Thank you for listening to the Week 1 podcast for ISSC640.
+                  This week focused on internet history and trends and how
+                  modern networking requirements are shaped by cloud services,
+                  mobility, and expanding connectivity. In Week 2, you will
+                  begin data communication basics and learn how LANs, MANs, and
+                  WANs support communication at different scales.&nbsp;</span
+                ><span
+                  data-ccp-props='{"335557856":16777215,"335559738":240,"335559739":240,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/Week_1/PRODUCCION%20W1/W1_ISSC640_Digital_content_guide_podcast/W1_ISSC640_Digital_content_guide_podcast.MP3"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          width="110"
+        />
+      </p>
+    </div>
+  </body>
+</html>

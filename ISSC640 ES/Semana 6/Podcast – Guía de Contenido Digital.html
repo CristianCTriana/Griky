@@ -1,0 +1,1017 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 400px; /* altura visible del acordeón */
+        padding: 20px;
+        overflow-y: auto; /* SCROLL */
+      }
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 6</span><br /><span
+          style="font-size: 28px"
+          >Interconexión de redes (Parte 2: Direccionamiento IPv4 e IPv6)</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente Podcast"
+        class="banner-image"
+        width="665"
+        height="59"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_nh3uy7m6&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_z4x6vshj"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W6_ISSC640_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content">
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{8}"
+                paraid="3"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Welcome back to ISSC640. This is Week 6, and the topic is
+                  Internetworking Part 2: IPv4 and IPv6 Addressing. In Week 5,
+                  you learned about network devices and internetworking and how
+                  routers and boundary devices&nbsp;connect&nbsp;networks. Week
+                  6 explains the logic those devices use to make forwarding
+                  decisions. That logic is built on addressing. If addressing is
+                  wrong, routing fails, even when cables, Wi-Fi, and devices are
+                  working.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{10}"
+                paraid="4"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >If you have ever seen a device that “connects” but cannot
+                  reach what it needs, you have seen why Week 6 matters. A
+                  device can connect to Wi-Fi, show signal bars, and even
+                  communicate locally, but still&nbsp;fail to&nbsp;reach
+                  resources on other networks. Many of those issues come down to
+                  three settings: the IP address, the subnet mask or prefix, and
+                  the default gateway.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{12}"
+                paraid="5"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >You will focus on three concepts this week that will help you
+                  achieve your Week 6 goals. First, you will understand what an
+                  IP address does and how it supports routing. Second, you will
+                  understand subnetting at a practical level, meaning how
+                  networks are divided and how devices decide what is local.
+                  Third, you will compare IPv4 and IPv6 at&nbsp;a high
+                  level&nbsp;and understand why IPv6 exists and how transition
+                  often works in real environments.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{14}"
+                paraid="6"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >By the end of Week 6, you should be able to look at an IP
+                  configuration and quickly&nbsp;identify&nbsp;common
+                  misconfigurations, such as a wrong gateway, a subnet mismatch,
+                  or an&nbsp;address&nbsp;conflict.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{16}"
+                paraid="7"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Let us begin with the role of IP addressing.&nbsp;An IP
+                  address identifies a device on a network and also tells
+                  routers where that device belongs.&nbsp;Addressing supports
+                  two essential tasks: local delivery and routed
+                  delivery.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{18}"
+                paraid="8"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Local delivery is when the destination is on the same network
+                  segment. Routed delivery is when the destination is on a
+                  different network. A device must decide which it is. That
+                  decision depends on the subnet information.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{20}"
+                paraid="9"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >This is where the idea of a network&nbsp;portion&nbsp;and a
+                  host&nbsp;portion&nbsp;becomes&nbsp;important. The
+                  network&nbsp;portion&nbsp;identifies&nbsp;the network. The
+                  host&nbsp;portion&nbsp;identifies&nbsp;the individual device
+                  within that network. The subnet mask, in IPv4, or the prefix
+                  length, in IPv6, is what&nbsp;defines how much of the address
+                  is&nbsp;network&nbsp;and how much is host.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{22}"
+                paraid="10"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now let us talk about the default gateway. The default
+                  gateway is the router address that a device uses when the
+                  destination is not local. If a device wants to reach something
+                  outside its subnet, it sends traffic to the gateway. If the
+                  gateway is wrong or unreachable, the device will often be able
+                  to talk locally but not remotely. That symptom pattern appears
+                  constantly in&nbsp;support&nbsp;tickets.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{24}"
+                paraid="11"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Let us make this concrete. Imagine a laptop on a local
+                  network. It can reach the printer and a nearby desktop. That
+                  suggests the laptop is on the right Wi-Fi&nbsp;and the local
+                  switch and access point are functioning. Now the laptop tries
+                  to reach a cloud service and fails.
+                  That&nbsp;suggests&nbsp;the failure is in routed delivery. The
+                  first checks are: does the laptop have a valid IP address,
+                  does it have the correct subnet mask or prefix, and does it
+                  have the correct default gateway?</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{26}"
+                paraid="12"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >If the gateway points to an address that is not on the same
+                  subnet, the laptop cannot reach it. If the subnet mask is
+                  wrong, the laptop might misclassify destinations as local when
+                  they are not, or remote when they are local. If the IP address
+                  conflicts with another device, communication can be
+                  intermittent and confusing.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{28}"
+                paraid="13"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Now let us briefly compare IPv4 and IPv6.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{30}"
+                paraid="14"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >IPv4 uses a dotted decimal format and has a limited address
+                  space. That limitation is one of the reasons networks often
+                  use private addressing and translation techniques. IPv4 also
+                  uses subnet masks to define the network&nbsp;portion. In
+                  practice, many end devices receive IPv4 settings through
+                  automatic configuration services. When those services are
+                  misconfigured, large groups of devices can be affected
+                  quickly.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{32}"
+                paraid="15"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >IPv6 uses a longer hexadecimal format with a much larger
+                  address space. The purpose of IPv6 is to support continued
+                  growth and to reduce the pressure created by limited
+                  addresses. IPv6 uses prefix lengths to define the
+                  network&nbsp;portion. Many
+                  organizations&nbsp;operate&nbsp;in&nbsp;a transition&nbsp;mode
+                  for a long time. This is often called&nbsp;dual-stack, where
+                  both IPv4 and IPv6 operate at the same time.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{34}"
+                paraid="16"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Dual-stack&nbsp;is practical because not every service
+                  supports IPv6 in the same way, and not every environment
+                  migrates at the same pace. The&nbsp;important point&nbsp;is
+                  that IPv4 and IPv6 can coexist, and troubleshooting sometimes
+                  requires you to understand which protocol a device is using to
+                  reach a destination.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{36}"
+                paraid="17"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Now, you do not need to become an addressing expert in one
+                  week. But you do need to learn how to recognize common failure
+                  patterns.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{38}"
+                paraid="18"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Here are a few of the most common addressing problems you
+                  will see.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{40}"
+                paraid="19"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Wrong default gateway.</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;This is&nbsp;the&nbsp;classic. The device has an IP
+                  address and can communicate&nbsp;locally, but&nbsp;cannot
+                  reach remote networks. The fix is to correct the gateway
+                  setting. If many devices are affected, you check the
+                  configuration service that provides addresses.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{42}"
+                paraid="20"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto">Subnet mismatch.</span
+                ><span data-contrast="auto"
+                  >&nbsp;The device might have a subnet mask that does not match
+                  the network design. This can cause the device to believe
+                  certain destinations are local when they are not, or remote
+                  when they are local. It can also create confusion when devices
+                  that should be on the same subnet cannot communicate
+                  consistently.</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{44}"
+                paraid="21"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Duplicate IP address conflict.</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;Two devices using the same IP address can create
+                  intermittent failures, because traffic may go to the wrong
+                  device depending on timing. Symptoms can appear&nbsp;random.
+                  Address conflicts can occur when static addressing is used
+                  incorrectly or when devices are misconfigured.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{47}"
+                paraid="22"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >DNS misconfiguration.</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >&nbsp;DNS is not addressing itself, but it is often grouped
+                  with addressing triage because it&nbsp;determines&nbsp;whether
+                  names can&nbsp;resolve to&nbsp;addresses. A device might have
+                  valid IP settings, but if DNS is wrong, users will experience
+                  failures that feel like the internet is down.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{49}"
+                paraid="23"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now, why does Week 6 matter for internetworking? Because
+                  routers depend on&nbsp;addressing
+                  to&nbsp;forward&nbsp;traffic.
+                  Routers&nbsp;maintain&nbsp;routing tables that tell them how
+                  to reach different networks. End devices use their own subnet
+                  and gateway settings to decide when to route. If either side
+                  is wrong, communication fails.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{51}"
+                paraid="24"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Week 6 also matters for troubleshooting communication
+                  boundaries. In Week 5, you learned that when internal works
+                  and external&nbsp;fails, you often check boundary devices.
+                  Week 6 adds a step: confirm whether the device is even sending
+                  traffic to the boundary device correctly. If the gateway is
+                  wrong, you can reboot routers all day and the client will
+                  still fail.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{53}"
+                paraid="25"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now, let us talk about a practical workflow you can use in
+                  support.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{55}"
+                paraid="26"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >When a device cannot reach remote services, run an addressing
+                  triage.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{57}"
+                paraid="27"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >First, check&nbsp;IP&nbsp;address, subnet mask or prefix, and
+                  default gateway. Confirm they match the network you expect. If
+                  the device is using automatic configuration, release and renew
+                  the settings and see if the values correct
+                  themselves.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{59}"
+                paraid="28"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Second, check basic reachability. Can the device reach the
+                  default gateway? If it cannot, you may have a local link issue
+                  or&nbsp;wrong&nbsp;gateway. If it can, try reaching a known
+                  external IP address. If that works, but names do not work, the
+                  issue may be DNS.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{61}"
+                paraid="29"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Third, compare with a working device on the same network. If
+                  one device works and another does&nbsp;not,&nbsp;compare their
+                  addressing side-by-side. Differences often reveal the root
+                  cause.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{63}"
+                paraid="30"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >This workflow is simple, but it is powerful. It also helps
+                  you communicate. You can say, “The client has a
+                  correct&nbsp;IP&nbsp;but the gateway is wrong,” or “The client
+                  has a subnet mismatch,” or “The client can reach the gateway
+                  and an external IP but cannot resolve names, suggesting
+                  DNS.”</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{65}"
+                paraid="31"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Week 6 also prepares you for more advanced networking work.
+                  Address planning, subnetting strategies, and IPv6 transition
+                  require structured thinking. For now, the goal is to build
+                  practical competence: understand what the fields mean and
+                  recognize the common failure patterns.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{67}"
+                paraid="32"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >In Week 7, you will shift to cloud services. Cloud networking
+                  depends heavily on correct addressing, routing, and name
+                  resolution. Cloud services also introduce new patterns of
+                  access and dependency. The addressing skills you learn in Week
+                  6 will help you interpret cloud connectivity issues with more
+                  confidence.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{69}"
+                paraid="33"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >So&nbsp;the Week 6 takeaway is this: if you want to
+                  troubleshoot routing, start&nbsp;with&nbsp;addressing.
+                  Address, subnet, and gateway are foundational. When they are
+                  correct, many other problems become easier to isolate. When
+                  they are wrong, nothing else matters.</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{71}"
+                paraid="34"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Let us close with reflection questions.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{73}"
+                paraid="35"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Imagine a&nbsp;device&nbsp;needs to reach a cloud service.
+                  What addressing information must be correct? Name the IP
+                  address, the subnet mask or prefix, the default gateway, and
+                  the DNS server.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{75}"
+                paraid="36"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Now list two misconfigurations that would break the scenario.
+                  For example, the gateway could be wrong, or the subnet could
+                  be incorrect, or DNS could be misconfigured.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{77}"
+                paraid="37"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Finally, if two devices are on the same Wi-Fi and only one
+                  fails, what is the first side-by-side comparison you would
+                  do?&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{79}"
+                paraid="38"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >If you can answer those questions, you are practicing Week 6
+                  thinking: addressing first, then routing, then services.</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{db135c12-453d-4d72-b758-e8c6fb67b01e}{81}"
+                paraid="39"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Thank you for listening to the Week 6 podcast for ISSC640.
+                  This week focused on IPv4 and IPv6 addressing and how correct
+                  addressing supports internetworking and routing. In Week 7,
+                  you will examine cloud services and learn how cloud networking
+                  changes traffic paths, responsibilities, and troubleshooting
+                  in modern environments.</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/Week_6/PRODUCCION%20W6/W6_ISSC640_Digital_content_guide_podcast/W6_ISSC640_Digital_content_guide_podcast.MP3"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          width="110"
+        />
+      </p>
+    </div>
+  </body>
+</html>

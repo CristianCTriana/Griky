@@ -1,0 +1,1132 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+
+    <style>
+      body {
+        font-family: Lato, sans-serif;
+        color: #202122;
+        font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      /* ============================
+       RESPONSIVE BANNER
+    ============================ */
+      .banner-image {
+        width: 100%;
+        max-width: 800px; /* similar al video */
+        height: auto;
+        display: block;
+        margin: 30px auto;
+        border-radius: 8px; /* opcional pero combina con el video */
+      }
+
+      /* ============================
+       RESPONSIVE VIDEO (APUS STYLE)
+    ============================ */
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto 30px auto;
+      }
+
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .video-responsive video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: none;
+      }
+
+      /* ============================
+       AUDIO BUTTON STYLE
+    ============================ */
+      .audio-box {
+        width: 300px;
+        height: 60px;
+        background-color: #004c97;
+        border: 1px solid #041e42;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        border-radius: 60px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .audio-box audio {
+        width: 90%;
+        height: 35px;
+      }
+
+      /* ============================
+       ACCORDION
+    ============================ */
+      .accordion {
+        margin-top: 30px;
+      }
+
+      .accordion-item {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+      }
+
+      .accordion-item input {
+        display: none;
+      }
+
+      .accordion-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #03244d;
+        background: #ffffff;
+        cursor: pointer;
+        border-bottom: 1px solid #e5e5e5;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+        position: relative;
+      }
+
+      /* ICONO + / - */
+      .accordion-title::after {
+        content: "+"; /* cerrado = + */
+        font-size: 22px;
+        font-weight: bold;
+        color: #004c90;
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+        margin-left: 12px;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 400px; /* altura visible del acordeón */
+        padding: 20px;
+        overflow-y: auto; /* SCROLL */
+      }
+      /* cuando está abierto cambia a "-" */
+      .accordion-item input:checked + .accordion-title::after {
+        content: "-";
+        color: #004c90;
+      }
+
+      .accordion-title:hover {
+        background: #f5faff;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        background: #ffffff;
+        color: #03244d;
+        padding: 0 20px;
+        font-size: 17px;
+        line-height: 1.5;
+        transition:
+          max-height 0.35s ease,
+          padding 0.3s ease;
+      }
+
+      .accordion-item input:checked ~ .accordion-content {
+        max-height: 800px;
+        padding: 20px;
+      }
+
+      .accordion-item input:checked + .accordion-title {
+        background: #eaf4ff;
+        color: #041e42;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span style="font-size: 20px; color: #05c3de">Semana 3</span><br /><span
+          style="font-size: 28px"
+          >Protocolos de Red, Puertos y el Modelo OSI</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <!-- BANNER RESPONSIVE -->
+      <img
+        src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/instructional_banners/Escucha%20el%20siguiente%20Podcast.png"
+        alt="Escucha el siguiente Podcast"
+        class="banner-image"
+        width="665"
+        height="59"
+      />&nbsp;<!-- VIDEO RESPONSIVE -->
+      <div style="text-align: center">
+        <iframe
+          id="kaltura_player"
+          src="https://cdnapisec.kaltura.com/p/1147982/sp/114798200/embedIframeJs/uiconf_id/38631292/partner_id/1147982?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_um53h5qo&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_evkheyxk"
+          width="608"
+          height="402"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="autoplay *; fullscreen *; encrypted-media *"
+          sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+          frameborder="0"
+          title="W3_ISSC640_Digital_content_guide_podcast"
+        ></iframe>
+      </div>
+      <!-- ACCORDION -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="lo1" />
+          <label class="accordion-title" for="lo1"
+            >Transcripción: Podcast – Guía de Contenido Digital</label
+          >
+          <div class="accordion-content">
+            <div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{8}"
+                  paraid="3"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                  data-ccp-padding-bottom="0px"
+                  data-ccp-border-bottom="0px none #000000"
+                >
+                  <span data-contrast="auto"
+                    >Welcome back to ISSC640. This is Week 3, and the topic is
+                    Network Protocols, Ports, and the OSI Model. In Week 2, you
+                    learned to think in terms of network scale: LAN, MAN, and
+                    WAN, and you practiced tracing the path that data follows
+                    from a user to a destination. Week 3 gives you another
+                    powerful tool: layered troubleshooting. When you combine
+                    path thinking with layered thinking, you can diagnose
+                    problems faster and communicate more clearly.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >
+                  </span
+                  ><span data-contrast="auto"></span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{12}"
+                  paraid="5"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                  data-ccp-padding-bottom="0px"
+                  data-ccp-border-bottom="0px none #000000"
+                >
+                  <span xml:lang="EN-US" data-contrast="auto"
+                    >Let us start with&nbsp;a common support&nbsp;ticket: “The
+                    website is not working.” That sentence is a symptom, not a
+                    diagnosis. The website might not work because the device has
+                    no connection, because the device has no valid IP address,
+                    because DNS cannot resolve names, because routing is
+                    failing, because&nbsp;a firewall&nbsp;blocks the destination
+                    port, or because the web service is down. Those
+                    are&nbsp;very different&nbsp;causes, and
+                    they&nbsp;require&nbsp;different fixes.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{14}"
+                  paraid="6"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                >
+                  <span xml:lang="EN-US" data-contrast="auto"
+                    >Week 3 introduces three connected ideas that help you
+                    reduce that uncertainty. The first is protocols, which
+                    define how communication happens. The second is ports, which
+                    help devices direct traffic to the correct service. The
+                    third is the OSI model, which is a way to organize
+                    communication into&nbsp;layers&nbsp;so you can test where
+                    the failure occurs.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{16}"
+                  paraid="7"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                  data-ccp-padding-bottom="0px"
+                  data-ccp-border-bottom="0px none #000000"
+                >
+                  <span data-contrast="auto"
+                    >Among your Week 3 goals, you will focus on three concepts.
+                    First, you will understand what protocols and ports do.
+                    Second, you will understand the OSI model and how it maps to
+                    real networking. Third, you will practice using the OSI
+                    model as a checklist that starts with basic connectivity and
+                    moves upward toward application services.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{18}"
+                  paraid="8"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                >
+                  <span data-contrast="auto"
+                    >By the end of this week, you should be able to take a vague
+                    symptom and turn it into a structured investigation
+                    plan.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{20}"
+                  paraid="9"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                  data-ccp-padding-bottom="0px"
+                  data-ccp-border-bottom="0px none #000000"
+                >
+                  <span xml:lang="EN-US" data-contrast="auto"
+                    >Let us begin with protocols.&nbsp;A protocol is a set of
+                    rules that systems follow so they can communicate
+                    reliably.&nbsp;Protocols define how data is packaged, how
+                    connections are established, how errors are handled, and how
+                    messages are interpreted.&nbsp;Without protocols, devices
+                    could not agree on what a message means.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{22}"
+                  paraid="10"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                  data-ccp-padding-bottom="0px"
+                  data-ccp-border-bottom="0px none #000000"
+                >
+                  <span xml:lang="EN-US" data-contrast="auto"
+                    >In networking, you will see protocols&nbsp;at&nbsp;many
+                    layers. Some protocols handle addressing and routing. Some
+                    handle reliable delivery. Some support application services
+                    like web browsing, email, and name resolution.
+                    The&nbsp;important point&nbsp;for Week 3 is that protocols
+                    exist because communication requires coordination. Devices
+                    must agree on how to speak.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{24}"
+                  paraid="11"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                >
+                  <span xml:lang="EN-US" data-contrast="auto"
+                    >Now let us talk about ports. A port is a logical number
+                    used to&nbsp;identify&nbsp;a service on a host. Think of an
+                    IP address as the street address of a building. A port is
+                    the specific door inside that building. A single server can
+                    run multiple services, such as a web service and an email
+                    service, because each service listens&nbsp;on&nbsp;different
+                    ports. When a client sends traffic to a server, the
+                    destination port tells the server which application should
+                    receive the traffic.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{26}"
+                  paraid="12"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                  data-ccp-padding-bottom="0px"
+                  data-ccp-border-bottom="0px none #000000"
+                >
+                  <span data-contrast="auto"
+                    >Ports matter because many network controls are built around
+                    them. Firewalls often allow or block traffic based on port
+                    numbers. If a user can reach the internet but cannot reach a
+                    specific service, it might be because the necessary port is
+                    blocked. This is common in restrictive environments like
+                    hotels, guest networks, or public Wi-Fi.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{28}"
+                  paraid="13"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                  data-ccp-padding-bottom="0px"
+                  data-ccp-border-bottom="0px none #000000"
+                >
+                  <span data-contrast="auto"
+                    >Now, the OSI model. The OSI model is a conceptual framework
+                    that divides communication into layers. You can think of it
+                    as a map of responsibilities. Each layer handles a specific
+                    part of communication. The reason this model is valuable is
+                    that it gives you a structured way to troubleshoot. If a
+                    higher layer depends on a lower layer, and the lower layer
+                    is broken, then the higher layer cannot work no matter what
+                    you do at the application level.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{30}"
+                  paraid="14"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                >
+                  <span data-contrast="auto"
+                    >The OSI model is often presented as seven layers. You do
+                    not need to memorize every detail at once, but you do need
+                    to understand the flow.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+              <div>
+                <ul style="list-style-type: disc" role="list">
+                  <li
+                    role="listitem"
+                    data-aria-level="1"
+                    data-aria-posinset="1"
+                    data-list-defn-props='{"335552541":1,"335559685":720,"335559991":360,"469769226":"Verdana","469769242":[8226],"469777803":"left","469777804":"●"}'
+                    data-listid="5"
+                    data-font="Verdana"
+                    data-leveltext="●"
+                    aria-setsize="-1"
+                  >
+                    <p
+                      paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{32}"
+                      paraid="15"
+                      data-ccp-padding-between="0px"
+                      data-ccp-border-between="0px none #000000"
+                    >
+                      <span xml:lang="EN-US" data-contrast="auto"
+                        >Layer 1 is the physical layer: cables, signals,
+                        wireless radio, and the basic ability
+                        to&nbsp;transmit&nbsp;bits.&nbsp;</span
+                      ><span
+                        data-ccp-props='{"201341983":0,"335557856":16777215,"335559685":1080,"335559740":313,"335559991":360,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                        >&nbsp;</span
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul style="list-style-type: disc" role="list">
+                  <li
+                    role="listitem"
+                    data-aria-level="1"
+                    data-aria-posinset="1"
+                    data-list-defn-props='{"335552541":1,"335559685":720,"335559991":360,"469769226":"Verdana","469769242":[8226],"469777803":"left","469777804":"●"}'
+                    data-listid="1"
+                    data-font="Verdana"
+                    data-leveltext="●"
+                    aria-setsize="-1"
+                  >
+                    <p
+                      paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{34}"
+                      paraid="16"
+                      data-ccp-padding-between="0px"
+                      data-ccp-border-between="0px none #000000"
+                      data-ccp-padding-bottom="0px"
+                      data-ccp-border-bottom="0px none #000000"
+                    >
+                      <span data-contrast="auto"
+                        >Layer 2 is the data link layer: local network
+                        communication, switching behavior, and how devices share
+                        a local segment.&nbsp;</span
+                      ><span
+                        data-ccp-props='{"201341983":0,"335557856":16777215,"335559685":1080,"335559740":313,"335559991":360,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                        >&nbsp;</span
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul style="list-style-type: disc" role="list">
+                  <li
+                    role="listitem"
+                    data-aria-level="1"
+                    data-aria-posinset="1"
+                    data-list-defn-props='{"335552541":1,"335559685":720,"335559991":360,"469769226":"Verdana","469769242":[8226],"469777803":"left","469777804":"●"}'
+                    data-listid="3"
+                    data-font="Verdana"
+                    data-leveltext="●"
+                    aria-setsize="-1"
+                  >
+                    <p
+                      paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{36}"
+                      paraid="17"
+                      data-ccp-padding-between="0px"
+                      data-ccp-border-between="0px none #000000"
+                      data-ccp-padding-bottom="0px"
+                      data-ccp-border-bottom="0px none #000000"
+                    >
+                      <span data-contrast="auto"
+                        >Layer 3 is the network layer: IP addressing and routing
+                        between networks.&nbsp;</span
+                      ><span
+                        data-ccp-props='{"201341983":0,"335557856":16777215,"335559685":1080,"335559740":313,"335559991":360,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                        >&nbsp;</span
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul style="list-style-type: disc" role="list">
+                  <li
+                    role="listitem"
+                    data-aria-level="1"
+                    data-aria-posinset="1"
+                    data-list-defn-props='{"335552541":1,"335559685":720,"335559991":360,"469769226":"Verdana","469769242":[8226],"469777803":"left","469777804":"●"}'
+                    data-listid="4"
+                    data-font="Verdana"
+                    data-leveltext="●"
+                    aria-setsize="-1"
+                  >
+                    <p
+                      paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{38}"
+                      paraid="18"
+                      data-ccp-padding-between="0px"
+                      data-ccp-border-between="0px none #000000"
+                    >
+                      <span data-contrast="auto"
+                        >Layer 4 is the transport layer: delivery mechanisms and
+                        ports used by applications.&nbsp;</span
+                      ><span
+                        data-ccp-props='{"201341983":0,"335557856":16777215,"335559685":1080,"335559740":313,"335559991":360,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                        >&nbsp;</span
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul style="list-style-type: disc" role="list">
+                  <li
+                    role="listitem"
+                    data-aria-level="1"
+                    data-aria-posinset="1"
+                    data-list-defn-props='{"335552541":1,"335559685":720,"335559991":360,"469769226":"Verdana","469769242":[8226],"469777803":"left","469777804":"●"}'
+                    data-listid="2"
+                    data-font="Verdana"
+                    data-leveltext="●"
+                    aria-setsize="-1"
+                  >
+                    <p
+                      paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{40}"
+                      paraid="19"
+                      data-ccp-padding-between="0px"
+                      data-ccp-border-between="0px none #000000"
+                    >
+                      <span xml:lang="EN-US" data-contrast="auto"
+                        >Layers 5 through 7
+                        cover&nbsp;session,&nbsp;presentation, and application:
+                        how applications&nbsp;establish&nbsp;conversations,
+                        format data, and provide services.&nbsp;</span
+                      ><span
+                        data-ccp-props='{"201341983":0,"335557856":16777215,"335559685":1080,"335559740":313,"335559991":360,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                        >&nbsp;</span
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p
+                  paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{42}"
+                  paraid="20"
+                  data-ccp-padding-between="0px"
+                  data-ccp-border-between="0px none #000000"
+                  data-ccp-padding-bottom="0px"
+                  data-ccp-border-bottom="0px none #000000"
+                >
+                  <span data-contrast="auto"
+                    >Many network professionals combine layers 5 through 7 into
+                    “the application layer” for practical troubleshooting. The
+                    key is that the OSI model is not a rigid rule. It is a way
+                    to organize thinking.&nbsp;</span
+                  ><span
+                    data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                    >&nbsp;</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{44}"
+                paraid="21"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Now let us make this practical with a scenario: a user cannot
+                  load a website.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{47}"
+                paraid="22"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >If you apply the OSI model, you start at the
+                  bottom.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{49}"
+                paraid="23"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >At layers 1 and 2, you ask: is the
+                  device&nbsp;connected.&nbsp;If wired, is the cable connected
+                  and is the link light active. If wireless, is the device
+                  connected to the correct Wi-Fi network with a
+                  stable&nbsp;signal.&nbsp;Can the device reach the
+                  local&nbsp;gateway.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{51}"
+                paraid="24"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >At layer 3, you ask: does the device have a valid
+                  IP&nbsp;address.&nbsp;Does it have the
+                  correct&nbsp;gateway.&nbsp;Can it reach a known external
+                  IP&nbsp;address.&nbsp;If routing is broken, DNS and web
+                  browsing will fail.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{53}"
+                paraid="25"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >At the name resolution step, which sits between layers 3 and
+                  7 depending on how you think about it, you ask: can the device
+                  resolve the website name to an IP&nbsp;address.&nbsp;If DNS
+                  fails, users often say “the internet is down,” even though the
+                  network might be fine.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{55}"
+                paraid="26"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >At layer 4, you ask: can the device reach the destination on
+                  the required&nbsp;port.&nbsp;Web traffic typically uses
+                  specific ports for web services. If the port is blocked, you
+                  might reach some sites and not others, especially if security
+                  settings differ.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{57}"
+                paraid="27"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >At the application layer, you&nbsp;ask:&nbsp;is the web
+                  service&nbsp;responding.&nbsp;Is the site&nbsp;down.&nbsp;Is
+                  the user blocked by authentication&nbsp;issues.&nbsp;Is there
+                  a certificate&nbsp;problem.&nbsp;Is the application
+                  returning&nbsp;errors.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{59}"
+                paraid="28"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Now notice what this checklist does. It prevents you from
+                  guessing. If the device has no valid IP address, there is no
+                  reason to worry about ports. If DNS cannot&nbsp;resolve, there
+                  is no reason to reinstall the browser.&nbsp;If port access is
+                  blocked, changing the website settings on the user device will
+                  not help.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{61}"
+                paraid="29"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >This is why the OSI model is so useful. It organizes evidence
+                  collection. It also gives you language to communicate. You can
+                  say, “The issue is at the network layer because the device
+                  cannot reach the gateway,” or “The issue is at the transport
+                  layer because the destination port is blocked,” or “The issue
+                  is at the application layer because the service is
+                  down.”&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{63}"
+                paraid="30"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Now let us connect this to protocols and ports again.
+                  Protocols define how each layer behaves. Ports are part of
+                  transport layer behavior and application service
+                  identification. When you understand these pieces, you can
+                  interpret common symptoms more accurately.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{65}"
+                paraid="31"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >For example, if a user can browse many websites but cannot
+                  reach a secure internal site, you might suspect a port
+                  filtering rule,&nbsp;a firewall&nbsp;policy, or a service
+                  outage. If a VPN works on home Wi-Fi but not on a hotel
+                  network, you might suspect port and protocol restrictions. If
+                  email sends but does not receive, you might suspect different
+                  service ports or server-side issues, and you would use a
+                  layered checklist to confirm what is working and what is
+                  not.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{67}"
+                paraid="32"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Another important idea is that symptoms can appear at a
+                  higher layer while the cause is at a lower layer. A user might
+                  say, “The email app is broken,” but the device might simply be
+                  on the wrong Wi-Fi network. Or the device might have a valid
+                  IP address but wrong DNS settings. Or
+                  the&nbsp;firewall&nbsp;might block&nbsp;a required&nbsp;port.
+                  Your job is to&nbsp;locate&nbsp;the cause, not to accept the
+                  first label.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{69}"
+                paraid="33"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Week 3 also improves your ability to document and
+                  escalate.&nbsp;If you open a ticket with an internet provider,
+                  the provider will ask for evidence.&nbsp;They will want
+                  timestamps, loss measurements, and reachability tests. If you
+                  can say, “We have stable LAN connectivity but cannot establish
+                  transport-layer connections to this destination port,” you are
+                  providing actionable information. If you can say, “DNS
+                  resolution is failing from this network, but IP reachability
+                  is intact,” you are narrowing the problem.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{71}"
+                paraid="34"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >This week is also a reminder that troubleshooting is a
+                  process, not a set of tricks. A strong process scales across
+                  scenarios. It works for web issues, email issues, VPN issues,
+                  and application performance issues. The OSI model gives you
+                  that process.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{73}"
+                paraid="35"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >In Week 4, you will build on these skills by learning about
+                  network media and connectivity. That week focuses on the
+                  physical and link layers, including cables, wireless media,
+                  and connection methods that influence speed and reliability.
+                  You will see how the lower layers you referenced in Week 3
+                  have real-world constraints that shape everything above
+                  them.</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{75}"
+                paraid="36"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Let us close with reflection questions.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{77}"
+                paraid="37"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Think of a common ticket: “A website will not load,” “Email
+                  is not working,” or “VPN will not connect.” Now write one
+                  question for each major layer group.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{79}"
+                paraid="38"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >For physical and&nbsp;link:&nbsp;is there a
+                  stable&nbsp;connection.&nbsp;</span
+                ><span
+                  title="Lo sentimos, Word no puede mostrar este elemento en un explorador. Para ver y editar este objeto, abra est3 documento en la versión de escritorio de Microsoft Word."
+                  >[Salto de ajuste de texto]</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >For&nbsp;network:&nbsp;does the device have valid addressing
+                  and routing.&nbsp;</span
+                ><span
+                  title="Lo sentimos, Word no puede mostrar este elemento en un explorador. Para ver y editar este objeto, abra est3 documento en la versión de escritorio de Microsoft Word."
+                  >[Salto de ajuste de texto]</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >For name resolution: can it resolve the
+                  destination.&nbsp;</span
+                ><span
+                  title="Lo sentimos, Word no puede mostrar este elemento en un explorador. Para ver y editar este objeto, abra est3 documento en la versión de escritorio de Microsoft Word."
+                  >[Salto de ajuste de texto]</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >For transport: can it reach the destination port.&nbsp;</span
+                ><span
+                  title="Lo sentimos, Word no puede mostrar este elemento en un explorador. Para ver y editar este objeto, abra est3 documento en la versión de escritorio de Microsoft Word."
+                  >[Salto de ajuste de texto]</span
+                ><span xml:lang="EN-US" data-contrast="auto"
+                  >For&nbsp;application:&nbsp;is the service responding
+                  correctly.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{81}"
+                paraid="39"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+              >
+                <span xml:lang="EN-US" data-contrast="auto"
+                  >Then,&nbsp;identify&nbsp;one protocol and one port that is
+                  commonly involved in the scenario. You do not need every
+                  detail. The goal is to practice connecting layered thinking to
+                  real services.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":0,"335572075":0,"335572076":0,"335572077":0,"335572079":0,"335572080":0,"335572081":0,"335572083":0,"335572084":0,"335572085":0,"335572087":0,"335572088":0,"335572089":0,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{83}"
+                paraid="40"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >If you can do that, you are building Week 3 skill: structured
+                  diagnosis instead of random fixes.&nbsp;</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559738":240,"335559739":240,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+            <div>
+              <p
+                paraeid="{7606fda8-a218-439e-84f8-2a5602f28c61}{85}"
+                paraid="41"
+                data-ccp-padding-between="0px"
+                data-ccp-border-between="0px none #000000"
+                data-ccp-padding-bottom="0px"
+                data-ccp-border-bottom="0px none #000000"
+              >
+                <span data-contrast="auto"
+                  >Thank you for listening to the Week 3 podcast for ISSC640.
+                  This week focused on network protocols, ports, and the OSI
+                  model as a framework for understanding and troubleshooting
+                  communication. In Week 4, you will examine network media and
+                  connectivity and learn how physical and wireless connection
+                  choices shape performance and reliability.</span
+                ><span
+                  data-ccp-props='{"201341983":0,"335557856":16777215,"335559740":313,"335572071":0,"335572072":0,"335572073":4278190080,"335572075":0,"335572076":0,"335572077":4278190080,"335572079":0,"335572080":0,"335572081":4278190080,"335572083":0,"335572084":0,"335572085":4278190080,"335572087":0,"335572088":0,"335572089":4278190080,"469789798":"none","469789802":"none","469789806":"none","469789810":"none","469789814":"none"}'
+                  >&nbsp;</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- AUDIO BUTTON -->
+      <div class="audio-box">
+        <audio controls="controls">
+          <source
+            src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/Week_3/PRODUCCION%20W3/W3_ISSC640_Digital_content_guide_podcast/W3_ISSC640_Digital_content_guide_podcast.MP3"
+            type="audio/mp3"
+          />
+        </audio>
+      </div>
+      <hr />
+      <!-- FOOTER LOGO -->
+      <p style="text-align: right">
+        <img
+          src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+          alt=""
+          role="presentation"
+          width="110"
+        />
+      </p>
+    </div>
+  </body>
+</html>

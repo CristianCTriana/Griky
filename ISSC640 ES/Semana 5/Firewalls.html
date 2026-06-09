@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/StylesComponents.css"
+    />
+    <style>
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBanner"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Semana 5</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Dispositivos de Red e Interconexión de Redes&nbsp;</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Firewalls&nbsp;</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        Cada fragmento de datos que viaja por una red se divide en pequeñas
+        unidades llamadas paquetes. Los firewalls inspeccionan estos paquetes
+        para garantizar que sean seguros. La función principal de un firewall es
+        permitir o denegar el tráfico entrante o saliente. Existen algunos
+        dispositivos de seguridad que no solo actúan como firewall, sino que
+        también realizan otras tareas como antivirus o detección de intrusiones.
+        Hay varios tipos diferentes de firewalls, por ejemplo:
+      </p>
+      <div
+        style="text-align: center; width: 100%; max-width: 100%; margin: 10px 0"
+      >
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Cintillos_Español/mas_informacion.png"
+          alt='Haz clic en "+" para ver más información'
+          style="
+            display: block;
+            margin: 20px auto;
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+          "
+        />
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="acc-13" />
+          <label class="accordion-title" for="acc-13"
+            >Filtrado de Paquetes</label
+          >
+          <div class="accordion-content">
+            <p>
+              El firewall examina el "encabezado" del paquete, que contiene la
+              IP de origen, la IP de destino y el número de puerto, y lo compara
+              con una lista de reglas permitidas o denegadas; por ejemplo,
+              permitir el tráfico en el puerto 80, que corresponde a HTTP.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="acc-14" />
+          <label class="accordion-title" for="acc-14"
+            >Inspección de Estado</label
+          >
+          <div class="accordion-content">
+            <p>
+              En lugar de analizar los paquetes de forma aislada, los firewalls
+              modernos rastrean el "estado" de una conexión. Si envías una
+              solicitud a un sitio web, el firewall recuerda que tú iniciaste la
+              comunicación y permite automáticamente la respuesta de retorno,
+              mientras bloquea los intentos no solicitados provenientes del
+              exterior.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="acc-15" />
+          <label class="accordion-title" for="acc-15"
+            >Inspección a Nivel de Aplicación</label
+          >
+          <div class="accordion-content">
+            <p>
+              Los firewalls tradicionales solo analizan direcciones y puertos
+              (Capas 3 y 4 del modelo OSI). Los Firewalls de Nueva Generación
+              (NGFWs) van más a fondo, inspeccionando el contenido real de los
+              datos (Capa 7).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Template JavaScript -->
+    <hr />
+    <div>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        width="110"
+        style="float: right"
+        role="presentation"
+      />
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>

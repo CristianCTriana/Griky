@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/StylesComponents.css"
+    />
+    <style>
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBanner"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Semana 2</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Fundamentos de Comunicación de Datos: LAN, MAN y WAN&nbsp;</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Redes de Área Amplia&nbsp;</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        Una Red de Área Amplia abarca una gran extensión geográfica. Una WAN
+        conecta dos o más LANs. Por sí sola, una WAN no tendría dispositivos
+        finales conectados directamente a ella. Los dispositivos finales se
+        conectan a las LANs, pero pueden comunicarse entre sí a través de la
+        WAN. La siguiente tabla resume tres tipos comunes de enlaces WAN.&nbsp;
+      </p>
+      <p></p>
+      <table style="border-collapse: collapse; width: 100.014%" border="1">
+        <colgroup>
+          <col style="width: 33.3333%" />
+          <col style="width: 33.3333%" />
+          <col style="width: 33.3333%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td><strong>Tipo de Enlace WAN</strong></td>
+            <td><strong>Descripción</strong></td>
+            <td><strong>Uso Típico</strong></td>
+          </tr>
+          <tr>
+            <td>Línea Dedicada</td>
+            <td>Una conexión privada y exclusiva entre ubicaciones.</td>
+            <td>
+              Conectividad confiable entre sitios para organizaciones que
+              requieren ancho de banda constante.
+            </td>
+          </tr>
+          <tr>
+            <td>MPLS</td>
+            <td>
+              Un servicio WAN administrado por un proveedor que enruta el
+              tráfico mediante etiquetas.
+            </td>
+            <td>
+              Conexión de múltiples sedes empresariales con rendimiento
+              predecible y Calidad de Servicio.
+            </td>
+          </tr>
+          <tr>
+            <td>VPN</td>
+            <td>Una conexión cifrada a través de la internet pública.</td>
+            <td>
+              Conexión segura de oficinas remotas o usuarios cuando el costo y
+              el acceso cifrado son prioritarios.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+      <p>
+        <!-- Accordion headings should be changed to respect page hierarchy -->
+      </p>
+      <p class="instruction">
+        Selecciona cada elemento para obtener más información.
+      </p>
+      <div
+        style="text-align: center; width: 100%; max-width: 100%; margin: 10px 0"
+      >
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Cintillos_Español/mas_informacion.png"
+          alt='Haz clic en "+" para ver más información'
+          style="
+            display: block;
+            margin: 20px auto;
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+          "
+        />
+      </div>
+      <!-- Accordion headings should be changed to respect page hierarchy -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <input type="checkbox" id="acc-4" />
+          <label class="accordion-title" for="acc-4">Líneas Dedicadas</label>
+          <div class="accordion-content">
+            <p>
+              Circuitos de comunicación punto a punto, privados y exclusivos,
+              arrendados a un proveedor de servicios, que ofrecen ancho de banda
+              constante y alta confiabilidad.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="acc-5" />
+          <label class="accordion-title" for="acc-5"
+            >Conmutación de Etiquetas Multiprotocolo (MPLS)</label
+          >
+          <div class="accordion-content">
+            <p>
+              Una técnica de enrutamiento de alto rendimiento que dirige los
+              datos mediante etiquetas de ruta cortas en lugar de direcciones de
+              red complejas, lo que reduce la latencia y permite a los
+              proveedores de servicios ofrecer Calidad de Servicio (QoS)
+              garantizada.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <input type="checkbox" id="acc-6" />
+          <label class="accordion-title" for="acc-6"
+            >Redes Privadas Virtuales (VPNs)</label
+          >
+          <div class="accordion-content">
+            <p>
+              La solución WAN más común y rentable. Las VPNs crean túneles
+              seguros y cifrados a través de la Internet pública (que en sí
+              misma es una WAN pública) para conectar oficinas remotas o
+              usuarios. La desventaja de esta solución es la inconsistencia que
+              ofrecen las conexiones a Internet. No sería una buena opción para
+              videoconferencias o Voz sobre IP (VoIP), ya que podría presentarse
+              cierta demora en la conexión VPN.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p><strong></strong></p>
+      <hr />
+      <h2>Aplicaciones de las WAN</h2>
+      <p>
+        A diferencia de las redes locales, las Redes de Área Amplia operan a
+        escala global, conectando sistemas a través de ciudades, países y
+        continentes. Las WAN son fundamentales para funciones empresariales y
+        globales como las siguientes:
+      </p>
+      <ul>
+        <li>
+          <strong>Conectividad Empresarial: </strong>Conexión de la sede central
+          de una empresa con sus sucursales, centros de datos y trabajadores
+          remotos en todo el país o el mundo.
+        </li>
+        <li>
+          <strong>Acceso a la Nube: </strong>Provisión del enlace necesario
+          entre una red corporativa y plataformas de nube pública (como AWS,
+          Azure o Google Cloud).
+        </li>
+        <li>
+          <strong>Comercio Electrónico y Finanzas: </strong>Soporte para el
+          procesamiento de transacciones globales, redes bancarias e intercambio
+          de datos bursátiles en tiempo real.
+        </li>
+        <li>
+          <strong>Internet: </strong>El ejemplo más conocido, que funciona como
+          la enorme colección interconectada de todas las redes públicas y
+          privadas a nivel mundial. En este sentido, Internet es la WAN que
+          conecta múltiples LANs alrededor del mundo.
+        </li>
+      </ul>
+    </div>
+    <!-- Template JavaScript -->
+    <hr />
+    <div>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        width="110"
+        style="float: right"
+        role="presentation"
+      />
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>

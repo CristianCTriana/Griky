@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/StylesComponents.css"
+    />
+    <style>
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBanner"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Semana 3</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Protocolos de Red, Puertos y el Modelo OSI&nbsp;</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong
+            >El Modelo de Interconexión de Sistemas Abiertos&nbsp;</strong
+          ></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        Además del conjunto de protocolos TCP/IP, también contamos con el modelo
+        de Interconexión de Sistemas Abiertos (OSI), que es similar al conjunto
+        de protocolos TCP/IP en cuanto a funcionalidad, con una diferencia
+        importante. El modelo OSI no solo se ha utilizado para TCP/IP, sino
+        también para muchos otros protocolos que no forman parte de la familia
+        de protocolos TCP/IP.
+      </p>
+      <p>
+        Divide la compleja tarea de la comunicación en siete capas distintas,
+        cada una con responsabilidades específicas. El propósito principal del
+        modelo OSI es proporcionar un estándar universal para los protocolos de
+        comunicación, ofreciendo un esquema para que sistemas informáticos,
+        hardware y software de diferentes fabricantes puedan comunicarse de
+        manera efectiva. En la década de 1980, muchos de los protocolos de
+        comunicación eran propietarios.
+      </p>
+      <div class="subsection-box">
+        Por ejemplo, IBM tenía su propio conjunto de protocolos, DEC hacía lo
+        mismo, al igual que Novell. La Organización Internacional de
+        Normalización (ISO) creó el modelo OSI con el fin de proporcionar este
+        esquema y un estándar de protocolos para todos los fabricantes y
+        protocolos de código abierto como TCP/IP.
+      </div>
+      <p></p>
+      <p>
+        Las siete capas del modelo OSI, junto con sus funciones y protocolos, se
+        describen en la siguiente tabla. Los datos son creados por el usuario
+        final en la capa de Aplicación. A medida que la Unidad de Datos de
+        Protocolo (PDU) desciende por las diferentes capas, recopila los
+        encabezados correspondientes a cada capa. Nótese que la PDU recibe
+        nombres distintos en algunas de las capas.
+      </p>
+      <div class="subsection-box">
+        Por ejemplo, en la Capa 4 (Transporte) se denomina Segmento, y en la
+        Capa 3 (Red) se denomina Paquete. Cuando la PDU llega a la capa 1
+        (Física), se transforma en bits y se envía al destino. En el destino, la
+        información recibida asciende desde la Capa 1 hasta la Capa de
+        Aplicación (Capa 7). En cada capa, los encabezados correspondientes son
+        eliminados y el resto de la PDU continúa hacia arriba. Por lo tanto,
+        cada capa se comunica con la capa correspondiente en el destino
+        utilizando los caracteres de control propios de esa capa específica.
+      </div>
+      <p></p>
+      <div class="table-wrapper">
+        <table class="table-apus">
+          <caption>
+            Capas del Modelo OSI
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Capa</th>
+              <th scope="col">Función Principal</th>
+              <th scope="col">Unidad de Datos (PDU)</th>
+              <th scope="col">Protocolos/Ejemplos Comunes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Layer"><strong>Capa 7: Aplicación</strong></td>
+              <td data-label="Primary Function">
+                Proporciona la interfaz entre la aplicación del usuario y la
+                red.
+              </td>
+              <td data-label="Data Unit (PDU)">Datos</td>
+              <td data-label="Common Protocols/Examples">
+                HTTP, FTP, SMTP, DNS
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Layer"><strong>Capa 6: Presentación</strong></td>
+              <td data-label="Primary Function">
+                Gestiona el formato, la traducción, el cifrado y la compresión
+                de datos.
+              </td>
+              <td data-label="Data Unit (PDU)">Datos</td>
+              <td data-label="Common Protocols/Examples">
+                JPEG, MPEG, SSL/TLS (cifrado)
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Layer"><strong>Capa 5: Sesión</strong></td>
+              <td data-label="Primary Function">
+                Administra el inicio, mantenimiento y cierre de una sesión de
+                comunicación.
+              </td>
+              <td data-label="Data Unit (PDU)">Datos</td>
+              <td data-label="Common Protocols/Examples">NetBIOS, RPC</td>
+            </tr>
+            <tr>
+              <td data-label="Layer"><strong>Capa 4: Transporte</strong></td>
+              <td data-label="Primary Function">
+                Proporciona entrega de datos confiable o no confiable y control
+                de flujo.
+              </td>
+              <td data-label="Data Unit (PDU)">
+                Segmento (TCP) / Datagrama (UDP)
+              </td>
+              <td data-label="Common Protocols/Examples">TCP, UDP</td>
+            </tr>
+            <tr>
+              <td data-label="Layer"><strong>Capa 3: Red</strong></td>
+              <td data-label="Primary Function">
+                Gestiona el direccionamiento lógico (IP) y el enrutamiento de
+                datos a través de diferentes redes.
+              </td>
+              <td data-label="Data Unit (PDU)">Paquete</td>
+              <td data-label="Common Protocols/Examples">IP, ICMP, Router</td>
+            </tr>
+            <tr>
+              <td data-label="Layer">
+                <strong>Capa 2: Enlace de Datos</strong>
+              </td>
+              <td data-label="Primary Function">
+                Proporciona direccionamiento físico (MAC), detección de errores
+                y sincronización de tramas en una red local.
+              </td>
+              <td data-label="Data Unit (PDU)">Trama</td>
+              <td data-label="Common Protocols/Examples">
+                Ethernet, dirección MAC, Switch
+              </td>
+            </tr>
+            <tr>
+              <td data-label="Layer"><strong>Capa 1: Física</strong></td>
+              <td data-label="Primary Function">
+                Transmite datos binarios sin procesar (bits) a través del medio
+                físico.
+              </td>
+              <td data-label="Data Unit (PDU)">Bit</td>
+              <td data-label="Common Protocols/Examples">
+                Cables (Cobre, Fibra), Wi-Fi, Hub
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        El siguiente video ofrece una visión más detallada del modelo OSI y
+        explica cómo las aplicaciones se comunican a través de una red.&nbsp;
+      </p>
+      <div
+        style="text-align: center; width: 100%; max-width: 100%; margin: 10px 0"
+      >
+        <img
+          src="/content/enforced/763384-BUSN620_H5P_Griky_development_8w/Cintillos_Español/video.png"
+          alt="Mira el siguiente video"
+          style="
+            display: block;
+            margin: 20px auto;
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+          "
+        />
+      </div>
+      <div class="video-wrapper">
+        <div class="video-responsive">
+          <iframe
+            src="https://www.youtube.com/embed/Ilk7UXzV_Qc?si=7XJmUR2XMaZiuBEA&amp;wmode=opaque"
+            allowfullscreen="allowfullscreen"
+          ></iframe>
+        </div>
+        <!-- Accordion headings should be changed to respect page hierarchy -->
+        <div class="accordion">
+          <div class="accordion-item">
+            <input type="checkbox" id="acc-8" />
+            <label class="accordion-title" for="acc-8"
+              >Transcripción: ¿Qué es el Modelo OSI?&nbsp;</label
+            >
+            <div class="accordion-content">
+              <p><strong>Intro</strong></p>
+              <p>
+                (0:03) OSI stands for Open Systems Interconnection, and is a
+                conceptual framework for how applications communicate over a
+                network.
+              </p>
+              <p>
+                (0:12) There are seven layers within the model, and the layers
+                depiction is used to help users identify what is happening
+                within a networking system.
+              </p>
+              <p><strong>Like Subscribe</strong></p>
+              <p>
+                (0:35) Before we get started on today's video, if you love our
+                videos, be sure to click the like button below.
+              </p>
+              <p>
+                (0:42) Then make sure to click subscribe and the little bell to
+                receive notifications of new RealPars videos.
+              </p>
+              <p>(0:49) This way you never miss another one!</p>
+              <p><strong>Layers</strong></p>
+              <p>
+                (0:54) The OSI model layers are typically described from the top
+                layer down.
+              </p>
+              <p>
+                (0:59) The layers are described as Application, Presentation,
+                Session, Transport, Network, Data Link, and Physical.
+              </p>
+              <p>
+                (1:11) These layers are provided by a mixture of network card
+                drivers, operating systems, applications, and networking
+                hardware that facilitate the transmission of signals over
+                Ethernet, Fiber Optic, Wi-Fi, or other wireless protocols.
+              </p>
+              <p><strong>Application Layer</strong></p>
+              <p>
+                (1:29) We’ll describe the layers from the top down as the top
+                layer is the Application layer or layer 7.
+              </p>
+              <p>
+                (1:37) This is the layer that most users interact with and will
+                recognize.
+              </p>
+              <p>
+                (1:41) The Application layer provides network services to the
+                end user.
+              </p>
+              <p>
+                (1:47) These services are protocols that work with the data the
+                client is using.
+              </p>
+              <p>
+                (1:52) One of these protocols may be HTTP that is used with web
+                browsers such as Google Chrome, Firefox, and Internet Explorer.
+              </p>
+              <p>
+                (2:02) Other examples of applications that use this layer are
+                Office, Outlook, and Skype.
+              </p>
+              <p>
+                (2:09) All of those interactive applications provide a set of
+                services that allow the application layer to supply data to and
+                receive data from the Presentation layer.
+              </p>
+              <p><strong>Presentation Layer</strong></p>
+              <p>
+                (2:23) The Presentation layer, or layer 6, performs the
+                uncomplicated task of syntax processing or converting data from
+                one format to another.
+              </p>
+              <p>
+                (2:34) For example, consider you are ordering something from an
+                online store.
+              </p>
+              <p>
+                (2:39) These transactions are typically handled in a secure
+                transmission, which means that the data passing between the
+                “store” or the Website Application will transmit encrypted data
+                to the Presentation layer that will need to be decrypted and
+                processed.
+              </p>
+              <p>
+                (2:56) This layer handles translating the data from the top
+                layer, which is presented in application format, to network
+                format and vice versa.
+              </p>
+              <p>
+                (3:08) After the Presentation layer processes the data from one
+                format to another, the information is then passed to the Session
+                layer or the Application layer depending on whether the data is
+                transmitting or receiving.
+              </p>
+              <p><strong>Session Layer</strong></p>
+              <p>
+                (3:24) At the Session layer, or layer 5, the construction,
+                direction, and conclusion of connections between devices occur.
+              </p>
+              <p>
+                (3:34) This layer supports multiple types of connections as well
+                as being responsible for authentication and reconnection if a
+                network interruption should occur.
+              </p>
+              <p>
+                (3:44) After the session is established, the data then passes to
+                or from the Transport layer.
+              </p>
+              <p><strong>Transport Layer</strong></p>
+              <p>
+                (3:52) The Transport layer, or layer 4, is responsible for the
+                transmission of data across network connections.
+              </p>
+              <p>
+                (4:00) This layer coordinates how much data to send, how fast,
+                where it goes, and these sorts of things.
+              </p>
+              <p>
+                (4:08) Of the most widely known protocols for internet
+                applications, these services may be provided by Transmission
+                Control Protocol or TCP and User Datagram Protocol or UDP.
+              </p>
+              <p>
+                (4:22) Other protocols may provide additional capabilities
+                including error recovery, data flow, and retransmission.
+              </p>
+              <p>
+                (4:31) Once the Transport layer has completed its function, the
+                data is then passed to or from the Network layer.
+              </p>
+              <p><strong>Network Layer</strong></p>
+              <p>
+                (4:40) The Network layer, or layer 3, handles the routing of the
+                data.
+              </p>
+              <p>
+                (4:46) After the data arrives at this layer, each frame of data
+                is examined to conclude if the data has reached its ultimate
+                target.
+              </p>
+              <p>
+                (4:54) The layer sends data to the correct destination on
+                outgoing transmissions and receives incoming transmissions as
+                well.
+              </p>
+              <p>
+                (5:02) The IP portion of TCP/IP is the commonly known network
+                layer for the Internet.
+              </p>
+              <p><strong>IP Layer</strong></p>
+              <p>
+                (5:10) This layer also manages the mapping between logical
+                addresses and physical addresses, for IP addresses, this is
+                accomplished through Address Resolution Protocol or ARP.
+              </p>
+              <p>
+                (5:24) The data is then passed to the next required layer, which
+                is the Data Link layer.
+              </p>
+              <p><strong>Data Link Layer</strong></p>
+              <p>
+                (5:31) The Data Link layer, or layer 2, is considered the most
+                complex of the layers.
+              </p>
+              <p>
+                (5:37) This layer is often divided into sublayers called Media
+                Access Control or MAC and Logical Link Control or LLC.
+              </p>
+              <p>(5:47) The layer sets up links across the physical network.</p>
+              <p>
+                (5:50) When this layer receives data from the Physical layer, it
+                checks for transmission errors and then packages the bits into
+                data frames.
+              </p>
+              <p>
+                (5:59) From there, this layer manages the physical addressing
+                methods for the MAC or LLC layers.
+              </p>
+              <p>
+                (6:06) An example of the MAC layer includes 802.11 wireless
+                specifications as well as Ethernet.
+              </p>
+              <p>
+                (6:15) At the Data Link layer, the data passes to or from the
+                final layer in the OSI model which is the Physical layer.
+              </p>
+              <p><strong>Physical Layer</strong></p>
+              <p>
+                (6:26) The Physical layer, or layer 1, is the
+                electrical/physical layer of the model.
+              </p>
+              <p>
+                (6:32) This layer encompasses the network cables, power plugs,
+                cable pinouts, wireless radio frequencies, connectors,
+                transceivers, receivers, repeaters, pulses of light, electric
+                voltages, etc.
+              </p>
+              <p>
+                (6:49) When troubleshooting problems, this is typically the
+                first place to start.
+              </p>
+              <p>(6:54) Is the device plugged in?</p>
+              <p>(6:56) Is the wireless card working?</p>
+              <p>
+                (7:00) At this layer, the model transmits the digital data bits
+                from the source or sending devices Physical layer, over network
+                communications media, which can be electrical, mechanical, or
+                radio, to the receiving or destination devices Physical layer.
+              </p>
+              <p>
+                (7:19) The OSI model is a guide for developers and vendors to
+                smooth the progress of developing communication products and
+                software programs that will work in cooperation with a commonly
+                established model.
+              </p>
+              <p>
+                (7:32) Once you understand the model, you can then understand
+                which protocols and devices will be compatible with one another.
+              </p>
+              <p>
+                (7:45) Want to learn PLC programming in an easy to understand
+                format and take your career to the next level?
+              </p>
+              <p>(7:53) Head on over to realpars.com</p>
+              <p>
+                (Transcript provided by YouTube. Organized by Copilot,
+                2026)&nbsp;
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Template JavaScript -->
+    <hr />
+    <div>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        width="110"
+        style="float: right"
+        role="presentation"
+      />
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>

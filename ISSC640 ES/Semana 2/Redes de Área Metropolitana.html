@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/GlobalStyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/content/enforced/1027274-ISSC640_development_site_griky_spanish/globalStyles/StylesComponents.css"
+    />
+    <style>
+      .video-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .video-responsive {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        background: #000;
+        margin-bottom: 30px;
+        border: 8px solid #05c3de;
+      }
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0; padding: 0">
+      <h1
+        class="titleBanner"
+        style="
+          background-color: #041e42;
+          padding: 20px;
+          color: white;
+          text-align: center;
+          margin: 0;
+        "
+      >
+        <span
+          style="font-size: 20px; color: #05c3de; font-family: Lato, sans-serif"
+          >Semana 2</span
+        ><br /><span style="font-size: 28px; font-family: Lato, sans-serif"
+          >Fundamentos de Comunicación de Datos: LAN, MAN y WAN&nbsp;</span
+        >
+      </h1>
+    </div>
+    <div class="content-wrapper">
+      <h1
+        class="title-topic"
+        style="text-align: center; color: #041e40; font-size: 35px"
+      >
+        <span style="font-family: Lato, sans-serif"
+          ><strong>Redes de Área Metropolitana&nbsp;</strong></span
+        >
+      </h1>
+      <hr class="divider-line" />
+      <p>
+        Si una organización tiene más de una oficina en un área metropolitana y
+        las conecta entre sí, se forma una Red de Área Metropolitana (MAN). Por
+        sí misma, una MAN no tiene dispositivos finales conectados directamente,
+        sino que se utiliza para interconectar LANs. El medio de transmisión de
+        una MAN puede ser inalámbrico, mediante una tecnología llamada WiMax
+        (IEEE 802.16), o puede consistir en cables de fibra óptica que se
+        arriendan a proveedores de servicios como Verizon. Hace algunas décadas,
+        no se contaba con WiMax y era necesario instalar transceptores en los
+        techos de los edificios para conectar distintas LANs a través de la
+        ciudad, lo que requería línea de visión directa y representaba una tarea
+        compleja. WiMax ha simplificado considerablemente esta conexión
+        inalámbrica.
+      </p>
+      <p>
+        Los siguientes diagramas ilustran MANs; el primero mediante cables de
+        fibra óptica y el segundo mediante una torre WiMax.
+      </p>
+      <p>
+        <img
+          src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/MAN_to_LAN.png"
+          alt="Diagrama de una MAN que utiliza cables de fibra óptica."
+          title="Diagrama de una MAN que utiliza cables de fibra óptica."
+          data-d2l-editor-default-img-style="true"
+          style="max-width: 100%"
+        />
+      </p>
+      <hr />
+      <p>
+        <img
+          src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/Week_0_Instructors/wimax-1.jpg"
+          alt="Diagrama de una MAN que utiliza torres WiMax."
+          title="Diagrama de una MAN que utiliza torres WiMax."
+          width="733"
+          height="388"
+          style="display: block; margin-left: auto; margin-right: auto"
+        />
+      </p>
+      <br />
+      <hr />
+      <br />
+      <h2>Aplicaciones típicas de las MANs</h2>
+      <p>
+        Las MANs proporcionan la infraestructura de backbone esencial para la
+        conectividad a escala urbana:
+      </p>
+      <ul>
+        <li>
+          <strong>Conectividad empresarial: </strong>Interconexión de todas las
+          sucursales de una misma corporación en un área metropolitana,
+          permitiéndoles compartir un servidor centralizado o un centro de
+          datos.
+        </li>
+        <li>
+          <strong>Servicios gubernamentales y municipales: </strong>Vinculación
+          de departamentos de policía, bibliotecas, escuelas y edificios
+          administrativos de una ciudad para el intercambio de datos en tiempo
+          real y los sistemas de seguridad pública.
+        </li>
+        <li>
+          <strong>Instituciones educativas: </strong>Provisión de conectividad
+          entre distintos campus, laboratorios de investigación y residencias
+          estudiantiles dentro de un gran sistema universitario.
+        </li>
+      </ul>
+      <br />
+      <div class="table-responsive">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp;
+        <div class="table-wrapper">
+          <table class="table-apus table">
+            <caption>
+              Características clave de las MANs&nbsp;
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">
+                  <p style="text-align: center">Característica</p>
+                </th>
+                <th scope="col">
+                  <p style="text-align: center">Descripción</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Alcance geográfico</strong></td>
+                <td>
+                  Cubre un área que va desde unos pocos kilómetros hasta
+                  aproximadamente 50 kilómetros, generalmente dentro de un área
+                  metropolitana.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Objetivo principal</strong></td>
+                <td>
+                  Conecta múltiples LANs a través de un área metropolitana.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Velocidad de transmisión</strong></td>
+                <td>
+                  Ofrece típicamente conectividad de alta velocidad, que va
+                  desde cientos de Mbps hasta múltiples Gbps.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Medios de transmisión</strong></td>
+                <td>
+                  Utiliza frecuentemente infraestructura de fibra óptica y
+                  servicios como Metro Ethernet para proporcionar conectividad
+                  de alto ancho de banda en distancias metropolitanas.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Propiedad</strong></td>
+                <td>
+                  Puede ser propiedad de una gran organización, un proveedor de
+                  servicios, un municipio o una institución educativa, y ser
+                  administrada por cualquiera de ellos.&nbsp;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Template JavaScript -->
+    <hr />
+    <div>
+      <img
+        src="/shared/LCS_HTML_Templates/apus_Template_2020/_assets/img/logo.png"
+        alt=""
+        width="110"
+        style="float: right"
+        role="presentation"
+      />
+    </div>
+    <p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/content/enforced/1027274-ISSC640_development_site_griky_spanish/assets/sorting/js/components.js"></script>
+    </p>
+  </body>
+</html>
